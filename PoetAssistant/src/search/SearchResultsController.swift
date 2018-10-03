@@ -9,9 +9,32 @@
 import UIKit
 import CoreData
 
-class SearchResultsController: UITableViewController, UISearchResultsUpdating {
+class SearchResultsController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
+	private var searchController: UISearchController? = nil
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		searchController = UISearchController(searchResultsController: nil)
+		searchController?.searchResultsUpdater = self
+		searchController?.obscuresBackgroundDuringPresentation = false
+		searchController?.hidesNavigationBarDuringPresentation = false
+		searchController?.definesPresentationContext = false
+		searchController?.delegate = self
+		searchController?.searchBar.delegate = self
+		tableView.tableHeaderView = searchController?.searchBar
+		definesPresentationContext = true
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		searchController?.isActive = true
+	}
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		searchController?.isActive = false
+	}
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -25,7 +48,7 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating {
 	}
 	
 	func updateSearchResults(for searchController: UISearchController) {
-		if let queryText = searchController.searchBar.text {
+		if let queryText = searchController.searchBar.text, !queryText.isEmpty {
 			fetchedResultsController = Dictionary.createQueryFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: queryText)
 			try? fetchedResultsController?.performFetch()
 			tableView.reloadData()
@@ -45,5 +68,9 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating {
 		didSelect?(selection)
 	}
 	
+	func didDismissSearchController(_ searchController: UISearchController) {
+		didSelect?(nil)
+	}
+
 	var didSelect: ((String?) -> Void)?
 }
