@@ -16,6 +16,7 @@
 		4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */; };
 		4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613F4216506B500FA10A1 /* PoemDocument.swift */; };
 		4F6613F721650F6600FA10A1 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613F621650F6600FA10A1 /* Poem.swift */; };
+		4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613F82165241D00FA10A1 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
 		4F6613F4216506B500FA10A1 /* PoemDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemDocument.swift; sourceTree = "<group>"; };
 		4F6613F621650F6600FA10A1 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		4F6613F82165241D00FA10A1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				4F6613F22164FC5800FA10A1 /* rhymer */,
 				4F6613F32164FC6200FA10A1 /* thesaurus */,
 				4F6613F12164FC4700FA10A1 /* composer */,
+				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
+				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */,
 			);

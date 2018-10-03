@@ -9,11 +9,7 @@
 import UIKit
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+	
 	@IBOutlet weak var text: UITextView! {
 		didSet {
 			text.delegate = self
@@ -23,7 +19,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
 		updateTextHint()
-		becomeFirstResponder()
+		text.becomeFirstResponder()
 	}
 
 	@IBOutlet weak var hint: UILabel!
@@ -39,15 +35,4 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		updateTextHint()
 		Poem(withText: text.text).saveDraft()
 	}
-
-	/*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
