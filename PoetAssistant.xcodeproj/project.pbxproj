@@ -13,6 +13,7 @@
 		4F6613DD2164D10700FA10A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613DB2164D10700FA10A1 /* Main.storyboard */; };
 		4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613DE2164D10800FA10A1 /* Assets.xcassets */; };
 		4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */; };
+		4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4F6613E12164D10800FA10A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F6613E32164D10800FA10A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6613EA2164D21200FA10A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,15 +59,48 @@
 		4F6613D42164D10700FA10A1 /* PoetAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
-				4F6613D72164D10700FA10A1 /* RhymerController.swift */,
-				4F6613D92164D10700FA10A1 /* ThesaurusController.swift */,
-				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
+				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
+				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
 			);
 			path = PoetAssistant;
+			sourceTree = "<group>";
+		};
+		4F6613EE2164FBEE00FA10A1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613F22164FC5800FA10A1 /* rhymer */,
+				4F6613F32164FC6200FA10A1 /* thesaurus */,
+				4F6613F12164FC4700FA10A1 /* composer */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		4F6613F12164FC4700FA10A1 /* composer */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
+			);
+			path = composer;
+			sourceTree = "<group>";
+		};
+		4F6613F22164FC5800FA10A1 /* rhymer */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613D72164D10700FA10A1 /* RhymerController.swift */,
+			);
+			path = rhymer;
+			sourceTree = "<group>";
+		};
+		4F6613F32164FC6200FA10A1 /* thesaurus */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
+				4F6613D92164D10700FA10A1 /* ThesaurusController.swift */,
+			);
+			path = thesaurus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +176,7 @@
 			files = (
 				4F6613DA2164D10700FA10A1 /* ThesaurusController.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
+				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
