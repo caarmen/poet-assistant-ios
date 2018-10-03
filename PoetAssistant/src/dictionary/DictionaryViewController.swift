@@ -9,17 +9,23 @@
 import UIKit
 import CoreData
 
-class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate {
+class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate {
 	private var searchResultHeaderViewController: SearchResultHeaderViewController? = nil
 	internal var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
 
 	@IBOutlet weak var toolbar: UIToolbar!
-	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var tableView: UITableView!{
+		didSet {
+			tableView.delegate = self
+			tableView.dataSource = self
+		}
+	}
 	private var query : String? {
 		didSet {
 			updateUI()
 		}
 	}
+	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
@@ -38,5 +44,10 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 
 	private func updateUI() {
 		searchResultHeaderViewController?.word.text = query
+		if let nonEmptyQuery = query, !nonEmptyQuery.isEmpty {
+			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
+			try? fetchedResultsController?.performFetch()
+			tableView.reloadData()
+		}
 	}
 }
