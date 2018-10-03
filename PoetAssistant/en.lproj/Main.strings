@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
+"A5M-7J-77L.text" = "Rhymer contents";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
+"KQZ-1w-vlD.text" = "Rhymer";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Thesaurus contents";
+
+/* Class = "UITabBarItem"; title = "First"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Rhymer";
+
+/* Class = "UITabBarItem"; title = "Second"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Thesaurus";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Thesaurus";
+
+/* Class = "UITabBarItem"; title = "Composer"; ObjectID = "leB-IY-dWZ"; */
+"leB-IY-dWZ.title" = "Composer";

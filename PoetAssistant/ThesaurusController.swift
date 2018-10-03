@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  PoetAssistant
 //
 //  Created by Carmen Alvarez on 03/10/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ThesaurusController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

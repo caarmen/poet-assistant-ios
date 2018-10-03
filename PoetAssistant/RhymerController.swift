@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  PoetAssistant
 //
 //  Created by Carmen Alvarez on 03/10/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class RhymerController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
