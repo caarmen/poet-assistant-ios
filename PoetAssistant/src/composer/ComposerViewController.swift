@@ -12,7 +12,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		updateTextHint()
     }
     
 	@IBOutlet weak var text: UITextView! {
@@ -20,7 +19,13 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 			text.delegate = self
 		}
 	}
-	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		text.text = Poem.readDraft().text
+		updateTextHint()
+		becomeFirstResponder()
+	}
+
 	@IBOutlet weak var hint: UILabel!
 	@IBAction func onShare(_ sender: Any) {
 		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
@@ -32,6 +37,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	func textViewDidChange(_ textView: UITextView) {
 		updateTextHint()
+		Poem(withText: text.text).saveDraft()
 	}
 
 	/*

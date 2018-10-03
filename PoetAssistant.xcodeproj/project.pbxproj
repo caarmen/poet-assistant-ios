@@ -14,6 +14,8 @@
 		4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613DE2164D10800FA10A1 /* Assets.xcassets */; };
 		4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */; };
 		4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */; };
+		4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613F4216506B500FA10A1 /* PoemDocument.swift */; };
+		4F6613F721650F6600FA10A1 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613F621650F6600FA10A1 /* Poem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		4F6613E32164D10800FA10A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6613EA2164D21200FA10A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
+		4F6613F4216506B500FA10A1 /* PoemDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemDocument.swift; sourceTree = "<group>"; };
+		4F6613F621650F6600FA10A1 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
+				4F6613F4216506B500FA10A1 /* PoemDocument.swift */,
+				4F6613F621650F6600FA10A1 /* Poem.swift */,
 			);
 			path = composer;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				4F6613DA2164D10700FA10A1 /* ThesaurusController.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
+				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
+				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
