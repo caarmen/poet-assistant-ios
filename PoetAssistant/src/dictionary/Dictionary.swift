@@ -11,6 +11,21 @@ import CoreData
 class Dictionary: NSManagedObject {
 	static let COLUMN_WORD = "word"
 	
+	class func createQueryFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
+		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
+		request.propertiesToFetch = [COLUMN_WORD]
+		request.resultType = .dictionaryResultType
+		request.returnsDistinctResults = true
+		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+		if !queryText.isEmpty {
+			request.predicate = NSPredicate(format: "\(COLUMN_WORD) contains[c] %@", queryText)
+		}
+		return NSFetchedResultsController(
+			fetchRequest: request,
+			managedObjectContext: context,
+			sectionNameKeyPath: nil,
+			cacheName: nil)
+	}
 	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String, sortColumn: String, ascendingSort: Bool) -> NSFetchedResultsController<Dictionary> {
 		let request: NSFetchRequest<Dictionary> = Dictionary.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: sortColumn, ascending: ascendingSort, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]

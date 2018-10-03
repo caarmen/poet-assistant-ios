@@ -11,7 +11,7 @@ import CoreData
 
 class SearchResultsController: UITableViewController, UISearchResultsUpdating {
 
-	private var fetchedResultsController: NSFetchedResultsController<Dictionary>?
+	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -26,7 +26,7 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating {
 	
 	func updateSearchResults(for searchController: UISearchController) {
 		if let queryText = searchController.searchBar.text {
-			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: queryText, sortColumn: Dictionary.COLUMN_WORD, ascendingSort: true)
+			fetchedResultsController = Dictionary.createQueryFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: queryText)
 			try? fetchedResultsController?.performFetch()
 			tableView.reloadData()
 		}
@@ -35,12 +35,13 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
 		let dictionaryEntry = fetchedResultsController?.object(at: indexPath)
-		cell.textLabel?.text = dictionaryEntry?.word
+		let word = dictionaryEntry?[Dictionary.COLUMN_WORD] as? String
+		cell.textLabel?.text = word
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let selection = fetchedResultsController?.object(at: indexPath).word
+		let selection = fetchedResultsController?.object(at: indexPath)[Dictionary.COLUMN_WORD] as? String
 		didSelect?(selection)
 	}
 	

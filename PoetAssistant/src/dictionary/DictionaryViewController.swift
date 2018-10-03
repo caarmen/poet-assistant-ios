@@ -13,6 +13,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 	private var searchController: UISearchController? = nil
 	private var searchResultsController: SearchResultsController? = nil
 	private var searchResultHeaderViewController: SearchResultHeaderViewController? = nil
+	internal var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
 
 	@IBOutlet weak var toolbar: UIToolbar!
 	@IBOutlet weak var tableView: UITableView!
@@ -24,7 +25,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		//searchResultsController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsController)
+		searchResultsController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsController)
 		searchResultsController?.didSelect = { [weak self] selection in
 			self?.query = selection
 			self?.searchResultsController?.dismiss(animated: true, completion: nil)
@@ -34,12 +35,14 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		searchController?.searchResultsUpdater = searchResultsController
 		searchController?.obscuresBackgroundDuringPresentation = false
 		searchController?.hidesNavigationBarDuringPresentation = false
+		searchController?.definesPresentationContext = true
 		searchController?.delegate = self
 		searchController?.searchBar.delegate = self
 		if let searchBar = searchController?.searchBar {
 			toolbar.addSubview(searchBar)
 		}
 		//tableView.tableHeaderView = searchController?.searchBar
+		
 		definesPresentationContext = true
 		updateUI()
 	}
@@ -55,7 +58,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 	}
 	
 	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-		query = searchBar.text
+		//query = searchBar.text
 	}
 	
 	private func updateUI() {

@@ -13,7 +13,7 @@ class EmbeddedDb {
 		if (paths.count > 0) {
 			if let toFolder = paths.first, let fromPath = Bundle.main.path(forResource: "dictionaries", ofType: "sqlite") {
 				let fromUrl = URL.init(fileURLWithPath: fromPath)
-				let toFilePath = "\(toFolder)/dictionaries"
+				let toFilePath = "\(toFolder)/dictionaries.sqlite"
 				let toFolderUrl = URL.init(fileURLWithPath: toFolder)
 				let toFileUrl = URL.init(fileURLWithPath: toFilePath)
 				print ("should copy \(fromUrl) to \(toFolderUrl)")
