@@ -272,7 +272,7 @@
         <!--Dictionary-->
         <scene sceneID="4HN-S3-2Hx">
             <objects>
-                <viewController id="KSz-7M-5ZO" sceneMemberID="viewController">
+                <viewController id="KSz-7M-5ZO" customClass="DictionaryViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqA-di-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +281,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items/>
                             </toolbar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q25-Er-WhQ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q25-Er-WhQ" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Dh8-JR-yKK"/>
@@ -343,6 +343,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Dictionary" image="ic_dictionary" id="Du4-Bb-Yuz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xge-7I-wBQ" id="P0w-6n-dkp"/>
+                        <outlet property="toolbar" destination="BxN-91-GYP" id="Ouz-iG-i7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wg5-Ai-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,6 +430,43 @@
             </objects>
             <point key="canvasLocation" x="-20" y="296"/>
         </scene>
+        <!--Search Results Controller-->
+        <scene sceneID="PrB-CE-YaJ">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchResults" id="Jwe-Pn-scP" customClass="SearchResultsController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wXH-az-7Hb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="cbk-CI-Fid" style="IBUITableViewCellStyleDefault" id="FHO-Ff-eI7">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FHO-Ff-eI7" id="9s8-eI-ciG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cbk-CI-Fid">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jwe-Pn-scP" id="ieO-06-3hN"/>
+                            <outlet property="delegate" destination="Jwe-Pn-scP" id="ySd-i5-868"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14x-VJ-fAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288" y="229"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hFU-YT-ul3">
             <objects>
@@ -481,11 +522,11 @@
             </objects>
             <point key="canvasLocation" x="-322" y="1681"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Result Header View Controller-->
         <scene sceneID="wIN-Jw-7KT">
             <objects>
-                <viewController id="dO5-jX-XXb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Q2-Ez-uEd">
+                <viewController id="dO5-jX-XXb" customClass="SearchResultHeaderViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Q2-Ez-uEd" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -503,7 +544,13 @@
                             <constraint firstItem="f7B-AF-DfY" firstAttribute="leading" secondItem="4Q2-Ez-uEd" secondAttribute="leading" constant="16" id="e1O-cw-Dt1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eaR-3z-VSz"/>
+                        <connections>
+                            <outlet property="word" destination="f7B-AF-DfY" id="qaH-06-4NX"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="word" destination="f7B-AF-DfY" id="CHK-UT-8Cf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7V-mB-LlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
