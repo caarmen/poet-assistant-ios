@@ -24,7 +24,6 @@
 		4F661407216533CB00FA10A1 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661406216533CB00FA10A1 /* SearchResultsController.swift */; };
 		4F6614092165345200FA10A1 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6614082165345200FA10A1 /* Dictionary.swift */; };
 		4F66140B2165391600FA10A1 /* SearchResultHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66140A2165391600FA10A1 /* SearchResultHeaderViewController.swift */; };
-		4F66140D216539CA00FA10A1 /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66140C216539CA00FA10A1 /* SearchResultHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 		4F661406216533CB00FA10A1 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		4F6614082165345200FA10A1 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		4F66140A2165391600FA10A1 /* SearchResultHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderViewController.swift; sourceTree = "<group>"; };
-		4F66140C216539CA00FA10A1 /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				4F661406216533CB00FA10A1 /* SearchResultsController.swift */,
-				4F66140C216539CA00FA10A1 /* SearchResultHeaderView.swift */,
 				4F66140A2165391600FA10A1 /* SearchResultHeaderViewController.swift */,
 			);
 			path = search;
@@ -234,7 +231,6 @@
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */,
-				4F66140D216539CA00FA10A1 /* SearchResultHeaderView.swift in Sources */,
 				4F66140B2165391600FA10A1 /* SearchResultHeaderViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
 				4F661407216533CB00FA10A1 /* SearchResultsController.swift in Sources */,

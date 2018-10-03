@@ -10,5 +10,6 @@ import UIKit
 
 class SearchResultHeaderViewController: UIViewController {
 
+	
 	@IBOutlet weak var word: UILabel!
 }

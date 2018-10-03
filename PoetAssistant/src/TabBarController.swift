@@ -12,7 +12,6 @@ class TabBarController: UITabBarController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardVisibilityChanged), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
-		let toto = AppDelegate.persistentContainer
 	}
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
