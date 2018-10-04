@@ -47,6 +47,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		if let nonEmptyQuery = query, !nonEmptyQuery.isEmpty {
 			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
 			try? fetchedResultsController?.performFetch()
+			tableView.invalidateIntrinsicContentSize()
 			tableView.reloadData()
 		}
 	}

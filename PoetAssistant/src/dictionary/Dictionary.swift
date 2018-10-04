@@ -18,7 +18,7 @@ class Dictionary: NSManagedObject {
 		request.returnsDistinctResults = true
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) contains[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(COLUMN_WORD) beginswith[c] %@", queryText)
 		}
 		return NSFetchedResultsController(
 			fetchRequest: request,
@@ -30,7 +30,7 @@ class Dictionary: NSManagedObject {
 		let request: NSFetchRequest<Dictionary> = Dictionary.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) contains[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(COLUMN_WORD) ==[c] %@", queryText)
 		}
 		return NSFetchedResultsController(
 			fetchRequest: request,

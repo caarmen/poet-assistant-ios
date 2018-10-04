@@ -48,4 +48,8 @@ extension DictionaryViewController : UITableViewDataSource {
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 		return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
 	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return UITableView.automaticDimension
+	}
 }

@@ -26,6 +26,7 @@
 		4F66140F21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66140E21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift */; };
 		4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */; };
 		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
+		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4F66140A2165391600FA10A1 /* SearchResultHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderViewController.swift; sourceTree = "<group>"; };
 		4F66140E21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DictionaryViewController+DataSource.swift"; sourceTree = "<group>"; };
 		4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
+		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4F661413216627BF00FA10A1 /* extensions */,
 				4F661405216533A600FA10A1 /* search */,
 				4F6614022165318900FA10A1 /* dictionary */,
 				4F6613F22164FC5800FA10A1 /* rhymer */,
@@ -153,6 +156,14 @@
 				4F66140A2165391600FA10A1 /* SearchResultHeaderViewController.swift */,
 			);
 			path = search;
+			sourceTree = "<group>";
+		};
+		4F661413216627BF00FA10A1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				4F661404216531C800FA10A1 /* DictionaryViewController.swift in Sources */,
 				4F6613DA2164D10700FA10A1 /* ThesaurusController.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
+				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F66140121652F6C00FA10A1 /* EmbeddedDb.swift in Sources */,
