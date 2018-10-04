@@ -10,13 +10,20 @@ import CoreData
 
 class Dictionary: NSManagedObject {
 	static let COLUMN_WORD = "word"
+	static let COLUMN_PART_OF_SPEECH = "part_of_speech"
+	static let PART_OF_SPEECH_NOUN = "n"
+	static let PART_OF_SPEECH_VERB = "v"
+	static let PART_OF_SPEECH_ADJECTIVE = "a"
+	static let PART_OF_SPEECH_ADVERB = "r"
 	
 	class func createQueryFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
 		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
 		request.propertiesToFetch = [COLUMN_WORD]
 		request.resultType = .dictionaryResultType
 		request.returnsDistinctResults = true
-		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+		request.sortDescriptors = [
+			NSSortDescriptor(key: COLUMN_PART_OF_SPEECH, ascending: true),
+			NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
 			request.predicate = NSPredicate(format: "\(COLUMN_WORD) beginswith[c] %@", queryText)
 		}
@@ -35,7 +42,7 @@ class Dictionary: NSManagedObject {
 		return NSFetchedResultsController(
 			fetchRequest: request,
 			managedObjectContext: context,
-			sectionNameKeyPath: nil,
+			sectionNameKeyPath: COLUMN_PART_OF_SPEECH,
 			cacheName: nil)
 	}
 }
