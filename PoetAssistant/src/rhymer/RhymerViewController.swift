@@ -14,6 +14,7 @@ class RhymerViewController: SearchResultsController {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
+		completion()
 	}
 }
 

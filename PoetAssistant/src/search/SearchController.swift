@@ -13,6 +13,7 @@ class SearchController: UITableViewController, UISearchResultsUpdating, UISearch
 	
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	private var searchController: UISearchController? = nil
+	private var queryHandled = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -78,6 +79,10 @@ class SearchController: UITableViewController, UISearchResultsUpdating, UISearch
 	}
 	
 	private func handleSelection(selection: String?) {
+		if (queryHandled) {
+			return
+		}
+		queryHandled = true
 		var userInfo: [String:String] = [:]
 		if (selection != nil) {
 			userInfo[Notification.Name.UserInfoKeys.query] = selection!

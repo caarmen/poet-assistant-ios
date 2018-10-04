@@ -16,6 +16,7 @@ class ThesaurusViewController: SearchResultsController {
 	}
 
 	override func doQuery(query: String, completion: @escaping () -> Void) {
+		completion()
 	}
 }
 
