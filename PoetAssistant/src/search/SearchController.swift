@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SearchResultsController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+class SearchController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 	
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	private var searchController: UISearchController? = nil
