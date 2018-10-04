@@ -1,5 +1,5 @@
 //
-//  DictionaryViewController.swift
+//  SecondViewController.swift
 //  PoetAssistant
 //
 //  Created by Carmen Alvarez on 03/10/2018.
@@ -7,34 +7,22 @@
 //
 
 import UIKit
-import CoreData
 
-class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, SearchResultProvider {
-	
-	internal var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
+class ThesaurusViewController: UIViewController, SearchResultProvider {
 
 	@IBOutlet weak var labelQuery: UILabel!
-	@IBOutlet weak var toolbar: UIToolbar!
-	@IBOutlet weak var tableView: UITableView!{
-		didSet {
-			tableView.delegate = self
-			tableView.dataSource = self
-		}
-	}
+	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyText: UILabel!
 	var query : String? {
 		didSet {
 			if (isViewLoaded) {
 				updateUI()
-			}
-		}
+			}		}
 	}
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
 	}
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? SearchResultsController {
@@ -47,27 +35,24 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 			}
 		}
 	}
-
 	private func updateUI() {
 		labelQuery.text = query?.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
-			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
-			try? fetchedResultsController?.performFetch()
-			tableView.invalidateIntrinsicContentSize()
-			tableView.reloadData()
 			if (tableView.visibleCells.isEmpty) {
 				emptyText.isHidden = false
 				labelQuery.isHidden = true
-				emptyText.text = String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(nonEmptyQuery)")
+				emptyText.text = String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(nonEmptyQuery)")
 			} else {
 				emptyText.isHidden = true
 				labelQuery.isHidden = false
+				
 			}
 		} else {
 			emptyText.isHidden = false
 			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
 			labelQuery.isHidden = true
 		}
-		
 	}
+
 }
+

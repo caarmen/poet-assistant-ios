@@ -23,6 +23,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardVisibilityChanged), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
 	}
+	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		NotificationCenter.default.removeObserver(self)
@@ -31,11 +32,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.delegate = self
-		let selectedTab = Settings.getTab()
-		viewControllers?.forEach  { viewController in
+		lastSelectedSearchResultTab = Settings.getTab()
+		for viewController in viewControllers! {
 			if let tab = getTabForViewController(viewController: viewController) {
 				tabToViewController[tab] = viewController
-				if (tab == selectedTab) {
+				if (tab == lastSelectedSearchResultTab) {
 					selectedViewController = viewController
 				}
 			}
@@ -43,9 +44,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	}
 	
 	private func getTabForViewController(viewController: UIViewController) -> Tab? {
-		if (viewController is RhymerController) {
+		if (viewController is RhymerViewController) {
 			return .rhymer
-		} else if (viewController is ThesaurusController) {
+		} else if (viewController is ThesaurusViewController) {
 			return .thesaurus
 		} else if (viewController is DictionaryViewController) {
 			return .dictionary

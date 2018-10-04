@@ -66,15 +66,19 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating, U
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let selection = fetchedResultsController?.object(at: indexPath)[Dictionary.COLUMN_WORD] as? String
 		searchController?.searchBar.text = selection
-		didSelect?(selection)
+		handleSelection(selection: selection)
 	}
 	
 	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-		didSelect?(searchBar.text)
+		handleSelection(selection: searchBar.text)
 	}
 	
 	func didDismissSearchController(_ searchController: UISearchController) {
-		didSelect?(nil)
+		handleSelection(selection: nil)
+	}
+	
+	private func handleSelection(selection: String?) {
+		didSelect?(selection)
 	}
 
 	var didSelect: ((String?) -> Void)?
