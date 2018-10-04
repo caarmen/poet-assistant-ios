@@ -27,6 +27,11 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		}
 	}
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		updateUI()
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? SearchResultsController {
@@ -52,6 +57,9 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 			} else {
 				emptyText.isHidden = true
 			}
+		} else {
+			emptyText.isHidden = false
+			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
 		}
 		
 	}
