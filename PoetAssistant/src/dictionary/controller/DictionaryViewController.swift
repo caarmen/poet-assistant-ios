@@ -31,7 +31,9 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? SearchResultsController {
 			viewController.didSelect = { [weak self] selection in
-				self?.query = selection
+				if (selection != nil) {
+					self?.query = selection
+				}
 				self?.dismiss(animated: true, completion: nil)
 			}
 		}
@@ -43,7 +45,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 	}
 
 	private func updateUI() {
-		searchResultHeaderViewController?.word.text = query
+		searchResultHeaderViewController?.word.text = query?.localizedLowercase
 		if let nonEmptyQuery = query, !nonEmptyQuery.isEmpty {
 			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
 			try? fetchedResultsController?.performFetch()

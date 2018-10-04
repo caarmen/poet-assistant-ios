@@ -68,6 +68,10 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating, U
 		didSelect?(selection)
 	}
 	
+	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+		didSelect?(searchBar.text)
+	}
+	
 	func didDismissSearchController(_ searchController: UISearchController) {
 		didSelect?(nil)
 	}

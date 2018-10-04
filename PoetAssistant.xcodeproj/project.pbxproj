@@ -141,10 +141,9 @@
 		4F6614022165318900FA10A1 /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				4F661403216531C800FA10A1 /* DictionaryViewController.swift */,
-				4F6614082165345200FA10A1 /* Dictionary.swift */,
-				4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */,
-				4F66140E21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift */,
+				4F66141921663D9E00FA10A1 /* controller */,
+				4F66141821663D9900FA10A1 /* view */,
+				4F66141721663D8A00FA10A1 /* model */,
 			);
 			path = dictionary;
 			sourceTree = "<group>";
@@ -164,6 +163,31 @@
 				4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		4F66141721663D8A00FA10A1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F6614082165345200FA10A1 /* Dictionary.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4F66141821663D9900FA10A1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4F66141921663D9E00FA10A1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F66140E21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift */,
+				4F661403216531C800FA10A1 /* DictionaryViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

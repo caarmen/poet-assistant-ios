@@ -523,6 +523,7 @@
                             <constraint firstItem="aQQ-48-TCn" firstAttribute="centerY" secondItem="kl5-T2-FKg" secondAttribute="centerY" id="Rym-Hf-IPz"/>
                             <constraint firstAttribute="trailing" secondItem="aQQ-48-TCn" secondAttribute="trailing" constant="16" id="rPb-74-glj"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hwd-9j-oNZ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3A-Ke-dl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -565,8 +566,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7B-AF-DfY">
-                                <rect key="frame" x="16" y="12" width="343" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7B-AF-DfY">
+                                <rect key="frame" x="16" y="24" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
