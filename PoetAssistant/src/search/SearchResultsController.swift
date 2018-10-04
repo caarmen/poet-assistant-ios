@@ -65,6 +65,7 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating, U
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let selection = fetchedResultsController?.object(at: indexPath)[Dictionary.COLUMN_WORD] as? String
+		searchController?.searchBar.text = selection
 		didSelect?(selection)
 	}
 	
