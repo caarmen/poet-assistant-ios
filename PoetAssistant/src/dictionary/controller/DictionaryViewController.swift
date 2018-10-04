@@ -20,6 +20,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 			tableView.dataSource = self
 		}
 	}
+	@IBOutlet weak var emptyText: UILabel!
 	private var query : String? {
 		didSet {
 			updateUI()
@@ -40,11 +41,18 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 
 	private func updateUI() {
 		word.text = query?.localizedLowercase
-		if let nonEmptyQuery = query, !nonEmptyQuery.isEmpty {
+		if let nonEmptyQuery = word.text, !nonEmptyQuery.isEmpty {
 			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
 			try? fetchedResultsController?.performFetch()
 			tableView.invalidateIntrinsicContentSize()
 			tableView.reloadData()
+			if (tableView.visibleCells.isEmpty) {
+				emptyText.isHidden = false
+				emptyText.text = String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(nonEmptyQuery)")
+			} else {
+				emptyText.isHidden = true
+			}
 		}
+		
 	}
 }

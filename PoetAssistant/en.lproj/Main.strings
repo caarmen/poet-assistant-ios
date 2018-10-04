@@ -43,3 +43,7 @@
 
 /* Class = "UILabel"; text = "Compose your beautiful poetry here."; ObjectID = "tEA-Om-MWX"; */
 "tEA-Om-MWX.text" = "Compose your beautiful poetry here.";
+
+"No definitions for %@." = "No definitions for \"%@\"";
+"No synonyms for %@." = "No synonyms for %@.";
+"No rhymes for %@." = "No rhymes for %@.";

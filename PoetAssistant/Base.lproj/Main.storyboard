@@ -331,11 +331,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-7I-wBQ">
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="T0x-Pn-x2J">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DictionaryEntry" id="5DP-Dr-WQ0" customClass="DictionaryTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -398,17 +393,29 @@
                                     <constraint firstAttribute="trailing" secondItem="jfn-HG-eyv" secondAttribute="trailing" constant="16" id="oYW-43-Whs"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
+                                <rect key="frame" x="187.5" y="369" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" secondItem="Xge-7I-wBQ" secondAttribute="trailing" id="3v1-hu-VUs"/>
                             <constraint firstItem="4bY-Av-vlk" firstAttribute="top" secondItem="BxN-91-GYP" secondAttribute="bottom" id="6FR-QL-gpl"/>
+                            <constraint firstItem="Xge-7I-wBQ" firstAttribute="baseline" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="firstBaseline" constant="16" id="Cqz-R4-s4N"/>
                             <constraint firstItem="BxN-91-GYP" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="FOJ-AF-uSU"/>
                             <constraint firstItem="Xge-7I-wBQ" firstAttribute="firstBaseline" secondItem="4bY-Av-vlk" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="HDx-Dw-0wd"/>
                             <constraint firstItem="BxN-91-GYP" firstAttribute="top" secondItem="Cvh-Tg-ldU" secondAttribute="top" id="WBa-Ln-Z0C"/>
+                            <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="trailing" constant="16" id="aNc-3f-P8D"/>
+                            <constraint firstItem="Ua2-db-8ud" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cvh-Tg-ldU" secondAttribute="leading" constant="16" id="g93-Cz-ROx"/>
+                            <constraint firstItem="Ua2-db-8ud" firstAttribute="centerX" secondItem="Cvh-Tg-ldU" secondAttribute="centerX" id="h8b-ed-s90"/>
+                            <constraint firstItem="Cvh-Tg-ldU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="bottom" constant="16" id="pVq-Th-afD"/>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="bottom" secondItem="Xge-7I-wBQ" secondAttribute="bottom" id="pc6-Vm-tmh"/>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" secondItem="BxN-91-GYP" secondAttribute="trailing" id="puI-Ck-LBU"/>
                             <constraint firstItem="Xge-7I-wBQ" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="qKi-MF-gnw"/>
+                            <constraint firstItem="Ua2-db-8ud" firstAttribute="centerY" secondItem="Xge-7I-wBQ" secondAttribute="centerY" id="reV-e6-UAY"/>
                             <constraint firstItem="4bY-Av-vlk" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="waK-rP-W1g"/>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" secondItem="4bY-Av-vlk" secondAttribute="trailing" id="zKL-z3-Jsc"/>
                         </constraints>
@@ -417,6 +424,7 @@
                     <tabBarItem key="tabBarItem" title="Dictionary" image="ic_dictionary" id="Du4-Bb-Yuz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="emptyText" destination="Ua2-db-8ud" id="tTn-Py-KEe"/>
                         <outlet property="tableView" destination="Xge-7I-wBQ" id="P0w-6n-dkp"/>
                         <outlet property="toolbar" destination="BxN-91-GYP" id="Ouz-iG-i7e"/>
                         <outlet property="word" destination="jfn-HG-eyv" id="yIs-cP-ofU"/>

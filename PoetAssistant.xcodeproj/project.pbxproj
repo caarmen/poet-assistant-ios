@@ -139,9 +139,9 @@
 		4F6614022165318900FA10A1 /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				4F66141921663D9E00FA10A1 /* controller */,
-				4F66141821663D9900FA10A1 /* view */,
 				4F66141721663D8A00FA10A1 /* model */,
+				4F66141821663D9900FA10A1 /* view */,
+				4F66141921663D9E00FA10A1 /* controller */,
 			);
 			path = dictionary;
 			sourceTree = "<group>";
