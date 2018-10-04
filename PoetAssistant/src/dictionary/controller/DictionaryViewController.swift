@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate {
-	private var searchResultHeaderViewController: SearchResultHeaderViewController? = nil
 	internal var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
 
+	@IBOutlet weak var word: UILabel!
 	@IBOutlet weak var toolbar: UIToolbar!
 	@IBOutlet weak var tableView: UITableView!{
 		didSet {
@@ -26,7 +26,6 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		}
 	}
 	
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? SearchResultsController {
@@ -38,14 +37,9 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 			}
 		}
 	}
-	override func addChild(_ childController: UIViewController) {
-		if (childController is SearchResultHeaderViewController) {
-			searchResultHeaderViewController = childController as? SearchResultHeaderViewController
-		}
-	}
 
 	private func updateUI() {
-		searchResultHeaderViewController?.word.text = query?.localizedLowercase
+		word.text = query?.localizedLowercase
 		if let nonEmptyQuery = query, !nonEmptyQuery.isEmpty {
 			fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: nonEmptyQuery)
 			try? fetchedResultsController?.performFetch()
