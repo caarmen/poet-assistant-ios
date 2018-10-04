@@ -8,8 +8,18 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
-
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
+	
+	private static let DEFAULT_SEARCH_RESULTS_TAB = Tab.dictionary
+	
+	var lastSelectedSearchResultViewController: UIViewController? {
+		get {
+			return tabToViewController[lastSelectedSearchResultTab]
+		}
+	}
+	private var lastSelectedSearchResultTab = TabBarController.DEFAULT_SEARCH_RESULTS_TAB
+	private var tabToViewController = [Tab:UIViewController]()
+	
 	override func viewWillAppear(_ animated: Bool) {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardVisibilityChanged), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
 	}
@@ -17,7 +27,42 @@ class TabBarController: UITabBarController {
 		super.viewWillDisappear(animated)
 		NotificationCenter.default.removeObserver(self)
 	}
-
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.delegate = self
+		let selectedTab = Settings.getTab()
+		viewControllers?.forEach  { viewController in
+			if let tab = getTabForViewController(viewController: viewController) {
+				tabToViewController[tab] = viewController
+				if (tab == selectedTab) {
+					selectedViewController = viewController
+				}
+			}
+		}
+	}
+	
+	private func getTabForViewController(viewController: UIViewController) -> Tab? {
+		if (viewController is RhymerController) {
+			return .rhymer
+		} else if (viewController is ThesaurusController) {
+			return .thesaurus
+		} else if (viewController is DictionaryViewController) {
+			return .dictionary
+		} else if (viewController is ComposerViewController){
+			return .composer
+		}
+		return nil
+	}
+	func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+		if let tab = getTabForViewController(viewController: viewController) {
+			if viewController is SearchResultProvider {
+				lastSelectedSearchResultTab = tab
+			}
+			Settings.setTab(tab: tab)
+		}
+	}
+	
 	// Make sure keyboard doesn't cover the tab bar, by placing the tab bar above the keyboard,
 	// when the keyboard becomes visible.
 	// https://stackoverflow.com/questions/5272267/keyboard-hides-tabbar/14782487#14782487
@@ -32,5 +77,14 @@ class TabBarController: UITabBarController {
 				})
 			}
 		}
+	}
+	
+	func updateQuery(query: String?) {
+		viewControllers?.forEach { viewController in
+			if (viewController is SearchResultProvider) {
+				(viewController as! SearchResultProvider).query = query
+			}
+		}
+		selectedViewController = tabToViewController[self.lastSelectedSearchResultTab]
 	}
 }

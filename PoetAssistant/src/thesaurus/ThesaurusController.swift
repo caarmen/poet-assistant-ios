@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ThesaurusController: UIViewController {
+class ThesaurusController: UIViewController, SearchResultProvider {
 
+	var query : String? {
+		didSet {
+			updateUI()
+		}
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
+	private func updateUI() {
+	
+	}
 
 }
 

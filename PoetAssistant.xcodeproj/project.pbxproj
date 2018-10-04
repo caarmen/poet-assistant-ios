@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
+		4F31972D21666B7400135FF4 /* SearchResultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972C21666B7400135FF4 /* SearchResultProvider.swift */; };
+		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613D52164D10700FA10A1 /* AppDelegate.swift */; };
 		4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613D72164D10700FA10A1 /* RhymerController.swift */; };
 		4F6613DA2164D10700FA10A1 /* ThesaurusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613D92164D10700FA10A1 /* ThesaurusController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		4F31972C21666B7400135FF4 /* SearchResultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultProvider.swift; sourceTree = "<group>"; };
+		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F6613D22164D10700FA10A1 /* PoetAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoetAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6613D52164D10700FA10A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F6613D72164D10700FA10A1 /* RhymerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
 				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
+				4F31972A2166587100135FF4 /* Tab.swift */,
+				4F31972E21666FCF00135FF4 /* Settings.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 		4F661405216533A600FA10A1 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				4F31972C21666B7400135FF4 /* SearchResultProvider.swift */,
 				4F661406216533CB00FA10A1 /* SearchResultsController.swift */,
 			);
 			path = search;
@@ -268,12 +277,15 @@
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
+				4F31972D21666B7400135FF4 /* SearchResultProvider.swift in Sources */,
+				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F66140121652F6C00FA10A1 /* EmbeddedDb.swift in Sources */,
 				4F66140F21654E0F00FA10A1 /* DictionaryViewController+DataSource.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
+				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,

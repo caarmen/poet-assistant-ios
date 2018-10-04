@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 
-class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate {
+class DictionaryViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, SearchResultProvider {
+	
 	internal var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
 
 	@IBOutlet weak var word: UILabel!
@@ -21,7 +22,7 @@ class DictionaryViewController: UIViewController, UISearchControllerDelegate, UI
 		}
 	}
 	@IBOutlet weak var emptyText: UILabel!
-	private var query : String? {
+	var query : String? {
 		didSet {
 			updateUI()
 		}

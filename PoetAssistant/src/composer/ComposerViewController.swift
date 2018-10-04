@@ -35,4 +35,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		updateTextHint()
 		Poem(withText: text.text).saveDraft()
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		if let viewController = segue.destination as? SearchResultsController {
+			viewController.didSelect = { [weak self] selection in
+				if (selection != nil) {
+					(self?.tabBarController as? TabBarController)?.updateQuery(query: selection)
+				}
+				self?.dismiss(animated: true, completion: nil)
+			}
+		}
+	}
 }
