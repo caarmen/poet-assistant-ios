@@ -16,9 +16,14 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
 	}
-	override func doQuery(query: String) {
-		fetchedResultsController = Dictionary.createFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: query)
-		try? fetchedResultsController?.performFetch()
+	override func doQuery(query: String, completion: @escaping () -> Void) {
+		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
+			self?.fetchedResultsController = Dictionary.createFetchResultsController(context: context, queryText: query)
+			try? self?.fetchedResultsController?.performFetch()
+			DispatchQueue.main.async {
+				completion()
+			}
+		}
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections?.count ?? 1

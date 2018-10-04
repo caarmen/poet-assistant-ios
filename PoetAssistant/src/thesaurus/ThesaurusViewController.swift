@@ -15,7 +15,7 @@ class ThesaurusViewController: SearchResultsController {
 		return String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(query)")
 	}
 
-	override func doQuery(query: String) {
+	override func doQuery(query: String, completion: @escaping () -> Void) {
 	}
 }
 

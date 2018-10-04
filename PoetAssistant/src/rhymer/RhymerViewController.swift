@@ -13,7 +13,7 @@ class RhymerViewController: SearchResultsController {
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
-	override func doQuery(query: String) {
+	override func doQuery(query: String, completion: @escaping () -> Void) {
 	}
 }
 

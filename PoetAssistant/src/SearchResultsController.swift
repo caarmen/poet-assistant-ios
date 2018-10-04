@@ -58,21 +58,26 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	private func updateUI() {
 		labelQuery.text = query?.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
-			doQuery(query: nonEmptyQuery)
-			tableView.invalidateIntrinsicContentSize()
-			tableView.reloadData()
-			if (tableView.visibleCells.isEmpty) {
-				emptyText.isHidden = false
-				labelQuery.isHidden = true
-				emptyText.text = getEmptyText(query: nonEmptyQuery)
-			} else {
-				emptyText.isHidden = true
-				labelQuery.isHidden = false
-			}
+			doQuery(query: nonEmptyQuery, completion: { [weak self] in
+				self?.queryResultsFetched(query: nonEmptyQuery)
+			})
 		} else {
 			emptyText.isHidden = false
 			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
 			labelQuery.isHidden = true
+		}
+	}
+	
+	private func queryResultsFetched(query: String) {
+		tableView.invalidateIntrinsicContentSize()
+		tableView.reloadData()
+		if (tableView.visibleCells.isEmpty) {
+			emptyText.isHidden = false
+			labelQuery.isHidden = true
+			emptyText.text = getEmptyText(query: query)
+		} else {
+			emptyText.isHidden = true
+			labelQuery.isHidden = false
 		}
 	}
 	
@@ -83,7 +88,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	open func getEmptyText(query: String) -> String {
 		return ""
 	}
-	open func doQuery(query: String) {
+	open func doQuery(query: String, completion: @escaping () -> Void) {
 	}
 	open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 0
