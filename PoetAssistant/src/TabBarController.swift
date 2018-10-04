@@ -12,12 +12,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	
 	private static let DEFAULT_SEARCH_RESULTS_TAB = Tab.dictionary
 	
-	var lastSelectedSearchResultViewController: UIViewController? {
-		get {
-			return tabToViewController[lastSelectedSearchResultTab]
-		}
-	}
-	private var lastSelectedSearchResultTab = TabBarController.DEFAULT_SEARCH_RESULTS_TAB
 	private var tabToViewController = [Tab:UIViewController]()
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -32,14 +26,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.delegate = self
-		lastSelectedSearchResultTab = Settings.getTab()
+		let lastSelectedTab = Settings.getTab()
 		for viewController in viewControllers! {
 			if let tab = getTabForViewController(viewController: viewController) {
 				tabToViewController[tab] = viewController
-				if (tab == lastSelectedSearchResultTab) {
+				if (tab == lastSelectedTab) {
 					selectedViewController = viewController
 				}
 			}
+			// Hack to preload tab viewcontrollers
+			// https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
+			let _ = viewController.view
 		}
 	}
 	
@@ -57,9 +54,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	}
 	func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 		if let tab = getTabForViewController(viewController: viewController) {
-			if viewController is SearchResultProvider {
-				lastSelectedSearchResultTab = tab
-			}
 			Settings.setTab(tab: tab)
 		}
 	}
@@ -80,12 +74,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 		}
 	}
 	
-	func updateQuery(query: String?) {
-		viewControllers?.forEach { viewController in
-			if (viewController is SearchResultProvider) {
-				(viewController as! SearchResultProvider).query = query
-			}
-		}
-		selectedViewController = tabToViewController[self.lastSelectedSearchResultTab]
+	func goToTab(tab: Tab) {
+		selectedViewController = tabToViewController[tab]
 	}
 }

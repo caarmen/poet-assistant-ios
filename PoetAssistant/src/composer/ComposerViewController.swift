@@ -15,16 +15,41 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 			text.delegate = self
 		}
 	}
+
+	@IBOutlet weak var hint: UILabel!
+	@IBAction func onShare(_ sender: Any) {
+		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
+	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
 		updateTextHint()
 		text.becomeFirstResponder()
+		addNotificationObserver()
 	}
-
-	@IBOutlet weak var hint: UILabel!
-	@IBAction func onShare(_ sender: Any) {
-		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		addNotificationObserver()
+	}
+	
+	private func addNotificationObserver() {
+		NotificationCenter.`default`.removeObserver(self)
+		NotificationCenter.`default`.addObserver(
+			forName: Notification.Name.onquery,
+			object:nil,
+			queue:OperationQueue.main,
+			using: { [weak self] notification in
+				self?.dismiss(animated: true, completion: nil)
+				if (self?.tabBarController?.selectedViewController == self) {
+					(self?.tabBarController as? TabBarController)?.goToTab(tab: Tab.dictionary)
+				}
+		})
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		NotificationCenter.`default`.removeObserver(self)
 	}
 	
 	private func updateTextHint() {
@@ -36,15 +61,4 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		Poem(withText: text.text).saveDraft()
 	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		super.prepare(for: segue, sender: sender)
-		if let viewController = segue.destination as? SearchResultsController {
-			viewController.didSelect = { [weak self] selection in
-				if (selection != nil) {
-					(self?.tabBarController as? TabBarController)?.updateQuery(query: selection)
-				}
-				self?.dismiss(animated: true, completion: nil)
-			}
-		}
-	}
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchResultProvider:class {
-	var query: String? { get set }
 }
+

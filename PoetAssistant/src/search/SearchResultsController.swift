@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 class SearchResultsController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
-
+	
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	private var searchController: UISearchController? = nil
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		searchController = UISearchController(searchResultsController: nil)
@@ -78,8 +78,13 @@ class SearchResultsController: UITableViewController, UISearchResultsUpdating, U
 	}
 	
 	private func handleSelection(selection: String?) {
-		didSelect?(selection)
+		var userInfo: [String:String] = [:]
+		if (selection != nil) {
+			userInfo[Notification.Name.UserInfoKeys.query] = selection!
+		}
+		NotificationCenter.`default`.post(
+			name:Notification.Name.onquery,
+			object:self,
+			userInfo:userInfo)
 	}
-
-	var didSelect: ((String?) -> Void)?
 }
