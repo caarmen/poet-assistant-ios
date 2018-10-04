@@ -9,8 +9,6 @@
 import UIKit
 
 class DictionaryTableViewCell: UITableViewCell {
-
-	@IBOutlet weak var partOfSpeech: UILabel!
 	
 	@IBOutlet weak var definition: UILabel!
 }

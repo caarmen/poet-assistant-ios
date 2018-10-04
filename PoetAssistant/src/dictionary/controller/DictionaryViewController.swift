@@ -60,7 +60,6 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let dictionaryEntryCell = tableView.dequeueReusableCell(withIdentifier: "DictionaryEntry") as? DictionaryTableViewCell {
 			if let dictionaryEntry = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				dictionaryEntryCell.partOfSpeech.text = dictionaryEntry.part_of_speech
 				dictionaryEntryCell.definition.text = dictionaryEntry.definition
 			}
 			return dictionaryEntryCell
