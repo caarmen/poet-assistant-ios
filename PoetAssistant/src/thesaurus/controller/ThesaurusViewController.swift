@@ -16,7 +16,7 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 		super.viewDidLoad()
 		tab = Tab.thesaurus
 	}
-
+	
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(query)")
 	}
@@ -25,6 +25,16 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
 			self?.fetchedResultsController = Thesaurus.createFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
+			// No results? How about trying the stem of the word.
+			if (self?.fetchedResultsController?.sections.count ?? 0) == 0 {
+				let stemmedWord = PorterStemmer().stemWord(word:query)
+				if (stemmedWord != query) {
+					DispatchQueue.main.async {
+						self?.query = stemmedWord
+					}
+					return
+				}
+			}
 			DispatchQueue.main.async {
 				completion()
 			}

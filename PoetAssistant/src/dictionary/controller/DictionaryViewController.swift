@@ -23,6 +23,16 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
 			self?.fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
+			// No results? How about trying the stem of the word.
+			if (self?.fetchedResultsController?.sections?.count ?? 0) == 0 {
+				let stemmedWord = PorterStemmer().stemWord(word:query)
+				if (stemmedWord != query) {
+					DispatchQueue.main.async {
+						self?.query = stemmedWord
+					}
+					return
+				}
+			}
 			DispatchQueue.main.async {
 				completion()
 			}
