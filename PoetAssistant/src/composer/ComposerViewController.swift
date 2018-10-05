@@ -28,10 +28,18 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		if speechSynthesizer.isSpeaking {
 			speechSynthesizer.stopSpeaking(at: .immediate)
 		} else {
-			let utterance = AVSpeechUtterance(string: text.text)
+			let utterance = AVSpeechUtterance(string: getTextToPlay())
 			speechSynthesizer.speak(utterance)
 		}
 		updateButton()
+	}
+	private func getTextToPlay() -> String {
+		if let selectedRange = text.selectedTextRange {
+			if let selectedText = text.text(in:selectedRange), !selectedText.isEmpty {
+				return selectedText
+			}
+		}
+		return text.text
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
