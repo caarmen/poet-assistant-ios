@@ -10,7 +10,7 @@ import UIKit
 
 class RhymerViewController: SearchResultsController {
 	
-	private var fetchedResultsController: CombinedFetchedResultsController<WordVariants>? = nil
+	private var fetchedResultsController: CombinedFetchedResultsController<NSDictionary>? = nil
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
@@ -49,7 +49,7 @@ class RhymerViewController: SearchResultsController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				rhymerWordCell.labelWord.text = rhymerWord.word
+				rhymerWordCell.labelWord.text = rhymerWord[WordVariants.COLUMN_WORD] as? String
 			}
 			return rhymerWordCell
 		}

@@ -18,8 +18,8 @@ class WordVariants: NSManagedObject {
 	static let COLUMN_LAST_THREE_SYLLABLES = "last_three_syllables"
 	static let COLUMN_HAS_DEFINITION = "has_definition"
 	
-	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> CombinedFetchedResultsController<WordVariants> {
-		let result = CombinedFetchedResultsController<WordVariants>()
+	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> CombinedFetchedResultsController<NSDictionary> {
+		let result = CombinedFetchedResultsController<NSDictionary>()
 		// find all variants
 		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_VARIANT_NUMBER, ascending: true)]
@@ -29,16 +29,16 @@ class WordVariants: NSManagedObject {
 		if let wordVariants = try? request.execute() {
 			wordVariants.forEach { wordVariant in
 				if let stress_syllables = wordVariant.stress_syllables {
-					result.add(sectionTitle: COLUMN_STRESS_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, rhymeTypeColumn: COLUMN_STRESS_SYLLABLES, rhymeValue: stress_syllables))
+					result.add(sectionTitle: COLUMN_STRESS_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_STRESS_SYLLABLES, rhymeValue: stress_syllables))
 				}
 				if let last_three_syllables = wordVariant.last_three_syllables {
-					result.add(sectionTitle: COLUMN_LAST_THREE_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, rhymeTypeColumn: COLUMN_LAST_THREE_SYLLABLES, rhymeValue: last_three_syllables))
+					result.add(sectionTitle: COLUMN_LAST_THREE_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_THREE_SYLLABLES, rhymeValue: last_three_syllables))
 				}
 				if let last_two_syllables = wordVariant.last_two_syllables {
-					result.add(sectionTitle: COLUMN_LAST_TWO_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, rhymeTypeColumn: COLUMN_LAST_TWO_SYLLABLES, rhymeValue: last_two_syllables))
+					result.add(sectionTitle: COLUMN_LAST_TWO_SYLLABLES, fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_TWO_SYLLABLES, rhymeValue: last_two_syllables))
 				}
 				if let last_syllable = wordVariant.last_syllable {
-					result.add(sectionTitle: COLUMN_LAST_SYLLABLE, fetchedResultsController: createFetchResultsController(context: context, rhymeTypeColumn: COLUMN_LAST_SYLLABLE, rhymeValue: last_syllable))
+					result.add(sectionTitle: COLUMN_LAST_SYLLABLE, fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_SYLLABLE, rhymeValue: last_syllable))
 				}
 			}
 		}
@@ -46,10 +46,13 @@ class WordVariants: NSManagedObject {
 		return result
 	}
 	
-	private class func createFetchResultsController(context: NSManagedObjectContext, rhymeTypeColumn: String, rhymeValue: String) -> NSFetchedResultsController<WordVariants> {
-		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
+	private class func createFetchResultsController(context: NSManagedObjectContext, queryWord: String, rhymeTypeColumn: String, rhymeValue: String) -> NSFetchedResultsController<NSDictionary> {
+		let request = NSFetchRequest<NSDictionary>(entityName: "WordVariants")
+		request.propertiesToFetch = [COLUMN_WORD]
+		request.resultType = .dictionaryResultType
+		request.returnsDistinctResults = true
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD, ascending: true)]
-		request.predicate = NSPredicate(format: "\(rhymeTypeColumn) == %@", rhymeValue)
+		request.predicate = NSPredicate(format: "\(rhymeTypeColumn) == %@ AND \(COLUMN_WORD) !=[c] %@", rhymeValue, queryWord)
 		return NSFetchedResultsController(
 			fetchRequest: request,
 			managedObjectContext: context,
