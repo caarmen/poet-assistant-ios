@@ -27,18 +27,19 @@ class WordVariants: NSManagedObject {
 			request.predicate = NSPredicate(format: "\(COLUMN_WORD) ==[c] %@", queryText)
 		}
 		if let wordVariants = try? request.execute() {
-			wordVariants.forEach { wordVariant in
+			for (index, wordVariant) in wordVariants.enumerated() {
+				let variantPrefix = (wordVariants.count > 1) ? "\(index + 1)." : ""
 				if let stress_syllables = wordVariant.stress_syllables {
-					result.add(sectionTitle: "0", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_STRESS_SYLLABLES, rhymeValue: stress_syllables))
+					result.add(sectionTitle: "\(variantPrefix)0", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_STRESS_SYLLABLES, rhymeValue: stress_syllables))
 				}
 				if let last_three_syllables = wordVariant.last_three_syllables {
-					result.add(sectionTitle: "3", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_THREE_SYLLABLES, rhymeValue: last_three_syllables))
+					result.add(sectionTitle: "\(variantPrefix)3", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_THREE_SYLLABLES, rhymeValue: last_three_syllables))
 				}
 				if let last_two_syllables = wordVariant.last_two_syllables {
-					result.add(sectionTitle: "2", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_TWO_SYLLABLES, rhymeValue: last_two_syllables))
+					result.add(sectionTitle: "\(variantPrefix)2", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_TWO_SYLLABLES, rhymeValue: last_two_syllables))
 				}
 				if let last_syllable = wordVariant.last_syllable {
-					result.add(sectionTitle: "1", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_SYLLABLE, rhymeValue: last_syllable))
+					result.add(sectionTitle: "\(variantPrefix)1", fetchedResultsController: createFetchResultsController(context: context, queryWord: queryText, rhymeTypeColumn: COLUMN_LAST_SYLLABLE, rhymeValue: last_syllable))
 				}
 			}
 		}

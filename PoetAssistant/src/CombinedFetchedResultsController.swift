@@ -45,10 +45,22 @@ class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 						numberOfObjects: thisControllerSections[0].numberOfObjects,
 						objects: thisControllerSections[0].objects)
 					sections.append(sectionInfo)
-					
 				}
+				
 			} catch let error {
 				throw error
+			}
+		}
+		
+		removeEmptySections()
+	}
+	
+	private func removeEmptySections() {
+		for (index, section) in sections.enumerated().reversed() {
+			if section.numberOfObjects == 0 {
+				fetchedResultsControllers.remove(at: index)
+				sections.remove(at: index)
+				sectionIndexTitles.remove(at:index)
 			}
 		}
 	}

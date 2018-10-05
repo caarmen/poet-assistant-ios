@@ -37,7 +37,14 @@ class RhymerViewController: SearchResultsController {
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return NSLocalizedString("rhyme_match_type_\(sections[section].name)", comment: "")
+			let sectionName = sections[section].name
+			if sectionName.contains(".") {
+				let variantNumber = String(sectionName[..<sectionName.index(sectionName.startIndex, offsetBy: 1)])
+				let rhymeType = String(sectionName.suffix(from: sectionName.index(sectionName.startIndex, offsetBy: 2)))
+				return String(format: NSLocalizedString("rhyme_variant_match_type_\(rhymeType)", comment: ""), query!, variantNumber)
+			} else {
+				return NSLocalizedString("rhyme_match_type_\(sectionName)", comment: "")
+			}
 		} else {
 			return nil
 		}

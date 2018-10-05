@@ -6,10 +6,10 @@
 "part_of_speech_v" = "verbs";
 "part_of_speech_a" = "adjectives";
 "part_of_speech_r" = "adverbs";
-"stress_syllables_title" = "strict matches";
-"last_syllable_title" = "last syllable";
-"last_two_syllables_title" = "last two syllables";
-"last_three_syllables_title" = "last three syllables";
+"rhyme_variant_match_type_0" = "%@(%@) strict matches";
+"rhyme_variant_match_type_1" = "%@(%@) last syllable";
+"rhyme_variant_match_type_2" = "%@(%@) last two syllables";
+"rhyme_variant_match_type_3" = "%@(%@) last three syllables";
 "rhyme_match_type_0" = "strict matches";
 "rhyme_match_type_1" = "last syllable";
 "rhyme_match_type_2" = "last two syllables";
