@@ -40,6 +40,10 @@ class ThesaurusFetchedResultsController {
 		return at
 	}
 	
+	private var wordTypeLabels:[String:String] = ["NOUN": "part_of_speech_n",
+								  "ADJ": "part_of_speech_a",
+								  "ADV": "part_of_speech_r",
+								  "VERB": "part_of_speech_v"]
 	func performFetch() throws {
 		do {
 			try fetchedResultsController.performFetch()
@@ -58,7 +62,7 @@ class ThesaurusFetchedResultsController {
 						}
 					}
 					let newSection = SectionInfo(
-						name: originalSection.name,
+						name: wordTypeLabels[originalSection.name] ?? "",
 						numberOfObjects: objectsInSection.count,
 						objects: objectsInSection)
 					sections.append(newSection)

@@ -65,7 +65,7 @@ class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDe
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return sections[section].name
+			return NSLocalizedString(sections[section].name, comment: "")
 		} else {
 			return nil
 		}
