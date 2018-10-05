@@ -79,6 +79,9 @@
                                                         <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_dictionary"/>
+                                                    <connections>
+                                                        <action selector="searchDictionary:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="gsk-XQ-DYC"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
                                                     <rect key="frame" x="250" y="-0.5" width="44" height="44.5"/>
@@ -87,6 +90,9 @@
                                                         <constraint firstAttribute="width" constant="44" id="utw-K2-emc"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_thesaurus"/>
+                                                    <connections>
+                                                        <action selector="searchThesaurus:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="1iM-qX-7fw"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
                                                     <rect key="frame" x="196" y="-0.5" width="44" height="44.5"/>
@@ -95,6 +101,9 @@
                                                         <constraint firstAttribute="height" constant="44" id="75J-Mg-6nI"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_rhymer"/>
+                                                    <connections>
+                                                        <action selector="searchRhymer:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="KOA-qw-UFo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -111,9 +120,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelWord" destination="G1t-Qu-q7L" id="5SH-hA-Bdn"/>
-                                            <outlet property="searchDictionary" destination="MDN-Gd-8qR" id="g69-7k-y1b"/>
-                                            <outlet property="searchRhymer" destination="LzB-D5-qoq" id="jS3-x2-HI2"/>
-                                            <outlet property="searchThesaurus" destination="Ksn-5e-YYn" id="AGX-Mm-mgO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

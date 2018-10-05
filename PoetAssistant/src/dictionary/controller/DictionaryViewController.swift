@@ -12,7 +12,10 @@ import CoreData
 class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
 	
 	private var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
-
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		tab = Tab.dictionary
+	}
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
 	}

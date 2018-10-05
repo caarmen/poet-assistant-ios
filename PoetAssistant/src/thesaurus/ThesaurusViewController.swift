@@ -10,7 +10,10 @@ import UIKit
 
 class ThesaurusViewController: SearchResultsController {
 	
-	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		tab = Tab.thesaurus
+	}
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(query)")
 	}

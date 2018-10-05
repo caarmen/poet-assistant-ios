@@ -8,7 +8,33 @@
 
 import UIKit
 
-class RhymerViewController: SearchResultsController {
+class RhymerViewController: SearchResultsController, RhymerTableViewCellDelegate {
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		tab = Tab.rhymer
+	}
+	
+	func searchRhymer(query: String) {
+		postSearch(query:query, tab:.rhymer)
+	}
+	
+	func searchThesaurus(query: String) {
+		postSearch(query:query, tab:.thesaurus)
+	}
+	
+	func searchDictionary(query: String) {
+		postSearch(query:query, tab:.dictionary)
+	}
+	
+	private func postSearch(query: String, tab: Tab) {
+		var userInfo: [String:String] = [:]
+		userInfo[Notification.Name.UserInfoKeys.query] = query
+		userInfo[Notification.Name.UserInfoKeys.tab] = tab.rawValue
+		NotificationCenter.`default`.post(
+			name:Notification.Name.onquery,
+			object:self,
+			userInfo:userInfo)
+	}
 	
 	private var fetchedResultsController: CombinedFetchedResultsController<NSDictionary>? = nil
 	override func getEmptyText(query: String) -> String {
@@ -57,6 +83,7 @@ class RhymerViewController: SearchResultsController {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
 				rhymerWordCell.labelWord.text = rhymerWord[WordVariants.COLUMN_WORD] as? String
+				rhymerWordCell.delegate = self
 			}
 			return rhymerWordCell
 		}
