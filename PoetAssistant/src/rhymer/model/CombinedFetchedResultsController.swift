@@ -16,7 +16,7 @@ import CoreData
 //
 class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 	private var fetchedResultsControllers = [NSFetchedResultsController<T>]()
-	var sectionIndexTitles = [String]()
+	private var sectionIndexTitles = [String]()
 	
 	var sections = [NSFetchedResultsSectionInfo]()
 	
@@ -28,11 +28,6 @@ class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 	func object(at: IndexPath) -> T {
 		let indexPath = IndexPath(row: at.row, section: 0)
 		return fetchedResultsControllers[at.section].object(at: indexPath)
-	}
-	
-	func section(forSectionIndexTitle: String, at: Int) -> Int {
-		print ("section forSectionIndexTitle \(forSectionIndexTitle) at \(at)")
-		return at
 	}
 	
 	func performFetch() throws {

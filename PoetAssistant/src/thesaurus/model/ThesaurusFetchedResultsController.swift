@@ -20,24 +20,15 @@ enum ThesaurusListItem {
 class ThesaurusFetchedResultsController {
 	private let fetchedResultsController : NSFetchedResultsController<Thesaurus>
 	
-	var sectionIndexTitles = [String]()
-	
 	var sections = [NSFetchedResultsSectionInfo]()
-	
 	
 	init(fetchedResultsController: NSFetchedResultsController<Thesaurus>) {
 		self.fetchedResultsController = fetchedResultsController
-		self.sectionIndexTitles = self.fetchedResultsController.sectionIndexTitles
 	}
-	
 	
 	func object(at: IndexPath) -> ThesaurusListItem? {
 		let section = sections[at.section]
 		return section.objects?[at.row] as? ThesaurusListItem
-	}
-	
-	func section(forSectionIndexTitle: String, at: Int) -> Int {
-		return at
 	}
 	
 	private var wordTypeLabels:[String:String] = ["NOUN": "part_of_speech_n",
@@ -66,10 +57,8 @@ class ThesaurusFetchedResultsController {
 						numberOfObjects: objectsInSection.count,
 						objects: objectsInSection)
 					sections.append(newSection)
-					sectionIndexTitles.append(originalSection.name)
 				}
 			}
-			
 		} catch let error {
 			throw error
 		}

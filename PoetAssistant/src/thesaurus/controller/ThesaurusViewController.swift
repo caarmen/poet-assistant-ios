@@ -107,7 +107,7 @@ class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDe
 		
 	}
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-		return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
+		return -1
 	}
 }
 
