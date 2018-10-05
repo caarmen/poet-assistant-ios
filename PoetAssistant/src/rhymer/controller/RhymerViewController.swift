@@ -8,35 +8,14 @@
 
 import UIKit
 
-class RhymerViewController: SearchResultsController, RhymerTableViewCellDelegate {
+class RhymerViewController: SearchResultsController, RTDDelegate {	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tab = Tab.rhymer
 	}
 	
-	func searchRhymer(query: String) {
-		postSearch(query:query, tab:.rhymer)
-	}
-	
-	func searchThesaurus(query: String) {
-		postSearch(query:query, tab:.thesaurus)
-	}
-	
-	func searchDictionary(query: String) {
-		postSearch(query:query, tab:.dictionary)
-	}
-	
-	private func postSearch(query: String, tab: Tab) {
-		var userInfo: [String:String] = [:]
-		userInfo[Notification.Name.UserInfoKeys.query] = query
-		userInfo[Notification.Name.UserInfoKeys.tab] = tab.rawValue
-		NotificationCenter.`default`.post(
-			name:Notification.Name.onquery,
-			object:self,
-			userInfo:userInfo)
-	}
-	
-	private var fetchedResultsController: CombinedFetchedResultsController<NSDictionary>? = nil
+
+	private var fetchedResultsController: RhymerFetchedResultsController<NSDictionary>? = nil
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
@@ -76,9 +55,6 @@ class RhymerViewController: SearchResultsController, RhymerTableViewCellDelegate
 		}
 	}
 	
-	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return nil
-	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
@@ -88,9 +64,6 @@ class RhymerViewController: SearchResultsController, RhymerTableViewCellDelegate
 			return rhymerWordCell
 		}
 		return UITableViewCell()
-	}
-	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-		return -1
 	}
 }
 

@@ -14,7 +14,7 @@ import CoreData
 // same api as FetchedResultsController.
 // This only aggregates NSFetchedResultsControllers which each have one section.
 //
-class CombinedFetchedResultsController<T: NSFetchRequestResult> {
+class RhymerFetchedResultsController<T: NSFetchRequestResult> {
 	private var fetchedResultsControllers = [NSFetchedResultsController<T>]()
 	private var sectionIndexTitles = [String]()
 	

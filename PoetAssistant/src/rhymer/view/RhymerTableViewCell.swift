@@ -10,7 +10,7 @@ import UIKit
 
 class RhymerTableViewCell: UITableViewCell {
 
-	weak var delegate: RhymerTableViewCellDelegate? = nil
+	weak var delegate: RTDDelegate? = nil
 	
 	@IBOutlet weak var labelWord: UILabel!
 
@@ -24,8 +24,4 @@ class RhymerTableViewCell: UITableViewCell {
 		delegate?.searchDictionary(query: labelWord.text!)
 	}
 }
-protocol RhymerTableViewCellDelegate:class {
-	func searchRhymer(query: String)
-	func searchThesaurus(query: String)
-	func searchDictionary(query: String)
-}
+

@@ -8,34 +8,13 @@
 
 import UIKit
 
-class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDelegate {
+class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	
 	private var fetchedResultsController: ThesaurusFetchedResultsController? = nil
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tab = Tab.thesaurus
-	}
-	func searchRhymer(query: String) {
-		postSearch(query:query, tab:.rhymer)
-	}
-	
-	func searchThesaurus(query: String) {
-		postSearch(query:query, tab:.thesaurus)
-	}
-	
-	func searchDictionary(query: String) {
-		postSearch(query:query, tab:.dictionary)
-	}
-	
-	private func postSearch(query: String, tab: Tab) {
-		var userInfo: [String:String] = [:]
-		userInfo[Notification.Name.UserInfoKeys.query] = query
-		userInfo[Notification.Name.UserInfoKeys.tab] = tab.rawValue
-		NotificationCenter.`default`.post(
-			name:Notification.Name.onquery,
-			object:self,
-			userInfo:userInfo)
 	}
 
 	override func getEmptyText(query: String) -> String {
@@ -71,9 +50,6 @@ class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDe
 		}
 	}
 	
-	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return nil
-	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let thesaurusListItem = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
 			var thesaurusCell: UITableViewCell?
@@ -105,9 +81,6 @@ class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDe
 		cellView.labelWord.text = word
 		cellView.delegate = self
 		
-	}
-	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-		return -1
 	}
 }
 
