@@ -33,7 +33,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let sections = fetchedResultsController?.sections, sections.count > 0 {
+		if let sections = fetchedResultsController?.sections, sections.count > section {
 			return sections[section].numberOfObjects
 		} else {
 			return 0
@@ -49,7 +49,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 	
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return fetchedResultsController?.sectionIndexTitles
+		return nil
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let dictionaryEntryCell = tableView.dequeueReusableCell(withIdentifier: "DictionaryEntry") as? DictionaryTableViewCell {

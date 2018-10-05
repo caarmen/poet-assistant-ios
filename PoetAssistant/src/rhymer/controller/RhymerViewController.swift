@@ -77,7 +77,7 @@ class RhymerViewController: SearchResultsController, RhymerTableViewCellDelegate
 	}
 	
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return fetchedResultsController?.sectionIndexTitles
+		return nil
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {

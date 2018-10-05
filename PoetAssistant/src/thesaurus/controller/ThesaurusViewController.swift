@@ -50,7 +50,7 @@ class ThesaurusViewController: SearchResultsController {
 	}
 	
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return fetchedResultsController?.sectionIndexTitles
+		return nil
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let thesaurusListItem = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
