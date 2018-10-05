@@ -35,8 +35,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	}
 	private func getTextToPlay() -> String {
 		if let selectedRange = text.selectedTextRange {
-			if let selectedText = text.text(in:selectedRange), !selectedText.isEmpty {
-				return selectedText
+			if let selectedText = text.text(in:selectedRange) {
+				if !selectedText.isEmpty {
+					return selectedText
+				} else if let rangeFromCursorToEnd = text.textRange(from: selectedRange.start, to: text.endOfDocument) {
+					if let textFromCursorToEnd = text.text(in:rangeFromCursorToEnd) {
+						if !textFromCursorToEnd.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+							return textFromCursorToEnd
+						}
+					}
+				}
 			}
 		}
 		return text.text
