@@ -18,21 +18,8 @@ class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 	private var fetchedResultsControllers = [NSFetchedResultsController<T>]()
 	var sectionIndexTitles = [String]()
 	
-	var sections: [NSFetchedResultsSectionInfo]? {
-		get {
-			var result = [NSFetchedResultsSectionInfo]()
-
-			for (index, fetchedResultController) in fetchedResultsControllers.enumerated() {
-				if let sections = fetchedResultController.sections, sections.count == 1 {
-					let sectionInfo = SectionInfo(name: sectionIndexTitles[index], numberOfObjects: sections[0].numberOfObjects, objects: sections[0].objects)
-					result.append(sectionInfo)
-
-				}
-			}
-			return result
-		}
-	}
-
+	var sections = [NSFetchedResultsSectionInfo]()
+	
 	func add(sectionTitle: String, fetchedResultsController: NSFetchedResultsController<T>) {
 		fetchedResultsControllers.append(fetchedResultsController)
 		sectionIndexTitles.append(sectionTitle)
@@ -44,13 +31,22 @@ class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 	}
 	
 	func section(forSectionIndexTitle: String, at: Int) -> Int {
+		print ("section forSectionIndexTitle \(forSectionIndexTitle) at \(at)")
 		return at
 	}
 	
 	func performFetch() throws {
-		for fetchedResultsController in fetchedResultsControllers {
+		for (index, fetchedResultsController) in fetchedResultsControllers.enumerated() {
 			do {
 				try fetchedResultsController.performFetch()
+				if let thisControllerSections = fetchedResultsController.sections, thisControllerSections.count == 1 {
+					let sectionInfo = SectionInfo(
+						name: sectionIndexTitles[index],
+						numberOfObjects: thisControllerSections[0].numberOfObjects,
+						objects: thisControllerSections[0].objects)
+					sections.append(sectionInfo)
+					
+				}
 			} catch let error {
 				throw error
 			}

@@ -24,7 +24,7 @@ class RhymerViewController: SearchResultsController {
 		}
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return fetchedResultsController?.sections?.count ?? 1
+		return fetchedResultsController?.sections.count ?? 0
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +37,7 @@ class RhymerViewController: SearchResultsController {
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return sections[section].name
+			return NSLocalizedString("rhyme_match_type_\(sections[section].name)", comment: "")
 		} else {
 			return nil
 		}

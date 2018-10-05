@@ -39,23 +39,9 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return getHeader(partOfSpeech: sections[section].name)
+			return NSLocalizedString("part_of_speech_\(sections[section].name)", comment: "")
 		} else {
 			return nil
-		}
-	}
-	
-	private func getHeader(partOfSpeech: String) -> String {
-		switch(partOfSpeech) {
-		case Dictionary.PART_OF_SPEECH_NOUN:
-			return NSLocalizedString("nouns", comment: "")
-		case Dictionary.PART_OF_SPEECH_ADJECTIVE:
-			return NSLocalizedString("adjectives", comment: "")
-		case Dictionary.PART_OF_SPEECH_VERB:
-			return NSLocalizedString("verbs", comment: "")
-		case Dictionary.PART_OF_SPEECH_ADVERB:
-			return NSLocalizedString("adverbs", comment: "")
-		default: return ""
 		}
 	}
 	
