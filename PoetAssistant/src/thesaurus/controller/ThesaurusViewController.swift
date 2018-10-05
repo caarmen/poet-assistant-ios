@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThesaurusViewController: SearchResultsController {
+class ThesaurusViewController: SearchResultsController, ThesaurusTableViewCellDelegate {
 	
 	private var fetchedResultsController: ThesaurusFetchedResultsController? = nil
 	
@@ -16,6 +16,28 @@ class ThesaurusViewController: SearchResultsController {
 		super.viewDidLoad()
 		tab = Tab.thesaurus
 	}
+	func searchRhymer(query: String) {
+		postSearch(query:query, tab:.rhymer)
+	}
+	
+	func searchThesaurus(query: String) {
+		postSearch(query:query, tab:.thesaurus)
+	}
+	
+	func searchDictionary(query: String) {
+		postSearch(query:query, tab:.dictionary)
+	}
+	
+	private func postSearch(query: String, tab: Tab) {
+		var userInfo: [String:String] = [:]
+		userInfo[Notification.Name.UserInfoKeys.query] = query
+		userInfo[Notification.Name.UserInfoKeys.tab] = tab.rawValue
+		NotificationCenter.`default`.post(
+			name:Notification.Name.onquery,
+			object:self,
+			userInfo:userInfo)
+	}
+
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(query)")
 	}
@@ -80,8 +102,8 @@ class ThesaurusViewController: SearchResultsController {
 		}
 	}
 	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
-		cellView.labelQuery.text = word
-		//thesaurusCell.delegate = self
+		cellView.labelWord.text = word
+		cellView.delegate = self
 		
 	}
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
