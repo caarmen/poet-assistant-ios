@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Displays the search results for a given query
+ */
 class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var labelQuery: UILabel!

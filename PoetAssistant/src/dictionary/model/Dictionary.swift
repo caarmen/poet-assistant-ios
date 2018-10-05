@@ -16,7 +16,7 @@ class Dictionary: NSManagedObject {
 	static let PART_OF_SPEECH_ADJECTIVE = "a"
 	static let PART_OF_SPEECH_ADVERB = "r"
 	
-	class func createQueryFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
+	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
 		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
 		request.propertiesToFetch = [COLUMN_WORD]
 		request.resultType = .dictionaryResultType
@@ -32,7 +32,8 @@ class Dictionary: NSManagedObject {
 			sectionNameKeyPath: nil,
 			cacheName: nil)
 	}
-	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<Dictionary> {
+	
+	class func createDefinitionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<Dictionary> {
 		let request: NSFetchRequest<Dictionary> = Dictionary.fetchRequest()
 		request.sortDescriptors = [
 			NSSortDescriptor(key: COLUMN_PART_OF_SPEECH, ascending: true),

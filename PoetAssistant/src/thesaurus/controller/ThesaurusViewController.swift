@@ -35,7 +35,7 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let sections = fetchedResultsController?.sections, sections.count > 0 {
+		if let sections = fetchedResultsController?.sections, sections.count > section {
 			return sections[section].numberOfObjects
 		} else {
 			return 0
@@ -72,9 +72,9 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	private func bindRelationshipCell(cellView: ThesaurusRelationshipViewCell, relationship: WordRelationship) {
 		switch (relationship) {
 		case .synonym:
-			cellView.labelRelationship.text = "synonyms"
+			cellView.labelRelationship.text = "thesaurus_synonyms_title"
 		case .antonym:
-			cellView.labelRelationship.text = "antonyms"
+			cellView.labelRelationship.text = "thesaurus_antonyms_title"
 		}
 	}
 	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {

@@ -13,7 +13,6 @@ class Thesaurus: NSManagedObject {
 	static let COLUMN_WORD_TYPE = "word_type"
 	static let COLUMN_SYNONYMS = "synonyms"
 	static let COLUMN_ANTONYMS = "antonyms"
-	
 
 	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> ThesaurusFetchedResultsControllerWrapper {
 		let request: NSFetchRequest<Thesaurus> = Thesaurus.fetchRequest()

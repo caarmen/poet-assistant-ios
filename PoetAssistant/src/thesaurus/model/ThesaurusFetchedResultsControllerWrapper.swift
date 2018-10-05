@@ -35,9 +35,27 @@ class ThesaurusFetchedResultsControllerWrapper {
 								  "ADJ": "part_of_speech_a",
 								  "ADV": "part_of_speech_r",
 								  "VERB": "part_of_speech_v"]
+	
+	//
+	// The thesaurus db is in a strange format:
+	// A given word has two columns: one for synonyms and one for antonyms. The value
+	// in each of these columns is a comma-separated list of the related words.
+	// We need to extract this into a structure with one entry per related word.
+	//
+	// Note that in the original data source, a given word may have multiple rows: each
+	// row corresponds to a different "meaning" of the word.
+	//
 	func performFetch() throws {
 		do {
 			try fetchedResultsController.performFetch()
+			
+			// The sections are grouped by part of speech. For example, we'll have a section
+			// for the "adjective" meanings of this word (there may be a few adjective meanings for
+			// the given word). Then we'll have a section of the "noun" meanings of the word, etc.
+			// We'll put this into a different format:
+			// We'll keep the parts-of-speech sections, but in each section, we'll one synonym or
+			// antonym per entry. We'll have "subsections" too, which are just a different type of entry.
+			// They indicate if the words that follow are synonyms or antonyms.
 			if (fetchedResultsController.sections != nil) {
 				for (originalSectionIndex, originalSection) in fetchedResultsController.sections!.enumerated() {
 					var objectsInSection = [ThesaurusListItem]()

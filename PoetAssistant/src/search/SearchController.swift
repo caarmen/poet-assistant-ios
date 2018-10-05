@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+/**
+ Displays the interface for entering a search query (with search suggestions).
+ */
 class SearchController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 	
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
@@ -51,7 +54,7 @@ class SearchController: UITableViewController, UISearchResultsUpdating, UISearch
 	func updateSearchResults(for searchController: UISearchController) {
 		if let queryText = searchController.searchBar.text, !queryText.isEmpty {
 			AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
-				self?.fetchedResultsController = Dictionary.createQueryFetchResultsController(context: context, queryText: queryText)
+				self?.fetchedResultsController = Dictionary.createSearchSuggestionsFetchResultsController(context: context, queryText: queryText)
 				try? self?.fetchedResultsController?.performFetch()
 				DispatchQueue.main.async {[weak self] in
 					self?.tableView.reloadData()

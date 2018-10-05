@@ -20,7 +20,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
 		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
-			self?.fetchedResultsController = WordVariants.createFetchResultsController(context: context, queryText: query)
+			self?.fetchedResultsController = WordVariants.createRhymesFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
 			DispatchQueue.main.async {
 				completion()

@@ -21,7 +21,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
 		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
-			self?.fetchedResultsController = Dictionary.createFetchResultsController(context: context, queryText: query)
+			self?.fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
 			DispatchQueue.main.async {
 				completion()

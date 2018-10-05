@@ -60,17 +60,3 @@ class RhymerFetchedResultsControllerWrapper {
 		}
 	}
 }
-
-// TODO copypaste
-class SectionInfo : NSFetchedResultsSectionInfo {
-	init(name: String, numberOfObjects: Int, objects: [Any]?) {
-		self.name = name
-		self.indexTitle = name
-		self.numberOfObjects = numberOfObjects
-		self.objects = objects
-	}
-	var name: String
-	var indexTitle: String?
-	var numberOfObjects: Int
-	var objects: [Any]?
-}

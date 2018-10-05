@@ -14,3 +14,6 @@
 "rhyme_match_type_1" = "last syllable";
 "rhyme_match_type_2" = "last two syllables";
 "rhyme_match_type_3" = "last three syllables";
+"thesaurus_synonyms_title" = "synonyms";
+"thesaurus_antonyms_title" = "antonyms";
+

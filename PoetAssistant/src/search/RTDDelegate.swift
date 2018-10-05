@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Handles taps on the "R" "T" "D" icons in a search result list.
+*/
 protocol RTDDelegate:class {
 	func searchRhymer(query: String)
 	func searchThesaurus(query: String)
