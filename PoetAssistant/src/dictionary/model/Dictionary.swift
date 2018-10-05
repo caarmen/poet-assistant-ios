@@ -9,8 +9,6 @@
 import CoreData
 
 class Dictionary: NSManagedObject {
-	static let COLUMN_WORD = "word"
-	static let COLUMN_PART_OF_SPEECH = "part_of_speech"
 	static let PART_OF_SPEECH_NOUN = "n"
 	static let PART_OF_SPEECH_VERB = "v"
 	static let PART_OF_SPEECH_ADJECTIVE = "a"
@@ -18,13 +16,13 @@ class Dictionary: NSManagedObject {
 	
 	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
 		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
-		request.propertiesToFetch = [COLUMN_WORD]
+		request.propertiesToFetch = [#keyPath(Dictionary.word)]
 		request.resultType = .dictionaryResultType
 		request.returnsDistinctResults = true
 		request.sortDescriptors = [
-			NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+			NSSortDescriptor(key: #keyPath(Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) beginswith[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(#keyPath(Dictionary.word)) beginswith[c] %@", queryText)
 		}
 		return NSFetchedResultsController(
 			fetchRequest: request,
@@ -36,15 +34,15 @@ class Dictionary: NSManagedObject {
 	class func createDefinitionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<Dictionary> {
 		let request: NSFetchRequest<Dictionary> = Dictionary.fetchRequest()
 		request.sortDescriptors = [
-			NSSortDescriptor(key: COLUMN_PART_OF_SPEECH, ascending: true),
-			NSSortDescriptor(key: COLUMN_WORD, ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+			NSSortDescriptor(key: #keyPath(Dictionary.part_of_speech), ascending: true),
+			NSSortDescriptor(key: #keyPath(Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) ==[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(#keyPath(Dictionary.word)) ==[c] %@", queryText)
 		}
 		return NSFetchedResultsController(
 			fetchRequest: request,
 			managedObjectContext: context,
-			sectionNameKeyPath: COLUMN_PART_OF_SPEECH,
+			sectionNameKeyPath: #keyPath(Dictionary.part_of_speech),
 			cacheName: nil)
 	}
 }

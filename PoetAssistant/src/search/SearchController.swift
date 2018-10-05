@@ -66,13 +66,13 @@ class SearchController: UITableViewController, UISearchResultsUpdating, UISearch
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
 		let dictionaryEntry = fetchedResultsController?.object(at: indexPath)
-		let word = dictionaryEntry?[Dictionary.COLUMN_WORD] as? String
+		let word = dictionaryEntry?[#keyPath(Dictionary.word)] as? String
 		cell.textLabel?.text = word
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let selection = fetchedResultsController?.object(at: indexPath)[Dictionary.COLUMN_WORD] as? String
+		let selection = fetchedResultsController?.object(at: indexPath)[#keyPath(Dictionary.word)] as? String
 		searchController?.searchBar.text = selection
 		handleSelection(selection: selection)
 	}

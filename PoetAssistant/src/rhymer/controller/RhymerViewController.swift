@@ -57,7 +57,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				rhymerWordCell.labelWord.text = rhymerWord[WordVariants.COLUMN_WORD] as? String
+				rhymerWordCell.labelWord.text = rhymerWord[#keyPath(WordVariants.word)] as? String
 				rhymerWordCell.delegate = self
 			}
 			return rhymerWordCell

@@ -9,24 +9,19 @@
 import CoreData
 
 class Thesaurus: NSManagedObject {
-	static let COLUMN_WORD = "word"
-	static let COLUMN_WORD_TYPE = "word_type"
-	static let COLUMN_SYNONYMS = "synonyms"
-	static let COLUMN_ANTONYMS = "antonyms"
-
 	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> ThesaurusFetchedResultsControllerWrapper {
 		let request: NSFetchRequest<Thesaurus> = Thesaurus.fetchRequest()
-		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD_TYPE, ascending: true)]
+		request.sortDescriptors = [NSSortDescriptor(key: "\(#keyPath(Thesaurus.word_type))", ascending: true)]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) ==[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(#keyPath(Thesaurus.word)) ==[c] %@", queryText)
 		}
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(COLUMN_WORD) beginswith[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(#keyPath(Thesaurus.word)) beginswith[c] %@", queryText)
 		}
 		let fetchedResultsController = NSFetchedResultsController<Thesaurus>(
 			fetchRequest: request,
 			managedObjectContext: context,
-			sectionNameKeyPath: COLUMN_WORD_TYPE,
+			sectionNameKeyPath: #keyPath(Thesaurus.word_type),
 			cacheName: nil)
 		return ThesaurusFetchedResultsControllerWrapper(fetchedResultsController: fetchedResultsController)
 	}

@@ -72,9 +72,9 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	private func bindRelationshipCell(cellView: ThesaurusRelationshipViewCell, relationship: WordRelationship) {
 		switch (relationship) {
 		case .synonym:
-			cellView.labelRelationship.text = "thesaurus_synonyms_title"
+			cellView.labelRelationship.text = NSLocalizedString("thesaurus_synonyms_title", comment: "")
 		case .antonym:
-			cellView.labelRelationship.text = "thesaurus_antonyms_title"
+			cellView.labelRelationship.text = NSLocalizedString("thesaurus_antonyms_title", comment: "")
 		}
 	}
 	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
