@@ -16,6 +16,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardVisibilityChanged), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
+
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self)
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.delegate = self
 		let lastSelectedTab = Settings.getTab()
 		for viewController in viewControllers! {
 			if let tab = getTabForViewController(viewController: viewController) {
@@ -28,16 +39,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 			// https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
 			let _ = viewController.view
 		}
-	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		NotificationCenter.default.removeObserver(self)
-	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.delegate = self
 
 	}
 	
@@ -76,6 +77,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	}
 	
 	func goToTab(tab: Tab) {
-		selectedViewController = tabToViewController[tab]
+		if let newViewController = tabToViewController[tab] {
+			selectedViewController = newViewController
+			if let tabIndex = viewControllers?.firstIndex(of: newViewController) {
+				selectedIndex = tabIndex
+			}
+		}
 	}
 }

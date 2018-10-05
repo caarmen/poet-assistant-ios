@@ -9,7 +9,8 @@
 import UIKit
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
-	
+	private var notificationObserver: NSObjectProtocol? = nil
+
 	@IBOutlet weak var text: UITextView! {
 		didSet {
 			text.delegate = self
@@ -35,8 +36,10 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	}
 	
 	private func addNotificationObserver() {
-		NotificationCenter.`default`.removeObserver(self)
-		NotificationCenter.`default`.addObserver(
+		if notificationObserver != nil {
+			NotificationCenter.`default`.removeObserver(notificationObserver)
+		}
+		notificationObserver = NotificationCenter.`default`.addObserver(
 			forName: Notification.Name.onquery,
 			object:nil,
 			queue:OperationQueue.main,
