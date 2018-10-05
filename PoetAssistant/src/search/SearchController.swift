@@ -50,9 +50,13 @@ class SearchController: UITableViewController, UISearchResultsUpdating, UISearch
 	
 	func updateSearchResults(for searchController: UISearchController) {
 		if let queryText = searchController.searchBar.text, !queryText.isEmpty {
-			fetchedResultsController = Dictionary.createQueryFetchResultsController(context: AppDelegate.persistentContainer.viewContext, queryText: queryText)
-			try? fetchedResultsController?.performFetch()
-			tableView.reloadData()
+			AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
+				self?.fetchedResultsController = Dictionary.createQueryFetchResultsController(context: context, queryText: queryText)
+				try? self?.fetchedResultsController?.performFetch()
+				DispatchQueue.main.async {[weak self] in
+					self?.tableView.reloadData()
+				}
+			}
 		}
 	}
 	
