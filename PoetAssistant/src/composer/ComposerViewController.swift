@@ -37,7 +37,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	private func addNotificationObserver() {
 		if notificationObserver != nil {
-			NotificationCenter.`default`.removeObserver(notificationObserver)
+			NotificationCenter.`default`.removeObserver(notificationObserver!)
 		}
 		notificationObserver = NotificationCenter.`default`.addObserver(
 			forName: Notification.Name.onquery,
@@ -46,7 +46,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 			using: { [weak self] notification in
 				self?.dismiss(animated: true, completion: nil)
 				if (self?.tabBarController?.selectedViewController == self) {
-					(self?.tabBarController as? TabBarController)?.goToTab(tab: Tab.dictionary)
+					(self?.tabBarController as? TabBarController)?.goToTab(tab: Tab.rhymer)
 				}
 		})
 	}
