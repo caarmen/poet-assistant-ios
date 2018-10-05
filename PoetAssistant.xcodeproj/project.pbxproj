@@ -22,7 +22,6 @@
 		4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31974E21679CFD00135FF4 /* RTDDelegate.swift */; };
 		4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197502167A2D000135FF4 /* SectionInfo.swift */; };
 		4F3197532167D59A00135FF4 /* PorterStemmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197522167D59A00135FF4 /* PorterStemmer.swift */; };
-		4F31975B2167E4A800135FF4 /* PoetAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31975A2167E4A800135FF4 /* PoetAssistantTests.swift */; };
 		4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */; };
 		4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613D52164D10700FA10A1 /* AppDelegate.swift */; };
 		4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6613D72164D10700FA10A1 /* RhymerViewController.swift */; };
@@ -72,7 +71,6 @@
 		4F3197502167A2D000135FF4 /* SectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
 		4F3197522167D59A00135FF4 /* PorterStemmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorterStemmer.swift; sourceTree = "<group>"; };
 		4F3197582167E4A800135FF4 /* PoetAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoetAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F31975A2167E4A800135FF4 /* PoetAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetAssistantTests.swift; sourceTree = "<group>"; };
 		4F31975C2167E4A800135FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorterStemmerTest.swift; sourceTree = "<group>"; };
 		4F6613D22164D10700FA10A1 /* PoetAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoetAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +169,6 @@
 		4F3197592167E4A800135FF4 /* PoetAssistantTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F31975A2167E4A800135FF4 /* PoetAssistantTests.swift */,
 				4F31975C2167E4A800135FF4 /* Info.plist */,
 				4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */,
 			);
@@ -418,7 +415,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F31975B2167E4A800135FF4 /* PoetAssistantTests.swift in Sources */,
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
