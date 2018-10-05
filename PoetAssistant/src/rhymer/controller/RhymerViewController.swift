@@ -1,5 +1,5 @@
 //
-//  DictionaryViewController.swift
+//  FirstViewController.swift
 //  PoetAssistant
 //
 //  Created by Carmen Alvarez on 03/10/2018.
@@ -7,18 +7,16 @@
 //
 
 import UIKit
-import CoreData
 
-class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
+class RhymerViewController: SearchResultsController {
 	
-	private var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
-
+	private var fetchedResultsController: CombinedFetchedResultsController<WordVariants>? = nil
 	override func getEmptyText(query: String) -> String {
-		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
+		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
 		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
-			self?.fetchedResultsController = Dictionary.createFetchResultsController(context: context, queryText: query)
+			self?.fetchedResultsController = WordVariants.createFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
 			DispatchQueue.main.async {
 				completion()
@@ -39,23 +37,9 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return getHeader(partOfSpeech: sections[section].name)
+			return sections[section].name
 		} else {
 			return nil
-		}
-	}
-	
-	private func getHeader(partOfSpeech: String) -> String {
-		switch(partOfSpeech) {
-		case Dictionary.PART_OF_SPEECH_NOUN:
-			return NSLocalizedString("nouns", comment: "")
-		case Dictionary.PART_OF_SPEECH_ADJECTIVE:
-			return NSLocalizedString("adjectives", comment: "")
-		case Dictionary.PART_OF_SPEECH_VERB:
-			return NSLocalizedString("verbs", comment: "")
-		case Dictionary.PART_OF_SPEECH_ADVERB:
-			return NSLocalizedString("adverbs", comment: "")
-		default: return ""
 		}
 	}
 	
@@ -63,11 +47,11 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		return fetchedResultsController?.sectionIndexTitles
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let dictionaryEntryCell = tableView.dequeueReusableCell(withIdentifier: "DictionaryEntry") as? DictionaryTableViewCell {
-			if let dictionaryEntry = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				dictionaryEntryCell.definition.text = dictionaryEntry.definition
+		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
+			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
+				rhymerWordCell.labelWord.text = rhymerWord.word
 			}
-			return dictionaryEntryCell
+			return rhymerWordCell
 		}
 		return UITableViewCell()
 	}
@@ -75,3 +59,4 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
 	}
 }
+

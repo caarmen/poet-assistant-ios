@@ -80,7 +80,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultListCell" id="jwo-BJ-c8G">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RhymerWordCell" id="jwo-BJ-c8G" customClass="RhymerTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwo-BJ-c8G" id="1lf-HL-7DB">
@@ -130,6 +130,12 @@
                                                 <constraint firstItem="Ksn-5e-YYn" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vUM-dk-RQJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelWord" destination="G1t-Qu-q7L" id="5SH-hA-Bdn"/>
+                                            <outlet property="searchDictionary" destination="MDN-Gd-8qR" id="g69-7k-y1b"/>
+                                            <outlet property="searchRhymer" destination="LzB-D5-qoq" id="jS3-x2-HI2"/>
+                                            <outlet property="searchThesaurus" destination="Ksn-5e-YYn" id="AGX-Mm-mgO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
