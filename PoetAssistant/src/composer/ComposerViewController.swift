@@ -7,34 +7,59 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ComposerViewController: UIViewController, UITextViewDelegate {
+class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
 	private var notificationObserver: NSObjectProtocol? = nil
-
+	private let speechSynthesizer = AVSpeechSynthesizer()
+	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
 		didSet {
 			text.delegate = self
 		}
 	}
-
+	
 	@IBOutlet weak var hint: UILabel!
 	@IBAction func onShare(_ sender: Any) {
 		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
 	}
 	
+	@IBAction func didTapPlayButton(_ sender: UIButton) {
+		if speechSynthesizer.isSpeaking {
+			speechSynthesizer.stopSpeaking(at: .immediate)
+		} else {
+			let utterance = AVSpeechUtterance(string: text.text)
+			speechSynthesizer.speak(utterance)
+		}
+		updateButton()
+	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
-		updateTextHint()
 		text.becomeFirstResponder()
 		addNotificationObserver()
+		updateUi()
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		addNotificationObserver()
+		speechSynthesizer.delegate = self
 	}
 	
+	private func updateUi() {
+		hint.isHidden = !text.text.isEmpty
+		updateButton()
+	}
+	
+	private func updateButton() {
+		playButton.isEnabled = !text.text.isEmpty
+		if speechSynthesizer.isSpeaking {
+			playButton.setImage(UIImage(imageLiteralResourceName: "ic_stop"), for:.normal)
+		} else {
+			playButton.setImage(UIImage(imageLiteralResourceName: "ic_play"), for:.normal)
+		}
+	}
 	private func addNotificationObserver() {
 		if notificationObserver != nil {
 			NotificationCenter.`default`.removeObserver(notificationObserver!)
@@ -55,13 +80,23 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		NotificationCenter.`default`.removeObserver(self)
 	}
 	
-	private func updateTextHint() {
-		hint.isHidden = !text.text.isEmpty
-	}
 	
 	func textViewDidChange(_ textView: UITextView) {
-		updateTextHint()
+		updateUi()
 		Poem(withText: text.text).saveDraft()
+	}
+	
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+		updateButton()
+	}
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+		updateButton()
+	}
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+		updateButton()
+	}
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
+		updateButton()
 	}
 	
 }
