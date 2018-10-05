@@ -10,13 +10,26 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	
-	private static let DEFAULT_SEARCH_RESULTS_TAB = Tab.dictionary
-	
 	private var tabToViewController = [Tab:UIViewController]()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.delegate = self
+		goToTab(tab: Settings.getTab())
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardVisibilityChanged), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
-
+		preloadTabs()
+	}
+	
+	private func preloadTabs() {
+		// Hack to preload tab viewcontrollers
+		// https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
+		// If we don't do this, then the first tab we open is behind (not below) the status bar.
+		viewControllers?.forEach {
+			let _ = $0.view
+		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -24,36 +37,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 		NotificationCenter.default.removeObserver(self)
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.delegate = self
-		let lastSelectedTab = Settings.getTab()
-		for viewController in viewControllers! {
-			if let tab = getTabForViewController(viewController: viewController) {
-				tabToViewController[tab] = viewController
-				if (tab == lastSelectedTab) {
-					selectedViewController = viewController
-				}
-			}
-			// Hack to preload tab viewcontrollers
-			// https://stackoverflow.com/questions/33261776/how-to-load-all-views-in-uitabbarcontroller
-			let _ = viewController.view
-		}
 
-	}
-	
-	private func getTabForViewController(viewController: UIViewController) -> Tab? {
-		if (viewController is RhymerViewController) {
-			return .rhymer
-		} else if (viewController is ThesaurusViewController) {
-			return .thesaurus
-		} else if (viewController is DictionaryViewController) {
-			return .dictionary
-		} else if (viewController is ComposerViewController){
-			return .composer
-		}
-		return nil
-	}
 	func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 		if let tab = getTabForViewController(viewController: viewController) {
 			Settings.setTab(tab: tab)
@@ -77,11 +61,24 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 	}
 	
 	func goToTab(tab: Tab) {
-		if let newViewController = tabToViewController[tab] {
-			selectedViewController = newViewController
-			if let tabIndex = viewControllers?.firstIndex(of: newViewController) {
-				selectedIndex = tabIndex
+		for (index, viewController) in viewControllers!.enumerated() {
+			if getTabForViewController(viewController: viewController) == tab {
+				selectedViewController = viewController
+				selectedIndex = index
 			}
 		}
+	}
+	
+	private func getTabForViewController(viewController: UIViewController) -> Tab? {
+		if (viewController is RhymerViewController) {
+			return .rhymer
+		} else if (viewController is ThesaurusViewController) {
+			return .thesaurus
+		} else if (viewController is DictionaryViewController) {
+			return .dictionary
+		} else if (viewController is ComposerViewController){
+			return .composer
+		}
+		return nil
 	}
 }

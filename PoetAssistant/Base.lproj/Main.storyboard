@@ -72,13 +72,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
                                                     <rect key="frame" x="304" y="-0.5" width="44" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
                                                         <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
                                                     </constraints>
-                                                    <state key="normal" image="ic_dictionary"/>
+                                                    <state key="normal" image="ic_dictionary">
+                                                        <string key="backgroundImage" base64-UTF8="YES">
+CQ
+</string>
+                                                    </state>
                                                     <connections>
                                                         <action selector="searchDictionary:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="gsk-XQ-DYC"/>
                                                     </connections>
@@ -589,6 +593,11 @@
         </scene>
     </scenes>
     <resources>
+        <image width="16" height="16">
+            <string key="name" base64-UTF8="YES">
+CQ
+</string>
+        </image>
         <image name="ic_composer" width="25" height="25"/>
         <image name="ic_dictionary" width="25" height="25"/>
         <image name="ic_rhymer" width="25" height="25"/>
