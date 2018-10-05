@@ -10,7 +10,7 @@
         <attribute name="stem" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>
         <attribute name="word" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>
     </entity>
-    <entity name="Thesaurus" representedClassName="Thesaurus" syncable="YES" codeGenerationType="class">
+    <entity name="Thesaurus" representedClassName="Thesaurus" syncable="YES" codeGenerationType="category">
         <attribute name="antonyms" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="synonyms" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="word" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>

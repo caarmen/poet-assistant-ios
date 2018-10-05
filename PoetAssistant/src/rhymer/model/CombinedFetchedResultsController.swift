@@ -66,6 +66,7 @@ class CombinedFetchedResultsController<T: NSFetchRequestResult> {
 	}
 }
 
+// TODO copypaste
 class SectionInfo : NSFetchedResultsSectionInfo {
 	init(name: String, numberOfObjects: Int, objects: [Any]?) {
 		self.name = name
@@ -74,12 +75,7 @@ class SectionInfo : NSFetchedResultsSectionInfo {
 		self.objects = objects
 	}
 	var name: String
-	
 	var indexTitle: String?
-	
 	var numberOfObjects: Int
-	
 	var objects: [Any]?
-	
-	
 }

@@ -235,7 +235,7 @@ CQ
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultListCell" id="kIV-Br-Ajk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultListCell" id="kIV-Br-Ajk" customClass="ThesaurusTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kIV-Br-Ajk" id="UIG-Yq-92h">
@@ -255,6 +255,9 @@ CQ
                                                         <constraint firstAttribute="width" constant="44" id="lBD-Ua-8Dp"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_dictionary"/>
+                                                    <connections>
+                                                        <action selector="searchDictionary:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="gg7-tp-Nch"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyi-K6-LOR">
                                                     <rect key="frame" x="250" y="-0.5" width="44" height="44.5"/>
@@ -263,6 +266,9 @@ CQ
                                                         <constraint firstAttribute="width" constant="44" id="pAv-iB-BFi"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_thesaurus"/>
+                                                    <connections>
+                                                        <action selector="searchThesaurus:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="Syn-4C-kpc"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-C7-Hx2">
                                                     <rect key="frame" x="196" y="-0.5" width="44" height="44.5"/>
@@ -271,6 +277,9 @@ CQ
                                                         <constraint firstAttribute="height" constant="44" id="t7z-F5-WJc"/>
                                                     </constraints>
                                                     <state key="normal" image="ic_rhymer"/>
+                                                    <connections>
+                                                        <action selector="searchRhymer:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="6AB-yY-Xph"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -285,6 +294,9 @@ CQ
                                                 <constraint firstItem="Kdd-C7-Hx2" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="x4K-7i-vJi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelQuery" destination="6e5-yf-lk0" id="ugS-2b-JTa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
