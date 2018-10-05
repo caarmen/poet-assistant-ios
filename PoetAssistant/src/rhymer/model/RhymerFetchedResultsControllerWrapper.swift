@@ -46,7 +46,6 @@ class RhymerFetchedResultsControllerWrapper {
 				throw error
 			}
 		}
-		
 		removeEmptySections()
 	}
 	

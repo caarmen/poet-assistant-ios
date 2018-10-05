@@ -47,10 +47,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 			return nil
 		}
 	}
-	
-	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return nil
-	}
+
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let dictionaryEntryCell = tableView.dequeueReusableCell(withIdentifier: "DictionaryEntry") as? DictionaryTableViewCell {
 			if let dictionaryEntry = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
@@ -59,8 +56,5 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 			return dictionaryEntryCell
 		}
 		return UITableViewCell()
-	}
-	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-		return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
 	}
 }
