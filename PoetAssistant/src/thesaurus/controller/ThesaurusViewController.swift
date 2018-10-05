@@ -53,23 +53,36 @@ class ThesaurusViewController: SearchResultsController {
 		return fetchedResultsController?.sectionIndexTitles
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ResultListCell") as? ThesaurusTableViewCell {
-			if let thesaurusListItem = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				switch (thesaurusListItem) {
-				case .subtitle (let subtitle):
-					if (subtitle == .synonym) {
-						thesaurusCell.labelQuery.text = "synonyms"
-					} else {
-						thesaurusCell.labelQuery.text = "antonyms"
-					}
-				case .word (let word):
-					thesaurusCell.labelQuery.text = word
-				}
-				//thesaurusCell.delegate = self
+		if let thesaurusListItem = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
+			var thesaurusCell: UITableViewCell?
+			switch (thesaurusListItem) {
+			case .subtitle (let subtitle):
+				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusSubheading") as? ThesaurusRelationshipViewCell
+				bindRelationshipCell(
+					cellView: thesaurusCell as! ThesaurusRelationshipViewCell, relationship: subtitle)
+			case .word (let word):
+				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusWord") as? ThesaurusTableViewCell
+				bindWordCell(cellView: thesaurusCell as! ThesaurusTableViewCell, word: word)
 			}
-			return thesaurusCell
+			if (thesaurusCell != nil) {
+				return thesaurusCell!
+			}
 		}
 		return UITableViewCell()
+	}
+	
+	private func bindRelationshipCell(cellView: ThesaurusRelationshipViewCell, relationship: WordRelationship) {
+		switch (relationship) {
+		case .synonym:
+			cellView.labelRelationship.text = "synonyms"
+		case .antonym:
+			cellView.labelRelationship.text = "antonyms"
+		}
+	}
+	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
+		cellView.labelQuery.text = word
+		//thesaurusCell.delegate = self
+		
 	}
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 		return fetchedResultsController?.section(forSectionIndexTitle: title, at: index) ?? 0
