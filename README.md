@@ -13,14 +13,4 @@ The iOS app doesn't yet have all the features of the Android app.
 
 These are all the screens so far:
 
-## Rhymer
-<img src="etc/screenshot-rhymer.png" width="480">
-
-## Thesaurus
-<img src="etc/screenshot-thesaurus.png" width="480">
-
-## Dictionary
-<img src="etc/screenshot-dictionary.png" width="480">
-
-## Composer
-<img src="etc/screenshot-composer.png" width="480">
+<img src="etc/screenshots.png" width="800">
