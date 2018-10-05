@@ -14,8 +14,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 		tab = Tab.rhymer
 	}
 	
-
-	private var fetchedResultsController: RhymerFetchedResultsController<NSDictionary>? = nil
+	private var fetchedResultsController: RhymerFetchedResultsControllerWrapper? = nil
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}

@@ -15,7 +15,7 @@ class Thesaurus: NSManagedObject {
 	static let COLUMN_ANTONYMS = "antonyms"
 	
 
-	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> ThesaurusFetchedResultsController {
+	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> ThesaurusFetchedResultsControllerWrapper {
 		let request: NSFetchRequest<Thesaurus> = Thesaurus.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_WORD_TYPE, ascending: true)]
 		if !queryText.isEmpty {
@@ -29,6 +29,6 @@ class Thesaurus: NSManagedObject {
 			managedObjectContext: context,
 			sectionNameKeyPath: COLUMN_WORD_TYPE,
 			cacheName: nil)
-		return ThesaurusFetchedResultsController(fetchedResultsController: fetchedResultsController)
+		return ThesaurusFetchedResultsControllerWrapper(fetchedResultsController: fetchedResultsController)
 	}
 }

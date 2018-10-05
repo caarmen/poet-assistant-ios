@@ -18,8 +18,8 @@ class WordVariants: NSManagedObject {
 	static let COLUMN_LAST_THREE_SYLLABLES = "last_three_syllables"
 	static let COLUMN_HAS_DEFINITION = "has_definition"
 	
-	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> RhymerFetchedResultsController<NSDictionary> {
-		let result = RhymerFetchedResultsController<NSDictionary>()
+	class func createFetchResultsController(context: NSManagedObjectContext, queryText: String) -> RhymerFetchedResultsControllerWrapper {
+		let result = RhymerFetchedResultsControllerWrapper()
 		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: COLUMN_VARIANT_NUMBER, ascending: true)]
 		if !queryText.isEmpty {

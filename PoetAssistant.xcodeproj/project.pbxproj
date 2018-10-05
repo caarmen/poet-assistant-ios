@@ -12,10 +12,10 @@
 		4F3197332166900F00135FF4 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197322166900F00135FF4 /* Notification+Name.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
 		4F31973B2166C28700135FF4 /* WordVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973A2166C28700135FF4 /* WordVariants.swift */; };
-		4F31973D2166C79600135FF4 /* RhymerFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973C2166C79600135FF4 /* RhymerFetchedResultsController.swift */; };
+		4F31973D2166C79600135FF4 /* RhymerFetchedResultsControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973C2166C79600135FF4 /* RhymerFetchedResultsControllerWrapper.swift */; };
 		4F3197402166D67000135FF4 /* RhymerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973F2166D67000135FF4 /* RhymerTableViewCell.swift */; };
 		4F3197452167129400135FF4 /* Thesaurus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197442167129400135FF4 /* Thesaurus.swift */; };
-		4F3197472167131200135FF4 /* ThesaurusFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusFetchedResultsController.swift */; };
+		4F3197472167131200135FF4 /* ThesaurusFetchedResultsControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusFetchedResultsControllerWrapper.swift */; };
 		4F3197492167261800135FF4 /* ThesaurusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197482167261800135FF4 /* ThesaurusTableViewCell.swift */; };
 		4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31974A2167284800135FF4 /* ThesaurusRelationshipViewCell.swift */; };
 		4F31974D21679BC800135FF4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31974C21679BC800135FF4 /* Search.swift */; };
@@ -47,10 +47,10 @@
 		4F3197322166900F00135FF4 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		4F31973A2166C28700135FF4 /* WordVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordVariants.swift; sourceTree = "<group>"; };
-		4F31973C2166C79600135FF4 /* RhymerFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerFetchedResultsController.swift; sourceTree = "<group>"; };
+		4F31973C2166C79600135FF4 /* RhymerFetchedResultsControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerFetchedResultsControllerWrapper.swift; sourceTree = "<group>"; };
 		4F31973F2166D67000135FF4 /* RhymerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerTableViewCell.swift; sourceTree = "<group>"; };
 		4F3197442167129400135FF4 /* Thesaurus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesaurus.swift; sourceTree = "<group>"; };
-		4F3197462167131200135FF4 /* ThesaurusFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusFetchedResultsController.swift; sourceTree = "<group>"; };
+		4F3197462167131200135FF4 /* ThesaurusFetchedResultsControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusFetchedResultsControllerWrapper.swift; sourceTree = "<group>"; };
 		4F3197482167261800135FF4 /* ThesaurusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusTableViewCell.swift; sourceTree = "<group>"; };
 		4F31974A2167284800135FF4 /* ThesaurusRelationshipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusRelationshipViewCell.swift; sourceTree = "<group>"; };
 		4F31974C21679BC800135FF4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				4F31973A2166C28700135FF4 /* WordVariants.swift */,
-				4F31973C2166C79600135FF4 /* RhymerFetchedResultsController.swift */,
+				4F31973C2166C79600135FF4 /* RhymerFetchedResultsControllerWrapper.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3197442167129400135FF4 /* Thesaurus.swift */,
-				4F3197462167131200135FF4 /* ThesaurusFetchedResultsController.swift */,
+				4F3197462167131200135FF4 /* ThesaurusFetchedResultsControllerWrapper.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -361,13 +361,13 @@
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F66140121652F6C00FA10A1 /* EmbeddedDb.swift in Sources */,
 				4F31974D21679BC800135FF4 /* Search.swift in Sources */,
-				4F31973D2166C79600135FF4 /* RhymerFetchedResultsController.swift in Sources */,
+				4F31973D2166C79600135FF4 /* RhymerFetchedResultsControllerWrapper.swift in Sources */,
 				4F3197492167261800135FF4 /* ThesaurusTableViewCell.swift in Sources */,
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
-				4F3197472167131200135FF4 /* ThesaurusFetchedResultsController.swift in Sources */,
+				4F3197472167131200135FF4 /* ThesaurusFetchedResultsControllerWrapper.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,

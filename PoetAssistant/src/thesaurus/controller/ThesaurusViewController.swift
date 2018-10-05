@@ -10,7 +10,7 @@ import UIKit
 
 class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	
-	private var fetchedResultsController: ThesaurusFetchedResultsController? = nil
+	private var fetchedResultsController: ThesaurusFetchedResultsControllerWrapper? = nil
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -43,7 +43,7 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if let sections = fetchedResultsController?.sections, sections.count > 0 {
+		if let sections = fetchedResultsController?.sections, sections.count > section {
 			return NSLocalizedString(sections[section].name, comment: "")
 		} else {
 			return nil
@@ -80,7 +80,6 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
 		cellView.labelWord.text = word
 		cellView.delegate = self
-		
 	}
 }
 

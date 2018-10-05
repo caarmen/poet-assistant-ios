@@ -17,7 +17,7 @@ enum ThesaurusListItem {
 	case word(String)
 }
 
-class ThesaurusFetchedResultsController {
+class ThesaurusFetchedResultsControllerWrapper {
 	private let fetchedResultsController : NSFetchedResultsController<Thesaurus>
 	
 	var sections = [NSFetchedResultsSectionInfo]()

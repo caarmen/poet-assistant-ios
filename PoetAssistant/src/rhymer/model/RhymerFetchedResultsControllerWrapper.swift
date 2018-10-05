@@ -14,18 +14,18 @@ import CoreData
 // same api as FetchedResultsController.
 // This only aggregates NSFetchedResultsControllers which each have one section.
 //
-class RhymerFetchedResultsController<T: NSFetchRequestResult> {
-	private var fetchedResultsControllers = [NSFetchedResultsController<T>]()
+class RhymerFetchedResultsControllerWrapper {
+	private var fetchedResultsControllers = [NSFetchedResultsController<NSDictionary>]()
 	private var sectionIndexTitles = [String]()
 	
 	var sections = [NSFetchedResultsSectionInfo]()
 	
-	func add(sectionTitle: String, fetchedResultsController: NSFetchedResultsController<T>) {
+	func add(sectionTitle: String, fetchedResultsController: NSFetchedResultsController<NSDictionary>) {
 		fetchedResultsControllers.append(fetchedResultsController)
 		sectionIndexTitles.append(sectionTitle)
 	}
 	
-	func object(at: IndexPath) -> T {
+	func object(at: IndexPath) -> NSDictionary {
 		let indexPath = IndexPath(row: at.row, section: 0)
 		return fetchedResultsControllers[at.section].object(at: indexPath)
 	}
