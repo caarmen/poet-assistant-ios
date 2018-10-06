@@ -438,8 +438,8 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-Hn-zsg">
-                                <rect key="frame" x="268" y="36" width="36" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-Hn-zsg" userLabel="Share Button">
+                                <rect key="frame" x="268" y="40" width="36" height="36"/>
                                 <state key="normal" image="ic_share"/>
                                 <connections>
                                     <action selector="onShare:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="ngf-TF-A7L"/>
@@ -462,7 +462,7 @@
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="top" secondItem="Tev-Af-9er" secondAttribute="top" constant="16" id="aao-Ml-FyC"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tEA-Om-MWX" secondAttribute="bottom" constant="-16" id="kqc-Dg-ehM"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="obe-Eu-hhV"/>
-                            <constraint firstItem="wXE-Hn-zsg" firstAttribute="top" secondItem="Tev-Af-9er" secondAttribute="top" constant="16" id="onD-04-v9s"/>
+                            <constraint firstItem="wXE-Hn-zsg" firstAttribute="centerY" secondItem="ihg-T8-2fA" secondAttribute="centerY" id="onD-04-v9s"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="wXE-Hn-zsg" secondAttribute="trailing" constant="16" id="zrv-6a-xrJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tev-Af-9er"/>
