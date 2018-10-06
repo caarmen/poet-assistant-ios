@@ -48,11 +48,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 		if let keyboardFrame = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
 			let newTabBarY = keyboardFrame.origin.y - tabBar.frame.size.height
 			let newTabBarFrame = CGRect(x: tabBar.frame.origin.x, y: newTabBarY, width: tabBar.frame.width, height: tabBar.frame.height)
-			if let animationDuration = notification.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Float {
-				UIView.animate(withDuration: TimeInterval(animationDuration), animations: { [weak self] in
-					self?.tabBar.frame = newTabBarFrame
-				})
-			}
+			tabBar.frame = newTabBarFrame
 		}
 	}
 }
