@@ -22,6 +22,7 @@ import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
 	private let speechSynthesizer = AVSpeechSynthesizer()
+	private var keyboardHeight:  CGFloat?
 	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
 		didSet {
@@ -69,6 +70,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		speechSynthesizer.delegate = self
+		registerForKeyboardNotifications()
 	}
 	
 	private func updateUi() {
@@ -103,4 +105,41 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		updateButton()
 	}
 	
+	// Adapt the size of the text view when the keyboard appears. Otherwise the keyboard will remain
+	// on top of the text view.
+	// https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW7
+	private func registerForKeyboardNotifications() {
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name:UIResponder.keyboardDidShowNotification, object:nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name:UIResponder.keyboardWillHideNotification, object:nil)
+	}
+	
+	@objc
+	private func keyboardWasShown(notification: Notification) {
+		if let size = (notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect)?.size {
+			keyboardHeight = size.height
+			let contentInsets = UIEdgeInsets(top:0.0, left:0.0, bottom:keyboardHeight!, right:0.0)
+			text.contentInset = contentInsets
+			text.scrollIndicatorInsets = contentInsets
+			scrollToCursor()
+		}
+	}
+	
+	@objc
+	private func keyboardWillBeHidden(notification: Notification) {
+		let contentInsets = UIEdgeInsets.zero
+		text.contentInset = contentInsets
+		text.scrollIndicatorInsets = contentInsets
+	}
+	
+	private func scrollToCursor() {
+		if let selectedRange = text.selectedTextRange {
+			let caretRectInTextView = text.caretRect(for: selectedRange.end)
+			let caretRectInRootView = view.convert(caretRectInTextView, from: text)
+			var visibleRootFrame = view.frame
+			visibleRootFrame.size.height -= keyboardHeight ?? 0
+			if (!visibleRootFrame.contains(caretRectInRootView)) {
+				text.scrollRectToVisible(caretRectInTextView, animated: true)
+			}
+		}
+	}
 }

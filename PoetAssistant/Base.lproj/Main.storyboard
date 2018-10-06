@@ -419,9 +419,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
-                                <rect key="frame" x="16" y="96" width="288" height="423"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
+                                <rect key="frame" x="16" y="96" width="288" height="399"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -434,7 +433,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
-                                <rect key="frame" x="16" y="96" width="288" height="29"/>
+                                <rect key="frame" x="24" y="96" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -442,18 +441,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="27O-AW-3tg"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="EXM-Ie-RKb" secondAttribute="trailing" constant="16" id="2is-wu-hm5"/>
-                            <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" id="61b-3h-wwc"/>
+                            <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" id="1d6-Ng-ajX"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7qv-8r-x7b"/>
+                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="EXM-Ie-RKb" secondAttribute="trailing" constant="16" id="8zy-8n-shV"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="tEA-Om-MWX" secondAttribute="trailing" constant="16" id="AKV-9E-gdf"/>
+                            <constraint firstItem="tEA-Om-MWX" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="24" id="BRi-E5-9qk"/>
+                            <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="EXM-Ie-RKb" secondAttribute="bottom" constant="24" id="BVK-bQ-Qoa"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ihg-T8-2fA" secondAttribute="trailing" constant="16" id="GmZ-xG-t5L"/>
-                            <constraint firstItem="tEA-Om-MWX" firstAttribute="leading" secondItem="EXM-Ie-RKb" secondAttribute="leading" id="KrT-Pq-PDo"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="EXM-Ie-RKb" secondAttribute="bottom" id="M29-1F-R9Q"/>
+                            <constraint firstItem="EXM-Ie-RKb" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="Hpf-x7-qUy"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="centerX" secondItem="Tev-Af-9er" secondAttribute="centerX" id="Wcn-rU-3lO"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="top" secondItem="Tev-Af-9er" secondAttribute="top" constant="16" id="aao-Ml-FyC"/>
-                            <constraint firstItem="EXM-Ie-RKb" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="aoE-SQ-HJ6"/>
-                            <constraint firstItem="tEA-Om-MWX" firstAttribute="baseline" secondItem="EXM-Ie-RKb" secondAttribute="firstBaseline" constant="24.5" symbolType="layoutAnchor" id="nZ9-mA-LIy"/>
+                            <constraint firstItem="EXM-Ie-RKb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tEA-Om-MWX" secondAttribute="bottom" constant="-16" id="kqc-Dg-ehM"/>
+                            <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="obe-Eu-hhV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tev-Af-9er"/>
                     </view>
