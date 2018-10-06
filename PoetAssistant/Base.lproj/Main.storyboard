@@ -481,19 +481,19 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoH-jk-KWk" userLabel="RhymerContainer">
                                 <rect key="frame" x="16" y="64" width="288" height="435"/>
                                 <connections>
-                                    <segue destination="9pv-A4-QxB" kind="embed" id="BV3-47-CFR"/>
+                                    <segue destination="9pv-A4-QxB" kind="embed" identifier="EmbedRhymer" id="BV3-47-CFR"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-wE-64Y" userLabel="ThesaurusContainer">
                                 <rect key="frame" x="16" y="64" width="288" height="435"/>
                                 <connections>
-                                    <segue destination="8rJ-Kc-sve" kind="embed" id="zrP-7G-uYi"/>
+                                    <segue destination="8rJ-Kc-sve" kind="embed" identifier="EmbedThesaurus" id="zrP-7G-uYi"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqG-s1-GFf" userLabel="DictionaryContainer">
                                 <rect key="frame" x="16" y="64" width="288" height="435"/>
                                 <connections>
-                                    <segue destination="KSz-7M-5ZO" kind="embed" id="qkT-RZ-6wv"/>
+                                    <segue destination="KSz-7M-5ZO" kind="embed" identifier="EmbedDictionary" id="qkT-RZ-6wv"/>
                                 </connections>
                             </containerView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-6z-fRS">
@@ -515,7 +515,7 @@
                                         </segmentedControl>
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="pej-yf-Lpc">
                                             <connections>
-                                                <segue destination="ROG-mD-2rX" kind="show" id="JtJ-qF-tD4"/>
+                                                <segue destination="ROG-mD-2rX" kind="show" identifier="ShowSearchController" id="JtJ-qF-tD4"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

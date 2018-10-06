@@ -11,20 +11,50 @@ import UIKit
 class SearchViewController: UIViewController {
 	
 	private var notificationObserver: NSObjectProtocol? = nil
-
+	
 	@IBOutlet weak var navigationBar: UINavigationBar!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var rhymerContainer: UIView!
 	@IBOutlet weak var thesaurusContainer: UIView!
 	@IBOutlet weak var dictionaryContainer: UIView!
+	private var rhymerController: SearchResultsController?
+	private var thesaurusController: SearchResultsController?
+	private var dictionaryController: SearchResultsController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLexicon(lexicon: Settings.getLexicon())
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch (segue.identifier) {
+		case "EmbedRhymer": rhymerController = segue.destination as? SearchResultsController
+		case "EmbedThesaurus": thesaurusController = segue.destination as? SearchResultsController
+		case "EmbedDictionary": dictionaryController = segue.destination as? SearchResultsController
+		default: break
+		}
+		super.prepare(for: segue, sender: sender)
+	}
 	override func viewWillAppear(_ animated: Bool) {
 		addNotificationObserver()
+		if !hasQueryTerm() {
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: "ShowSearchController", sender: self)
+			}
+		}
+	}
+	
+	private func hasQueryTerm() -> Bool {
+		if !(rhymerController?.query.isEmpty ?? true) {
+			return true
+		}
+		if !(thesaurusController?.query.isEmpty ?? true) {
+			return true
+		}
+		if !(dictionaryController?.query.isEmpty ?? true) {
+			return true
+		}
+		return false
 	}
 	override func viewWillDisappear(_ animated: Bool) {
 		NotificationCenter.`default`.removeObserver(self)
@@ -70,15 +100,6 @@ class SearchViewController: UIViewController {
 		showContainer(container: selectedContainer)
 		Settings.setLexicon(lexicon: getSelectedLexicon())
 	}
-	/*
-	private func getContainerForTab(tab: Tab) -> UIView? {
-		switch(tab) {
-		case .rhymer: return rhymerContainer
-		case .thesaurus: return thesaurusContainer
-		case .dictionary: return dictionaryContainer
-		default: return nil
-		}
-	}*/
 	
 	private func showContainer(container: UIView?) {
 		if container == nil {

@@ -33,7 +33,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	@IBOutlet weak var emptyText: UILabel!
-	var query : String? {
+	var query : String = "" {
 		didSet {
 			if (isViewLoaded) {
 				updateUI()
@@ -81,7 +81,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	private func updateUI() {
-		labelQuery.text = query?.localizedLowercase
+		labelQuery.text = query.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
 			doQuery(query: nonEmptyQuery, completion: { [weak self] in
 				self?.queryResultsFetched(query: nonEmptyQuery)
