@@ -22,7 +22,7 @@ import UIKit
 class RhymerViewController: SearchResultsController, RTDDelegate {	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tab = Tab.rhymer
+		lexicon = Lexicon.rhymer
 	}
 	
 	private var fetchedResultsController: RhymerFetchedResultsControllerWrapper? = nil

@@ -25,7 +25,7 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tab = Tab.thesaurus
+		lexicon = Lexicon.thesaurus
 	}
 	
 	override func getEmptyText(query: String) -> String {

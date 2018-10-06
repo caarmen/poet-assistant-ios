@@ -21,7 +21,6 @@ import UIKit
 import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
-	private var notificationObserver: NSObjectProtocol? = nil
 	private let speechSynthesizer = AVSpeechSynthesizer()
 	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
@@ -64,13 +63,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
 		text.becomeFirstResponder()
-		addNotificationObserver()
 		updateUi()
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		addNotificationObserver()
 		speechSynthesizer.delegate = self
 	}
 	
@@ -87,26 +84,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 			playButton.setImage(UIImage(imageLiteralResourceName: "ic_play"), for:.normal)
 		}
 	}
-	private func addNotificationObserver() {
-		if notificationObserver != nil {
-			NotificationCenter.`default`.removeObserver(notificationObserver!)
-		}
-		notificationObserver = NotificationCenter.`default`.addObserver(
-			forName: Notification.Name.onquery,
-			object:nil,
-			queue:OperationQueue.main,
-			using: { [weak self] notification in
-				self?.dismiss(animated: true, completion: nil)
-				if (self?.tabBarController?.selectedViewController == self) {
-					(self?.tabBarController as? TabBarController)?.goToTab(tab: Tab.rhymer)
-				}
-		})
-	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		NotificationCenter.`default`.removeObserver(self)
-	}
-	
 	
 	func textViewDidChange(_ textView: UITextView) {
 		updateUi()

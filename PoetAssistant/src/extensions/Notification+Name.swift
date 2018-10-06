@@ -22,7 +22,7 @@ import Foundation
 extension Notification.Name {
 	struct UserInfoKeys {
 		static let query = "query"
-		static let tab = "tab"
+		static let lexicon = "lexicon"
 	}
 	static let onquery = Notification.Name("on-query")
 }

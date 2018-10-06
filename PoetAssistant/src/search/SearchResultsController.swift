@@ -40,7 +40,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			}
 		}
 	}
-	var tab: Tab!
+	var lexicon: Lexicon!
 	
 	private var notificationObserver: NSObjectProtocol? = nil
 	
@@ -60,15 +60,12 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			queue:OperationQueue.main,
 			using: { [weak self] notification in
 				// Don't handle it if it's directed at another tab
-				let notificationTab = notification.userInfo?[Notification.Name.UserInfoKeys.tab] as? String
+				let notificationTab = notification.userInfo?[Notification.Name.UserInfoKeys.lexicon] as? String
 				if (notificationTab != nil) {
-					if Tab(rawValue: notificationTab!) != self?.tab {
+					if Lexicon(rawValue: notificationTab!) != self?.lexicon {
 						return
-					} else {
-						self?.tabBarController?.selectedViewController = self
 					}
 				}
-				self?.dismiss(animated: true, completion: nil)
 				if let notificationQuery = notification.userInfo?[Notification.Name.UserInfoKeys.query] as? String {
 					self?.query = notificationQuery
 				}

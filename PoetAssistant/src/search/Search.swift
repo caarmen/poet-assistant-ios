@@ -20,21 +20,21 @@
 import Foundation
 struct Search {
 	static func searchRhymer(query: String, sender: Any?) {
-		postSearch(query:query, sender:sender, tab:.rhymer)
+		postSearch(query:query, sender:sender, lexicon:.rhymer)
 	}
 	
 	static func searchThesaurus(query: String, sender: Any?) {
-		postSearch(query:query, sender:sender, tab:.thesaurus)
+		postSearch(query:query, sender:sender, lexicon:.thesaurus)
 	}
 	
 	static func searchDictionary(query: String, sender: Any?) {
-		postSearch(query:query, sender:sender, tab:.dictionary)
+		postSearch(query:query, sender:sender, lexicon:.dictionary)
 	}
 	
-	private static func postSearch(query: String, sender: Any?, tab: Tab) {
+	private static func postSearch(query: String, sender: Any?, lexicon: Lexicon) {
 		var userInfo: [String:String] = [:]
 		userInfo[Notification.Name.UserInfoKeys.query] = query
-		userInfo[Notification.Name.UserInfoKeys.tab] = tab.rawValue
+		userInfo[Notification.Name.UserInfoKeys.lexicon] = lexicon.rawValue
 		NotificationCenter.`default`.post(
 			name:Notification.Name.onquery,
 			object:sender,
