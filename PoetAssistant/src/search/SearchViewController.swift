@@ -41,6 +41,12 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		definesPresentationContext = true
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if (!hasQueryTerm()) {
+			searchController?.searchBar.becomeFirstResponder()
+		}
+	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch (segue.identifier) {
 		case "EmbedRhymer":

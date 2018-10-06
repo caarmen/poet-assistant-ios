@@ -31,11 +31,6 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	weak var delegate: SearchSuggestionsDelegate?
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		resizeTableView()
-	}
-	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections?.count ?? 0
 	}
@@ -67,16 +62,8 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	}
 	private func reloadData() {
 		tableView.reloadData()
-		resizeTableView()
 	}
-	private func resizeTableView() {
-		// https://stackoverflow.com/questions/46928333/uitableview-doesnt-update-sizetofit-in-ios-10-but-working-in-ios-11
-		var tableFrame = tableView.frame
-		if let container = view.superview {
-			tableFrame.size.height = min(tableView.contentSize.height, container.frame.height)
-			tableView.frame = tableFrame
-		}
-	}
+
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
 		let dictionaryEntry = fetchedResultsController?.object(at: indexPath)

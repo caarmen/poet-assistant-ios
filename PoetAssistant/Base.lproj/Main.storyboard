@@ -506,8 +506,8 @@
                                     <action selector="segmentedControlValueChanged:" destination="dQg-uc-ADU" eventType="valueChanged" id="TXa-rH-aOh"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLL-BI-mD4" userLabel="SearchSuggestionsContainer">
-                                <rect key="frame" x="16" y="64" width="288" height="435"/>
+                            <containerView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLL-BI-mD4" userLabel="SearchSuggestionsContainer">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <connections>
                                     <segue destination="ROG-mD-2rX" kind="embed" identifier="EmbedSearchSuggestions" id="PTs-lJ-7Oz"/>
                                 </connections>
@@ -520,12 +520,12 @@
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="Ywm-wE-64Y" secondAttribute="trailing" id="8yt-V9-hlg"/>
                             <constraint firstItem="Ywm-wE-64Y" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="CxH-e6-sAz"/>
                             <constraint firstItem="aqG-s1-GFf" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="HVY-pC-nVy"/>
-                            <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="pLL-BI-mD4" secondAttribute="bottom" constant="20" id="HgH-4q-OrH"/>
+                            <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="pLL-BI-mD4" secondAttribute="bottom" id="HgH-4q-OrH"/>
                             <constraint firstItem="GoH-jk-KWk" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="I1w-Oo-BcV"/>
                             <constraint firstItem="twx-gO-fQb" firstAttribute="top" secondItem="cin-b1-hfA" secondAttribute="top" constant="16" id="Ml3-9B-lTM"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="16" id="Rwe-wa-xCg"/>
-                            <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="pLL-BI-mD4" secondAttribute="trailing" constant="16" id="UcJ-wk-qNf"/>
-                            <constraint firstItem="pLL-BI-mD4" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" constant="16" id="V8e-Fg-v9X"/>
+                            <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="pLL-BI-mD4" secondAttribute="trailing" id="UcJ-wk-qNf"/>
+                            <constraint firstItem="pLL-BI-mD4" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="V8e-Fg-v9X"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="GoH-jk-KWk" secondAttribute="trailing" id="VHq-e6-5Vs"/>
                             <constraint firstItem="twx-gO-fQb" firstAttribute="centerX" secondItem="cin-b1-hfA" secondAttribute="centerX" id="agW-Lb-nDi"/>
                             <constraint firstItem="pLL-BI-mD4" firstAttribute="top" secondItem="cin-b1-hfA" secondAttribute="top" id="akV-xg-e1I"/>
@@ -582,19 +582,19 @@
             <objects>
                 <tableViewController modalTransitionStyle="crossDissolve" id="ROG-mD-2rX" customClass="SearchSuggestionsController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VI1-8Y-QvC">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="435"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="zXf-f2-7zw" style="IBUITableViewCellStyleDefault" id="Wia-JC-KWF">
-                                <rect key="frame" x="0.0" y="28" width="288" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wia-JC-KWF" id="uf7-V5-MsJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="zXf-f2-7zw">
-                                            <rect key="frame" x="16" y="0.0" width="256" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
@@ -602,7 +602,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
