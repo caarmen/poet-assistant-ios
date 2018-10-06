@@ -8,42 +8,57 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-	
-	private var notificationObserver: NSObjectProtocol? = nil
-	
-	@IBOutlet weak var navigationBar: UINavigationBar!
+class SearchViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, SearchSuggestionsDelegate, RTDDelegate {
+
+	private var searchController: UISearchController? = nil
+
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var rhymerContainer: UIView!
 	@IBOutlet weak var thesaurusContainer: UIView!
 	@IBOutlet weak var dictionaryContainer: UIView!
-	private var rhymerController: SearchResultsController?
-	private var thesaurusController: SearchResultsController?
-	private var dictionaryController: SearchResultsController?
+	@IBOutlet weak var searchContainer: UIView!
+	private var rhymerController: RhymerViewController?
+	private var thesaurusController: ThesaurusViewController?
+	private var dictionaryController: DictionaryViewController?
+	private var searchSuggestionsController: SearchSuggestionsController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLexicon(lexicon: Settings.getLexicon())
+		searchController = UISearchController(searchResultsController: nil)
+		searchController?.searchResultsUpdater = searchSuggestionsController
+		searchController?.obscuresBackgroundDuringPresentation = false
+		searchController?.hidesNavigationBarDuringPresentation = false
+		searchController?.dimsBackgroundDuringPresentation = false
+		searchController?.definesPresentationContext = true
+		searchController?.delegate = self
+		searchController?.searchBar.delegate = self
+		searchController?.searchBar.sizeToFit()
+		searchController?.searchBar.placeholder = NSLocalizedString("search_placeholder", comment: "")
+		searchController?.isActive = true
+		navigationItem.titleView = searchController?.searchBar
+		navigationItem.hidesSearchBarWhenScrolling = false
+		definesPresentationContext = true
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch (segue.identifier) {
-		case "EmbedRhymer": rhymerController = segue.destination as? SearchResultsController
-		case "EmbedThesaurus": thesaurusController = segue.destination as? SearchResultsController
-		case "EmbedDictionary": dictionaryController = segue.destination as? SearchResultsController
+		case "EmbedRhymer":
+			rhymerController = segue.destination as? RhymerViewController
+			rhymerController?.delegate = self
+		case "EmbedThesaurus":
+			thesaurusController = segue.destination as? ThesaurusViewController
+			thesaurusController?.delegate = self
+		case "EmbedDictionary":
+			dictionaryController = segue.destination as? DictionaryViewController
+		case "EmbedSearchSuggestions":
+			searchSuggestionsController = segue.destination as? SearchSuggestionsController
+			searchSuggestionsController?.delegate = self
 		default: break
 		}
 		super.prepare(for: segue, sender: sender)
 	}
-	override func viewWillAppear(_ animated: Bool) {
-		addNotificationObserver()
-		if !hasQueryTerm() {
-			DispatchQueue.main.async {
-				self.performSegue(withIdentifier: "ShowSearchController", sender: self)
-			}
-		}
-	}
-	
+
 	private func hasQueryTerm() -> Bool {
 		if !(rhymerController?.query.isEmpty ?? true) {
 			return true
@@ -55,9 +70,6 @@ class SearchViewController: UIViewController {
 			return true
 		}
 		return false
-	}
-	override func viewWillDisappear(_ animated: Bool) {
-		NotificationCenter.`default`.removeObserver(self)
 	}
 	
 	@IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -110,21 +122,49 @@ class SearchViewController: UIViewController {
 		dictionaryContainer.isHidden = true
 		container!.isHidden = false
 	}
-	private func addNotificationObserver() {
-		if (notificationObserver != nil) {
-			NotificationCenter.`default`.removeObserver(notificationObserver!)
+	func getSearchResultsController(lexicon: Lexicon) -> SearchResultsController? {
+		switch(lexicon) {
+		case .rhymer: return rhymerController
+		case .thesaurus: return thesaurusController
+		case .dictionary: return dictionaryController
 		}
-		notificationObserver = NotificationCenter.`default`.addObserver(
-			forName: Notification.Name.onquery,
-			object:nil,
-			queue:OperationQueue.main,
-			using: { [weak self] notification in
-				let notificationLexicon = notification.userInfo?[Notification.Name.UserInfoKeys.lexicon] as? String
-				if (notificationLexicon != nil) {
-					self?.showLexicon(lexicon: Lexicon(rawValue: notificationLexicon!)!)
-				}
-				self?.dismiss(animated: true, completion: nil)
-		})
 	}
-	
+	func searchRhymer(query: String) {
+		wordSelected(word:query, lexicon: .rhymer)
+	}
+	func searchThesaurus(query: String) {
+		wordSelected(word:query, lexicon: .thesaurus)
+
+	}
+	func searchDictionary(query: String) {
+		wordSelected(word:query, lexicon: .dictionary)
+
+	}
+	private func wordSelected(word: String, lexicon: Lexicon) {
+		getSearchResultsController(lexicon: lexicon)?.query = word
+		showLexicon(lexicon:lexicon)
+	}
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		searchContainer.isHidden = false
+	}
+	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+		handleSelection(selection: searchBar.text)
+	}
+	func didDismissSearchController(_ searchController: UISearchController) {
+		handleSelection(selection: nil)
+	}
+	func didSelectSuggestion(suggestion: String) {
+		searchController?.searchBar.text = suggestion
+		handleSelection(selection: suggestion)
+	}
+	private func handleSelection(selection: String?) {
+		if (selection != nil) {
+			rhymerController?.query = selection!
+			thesaurusController?.query = selection!
+			dictionaryController?.query = selection!
+		}
+		searchSuggestionsController?.clear()
+		searchContainer.isHidden = true
+		searchController?.isActive = false
+	}
 }

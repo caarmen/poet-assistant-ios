@@ -27,16 +27,3 @@ protocol RTDDelegate:class {
 	func searchDictionary(query: String)
 }
 
-extension RTDDelegate where Self: Any {
-	func searchRhymer(query: String) {
-		Search.searchRhymer(query:query, sender:self)
-	}
-	
-	func searchThesaurus(query: String) {
-		Search.searchThesaurus(query:query, sender:self)
-	}
-	
-	func searchDictionary(query: String) {
-		Search.searchDictionary(query:query, sender:self)
-	}
-}

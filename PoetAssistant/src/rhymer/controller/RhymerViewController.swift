@@ -19,12 +19,12 @@
 
 import UIKit
 
-class RhymerViewController: SearchResultsController, RTDDelegate {	
+class RhymerViewController: SearchResultsController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lexicon = Lexicon.rhymer
 	}
-	
+	weak var delegate: RTDDelegate?
 	private var fetchedResultsController: RhymerFetchedResultsControllerWrapper? = nil
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
@@ -69,7 +69,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
 				rhymerWordCell.labelWord.text = rhymerWord[#keyPath(WordVariants.word)] as? String
-				rhymerWordCell.delegate = self
+				rhymerWordCell.delegate = delegate
 			}
 			return rhymerWordCell
 		}

@@ -19,10 +19,11 @@
 
 import UIKit
 
-class ThesaurusViewController: SearchResultsController, RTDDelegate {
+class ThesaurusViewController: SearchResultsController {
 	
 	private var fetchedResultsController: ThesaurusFetchedResultsControllerWrapper? = nil
 	
+	weak var delegate: RTDDelegate?
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lexicon = Lexicon.thesaurus
@@ -100,7 +101,7 @@ class ThesaurusViewController: SearchResultsController, RTDDelegate {
 	}
 	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
 		cellView.labelWord.text = word
-		cellView.delegate = self
+		cellView.delegate = delegate
 	}
 }
 

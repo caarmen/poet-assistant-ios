@@ -25,7 +25,6 @@ import UIKit
 class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var labelQuery: UILabel!
-	@IBOutlet weak var toolbar: UIToolbar!
 	@IBOutlet weak var tableView: UITableView!{
 		didSet {
 			tableView.delegate = self
@@ -41,43 +40,10 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	var lexicon: Lexicon!
-	
-	private var notificationObserver: NSObjectProtocol? = nil
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		addNotificationObserver()
 		updateUI()
-	}
-	
-	private func addNotificationObserver() {
-		if (notificationObserver != nil) {
-			NotificationCenter.`default`.removeObserver(notificationObserver!)
-		}
-		notificationObserver = NotificationCenter.`default`.addObserver(
-			forName: Notification.Name.onquery,
-			object:nil,
-			queue:OperationQueue.main,
-			using: { [weak self] notification in
-				// Don't handle it if it's directed at another tab
-				let notificationTab = notification.userInfo?[Notification.Name.UserInfoKeys.lexicon] as? String
-				if (notificationTab != nil) {
-					if Lexicon(rawValue: notificationTab!) != self?.lexicon {
-						return
-					}
-				}
-				if let notificationQuery = notification.userInfo?[Notification.Name.UserInfoKeys.query] as? String {
-					self?.query = notificationQuery
-				}
-		})
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		addNotificationObserver()
-	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		NotificationCenter.`default`.removeObserver(self)
 	}
 	
 	private func updateUI() {
