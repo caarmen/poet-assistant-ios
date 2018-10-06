@@ -164,7 +164,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		handleSelection(selection: suggestion)
 	}
 	private func handleSelection(selection: String?) {
-		if (selection != nil) {
+		if (selection != nil && !selection!.isEmpty) {
 			rhymerController?.query = selection!
 			thesaurusController?.query = selection!
 			dictionaryController?.query = selection!
