@@ -19,12 +19,12 @@
 
 import UIKit
 
-class RhymerViewController: SearchResultsController, RTDDelegate {	
+class RhymerViewController: SearchResultsController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tab = Tab.rhymer
+		lexicon = Lexicon.rhymer
 	}
-	
+	weak var delegate: RTDDelegate?
 	private var fetchedResultsController: RhymerFetchedResultsControllerWrapper? = nil
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
@@ -56,7 +56,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 			if sectionName.contains(".") {
 				let variantNumber = String(sectionName[..<sectionName.index(sectionName.startIndex, offsetBy: 1)])
 				let rhymeType = String(sectionName.suffix(from: sectionName.index(sectionName.startIndex, offsetBy: 2)))
-				return String(format: NSLocalizedString("rhyme_variant_match_type_\(rhymeType)", comment: ""), query!, variantNumber)
+				return String(format: NSLocalizedString("rhyme_variant_match_type_\(rhymeType)", comment: ""), query, variantNumber)
 			} else {
 				return NSLocalizedString("rhyme_match_type_\(sectionName)", comment: "")
 			}
@@ -69,7 +69,7 @@ class RhymerViewController: SearchResultsController, RTDDelegate {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
 			if let rhymerWord = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
 				rhymerWordCell.labelWord.text = rhymerWord[#keyPath(WordVariants.word)] as? String
-				rhymerWordCell.delegate = self
+				rhymerWordCell.delegate = delegate
 			}
 			return rhymerWordCell
 		}

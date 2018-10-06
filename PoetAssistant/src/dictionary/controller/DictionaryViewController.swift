@@ -25,7 +25,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	private var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tab = Tab.dictionary
+		lexicon = Lexicon.dictionary
 	}
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")

@@ -18,8 +18,6 @@
 */
 
 enum Tab: String {
-	case rhymer = "rhymer"
-	case thesaurus = "thesaurus"
-	case dictionary = "dictionary"
 	case composer = "composer"
+	case search = "search"
 }

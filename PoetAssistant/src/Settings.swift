@@ -21,7 +21,11 @@ import Foundation
 
 class Settings {
 	private static let KEY_TAB = "tab"
-	private static let DEFAULT_TAB = Tab.dictionary
+	private static let KEY_LEXICON = "lexicon"
+
+	private static let DEFAULT_TAB = Tab.composer
+	private static let DEFAULT_LEXICON = Lexicon.rhymer
+
 	class func getTab() -> Tab {
 		if let tabName = UserDefaults.init().object(forKey: KEY_TAB) as? String {
 			if let tab = Tab(rawValue: tabName) {
@@ -36,4 +40,20 @@ class Settings {
 		userDefaults.setValue(tab.rawValue, forKey: KEY_TAB)
 		userDefaults.synchronize()
 	}
+	
+	class func getLexicon() -> Lexicon {
+		if let lexiconName = UserDefaults.init().object(forKey: KEY_LEXICON) as? String {
+			if let lexicon = Lexicon(rawValue: lexiconName) {
+				return lexicon
+			}
+		}
+		return DEFAULT_LEXICON
+	}
+	
+	class func setLexicon(lexicon: Lexicon) {
+		let userDefaults = UserDefaults.init()
+		userDefaults.setValue(lexicon.rawValue, forKey: KEY_LEXICON)
+		userDefaults.synchronize()
+	}
+	
 }
