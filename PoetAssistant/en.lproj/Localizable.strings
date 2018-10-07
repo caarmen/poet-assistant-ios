@@ -18,4 +18,5 @@
 "thesaurus_antonyms_title" = "antonyms:";
 "search_placeholder" = "Lookup a word";
 "word_count" = "%@ words, %@ characters";
-
+"suggestions_section_history" = "History";
+"suggestions_section_dictionary" = "Dictionary";

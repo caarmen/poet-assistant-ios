@@ -30,7 +30,7 @@ class RhymerViewController: SearchResultsController {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
-		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
 			self?.fetchedResultsController = WordVariants.createRhymesFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
 			DispatchQueue.main.async {

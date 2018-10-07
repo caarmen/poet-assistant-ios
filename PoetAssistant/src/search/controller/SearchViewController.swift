@@ -168,6 +168,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			rhymerController?.query = selection!
 			thesaurusController?.query = selection!
 			dictionaryController?.query = selection!
+			Suggestion.addSuggestion(word: selection!)
 		}
 		searchSuggestionsController?.clear()
 		searchContainer.isHidden = true

@@ -28,11 +28,11 @@ protocol SearchSuggestionsDelegate:class {
  */
 class SearchSuggestionsController: UITableViewController, UISearchResultsUpdating {
 	
-	private var fetchedResultsController: NSFetchedResultsController<NSDictionary>?
+	private var fetchedResultsController: SuggestionsFetchedResultsControllerWrapper?
 	weak var delegate: SearchSuggestionsDelegate?
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return fetchedResultsController?.sections?.count ?? 0
+		return fetchedResultsController?.sections.count ?? 0
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,8 +50,8 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 				fetchedResultsController = nil
 				reloadData()
 			} else {
-				AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
-					self?.fetchedResultsController = Dictionary.createSearchSuggestionsFetchResultsController(context: context, queryText: queryText)
+				AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
+					self?.fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(context: context, queryText: queryText)
 					try? self?.fetchedResultsController?.performFetch()
 					DispatchQueue.main.async {[weak self] in
 						self?.reloadData()
@@ -66,14 +66,13 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
-		let dictionaryEntry = fetchedResultsController?.object(at: indexPath)
-		let word = dictionaryEntry?[#keyPath(Dictionary.word)] as? String
+		let word = fetchedResultsController?.object(at: indexPath)
 		cell.textLabel?.text = word
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let selection = fetchedResultsController?.object(at: indexPath)[#keyPath(Dictionary.word)] as? String {
+		if let selection = fetchedResultsController?.object(at: indexPath) {
 			delegate?.didSelectSuggestion(suggestion: selection)
 		}
 	}
