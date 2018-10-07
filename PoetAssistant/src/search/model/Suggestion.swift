@@ -21,12 +21,10 @@ import UIKit
 import CoreData
 
 class Suggestion: NSManagedObject {
-	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String?) -> SuggestionsFetchedResultsControllerWrapper {
-		let historySearchSuggestions = createHistorySearchSuggestionsFetchResultsController(context: context, queryText: queryText)
-		let dictionarySearchSuggestions = (queryText == nil || queryText!.isEmpty) ? nil :  Dictionary.createSearchSuggestionsFetchResultsController(context: context, queryText: queryText!)
-		return SuggestionsFetchedResultsControllerWrapper(historyFetchedResultsController: historySearchSuggestions, dictionaryFetchedResultsController: dictionarySearchSuggestions)
+	class func createSearchSuggestionsFetchResultsController(queryText: String?) -> SuggestionsFetchedResultsControllerWrapper {
+		return SuggestionsFetchedResultsControllerWrapper(queryText:queryText)
 	}
-
+	
 	class func createHistorySearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String?) -> NSFetchedResultsController<Suggestion>{
 		let request: NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
 		request.sortDescriptors = [

@@ -50,8 +50,8 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 				fetchedResultsController = nil
 				reloadData()
 			} else {
-				AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-					self?.fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(context: context, queryText: queryText)
+				DispatchQueue.global().async { [weak self] in
+					self?.fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(queryText: queryText)
 					try? self?.fetchedResultsController?.performFetch()
 					DispatchQueue.main.async {[weak self] in
 						self?.reloadData()

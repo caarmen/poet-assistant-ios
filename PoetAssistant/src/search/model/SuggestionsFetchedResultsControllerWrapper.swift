@@ -22,15 +22,14 @@ import CoreData
 
 
 class SuggestionsFetchedResultsControllerWrapper {
-	private let historyFetchedResultsController: NSFetchedResultsController<Suggestion>
-	private let dictionaryFetchedResultsController: NSFetchedResultsController<NSDictionary>?
+	private var historyFetchedResultsController: NSFetchedResultsController<Suggestion>?
+	private var dictionaryFetchedResultsController: NSFetchedResultsController<NSDictionary>?
 	private static let SECTION_HISTORY = "suggestions_section_history"
 	private static let SECTION_DICTIONARY = "suggestions_section_dictionary"
+	private let queryText: String?
 	
-	init(historyFetchedResultsController: NSFetchedResultsController<Suggestion>,
-		 dictionaryFetchedResultsController: NSFetchedResultsController<NSDictionary>?) {
-		self.historyFetchedResultsController = historyFetchedResultsController
-		self.dictionaryFetchedResultsController = dictionaryFetchedResultsController
+	init(queryText: String?) {
+		self.queryText = queryText
 	}
 	var sections = [NSFetchedResultsSectionInfo]()
 	
@@ -38,8 +37,8 @@ class SuggestionsFetchedResultsControllerWrapper {
 		let indexPathForRealController = IndexPath(row: at.row, section: 0)
 		let sectionName = sections[at.section].name
 		if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY {
-			let historySuggestion = historyFetchedResultsController.object(at: indexPathForRealController)
-			return historySuggestion.word
+			let historySuggestion = historyFetchedResultsController?.object(at: indexPathForRealController)
+			return historySuggestion?.word
 		} else {
 			let dictionarySuggestion = dictionaryFetchedResultsController?.object(at: indexPathForRealController)
 			return dictionarySuggestion?[#keyPath(Dictionary.word)] as? String
@@ -47,10 +46,15 @@ class SuggestionsFetchedResultsControllerWrapper {
 	}
 	
 	func performFetch() throws {
+		
+		let historyContext = AppDelegate.persistentUserDbContainer.newBackgroundContext()
+		let dictionaryContext = AppDelegate.persistentDictionariesContainer.newBackgroundContext()
+		historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: queryText)
+		dictionaryFetchedResultsController = (queryText == nil || queryText!.isEmpty) ? nil :  Dictionary.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: queryText!)
 		do {
-			try historyFetchedResultsController.performFetch()
+			try historyFetchedResultsController?.performFetch()
 			try dictionaryFetchedResultsController?.performFetch()
-			if let historySearchSections = historyFetchedResultsController.sections, historySearchSections.count == 1 {
+			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1 {
 				sections.append(SectionInfo(
 					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
 					numberOfObjects: historySearchSections[0].numberOfObjects,
