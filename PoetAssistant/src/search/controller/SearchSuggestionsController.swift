@@ -1,20 +1,20 @@
 /**
- Copyright (c) 2018 Carmen Alvarez
+Copyright (c) 2018 Carmen Alvarez
 
- This file is part of Poet Assistant.
+This file is part of Poet Assistant.
 
- Poet Assistant is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+Poet Assistant is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
- Poet Assistant is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+Poet Assistant is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
- You should have received a copy of the GNU General Public License
- along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import UIKit
@@ -24,8 +24,8 @@ protocol SearchSuggestionsDelegate:class {
 	func didSelectSuggestion(suggestion: String)
 }
 /**
- Displays the interface for entering a search query (with search suggestions).
- */
+Displays the interface for entering a search query (with search suggestions).
+*/
 class SearchSuggestionsController: UITableViewController, UISearchResultsUpdating {
 	
 	private var fetchedResultsController: SuggestionsFetchedResultsControllerWrapper?
@@ -63,21 +63,28 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	private func reloadData() {
 		tableView.reloadData()
 	}
-
+	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
-		let word = fetchedResultsController?.object(at: indexPath)
-		cell.textLabel?.text = word
+		if let suggestionRowItem = fetchedResultsController?.object(at: indexPath) {
+			cell.textLabel?.text = suggestionRowItem.word
+			switch (suggestionRowItem.type) {
+			case .history:
+				cell.imageView?.image = UIImage(imageLiteralResourceName: "ic_history")
+			case .dictionary:
+				cell.imageView?.image = UIImage(imageLiteralResourceName: "ic_search")
+			}
+		}
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let selection = fetchedResultsController?.object(at: indexPath) {
-			delegate?.didSelectSuggestion(suggestion: selection)
+			delegate?.didSelectSuggestion(suggestion: selection.word)
 		}
 	}
 	
-
+	
 	func clear() {
 		fetchedResultsController = nil
 		reloadData()
