@@ -31,7 +31,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		}
 	}
 	
+	@IBOutlet weak var wordCount: UILabel!
 	@IBOutlet weak var hint: UILabel!
+	@IBOutlet weak var placeholderHeight: NSLayoutConstraint!
 	@IBAction func onShare(_ sender: Any) {
 		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
 	}
@@ -78,10 +80,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		hint.isHidden = !text.text.isEmpty
 		shareButton.isEnabled = !text.text.isEmpty
 		updatePlayButton()
-		if let wordCountText = getWordCountText(text: text.text) {
-			// TODO set the text on a label somewhere
-			print (wordCountText)
-		}
+		wordCount.text = getWordCountText(text: text.text)
 	}
 	
 	private func updatePlayButton() {
@@ -93,11 +92,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		}
 	}
 	
-	private func getWordCountText(text: String?) -> String? {
+	private func getWordCountText(text: String?) -> String {
 		let words = WordCounter.countWords(text:text)
 		let characters = WordCounter.countCharacters(text:text)
 		if (words == 0) {
-			return nil
+			return ""
 		}
 		return String(format: NSLocalizedString("word_count", comment:""), String(words), String(characters))
 	}
@@ -120,39 +119,35 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		updatePlayButton()
 	}
 	
-	// Adapt the size of the text view when the keyboard appears. Otherwise the keyboard will remain
+	// Adapt the location of the text view when the keyboard appears. Otherwise the keyboard will remain
 	// on top of the text view.
 	// https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW7
 	private func registerForKeyboardNotifications() {
-		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name:UIResponder.keyboardDidShowNotification, object:nil)
-		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name:UIResponder.keyboardWillHideNotification, object:nil)
+		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown), name:UIResponder.keyboardDidShowNotification, object:nil)
+		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown), name:UIResponder.keyboardWillHideNotification, object:nil)
 	}
-	
-	@objc
-	private func keyboardWasShown(notification: Notification) {
-		if let size = (notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect)?.size {
-			keyboardHeight = size.height
-			let contentInsets = UIEdgeInsets(top:0.0, left:0.0, bottom:keyboardHeight!, right:0.0)
-			text.contentInset = contentInsets
-			text.scrollIndicatorInsets = contentInsets
-			scrollToCursor()
+	@objc func keyboardWasShown(notification: Notification) {
+		if let kbSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size {
+			setPlaceholderHeight(height: kbSize.height)
+		}
+	}
+	@objc func keyboardWillBeHidden(notification: Notification) {
+		setPlaceholderHeight(height: 0.0)
+	}
+	private func setPlaceholderHeight(height: CGFloat) {
+		placeholderHeight.constant = height
+		DispatchQueue.main.async {
+			self.scrollToCursor(keyboardHeight: height)
 		}
 	}
 	
-	@objc
-	private func keyboardWillBeHidden(notification: Notification) {
-		let contentInsets = UIEdgeInsets.zero
-		text.contentInset = contentInsets
-		text.scrollIndicatorInsets = contentInsets
-	}
-	
-	private func scrollToCursor() {
+	private func scrollToCursor(keyboardHeight: CGFloat) {
 		if let selectedRange = text.selectedTextRange {
 			let caretRectInTextView = text.caretRect(for: selectedRange.end)
 			let caretRectInRootView = view.convert(caretRectInTextView, from: text)
-			var visibleRootFrame = view.frame
-			visibleRootFrame.size.height -= keyboardHeight ?? 0
-			if (!visibleRootFrame.contains(caretRectInRootView)) {
+			
+			let visibleTextFrame = text.frame
+			if (!visibleTextFrame.contains(caretRectInRootView)) {
 				text.scrollRectToVisible(caretRectInTextView, animated: true)
 			}
 		}

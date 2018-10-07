@@ -420,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
-                                <rect key="frame" x="16" y="96" width="288" height="399"/>
+                                <rect key="frame" x="16" y="96" width="288" height="415"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -445,24 +445,43 @@
                                     <action selector="onShare:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="ngf-TF-A7L"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
+                                <rect key="frame" x="24" y="519" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1k-Yd-1yO" userLabel="Placeholder">
+                                <rect key="frame" x="16" y="519" width="288" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="piX-I6-F14"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" id="1d6-Ng-ajX"/>
                             <constraint firstItem="wXE-Hn-zsg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ihg-T8-2fA" secondAttribute="trailing" constant="16" id="1oP-ZY-F6Y"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wXE-Hn-zsg" secondAttribute="bottom" constant="16" id="28t-XS-KDp"/>
+                            <constraint firstItem="W1k-Yd-1yO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wXE-Hn-zsg" secondAttribute="bottom" constant="16" id="28t-XS-KDp"/>
+                            <constraint firstItem="W1k-Yd-1yO" firstAttribute="top" secondItem="UvM-C0-zec" secondAttribute="bottom" id="2xM-JV-40M"/>
+                            <constraint firstItem="W1k-Yd-1yO" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7gW-rl-Koa"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7qv-8r-x7b"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="EXM-Ie-RKb" secondAttribute="trailing" constant="16" id="8zy-8n-shV"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="tEA-Om-MWX" secondAttribute="trailing" constant="16" id="AKV-9E-gdf"/>
                             <constraint firstItem="tEA-Om-MWX" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="24" id="BRi-E5-9qk"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="EXM-Ie-RKb" secondAttribute="bottom" constant="24" id="BVK-bQ-Qoa"/>
+                            <constraint firstItem="UvM-C0-zec" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="bottom" constant="8" id="BVK-bQ-Qoa"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ihg-T8-2fA" secondAttribute="trailing" constant="16" id="GmZ-xG-t5L"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="Hpf-x7-qUy"/>
+                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="W1k-Yd-1yO" secondAttribute="trailing" constant="16" id="NgT-le-4Qi"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="centerX" secondItem="Tev-Af-9er" secondAttribute="centerX" id="Wcn-rU-3lO"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="top" secondItem="Tev-Af-9er" secondAttribute="top" constant="16" id="aao-Ml-FyC"/>
+                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UvM-C0-zec" secondAttribute="trailing" constant="16" id="hdn-6n-RxS"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tEA-Om-MWX" secondAttribute="bottom" constant="-16" id="kqc-Dg-ehM"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="obe-Eu-hhV"/>
                             <constraint firstItem="wXE-Hn-zsg" firstAttribute="centerY" secondItem="ihg-T8-2fA" secondAttribute="centerY" id="onD-04-v9s"/>
+                            <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="W1k-Yd-1yO" secondAttribute="bottom" id="pFk-Oc-jer"/>
+                            <constraint firstItem="UvM-C0-zec" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="24" id="utb-jq-jCh"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="wXE-Hn-zsg" secondAttribute="trailing" constant="16" id="zrv-6a-xrJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tev-Af-9er"/>
@@ -471,14 +490,16 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="hint" destination="tEA-Om-MWX" id="YvO-We-hJW"/>
+                        <outlet property="placeholderHeight" destination="piX-I6-F14" id="2tS-nZ-XRQ"/>
                         <outlet property="playButton" destination="ihg-T8-2fA" id="fxY-GG-FBJ"/>
                         <outlet property="shareButton" destination="wXE-Hn-zsg" id="Xeg-AW-GMd"/>
                         <outlet property="text" destination="EXM-Ie-RKb" id="K6A-NL-pt8"/>
+                        <outlet property="wordCount" destination="UvM-C0-zec" id="bka-bI-HqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tad-CJ-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-939" y="1066"/>
+            <point key="canvasLocation" x="-939.375" y="1065.8450704225352"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="DJi-hg-4dj">
