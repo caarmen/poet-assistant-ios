@@ -78,6 +78,10 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		hint.isHidden = !text.text.isEmpty
 		shareButton.isEnabled = !text.text.isEmpty
 		updatePlayButton()
+		if let wordCountText = getWordCountText(text: text.text) {
+			// TODO set the text on a label somewhere
+			print (wordCountText)
+		}
 	}
 	
 	private func updatePlayButton() {
@@ -87,6 +91,15 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		} else {
 			playButton.setImage(UIImage(imageLiteralResourceName: "ic_play"), for:.normal)
 		}
+	}
+	
+	private func getWordCountText(text: String?) -> String? {
+		let words = WordCounter.countWords(text:text)
+		let characters = WordCounter.countCharacters(text:text)
+		if (words == 0) {
+			return nil
+		}
+		return String(format: NSLocalizedString("word_count", comment:""), String(words), String(characters))
 	}
 	
 	func textViewDidChange(_ textView: UITextView) {

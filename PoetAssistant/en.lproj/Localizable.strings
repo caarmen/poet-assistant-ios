@@ -17,4 +17,5 @@
 "thesaurus_synonyms_title" = "synonyms:";
 "thesaurus_antonyms_title" = "antonyms:";
 "search_placeholder" = "Lookup a word";
+"word_count" = "%@ words, %@ characters";
 

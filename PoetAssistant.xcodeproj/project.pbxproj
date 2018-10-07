@@ -42,6 +42,8 @@
 		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
+		4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */; };
+		4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
+		4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 			children = (
 				4F31975C2167E4A800135FF4 /* Info.plist */,
 				4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */,
+				4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */,
 			);
 			path = PoetAssistantTests;
 			sourceTree = "<group>";
@@ -230,9 +235,8 @@
 		4F6613F12164FC4700FA10A1 /* composer */ = {
 			isa = PBXGroup;
 			children = (
+				4FFBA5BC216A540B00AD3AD6 /* model */,
 				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
-				4F6613F4216506B500FA10A1 /* PoemDocument.swift */,
-				4F6613F621650F6600FA10A1 /* Poem.swift */,
 			);
 			path = composer;
 			sourceTree = "<group>";
@@ -310,6 +314,16 @@
 				4F661403216531C800FA10A1 /* DictionaryViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		4FFBA5BC216A540B00AD3AD6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613F4216506B500FA10A1 /* PoemDocument.swift */,
+				4F6613F621650F6600FA10A1 /* Poem.swift */,
+				4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
+				4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +448,7 @@
 				4F3197532167D59A00135FF4 /* PorterStemmer.swift in Sources */,
 				4F3197452167129400135FF4 /* Thesaurus.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
+				4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */,
 				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
 				4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
