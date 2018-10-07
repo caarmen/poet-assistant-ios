@@ -472,12 +472,13 @@
                     <connections>
                         <outlet property="hint" destination="tEA-Om-MWX" id="YvO-We-hJW"/>
                         <outlet property="playButton" destination="ihg-T8-2fA" id="fxY-GG-FBJ"/>
+                        <outlet property="shareButton" destination="wXE-Hn-zsg" id="Xeg-AW-GMd"/>
                         <outlet property="text" destination="EXM-Ie-RKb" id="K6A-NL-pt8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tad-CJ-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2295" y="580"/>
+            <point key="canvasLocation" x="-939" y="1066"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="DJi-hg-4dj">

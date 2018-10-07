@@ -24,6 +24,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	private let speechSynthesizer = AVSpeechSynthesizer()
 	private var keyboardHeight:  CGFloat?
 	@IBOutlet weak var playButton: UIButton!
+	@IBOutlet weak var shareButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
 		didSet {
 			text.delegate = self
@@ -42,7 +43,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 			let utterance = AVSpeechUtterance(string: getTextToPlay())
 			speechSynthesizer.speak(utterance)
 		}
-		updateButton()
+		updatePlayButton()
 	}
 	private func getTextToPlay() -> String {
 		if let selectedRange = text.selectedTextRange {
@@ -75,10 +76,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	
 	private func updateUi() {
 		hint.isHidden = !text.text.isEmpty
-		updateButton()
+		shareButton.isEnabled = !text.text.isEmpty
+		updatePlayButton()
 	}
 	
-	private func updateButton() {
+	private func updatePlayButton() {
 		playButton.isEnabled = !text.text.isEmpty
 		if speechSynthesizer.isSpeaking {
 			playButton.setImage(UIImage(imageLiteralResourceName: "ic_stop"), for:.normal)
@@ -93,16 +95,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	}
 	
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-		updateButton()
+		updatePlayButton()
 	}
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-		updateButton()
+		updatePlayButton()
 	}
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-		updateButton()
+		updatePlayButton()
 	}
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
-		updateButton()
+		updatePlayButton()
 	}
 	
 	// Adapt the size of the text view when the keyboard appears. Otherwise the keyboard will remain
