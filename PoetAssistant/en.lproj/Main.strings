@@ -1,45 +1,36 @@
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "2DA-ef-vbD"; */
-"2DA-ef-vbD.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "41t-Hs-Pk1"; */
-"41t-Hs-Pk1.text" = "Label";
-
+﻿
 /* Class = "UILabel"; text = "Label"; ObjectID = "5RU-0o-tFr"; */
 "5RU-0o-tFr.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Dictionaries"; ObjectID = "6Yy-f2-0S0"; */
+"6Yy-f2-0S0.title" = "Dictionaries";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "6e5-yf-lk0"; */
 "6e5-yf-lk0.text" = "Label";
 
-/* Class = "UITabBarItem"; title = "Dictionary"; ObjectID = "Du4-Bb-Yuz"; */
-"Du4-Bb-Yuz.title" = "Dictionary";
-
 /* Class = "UILabel"; text = "Label"; ObjectID = "G1t-Qu-q7L"; */
 "G1t-Qu-q7L.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Oqv-dE-T93"; */
-"Oqv-dE-T93.text" = "Label";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Vjb-ag-JBK"; */
 "Vjb-ag-JBK.text" = "Label";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "aQQ-48-TCn"; */
-"aQQ-48-TCn.text" = "Label";
-
-/* Class = "UITabBarItem"; title = "Rhymer"; ObjectID = "acW-dT-cKf"; */
-"acW-dT-cKf.title" = "Rhymer";
-
-/* Class = "UITabBarItem"; title = "Thesaurus"; ObjectID = "cPa-gy-q4n"; */
-"cPa-gy-q4n.title" = "Thesaurus";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "f7B-AF-DfY"; */
-"f7B-AF-DfY.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "kUc-iz-29f"; */
-"kUc-iz-29f.text" = "Label";
+/* Class = "UILabel"; text = "Label"; ObjectID = "iCD-QQ-zCG"; */
+"iCD-QQ-zCG.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "Composer"; ObjectID = "leB-IY-dWZ"; */
 "leB-IY-dWZ.title" = "Composer";
 
 /* Class = "UILabel"; text = "Compose your beautiful poetry here."; ObjectID = "tEA-Om-MWX"; */
 "tEA-Om-MWX.text" = "Compose your beautiful poetry here.";
+
+/* Class = "UISegmentedControl"; twx-gO-fQb.segmentTitles[0] = "Rhymer"; ObjectID = "twx-gO-fQb"; */
+"twx-gO-fQb.segmentTitles[0]" = "Rhymer";
+
+/* Class = "UISegmentedControl"; twx-gO-fQb.segmentTitles[1] = "Thesaurus"; ObjectID = "twx-gO-fQb"; */
+"twx-gO-fQb.segmentTitles[1]" = "Thesaurus";
+
+/* Class = "UISegmentedControl"; twx-gO-fQb.segmentTitles[2] = "Dictionary"; ObjectID = "twx-gO-fQb"; */
+"twx-gO-fQb.segmentTitles[2]" = "Dictionary";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "zXf-f2-7zw"; */
+"zXf-f2-7zw.text" = "Title";

@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
-                                                    <rect key="frame" x="260" y="-0.5" width="44" height="44.5"/>
+                                                    <rect key="frame" x="260" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
                                                         <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
@@ -51,7 +51,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
-                                                    <rect key="frame" x="206" y="-0.5" width="44" height="44.5"/>
+                                                    <rect key="frame" x="206" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="V9H-br-mze"/>
                                                         <constraint firstAttribute="width" constant="44" id="utw-K2-emc"/>
@@ -62,7 +62,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
-                                                    <rect key="frame" x="152" y="-0.5" width="44" height="44.5"/>
+                                                    <rect key="frame" x="152" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="2xA-JD-WOe"/>
                                                         <constraint firstAttribute="height" constant="44" id="75J-Mg-6nI"/>
@@ -624,11 +624,11 @@
             </objects>
             <point key="canvasLocation" x="2839" y="1161"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dictionaries-->
         <scene sceneID="QmK-RE-QOQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k96-hQ-505" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="6Yy-f2-0S0"/>
+                    <tabBarItem key="tabBarItem" title="Dictionaries" image="ic_lexicons" id="6Yy-f2-0S0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="me6-Gk-AfH">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -652,6 +652,7 @@
     <resources>
         <image name="ic_composer" width="25" height="25"/>
         <image name="ic_dictionary" width="25" height="25"/>
+        <image name="ic_lexicons" width="25" height="25"/>
         <image name="ic_play" width="36" height="36"/>
         <image name="ic_rhymer" width="25" height="25"/>
         <image name="ic_share" width="36" height="36"/>
