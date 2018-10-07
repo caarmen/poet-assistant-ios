@@ -54,4 +54,19 @@ class Suggestion: NSManagedObject {
 			}
 		}
 	}
+	
+	class func clear(completion: @escaping () -> Void) {
+		AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
+			do {
+				let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Suggestion")
+				let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+				let result = try context.execute(deleteRequest)
+				print ("Executed delete request \(result)")
+				try context.save()
+				DispatchQueue.main.async(execute: completion)
+			} catch let error {
+				print ("Error clearing search history \(error)")
+			}
+		}
+	}
 }

@@ -20,18 +20,12 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 import Foundation
 import CoreData
 
-enum SuggestionType {
-	case history
-	case dictionary
+enum SuggestionListItem {
+	case clear_history
+	case history_suggestion(String)
+	case dictionary_suggestion(String)
 }
-class SuggestionRowItem {
-	let type: SuggestionType
-	let word: String
-	init(type: SuggestionType, word: String) {
-		self.type = type
-		self.word = word
-	}
-}
+
 class SuggestionsFetchedResultsControllerWrapper {
 	private var historyFetchedResultsController: NSFetchedResultsController<Suggestion>?
 	private var dictionaryFetchedResultsController: NSFetchedResultsController<NSDictionary>?
@@ -44,15 +38,18 @@ class SuggestionsFetchedResultsControllerWrapper {
 	}
 	var sections = [NSFetchedResultsSectionInfo]()
 	
-	func object(at: IndexPath) -> SuggestionRowItem? {
-		let indexPathForRealController = IndexPath(row: at.row, section: 0)
+	func object(at: IndexPath) -> SuggestionListItem {
 		let sectionName = sections[at.section].name
 		if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY {
-			let historySuggestion = historyFetchedResultsController?.object(at: indexPathForRealController)
-			return SuggestionRowItem(type: .history, word: historySuggestion?.word ?? "")
+			if at.row == 0 {
+				return SuggestionListItem.clear_history
+			} else {
+				let historySuggestion = historyFetchedResultsController?.object(at: IndexPath(row: at.row - 1, section: 0))
+				return SuggestionListItem.history_suggestion(historySuggestion?.word ?? "")
+			}
 		} else {
-			let dictionarySuggestion = dictionaryFetchedResultsController?.object(at: indexPathForRealController)
-			return SuggestionRowItem(type: .dictionary, word: dictionarySuggestion?[#keyPath(Dictionary.word)] as? String ?? "")
+			let dictionarySuggestion = dictionaryFetchedResultsController?.object(at: IndexPath(row: at.row, section: 0))
+			return SuggestionListItem.dictionary_suggestion(dictionarySuggestion?[#keyPath(Dictionary.word)] as? String ?? "")
 		}
 	}
 	
@@ -68,7 +65,7 @@ class SuggestionsFetchedResultsControllerWrapper {
 			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
 				sections.append(SectionInfo(
 					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
-					numberOfObjects: historySearchSections[0].numberOfObjects,
+					numberOfObjects: historySearchSections[0].numberOfObjects + 1,
 					objects: historySearchSections[0].objects))
 			}
 			if let dictionarySearchSections = dictionaryFetchedResultsController?.sections, dictionarySearchSections.count == 1 {

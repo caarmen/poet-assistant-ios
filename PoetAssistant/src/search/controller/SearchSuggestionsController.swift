@@ -69,24 +69,62 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
-		if let suggestionRowItem = fetchedResultsController?.object(at: indexPath) {
-			cell.textLabel?.text = suggestionRowItem.word
-			switch (suggestionRowItem.type) {
-			case .history:
-				cell.imageView?.image = UIImage(imageLiteralResourceName: "ic_history")
-			case .dictionary:
-				cell.imageView?.image = UIImage(imageLiteralResourceName: "ic_search")
+		if let suggestionListItem = fetchedResultsController?.object(at: indexPath) {
+			switch (suggestionListItem) {
+			case .clear_history:
+				bindSuggestionCell(cell: cell, imageResource: "ic_delete", suggestion: NSLocalizedString("clear_search_history", comment: ""), bold: true)
+			case .history_suggestion(let word):
+				bindSuggestionCell(cell: cell, imageResource: "ic_history", suggestion: word, bold: false)
+			case .dictionary_suggestion(let word):
+				bindSuggestionCell(cell: cell, imageResource: "ic_search", suggestion: word, bold: false)
 			}
 		}
 		return cell
 	}
 	
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let selection = fetchedResultsController?.object(at: indexPath) {
-			delegate?.didSelectSuggestion(suggestion: selection.word)
-		}
+	private func bindSuggestionCell(cell: UITableViewCell, imageResource: String, suggestion: String?, bold: Bool) {
+		cell.imageView?.image = UIImage(imageLiteralResourceName: imageResource)
+		cell.textLabel?.text = suggestion
+		cell.textLabel?.bold = bold
 	}
 	
+	private func presentClearSearchHistoryDialog() {
+		let alert = UIAlertController(
+			title: NSLocalizedString("clear_search_history", comment: ""),
+			message: NSLocalizedString("clear_search_history_message", comment: ""),
+			preferredStyle: UIAlertController.Style.actionSheet)
+		alert.addAction(UIAlertAction(
+			title: NSLocalizedString("clear_search_history_action_clear", comment: ""),
+			style: UIAlertAction.Style.destructive, handler: { action in
+				Suggestion.clear { self.presentClearSearchHistoryCompletedDialog()}
+		}))
+		alert.addAction(UIAlertAction(
+			title: NSLocalizedString("clear_search_history_action_cancel", comment: ""),
+			style: UIAlertAction.Style.cancel, handler: nil))
+		present(alert, animated: true, completion: nil)
+	}
+	
+	private func presentClearSearchHistoryCompletedDialog() {
+		let alert = UIAlertController(
+			title: NSLocalizedString("clear_search_history_deleted", comment: ""),
+			message: nil,
+			preferredStyle: UIAlertController.Style.alert)
+		present(alert, animated: true, completion: nil)
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+			alert.dismiss(animated: false, completion: nil)
+		}
+		
+	}
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if let selection = fetchedResultsController?.object(at: indexPath) {
+			switch(selection) {
+			case .clear_history:
+				presentClearSearchHistoryDialog()
+			case .history_suggestion(let word), .dictionary_suggestion(let word):
+				delegate?.didSelectSuggestion(suggestion: word)
+			}
+		}
+	}
 	
 	func clear() {
 		fetchedResultsController = nil
