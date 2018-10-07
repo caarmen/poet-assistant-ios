@@ -46,7 +46,7 @@ class Suggestion: NSManagedObject {
 			do {
 				if (try context.count(for: request) == 0) {
 					let suggestion = Suggestion(context:context)
-					suggestion.word = word
+					suggestion.word = word.lowercased(with: Locale.current)
 					try context.save()
 				}
 			} catch let error {

@@ -44,19 +44,15 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	}
 	
 	func updateSearchResults(for searchController: UISearchController) {
-		
-		if let queryText = searchController.searchBar.text {
-			if queryText.isEmpty {
-				fetchedResultsController = nil
-				reloadData()
-			} else {
-				DispatchQueue.global().async { [weak self] in
-					self?.fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(queryText: queryText)
-					try? self?.fetchedResultsController?.performFetch()
-					DispatchQueue.main.async {[weak self] in
-						self?.reloadData()
-					}
-				}
+		loadSuggestions(forQuery: searchController.searchBar.text)
+	}
+	
+	func loadSuggestions(forQuery queryText: String?) {
+		DispatchQueue.global().async { [weak self] in
+			self?.fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(queryText: queryText)
+			try? self?.fetchedResultsController?.performFetch()
+			DispatchQueue.main.async {[weak self] in
+				self?.reloadData()
 			}
 		}
 	}
