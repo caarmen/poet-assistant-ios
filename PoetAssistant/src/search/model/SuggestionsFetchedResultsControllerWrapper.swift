@@ -65,7 +65,7 @@ class SuggestionsFetchedResultsControllerWrapper {
 		do {
 			try historyFetchedResultsController?.performFetch()
 			try dictionaryFetchedResultsController?.performFetch()
-			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1 {
+			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
 				sections.append(SectionInfo(
 					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
 					numberOfObjects: historySearchSections[0].numberOfObjects,

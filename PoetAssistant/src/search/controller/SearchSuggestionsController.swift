@@ -35,6 +35,13 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		return fetchedResultsController?.sections.count ?? 0
 	}
 	
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if let sectionName = fetchedResultsController?.sections[section].name {
+			return NSLocalizedString(sectionName, comment: "")
+		}
+		return nil
+	}
+	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let sections = fetchedResultsController?.sections, sections.count > 0 {
 			return sections[section].numberOfObjects
