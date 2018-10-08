@@ -30,25 +30,16 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
 	}
-	override func doQuery(query: String, completion: @escaping () -> Void) {
-		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			self?.fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: query)
-			try? self?.fetchedResultsController?.performFetch()
-			// No results? How about trying the stem of the word.
-			if (self?.fetchedResultsController?.sections?.count ?? 0) == 0 {
-				let stemmedWord = PorterStemmer().stemWord(word:query)
-				if (stemmedWord != query) {
-					DispatchQueue.main.async {
-						self?.query = stemmedWord
-					}
-					return
-				}
-			}
-			DispatchQueue.main.async {
-				completion()
-			}
-		}
+	
+	override func backgroundFetch(context: NSManagedObjectContext, word: String) -> Bool {
+		fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: word)
+		try? fetchedResultsController?.performFetch()
+		return fetchedResultsController?.sections?.count ?? 0 > 0
 	}
+	override func getFallbackQuery(query: String) -> String? {
+		return PorterStemmer().stemWord(word:query)
+	}
+
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections?.count ?? 1
 	}

@@ -18,6 +18,7 @@
 */
 
 import UIKit
+import CoreData
 
 class RhymerViewController: SearchResultsController {
 	override func viewDidLoad() {
@@ -29,15 +30,13 @@ class RhymerViewController: SearchResultsController {
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
-	override func doQuery(query: String, completion: @escaping () -> Void) {
-		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			self?.fetchedResultsController = WordVariants.createRhymesFetchResultsController(context: context, queryText: query)
-			try? self?.fetchedResultsController?.performFetch()
-			DispatchQueue.main.async {
-				completion()
-			}
-		}
+
+	override func backgroundFetch(context: NSManagedObjectContext, word: String) -> Bool {
+		fetchedResultsController = WordVariants.createRhymesFetchResultsController(context: context, queryText: word)
+		try? fetchedResultsController?.performFetch()
+		return fetchedResultsController?.sections.count ?? 0 > 0
 	}
+	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections.count ?? 0
 	}
