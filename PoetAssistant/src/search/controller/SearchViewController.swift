@@ -150,13 +150,15 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	}
 	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 		searchContainer.isHidden = false
-		searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
+		if (searchBar.text == nil || searchBar.text!.isEmpty) {
+			searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
+		}
 	}
 
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		searchContainer.isHidden = false
 	}
-	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		handleSelection(selection: searchBar.text)
 	}
 	func didDismissSearchController(_ searchController: UISearchController) {
