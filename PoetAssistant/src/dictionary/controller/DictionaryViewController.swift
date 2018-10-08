@@ -31,7 +31,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
 	}
 	override func doQuery(query: String, completion: @escaping () -> Void) {
-		AppDelegate.persistentContainer.performBackgroundTask { [weak self] context in
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
 			self?.fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: query)
 			try? self?.fetchedResultsController?.performFetch()
 			// No results? How about trying the stem of the word.

@@ -44,6 +44,9 @@
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
 		4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */; };
 		4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */; };
+		4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */; };
+		4FFBA60B216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA60A216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift */; };
+		4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
 		4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTest.swift; sourceTree = "<group>"; };
+		4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		4FFBA60A216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsFetchedResultsControllerWrapper.swift; sourceTree = "<group>"; };
+		4FFBA613216AB88100AD3AD6 /* userdata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userdata.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +234,7 @@
 				4F31972A2166587100135FF4 /* Tab.swift */,
 				4F31972E21666FCF00135FF4 /* Settings.swift */,
 				4F3197662168C32800135FF4 /* Lexicon.swift */,
+				4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -274,12 +281,8 @@
 		4F661405216533A600FA10A1 /* search */ = {
 			isa = PBXGroup;
 			children = (
-				4F661406216533CB00FA10A1 /* SearchSuggestionsController.swift */,
-				4F3197362166A4A500135FF4 /* SearchResultsController.swift */,
-				4F31974E21679CFD00135FF4 /* RTDDelegate.swift */,
-				4F3197502167A2D000135FF4 /* SectionInfo.swift */,
-				4F3197522167D59A00135FF4 /* PorterStemmer.swift */,
-				4F3197642168AD0F00135FF4 /* SearchViewController.swift */,
+				4FFBA606216A977B00AD3AD6 /* model */,
+				4FFBA607216A978B00AD3AD6 /* controller */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -324,6 +327,28 @@
 				4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		4FFBA606216A977B00AD3AD6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F3197502167A2D000135FF4 /* SectionInfo.swift */,
+				4F3197522167D59A00135FF4 /* PorterStemmer.swift */,
+				4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */,
+				4FFBA60A216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4FFBA607216A978B00AD3AD6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F661406216533CB00FA10A1 /* SearchSuggestionsController.swift */,
+				4F3197362166A4A500135FF4 /* SearchResultsController.swift */,
+				4F3197642168AD0F00135FF4 /* SearchViewController.swift */,
+				4F31974E21679CFD00135FF4 /* RTDDelegate.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,10 +470,12 @@
 				4F6613DA2164D10700FA10A1 /* ThesaurusViewController.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
+				4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */,
 				4F3197532167D59A00135FF4 /* PorterStemmer.swift in Sources */,
 				4F3197452167129400135FF4 /* Thesaurus.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
 				4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */,
+				4FFBA60B216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift in Sources */,
 				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
 				4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
@@ -464,6 +491,7 @@
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
+				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
@@ -742,6 +770,16 @@
 			);
 			currentVersion = 4F6613FB2165295400FA10A1 /* dictionaries.xcdatamodel */;
 			path = dictionaries.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FFBA613216AB88100AD3AD6 /* userdata.xcdatamodel */,
+			);
+			currentVersion = 4FFBA613216AB88100AD3AD6 /* userdata.xcdatamodel */;
+			path = userdata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -140,16 +140,19 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	}
 	func searchThesaurus(query: String) {
 		wordSelected(word:query, lexicon: .thesaurus)
-
 	}
 	func searchDictionary(query: String) {
 		wordSelected(word:query, lexicon: .dictionary)
-
 	}
 	private func wordSelected(word: String, lexicon: Lexicon) {
 		getSearchResultsController(lexicon: lexicon)?.query = word
 		showLexicon(lexicon:lexicon)
 	}
+	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+		searchContainer.isHidden = false
+		searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
+	}
+
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		searchContainer.isHidden = false
 	}
@@ -168,6 +171,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			rhymerController?.query = selection!
 			thesaurusController?.query = selection!
 			dictionaryController?.query = selection!
+			Suggestion.addSuggestion(word: selection!)
 		}
 		searchSuggestionsController?.clear()
 		searchContainer.isHidden = true
