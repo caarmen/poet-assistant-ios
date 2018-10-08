@@ -22,6 +22,7 @@ import CoreData
 
 protocol SearchSuggestionsDelegate:class {
 	func didSelectSuggestion(suggestion: String)
+	func didClearSearchHistory()
 }
 /**
 Displays the interface for entering a search query (with search suggestions).
@@ -34,7 +35,6 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections.count ?? 0
 	}
-	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sectionName = fetchedResultsController?.sections[section].name {
 			return NSLocalizedString(sectionName, comment: "")
@@ -96,7 +96,10 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("clear_search_history_action_clear", comment: ""),
 			style: UIAlertAction.Style.destructive, handler: { action in
-				Suggestion.clear { self.presentClearSearchHistoryCompletedDialog()}
+				Suggestion.clear {
+					self.presentClearSearchHistoryCompletedDialog()
+					self.delegate?.didClearSearchHistory()
+				}
 		}))
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("clear_search_history_action_cancel", comment: ""),
