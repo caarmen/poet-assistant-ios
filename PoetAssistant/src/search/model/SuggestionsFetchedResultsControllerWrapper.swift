@@ -63,10 +63,12 @@ class SuggestionsFetchedResultsControllerWrapper {
 			try historyFetchedResultsController?.performFetch()
 			try dictionaryFetchedResultsController?.performFetch()
 			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
+				var historySearchObjects: [Any] = [SuggestionListItem.clear_history]
+				historySearchObjects += historySearchSections[0].objects ?? []
 				sections.append(SectionInfo(
 					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
 					numberOfObjects: historySearchSections[0].numberOfObjects + 1,
-					objects: historySearchSections[0].objects))
+					objects: historySearchObjects))
 			}
 			if let dictionarySearchSections = dictionaryFetchedResultsController?.sections, dictionarySearchSections.count == 1 {
 				sections.append(SectionInfo(

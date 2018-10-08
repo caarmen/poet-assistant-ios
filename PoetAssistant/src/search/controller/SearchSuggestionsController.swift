@@ -72,7 +72,7 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		if let suggestionListItem = fetchedResultsController?.object(at: indexPath) {
 			switch (suggestionListItem) {
 			case .clear_history:
-				bindSuggestionCell(cell: cell, imageResource: "ic_delete", suggestion: NSLocalizedString("clear_search_history", comment: ""), bold: true)
+				bindSuggestionCell(cell: cell, imageResource: "ic_delete", suggestion: NSLocalizedString("clear_search_history_list_item", comment: ""), bold: true)
 			case .history_suggestion(let word):
 				bindSuggestionCell(cell: cell, imageResource: "ic_history", suggestion: word, bold: false)
 			case .dictionary_suggestion(let word):
@@ -90,9 +90,9 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	
 	private func presentClearSearchHistoryDialog() {
 		let alert = UIAlertController(
-			title: NSLocalizedString("clear_search_history", comment: ""),
-			message: NSLocalizedString("clear_search_history_message", comment: ""),
-			preferredStyle: UIAlertController.Style.actionSheet)
+			title: NSLocalizedString("clear_search_history_dialog_title", comment: ""),
+			message: NSLocalizedString("clear_search_history_dialog_message", comment: ""),
+			preferredStyle: UIAlertController.Style.alert)
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("clear_search_history_action_clear", comment: ""),
 			style: UIAlertAction.Style.destructive, handler: { action in
