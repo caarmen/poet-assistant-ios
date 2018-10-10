@@ -50,34 +50,15 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
-			executeQuery(query: nonEmptyQuery)
+			fetch(word: query, completion: {[weak self] in
+				self?.queryResultsFetched(query:nonEmptyQuery)})
 		} else {
 			emptyText.isHidden = false
 			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
 			labelQuery.isHidden = true
 		}
 	}
-	
-	private func executeQuery(query: String) {
-		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			// No results? How about trying the stem of the word.
-			// This should probably (maybe?) be in the model, but the details can't be completely hidden
-			// from the view controller either... we need to know what was the actual query
-			// term used in the end, the original
-			// or the stem, to display something meaningful to the user:
-			// no results => show "no results for 'original term'"
-			// results => show the results for the actual term used.
-			if !(self?.backgroundFetch(context:context, word:query) ?? false) {
-				if let fallbackQuery = self?.getFallbackQuery(query: query), fallbackQuery != query {
-					if (self?.backgroundFetch(context:context, word:fallbackQuery) ?? false) {
-						DispatchQueue.main.async{self?.labelQuery.text = fallbackQuery}
-					}
-				}
-			}
-			DispatchQueue.main.async{self?.queryResultsFetched(query: query)}
-		}
-	}
-	
+
 	private func queryResultsFetched(query: String) {
 		tableView.invalidateIntrinsicContentSize()
 		tableView.reloadData()
@@ -100,17 +81,9 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	//--------------------------------------------
 
 	/**
-	* Fetch the data and return true if some data was fetched.
+	* Fetch the data
 	*/
-	open func backgroundFetch(context: NSManagedObjectContext, word: String) -> Bool {
-		return false
-	}
-
-	/**
-	* return an optional string to query in case we find no results for the original query
-	*/
-	open func getFallbackQuery(query: String) -> String? {
-		return nil
+	open func fetch(word: String, completion: @escaping () -> Void) {
 	}
 
 	open func getEmptyText(query: String) -> String {

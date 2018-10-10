@@ -22,7 +22,12 @@ import CoreData
 
 class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
 	
-	private var fetchedResultsController: NSFetchedResultsController<Dictionary>? = nil
+	// TODO copy paste
+	private static let PART_OF_SPEECH_LABELS:[PartOfSpeech:String] = [.noun: "part_of_speech_n",
+																	  .adjective: "part_of_speech_a",
+																	  .adverb: "part_of_speech_r",
+																	  .verb: "part_of_speech_v"]
+	private var dictionaryQueryResult: DictionaryQueryResult? = nil
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lexicon = Lexicon.dictionary
@@ -31,30 +36,28 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		return String(format: NSLocalizedString("No definitions for %@", comment: ""), "\(query)")
 	}
 	
-	override func backgroundFetch(context: NSManagedObjectContext, word: String) -> Bool {
-		fetchedResultsController = Dictionary.createDefinitionsFetchResultsController(context: context, queryText: word)
-		try? fetchedResultsController?.performFetch()
-		return fetchedResultsController?.sections?.count ?? 0 > 0
-	}
-	override func getFallbackQuery(query: String) -> String? {
-		return PorterStemmer().stemWord(word:query)
+	override func fetch(word: String, completion: @escaping () -> Void) {
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask {[weak self] context in
+			self?.dictionaryQueryResult = Dictionary.fetch(context: context, queryText: word)
+			DispatchQueue.main.async { [weak self] in
+				self?.labelQuery.text = self?.dictionaryQueryResult?.queryText
+				completion()
+			}
+		}
 	}
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return fetchedResultsController?.sections?.count ?? 1
+		return dictionaryQueryResult?.numberOfSections() ?? 0
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let sections = fetchedResultsController?.sections, sections.count > section {
-			return sections[section].numberOfObjects
-		} else {
-			return 0
-		}
+		return dictionaryQueryResult?.numberOfRowsInSection(section:section) ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if let sections = fetchedResultsController?.sections, sections.count > 0 {
-			return NSLocalizedString("part_of_speech_\(sections[section].name)", comment: "")
+		if let partOfSpeech = dictionaryQueryResult?.partOfSpeech(section:section) {
+			let partOfSpeechStringKey = DictionaryViewController.PART_OF_SPEECH_LABELS[partOfSpeech] ?? ""
+			return NSLocalizedString(partOfSpeechStringKey, comment: "")
 		} else {
 			return nil
 		}
@@ -62,8 +65,8 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let dictionaryEntryCell = tableView.dequeueReusableCell(withIdentifier: "DictionaryEntry") as? DictionaryTableViewCell {
-			if let dictionaryEntry = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
-				dictionaryEntryCell.definition.text = dictionaryEntry.definition
+			if let definition = dictionaryQueryResult?.definition(indexPath:indexPath) {
+				dictionaryEntryCell.definition.text = definition
 			}
 			return dictionaryEntryCell
 		}

@@ -22,7 +22,11 @@ import CoreData
 
 class ThesaurusViewController: SearchResultsController {
 	
-	private var fetchedResultsController: ThesaurusFetchedResultsControllerWrapper? = nil
+	private static let PART_OF_SPEECH_LABELS:[PartOfSpeech:String] = [.noun: "part_of_speech_n",
+																 .adjective: "part_of_speech_a",
+																 .adverb: "part_of_speech_r",
+																 .verb: "part_of_speech_v"]
+	private var thesaurusQueryResult: ThesaurusQueryResult? = nil
 	
 	weak var delegate: RTDDelegate?
 	override func viewDidLoad() {
@@ -34,37 +38,40 @@ class ThesaurusViewController: SearchResultsController {
 		return String(format: NSLocalizedString("No synonyms for %@", comment: ""), "\(query)")
 	}
 	
-	override func backgroundFetch(context: NSManagedObjectContext, word: String) -> Bool {
-		fetchedResultsController = Thesaurus.createFetchResultsController(context: context, queryText: word)
-		try? fetchedResultsController?.performFetch()
-		return fetchedResultsController?.sections.count ?? 0 > 0
-	}
-	override func getFallbackQuery(query: String) -> String? {
-		return PorterStemmer().stemWord(word:query)
+	override func fetch(word: String, completion: @escaping () -> Void) {
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
+			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word)
+			DispatchQueue.main.async { [weak self] in
+				self?.labelQuery.text = self?.thesaurusQueryResult?.queryText
+				completion()
+			}
+		}
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return fetchedResultsController?.sections.count ?? 0
+		return thesaurusQueryResult?.sections.count ?? 0
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let sections = fetchedResultsController?.sections, sections.count > section {
-			return sections[section].numberOfObjects
+		if let sections = thesaurusQueryResult?.sections, sections.count > section {
+			return sections[section].entries.count
 		} else {
 			return 0
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if let sections = fetchedResultsController?.sections, sections.count > section {
-			return NSLocalizedString(sections[section].name, comment: "")
+		if let sections = thesaurusQueryResult?.sections, sections.count > section {
+			let partOfSpeech = sections[section].partOfSpeech
+			let partOfSpeechStringKey = ThesaurusViewController.PART_OF_SPEECH_LABELS[partOfSpeech] ?? ""
+			return NSLocalizedString(partOfSpeechStringKey, comment: "")
 		} else {
 			return nil
 		}
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let thesaurusListItem = fetchedResultsController?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
+		if let thesaurusListItem = thesaurusQueryResult?.object(at: IndexPath(row: indexPath.row, section: indexPath.section)) {
 			var thesaurusCell: UITableViewCell?
 			switch (thesaurusListItem) {
 			case .subtitle (let subtitle):
