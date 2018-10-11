@@ -499,7 +499,7 @@
         <!--Search View Controller-->
         <scene sceneID="DJi-hg-4dj">
             <objects>
-                <viewController id="dQg-uc-ADU" customClass="SearchViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="dQg-uc-ADU" customClass="SearchViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTf-RG-2Ob">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
