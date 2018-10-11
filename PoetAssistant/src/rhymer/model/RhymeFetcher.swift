@@ -25,48 +25,53 @@ import CoreData
 // same api as FetchedResultsController.
 // This only aggregates NSFetchedResultsControllers which each have one section.
 //
-class RhymerFetchedResultsControllerWrapper {
+class RhymeFetcher {
+	private(set) var sectionCount = 0
 	private var fetchedResultsControllers = [NSFetchedResultsController<NSDictionary>]()
-	private var sectionIndexTitles = [String]()
+	private var rhymeTypes = [RhymeType]()
+	private var variants = [Int?]()
 	
-	var sections = [NSFetchedResultsSectionInfo]()
-	
-	func add(sectionTitle: String, fetchedResultsController: NSFetchedResultsController<NSDictionary>) {
+	func add(rhymeType:RhymeType, variant:Int?, fetchedResultsController: NSFetchedResultsController<NSDictionary>) {
+		rhymeTypes.append(rhymeType)
+		variants.append(variant)
 		fetchedResultsControllers.append(fetchedResultsController)
-		sectionIndexTitles.append(sectionTitle)
 	}
 	
-	func object(at: IndexPath) -> NSDictionary {
+	func rhyme(at: IndexPath) -> String? {
 		let indexPath = IndexPath(row: at.row, section: 0)
-		return fetchedResultsControllers[at.section].object(at: indexPath)
+		let value = fetchedResultsControllers[at.section].object(at: indexPath)
+		return value[#keyPath(WordVariants.word)] as? String
 	}
 	
 	func performFetch() throws {
-		for (index, fetchedResultsController) in fetchedResultsControllers.enumerated() {
+		for (index, fetchedResultsController) in fetchedResultsControllers.enumerated().reversed() {
 			do {
 				try fetchedResultsController.performFetch()
-				if let thisControllerSections = fetchedResultsController.sections, thisControllerSections.count == 1 {
-					let sectionInfo = SectionInfo(
-						name: sectionIndexTitles[index],
-						numberOfObjects: thisControllerSections[0].numberOfObjects,
-						objects: thisControllerSections[0].objects)
-					sections.append(sectionInfo)
+				if let sections = fetchedResultsController.sections, sections.count > 0, sections[0].numberOfObjects > 0 {
+					sectionCount += sections.count
+				} else {
+					fetchedResultsControllers.remove(at:index)
+					rhymeTypes.remove(at:index)
+					variants.remove(at:index)
 				}
-				
 			} catch let error {
 				throw error
 			}
 		}
-		removeEmptySections()
 	}
-	
-	private func removeEmptySections() {
-		for (index, section) in sections.enumerated().reversed() {
-			if section.numberOfObjects == 0 {
-				fetchedResultsControllers.remove(at: index)
-				sections.remove(at: index)
-				sectionIndexTitles.remove(at:index)
-			}
-		}
+	func numberOfRowsInSection(section: Int) -> Int {
+		return fetchedResultsControllers[section].sections?[0].numberOfObjects ?? 0
 	}
+	func rhymeType(section: Int) -> RhymeType? {
+		return rhymeTypes[section]
+	}
+	func variant(section: Int) -> Int?{
+		return variants[section]
+	}
+}
+enum RhymeType {
+	case strict
+	case last_three_syllables
+	case last_two_syllables
+	case last_syllable
 }

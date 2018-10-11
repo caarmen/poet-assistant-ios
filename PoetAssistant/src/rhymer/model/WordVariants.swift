@@ -21,37 +21,43 @@ import CoreData
 
 class WordVariants: NSManagedObject {
 	
-	class func createRhymesFetchResultsController(context: NSManagedObjectContext, queryText: String) -> RhymerFetchedResultsControllerWrapper {
-		let result = RhymerFetchedResultsControllerWrapper()
+	class func createRhymeFetcher(context: NSManagedObjectContext, queryText: String) -> RhymeFetcher {
+		let result = RhymeFetcher()
 		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(WordVariants.variant_number), ascending: true)]
 		if !queryText.isEmpty {
 			request.predicate = NSPredicate(format: "\(#keyPath(WordVariants.word)) ==[c] %@", queryText)
 		}
 		if let wordVariants = try? request.execute() {
-			for (index, wordVariant) in wordVariants.enumerated() {
-				let variantPrefix = (wordVariants.count > 1) ? "\(index + 1)." : ""
+			let indicateVariants = (wordVariants.count > 1)
+
+			for wordVariant in wordVariants {
+				let variantNumber = indicateVariants ? Int(wordVariant.variant_number) : nil
 				result.add(
-					sectionTitle: "\(variantPrefix)0",
+					rhymeType: .strict,
+					variant: variantNumber,
 					fetchedResultsController: createFetchResultsControllerForRhymeType(
 						context: context,
 						predicate: createPredicateForStressSyllableMatch(wordVariant: wordVariant)))
 				if wordVariant.last_three_syllables != nil {
 					result.add(
-						sectionTitle: "\(variantPrefix)3",
+						rhymeType: .last_three_syllables,
+						variant: variantNumber,
 						fetchedResultsController: createFetchResultsControllerForRhymeType(
 							context: context,
 							predicate: createPredicateForLastThreeSyllableMatch(wordVariant: wordVariant)!))
 				}
 				if wordVariant.last_two_syllables != nil {
 					result.add(
-						sectionTitle: "\(variantPrefix)2",
+						rhymeType: .last_two_syllables,
+						variant: variantNumber,
 						fetchedResultsController: createFetchResultsControllerForRhymeType(
 							context: context,
 							predicate: createPredicateForLastTwoSyllableMatch(wordVariant: wordVariant)!))
 				}
 				result.add(
-					sectionTitle: "\(variantPrefix)1",
+					rhymeType: .last_syllable,
+					variant: variantNumber,
 					fetchedResultsController: createFetchResultsControllerForRhymeType(
 						context: context,
 						predicate: createPredicateForLastSyllableMatch(wordVariant: wordVariant)))
@@ -94,7 +100,7 @@ class WordVariants: NSManagedObject {
 		let excludeStressSyllablesPredicate = createPredicateExcludingStressSyllables(wordVariant: wordVariant)
 		let excludeLastThreeSyllablesPredicate = createPredicateExcludingLastThreeSyllables(wordVariant: wordVariant)
 		let excludeLastTwoSyllablesPredicate = createPredicateExcludingLastTwoSyllables(wordVariant: wordVariant)
-		return concatenatePredicates(subpredicates: [matchingPredicate, excludeSameWordPredicate, excludeStressSyllablesPredicate, excludeLastThreeSyllablesPredicate, excludeLastTwoSyllablesPredicate])
+		return  concatenatePredicates(subpredicates: [matchingPredicate, excludeSameWordPredicate, excludeStressSyllablesPredicate, excludeLastThreeSyllablesPredicate, excludeLastTwoSyllablesPredicate])
 	}
 	
 	private class func concatenatePredicates(subpredicates: [NSPredicate?]) -> NSPredicate {

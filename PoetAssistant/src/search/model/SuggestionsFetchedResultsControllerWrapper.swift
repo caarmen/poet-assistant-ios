@@ -41,10 +41,10 @@ class SuggestionsFetchedResultsControllerWrapper {
 	func object(at: IndexPath) -> SuggestionListItem {
 		let sectionName = sections[at.section].name
 		if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY {
-			if at.row == 0 {
+			if at.row == ((historyFetchedResultsController?.sections?[at.section].numberOfObjects ?? 0)) {
 				return SuggestionListItem.clear_history
 			} else {
-				let historySuggestion = historyFetchedResultsController?.object(at: IndexPath(row: at.row - 1, section: 0))
+				let historySuggestion = historyFetchedResultsController?.object(at: IndexPath(row: at.row, section: 0))
 				return SuggestionListItem.history_suggestion(historySuggestion?.word ?? "")
 			}
 		} else {
@@ -58,16 +58,17 @@ class SuggestionsFetchedResultsControllerWrapper {
 		let historyContext = AppDelegate.persistentUserDbContainer.newBackgroundContext()
 		let dictionaryContext = AppDelegate.persistentDictionariesContainer.newBackgroundContext()
 		historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: queryText)
-		dictionaryFetchedResultsController = (queryText == nil || queryText!.isEmpty) ? nil :  Dictionary.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: queryText!)
+		dictionaryFetchedResultsController = (queryText == nil || queryText!.isEmpty) ? nil :  Suggestion.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: queryText!)
 		do {
 			try historyFetchedResultsController?.performFetch()
 			try dictionaryFetchedResultsController?.performFetch()
 			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
-				var historySearchObjects: [Any] = [SuggestionListItem.clear_history]
+				var historySearchObjects = [Any]()
 				historySearchObjects += historySearchSections[0].objects ?? []
+				historySearchObjects += [SuggestionListItem.clear_history]
 				sections.append(SectionInfo(
 					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
-					numberOfObjects: historySearchSections[0].numberOfObjects + 1,
+					numberOfObjects: historySearchObjects.count,
 					objects: historySearchObjects))
 			}
 			if let dictionarySearchSections = dictionaryFetchedResultsController?.sections, dictionarySearchSections.count == 1 {

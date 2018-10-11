@@ -47,6 +47,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			searchController?.searchBar.becomeFirstResponder()
 		}
 	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch (segue.identifier) {
 		case "EmbedRhymer":
@@ -150,13 +151,16 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	}
 	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 		searchContainer.isHidden = false
-		searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
+		if (searchBar.text == nil || searchBar.text!.isEmpty) {
+			searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
+		}
+		tabBarController?.tabBar.isHidden = true
 	}
 
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		searchContainer.isHidden = false
 	}
-	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		handleSelection(selection: searchBar.text)
 	}
 	func didDismissSearchController(_ searchController: UISearchController) {
@@ -165,6 +169,9 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	func didSelectSuggestion(suggestion: String) {
 		searchController?.searchBar.text = suggestion
 		handleSelection(selection: suggestion)
+	}
+	func didClearSearchHistory() {
+		handleSelection(selection:nil)
 	}
 	private func handleSelection(selection: String?) {
 		if (selection != nil && !selection!.isEmpty) {
@@ -176,5 +183,6 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchSuggestionsController?.clear()
 		searchContainer.isHidden = true
 		searchController?.isActive = false
+		tabBarController?.tabBar.isHidden = false
 	}
 }

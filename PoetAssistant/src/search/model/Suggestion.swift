@@ -39,6 +39,23 @@ class Suggestion: NSManagedObject {
 			cacheName: nil)
 	}
 	
+	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
+		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
+		request.propertiesToFetch = [#keyPath(Dictionary.word)]
+		request.resultType = .dictionaryResultType
+		request.returnsDistinctResults = true
+		request.sortDescriptors = [
+			NSSortDescriptor(key: #keyPath(Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+		if !queryText.isEmpty {
+			request.predicate = NSPredicate(format: "\(#keyPath(Dictionary.word)) beginswith[c] %@", queryText)
+		}
+		return NSFetchedResultsController(
+			fetchRequest: request,
+			managedObjectContext: context,
+			sectionNameKeyPath: nil,
+			cacheName: nil)
+	}
+	
 	class func addSuggestion(word: String) {
 		AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
 			let request: NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
