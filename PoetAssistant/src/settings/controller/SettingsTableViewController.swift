@@ -17,24 +17,19 @@ You should have received a copy of the GNU General Public License
 along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import UIKit
 
-import Foundation
+class SettingsTableViewController: UITableViewController {
 
-class SettingsObserver {
-	func register() {
-		NotificationCenter.default.addObserver(self, selector: #selector(settingChanged(notification:)), name: UserDefaults.didChangeNotification, object: nil)
-	}
+	@IBOutlet weak var switchSearchHistory: UISwitch!
 	
-	@objc func settingChanged(notification: NSNotification) {
-		if (!Settings.isSearchHistoryEnabled()) {
-			AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
-				do {
-					try Suggestion.clear(context:context)
-					print ("cleared search history")
-				} catch let error {
-					print ("Error clearing search history \(error)")
-				}
-			}
-		}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		switchSearchHistory.isOn = Settings.isSearchHistoryEnabled()
+	}
+
+	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
+		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
 	}
 }

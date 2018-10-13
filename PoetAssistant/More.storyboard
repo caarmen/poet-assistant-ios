@@ -11,7 +11,7 @@
         <!--More-->
         <scene sceneID="xRH-bK-PVU">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="kC3-ES-o76" userLabel="More" customClass="MoreViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="kC3-ES-o76" userLabel="More" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hHf-J0-9A1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                                 <constraint firstItem="JqE-Sg-JxF" firstAttribute="centerY" secondItem="RYh-9v-AlH" secondAttribute="centerY" id="hBx-Kl-vfv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="LXh-xF-4WQ" kind="show" id="lD5-fr-dk0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -73,18 +76,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="64B-pH-cGa"/>
-                    <connections>
-                        <outlet property="settingsCell" destination="l2A-h4-OuT" id="17H-M1-wF7"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tox-hF-mRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="-141.67916041979012"/>
         </scene>
-        <!--About View Controller-->
+        <!--About-->
         <scene sceneID="sFb-NQ-qtd">
             <objects>
-                <tableViewController id="hqh-0w-WYP" customClass="AboutViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="About" id="hqh-0w-WYP" customClass="AboutViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xfm-1o-6FE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,6 +464,71 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0j-RL-5f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2044" y="-279.31034482758622"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="kge-OP-eyn">
+            <objects>
+                <tableViewController title="Settings" id="LXh-xF-4WQ" userLabel="Settings" customClass="SettingsTableViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FSH-yo-BEu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="iiN-CS-dKJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KCf-wy-RUN" userLabel="Search History">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCf-wy-RUN" id="9Fw-BT-cv9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-eR-uCg">
+                                                    <rect key="frame" x="310" y="24.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="didClickSearchHistory:" destination="LXh-xF-4WQ" eventType="valueChanged" id="Zz1-UI-Cpy"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lj-6Q-TeV" userLabel="Title">
+                                                    <rect key="frame" x="16" y="8" width="119" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer search suggestions based on previous searches" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-r6-e63" userLabel="Summary">
+                                                    <rect key="frame" x="16" y="37" width="215.5" height="34"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Lj-6Q-TeV" firstAttribute="top" secondItem="9Fw-BT-cv9" secondAttribute="top" constant="8" id="5M3-CC-BMT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nc1-eR-uCg" secondAttribute="trailing" constant="16" id="5fz-Re-fDT"/>
+                                                <constraint firstItem="9Lj-6Q-TeV" firstAttribute="leading" secondItem="9Fw-BT-cv9" secondAttribute="leading" constant="16" id="AZj-ZK-JG1"/>
+                                                <constraint firstItem="Nc1-eR-uCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hMf-r6-e63" secondAttribute="trailing" constant="16" id="Hha-tm-e0n"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hMf-r6-e63" secondAttribute="bottom" constant="8" id="MzU-hh-bXI"/>
+                                                <constraint firstItem="hMf-r6-e63" firstAttribute="leading" secondItem="9Fw-BT-cv9" secondAttribute="leading" constant="16" id="NQA-vU-wOG"/>
+                                                <constraint firstItem="Nc1-eR-uCg" firstAttribute="centerY" secondItem="9Fw-BT-cv9" secondAttribute="centerY" id="a0w-Wl-ENt"/>
+                                                <constraint firstItem="hMf-r6-e63" firstAttribute="top" secondItem="9Lj-6Q-TeV" secondAttribute="bottom" constant="8" id="aYs-r5-uKn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="LXh-xF-4WQ" id="Vcz-Gg-PiP"/>
+                            <outlet property="delegate" destination="LXh-xF-4WQ" id="xJD-mP-lHs"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="switchSearchHistory" destination="Nc1-eR-uCg" id="iiw-sX-UuT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05l-hL-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="388"/>
         </scene>
     </scenes>
     <resources>
