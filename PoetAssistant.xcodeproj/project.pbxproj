@@ -44,6 +44,7 @@
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
+		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
 		4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */; };
 		4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */; };
 		4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */; };
@@ -105,6 +106,7 @@
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
+		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
 		4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
 		4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTest.swift; sourceTree = "<group>"; };
 		4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				4FFBA5BC216A540B00AD3AD6 /* model */,
 				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
+				4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */,
 			);
 			path = composer;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
 				4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
+				4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,

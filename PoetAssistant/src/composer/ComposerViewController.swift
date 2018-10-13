@@ -34,6 +34,12 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	@IBOutlet weak var wordCount: UILabel!
 	@IBOutlet weak var hint: UILabel!
 	@IBOutlet weak var placeholderHeight: NSLayoutConstraint!
+
+	internal let menuItemRhymer = UIMenuItem(title: NSLocalizedString("rhymer", comment:""), action: #selector(menuItemRhymerSelected))
+	internal let menuItemThesaurus = UIMenuItem(title: NSLocalizedString("thesaurus", comment:""), action: #selector(menuItemThesaurusSelected))
+	internal let menuItemDictionary = UIMenuItem(title: NSLocalizedString("dictionary", comment:""), action: #selector(menuItemDictionarySelected))
+	var rtdDelegate : RTDDelegate? = nil
+
 	@IBAction func onShare(_ sender: Any) {
 		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
 	}
