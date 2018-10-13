@@ -104,13 +104,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="height" constant="24" id="Yig-I6-Gnl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR9-9S-Rws">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR9-9S-Rws">
                                                     <rect key="frame" x="48" y="5.5" width="97" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Source code"/>
-                                                    <connections>
-                                                        <action selector="didClickSourceCode:" destination="hqh-0w-WYP" eventType="touchUpInside" id="IPN-m4-Lsl"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -139,13 +136,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="width" constant="24" id="ov6-NN-HIh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G20-BU-GR8">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G20-BU-GR8">
                                                     <rect key="frame" x="48" y="5.5" width="95" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Report bugs"/>
-                                                    <connections>
-                                                        <action selector="didClickReportBugs:" destination="hqh-0w-WYP" eventType="touchUpInside" id="MkJ-YG-hzJ"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -159,7 +153,7 @@ https://rmen.ca</string>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="centerY" secondItem="ydH-N6-nVT" secondAttribute="centerY" id="k1m-YP-r3Y"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pXu-CU-tzy" userLabel="Legal">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pXu-CU-tzy" userLabel="Legal">
                                         <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pXu-CU-tzy" id="Ntf-rb-hVx">
@@ -207,13 +201,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="height" constant="24" id="woL-b8-3j8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePr-q8-0EM">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePr-q8-0EM">
                                                     <rect key="frame" x="64" y="5.5" width="106" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Privacy Policy"/>
-                                                    <connections>
-                                                        <action selector="didClickPrivacyPolicy:" destination="hqh-0w-WYP" eventType="touchUpInside" id="pcQ-Cf-BzC"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -242,13 +233,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="height" constant="24" id="nVI-Rl-5H5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klw-xD-iyd">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klw-xD-iyd">
                                                     <rect key="frame" x="64" y="5.5" width="240" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Poet Assistant License (GPLv3)"/>
-                                                    <connections>
-                                                        <action selector="didClickPoetAssistantLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="Oas-4n-PrO"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -277,13 +265,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="height" constant="24" id="K9k-Z5-cTN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-9s-Cfh">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-9s-Cfh">
                                                     <rect key="frame" x="64" y="5.5" width="255" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="CMU Rhyming Dictionary License"/>
-                                                    <connections>
-                                                        <action selector="didClickRhymerLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="Ryn-mX-8LT"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -312,13 +297,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="width" constant="24" id="wIt-Bw-g7G"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohy-AA-a0p">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohy-AA-a0p">
                                                     <rect key="frame" x="64" y="5.5" width="217" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="WordNet Thesaurus License"/>
-                                                    <connections>
-                                                        <action selector="didClickThesaurusLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="wDg-3g-OgV"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -347,13 +329,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="height" constant="24" id="z5M-Og-uXk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-mM-hmh">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-mM-hmh">
                                                     <rect key="frame" x="64" y="5.5" width="214" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="WordNet Dictionary License"/>
-                                                    <connections>
-                                                        <action selector="didClickDictionaryLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="S7Q-35-RRx"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -382,13 +361,10 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="width" constant="24" id="idE-1Y-4Uq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-EE-8bf">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-EE-8bf">
                                                     <rect key="frame" x="64" y="5.5" width="205" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Porter stemming algorithm"/>
-                                                    <connections>
-                                                        <action selector="didClickPorterStemmer:" destination="hqh-0w-WYP" eventType="touchUpInside" id="zp4-oi-URj"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -410,6 +386,16 @@ https://rmen.ca</string>
                             <outlet property="delegate" destination="hqh-0w-WYP" id="1Bp-eF-eGJ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cellDictionaryLicense" destination="OWO-i7-DLM" id="2Yb-ni-YTF"/>
+                        <outlet property="cellPoetAssistantLicense" destination="qER-0Z-1Ou" id="pJC-fS-rUN"/>
+                        <outlet property="cellPorterStemmer" destination="OxR-il-buW" id="0tE-hs-UOh"/>
+                        <outlet property="cellPrivacyPolicy" destination="PNN-u8-0j4" id="MFH-ae-JmJ"/>
+                        <outlet property="cellReportBugs" destination="ydH-N6-nVT" id="jrS-dm-oP4"/>
+                        <outlet property="cellRhymerLicense" destination="pPs-4q-fbL" id="KH9-Ik-mXN"/>
+                        <outlet property="cellSourceCode" destination="cgw-cQ-TZa" id="7YC-zr-qi4"/>
+                        <outlet property="cellThesaurusLicense" destination="ipH-qD-fw6" id="LAs-wa-nNN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0j-RL-5f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
