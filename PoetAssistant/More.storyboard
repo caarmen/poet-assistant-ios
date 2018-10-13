@@ -89,18 +89,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poet Assistant v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZk-HA-0nu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <sections>
                             <tableViewSection id="Kqi-Rs-vio">
                                 <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="P7d-Gt-pn6" userLabel="Porter Stemmer">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P7d-Gt-pn6" id="m2y-PU-hZJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poet Assistant v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZk-HA-0nu">
+                                                    <rect key="frame" x="0.0" y="4" width="375" height="36"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YZk-HA-0nu" firstAttribute="leading" secondItem="m2y-PU-hZJ" secondAttribute="leading" id="P3j-xI-wob"/>
+                                                <constraint firstAttribute="trailing" secondItem="YZk-HA-0nu" secondAttribute="trailing" id="VhV-EE-chP"/>
+                                                <constraint firstItem="YZk-HA-0nu" firstAttribute="top" secondItem="m2y-PU-hZJ" secondAttribute="top" constant="4" id="krn-jb-Txo"/>
+                                                <constraint firstAttribute="bottom" secondItem="YZk-HA-0nu" secondAttribute="bottom" constant="4" id="t13-RV-Htl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YLb-nd-Jxu">
-                                        <rect key="frame" x="0.0" y="36" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YLb-nd-Jxu" id="qOU-w2-x8G">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -121,7 +136,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Yk-hg-Gjv">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Yk-hg-Gjv" id="9DB-hz-m7K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -148,7 +163,7 @@ https://rmen.ca</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="cgw-cQ-TZa" userLabel="Source">
-                                        <rect key="frame" x="0.0" y="124" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="132" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgw-cQ-TZa" id="LBB-YP-Iyv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
@@ -184,7 +199,7 @@ https://github.com/caarmen/poet-assistant-ios</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="ydH-N6-nVT" userLabel="Bug">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="196" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydH-N6-nVT" id="gRc-QL-Aoj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
@@ -220,7 +235,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="pXu-CU-tzy" userLabel="Legal">
-                                        <rect key="frame" x="0.0" y="252" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="260" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pXu-CU-tzy" id="Ntf-rb-hVx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -255,7 +270,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PNN-u8-0j4" userLabel="Privacy Policy">
-                                        <rect key="frame" x="0.0" y="300" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNN-u8-0j4" id="zro-4t-P62">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -288,7 +303,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qER-0Z-1Ou" userLabel="Poet Assistant Licence">
-                                        <rect key="frame" x="0.0" y="344" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qER-0Z-1Ou" id="vu8-ML-e3S">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -321,7 +336,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pPs-4q-fbL" userLabel="Rhymer License">
-                                        <rect key="frame" x="0.0" y="388" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="396" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pPs-4q-fbL" id="637-24-3pM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -354,7 +369,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ipH-qD-fw6" userLabel="Thesaurus License">
-                                        <rect key="frame" x="0.0" y="432" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ipH-qD-fw6" id="ztG-6y-45F">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -387,7 +402,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OWO-i7-DLM" userLabel="Dictionary License">
-                                        <rect key="frame" x="0.0" y="476" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="484" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OWO-i7-DLM" id="ZLi-zK-pfi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -420,7 +435,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OxR-il-buW" userLabel="Porter Stemmer">
-                                        <rect key="frame" x="0.0" y="520" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="528" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OxR-il-buW" id="WI2-04-t1z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
