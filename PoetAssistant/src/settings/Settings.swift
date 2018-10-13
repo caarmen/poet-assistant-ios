@@ -56,4 +56,8 @@ class Settings {
 		userDefaults.synchronize()
 	}
 	
+	class func isSearchHistoryEnabled() ->Bool {
+		let userDefaults = UserDefaults.init()
+		return userDefaults.bool(forKey: "search_history_enabled")
+	}
 }

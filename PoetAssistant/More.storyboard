@@ -11,7 +11,7 @@
         <!--More-->
         <scene sceneID="xRH-bK-PVU">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="kC3-ES-o76" userLabel="More" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="kC3-ES-o76" userLabel="More" customClass="MoreViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hHf-J0-9A1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +73,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="64B-pH-cGa"/>
+                    <connections>
+                        <outlet property="settingsCell" destination="l2A-h4-OuT" id="17H-M1-wF7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tox-hF-mRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
