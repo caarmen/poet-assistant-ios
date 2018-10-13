@@ -2,9 +2,6 @@
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
 "1Wv-H5-jYT.title" = "Settings";
 
-/* Class = "UITextView"; text = "Legal:"; ObjectID = "1XD-it-8U2"; */
-"1XD-it-8U2.text" = "Legal:";
-
 /* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
 "9Lj-6Q-TeV.text" = "Search History";
 
@@ -31,6 +28,9 @@
 
 /* Class = "UIButton"; normalTitle = "WordNet Dictionary License"; ObjectID = "dd9-mM-hmh"; */
 "dd9-mM-hmh.normalTitle" = "WordNet Dictionary License";
+
+/* Class = "UILabel"; text = "Legal"; ObjectID = "dmh-1O-rQw"; */
+"dmh-1O-rQw.text" = "Legal";
 
 /* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "ePr-q8-0EM"; */
 "ePr-q8-0EM.normalTitle" = "Privacy Policy";

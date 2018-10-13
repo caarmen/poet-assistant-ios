@@ -174,25 +174,22 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="width" constant="24" id="ewa-51-ZFW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Legal:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-it-8U2">
-                                                    <rect key="frame" x="48" y="5" width="311" height="34"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="G22-7a-rzx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-1O-rQw">
+                                                    <rect key="frame" x="48" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1XD-it-8U2" firstAttribute="centerY" secondItem="YZC-bj-eX3" secondAttribute="centerY" id="D85-DQ-SZi"/>
-                                                <constraint firstItem="1XD-it-8U2" firstAttribute="leading" secondItem="YZC-bj-eX3" secondAttribute="trailing" constant="8" id="Wsj-pi-rng"/>
+                                                <constraint firstItem="dmh-1O-rQw" firstAttribute="centerY" secondItem="Ntf-rb-hVx" secondAttribute="centerY" id="0h3-vO-5h5"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dmh-1O-rQw" secondAttribute="trailing" constant="16" id="3GN-RU-X1x"/>
+                                                <constraint firstItem="dmh-1O-rQw" firstAttribute="leading" secondItem="YZC-bj-eX3" secondAttribute="trailing" constant="8" id="Ngy-Zn-Rt9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="YZC-bj-eX3" firstAttribute="leading" secondItem="pXu-CU-tzy" secondAttribute="leadingMargin" id="8dm-dj-xA4"/>
                                             <constraint firstItem="YZC-bj-eX3" firstAttribute="centerY" secondItem="pXu-CU-tzy" secondAttribute="centerY" id="JFN-u8-yYJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="1XD-it-8U2" secondAttribute="trailing" constant="16" id="e9K-zO-v44"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PNN-u8-0j4" userLabel="Privacy Policy">
