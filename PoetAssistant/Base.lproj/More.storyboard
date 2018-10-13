@@ -98,7 +98,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_code" translatesAutoresizingMaskIntoConstraints="NO" id="on2-qn-fkM">
                                                     <rect key="frame" x="16" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="Kfj-gu-j0c"/>
                                                         <constraint firstAttribute="height" constant="24" id="Yig-I6-Gnl"/>
@@ -133,7 +133,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="QPq-LE-7km">
                                                     <rect key="frame" x="16" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="2gr-CE-2Km"/>
                                                         <constraint firstAttribute="width" constant="24" id="ov6-NN-HIh"/>
@@ -168,7 +168,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_legal" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-bj-eX3">
                                                     <rect key="frame" x="16" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="Rz1-eI-QdT"/>
                                                         <constraint firstAttribute="width" constant="24" id="ewa-51-ZFW"/>
@@ -201,7 +201,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-SW-RWv">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="KNi-Ft-rDQ"/>
                                                         <constraint firstAttribute="height" constant="24" id="woL-b8-3j8"/>
@@ -236,7 +236,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="mpl-UF-d0z">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="ck1-Y2-aks"/>
                                                         <constraint firstAttribute="height" constant="24" id="nVI-Rl-5H5"/>
@@ -271,7 +271,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="FX5-0A-jti">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="I8o-8h-G7N"/>
                                                         <constraint firstAttribute="height" constant="24" id="K9k-Z5-cTN"/>
@@ -306,7 +306,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="sKh-dS-VpO">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="ey5-ly-KAs"/>
                                                         <constraint firstAttribute="width" constant="24" id="wIt-Bw-g7G"/>
@@ -341,7 +341,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="wud-NJ-Vxm">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="azQ-kQ-utZ"/>
                                                         <constraint firstAttribute="height" constant="24" id="z5M-Og-uXk"/>
@@ -376,7 +376,7 @@ https://rmen.ca</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-y1-O4l">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="Ufa-aW-0rk"/>
                                                         <constraint firstAttribute="width" constant="24" id="idE-1Y-4Uq"/>
