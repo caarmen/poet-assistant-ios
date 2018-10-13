@@ -10,6 +10,12 @@ import UIKit
 
 class AboutViewController: UITableViewController {
 
+	@IBAction func didClickSourceCode(_ sender: UIButton) {
+		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios")
+	}
+	@IBAction func didClickReportBugs(_ sender: UIButton) {
+		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/issues")
+	}
 	@IBAction func didClickPrivacyPolicy(_ sender: UIButton) {
 		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/PRIVACY.md")
 	}

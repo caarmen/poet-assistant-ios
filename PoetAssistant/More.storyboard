@@ -89,105 +89,104 @@ https://rmen.ca</string>
                                             <constraint firstItem="xd3-Pv-Zat" firstAttribute="top" secondItem="9Yk-hg-Gjv" secondAttribute="top" id="rCU-Tj-DCV"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="cgw-cQ-TZa" userLabel="Source">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cgw-cQ-TZa" userLabel="Source">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgw-cQ-TZa" id="LBB-YP-Iyv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_code" translatesAutoresizingMaskIntoConstraints="NO" id="on2-qn-fkM">
-                                                    <rect key="frame" x="16" y="20" width="24" height="24"/>
+                                                    <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="Kfj-gu-j0c"/>
                                                         <constraint firstAttribute="height" constant="24" id="Yig-I6-Gnl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mwj-G0-3Ux">
-                                                    <rect key="frame" x="40" y="0.0" width="319" height="86.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Source code:
-https://github.com/caarmen/poet-assistant-ios</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR9-9S-Rws">
+                                                    <rect key="frame" x="48" y="5.5" width="97" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <state key="normal" title="Source code"/>
+                                                    <connections>
+                                                        <action selector="didClickSourceCode:" destination="hqh-0w-WYP" eventType="touchUpInside" id="IPN-m4-Lsl"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mwj-G0-3Ux" firstAttribute="leading" secondItem="on2-qn-fkM" secondAttribute="trailing" id="qsp-Zs-Xra"/>
+                                                <constraint firstItem="gR9-9S-Rws" firstAttribute="leading" secondItem="on2-qn-fkM" secondAttribute="trailing" constant="8" id="01R-bl-eev"/>
+                                                <constraint firstItem="gR9-9S-Rws" firstAttribute="centerY" secondItem="LBB-YP-Iyv" secondAttribute="centerY" id="BlA-gm-4Ip"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gR9-9S-Rws" secondAttribute="trailing" constant="16" id="puf-xB-35U"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="centerY" secondItem="cgw-cQ-TZa" secondAttribute="centerY" id="F18-ao-hnW"/>
-                                            <constraint firstAttribute="bottom" secondItem="mwj-G0-3Ux" secondAttribute="bottom" constant="-22.5" id="ZzX-3t-ZfG"/>
-                                            <constraint firstItem="mwj-G0-3Ux" firstAttribute="top" secondItem="cgw-cQ-TZa" secondAttribute="top" id="cAy-vp-011"/>
-                                            <constraint firstAttribute="trailing" secondItem="mwj-G0-3Ux" secondAttribute="trailing" constant="16" id="hV9-4x-dis"/>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="leading" secondItem="cgw-cQ-TZa" secondAttribute="leadingMargin" id="vsI-mZ-ehh"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="ydH-N6-nVT" userLabel="Bug">
-                                        <rect key="frame" x="0.0" y="196" width="375" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ydH-N6-nVT" userLabel="Bug">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydH-N6-nVT" id="gRc-QL-Aoj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bug" translatesAutoresizingMaskIntoConstraints="NO" id="QPq-LE-7km">
-                                                    <rect key="frame" x="16" y="20" width="24" height="24"/>
+                                                    <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="2gr-CE-2Km"/>
                                                         <constraint firstAttribute="width" constant="24" id="ov6-NN-HIh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAT-oN-Hu1">
-                                                    <rect key="frame" x="40" y="0.0" width="319" height="64"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Report bugs:
-https://github.com/caarmen/poet-assistant-ios/issues</string>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="url"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G20-BU-GR8">
+                                                    <rect key="frame" x="48" y="5.5" width="95" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <state key="normal" title="Report bugs"/>
+                                                    <connections>
+                                                        <action selector="didClickReportBugs:" destination="hqh-0w-WYP" eventType="touchUpInside" id="MkJ-YG-hzJ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XAT-oN-Hu1" firstAttribute="leading" secondItem="QPq-LE-7km" secondAttribute="trailing" id="Mzt-ry-Rjj"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G20-BU-GR8" secondAttribute="trailing" constant="16" id="1HA-SW-VjO"/>
+                                                <constraint firstItem="G20-BU-GR8" firstAttribute="centerY" secondItem="gRc-QL-Aoj" secondAttribute="centerY" id="C7z-Gc-tbV"/>
+                                                <constraint firstItem="G20-BU-GR8" firstAttribute="leading" secondItem="QPq-LE-7km" secondAttribute="trailing" constant="8" id="Naf-Ei-OdX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="XAT-oN-Hu1" secondAttribute="bottom" id="40H-9T-Yiy"/>
-                                            <constraint firstItem="XAT-oN-Hu1" firstAttribute="top" secondItem="ydH-N6-nVT" secondAttribute="top" id="EoQ-BP-fgD"/>
-                                            <constraint firstAttribute="trailing" secondItem="XAT-oN-Hu1" secondAttribute="trailing" constant="16" id="PQr-WQ-aeU"/>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="leading" secondItem="ydH-N6-nVT" secondAttribute="leadingMargin" id="elj-e6-oLq"/>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="centerY" secondItem="ydH-N6-nVT" secondAttribute="centerY" id="k1m-YP-r3Y"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="pXu-CU-tzy" userLabel="Legal">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="48"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pXu-CU-tzy" userLabel="Legal">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pXu-CU-tzy" id="Ntf-rb-hVx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_legal" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-bj-eX3">
-                                                    <rect key="frame" x="16" y="12" width="24" height="24"/>
+                                                    <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="Rz1-eI-QdT"/>
                                                         <constraint firstAttribute="width" constant="24" id="ewa-51-ZFW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Legal:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-it-8U2">
-                                                    <rect key="frame" x="40" y="7" width="319" height="34"/>
+                                                    <rect key="frame" x="48" y="5" width="311" height="34"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="G22-7a-rzx"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1XD-it-8U2" firstAttribute="centerY" secondItem="YZC-bj-eX3" secondAttribute="centerY" id="D85-DQ-SZi"/>
-                                                <constraint firstItem="1XD-it-8U2" firstAttribute="leading" secondItem="YZC-bj-eX3" secondAttribute="trailing" id="Wsj-pi-rng"/>
+                                                <constraint firstItem="1XD-it-8U2" firstAttribute="leading" secondItem="YZC-bj-eX3" secondAttribute="trailing" constant="8" id="Wsj-pi-rng"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -197,7 +196,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PNN-u8-0j4" userLabel="Privacy Policy">
-                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNN-u8-0j4" id="zro-4t-P62">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -205,14 +204,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-SW-RWv">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="KNi-Ft-rDQ"/>
                                                         <constraint firstAttribute="height" constant="24" id="woL-b8-3j8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePr-q8-0EM">
-                                                    <rect key="frame" x="64" y="8" width="84" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="106" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Privacy Policy"/>
                                                     <connections>
                                                         <action selector="didClickPrivacyPolicy:" destination="hqh-0w-WYP" eventType="touchUpInside" id="pcQ-Cf-BzC"/>
@@ -230,7 +230,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qER-0Z-1Ou" userLabel="Poet Assistant Licence">
-                                        <rect key="frame" x="0.0" y="352" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qER-0Z-1Ou" id="vu8-ML-e3S">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -238,14 +238,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="mpl-UF-d0z">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="ck1-Y2-aks"/>
                                                         <constraint firstAttribute="height" constant="24" id="nVI-Rl-5H5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klw-xD-iyd">
-                                                    <rect key="frame" x="64" y="8" width="190" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="240" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Poet Assistant License (GPLv3)"/>
                                                     <connections>
                                                         <action selector="didClickPoetAssistantLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="Oas-4n-PrO"/>
@@ -263,7 +264,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pPs-4q-fbL" userLabel="Rhymer License">
-                                        <rect key="frame" x="0.0" y="396" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pPs-4q-fbL" id="637-24-3pM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -271,14 +272,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="FX5-0A-jti">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="I8o-8h-G7N"/>
                                                         <constraint firstAttribute="height" constant="24" id="K9k-Z5-cTN"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-9s-Cfh">
-                                                    <rect key="frame" x="64" y="8" width="202" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="255" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="CMU Rhyming Dictionary License"/>
                                                     <connections>
                                                         <action selector="didClickRhymerLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="Ryn-mX-8LT"/>
@@ -296,7 +298,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ipH-qD-fw6" userLabel="Thesaurus License">
-                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="396" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ipH-qD-fw6" id="ztG-6y-45F">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -304,14 +306,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="sKh-dS-VpO">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="ey5-ly-KAs"/>
                                                         <constraint firstAttribute="width" constant="24" id="wIt-Bw-g7G"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohy-AA-a0p">
-                                                    <rect key="frame" x="64" y="8" width="172" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="217" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="WordNet Thesaurus License"/>
                                                     <connections>
                                                         <action selector="didClickThesaurusLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="wDg-3g-OgV"/>
@@ -329,7 +332,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OWO-i7-DLM" userLabel="Dictionary License">
-                                        <rect key="frame" x="0.0" y="484" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OWO-i7-DLM" id="ZLi-zK-pfi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -337,14 +340,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="wud-NJ-Vxm">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="azQ-kQ-utZ"/>
                                                         <constraint firstAttribute="height" constant="24" id="z5M-Og-uXk"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-mM-hmh">
-                                                    <rect key="frame" x="64" y="8" width="170" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="214" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="WordNet Dictionary License"/>
                                                     <connections>
                                                         <action selector="didClickDictionaryLicense:" destination="hqh-0w-WYP" eventType="touchUpInside" id="S7Q-35-RRx"/>
@@ -362,7 +366,7 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OxR-il-buW" userLabel="Porter Stemmer">
-                                        <rect key="frame" x="0.0" y="528" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="484" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OxR-il-buW" id="WI2-04-t1z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -370,14 +374,15 @@ https://github.com/caarmen/poet-assistant-ios/issues</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-y1-O4l">
                                                     <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="Ufa-aW-0rk"/>
                                                         <constraint firstAttribute="width" constant="24" id="idE-1Y-4Uq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-EE-8bf">
-                                                    <rect key="frame" x="64" y="8" width="162" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <rect key="frame" x="64" y="5.5" width="205" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Porter stemming algorithm"/>
                                                     <connections>
                                                         <action selector="didClickPorterStemmer:" destination="hqh-0w-WYP" eventType="touchUpInside" id="zp4-oi-URj"/>
