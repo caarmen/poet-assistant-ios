@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="1291.3732394366198"/>
+            <point key="canvasLocation" x="1197" y="1277"/>
         </scene>
         <!--Thesaurus View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843.125" y="1290.3169014084508"/>
+            <point key="canvasLocation" x="1880" y="1277"/>
         </scene>
         <!--Dictionary View Controller-->
         <scene sceneID="4HN-S3-2Hx">
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wg5-Ai-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="1290.3169014084508"/>
+            <point key="canvasLocation" x="2553" y="1277"/>
         </scene>
         <!--Composer-->
         <scene sceneID="lvC-UM-TLK">
@@ -507,11 +507,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Composer" image="ic_composer" selectedImage="ic_composer" id="GNE-fo-Lm9"/>
                     <navigationItem key="navigationItem" id="HFJ-vb-k8L">
-                        <barButtonItem key="rightBarButtonItem" image="ic_settings" id="plG-zv-d7B" userLabel="More">
-                            <connections>
-                                <segue destination="JrE-UA-3c5" kind="show" id="vmq-X0-Ib6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_settings" id="plG-zv-d7B" userLabel="More"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -525,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tad-CJ-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58.125" y="1065.8450704225352"/>
+            <point key="canvasLocation" x="24" y="212"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="DJi-hg-4dj">
@@ -634,7 +630,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="34"/>
+            <point key="canvasLocation" x="995" y="-829"/>
         </scene>
         <!--More-->
         <scene sceneID="SLz-ax-vTY">
@@ -644,7 +640,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktW-tB-IdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="-613"/>
+            <point key="canvasLocation" x="1764" y="-715"/>
         </scene>
         <!--Search Suggestions Controller-->
         <scene sceneID="Jer-rA-uim">
@@ -681,7 +677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JT-QH-dIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836.25" y="1160.3873239436621"/>
+            <point key="canvasLocation" x="3227" y="1290"/>
         </scene>
         <!--Dictionaries-->
         <scene sceneID="QmK-RE-QOQ">
@@ -718,8 +714,5 @@
         <image name="ic_share" width="36" height="36"/>
         <image name="ic_thesaurus" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="f9G-Dx-a3S"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

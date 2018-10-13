@@ -9,37 +9,39 @@
 import UIKit
 
 class AboutViewController: UITableViewController {
-
-	@IBAction func didClickSourceCode(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios")
-	}
-	@IBAction func didClickReportBugs(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/issues")
-	}
-	@IBAction func didClickPrivacyPolicy(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/PRIVACY.md")
-	}
-
-	@IBAction func didClickPoetAssistantLicense(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE.txt")
-	}
 	
-	@IBAction func didClickRhymerLicense(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-rhyming-dictionary.txt")
-	}
+	@IBOutlet weak var cellSourceCode: UITableViewCell!
 	
-	@IBAction func didClickThesaurusLicense(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-thesaurus-wordnet.txt")
-	}
-
-	@IBAction func didClickDictionaryLicense(_ sender: UIButton) {
-		openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-dictionary-wordnet.txt")
-	}
+	@IBOutlet weak var cellReportBugs: UITableViewCell!
 	
-	@IBAction func didClickPorterStemmer(_ sender: UIButton) {
-		openUrl(urlString: "https://tartarus.org/martin/PorterStemmer/")
-	}
+	@IBOutlet weak var cellPrivacyPolicy: UITableViewCell!
+	
+	@IBOutlet weak var cellPoetAssistantLicense: UITableViewCell!
+	
+	@IBOutlet weak var cellRhymerLicense: UITableViewCell!
+	
+	@IBOutlet weak var cellThesaurusLicense: UITableViewCell!
+	
+	@IBOutlet weak var cellDictionaryLicense: UITableViewCell!
+	
+	@IBOutlet weak var cellPorterStemmer: UITableViewCell!
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let selectedCell = tableView.cellForRow(at: indexPath)
+		switch(selectedCell) {
+		case cellSourceCode: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios")
+		case cellReportBugs: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/issues")
+		case cellPrivacyPolicy: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/PRIVACY.md")
+		case cellPoetAssistantLicense: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE.txt")
+		case cellRhymerLicense: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-rhyming-dictionary.txt")
+		case cellThesaurusLicense: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-thesaurus-wordnet.txt")
+		case cellDictionaryLicense: openUrl(urlString: "https://github.com/caarmen/poet-assistant-ios/blob/master/LICENSE-dictionary-wordnet.txt")
+		case cellPorterStemmer: openUrl(urlString: "https://tartarus.org/martin/PorterStemmer/")
+		default: break
+		}
+		tableView.deselectRow(at: indexPath, animated: true)
 
+	}
 	private func openUrl(urlString: String) {
 		if let url = URL(string: urlString) {
 			UIApplication.shared.open(url, options:[:], completionHandler:nil)
