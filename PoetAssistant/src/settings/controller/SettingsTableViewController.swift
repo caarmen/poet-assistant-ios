@@ -32,4 +32,8 @@ class SettingsTableViewController: UITableViewController {
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
 	}
+
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return UITableView.automaticDimension
+	}
 }

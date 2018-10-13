@@ -25,10 +25,7 @@ class AboutViewController: UITableViewController {
 	@IBOutlet weak var cellDictionaryLicense: UITableViewCell!
 	
 	@IBOutlet weak var cellPorterStemmer: UITableViewCell!
-	/*
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableView.automaticDimension
-	}*/
+
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let selectedCell = tableView.cellForRow(at: indexPath)
 		switch(selectedCell) {

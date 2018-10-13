@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7Ux-0q-Psx"/>
                         <sections>
                             <tableViewSection id="Kqi-Rs-vio">
                                 <cells>
@@ -443,7 +445,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer search suggestions based on previous searches" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-r6-e63" userLabel="Summary">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer search suggestions based on previous searches" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-r6-e63" userLabel="Summary">
                                                     <rect key="frame" x="16" y="37" width="215.5" height="34"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="textColor"/>
@@ -460,6 +462,7 @@
                                                 <constraint firstItem="Nc1-eR-uCg" firstAttribute="centerY" secondItem="9Fw-BT-cv9" secondAttribute="centerY" id="a0w-Wl-ENt"/>
                                                 <constraint firstItem="hMf-r6-e63" firstAttribute="top" secondItem="9Lj-6Q-TeV" secondAttribute="bottom" constant="8" id="aYs-r5-uKn"/>
                                                 <constraint firstItem="Nc1-eR-uCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Lj-6Q-TeV" secondAttribute="trailing" constant="16" id="c3Z-tX-Elf"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hMf-r6-e63" secondAttribute="trailing" constant="80" id="pOl-Re-6u5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
