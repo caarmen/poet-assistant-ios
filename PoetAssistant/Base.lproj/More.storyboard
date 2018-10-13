@@ -62,32 +62,36 @@
                                             <constraint firstItem="MIN-pK-fwY" firstAttribute="leading" secondItem="YLb-nd-Jxu" secondAttribute="leadingMargin" id="aLj-oh-ZQu"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Yk-hg-Gjv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" id="9Yk-hg-Gjv">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Yk-hg-Gjv" id="9DB-hz-m7K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-Pv-Zat">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="c@rmen.ca" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfS-Pu-ub4" userLabel="Email">
+                                                    <rect key="frame" x="281" y="5" width="78" height="34"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">c@rmen.ca
-https://rmen.ca</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="https://rmen.ca" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-Pv-Zat" userLabel="Website">
+                                                    <rect key="frame" x="16" y="5" width="103" height="34"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xd3-Pv-Zat" firstAttribute="trailing" secondItem="9DB-hz-m7K" secondAttribute="trailingMargin" id="cca-uq-gGM"/>
+                                                <constraint firstItem="QfS-Pu-ub4" firstAttribute="centerY" secondItem="9DB-hz-m7K" secondAttribute="centerY" id="1aO-oK-4hB"/>
+                                                <constraint firstItem="xd3-Pv-Zat" firstAttribute="leading" secondItem="9DB-hz-m7K" secondAttribute="leading" constant="16" id="2tH-TW-DdE"/>
+                                                <constraint firstItem="QfS-Pu-ub4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xd3-Pv-Zat" secondAttribute="trailing" constant="16" id="3Jg-cQ-Wrb"/>
+                                                <constraint firstItem="xd3-Pv-Zat" firstAttribute="centerY" secondItem="9DB-hz-m7K" secondAttribute="centerY" id="gZp-x8-SOj"/>
+                                                <constraint firstAttribute="trailing" secondItem="QfS-Pu-ub4" secondAttribute="trailing" constant="16" id="uqu-Xh-A79"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="xd3-Pv-Zat" secondAttribute="bottom" id="5AM-9k-7ia"/>
-                                            <constraint firstItem="xd3-Pv-Zat" firstAttribute="leading" secondItem="9Yk-hg-Gjv" secondAttribute="leadingMargin" id="FVU-NC-tyu"/>
-                                            <constraint firstItem="xd3-Pv-Zat" firstAttribute="top" secondItem="9Yk-hg-Gjv" secondAttribute="top" id="rCU-Tj-DCV"/>
-                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cgw-cQ-TZa" userLabel="Source">
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
@@ -172,7 +176,7 @@ https://rmen.ca</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-1O-rQw">
                                                     <rect key="frame" x="48" y="11.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -302,8 +306,8 @@ https://rmen.ca</string>
                                                         <constraint firstAttribute="width" constant="24" id="wIt-Bw-g7G"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WordNet Thesaurus License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5V-oQ-R4a">
-                                                    <rect key="frame" x="64" y="13" width="217" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WordNet Thesaurus License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5V-oQ-R4a">
+                                                    <rect key="frame" x="64" y="12" width="217" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -407,7 +411,7 @@ https://rmen.ca</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0j-RL-5f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="387"/>
+            <point key="canvasLocation" x="3836" y="386.35682158920542"/>
         </scene>
         <!--Settings-->
         <scene sceneID="kge-OP-eyn">
