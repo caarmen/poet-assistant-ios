@@ -19,12 +19,15 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 import CoreData
+import AVFoundation
 
 /**
 Displays the search results for a given query
 */
 class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	
+	private let speechSynthesizer = AVSpeechSynthesizer()
+
+	@IBOutlet weak var viewResultHeader: UIView!
 	@IBOutlet weak var labelQuery: UILabel!
 	@IBOutlet weak var tableView: UITableView!{
 		didSet {
@@ -55,7 +58,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		} else {
 			emptyText.isHidden = false
 			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
-			labelQuery.isHidden = true
+			viewResultHeader.isHidden = true
 		}
 	}
 
@@ -64,16 +67,30 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		tableView.reloadData()
 		if (tableView.visibleCells.isEmpty) {
 			emptyText.isHidden = false
-			labelQuery.isHidden = true
+			viewResultHeader.isHidden = true
 			emptyText.text = getEmptyText(query: query)
 		} else {
 			emptyText.isHidden = true
-			labelQuery.isHidden = false
+			viewResultHeader.isHidden = false
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UITableView.automaticDimension
+	}
+	@IBAction func didClickLookupQueryWord(_ sender: UIButton) {
+		//let vcLookup = UIReferenceLibraryViewController(term:query)
+		//vcLookup.modalPresentationStyle = .popover
+		//present(vcLookup, animated: true, completion: nil)
+		if let urlString = "https://www.google.com/search?q=\(query)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+			if let url = URL(string: urlString) {
+				UIApplication.shared.open(url, options:[:])
+			}
+		}
+	}
+
+	@IBAction func didClickPlayQueryWord(_ sender: UIButton) {
+		speechSynthesizer.speak(AVSpeechUtterance(string: query))
 	}
 	
 	//--------------------------------------------
