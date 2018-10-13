@@ -220,6 +220,7 @@ https://rmen.ca</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ePr-q8-0EM" secondAttribute="trailing" constant="16" id="4sI-kT-JRR"/>
                                                 <constraint firstItem="ePr-q8-0EM" firstAttribute="leading" secondItem="fmw-SW-RWv" secondAttribute="trailing" constant="8" id="aio-de-z1U"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -254,6 +255,7 @@ https://rmen.ca</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="klw-xD-iyd" secondAttribute="trailing" constant="16" id="HWN-aP-RFC"/>
                                                 <constraint firstItem="klw-xD-iyd" firstAttribute="leading" secondItem="mpl-UF-d0z" secondAttribute="trailing" constant="8" id="fpJ-EX-bQG"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -289,6 +291,7 @@ https://rmen.ca</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vLX-9s-Cfh" firstAttribute="leading" secondItem="FX5-0A-jti" secondAttribute="trailing" constant="8" id="455-xp-2WS"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vLX-9s-Cfh" secondAttribute="trailing" constant="16" id="Jst-9C-w2U"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -322,6 +325,7 @@ https://rmen.ca</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ohy-AA-a0p" secondAttribute="trailing" constant="16" id="Kgu-GJ-H8T"/>
                                                 <constraint firstItem="ohy-AA-a0p" firstAttribute="leading" secondItem="sKh-dS-VpO" secondAttribute="trailing" constant="8" id="dh4-uQ-jla"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -356,6 +360,7 @@ https://rmen.ca</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dd9-mM-hmh" secondAttribute="trailing" constant="16" id="eR9-JN-KHv"/>
                                                 <constraint firstItem="dd9-mM-hmh" firstAttribute="leading" secondItem="wud-NJ-Vxm" secondAttribute="trailing" constant="8" id="xVy-5E-L1V"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -390,6 +395,7 @@ https://rmen.ca</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dCZ-EE-8bf" secondAttribute="trailing" constant="16" id="ILY-64-XDD"/>
                                                 <constraint firstItem="dCZ-EE-8bf" firstAttribute="leading" secondItem="d5c-y1-O4l" secondAttribute="trailing" constant="8" id="QEU-DZ-xmu"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -458,6 +464,7 @@ https://rmen.ca</string>
                                                 <constraint firstItem="hMf-r6-e63" firstAttribute="leading" secondItem="9Fw-BT-cv9" secondAttribute="leading" constant="16" id="NQA-vU-wOG"/>
                                                 <constraint firstItem="Nc1-eR-uCg" firstAttribute="centerY" secondItem="9Fw-BT-cv9" secondAttribute="centerY" id="a0w-Wl-ENt"/>
                                                 <constraint firstItem="hMf-r6-e63" firstAttribute="top" secondItem="9Lj-6Q-TeV" secondAttribute="bottom" constant="8" id="aYs-r5-uKn"/>
+                                                <constraint firstItem="Nc1-eR-uCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Lj-6Q-TeV" secondAttribute="trailing" constant="16" id="c3Z-tX-Elf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
