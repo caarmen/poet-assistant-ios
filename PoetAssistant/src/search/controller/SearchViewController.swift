@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	private var thesaurusController: ThesaurusViewController?
 	private var dictionaryController: DictionaryViewController?
 	private var searchSuggestionsController: SearchSuggestionsController?
+	private var rightButtonBarItem: UIBarButtonItem?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,6 +39,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchController?.isActive = true
 		navigationItem.titleView = searchController?.searchBar
 		navigationItem.hidesSearchBarWhenScrolling = false
+		rightButtonBarItem = navigationItem.rightBarButtonItem
 		definesPresentationContext = true
 	}
 	
@@ -155,6 +157,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			searchSuggestionsController?.loadSuggestions(forQuery: searchBar.text)
 		}
 		tabBarController?.tabBar.isHidden = true
+		navigationItem.rightBarButtonItem = nil
 	}
 
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -184,5 +187,6 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchContainer.isHidden = true
 		searchController?.isActive = false
 		tabBarController?.tabBar.isHidden = false
+		navigationItem.rightBarButtonItem = rightButtonBarItem
 	}
 }

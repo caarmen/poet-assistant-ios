@@ -45,6 +45,8 @@
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
+		4FFB97FF2171F6D9000469F0 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFB97FE2171F6D9000469F0 /* More.storyboard */; };
+		4FFB980221722274000469F0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980121722274000469F0 /* AboutViewController.swift */; };
 		4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */; };
 		4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */; };
 		4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */; };
@@ -107,6 +109,8 @@
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
+		4FFB97FE2171F6D9000469F0 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		4FFB980121722274000469F0 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
 		4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTest.swift; sourceTree = "<group>"; };
 		4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
+				4FFB97FE2171F6D9000469F0 /* More.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
 			);
@@ -230,6 +235,7 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4FFB980021722253000469F0 /* about */,
 				4F661413216627BF00FA10A1 /* extensions */,
 				4F661405216533A600FA10A1 /* search */,
 				4F6614022165318900FA10A1 /* dictionary */,
@@ -329,6 +335,14 @@
 				4F661403216531C800FA10A1 /* DictionaryViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		4FFB980021722253000469F0 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB980121722274000469F0 /* AboutViewController.swift */,
+			);
+			path = about;
 			sourceTree = "<group>";
 		};
 		4FFBA5BC216A540B00AD3AD6 /* model */ = {
@@ -452,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */,
+				4FFB97FF2171F6D9000469F0 /* More.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
@@ -503,6 +518,7 @@
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
+				4FFB980221722274000469F0 /* AboutViewController.swift in Sources */,
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
