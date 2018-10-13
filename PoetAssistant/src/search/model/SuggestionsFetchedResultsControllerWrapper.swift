@@ -57,7 +57,9 @@ class SuggestionsFetchedResultsControllerWrapper {
 		
 		let historyContext = AppDelegate.persistentUserDbContainer.newBackgroundContext()
 		let dictionaryContext = AppDelegate.persistentDictionariesContainer.newBackgroundContext()
-		historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: queryText)
+		if (Settings.isSearchHistoryEnabled()) {
+			historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: queryText)
+		}
 		dictionaryFetchedResultsController = (queryText == nil || queryText!.isEmpty) ? nil :  Suggestion.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: queryText!)
 		do {
 			try historyFetchedResultsController?.performFetch()

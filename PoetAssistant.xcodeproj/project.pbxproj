@@ -42,9 +42,12 @@
 		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
+		4FA229F121726C800014B1B9 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* More.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
+		4FFB980221722274000469F0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980121722274000469F0 /* AboutViewController.swift */; };
+		4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980B21724595000469F0 /* SettingsTableViewController.swift */; };
 		4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */; };
 		4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */; };
 		4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */; };
@@ -104,9 +107,13 @@
 		4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
+		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/More.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
+		4FFB980121722274000469F0 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4FFB980B21724595000469F0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
 		4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTest.swift; sourceTree = "<group>"; };
 		4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
@@ -221,6 +228,7 @@
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
+				4FA229F321726C800014B1B9 /* More.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
 			);
@@ -230,6 +238,9 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4FFB98082172358A000469F0 /* settings */,
+				4FFB980521722E6F000469F0 /* more */,
+				4FFB980021722253000469F0 /* about */,
 				4F661413216627BF00FA10A1 /* extensions */,
 				4F661405216533A600FA10A1 /* search */,
 				4F6614022165318900FA10A1 /* dictionary */,
@@ -241,7 +252,6 @@
 				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
 				4F31972A2166587100135FF4 /* Tab.swift */,
-				4F31972E21666FCF00135FF4 /* Settings.swift */,
 				4F3197662168C32800135FF4 /* Lexicon.swift */,
 				4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */,
 				4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */,
@@ -329,6 +339,46 @@
 				4F661403216531C800FA10A1 /* DictionaryViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		4FFB980021722253000469F0 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB980121722274000469F0 /* AboutViewController.swift */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
+		4FFB980521722E6F000469F0 /* more */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		4FFB98082172358A000469F0 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB980E217245AF000469F0 /* model */,
+				4FFB980D217245A7000469F0 /* controller */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		4FFB980D217245A7000469F0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FFB980B21724595000469F0 /* SettingsTableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4FFB980E217245AF000469F0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F31972E21666FCF00135FF4 /* Settings.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		4FFBA5BC216A540B00AD3AD6 /* model */ = {
@@ -452,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */,
+				4FA229F121726C800014B1B9 /* More.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
@@ -503,12 +554,14 @@
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
+				4FFB980221722274000469F0 /* AboutViewController.swift in Sources */,
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
+				4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
 				4F661407216533CB00FA10A1 /* SearchSuggestionsController.swift in Sources */,
@@ -549,6 +602,15 @@
 				4F6613FE21652F2200FA10A1 /* Base */,
 			);
 			name = dictionaries.sqlite;
+			sourceTree = "<group>";
+		};
+		4FA229F321726C800014B1B9 /* More.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FA229F221726C800014B1B9 /* Base */,
+				4FA229F521726C8D0014B1B9 /* en */,
+			);
+			name = More.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

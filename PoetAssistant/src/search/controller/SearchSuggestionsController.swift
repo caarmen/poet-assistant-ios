@@ -96,10 +96,10 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("clear_search_history_action_clear", comment: ""),
 			style: UIAlertAction.Style.destructive, handler: { action in
-				Suggestion.clear {
+				Suggestion.clearHistory (completion: {
 					self.presentClearSearchHistoryCompletedDialog()
 					self.delegate?.didClearSearchHistory()
-				}
+				})
 		}))
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("clear_search_history_action_cancel", comment: ""),

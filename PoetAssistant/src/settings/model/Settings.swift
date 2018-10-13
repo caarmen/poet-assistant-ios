@@ -22,6 +22,7 @@ import Foundation
 class Settings {
 	private static let KEY_TAB = "tab"
 	private static let KEY_LEXICON = "lexicon"
+	private static let KEY_SEARCH_HISTORY = "search_history"
 
 	private static let DEFAULT_TAB = Tab.composer
 	private static let DEFAULT_LEXICON = Lexicon.rhymer
@@ -56,4 +57,17 @@ class Settings {
 		userDefaults.synchronize()
 	}
 	
+	class func isSearchHistoryEnabled() ->Bool {
+		let userDefaults = UserDefaults.init()
+		return userDefaults.bool(forKey: KEY_SEARCH_HISTORY)
+	}
+	
+	class func setSearchHistoryEnabled(enabled: Bool) {
+		let userDefaults = UserDefaults.init()
+		userDefaults.setValue(enabled, forKey: KEY_SEARCH_HISTORY)
+		userDefaults.synchronize()
+		if !enabled {
+			Suggestion.clearHistory(completion:nil)
+		}
+	}
 }

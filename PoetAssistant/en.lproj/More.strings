@@ -1,0 +1,57 @@
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
+"1Wv-H5-jYT.title" = "Settings";
+
+/* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
+"9Lj-6Q-TeV.text" = "Search History";
+
+/* Class = "UIButton"; normalTitle = "Report bugs"; ObjectID = "G20-BU-GR8"; */
+"G20-BU-GR8.normalTitle" = "Report bugs";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "LXh-xF-4WQ"; */
+"LXh-xF-4WQ.title" = "Settings";
+
+/* Class = "UILabel"; text = "Copyright © 2018 Carmen Alvarez"; ObjectID = "MIN-pK-fwY"; */
+"MIN-pK-fwY.text" = "Copyright © 2018 Carmen Alvarez";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "Qwz-2I-Nkm"; */
+"Qwz-2I-Nkm.text" = "About";
+
+/* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "YZk-HA-0nu"; */
+"YZk-HA-0nu.text" = "Poet Assistant v1.0.0";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "dBT-e1-VqH"; */
+"dBT-e1-VqH.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Porter stemming algorithm"; ObjectID = "dCZ-EE-8bf"; */
+"dCZ-EE-8bf.normalTitle" = "Porter stemming algorithm";
+
+/* Class = "UIButton"; normalTitle = "WordNet Dictionary License"; ObjectID = "dd9-mM-hmh"; */
+"dd9-mM-hmh.normalTitle" = "WordNet Dictionary License";
+
+/* Class = "UILabel"; text = "Legal"; ObjectID = "dmh-1O-rQw"; */
+"dmh-1O-rQw.text" = "Legal";
+
+/* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "ePr-q8-0EM"; */
+"ePr-q8-0EM.normalTitle" = "Privacy Policy";
+
+/* Class = "UIButton"; normalTitle = "Source code"; ObjectID = "gR9-9S-Rws"; */
+"gR9-9S-Rws.normalTitle" = "Source code";
+
+/* Class = "UILabel"; text = "Offer search suggestions based on previous searches"; ObjectID = "hMf-r6-e63"; */
+"hMf-r6-e63.text" = "Offer search suggestions based on previous searches";
+
+/* Class = "UITableViewController"; title = "About"; ObjectID = "hqh-0w-WYP"; */
+"hqh-0w-WYP.title" = "About";
+
+/* Class = "UIButton"; normalTitle = "Poet Assistant License (GPLv3)"; ObjectID = "klw-xD-iyd"; */
+"klw-xD-iyd.normalTitle" = "Poet Assistant License (GPLv3)";
+
+/* Class = "UIButton"; normalTitle = "WordNet Thesaurus License"; ObjectID = "ohy-AA-a0p"; */
+"ohy-AA-a0p.normalTitle" = "WordNet Thesaurus License";
+
+/* Class = "UIButton"; normalTitle = "CMU Rhyming Dictionary License"; ObjectID = "vLX-9s-Cfh"; */
+"vLX-9s-Cfh.normalTitle" = "CMU Rhymer License";
+
+/* Class = "UITextView"; text = "c@rmen.ca\nhttps://rmen.ca"; ObjectID = "xd3-Pv-Zat"; */
+"xd3-Pv-Zat.text" = "c@rmen.ca\nhttps://rmen.ca";

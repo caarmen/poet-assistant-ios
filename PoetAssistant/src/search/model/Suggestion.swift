@@ -57,22 +57,24 @@ class Suggestion: NSManagedObject {
 	}
 	
 	class func addSuggestion(word: String) {
-		AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
-			let request: NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
-			request.predicate = NSPredicate(format: "\(#keyPath(Suggestion.word)) =[c] %@", word)
-			do {
-				if (try context.count(for: request) == 0) {
-					let suggestion = Suggestion(context:context)
-					suggestion.word = word.lowercased(with: Locale.current)
-					try context.save()
+		if (Settings.isSearchHistoryEnabled()) {
+			AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
+				let request: NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
+				request.predicate = NSPredicate(format: "\(#keyPath(Suggestion.word)) =[c] %@", word)
+				do {
+					if (try context.count(for: request) == 0) {
+						let suggestion = Suggestion(context:context)
+						suggestion.word = word.lowercased(with: Locale.current)
+						try context.save()
+					}
+				} catch let error {
+					print ("Error saving suggestion \(word): \(error)")
 				}
-			} catch let error {
-				print ("Error saving suggestion \(word): \(error)")
 			}
 		}
 	}
 	
-	class func clear(completion: @escaping () -> Void) {
+	class func clearHistory(completion: (() -> Void)?) {
 		AppDelegate.persistentUserDbContainer.performBackgroundTask{ context in
 			do {
 				let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Suggestion")
@@ -80,10 +82,13 @@ class Suggestion: NSManagedObject {
 				let result = try context.execute(deleteRequest)
 				print ("Executed delete request \(result)")
 				try context.save()
-				DispatchQueue.main.async(execute: completion)
+				if completion != nil {
+					DispatchQueue.main.async(execute: completion!)
+				}
 			} catch let error {
 				print ("Error clearing search history \(error)")
 			}
 		}
 	}
+
 }
