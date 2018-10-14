@@ -5,6 +5,9 @@
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
 "1Wv-H5-jYT.title" = "Settings";
 
+/* Class = "UILabel"; text = "Voice"; ObjectID = "5ac-lg-RHJ"; */
+"5ac-lg-RHJ.text" = "Voice";
+
 /* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
 "9Lj-6Q-TeV.text" = "Search History";
 
@@ -31,6 +34,9 @@
 
 /* Class = "UILabel"; text = "About"; ObjectID = "Qwz-2I-Nkm"; */
 "Qwz-2I-Nkm.text" = "About";
+
+/* Class = "UILabel"; text = "Voice"; ObjectID = "RKE-Ha-fzm"; */
+"RKE-Ha-fzm.text" = "Voice";
 
 /* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "YZk-HA-0nu"; */
 "YZk-HA-0nu.text" = "Poet Assistant v1.0.0";
