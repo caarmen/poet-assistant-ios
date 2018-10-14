@@ -23,7 +23,8 @@ import AVFoundation
 protocol VoiceListDelegate {
 	func voiceSelected(voice: AVSpeechSynthesisVoice)
 }
-class VoicesTableViewController: UITableViewController {
+class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelegate {
+	private let speechSynthesizer = AVSpeechSynthesizer()
 
 	var voiceListDelegate: VoiceListDelegate?
 	
@@ -38,29 +39,40 @@ class VoicesTableViewController: UITableViewController {
 		tableView.reloadData()
 	}
 	
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return voices.count
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return voices[section].voices.count
-    }
-
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return voices.count
+	}
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return voices[section].voices.count
+	}
+	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return voices[section].displayLanguage
 	}
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VoiceCell", for: indexPath)
-		let voice = voices[indexPath.section].voices[indexPath.row]
-		cell.textLabel?.text = voice.name
-		let qualityStringKey = voice.quality == .enhanced ? "voice_quality_enhanced" : "voice_quality_default"
-		let qualityString = NSLocalizedString(qualityStringKey, comment: "")
-		cell.detailTextLabel?.text = qualityString
-        return cell
-    }
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "VoiceCell", for: indexPath)
+		if let voiceCell = cell as? VoiceTableViewCell {
+			let voice = voices[indexPath.section].voices[indexPath.row]
+			voiceCell.labelVoiceName.text = voice.name
+			let qualityStringKey = voice.quality == .enhanced ? "voice_quality_enhanced" : "voice_quality_default"
+			let qualityString = NSLocalizedString(qualityStringKey, comment: "")
+			voiceCell.labelVoiceQuality.text = qualityString
+			voiceCell.delegate = self
+		}
+		return cell
+		
+	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let voice = voices[indexPath.section].voices[indexPath.row]
 		voiceListDelegate?.voiceSelected(voice: voice)
+	}
+	
+	func didClickPlayButton(sender: UITableViewCell) {
+		if !speechSynthesizer.isSpeaking, let indexPath = tableView.indexPath(for: sender) {
+			let voice = voices[indexPath.section].voices[indexPath.row]
+			speechSynthesizer.speak(Tts.createUtterance(text: NSLocalizedString("voice_preview", comment: ""), voiceIdentifier: voice.identifier))
+		}
 	}
 }

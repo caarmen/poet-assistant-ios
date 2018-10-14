@@ -10,13 +10,15 @@ import AVFoundation
 
 class Tts {
 	class func createUtterance(text: String) -> AVSpeechUtterance {
+		return createUtterance(text:text, voiceIdentifier: Settings.getVoiceIdentifier())
+	}
+	
+	class func createUtterance(text: String, voiceIdentifier: String?) -> AVSpeechUtterance {
 		let utterance = AVSpeechUtterance(string: text)
 		utterance.rate = Settings.getVoiceSpeed()
 		utterance.pitchMultiplier = Settings.getVoicePitch()
-		if let voiceIdentifier = Settings.getVoiceIdentifier() {
-			if let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier) {
-				utterance.voice = voice
-			}
+		if voiceIdentifier != nil, let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier!) {
+			utterance.voice = voice
 		}
 		return utterance
 	}
