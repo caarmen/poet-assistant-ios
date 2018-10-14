@@ -27,33 +27,40 @@ class VoicesTableViewController: UITableViewController {
 
 	var voiceListDelegate: VoiceListDelegate?
 	
-	private let voices = AVSpeechSynthesisVoice.speechVoices().filter { voice in
-		voice.language == AVSpeechSynthesisVoice.currentLanguageCode()
-	}
+	private let voices = VoiceList.getVoiceList()
 	
+	private class func getLanguageCode(identifier: String) -> String {
+		let nsLocale = NSLocale.autoupdatingCurrent
+		return nsLocale.localizedString(forLanguageCode: identifier) ?? identifier
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.reloadData()
 	}
 	
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return voices.count
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return voices[section].voices.count
+    }
+
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return voices[section].displayLanguage
+	}
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VoiceCell", for: indexPath)
-		let voice = voices[indexPath.row]
+		let voice = voices[indexPath.section].voices[indexPath.row]
 		cell.textLabel?.text = voice.name
 		let qualityStringKey = voice.quality == .enhanced ? "voice_quality_enhanced" : "voice_quality_default"
-		cell.detailTextLabel?.text = NSLocalizedString(qualityStringKey, comment: "")
+		let qualityString = NSLocalizedString(qualityStringKey, comment: "")
+		cell.detailTextLabel?.text = qualityString
         return cell
     }
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		voiceListDelegate?.voiceSelected(voice: voices[indexPath.row])
+		let voice = voices[indexPath.section].voices[indexPath.row]
+		voiceListDelegate?.voiceSelected(voice: voice)
 	}
 }

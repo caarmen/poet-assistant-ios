@@ -44,6 +44,7 @@
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
 		4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */; };
+		4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1B21737AD500CD6CB3 /* VoiceList.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
@@ -111,6 +112,7 @@
 		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
+		4F698A1B21737AD500CD6CB3 /* VoiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceList.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				4F15B04B217342560072C8BC /* Tts.swift */,
+				4F698A1B21737AD500CD6CB3 /* VoiceList.swift */,
 			);
 			path = tts;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
+				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
