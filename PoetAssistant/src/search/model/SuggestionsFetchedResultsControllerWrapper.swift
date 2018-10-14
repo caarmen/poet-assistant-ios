@@ -53,34 +53,38 @@ class SuggestionsFetchedResultsControllerWrapper {
 		}
 	}
 	
-	func performFetch() throws {
+	func performFetch(completion: @escaping () -> Void) {
 		
 		let historyContext = AppDelegate.persistentUserDbContainer.newBackgroundContext()
 		let dictionaryContext = AppDelegate.persistentDictionariesContainer.newBackgroundContext()
-		if (Settings.isSearchHistoryEnabled()) {
-			historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: queryText)
-		}
-		dictionaryFetchedResultsController = (queryText == nil || queryText!.isEmpty) ? nil :  Suggestion.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: queryText!)
-		do {
-			try historyFetchedResultsController?.performFetch()
-			try dictionaryFetchedResultsController?.performFetch()
-			if let historySearchSections = historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
-				var historySearchObjects = [Any]()
-				historySearchObjects += historySearchSections[0].objects ?? []
-				historySearchObjects += [SuggestionListItem.clear_history]
-				sections.append(SectionInfo(
-					name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
-					numberOfObjects: historySearchObjects.count,
-					objects: historySearchObjects))
+		DispatchQueue.global().async { [weak self] in
+			if (Settings.isSearchHistoryEnabled()) {
+				self?.historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: self?.queryText)
 			}
-			if let dictionarySearchSections = dictionaryFetchedResultsController?.sections, dictionarySearchSections.count == 1 {
-				sections.append(SectionInfo(
-					name: SuggestionsFetchedResultsControllerWrapper.SECTION_DICTIONARY,
-					numberOfObjects: dictionarySearchSections[0].numberOfObjects,
-					objects: dictionarySearchSections[0].objects))
+			self?.dictionaryFetchedResultsController = (self?.queryText == nil || self!.queryText!.isEmpty) ? nil :  Suggestion.createSearchSuggestionsFetchResultsController(context: dictionaryContext, queryText: self!.queryText!)
+			do {
+				try self?.historyFetchedResultsController?.performFetch()
+				try self?.dictionaryFetchedResultsController?.performFetch()
+				if let historySearchSections = self?.historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
+					var historySearchObjects = [Any]()
+					historySearchObjects += historySearchSections[0].objects ?? []
+					historySearchObjects += [SuggestionListItem.clear_history]
+					self?.sections.append(SectionInfo(
+						name: SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY,
+						numberOfObjects: historySearchObjects.count,
+						objects: historySearchObjects))
+				}
+				if let dictionarySearchSections = self?.dictionaryFetchedResultsController?.sections, dictionarySearchSections.count == 1 {
+					self?.sections.append(SectionInfo(
+						name: SuggestionsFetchedResultsControllerWrapper.SECTION_DICTIONARY,
+						numberOfObjects: dictionarySearchSections[0].numberOfObjects,
+						objects: dictionarySearchSections[0].objects))
+				}
+				DispatchQueue.main.async(execute:completion)
+			} catch let error {
+				print ("Error loading suggestions \(error)")
 			}
-		} catch let error {
-			throw error
+			DispatchQueue.main.async(execute:completion)
 		}
 	}
 }
