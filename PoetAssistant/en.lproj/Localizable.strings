@@ -29,3 +29,7 @@
 "rhymer" = "Rhymer";
 "thesaurus" = "Thesaurus";
 "dictionary" = "Dictionary";
+"voice_preview" = "To be or not too be, that is the question";
+"voice_quality_enhanced" = "High quality";
+"voice_quality_default" = "Normal quality";
+"voice_default" = "Default";

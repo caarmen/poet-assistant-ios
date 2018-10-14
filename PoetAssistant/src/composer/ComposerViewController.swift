@@ -48,7 +48,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		if speechSynthesizer.isSpeaking {
 			speechSynthesizer.stopSpeaking(at: .immediate)
 		} else {
-			let utterance = AVSpeechUtterance(string: getTextToPlay())
+			let utterance = Tts.createUtterance(text: getTextToPlay())
 			speechSynthesizer.speak(utterance)
 		}
 		updatePlayButton()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -42,7 +43,10 @@
 		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
-		4FA229F121726C800014B1B9 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* More.storyboard */; };
+		4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */; };
+		4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1B21737AD500CD6CB3 /* VoiceList.swift */; };
+		4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */; };
+		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -67,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -107,8 +112,11 @@
 		4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
-		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
-		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/More.strings; sourceTree = "<group>"; };
+		4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
+		4F698A1B21737AD500CD6CB3 /* VoiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceList.swift; sourceTree = "<group>"; };
+		4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
+		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -140,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F15B04A217342380072C8BC /* tts */ = {
+			isa = PBXGroup;
+			children = (
+				4F15B04B217342560072C8BC /* Tts.swift */,
+				4F698A1B21737AD500CD6CB3 /* VoiceList.swift */,
+			);
+			path = tts;
+			sourceTree = "<group>";
+		};
 		4F3197382166C0E100135FF4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +245,7 @@
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
-				4FA229F321726C800014B1B9 /* More.storyboard */,
+				4FA229F321726C800014B1B9 /* Settings.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
 			);
@@ -238,6 +255,7 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4F15B04A217342380072C8BC /* tts */,
 				4FFB98082172358A000469F0 /* settings */,
 				4FFB980521722E6F000469F0 /* more */,
 				4FFB980021722253000469F0 /* about */,
@@ -341,6 +359,14 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		4F698A1D21738F1500CD6CB3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		4FFB980021722253000469F0 /* about */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +385,7 @@
 		4FFB98082172358A000469F0 /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				4F698A1D21738F1500CD6CB3 /* view */,
 				4FFB980E217245AF000469F0 /* model */,
 				4FFB980D217245A7000469F0 /* controller */,
 			);
@@ -369,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFB980B21724595000469F0 /* SettingsTableViewController.swift */,
+				4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -502,7 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */,
-				4FA229F121726C800014B1B9 /* More.storyboard in Resources */,
+				4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
@@ -533,6 +561,7 @@
 				4F6613DA2164D10700FA10A1 /* ThesaurusViewController.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4FFBA616216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift in Sources */,
+				4F15B04C217342560072C8BC /* Tts.swift in Sources */,
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
 				4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */,
 				4F3197532167D59A00135FF4 /* PorterStemmer.swift in Sources */,
@@ -541,6 +570,8 @@
 				4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */,
 				4FFBA60B216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift in Sources */,
 				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
+				4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */,
+				4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */,
 				4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */,
 				4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
@@ -558,6 +589,7 @@
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
+				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
@@ -604,13 +636,13 @@
 			name = dictionaries.sqlite;
 			sourceTree = "<group>";
 		};
-		4FA229F321726C800014B1B9 /* More.storyboard */ = {
+		4FA229F321726C800014B1B9 /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4FA229F221726C800014B1B9 /* Base */,
 				4FA229F521726C8D0014B1B9 /* en */,
 			);
-			name = More.storyboard;
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -776,6 +808,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistant/Info.plist;
@@ -783,8 +816,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.myapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -794,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistant/Info.plist;
@@ -801,8 +836,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.myapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
