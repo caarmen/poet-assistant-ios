@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Core Data stack
 	
 	lazy var persistentEmbeddedDbContainer: NSPersistentContainer = {
+		EmbeddedDb.install()
 		return loadContainer(databaseName: "dictionaries")
 	}()
 	
