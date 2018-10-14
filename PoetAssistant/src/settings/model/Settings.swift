@@ -30,6 +30,7 @@ class Settings {
 	private static let KEY_SEARCH_HISTORY = "search_history"
 	private static let KEY_VOICE_SPEED = "voice_speed"
 	private static let KEY_VOICE_PITCH = "voice_pitch"
+	private static let KEY_VOICE_IDENTIFIER = "voice_identifier"
 	
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
 	private static let DEFAULT_VOICE_PITCH = Float(1.0)
@@ -77,11 +78,18 @@ class Settings {
 			Suggestion.clearHistory(completion:nil)
 		}
 	}
+	class func getVoiceIdentifier() -> String? {
+		return UserDefaults.init().string(forKey: KEY_VOICE_IDENTIFIER)
+	}
+	
+	class func setVoiceIdentifier(identifier: String) {
+		setPref(key: KEY_VOICE_IDENTIFIER, value: identifier)
+	}
 	
 	class func getVoiceSpeed() -> Float {
 		return getFloatPref(key: KEY_VOICE_SPEED, defaultValue: DEFAULT_VOICE_SPEED)
 	}
-	
+
 	class func setVoiceSpeed(speed: Float) {
 		setPref(key: KEY_VOICE_SPEED, value: speed)
 	}

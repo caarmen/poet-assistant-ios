@@ -43,6 +43,7 @@
 		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
+		4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
@@ -109,6 +110,7 @@
 		4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+fontstyle.swift"; sourceTree = "<group>"; };
 		4F66141A2166501A00FA10A1 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFB980B21724595000469F0 /* SettingsTableViewController.swift */,
+				4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */,
 				4FFBA60B216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift in Sources */,
 				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
+				4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */,
 				4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */,
 				4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,

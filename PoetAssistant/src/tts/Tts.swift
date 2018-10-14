@@ -13,6 +13,11 @@ class Tts {
 		let utterance = AVSpeechUtterance(string: text)
 		utterance.rate = Settings.getVoiceSpeed()
 		utterance.pitchMultiplier = Settings.getVoicePitch()
+		if let voiceIdentifier = Settings.getVoiceIdentifier() {
+			if let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier) {
+				utterance.voice = voice
+			}
+		}
 		return utterance
 	}
 }
