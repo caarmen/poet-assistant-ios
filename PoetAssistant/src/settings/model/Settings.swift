@@ -33,9 +33,9 @@ class Settings {
 	
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
 	private static let DEFAULT_VOICE_PITCH = Float(1.0)
-	
 	private static let DEFAULT_TAB = Tab.composer
 	private static let DEFAULT_LEXICON = Lexicon.rhymer
+	private static let DEFAULT_SEARCH_HISTORY_ENABLED = true
 	
 	class func getTab() -> Tab {
 		if let tabName = UserDefaults.init().object(forKey: KEY_TAB) as? String {
@@ -68,14 +68,11 @@ class Settings {
 	}
 	
 	class func isSearchHistoryEnabled() ->Bool {
-		let userDefaults = UserDefaults.init()
-		return userDefaults.bool(forKey: KEY_SEARCH_HISTORY)
+		return getBoolPref(key: KEY_SEARCH_HISTORY, defaultValue: DEFAULT_SEARCH_HISTORY_ENABLED)
 	}
 	
 	class func setSearchHistoryEnabled(enabled: Bool) {
-		let userDefaults = UserDefaults.init()
-		userDefaults.setValue(enabled, forKey: KEY_SEARCH_HISTORY)
-		userDefaults.synchronize()
+		setPref(key: KEY_SEARCH_HISTORY, value: enabled)
 		if !enabled {
 			Suggestion.clearHistory(completion:nil)
 		}
@@ -83,11 +80,10 @@ class Settings {
 	
 	class func getVoiceSpeed() -> Float {
 		return getFloatPref(key: KEY_VOICE_SPEED, defaultValue: DEFAULT_VOICE_SPEED)
-		
 	}
 	
 	class func setVoiceSpeed(speed: Float) {
-		setFloatPref(key: KEY_VOICE_SPEED, value: speed)
+		setPref(key: KEY_VOICE_SPEED, value: speed)
 	}
 	
 	class func getVoicePitch() -> Float {
@@ -95,9 +91,17 @@ class Settings {
 	}
 	
 	class func setVoicePitch(pitch: Float) {
-		setFloatPref(key: KEY_VOICE_PITCH, value: pitch)
+		setPref(key: KEY_VOICE_PITCH, value: pitch)
 	}
 	
+	private class func getBoolPref(key: String, defaultValue: Bool) -> Bool {
+		let userDefaults = UserDefaults.init()
+		if userDefaults.object(forKey: key) == nil {
+			userDefaults.setValue(defaultValue, forKey: key)
+		}
+		return userDefaults.bool(forKey: key)
+	}
+
 	private class func getFloatPref(key: String, defaultValue: Float) -> Float {
 		let userDefaults = UserDefaults.init()
 		if userDefaults.object(forKey: key) == nil {
@@ -106,7 +110,7 @@ class Settings {
 		return userDefaults.float(forKey: key)
 	}
 	
-	private class func setFloatPref(key: String, value: Float) {
+	private class func setPref(key: String, value: Any) {
 		let userDefaults = UserDefaults.init()
 		userDefaults.setValue(value, forKey: key)
 		userDefaults.synchronize()
