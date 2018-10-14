@@ -21,14 +21,28 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+	@IBOutlet weak var sliderVoiceSpeed: UISlider!
+	@IBOutlet weak var sliderVoicePitch: UISlider!
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		switchSearchHistory.isOn = Settings.isSearchHistoryEnabled()
+		sliderVoiceSpeed.minimumValue = Settings.MIN_VOICE_SPEED
+		sliderVoiceSpeed.maximumValue = Settings.MAX_VOICE_SPEED
+		sliderVoiceSpeed.value = Settings.getVoiceSpeed()
+		sliderVoicePitch.minimumValue = Settings.MIN_VOICE_PITCH
+		sliderVoicePitch.maximumValue = Settings.MAX_VOICE_PITCH
+		sliderVoicePitch.value = Settings.getVoicePitch()
 	}
 
+	@IBAction func didSlideVoiceSpeed(_ sender: UISlider) {
+		Settings.setVoiceSpeed(speed: sender.value)
+	}
+	@IBAction func didSlideVoicePitch(_ sender: UISlider) {
+		Settings.setVoicePitch(pitch: sender.value)
+	}
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
 	}

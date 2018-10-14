@@ -74,6 +74,9 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="c@rmen.ca" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfS-Pu-ub4" userLabel="Email">
                                                     <rect key="frame" x="281" y="5" width="78" height="34"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="vlA-gv-goT"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -309,7 +312,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WordNet Thesaurus License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5V-oQ-R4a">
-                                                    <rect key="frame" x="64" y="12" width="217" height="21"/>
+                                                    <rect key="frame" x="64" y="11.5" width="217" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -424,10 +427,76 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection id="iiN-CS-dKJ">
+                            <tableViewSection headerTitle="Voice Settings" id="czk-8K-qjE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="t6h-X6-vNP" userLabel="Voice speed">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6h-X6-vNP" id="ugI-XK-4PB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-BE-KgI" userLabel="Title">
+                                                    <rect key="frame" x="16" y="8" width="97.5" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YGJ-TP-mYS">
+                                                    <rect key="frame" x="14" y="37" width="347" height="31"/>
+                                                    <connections>
+                                                        <action selector="didSlideVoiceSpeed:" destination="LXh-xF-4WQ" eventType="valueChanged" id="BTx-ew-rYG"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YGJ-TP-mYS" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leading" constant="16" id="2NP-LZ-Uz8"/>
+                                                <constraint firstItem="Ygb-BE-KgI" firstAttribute="top" secondItem="ugI-XK-4PB" secondAttribute="top" constant="8" id="Cik-Wj-6B3"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YGJ-TP-mYS" secondAttribute="bottom" constant="8" id="DKy-uC-eRa"/>
+                                                <constraint firstItem="Ygb-BE-KgI" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leading" constant="16" id="Dho-6j-y0Y"/>
+                                                <constraint firstItem="YGJ-TP-mYS" firstAttribute="top" secondItem="Ygb-BE-KgI" secondAttribute="bottom" constant="8" id="QWu-g3-lzv"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ygb-BE-KgI" secondAttribute="trailing" constant="16" id="SFp-lK-KQ4"/>
+                                                <constraint firstAttribute="trailing" secondItem="YGJ-TP-mYS" secondAttribute="trailing" constant="16" id="Vhp-0g-wE8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kYC-vE-wEG" userLabel="Voice pitch">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kYC-vE-wEG" id="ZL1-pL-f3O">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice pitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMK-f3-MzO" userLabel="Title">
+                                                    <rect key="frame" x="16" y="8" width="88.5" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yb3-pG-1Uk">
+                                                    <rect key="frame" x="14" y="37" width="347" height="31"/>
+                                                    <connections>
+                                                        <action selector="didSlideVoicePitch:" destination="LXh-xF-4WQ" eventType="valueChanged" id="qmL-CP-fWn"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aMK-f3-MzO" firstAttribute="leading" secondItem="ZL1-pL-f3O" secondAttribute="leading" constant="16" id="22z-Df-9CC"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aMK-f3-MzO" secondAttribute="trailing" constant="16" id="7Pf-98-aPz"/>
+                                                <constraint firstItem="Yb3-pG-1Uk" firstAttribute="top" secondItem="aMK-f3-MzO" secondAttribute="bottom" constant="8" id="C7P-Ya-83h"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yb3-pG-1Uk" secondAttribute="bottom" constant="8" id="QhB-uU-7t3"/>
+                                                <constraint firstItem="Yb3-pG-1Uk" firstAttribute="leading" secondItem="ZL1-pL-f3O" secondAttribute="leading" constant="16" id="bUV-G4-WMU"/>
+                                                <constraint firstItem="aMK-f3-MzO" firstAttribute="top" secondItem="ZL1-pL-f3O" secondAttribute="top" constant="8" id="fDd-Ff-SBi"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yb3-pG-1Uk" secondAttribute="trailing" constant="16" id="kRI-u4-4ZP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Other" id="iiN-CS-dKJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KCf-wy-RUN" userLabel="Search History">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="216" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCf-wy-RUN" id="9Fw-BT-cv9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -467,7 +536,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rdA-Ud-gF8" userLabel="About">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="296" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rdA-Ud-gF8" id="cJB-Rm-Oli">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -500,6 +569,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="1Wv-H5-jYT"/>
                     <connections>
+                        <outlet property="sliderVoicePitch" destination="Yb3-pG-1Uk" id="rx9-HH-xSu"/>
+                        <outlet property="sliderVoiceSpeed" destination="YGJ-TP-mYS" id="uIw-Un-LAw"/>
                         <outlet property="switchSearchHistory" destination="Nc1-eR-uCg" id="iiw-sX-UuT"/>
                     </connections>
                 </tableViewController>
