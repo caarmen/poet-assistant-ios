@@ -491,12 +491,52 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gEe-7Z-kFh" userLabel="Preview">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEe-7Z-kFh" id="PiU-dk-83k">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIj-28-B8O" userLabel="Title">
+                                                    <rect key="frame" x="20" y="8" width="54" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listen to a voice sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k24-ay-Xe2">
+                                                    <rect key="frame" x="20" y="34" width="146" height="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reA-5s-nuS" userLabel="Play">
+                                                    <rect key="frame" x="342" y="22" width="36" height="36"/>
+                                                    <state key="normal" image="ic_play"/>
+                                                    <connections>
+                                                        <action selector="didClickPreview:" destination="LXh-xF-4WQ" eventType="touchUpInside" id="rQJ-5W-MM8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="k24-ay-Xe2" firstAttribute="leading" secondItem="PiU-dk-83k" secondAttribute="leadingMargin" id="EE4-mU-QNh"/>
+                                                <constraint firstItem="hIj-28-B8O" firstAttribute="top" secondItem="PiU-dk-83k" secondAttribute="top" constant="8" id="MsO-Fj-dfa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="reA-5s-nuS" secondAttribute="trailing" constant="16" id="TGU-kk-bsu"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k24-ay-Xe2" secondAttribute="bottom" constant="8" id="VaX-Zn-32K"/>
+                                                <constraint firstItem="hIj-28-B8O" firstAttribute="leading" secondItem="PiU-dk-83k" secondAttribute="leadingMargin" id="bfj-td-bkp"/>
+                                                <constraint firstItem="k24-ay-Xe2" firstAttribute="top" secondItem="hIj-28-B8O" secondAttribute="bottom" constant="8" id="eVy-Kw-5UA"/>
+                                                <constraint firstItem="reA-5s-nuS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hIj-28-B8O" secondAttribute="trailing" constant="16" id="oq1-jG-2vP"/>
+                                                <constraint firstItem="reA-5s-nuS" firstAttribute="centerY" secondItem="PiU-dk-83k" secondAttribute="centerY" id="vAq-Ue-ZyM"/>
+                                                <constraint firstItem="reA-5s-nuS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k24-ay-Xe2" secondAttribute="trailing" constant="16" id="vuc-Br-bdh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Other" id="iiN-CS-dKJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KCf-wy-RUN" userLabel="Search History">
-                                        <rect key="frame" x="0.0" y="216" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="296" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCf-wy-RUN" id="9Fw-BT-cv9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
@@ -536,7 +576,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rdA-Ud-gF8" userLabel="About">
-                                        <rect key="frame" x="0.0" y="296" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="376" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rdA-Ud-gF8" id="cJB-Rm-Oli">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
@@ -604,6 +644,7 @@
         <image name="ic_chevron_right" width="24" height="24"/>
         <image name="ic_code" width="24" height="24"/>
         <image name="ic_legal" width="24" height="24"/>
+        <image name="ic_play" width="36" height="36"/>
         <image name="ic_settings" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

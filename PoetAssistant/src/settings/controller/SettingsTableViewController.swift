@@ -18,8 +18,10 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import UIKit
+import AVFoundation
 
 class SettingsTableViewController: UITableViewController {
+	private let speechSynthesizer = AVSpeechSynthesizer()
 
 	@IBOutlet weak var sliderVoiceSpeed: UISlider!
 	@IBOutlet weak var sliderVoicePitch: UISlider!
@@ -42,6 +44,10 @@ class SettingsTableViewController: UITableViewController {
 	}
 	@IBAction func didSlideVoicePitch(_ sender: UISlider) {
 		Settings.setVoicePitch(pitch: sender.value)
+	}
+	@IBAction func didClickPreview(_ sender: UIButton) {
+		let utterance = Tts.createUtterance(text: NSLocalizedString("voice_preview", comment: ""))
+		speechSynthesizer.speak(utterance)
 	}
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
