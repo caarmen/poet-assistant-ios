@@ -26,14 +26,26 @@
 /* Class = "UILabel"; text = "Copyright © 2018 Carmen Alvarez"; ObjectID = "MIN-pK-fwY"; */
 "MIN-pK-fwY.text" = "Copyright © 2018 Carmen Alvarez";
 
+/* Class = "UITextView"; text = "c@rmen.ca"; ObjectID = "QfS-Pu-ub4"; */
+"QfS-Pu-ub4.text" = "c@rmen.ca";
+
 /* Class = "UILabel"; text = "About"; ObjectID = "Qwz-2I-Nkm"; */
 "Qwz-2I-Nkm.text" = "About";
 
 /* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "YZk-HA-0nu"; */
 "YZk-HA-0nu.text" = "Poet Assistant v1.0.0";
 
+/* Class = "UILabel"; text = "Voice speed"; ObjectID = "Ygb-BE-KgI"; */
+"Ygb-BE-KgI.text" = "Voice speed";
+
+/* Class = "UILabel"; text = "Voice pitch"; ObjectID = "aMK-f3-MzO"; */
+"aMK-f3-MzO.text" = "Voice pitch";
+
 /* Class = "UILabel"; text = "Porter Stemmer algorithm"; ObjectID = "cAX-aF-TZd"; */
 "cAX-aF-TZd.text" = "Porter Stemmer algorithm";
+
+/* Class = "UITableViewSection"; headerTitle = "Voice Settings"; ObjectID = "czk-8K-qjE"; */
+"czk-8K-qjE.headerTitle" = "Voice Settings";
 
 /* Class = "UILabel"; text = "WordNet Thesaurus License"; ObjectID = "d5V-oQ-R4a"; */
 "d5V-oQ-R4a.text" = "WordNet Thesaurus License";
@@ -44,14 +56,23 @@
 /* Class = "UILabel"; text = "Legal"; ObjectID = "dmh-1O-rQw"; */
 "dmh-1O-rQw.text" = "Legal";
 
+/* Class = "UILabel"; text = "Preview"; ObjectID = "hIj-28-B8O"; */
+"hIj-28-B8O.text" = "Preview";
+
 /* Class = "UILabel"; text = "Offer search suggestions based on previous searches"; ObjectID = "hMf-r6-e63"; */
 "hMf-r6-e63.text" = "Offer search suggestions based on previous searches";
 
 /* Class = "UITableViewController"; title = "About"; ObjectID = "hqh-0w-WYP"; */
 "hqh-0w-WYP.title" = "About";
 
+/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "iiN-CS-dKJ"; */
+"iiN-CS-dKJ.headerTitle" = "Other";
+
+/* Class = "UILabel"; text = "Listen to a voice sample"; ObjectID = "k24-ay-Xe2"; */
+"k24-ay-Xe2.text" = "Listen to a voice sample";
+
 /* Class = "UILabel"; text = "CMU Rhymer License"; ObjectID = "rMy-nv-8oH"; */
 "rMy-nv-8oH.text" = "CMU Rhymer License";
 
-/* Class = "UITextView"; text = "c@rmen.ca\nhttps://rmen.ca"; ObjectID = "xd3-Pv-Zat"; */
-"xd3-Pv-Zat.text" = "c@rmen.ca\nhttps://rmen.ca";
+/* Class = "UITextView"; text = "https://rmen.ca"; ObjectID = "xd3-Pv-Zat"; */
+"xd3-Pv-Zat.text" = "https://rmen.ca";
