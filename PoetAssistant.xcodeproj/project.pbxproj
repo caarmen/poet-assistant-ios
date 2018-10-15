@@ -246,18 +246,18 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4F15B04A217342380072C8BC /* tts */,
+				4F6613F12164FC4700FA10A1 /* composer */,
+				4F661405216533A600FA10A1 /* search */,
 				4FFB98082172358A000469F0 /* settings */,
 				4FFB980021722253000469F0 /* about */,
+				4F15B04A217342380072C8BC /* tts */,
 				4F661413216627BF00FA10A1 /* extensions */,
-				4F661405216533A600FA10A1 /* search */,
-				4F6613F12164FC4700FA10A1 /* composer */,
 				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
-				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
 				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
 				4F31972A2166587100135FF4 /* Tab.swift */,
 				4F3197662168C32800135FF4 /* Lexicon.swift */,
+				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
 				4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */,
 			);
 			path = src;
