@@ -502,8 +502,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
-                                <rect key="frame" x="16" y="96" width="343" height="514"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
+                                <rect key="frame" x="16" y="96" width="343" height="492"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -529,18 +529,24 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
-                                <rect key="frame" x="24" y="618" width="0.0" height="0.0"/>
+                                <rect key="frame" x="24" y="596" width="0.0" height="22"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1k-Yd-1yO" userLabel="Placeholder">
                                 <rect key="frame" x="16" y="618" width="343" height="0.0"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="piX-I6-F14"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-tE-kWm" userLabel="Hide Keyboard">
+                                <rect key="frame" x="341" y="596" width="18" height="22"/>
+                                <state key="normal" image="ic_keyboard_hide"/>
+                                <connections>
+                                    <action selector="didClickHideKeyboard:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="e6o-fe-kGC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -559,11 +565,14 @@
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="W1k-Yd-1yO" secondAttribute="trailing" constant="16" id="NgT-le-4Qi"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="centerX" secondItem="Tev-Af-9er" secondAttribute="centerX" id="Wcn-rU-3lO"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="top" secondItem="Tev-Af-9er" secondAttribute="top" constant="16" id="aao-Ml-FyC"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UvM-C0-zec" secondAttribute="trailing" constant="16" id="hdn-6n-RxS"/>
+                            <constraint firstItem="1hH-tE-kWm" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="bottom" constant="8" id="btp-bK-zR2"/>
+                            <constraint firstItem="1hH-tE-kWm" firstAttribute="trailing" secondItem="Tev-Af-9er" secondAttribute="trailing" constant="-16" id="c0x-pi-JBh"/>
+                            <constraint firstItem="1hH-tE-kWm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UvM-C0-zec" secondAttribute="trailing" constant="16" id="hdn-6n-RxS"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tEA-Om-MWX" secondAttribute="bottom" constant="-16" id="kqc-Dg-ehM"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="obe-Eu-hhV"/>
                             <constraint firstItem="wXE-Hn-zsg" firstAttribute="centerY" secondItem="ihg-T8-2fA" secondAttribute="centerY" id="onD-04-v9s"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="W1k-Yd-1yO" secondAttribute="bottom" id="pFk-Oc-jer"/>
+                            <constraint firstItem="W1k-Yd-1yO" firstAttribute="top" secondItem="1hH-tE-kWm" secondAttribute="bottom" id="pXe-3E-Gcz"/>
                             <constraint firstItem="UvM-C0-zec" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="24" id="utb-jq-jCh"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="wXE-Hn-zsg" secondAttribute="trailing" constant="16" id="zrv-6a-xrJ"/>
                         </constraints>
@@ -575,6 +584,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="hideKeyboardButton" destination="1hH-tE-kWm" id="FXg-LC-j96"/>
                         <outlet property="hint" destination="tEA-Om-MWX" id="YvO-We-hJW"/>
                         <outlet property="placeholderHeight" destination="piX-I6-F14" id="2tS-nZ-XRQ"/>
                         <outlet property="playButton" destination="ihg-T8-2fA" id="fxY-GG-FBJ"/>
@@ -771,6 +781,7 @@
     <resources>
         <image name="ic_composer" width="25" height="25"/>
         <image name="ic_dictionary" width="25" height="25"/>
+        <image name="ic_keyboard_hide" width="18" height="18"/>
         <image name="ic_lexicons" width="25" height="25"/>
         <image name="ic_play" width="36" height="36"/>
         <image name="ic_play_outline" width="24" height="24"/>
