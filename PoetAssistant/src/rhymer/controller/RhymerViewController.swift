@@ -21,6 +21,7 @@ import UIKit
 import CoreData
 
 class RhymerViewController: SearchResultsController {
+	
 	private static let RHYME_TYPE_LABELS:[RhymeType:String] = [.strict: "rhyme_match_type_0",
 															   .last_three_syllables: "rhyme_match_type_3",
 															   .last_two_syllables: "rhyme_match_type_2",
@@ -35,6 +36,7 @@ class RhymerViewController: SearchResultsController {
 	}
 	weak var delegate: RTDDelegate?
 	private var rhymeFetcher: RhymeFetcher? = nil
+	
 	override func getEmptyText(query: String) -> String {
 		return String(format: NSLocalizedString("No rhymes for %@", comment: ""), "\(query)")
 	}
@@ -69,14 +71,22 @@ class RhymerViewController: SearchResultsController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RhymerTableViewCell {
+		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RTDTableViewCell {
 			if let rhyme = rhymeFetcher?.rhyme(at: indexPath) {
 				rhymerWordCell.labelWord.text = rhyme
-				rhymerWordCell.delegate = delegate
+				rhymerWordCell.rtdDelegate = delegate
 			}
+			rhymerWordCell.setRTDVisible(visible: !minimalistLayoutEnabled, animate: false)
 			return rhymerWordCell
 		}
 		return UITableViewCell()
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if minimalistLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
+			RTDAnimator.setRTDVisible(selectedCell: selectedCell, visibleCells: tableView.visibleCells)
+		}
+	}
+
 }
 

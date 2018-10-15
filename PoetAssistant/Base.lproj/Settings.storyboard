@@ -609,8 +609,37 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rdA-Ud-gF8" userLabel="About">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fhn-QY-ZpB" userLabel="Layout">
                                         <rect key="frame" x="0.0" y="456" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fhn-QY-ZpB" id="ITQ-Pa-X10">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1c-Nt-CDn">
+                                                    <rect key="frame" x="329" y="24.333333333333329" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="didClickMinimalistLayout:" destination="LXh-xF-4WQ" eventType="valueChanged" id="C9a-3x-AN4"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimalist layout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlK-43-Sj7" userLabel="Title">
+                                                    <rect key="frame" x="19.999999999999993" y="31" width="114.33333333333331" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m1c-Nt-CDn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KlK-43-Sj7" secondAttribute="trailing" constant="16" id="5Jb-fP-1uG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="m1c-Nt-CDn" secondAttribute="trailing" constant="16" id="KSJ-ge-ogP"/>
+                                                <constraint firstItem="KlK-43-Sj7" firstAttribute="leading" secondItem="ITQ-Pa-X10" secondAttribute="leadingMargin" id="LyY-tU-diu"/>
+                                                <constraint firstItem="m1c-Nt-CDn" firstAttribute="centerY" secondItem="ITQ-Pa-X10" secondAttribute="centerY" id="VpC-hA-gcz"/>
+                                                <constraint firstItem="KlK-43-Sj7" firstAttribute="centerY" secondItem="ITQ-Pa-X10" secondAttribute="centerY" id="WJZ-ju-r7n"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rdA-Ud-gF8" userLabel="About">
+                                        <rect key="frame" x="0.0" y="536" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rdA-Ud-gF8" id="cJB-Rm-Oli">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
@@ -646,6 +675,7 @@
                         <outlet property="selectedVoice" destination="e3K-wm-DDR" id="r0e-Od-Xmt"/>
                         <outlet property="sliderVoicePitch" destination="Yb3-pG-1Uk" id="rx9-HH-xSu"/>
                         <outlet property="sliderVoiceSpeed" destination="YGJ-TP-mYS" id="uIw-Un-LAw"/>
+                        <outlet property="switchMinimalistLayout" destination="m1c-Nt-CDn" id="pvg-Oh-p1F"/>
                         <outlet property="switchSearchHistory" destination="Nc1-eR-uCg" id="iiw-sX-UuT"/>
                     </connections>
                 </tableViewController>
