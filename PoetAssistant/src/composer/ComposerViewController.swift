@@ -73,7 +73,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
-		text.becomeFirstResponder()
 		updateUi()
 	}
 	
