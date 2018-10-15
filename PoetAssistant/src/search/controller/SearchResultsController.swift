@@ -44,12 +44,15 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	var lexicon: Lexicon!
+	internal var minimalistLayoutEnabled = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
+		NotificationCenter.default.addObserver(self, selector: #selector(settingsChanged), name:UserDefaults.didChangeNotification, object:nil)
 		updateUI()
 	}
-	
+
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
@@ -62,6 +65,12 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 
+	@objc
+	private func settingsChanged(notification: Notification) {
+		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
+		tableView.reloadData()
+	}
+	
 	private func queryResultsFetched(query: String) {
 		tableView.invalidateIntrinsicContentSize()
 		tableView.reloadData()

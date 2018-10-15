@@ -29,7 +29,8 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBOutlet weak var sliderVoicePitch: UISlider!
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	
-
+	@IBOutlet weak var switchMinimalistLayout: UISwitch!
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		switchSearchHistory.isOn = Settings.isSearchHistoryEnabled()
@@ -39,6 +40,7 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		sliderVoicePitch.minimumValue = Settings.MIN_VOICE_PITCH
 		sliderVoicePitch.maximumValue = Settings.MAX_VOICE_PITCH
 		sliderVoicePitch.value = Settings.getVoicePitch()
+		switchMinimalistLayout.isOn = Settings.getMinimalistLayoutEnabled()
 		updateVoiceSelection()
 	}
 
@@ -56,6 +58,9 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
 	}
 
+	@IBAction func didClickMinimalistLayout(_ sender: UISwitch) {
+		Settings.setMinimalistLayoutEnabled(enabled: sender.isOn)
+	}
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UITableView.automaticDimension
 	}
