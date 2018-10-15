@@ -248,13 +248,9 @@
 			children = (
 				4F15B04A217342380072C8BC /* tts */,
 				4FFB98082172358A000469F0 /* settings */,
-				4FFB980521722E6F000469F0 /* more */,
 				4FFB980021722253000469F0 /* about */,
 				4F661413216627BF00FA10A1 /* extensions */,
 				4F661405216533A600FA10A1 /* search */,
-				4F6614022165318900FA10A1 /* dictionary */,
-				4F6613F22164FC5800FA10A1 /* rhymer */,
-				4F6613F32164FC6200FA10A1 /* thesaurus */,
 				4F6613F12164FC4700FA10A1 /* composer */,
 				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
 				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
@@ -263,7 +259,6 @@
 				4F31972A2166587100135FF4 /* Tab.swift */,
 				4F3197662168C32800135FF4 /* Lexicon.swift */,
 				4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */,
-				4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -310,6 +305,9 @@
 		4F661405216533A600FA10A1 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				4F6613F22164FC5800FA10A1 /* rhymer */,
+				4F6613F32164FC6200FA10A1 /* thesaurus */,
+				4F6614022165318900FA10A1 /* dictionary */,
 				4FFBA606216A977B00AD3AD6 /* model */,
 				4F698A222175421F00CD6CB3 /* view */,
 				4FFBA607216A978B00AD3AD6 /* controller */,
@@ -375,18 +373,11 @@
 			path = about;
 			sourceTree = "<group>";
 		};
-		4FFB980521722E6F000469F0 /* more */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = more;
-			sourceTree = "<group>";
-		};
 		4FFB98082172358A000469F0 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				4F698A1D21738F1500CD6CB3 /* view */,
 				4FFB980E217245AF000469F0 /* model */,
+				4F698A1D21738F1500CD6CB3 /* view */,
 				4FFB980D217245A7000469F0 /* controller */,
 			);
 			path = settings;
@@ -422,6 +413,7 @@
 		4FFBA606216A977B00AD3AD6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */,
 				4F3197502167A2D000135FF4 /* SectionInfo.swift */,
 				4F3197522167D59A00135FF4 /* PorterStemmer.swift */,
 				4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */,
