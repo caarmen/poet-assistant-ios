@@ -26,7 +26,6 @@ Displays the search results for a given query
 */
 class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	private let speechSynthesizer = AVSpeechSynthesizer()
-
 	@IBOutlet weak var viewResultHeader: UIView!
 	@IBOutlet weak var labelQuery: UILabel!
 	@IBOutlet weak var tableView: UITableView!{
@@ -44,15 +43,23 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	var lexicon: Lexicon!
-	internal var minimalistLayoutEnabled = false
+	internal var minimalistLayoutEnabled = false {
+		didSet {
+			if oldValue != minimalistLayoutEnabled {
+				tableView.reloadData()
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
-		NotificationCenter.default.addObserver(self, selector: #selector(settingsChanged), name:UserDefaults.didChangeNotification, object:nil)
 		updateUI()
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
+	}
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
@@ -63,12 +70,6 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			emptyText.text = NSLocalizedString("empty_text_no_query", comment: "")
 			viewResultHeader.isHidden = true
 		}
-	}
-
-	@objc
-	private func settingsChanged(notification: Notification) {
-		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
-		tableView.reloadData()
 	}
 	
 	private func queryResultsFetched(query: String) {
@@ -97,7 +98,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			}
 		}
 	}
-
+	
 	@IBAction func didClickPlayQueryWord(_ sender: UIButton) {
 		let utterance = Tts.createUtterance(text: query)
 		speechSynthesizer.speak(utterance)
@@ -106,17 +107,17 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	//--------------------------------------------
 	// Methods to be implemented by the subclasses
 	//--------------------------------------------
-
+	
 	/**
 	* Fetch the data
 	*/
 	open func fetch(word: String, completion: @escaping () -> Void) {
 	}
-
+	
 	open func getEmptyText(query: String) -> String {
 		return ""
 	}
-
+	
 	open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 0
 	}
