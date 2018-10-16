@@ -135,7 +135,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	// https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW7
 	private func registerForKeyboardNotifications() {
 		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown), name:UIResponder.keyboardDidShowNotification, object:nil)
-		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown), name:UIResponder.keyboardWillHideNotification, object:nil)
+		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillBeHidden), name:UIResponder.keyboardWillHideNotification, object:nil)
 	}
 	@objc func keyboardWasShown(notification: Notification) {
 		if let kbSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size {
