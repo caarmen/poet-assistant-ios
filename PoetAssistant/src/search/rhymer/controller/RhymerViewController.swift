@@ -76,15 +76,15 @@ class RhymerViewController: SearchResultsController {
 				rhymerWordCell.labelWord.text = rhyme
 				rhymerWordCell.rtdDelegate = delegate
 			}
-			rhymerWordCell.setRTDVisible(visible: !minimalistLayoutEnabled, animate: false)
-			rhymerWordCell.buttonMore.isHidden = !minimalistLayoutEnabled
+			rhymerWordCell.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
+			rhymerWordCell.buttonMore.isHidden = efficientLayoutEnabled
 			return rhymerWordCell
 		}
 		return UITableViewCell()
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if minimalistLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
+		if !efficientLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
 			RTDAnimator.setRTDVisible(selectedCell: selectedCell, visibleCells: tableView.visibleCells)
 		}
 	}

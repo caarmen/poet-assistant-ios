@@ -43,9 +43,9 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	var lexicon: Lexicon!
-	internal var minimalistLayoutEnabled = false {
+	internal var efficientLayoutEnabled = false {
 		didSet {
-			if oldValue != minimalistLayoutEnabled {
+			if oldValue != efficientLayoutEnabled {
 				tableView.reloadData()
 			}
 		}
@@ -58,7 +58,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
+		efficientLayoutEnabled = Settings.getEfficientLayoutEnabled()
 	}
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
