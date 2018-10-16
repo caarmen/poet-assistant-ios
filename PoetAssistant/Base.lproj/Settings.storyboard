@@ -598,7 +598,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer search suggestions based on previous searches" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-r6-e63" userLabel="Summary">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer search suggestions based on previous searches" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-r6-e63" userLabel="Summary">
                                                             <rect key="frame" x="0.0" y="10" width="215.66666666666666" height="1.6666666666666661"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <nil key="textColor"/>
@@ -640,7 +640,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always show R T D icons for quicker access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N5-jd-bgJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always show R T D icons for quicker access" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N5-jd-bgJ">
                                                             <rect key="frame" x="0.0" y="10" width="264.33333333333331" height="1.6666666666666661"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <nil key="textColor"/>
@@ -653,6 +653,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="m1c-Nt-CDn" secondAttribute="trailing" id="KSJ-ge-ogP"/>
                                                 <constraint firstItem="hOU-rK-JPR" firstAttribute="leading" secondItem="ITQ-Pa-X10" secondAttribute="leadingMargin" id="MY2-ne-eoh"/>
                                                 <constraint firstItem="m1c-Nt-CDn" firstAttribute="centerY" secondItem="ITQ-Pa-X10" secondAttribute="centerY" id="VpC-hA-gcz"/>
+                                                <constraint firstItem="m1c-Nt-CDn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hOU-rK-JPR" secondAttribute="trailing" constant="16" id="fVX-P7-eTm"/>
                                                 <constraint firstItem="hOU-rK-JPR" firstAttribute="centerY" secondItem="ITQ-Pa-X10" secondAttribute="centerY" id="fZh-Dn-hW2"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hOU-rK-JPR" secondAttribute="bottom" constant="16" id="lzE-Pk-27y"/>
                                                 <constraint firstItem="hOU-rK-JPR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ITQ-Pa-X10" secondAttribute="top" constant="16" id="plM-jJ-Oye"/>
