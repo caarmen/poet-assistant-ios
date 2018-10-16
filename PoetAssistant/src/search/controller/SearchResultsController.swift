@@ -26,7 +26,6 @@ Displays the search results for a given query
 */
 class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	private let speechSynthesizer = AVSpeechSynthesizer()
-
 	@IBOutlet weak var viewResultHeader: UIView!
 	@IBOutlet weak var labelQuery: UILabel!
 	@IBOutlet weak var tableView: UITableView!{
@@ -44,12 +43,23 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	var lexicon: Lexicon!
+	internal var minimalistLayoutEnabled = false {
+		didSet {
+			if oldValue != minimalistLayoutEnabled {
+				tableView.reloadData()
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
 	}
-	
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		minimalistLayoutEnabled = Settings.getMinimalistLayoutEnabled()
+	}
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
 		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
@@ -61,7 +71,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			viewResultHeader.isHidden = true
 		}
 	}
-
+	
 	private func queryResultsFetched(query: String) {
 		tableView.invalidateIntrinsicContentSize()
 		tableView.reloadData()
@@ -88,7 +98,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			}
 		}
 	}
-
+	
 	@IBAction func didClickPlayQueryWord(_ sender: UIButton) {
 		let utterance = Tts.createUtterance(text: query)
 		speechSynthesizer.speak(utterance)
@@ -97,17 +107,17 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	//--------------------------------------------
 	// Methods to be implemented by the subclasses
 	//--------------------------------------------
-
+	
 	/**
 	* Fetch the data
 	*/
 	open func fetch(word: String, completion: @escaping () -> Void) {
 	}
-
+	
 	open func getEmptyText(query: String) -> String {
 		return ""
 	}
-
+	
 	open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 0
 	}

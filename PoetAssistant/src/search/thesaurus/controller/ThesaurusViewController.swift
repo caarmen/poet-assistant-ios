@@ -79,8 +79,8 @@ class ThesaurusViewController: SearchResultsController {
 				bindRelationshipCell(
 					cellView: thesaurusCell as! ThesaurusRelationshipViewCell, relationship: subtitle)
 			case .word (let word):
-				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusWord") as? ThesaurusTableViewCell
-				bindWordCell(cellView: thesaurusCell as! ThesaurusTableViewCell, word: word)
+				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusWord") as? RTDTableViewCell
+				bindWordCell(cellView: thesaurusCell as! RTDTableViewCell, word: word)
 			}
 			if (thesaurusCell != nil) {
 				return thesaurusCell!
@@ -97,9 +97,16 @@ class ThesaurusViewController: SearchResultsController {
 			cellView.labelRelationship.text = NSLocalizedString("thesaurus_antonyms_title", comment: "")
 		}
 	}
-	private func bindWordCell(cellView: ThesaurusTableViewCell, word: String) {
+	private func bindWordCell(cellView: RTDTableViewCell, word: String) {
 		cellView.labelWord.text = word
-		cellView.delegate = delegate
+		cellView.rtdDelegate = delegate
+		cellView.setRTDVisible(visible: !minimalistLayoutEnabled, animate: false)
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if minimalistLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
+			RTDAnimator.setRTDVisible(selectedCell: selectedCell, visibleCells: tableView.visibleCells)
+		}
 	}
 }
 

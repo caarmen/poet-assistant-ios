@@ -13,10 +13,8 @@
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
 		4F31973B2166C28700135FF4 /* WordVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973A2166C28700135FF4 /* WordVariants.swift */; };
 		4F31973D2166C79600135FF4 /* RhymeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973C2166C79600135FF4 /* RhymeFetcher.swift */; };
-		4F3197402166D67000135FF4 /* RhymerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31973F2166D67000135FF4 /* RhymerTableViewCell.swift */; };
 		4F3197452167129400135FF4 /* Thesaurus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197442167129400135FF4 /* Thesaurus.swift */; };
 		4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */; };
-		4F3197492167261800135FF4 /* ThesaurusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197482167261800135FF4 /* ThesaurusTableViewCell.swift */; };
 		4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31974A2167284800135FF4 /* ThesaurusRelationshipViewCell.swift */; };
 		4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31974E21679CFD00135FF4 /* RTDDelegate.swift */; };
 		4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197502167A2D000135FF4 /* SectionInfo.swift */; };
@@ -46,6 +44,8 @@
 		4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */; };
 		4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1B21737AD500CD6CB3 /* VoiceList.swift */; };
 		4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */; };
+		4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A202175410200CD6CB3 /* RTDAnimator.swift */; };
+		4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
@@ -77,10 +77,8 @@
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		4F31973A2166C28700135FF4 /* WordVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordVariants.swift; sourceTree = "<group>"; };
 		4F31973C2166C79600135FF4 /* RhymeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymeFetcher.swift; sourceTree = "<group>"; };
-		4F31973F2166D67000135FF4 /* RhymerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerTableViewCell.swift; sourceTree = "<group>"; };
 		4F3197442167129400135FF4 /* Thesaurus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesaurus.swift; sourceTree = "<group>"; };
 		4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusResultsFetcher.swift; sourceTree = "<group>"; };
-		4F3197482167261800135FF4 /* ThesaurusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusTableViewCell.swift; sourceTree = "<group>"; };
 		4F31974A2167284800135FF4 /* ThesaurusRelationshipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusRelationshipViewCell.swift; sourceTree = "<group>"; };
 		4F31974E21679CFD00135FF4 /* RTDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDDelegate.swift; sourceTree = "<group>"; };
 		4F3197502167A2D000135FF4 /* SectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
@@ -115,6 +113,8 @@
 		4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
 		4F698A1B21737AD500CD6CB3 /* VoiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceList.swift; sourceTree = "<group>"; };
 		4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
+		4F698A202175410200CD6CB3 /* RTDAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDAnimator.swift; sourceTree = "<group>"; };
+		4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTableViewCell.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
@@ -174,14 +174,6 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		4F31973E2166D64D00135FF4 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				4F31973F2166D67000135FF4 /* RhymerTableViewCell.swift */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		4F3197412167125C00135FF4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +195,6 @@
 		4F3197432167127100135FF4 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4F3197482167261800135FF4 /* ThesaurusTableViewCell.swift */,
 				4F31974A2167284800135FF4 /* ThesaurusRelationshipViewCell.swift */,
 			);
 			path = view;
@@ -255,24 +246,19 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4F15B04A217342380072C8BC /* tts */,
-				4FFB98082172358A000469F0 /* settings */,
-				4FFB980521722E6F000469F0 /* more */,
-				4FFB980021722253000469F0 /* about */,
-				4F661413216627BF00FA10A1 /* extensions */,
-				4F661405216533A600FA10A1 /* search */,
-				4F6614022165318900FA10A1 /* dictionary */,
-				4F6613F22164FC5800FA10A1 /* rhymer */,
-				4F6613F32164FC6200FA10A1 /* thesaurus */,
 				4F6613F12164FC4700FA10A1 /* composer */,
+				4F661405216533A600FA10A1 /* search */,
+				4FFB98082172358A000469F0 /* settings */,
+				4FFB980021722253000469F0 /* about */,
+				4F15B04A217342380072C8BC /* tts */,
+				4F661413216627BF00FA10A1 /* extensions */,
 				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
-				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
 				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
 				4F31972A2166587100135FF4 /* Tab.swift */,
 				4F3197662168C32800135FF4 /* Lexicon.swift */,
+				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
 				4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */,
-				4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -291,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				4F3197382166C0E100135FF4 /* model */,
-				4F31973E2166D64D00135FF4 /* view */,
 				4F3197392166C0EF00135FF4 /* controller */,
 			);
 			path = rhymer;
@@ -320,7 +305,11 @@
 		4F661405216533A600FA10A1 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				4F6613F22164FC5800FA10A1 /* rhymer */,
+				4F6613F32164FC6200FA10A1 /* thesaurus */,
+				4F6614022165318900FA10A1 /* dictionary */,
 				4FFBA606216A977B00AD3AD6 /* model */,
+				4F698A222175421F00CD6CB3 /* view */,
 				4FFBA607216A978B00AD3AD6 /* controller */,
 			);
 			path = search;
@@ -367,6 +356,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		4F698A222175421F00CD6CB3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4F698A202175410200CD6CB3 /* RTDAnimator.swift */,
+				4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		4FFB980021722253000469F0 /* about */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,18 +373,11 @@
 			path = about;
 			sourceTree = "<group>";
 		};
-		4FFB980521722E6F000469F0 /* more */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = more;
-			sourceTree = "<group>";
-		};
 		4FFB98082172358A000469F0 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				4F698A1D21738F1500CD6CB3 /* view */,
 				4FFB980E217245AF000469F0 /* model */,
+				4F698A1D21738F1500CD6CB3 /* view */,
 				4FFB980D217245A7000469F0 /* controller */,
 			);
 			path = settings;
@@ -422,6 +413,7 @@
 		4FFBA606216A977B00AD3AD6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */,
 				4F3197502167A2D000135FF4 /* SectionInfo.swift */,
 				4F3197522167D59A00135FF4 /* PorterStemmer.swift */,
 				4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */,
@@ -556,7 +548,6 @@
 			files = (
 				4F3197652168AD0F00135FF4 /* SearchViewController.swift in Sources */,
 				4F31973B2166C28700135FF4 /* WordVariants.swift in Sources */,
-				4F3197402166D67000135FF4 /* RhymerTableViewCell.swift in Sources */,
 				4F661404216531C800FA10A1 /* DictionaryViewController.swift in Sources */,
 				4F6613DA2164D10700FA10A1 /* ThesaurusViewController.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
@@ -571,13 +562,13 @@
 				4FFBA60B216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift in Sources */,
 				4F31972F21666FCF00135FF4 /* Settings.swift in Sources */,
 				4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */,
+				4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */,
 				4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */,
 				4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */,
 				4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */,
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F66140121652F6C00FA10A1 /* EmbeddedDb.swift in Sources */,
 				4F31973D2166C79600135FF4 /* RhymeFetcher.swift in Sources */,
-				4F3197492167261800135FF4 /* ThesaurusTableViewCell.swift in Sources */,
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
 				4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
@@ -588,6 +579,7 @@
 				4FFB980221722274000469F0 /* AboutViewController.swift in Sources */,
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
+				4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
 				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
