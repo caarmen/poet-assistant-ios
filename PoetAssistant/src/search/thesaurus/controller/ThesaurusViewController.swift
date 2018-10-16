@@ -100,7 +100,6 @@ class ThesaurusViewController: SearchResultsController {
 	private func bindWordCell(cellView: RTDTableViewCell, word: String) {
 		cellView.labelWord.text = word
 		cellView.rtdDelegate = delegate
-		cellView.buttonMore.isHidden = efficientLayoutEnabled
 		cellView.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
 	}
 	

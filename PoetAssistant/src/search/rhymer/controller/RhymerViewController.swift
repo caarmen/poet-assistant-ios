@@ -77,7 +77,6 @@ class RhymerViewController: SearchResultsController {
 				rhymerWordCell.rtdDelegate = delegate
 			}
 			rhymerWordCell.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
-			rhymerWordCell.buttonMore.isHidden = efficientLayoutEnabled
 			return rhymerWordCell
 		}
 		return UITableViewCell()
