@@ -31,6 +31,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		}
 	}
 	
+	@IBOutlet weak var hideKeyboardButton: UIButton!
 	@IBOutlet weak var wordCount: UILabel!
 	@IBOutlet weak var hint: UILabel!
 	@IBOutlet weak var placeholderHeight: NSLayoutConstraint!
@@ -72,7 +73,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		text.text = Poem.readDraft().text
-		text.becomeFirstResponder()
 		updateUi()
 	}
 	
@@ -125,6 +125,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 		updatePlayButton()
 	}
 	
+	@IBAction func didClickHideKeyboard(_ sender: UIButton) {
+		text.endEditing(true)
+		setPlaceholderHeight(height: 0.0)
+	}
+	
 	// Adapt the location of the text view when the keyboard appears. Otherwise the keyboard will remain
 	// on top of the text view.
 	// https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW7
@@ -134,7 +139,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	}
 	@objc func keyboardWasShown(notification: Notification) {
 		if let kbSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size {
-			setPlaceholderHeight(height: kbSize.height)
+			if let tabBarHeight = tabBarController?.tabBar.frame.height {
+				setPlaceholderHeight(height: kbSize.height - tabBarHeight)
+			}
 		}
 	}
 	@objc func keyboardWillBeHidden(notification: Notification) {
@@ -142,6 +149,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	}
 	private func setPlaceholderHeight(height: CGFloat) {
 		placeholderHeight.constant = height
+		hideKeyboardButton.isHidden = height <= 0
 		DispatchQueue.main.async {
 			self.scrollToCursor(keyboardHeight: height)
 		}

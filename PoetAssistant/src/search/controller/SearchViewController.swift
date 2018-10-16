@@ -37,10 +37,24 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchController?.searchBar.sizeToFit()
 		searchController?.searchBar.placeholder = NSLocalizedString("search_placeholder", comment: "")
 		searchController?.isActive = true
-		navigationItem.titleView = searchController?.searchBar
+		if let searchBar = searchController?.searchBar, let tintColor = navigationController?.navigationBar.barTintColor {
+			navigationItem.titleView = searchBar
+			applyTextFieldTint(view: searchBar, color: tintColor)
+		}
+
 		navigationItem.hidesSearchBarWhenScrolling = false
 		rightButtonBarItem = navigationItem.rightBarButtonItem
 		definesPresentationContext = true
+	}
+	
+	// https://stackoverflow.com/questions/21453838/cursor-invisible-in-uisearchbar-ios-7/42444940#42444940
+	// Workaround to have a dark cursor yet a light "Cancel" text.
+	private func applyTextFieldTint(view: UIView, color: UIColor) {
+		if view is UITextField {
+			view.tintColor = color
+		} else {
+			view.subviews.forEach {applyTextFieldTint(view:$0, color:color)}
+		}
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
