@@ -29,12 +29,14 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 	var voiceListDelegate: VoiceListDelegate?
 	
 	private let voices = VoiceList.getVoiceList()
+	private var selectedVoiceIdentifier: String?
 	
 	private class func getLanguageCode(identifier: String) -> String {
 		let nsLocale = NSLocale.autoupdatingCurrent
 		return nsLocale.localizedString(forLanguageCode: identifier) ?? identifier
 	}
 	override func viewDidLoad() {
+		selectedVoiceIdentifier = Settings.getVoiceIdentifier()
 		super.viewDidLoad()
 		tableView.reloadData()
 	}
@@ -58,6 +60,9 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 			let qualityStringKey = voice.quality == .enhanced ? "voice_quality_enhanced" : "voice_quality_default"
 			let qualityString = NSLocalizedString(qualityStringKey, comment: "")
 			voiceCell.labelVoiceQuality.text = qualityString
+			let isSelectedVoice = voice.identifier == selectedVoiceIdentifier
+			voiceCell.labelVoiceName.bold = isSelectedVoice
+			voiceCell.labelVoiceQuality.bold = isSelectedVoice
 			voiceCell.delegate = self
 		}
 		return cell

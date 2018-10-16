@@ -31,14 +31,14 @@ class Settings {
 	private static let KEY_VOICE_SPEED = "voice_speed"
 	private static let KEY_VOICE_PITCH = "voice_pitch"
 	private static let KEY_VOICE_IDENTIFIER = "voice_identifier"
-	private static let KEY_MINIMALIST_LAYOUT = "minimalist_layout"
+	private static let KEY_EFFICIENT_LAYOUT = "efficient_layout"
 	
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
 	private static let DEFAULT_VOICE_PITCH = Float(1.0)
 	private static let DEFAULT_TAB = Tab.composer
 	private static let DEFAULT_LEXICON = Lexicon.rhymer
 	private static let DEFAULT_SEARCH_HISTORY_ENABLED = true
-	private static let DEFAULT_MINIMALIST_LAYOUT = false
+	private static let DEFAULT_EFFICIENT_LAYOUT = false
 	
 	class func registerDefaults() {
 		UserDefaults.init().register(defaults:
@@ -47,7 +47,7 @@ class Settings {
 			 KEY_SEARCH_HISTORY: DEFAULT_SEARCH_HISTORY_ENABLED,
 			 KEY_VOICE_SPEED: DEFAULT_VOICE_SPEED,
 			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
-			 KEY_MINIMALIST_LAYOUT: DEFAULT_MINIMALIST_LAYOUT])
+			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT])
 	}
 	class func getTab() -> Tab {
 		if let tabName = UserDefaults.init().object(forKey: KEY_TAB) as? String {
@@ -113,12 +113,12 @@ class Settings {
 		setPref(key: KEY_VOICE_PITCH, value: pitch)
 	}
 	
-	class func getMinimalistLayoutEnabled() -> Bool {
-		return getBoolPref(key: KEY_MINIMALIST_LAYOUT, defaultValue: DEFAULT_MINIMALIST_LAYOUT)
+	class func getEfficientLayoutEnabled() -> Bool {
+		return getBoolPref(key: KEY_EFFICIENT_LAYOUT, defaultValue: DEFAULT_EFFICIENT_LAYOUT)
 	}
 	
-	class func setMinimalistLayoutEnabled(enabled: Bool) {
-		setPref(key: KEY_MINIMALIST_LAYOUT, value: enabled)
+	class func setEfficientLayoutEnabled(enabled: Bool) {
+		setPref(key: KEY_EFFICIENT_LAYOUT, value: enabled)
 	}
 	
 	private class func getBoolPref(key: String, defaultValue: Bool) -> Bool {

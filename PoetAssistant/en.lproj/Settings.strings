@@ -8,6 +8,9 @@
 /* Class = "UILabel"; text = "Voice"; ObjectID = "5ac-lg-RHJ"; */
 "5ac-lg-RHJ.text" = "Voice";
 
+/* Class = "UILabel"; text = "Always show R T D icons for quicker access"; ObjectID = "7N5-jd-bgJ"; */
+"7N5-jd-bgJ.text" = "Always show R T D icons for quicker access";
+
 /* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
 "9Lj-6Q-TeV.text" = "Search History";
 
@@ -23,8 +26,8 @@
 /* Class = "UILabel"; text = "Poet Assistant License (GPLv3)"; ObjectID = "IDM-6f-6gZ"; */
 "IDM-6f-6gZ.text" = "Poet Assistant License (GPLv3)";
 
-/* Class = "UILabel"; text = "Minimalist layout"; ObjectID = "KlK-43-Sj7"; */
-"KlK-43-Sj7.text" = "Minimalist layout";
+/* Class = "UILabel"; text = "Efficient layout"; ObjectID = "KlK-43-Sj7"; */
+"KlK-43-Sj7.text" = "Efficient layout";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "LXh-xF-4WQ"; */
 "LXh-xF-4WQ.title" = "Settings";

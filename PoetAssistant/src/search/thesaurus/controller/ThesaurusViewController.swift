@@ -100,11 +100,11 @@ class ThesaurusViewController: SearchResultsController {
 	private func bindWordCell(cellView: RTDTableViewCell, word: String) {
 		cellView.labelWord.text = word
 		cellView.rtdDelegate = delegate
-		cellView.setRTDVisible(visible: !minimalistLayoutEnabled, animate: false)
+		cellView.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if minimalistLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
+		if !efficientLayoutEnabled, let selectedCell = tableView.cellForRow(at: indexPath) as? RTDTableViewCell {
 			RTDAnimator.setRTDVisible(selectedCell: selectedCell, visibleCells: tableView.visibleCells)
 		}
 	}

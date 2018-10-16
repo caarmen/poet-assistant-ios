@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Qu-q7L">
-                                                    <rect key="frame" x="15" y="11.5" width="184" height="21"/>
+                                                    <rect key="frame" x="15" y="11.5" width="185" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
-                                                    <rect key="frame" x="315" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="316" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
                                                         <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
@@ -51,7 +51,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
-                                                    <rect key="frame" x="261" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="262" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="V9H-br-mze"/>
                                                         <constraint firstAttribute="width" constant="44" id="utw-K2-emc"/>
@@ -62,7 +62,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
-                                                    <rect key="frame" x="207" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="208" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="2xA-JD-WOe"/>
                                                         <constraint firstAttribute="height" constant="44" id="75J-Mg-6nI"/>
@@ -74,9 +74,9 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MDN-Gd-8qR" secondAttribute="trailing" id="05n-oK-Mku"/>
                                                 <constraint firstItem="Ksn-5e-YYn" firstAttribute="leading" secondItem="LzB-D5-qoq" secondAttribute="trailing" constant="10" id="1kQ-Fo-REQ"/>
                                                 <constraint firstItem="MDN-Gd-8qR" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="3CC-lH-1kP"/>
-                                                <constraint firstAttribute="trailing" secondItem="MDN-Gd-8qR" secondAttribute="trailing" constant="16" id="3ge-8h-6Rl"/>
                                                 <constraint firstItem="LzB-D5-qoq" firstAttribute="leading" secondItem="G1t-Qu-q7L" secondAttribute="trailing" constant="8" id="939-00-UB2"/>
                                                 <constraint firstItem="G1t-Qu-q7L" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="QGe-3V-Bny"/>
                                                 <constraint firstItem="G1t-Qu-q7L" firstAttribute="leading" secondItem="1lf-HL-7DB" secondAttribute="leadingMargin" id="Wpr-Cr-oV2"/>
@@ -228,13 +228,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e5-yf-lk0">
-                                                    <rect key="frame" x="15" y="11.5" width="184" height="21"/>
+                                                    <rect key="frame" x="15" y="11.5" width="185" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-hD-7jw">
-                                                    <rect key="frame" x="315" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="316" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="alQ-Ea-jny"/>
                                                         <constraint firstAttribute="width" constant="44" id="lBD-Ua-8Dp"/>
@@ -245,7 +245,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyi-K6-LOR">
-                                                    <rect key="frame" x="261" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="262" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="7FO-5a-q6C"/>
                                                         <constraint firstAttribute="width" constant="44" id="pAv-iB-BFi"/>
@@ -256,7 +256,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-C7-Hx2">
-                                                    <rect key="frame" x="207" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="208" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="6lF-iC-c3i"/>
                                                         <constraint firstAttribute="height" constant="44" id="t7z-F5-WJc"/>
@@ -273,9 +273,9 @@
                                                 <constraint firstItem="Fyi-K6-LOR" firstAttribute="leading" secondItem="Kdd-C7-Hx2" secondAttribute="trailing" constant="10" id="Elo-i3-EwE"/>
                                                 <constraint firstItem="FrO-hD-7jw" firstAttribute="leading" secondItem="Fyi-K6-LOR" secondAttribute="trailing" constant="10" id="KU8-un-YkZ"/>
                                                 <constraint firstItem="6e5-yf-lk0" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="TVM-oo-NfT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FrO-hD-7jw" secondAttribute="trailing" id="crK-Rg-KDy"/>
                                                 <constraint firstItem="FrO-hD-7jw" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="izc-bw-yag"/>
                                                 <constraint firstItem="Kdd-C7-Hx2" firstAttribute="leading" secondItem="6e5-yf-lk0" secondAttribute="trailing" constant="8" id="mTX-eE-5he"/>
-                                                <constraint firstAttribute="trailing" secondItem="FrO-hD-7jw" secondAttribute="trailing" constant="16" id="nCQ-IX-Mmj"/>
                                                 <constraint firstItem="Kdd-C7-Hx2" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="x4K-7i-vJi"/>
                                             </constraints>
                                         </tableViewCellContentView>
