@@ -26,6 +26,7 @@ class RTDTableViewCell: UITableViewCell {
 	@IBOutlet weak var buttonRhymer: UIButton!
 	@IBOutlet weak var buttonThesaurus: UIButton!
 	@IBOutlet weak var buttonDictionary: UIButton!
+	@IBOutlet weak var buttonMore: UIButton!
 	@IBAction func searchRhymer(_ sender: UIButton) {
 		rtdDelegate?.searchRhymer(query: labelWord.text!)
 	}
@@ -40,7 +41,7 @@ class RTDTableViewCell: UITableViewCell {
 		setRTDVisible(visible: buttonRhymer.isHidden, animate: true)
 	}
 	func setRTDVisible(visible: Bool, animate: Bool) {
-		RTDAnimator.setRTDVisible(rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
+		RTDAnimator.setRTDVisible(buttonMore: buttonMore, rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
 								  visible:visible, animate:animate)
 	}
 

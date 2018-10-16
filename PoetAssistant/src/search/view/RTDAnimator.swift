@@ -34,23 +34,23 @@ class RTDAnimator {
 		selectedCell.toggleRTDVisibility()
 	}
 	
-	class func setRTDVisible(rtdViews: [UIView], visible: Bool, animate: Bool) {
+	class func setRTDVisible(buttonMore: UIView, rtdViews: [UIView], visible: Bool, animate: Bool) {
 		if (animate) {
 			if (visible) {
-				rtdViews.forEach { showView(view: $0)}
+				rtdViews.forEach { showView(buttonMore:buttonMore, view: $0)}
 			} else {
-				rtdViews.forEach { hideView(view: $0)}
+				rtdViews.forEach { hideView(buttonMore:buttonMore, view: $0)}
 			}
 		} else {
 			rtdViews.forEach {$0.isHidden = !visible}
 		}
 	}
 	
-	private class func hideView(view: UIView) {
+	private class func hideView(buttonMore: UIView, view: UIView) {
 		if (!view.isHidden) {
 			let origFrame = view.frame
 			UIView.animate(withDuration: ANIMATION_DURATION, animations: {
-				let newFrame = CGRect(x: UIScreen.main.bounds.width, y: origFrame.minY, width: origFrame.width, height: origFrame.height)
+				let newFrame = CGRect(x: buttonMore.frame.origin.x - view.frame.width, y: origFrame.minY, width: origFrame.width, height: origFrame.height)
 				view.frame = newFrame
 				view.alpha = 0.0
 			}, completion: { animationFinished in
@@ -60,10 +60,10 @@ class RTDAnimator {
 			})
 		}
 	}
-	private class func showView(view: UIView) {
+	private class func showView(buttonMore: UIView, view: UIView) {
 		if (view.isHidden) {
 			let origFrame = view.frame
-			let newFrame = CGRect(x: UIScreen.main.bounds.width, y: origFrame.minY, width: origFrame.width, height: origFrame.height)
+			let newFrame = CGRect(x: buttonMore.frame.origin.x - view.frame.width, y: origFrame.minY, width: origFrame.width, height: origFrame.height)
 			view.frame = newFrame
 			view.isHidden = false
 			view.alpha = 0.0
