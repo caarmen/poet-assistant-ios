@@ -40,6 +40,15 @@ class Settings {
 	private static let DEFAULT_SEARCH_HISTORY_ENABLED = true
 	private static let DEFAULT_MINIMALIST_LAYOUT = false
 	
+	class func registerDefaults() {
+		UserDefaults.init().register(defaults:
+			[KEY_TAB: DEFAULT_TAB.rawValue,
+			 KEY_LEXICON: DEFAULT_LEXICON.rawValue,
+			 KEY_SEARCH_HISTORY: DEFAULT_SEARCH_HISTORY_ENABLED,
+			 KEY_VOICE_SPEED: DEFAULT_VOICE_SPEED,
+			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
+			 KEY_MINIMALIST_LAYOUT: DEFAULT_MINIMALIST_LAYOUT])
+	}
 	class func getTab() -> Tab {
 		if let tabName = UserDefaults.init().object(forKey: KEY_TAB) as? String {
 			if let tab = Tab(rawValue: tabName) {
