@@ -192,10 +192,11 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	}
 	private func handleSelection(selection: String?) {
 		if (selection != nil && !selection!.isEmpty) {
-			rhymerController?.query = selection!
-			thesaurusController?.query = selection!
-			dictionaryController?.query = selection!
-			Suggestion.addSuggestion(word: selection!)
+			let selectionLowerCase = selection!.localizedLowercase
+			rhymerController?.query = selectionLowerCase
+			thesaurusController?.query = selectionLowerCase
+			dictionaryController?.query = selectionLowerCase
+			Suggestion.addSuggestion(word: selectionLowerCase)
 		}
 		searchSuggestionsController?.clear()
 		searchContainer.isHidden = true
