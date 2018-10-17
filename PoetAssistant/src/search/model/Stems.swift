@@ -59,11 +59,6 @@ class Stems: NSManagedObject {
 	*/
 	class func calculateSimilarityScore(word1: String, word2: String) -> Int {
 		let length = min(word1.count, word2.count)
-		for (index, _) in word1.enumerated() {
-			if index >= word2.count || word1[index] != word2[index] {
-				return index
-			}
-		}
-		return length
+		return (0..<length).first(where: { word1[$0] != word2[$0] }) ?? length
 	}
 }

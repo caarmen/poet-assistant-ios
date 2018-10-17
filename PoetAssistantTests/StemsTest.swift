@@ -42,6 +42,7 @@ class StemsTest: XCTestCase {
 	
 	func testWordSimilarities() {
 		assertSimilarityScore(word1: "animations", word2: "animation", expectedScore: 9)
+		assertSimilarityScore(word1: "animations", word2: "animations", expectedScore: 10)
 		assertSimilarityScore(word1: "happy", word2: "sad", expectedScore: 0)
 		assertSimilarityScore(word1: "happy", word2: "hungry", expectedScore: 1)
 		assertSimilarityScore(word1: "happy", word2: "", expectedScore: 0)
