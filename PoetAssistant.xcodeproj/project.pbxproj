@@ -47,6 +47,8 @@
 		4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A202175410200CD6CB3 /* RTDAnimator.swift */; };
 		4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
+		4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B52177B70E00CF8B49 /* Stems.swift */; };
+		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -117,6 +119,8 @@
 		4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTableViewCell.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		4FEB03B52177B70E00CF8B49 /* Stems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stems.swift; sourceTree = "<group>"; };
+		4FEB03B72177BB7100CF8B49 /* StemsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemsTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				4F31975C2167E4A800135FF4 /* Info.plist */,
 				4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */,
 				4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */,
+				4FEB03B72177BB7100CF8B49 /* StemsTest.swift */,
 			);
 			path = PoetAssistantTests;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				4F3197522167D59A00135FF4 /* PorterStemmer.swift */,
 				4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */,
 				4FFBA60A216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift */,
+				4FEB03B52177B70E00CF8B49 /* Stems.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 			files = (
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
 				4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */,
+				4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +583,7 @@
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
+				4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */,
 				4FFB980221722274000469F0 /* AboutViewController.swift in Sources */,
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,

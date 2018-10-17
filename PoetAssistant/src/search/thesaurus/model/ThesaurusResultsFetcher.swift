@@ -32,11 +32,10 @@ class ThesaurusResultsFetcher {
 			var usedQueryText = queryText
 			var sections = try fetchImpl(context: context, queryText: queryText)
 			if sections.count == 0 {
-				let stem = PorterStemmer().stemWord(word: queryText)
-				if (stem != queryText) {
-					sections = try fetchImpl(context:context, queryText: stem)
+				if let closestWord = Stems.findClosestWord(word: queryText, context: context), closestWord != queryText {
+					sections = try fetchImpl(context:context, queryText: closestWord)
 					if (sections.count != 0) {
-						usedQueryText = stem
+						usedQueryText = closestWord
 					}
 				}
 			}

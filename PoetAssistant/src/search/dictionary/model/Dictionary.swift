@@ -27,11 +27,10 @@ class Dictionary: NSManagedObject {
 			if result.sections != nil && result.sections!.count > 0 {
 				return DictionaryQueryResult(queryText: queryText, controller: result)
 			}
-			let stem = PorterStemmer().stemWord(word: queryText)
-			if (stem != queryText) {
-				result = try fetchImpl(context:context, queryText:stem)
+			if let closestWord = Stems.findClosestWord(word: queryText, context: context), closestWord != queryText {
+				result = try fetchImpl(context:context, queryText:closestWord)
 				if result.sections != nil && result.sections!.count > 0 {
-					return DictionaryQueryResult(queryText: stem, controller: result)
+					return DictionaryQueryResult(queryText: closestWord, controller: result)
 				}
 			}
 			return nil

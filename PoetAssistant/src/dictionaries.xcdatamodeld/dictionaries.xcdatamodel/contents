@@ -5,7 +5,7 @@
         <attribute name="part_of_speech" optional="YES" attributeType="String" minValueString="0" maxValueString="1" syncable="YES"/>
         <attribute name="word" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>
     </entity>
-    <entity name="Stems" representedClassName="Stems" syncable="YES" codeGenerationType="class">
+    <entity name="Stems" representedClassName=".Stems" syncable="YES" codeGenerationType="category">
         <attribute name="google_ngram_frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="stem" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>
         <attribute name="word" attributeType="String" minValueString="0" maxValueString="80" syncable="YES"/>
