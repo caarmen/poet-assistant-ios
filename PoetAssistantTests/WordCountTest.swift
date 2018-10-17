@@ -42,6 +42,11 @@ class WordCountTest: XCTestCase {
 		XCTAssertEqual(325, WordCounter.countCharacters(text:text));
 	}
 	
+	func testNewline() {
+		let text = "foo\nbar"
+		XCTAssertEqual(2, WordCounter.countWords(text:text));
+		XCTAssertEqual(7, WordCounter.countCharacters(text:text));
+	}
 	func testHuckleberryFinn() {
 		let text = "“Did I give you the letter?”\n" +
 			"“What letter?”\n" +
@@ -83,18 +88,41 @@ class WordCountTest: XCTestCase {
 		XCTAssertEqual(154, WordCounter.countCharacters(text:text));
 	}
 	
-	
 	func testDate1() {
 		let text = "On the 5th of November, I wrote this test.";
 		XCTAssertEqual(9, WordCounter.countWords(text:text));
 		XCTAssertEqual(42, WordCounter.countCharacters(text:text));
 	}
 	
-	
 	func testDate2() {
 		let text = "On 11/5/2017, I wrote this test.";
 		XCTAssertEqual(8, WordCounter.countWords(text:text));
 		XCTAssertEqual(32, WordCounter.countCharacters(text:text));
 	}
+	
+	func testEmojis() {
+		let text = "one 123👨🏽‍✈️ 456"
+		XCTAssertEqual(3, WordCounter.countWords(text:text));
+		XCTAssertEqual(11, WordCounter.countCharacters(text:text));
+	}
+	
+	func testEmojis2() {
+		let text = "one 123👨🏽‍✈️👨🏻‍⚖️ 456"
+		XCTAssertEqual(3, WordCounter.countWords(text:text));
+		XCTAssertEqual(11, WordCounter.countCharacters(text:text));
+	}
+	
+	func testEmojis3() {
+		let text = "one 123 👨🏽‍✈️👨🏻‍⚖️ 456"
+		XCTAssertEqual(3, WordCounter.countWords(text:text));
+		XCTAssertEqual(12, WordCounter.countCharacters(text:text));
+	}
+	
+	func testEmojis4() {
+		let text = "one 1👨🏽‍✈️23 👨🏻‍⚖️ 456"
+		XCTAssertEqual(3, WordCounter.countWords(text:text));
+		XCTAssertEqual(12, WordCounter.countCharacters(text:text));
+	}
+	
 	
 }
