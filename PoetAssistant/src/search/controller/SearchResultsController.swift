@@ -100,8 +100,10 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	@IBAction func didClickPlayQueryWord(_ sender: UIButton) {
-		let utterance = Tts.createUtterance(text: query)
-		speechSynthesizer.speak(utterance)
+		if let queryText = labelQuery.text {
+			let utterance = Tts.createUtterance(text: queryText)
+			speechSynthesizer.speak(utterance)
+		}
 	}
 	
 	//--------------------------------------------
