@@ -47,7 +47,7 @@ class ComposerTest: XCTestCase {
 		app.typeText(poemText)
 		assertHidden(element:labelHint)
 		XCTAssertTrue(buttonPlay.isEnabled)
-		clearText(element: textViewPoem)
+		UITestUtils.clearText(element: textViewPoem)
 		XCTAssertEqual("", textViewPoem.value as! String)
 		assertVisible(element: labelHint)
 		XCTAssertFalse(buttonPlay.isEnabled)
@@ -66,7 +66,7 @@ class ComposerTest: XCTestCase {
 		var wordCountText = labelWordCount.label
 		XCTAssert(wordCountText.contains("2"))
 		XCTAssert(wordCountText.contains("11"))
-		clearText(element: textViewPoem)
+		UITestUtils.clearText(element: textViewPoem)
 		assertHidden(element:labelWordCount)
 		app.typeText(" ")
 		assertHidden(element:labelWordCount)
@@ -144,12 +144,5 @@ class ComposerTest: XCTestCase {
 	private func assertHidden(element: XCUIElement) {
 		let window = app.windows.element(boundBy: 0)
 		XCTAssert(!element.exists || !window.frame.contains(element.frame) || !element.isHittable)
-	}
-	
-	private func clearText(element: XCUIElement) {
-		let text = element.value as! String
-		for _ in 0..<text.count {
-			app.keys["delete"].tap()
-		}
 	}
 }
