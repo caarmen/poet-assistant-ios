@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -510,11 +511,13 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
                                 <rect key="frame" x="16" y="96" width="343" height="474"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerTextViewPoem"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-T8-2fA">
                                 <rect key="frame" x="165.5" y="36" width="44" height="44"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonPlay"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="ic_play"/>
                                 <connections>
@@ -523,12 +526,14 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
                                 <rect key="frame" x="24" y="96" width="335" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerLabelHint"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-Hn-zsg" userLabel="Share Button">
                                 <rect key="frame" x="323" y="40" width="36" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonShare"/>
                                 <state key="normal" image="ic_share"/>
                                 <connections>
                                     <action selector="onShare:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="ngf-TF-A7L"/>
@@ -536,6 +541,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
                                 <rect key="frame" x="24" y="578" width="0.0" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerLabelWordCount"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -548,6 +554,7 @@
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-tE-kWm" userLabel="Hide Keyboard">
                                 <rect key="frame" x="319" y="578" width="56" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonHideKeyboard"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="0.0"/>
                                 <state key="normal" image="ic_keyboard_hide"/>
                                 <connections>
