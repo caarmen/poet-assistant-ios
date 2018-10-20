@@ -128,6 +128,7 @@
                                                 <constraint firstItem="HnG-uC-Ns9" firstAttribute="leading" secondItem="on2-qn-fkM" secondAttribute="trailing" constant="8" id="yF5-FB-vfL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutSource"/>
                                         <constraints>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="centerY" secondItem="cgw-cQ-TZa" secondAttribute="centerY" id="F18-ao-hnW"/>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="leading" secondItem="cgw-cQ-TZa" secondAttribute="leadingMargin" id="vsI-mZ-ehh"/>
@@ -161,6 +162,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BIY-1c-ebu" secondAttribute="trailing" constant="16" id="Qiu-Hj-A9d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutBugs"/>
                                         <constraints>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="leading" secondItem="ydH-N6-nVT" secondAttribute="leadingMargin" id="elj-e6-oLq"/>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="centerY" secondItem="ydH-N6-nVT" secondAttribute="centerY" id="k1m-YP-r3Y"/>
@@ -227,6 +229,7 @@
                                                 <constraint firstItem="02d-gJ-v6l" firstAttribute="centerY" secondItem="zro-4t-P62" secondAttribute="centerY" id="vHn-Ll-x2j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutPrivacyPolicy"/>
                                         <constraints>
                                             <constraint firstItem="fmw-SW-RWv" firstAttribute="centerY" secondItem="PNN-u8-0j4" secondAttribute="centerY" id="ZfT-Wa-zNY"/>
                                             <constraint firstItem="fmw-SW-RWv" firstAttribute="leading" secondItem="PNN-u8-0j4" secondAttribute="leadingMargin" constant="16" id="fS8-gr-Wgy"/>
@@ -260,6 +263,7 @@
                                                 <constraint firstItem="IDM-6f-6gZ" firstAttribute="leading" secondItem="mpl-UF-d0z" secondAttribute="trailing" constant="8" id="rMk-fK-Khb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutLicense"/>
                                         <constraints>
                                             <constraint firstItem="mpl-UF-d0z" firstAttribute="leading" secondItem="qER-0Z-1Ou" secondAttribute="leadingMargin" constant="16" id="Zk0-hg-dvO"/>
                                             <constraint firstItem="mpl-UF-d0z" firstAttribute="centerY" secondItem="qER-0Z-1Ou" secondAttribute="centerY" id="xGX-lT-bMg"/>
@@ -293,6 +297,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rMy-nv-8oH" secondAttribute="trailing" constant="16" id="qUV-gR-etq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutRhymerLicense"/>
                                         <constraints>
                                             <constraint firstItem="FX5-0A-jti" firstAttribute="centerY" secondItem="pPs-4q-fbL" secondAttribute="centerY" id="6SR-mS-eKp"/>
                                             <constraint firstItem="FX5-0A-jti" firstAttribute="leading" secondItem="pPs-4q-fbL" secondAttribute="leadingMargin" constant="16" id="u0S-A2-yfH"/>
@@ -326,6 +331,7 @@
                                                 <constraint firstItem="d5V-oQ-R4a" firstAttribute="centerY" secondItem="ztG-6y-45F" secondAttribute="centerY" id="bdc-U8-NGY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutThesaurusLicense"/>
                                         <constraints>
                                             <constraint firstItem="sKh-dS-VpO" firstAttribute="centerY" secondItem="ipH-qD-fw6" secondAttribute="centerY" id="hAp-Jz-h7d"/>
                                             <constraint firstItem="sKh-dS-VpO" firstAttribute="leading" secondItem="ipH-qD-fw6" secondAttribute="leadingMargin" constant="16" id="pge-Gx-i6G"/>
@@ -359,6 +365,7 @@
                                                 <constraint firstItem="GCy-cB-mHR" firstAttribute="leading" secondItem="wud-NJ-Vxm" secondAttribute="trailing" constant="8" id="m13-h9-YJ2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutDictionaryLicense"/>
                                         <constraints>
                                             <constraint firstItem="wud-NJ-Vxm" firstAttribute="leading" secondItem="OWO-i7-DLM" secondAttribute="leadingMargin" constant="16" id="7jj-og-Qev"/>
                                             <constraint firstItem="wud-NJ-Vxm" firstAttribute="centerY" secondItem="OWO-i7-DLM" secondAttribute="centerY" id="BBd-Lw-QXd"/>
@@ -392,6 +399,7 @@
                                                 <constraint firstItem="cAX-aF-TZd" firstAttribute="centerY" secondItem="WI2-04-t1z" secondAttribute="centerY" id="ydk-JC-rUx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutPorterStemmer"/>
                                         <constraints>
                                             <constraint firstItem="d5c-y1-O4l" firstAttribute="centerY" secondItem="OxR-il-buW" secondAttribute="centerY" id="kKW-O3-bf0"/>
                                             <constraint firstItem="d5c-y1-O4l" firstAttribute="leading" secondItem="OxR-il-buW" secondAttribute="leadingMargin" constant="16" id="sPO-ZM-6mz"/>
@@ -683,6 +691,7 @@
                                                 <constraint firstItem="Qwz-2I-Nkm" firstAttribute="leading" secondItem="cJB-Rm-Oli" secondAttribute="leadingMargin" id="zbv-gV-hgl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="About"/>
                                         <connections>
                                             <segue destination="hqh-0w-WYP" kind="show" id="EhG-sj-KRs"/>
                                         </connections>
