@@ -33,9 +33,8 @@ class SearchTest: XCTestCase {
 	}
 	
 	func testSearchHistory() {
-		let tabs = app.tabBars.firstMatch
-		// Open the dictionaries tab
-		tabs.buttons.element(boundBy: 1).tap()
+		UITestUtils.openDictionariesTab(app:app)
+
 		var searchField = app.searchFields.firstMatch
 
 		//searchField.tap()

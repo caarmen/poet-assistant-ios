@@ -18,12 +18,41 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import XCTest
+import Foundation
 
 class UITestUtils {
 	class func clearText(element: XCUIElement) {
 		let text = element.value as! String
 		for _ in 0..<text.count {
 			element.typeText(XCUIKeyboardKey.delete.rawValue)
+		}
+	}
+	
+	class func openDictionariesTab(app:XCUIApplication) {
+		openTab(app: app, position: 1)
+	}
+	
+	class func openSettingsTab(app:XCUIApplication) {
+		openTab(app: app, position: 2)
+	}
+	
+	private class func openTab(app:XCUIApplication, position: Int) {
+		let tabs = app.tabBars.firstMatch
+		tabs.buttons.element(boundBy: position).tap()
+	}
+	class func waitFor (test: XCTestCase, timeout: TimeInterval, block: @escaping () -> Bool) {
+		let condiationalExpectation  = test.expectation(description: "conditional expectation")
+		DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + timeout) {
+			if block() {
+				condiationalExpectation.fulfill()
+			}
+		}
+		test.wait(for: [condiationalExpectation], timeout: timeout + 0.5)
+	}
+	
+	class func wait(test: XCTestCase, timeout: TimeInterval) {
+		waitFor(test:test, timeout:timeout) {
+			return true
 		}
 	}
 }
