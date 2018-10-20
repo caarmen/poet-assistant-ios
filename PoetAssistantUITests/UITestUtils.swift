@@ -34,12 +34,28 @@ class UITestUtils {
 		}
 	}
 	
+	class func openComposerTab(app:XCUIApplication) {
+		openTab(app: app, position: 0)
+	}
 	class func openDictionariesTab(app:XCUIApplication) {
 		openTab(app: app, position: 1)
 	}
 	
 	class func openSettingsTab(app:XCUIApplication) {
 		openTab(app: app, position: 2)
+	}
+	
+	class func moveToRhymer(app:XCUIApplication) {
+		moveToLexicon(app:app, position: 0)
+	}
+	class func moveToThesaurus(app:XCUIApplication) {
+		moveToLexicon(app:app, position: 1)
+	}
+	class func moveToDictionary(app:XCUIApplication) {
+		moveToLexicon(app:app, position:2)
+	}
+	private class func moveToLexicon(app:XCUIApplication, position: Int) {
+		app.segmentedControls.buttons.element(boundBy: position).tap()
 	}
 	
 	class func search(test: XCTestCase, app:XCUIApplication, query: String) {
@@ -78,5 +94,32 @@ class UITestUtils {
 		waitFor(test:test, timeout:timeout) {
 			return true
 		}
+	}
+	
+	class func getRhymerQueryLabel(app: XCUIApplication) -> XCUIElement {
+		return getResultHeaderQueryLabel(header:getRhymerHeader(app:app), queryLabelIdentifier: "RhymerQueryLabel")
+	}
+	class func getThesaurusQueryLabel(app: XCUIApplication)-> XCUIElement {
+		return getResultHeaderQueryLabel(header:getThesaurusHeader(app:app), queryLabelIdentifier: "ThesaurusQueryLabel")
+	}
+	class func getDictionaryQueryLabel(app: XCUIApplication)-> XCUIElement {
+		return getResultHeaderQueryLabel(header:getDictionaryHeader(app:app), queryLabelIdentifier: "DictionaryQueryLabel")
+	}
+	private class func getResultHeaderQueryLabel(header: XCUIElement, queryLabelIdentifier: String) -> XCUIElement {
+		return header
+			.staticTexts.matching(identifier: queryLabelIdentifier)
+			.firstMatch
+	}
+	class func getRhymerHeader(app: XCUIApplication) -> XCUIElement {
+		return getHeader(app:app, headerIdentifier: "RhymerResultHeader")
+	}
+	class func getThesaurusHeader(app: XCUIApplication) -> XCUIElement {
+		return getHeader(app:app, headerIdentifier: "ThesaurusResultHeader")
+	}
+	class func getDictionaryHeader(app: XCUIApplication) -> XCUIElement {
+		return getHeader(app:app, headerIdentifier: "DictionaryResultHeader")
+	}
+	private class func getHeader(app: XCUIApplication, headerIdentifier: String) -> XCUIElement {
+		return app.otherElements.matching(identifier: headerIdentifier).firstMatch
 	}
 }

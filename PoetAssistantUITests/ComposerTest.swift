@@ -127,7 +127,40 @@ class ComposerTest: XCTestCase {
 		assertVisible(element: buttonCancelShare)
 	}
 
+	func testMenu() {
+		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
+		let poemText = "Here is a poem"
+		textViewPoem.tap()
+		textViewPoem.typeText(poemText)
+		let beginningPoint = textViewPoem.coordinate(withNormalizedOffset: CGVector(dx: 0.0, dy: 0.0))
+		beginningPoint.doubleTap()
+		// Lookup "Here" in the rhymer (no localized string for Rhymer, from tests :( )
+		openMenuItem(label:"Rhymer")
+		XCTAssertEqual("here", UITestUtils.getRhymerQueryLabel(app:app).label)
+		
+		UITestUtils.openComposerTab(app:app)
+		beginningPoint.tap()
+		openMenuItem(label:"Thesaurus")
+		XCTAssertEqual("here", UITestUtils.getThesaurusQueryLabel(app:app).label)
+		
+		UITestUtils.openComposerTab(app:app)
+		beginningPoint.tap()
+		openMenuItem(label:"Dictionary")
+		XCTAssertEqual("here", UITestUtils.getDictionaryQueryLabel(app:app).label)
+	}
 	
+	private func openMenuItem(label: String) {
+		UITestUtils.wait(test: self, timeout: 0.5)
+		let menuItem = app.menus.menuItems.matching(NSPredicate(format: "label == %@", label)).firstMatch
+		if menuItem.exists {
+			menuItem.tap()
+		} else {
+			let moreMenuItem = app.menus.menuItems.element(boundBy: app.menus.menuItems.count - 1).firstMatch
+			moreMenuItem.tap()
+			openMenuItem(label: label)
+		}
+	}
+
 	private func assertVisible(element: XCUIElement) {
 		let window = app.windows.element(boundBy: 0)
 		XCTAssert(window.frame.contains(element.frame))
