@@ -73,11 +73,23 @@ class RTDTest: XCTestCase {
 	}
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
 		UITestUtils.search(test: self, app: app, query: data.query)
+		tapHeaderButtons(header:UITestUtils.getRhymerHeader(app: app))
 		checkRhymes(query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
+		
 		openThesaurusFromRhymerCleanLayout(rhyme: data.firstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
+		tapHeaderButtons(header:UITestUtils.getThesaurusHeader(app: app))
+
 		checkSynonyms(query: data.query, expectedFirstSynonym: data.firstSynonymForFirstRhyme, expectedSecondSynonym: data.secondSynonymForFirstRhyme)
+		
 		openDictionaryFromThesaurusCleanLayout(synonym: data.secondSynonymForFirstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
+		tapHeaderButtons(header:UITestUtils.getDictionaryHeader(app: app))
 		checkDefinition(query: data.query, expectedFirstDefinition: data.firstDefinitionForSecondSynonym)
+	}
+	
+	private func tapHeaderButtons(header: XCUIElement) {
+		header.buttons.matching(identifier: "HeaderButtonPlay").firstMatch.tap()
+		header.buttons.matching(identifier: "HeaderButtonLookup").firstMatch.tap()
+		app.activate()
 	}
 	
 	private func checkRhymes(query: String, expectedFirstRhyme: String, expectedSecondRhyme: String) {

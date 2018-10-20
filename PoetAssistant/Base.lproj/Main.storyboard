@@ -122,6 +122,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-Nq-Sxh" userLabel="Play">
                                         <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H28-Kc-9ap"/>
@@ -129,6 +130,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-2t-DNg" userLabel="Lookup">
                                         <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nQN-rx-YB3"/>
@@ -322,6 +324,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-02-cIt" userLabel="Play">
                                         <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="U2J-e1-sgj"/>
@@ -329,6 +332,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-gl-gR9" userLabel="Lookup">
                                         <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tea-IQ-Gvn"/>
@@ -454,6 +458,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-SF-qgr" userLabel="Lookup">
                                         <rect key="frame" x="295" y="-8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="R1k-c6-ALh"/>
@@ -462,6 +467,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fga-JC-XAb" userLabel="Play">
                                         <rect key="frame" x="335" y="-8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="dgi-ap-qH8"/>
