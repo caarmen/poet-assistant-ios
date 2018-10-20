@@ -40,14 +40,14 @@ class Suggestion: NSManagedObject {
 	}
 	
 	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
-		let request = NSFetchRequest<NSDictionary>(entityName: "Dictionary")
+		let request = NSFetchRequest<NSDictionary>(entityName: "WordVariants")
 		request.propertiesToFetch = [#keyPath(Dictionary.word)]
 		request.resultType = .dictionaryResultType
 		request.returnsDistinctResults = true
 		request.sortDescriptors = [
 			NSSortDescriptor(key: #keyPath(Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
-			request.predicate = NSPredicate(format: "\(#keyPath(Dictionary.word)) beginswith[c] %@", queryText)
+			request.predicate = NSPredicate(format: "\(#keyPath(WordVariants.word)) beginswith[c] %@ and \(#keyPath(WordVariants.has_definition)) = 1", queryText)
 		}
 		return NSFetchedResultsController(
 			fetchRequest: request,

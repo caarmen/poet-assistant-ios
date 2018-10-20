@@ -86,7 +86,7 @@ class ComposerTest: XCTestCase {
 		app.typeText("Eeny meeny miney moe. Catch a tiger by the toe. If he hollers let him go. Eeny meeny miney moe.")
 		let timestampBeforePlay = NSDate().timeIntervalSince1970
 		buttonPlay.tap()
-		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic stop", timeout: 1)
+		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic stop", timeout: 2)
 		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic play", timeout: 15)
 		let timestampAfterPlay = NSDate().timeIntervalSince1970
 		// This poem should have taken at least 5 seconds to read.
@@ -94,10 +94,8 @@ class ComposerTest: XCTestCase {
 		
 		buttonPlay.tap()
 		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic stop", timeout: 1)
-		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-			buttonPlay.tap()
-			self.waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic play", timeout: 1)
-		}.fire()
+		buttonPlay.tap()
+		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic play", timeout: 4.0)
 	}
 	
 	func testKeyboard() {

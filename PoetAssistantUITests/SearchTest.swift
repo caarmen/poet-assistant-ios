@@ -37,34 +37,31 @@ class SearchTest: XCTestCase {
 		// Open the dictionaries tab
 		tabs.buttons.element(boundBy: 1).tap()
 		var searchField = app.searchFields.firstMatch
-		
+
+		//searchField.tap()
 		searchField.typeText("carmen\n")
 		searchField.tap()
+		waitForSearchSuggestion(searchField: searchField, table:app.tables.firstMatch, query: "", expectedSuggestions: ["carmen"], expectedClearHistory: true)
 		
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["carmen"])
-		
-		searchField.tap()
+		//searchField.tap()
 		searchField.typeText("benoit\n")
+		
 		searchField.tap()
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["benoit", "carmen"])
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "", expectedSuggestions: ["benoit", "carmen"], expectedClearHistory: true)
 		
-		searchField.typeText("awes")
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["awesome", "awesomely", "awestruck"])
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "awes", expectedSuggestions: ["awesome", "awesomely", "awestruck"], expectedClearHistory: false)
 		
-		searchField.typeText("o")
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["awesome", "awesomely"])
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "o", expectedSuggestions: ["awesome", "awesomely"], expectedClearHistory: false)
 		UITestUtils.clearText(element: searchField)
-		
-		searchField.typeText("carme")
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["carmen", "carmelite"])
-
 		searchField.tap()
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmen", "carmelite"], expectedClearHistory: true)
+
+		//searchField.tap()
 		clearSearchHistory()
 		
 		searchField = app.navigationBars["PoetAssistant.SearchView"].searchFields.firstMatch
 		searchField.tap()
-		searchField.typeText("carme")
-		waitForSearchSuggestion(table: app.tables.firstMatch, texts: ["carmelite"])
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmelite"], expectedClearHistory: false)
 	}
 	
 	private func clearSearchHistory() {
@@ -77,23 +74,26 @@ class SearchTest: XCTestCase {
 	
 	private func waitForSearchHistoryDeletionDialogToDismiss() {
 		let expectedDialogGone = expectation(description: "expected search history dialog gone")
-		Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+		DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 3.0) {
 			if !self.app.alerts.firstMatch.exists {
 				expectedDialogGone.fulfill()
 			}
-			}.fire()
-		wait(for: [expectedDialogGone], timeout: 3.0)
+		}
+		wait(for: [expectedDialogGone], timeout: 3.5)
 	}
-	private func waitForSearchSuggestion(table: XCUIElement, texts: [String]) {
+	private func waitForSearchSuggestion(searchField: XCUIElement, table: XCUIElement, query: String, expectedSuggestions: [String], expectedClearHistory: Bool) {
+		searchField.typeText(query)
 		let expectedSuggestionsExpectation = expectation(description: "expected suggestions")
-		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-			texts.forEach { text in
-				if !table.staticTexts[text].firstMatch.exists {
-					return
-				}
+		DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 1.5) {
+			// If there are any suggestions, there will also be an additional row item to clear history
+			let expectedSuggestionCount = expectedClearHistory ? expectedSuggestions.count + 1 : expectedSuggestions.count
+			let actualSuggestionTitles = table.staticTexts.matching(identifier: "SuggestionTitle")
+			XCTAssertEqual(expectedSuggestionCount, actualSuggestionTitles.count, "Expected \(expectedSuggestionCount) suggestions but got \(actualSuggestionTitles.count) for \(query)")
+			expectedSuggestions.forEach { suggestion in
+				XCTAssert(table.staticTexts[suggestion].exists, "Didn't find expected suggestion \(suggestion) for \(query)")
 			}
 			expectedSuggestionsExpectation.fulfill()
-			}.fire()
+		}
 		wait(for: [expectedSuggestionsExpectation], timeout: 2.0)
 	}
 	
