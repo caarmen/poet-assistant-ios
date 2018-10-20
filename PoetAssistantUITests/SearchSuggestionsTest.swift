@@ -19,7 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import XCTest
 
-class SearchTest: XCTestCase {
+class SearchSuggestionsTest: XCTestCase {
 	
 	var app: XCUIApplication!
 	override func setUp() {
@@ -37,12 +37,10 @@ class SearchTest: XCTestCase {
 
 		var searchField = app.searchFields.firstMatch
 
-		//searchField.tap()
 		searchField.typeText("carmen\n")
 		searchField.tap()
 		waitForSearchSuggestion(searchField: searchField, table:app.tables.firstMatch, query: "", expectedSuggestions: ["carmen"], expectedClearHistory: true)
 		
-		//searchField.tap()
 		searchField.typeText("benoit\n")
 		
 		searchField.tap()
@@ -55,7 +53,6 @@ class SearchTest: XCTestCase {
 		searchField.tap()
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmen", "carmelite"], expectedClearHistory: true)
 
-		//searchField.tap()
 		clearSearchHistory()
 		
 		searchField = app.navigationBars["PoetAssistant.SearchView"].searchFields.firstMatch
@@ -63,6 +60,29 @@ class SearchTest: XCTestCase {
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmelite"], expectedClearHistory: false)
 	}
 	
+	func testSearchHistoryDisabled() {
+		UITestUtils.openSettingsTab(app: app)
+		app.switches.matching(identifier: "SwitchSearchHistory").firstMatch.tap()
+		UITestUtils.openDictionariesTab(app: app)
+		
+		let searchField = app.searchFields.firstMatch
+		searchField.typeText("carmen\n")
+		searchField.tap()
+		waitForSearchSuggestion(searchField: searchField, table:app.tables.firstMatch, query: "", expectedSuggestions: [], expectedClearHistory: false)
+		
+		searchField.typeText("benoit\n")
+		searchField.tap()
+		waitForSearchSuggestion(searchField: searchField, table:app.tables.firstMatch, query: "", expectedSuggestions: [], expectedClearHistory: false)
+		
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "awes", expectedSuggestions: ["awesome", "awesomely", "awestruck"], expectedClearHistory: false)
+		
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "o", expectedSuggestions: ["awesome", "awesomely"], expectedClearHistory: false)
+		UITestUtils.clearText(element: searchField)
+		searchField.tap()
+		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmelite"], expectedClearHistory: false)
+	}
+	
+
 	private func clearSearchHistory() {
 		let deleteCell = app.tables.cells.matching(identifier: "cell_delete").firstMatch
 		deleteCell.tap()

@@ -50,7 +50,7 @@
 		4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B52177B70E00CF8B49 /* Stems.swift */; };
 		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
 		4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D02179047200CF8B49 /* ComposerTest.swift */; };
-		4FEB03D921792E1000CF8B49 /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D821792E1000CF8B49 /* SearchTest.swift */; };
+		4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */; };
 		4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DA217942C000CF8B49 /* UITestUtils.swift */; };
 		4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DC217B45D200CF8B49 /* RTDTest.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
@@ -135,7 +135,7 @@
 		4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoetAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEB03D02179047200CF8B49 /* ComposerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerTest.swift; sourceTree = "<group>"; };
 		4FEB03D22179047200CF8B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FEB03D821792E1000CF8B49 /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
+		4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsTest.swift; sourceTree = "<group>"; };
 		4FEB03DA217942C000CF8B49 /* UITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestUtils.swift; sourceTree = "<group>"; };
 		4FEB03DC217B45D200CF8B49 /* RTDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 			children = (
 				4FEB03D02179047200CF8B49 /* ComposerTest.swift */,
 				4FEB03D22179047200CF8B49 /* Info.plist */,
-				4FEB03D821792E1000CF8B49 /* SearchTest.swift */,
+				4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */,
 				4FEB03DA217942C000CF8B49 /* UITestUtils.swift */,
 				4FEB03DC217B45D200CF8B49 /* RTDTest.swift */,
 			);
@@ -675,7 +675,7 @@
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,
 				4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */,
-				4FEB03D921792E1000CF8B49 /* SearchTest.swift in Sources */,
+				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
