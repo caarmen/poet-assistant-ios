@@ -47,6 +47,19 @@ class UITestUtils {
 		app.searchFields.firstMatch.typeText("\(query)\n")
 		wait(test: test, timeout: 2)
 	}
+	
+	class func waitForPlayButtonToHavePlayImage(test: XCTestCase, playButton: XCUIElement, timeout: TimeInterval) {
+		waitForButtonToHaveImage(test: test, button: playButton, imageLabel: "ic play", timeout: timeout)
+	}
+	class func waitForPlayButtonToHaveStopImage(test: XCTestCase, playButton: XCUIElement, timeout: TimeInterval) {
+		waitForButtonToHaveImage(test: test, button: playButton, imageLabel: "ic stop", timeout: timeout)
+	}
+	class func waitForButtonToHaveImage(test: XCTestCase, button: XCUIElement, imageLabel: String, timeout: TimeInterval) {
+		let predicate = NSPredicate(format: "label == '\(imageLabel)'")
+		test.expectation(for: predicate, evaluatedWith: button, handler: nil)
+		test.waitForExpectations(timeout: timeout, handler: nil)
+	}
+	
 	private class func openTab(app:XCUIApplication, position: Int) {
 		let tabs = app.tabBars.firstMatch
 		tabs.buttons.element(boundBy: position).tap()

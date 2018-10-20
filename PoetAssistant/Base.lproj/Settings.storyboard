@@ -472,6 +472,7 @@
                                                 <constraint firstItem="cZK-Ya-5W9" firstAttribute="leading" secondItem="Ktr-JB-Fqo" secondAttribute="leadingMargin" id="u3m-Vv-7E3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoice"/>
                                         <connections>
                                             <segue destination="PBW-29-Fcp" kind="show" identifier="VoiceSelection" id="Pti-hK-rvC"/>
                                         </connections>
@@ -509,6 +510,7 @@
                                                 <constraint firstItem="cGH-hY-uWZ" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leadingMargin" id="swY-rA-YLy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoiceSpeed"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kYC-vE-wEG" userLabel="Voice pitch">
                                         <rect key="frame" x="0.0" y="116" width="414" height="44"/>
@@ -543,6 +545,7 @@
                                                 <constraint firstItem="ZBJ-QQ-iNB" firstAttribute="centerY" secondItem="ZL1-pL-f3O" secondAttribute="centerY" id="mhN-DH-Uo3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoicePitch"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gEe-7Z-kFh" userLabel="Preview">
                                         <rect key="frame" x="0.0" y="160" width="414" height="44"/>
@@ -586,6 +589,7 @@
                                                 <constraint firstItem="reA-5s-nuS" firstAttribute="centerY" secondItem="PiU-dk-83k" secondAttribute="centerY" id="vAq-Ue-ZyM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoicePreview"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -712,6 +716,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="1Wv-H5-jYT"/>
                     <connections>
+                        <outlet property="playButton" destination="reA-5s-nuS" id="bkh-58-saZ"/>
                         <outlet property="selectedVoice" destination="e3K-wm-DDR" id="r0e-Od-Xmt"/>
                         <outlet property="sliderVoicePitch" destination="Yb3-pG-1Uk" id="rx9-HH-xSu"/>
                         <outlet property="sliderVoiceSpeed" destination="YGJ-TP-mYS" id="uIw-Un-LAw"/>

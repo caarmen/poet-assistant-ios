@@ -55,6 +55,8 @@
 		4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DC217B45D200CF8B49 /* RTDTest.swift */; };
 		4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */; };
 		4FEF0686217B988000D69383 /* AboutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0685217B988000D69383 /* AboutTest.swift */; };
+		4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */; };
+		4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -142,6 +144,8 @@
 		4FEB03DC217B45D200CF8B49 /* RTDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTest.swift; sourceTree = "<group>"; };
 		4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNotFoundTest.swift; sourceTree = "<group>"; };
 		4FEF0685217B988000D69383 /* AboutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTest.swift; sourceTree = "<group>"; };
+		4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSettingsTest.swift; sourceTree = "<group>"; };
+		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			children = (
 				4F15B04B217342560072C8BC /* Tts.swift */,
 				4F698A1B21737AD500CD6CB3 /* VoiceList.swift */,
+				4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */,
 			);
 			path = tts;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				4FEB03DC217B45D200CF8B49 /* RTDTest.swift */,
 				4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */,
 				4FEF0685217B988000D69383 /* AboutTest.swift */,
+				4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -671,6 +677,7 @@
 				4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
 				4F661407216533CB00FA10A1 /* SearchSuggestionsController.swift in Sources */,
+				4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */,
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
 				4FEF0686217B988000D69383 /* AboutTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,

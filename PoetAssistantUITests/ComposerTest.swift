@@ -84,16 +84,16 @@ class ComposerTest: XCTestCase {
 		app.typeText("Eeny meeny miney moe. Catch a tiger by the toe. If he hollers let him go. Eeny meeny miney moe.")
 		let timestampBeforePlay = NSDate().timeIntervalSince1970
 		buttonPlay.tap()
-		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic stop", timeout: 2)
-		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic play", timeout: 15)
+		UITestUtils.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 2)
+		UITestUtils.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 15)
 		let timestampAfterPlay = NSDate().timeIntervalSince1970
 		// This poem should have taken at least 5 seconds to read.
 		XCTAssertGreaterThan(timestampAfterPlay - timestampBeforePlay, 5)
 		
 		buttonPlay.tap()
-		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic stop", timeout: 1)
+		UITestUtils.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 1)
 		buttonPlay.tap()
-		waitForButtonToHaveImage(button: buttonPlay, imageLabel: "ic play", timeout: 4.0)
+		UITestUtils.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 4)
 	}
 	
 	func testKeyboard() {
@@ -126,11 +126,7 @@ class ComposerTest: XCTestCase {
 		let buttonCancelShare = app.buttons.matching(predicate).firstMatch
 		assertVisible(element: buttonCancelShare)
 	}
-	private func waitForButtonToHaveImage(button: XCUIElement, imageLabel: String, timeout: TimeInterval) {
-		let predicate = NSPredicate(format: "label == '\(imageLabel)'")
-		expectation(for: predicate, evaluatedWith: button, handler: nil)
-		waitForExpectations(timeout: timeout, handler: nil)
-	}
+
 	
 	private func assertVisible(element: XCUIElement) {
 		let window = app.windows.element(boundBy: 0)
