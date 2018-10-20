@@ -33,9 +33,7 @@ class RTDTest: XCTestCase {
 	var app: XCUIApplication!
 	override func setUp() {
 		continueAfterFailure = false
-		app = XCUIApplication()
-		app.launchArguments = ["UITesting"]
-		app.launch()
+		app = UITestUtils.launchApp()
 	}
 	
 	override func tearDown() {
@@ -63,9 +61,7 @@ class RTDTest: XCTestCase {
 		app.switches.matching(identifier: "SwitchRTD").firstMatch.tap()
 	}
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
-		UITestUtils.openDictionariesTab(app:app)
-		search(query: data.query)
-		waitForQueryResult(labelElementIdentifier: "RhymerQueryLabel", expectedQueryLabel: data.query)
+		UITestUtils.search(test: self, app: app, query: data.query)
 		checkRhymes(query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
 		openThesaurusFromRhymerCleanLayout(rhyme: data.firstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
 		checkSynonyms(query: data.query, expectedFirstSynonym: data.firstSynonymForFirstRhyme, expectedSecondSynonym: data.secondSynonymForFirstRhyme)
@@ -73,9 +69,6 @@ class RTDTest: XCTestCase {
 		checkDefinition(query: data.query, expectedFirstDefinition: data.firstDefinitionForSecondSynonym)
 	}
 	
-	private func search(query: String) {
-		app.searchFields.firstMatch.typeText("\(query)\n")
-	}
 	private func checkRhymes(query: String, expectedFirstRhyme: String, expectedSecondRhyme: String) {
 		let table = app.tables.element
 		XCTAssertTrue(table.exists)
@@ -131,14 +124,7 @@ class RTDTest: XCTestCase {
 		let actualDefinition = definitionCellWordLabels.element(boundBy: 0).label
 		XCTAssertEqual(expectedFirstDefinition, actualDefinition, "Expected definition for \(query) to be \(expectedFirstDefinition) but got \(actualDefinition)")
 	}
-	
-	private func waitForQueryResult(labelElementIdentifier: String, expectedQueryLabel: String) {
-		//		let labelElement = app.staticTexts.matching(identifier: labelElementIdentifier).firstMatch
-		//		UITestUtils.waitFor(test: self, timeout: 5) {
-		//			return labelElement.exists
-		//		}
-		UITestUtils.wait(test: self, timeout: 2)
-	}
+
 	private func waitForRTD(row: XCUIElement) {
 		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
 		UITestUtils.waitFor(test:self, timeout: 1.5) {

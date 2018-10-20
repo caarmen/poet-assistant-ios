@@ -21,6 +21,12 @@ import XCTest
 import Foundation
 
 class UITestUtils {
+	class func launchApp() -> XCUIApplication {
+		let app = XCUIApplication()
+		app.launchArguments = ["UITesting"]
+		app.launch()
+		return app
+	}
 	class func clearText(element: XCUIElement) {
 		let text = element.value as! String
 		for _ in 0..<text.count {
@@ -36,6 +42,11 @@ class UITestUtils {
 		openTab(app: app, position: 2)
 	}
 	
+	class func search(test: XCTestCase, app:XCUIApplication, query: String) {
+		openDictionariesTab(app: app)
+		app.searchFields.firstMatch.typeText("\(query)\n")
+		wait(test: test, timeout: 2)
+	}
 	private class func openTab(app:XCUIApplication, position: Int) {
 		let tabs = app.tabBars.firstMatch
 		tabs.buttons.element(boundBy: position).tap()

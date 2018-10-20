@@ -53,6 +53,7 @@
 		4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */; };
 		4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DA217942C000CF8B49 /* UITestUtils.swift */; };
 		4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DC217B45D200CF8B49 /* RTDTest.swift */; };
+		4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -138,6 +139,7 @@
 		4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsTest.swift; sourceTree = "<group>"; };
 		4FEB03DA217942C000CF8B49 /* UITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestUtils.swift; sourceTree = "<group>"; };
 		4FEB03DC217B45D200CF8B49 /* RTDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTest.swift; sourceTree = "<group>"; };
+		4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNotFoundTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */,
 				4FEB03DA217942C000CF8B49 /* UITestUtils.swift */,
 				4FEB03DC217B45D200CF8B49 /* RTDTest.swift */,
+				4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,
 				4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */,
+				4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */,
 				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

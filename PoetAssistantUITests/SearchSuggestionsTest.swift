@@ -24,9 +24,7 @@ class SearchSuggestionsTest: XCTestCase {
 	var app: XCUIApplication!
 	override func setUp() {
 		continueAfterFailure = false
-		app = XCUIApplication()
-		app.launchArguments = ["UITesting"]
-		app.launch()
+		app = UITestUtils.launchApp()
 	}
 	
 	override func tearDown() {
