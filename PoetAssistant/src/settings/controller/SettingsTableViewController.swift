@@ -27,10 +27,17 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBOutlet weak var selectedVoice: UILabel!
 	@IBOutlet weak var sliderVoiceSpeed: UISlider!
 	@IBOutlet weak var sliderVoicePitch: UISlider!
+	
+	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	
 	@IBOutlet weak var switchEfficientLayout: UISwitch!
+	private var ttsPlayButtonConnector: TtsPlayButtonConnector?
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		ttsPlayButtonConnector = TtsPlayButtonConnector(playButton: playButton)
+	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		switchSearchHistory.isOn = Settings.isSearchHistoryEnabled()
@@ -51,8 +58,8 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		Settings.setVoicePitch(pitch: sender.value)
 	}
 	@IBAction func didClickPreview(_ sender: UIButton) {
-		let utterance = Tts.createUtterance(text: NSLocalizedString("voice_preview", comment: ""))
-		speechSynthesizer.speak(utterance)
+		ttsPlayButtonConnector?.textToSpeak = NSLocalizedString("voice_preview", comment: "")
+		ttsPlayButtonConnector?.didTapPlayButton()
 	}
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)

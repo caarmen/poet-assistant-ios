@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -127,6 +128,7 @@
                                                 <constraint firstItem="HnG-uC-Ns9" firstAttribute="leading" secondItem="on2-qn-fkM" secondAttribute="trailing" constant="8" id="yF5-FB-vfL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutSource"/>
                                         <constraints>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="centerY" secondItem="cgw-cQ-TZa" secondAttribute="centerY" id="F18-ao-hnW"/>
                                             <constraint firstItem="on2-qn-fkM" firstAttribute="leading" secondItem="cgw-cQ-TZa" secondAttribute="leadingMargin" id="vsI-mZ-ehh"/>
@@ -160,6 +162,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BIY-1c-ebu" secondAttribute="trailing" constant="16" id="Qiu-Hj-A9d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutBugs"/>
                                         <constraints>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="leading" secondItem="ydH-N6-nVT" secondAttribute="leadingMargin" id="elj-e6-oLq"/>
                                             <constraint firstItem="QPq-LE-7km" firstAttribute="centerY" secondItem="ydH-N6-nVT" secondAttribute="centerY" id="k1m-YP-r3Y"/>
@@ -226,6 +229,7 @@
                                                 <constraint firstItem="02d-gJ-v6l" firstAttribute="centerY" secondItem="zro-4t-P62" secondAttribute="centerY" id="vHn-Ll-x2j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutPrivacyPolicy"/>
                                         <constraints>
                                             <constraint firstItem="fmw-SW-RWv" firstAttribute="centerY" secondItem="PNN-u8-0j4" secondAttribute="centerY" id="ZfT-Wa-zNY"/>
                                             <constraint firstItem="fmw-SW-RWv" firstAttribute="leading" secondItem="PNN-u8-0j4" secondAttribute="leadingMargin" constant="16" id="fS8-gr-Wgy"/>
@@ -259,6 +263,7 @@
                                                 <constraint firstItem="IDM-6f-6gZ" firstAttribute="leading" secondItem="mpl-UF-d0z" secondAttribute="trailing" constant="8" id="rMk-fK-Khb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutLicense"/>
                                         <constraints>
                                             <constraint firstItem="mpl-UF-d0z" firstAttribute="leading" secondItem="qER-0Z-1Ou" secondAttribute="leadingMargin" constant="16" id="Zk0-hg-dvO"/>
                                             <constraint firstItem="mpl-UF-d0z" firstAttribute="centerY" secondItem="qER-0Z-1Ou" secondAttribute="centerY" id="xGX-lT-bMg"/>
@@ -292,6 +297,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rMy-nv-8oH" secondAttribute="trailing" constant="16" id="qUV-gR-etq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutRhymerLicense"/>
                                         <constraints>
                                             <constraint firstItem="FX5-0A-jti" firstAttribute="centerY" secondItem="pPs-4q-fbL" secondAttribute="centerY" id="6SR-mS-eKp"/>
                                             <constraint firstItem="FX5-0A-jti" firstAttribute="leading" secondItem="pPs-4q-fbL" secondAttribute="leadingMargin" constant="16" id="u0S-A2-yfH"/>
@@ -325,6 +331,7 @@
                                                 <constraint firstItem="d5V-oQ-R4a" firstAttribute="centerY" secondItem="ztG-6y-45F" secondAttribute="centerY" id="bdc-U8-NGY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutThesaurusLicense"/>
                                         <constraints>
                                             <constraint firstItem="sKh-dS-VpO" firstAttribute="centerY" secondItem="ipH-qD-fw6" secondAttribute="centerY" id="hAp-Jz-h7d"/>
                                             <constraint firstItem="sKh-dS-VpO" firstAttribute="leading" secondItem="ipH-qD-fw6" secondAttribute="leadingMargin" constant="16" id="pge-Gx-i6G"/>
@@ -358,6 +365,7 @@
                                                 <constraint firstItem="GCy-cB-mHR" firstAttribute="leading" secondItem="wud-NJ-Vxm" secondAttribute="trailing" constant="8" id="m13-h9-YJ2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutDictionaryLicense"/>
                                         <constraints>
                                             <constraint firstItem="wud-NJ-Vxm" firstAttribute="leading" secondItem="OWO-i7-DLM" secondAttribute="leadingMargin" constant="16" id="7jj-og-Qev"/>
                                             <constraint firstItem="wud-NJ-Vxm" firstAttribute="centerY" secondItem="OWO-i7-DLM" secondAttribute="centerY" id="BBd-Lw-QXd"/>
@@ -391,6 +399,7 @@
                                                 <constraint firstItem="cAX-aF-TZd" firstAttribute="centerY" secondItem="WI2-04-t1z" secondAttribute="centerY" id="ydk-JC-rUx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AboutPorterStemmer"/>
                                         <constraints>
                                             <constraint firstItem="d5c-y1-O4l" firstAttribute="centerY" secondItem="OxR-il-buW" secondAttribute="centerY" id="kKW-O3-bf0"/>
                                             <constraint firstItem="d5c-y1-O4l" firstAttribute="leading" secondItem="OxR-il-buW" secondAttribute="leadingMargin" constant="16" id="sPO-ZM-6mz"/>
@@ -463,6 +472,7 @@
                                                 <constraint firstItem="cZK-Ya-5W9" firstAttribute="leading" secondItem="Ktr-JB-Fqo" secondAttribute="leadingMargin" id="u3m-Vv-7E3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoice"/>
                                         <connections>
                                             <segue destination="PBW-29-Fcp" kind="show" identifier="VoiceSelection" id="Pti-hK-rvC"/>
                                         </connections>
@@ -474,29 +484,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-BE-KgI" userLabel="Title">
-                                                    <rect key="frame" x="20" y="8" width="84" height="18"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YGJ-TP-mYS">
-                                                    <rect key="frame" x="18" y="34" width="362" height="31"/>
-                                                    <connections>
-                                                        <action selector="didSlideVoiceSpeed:" destination="LXh-xF-4WQ" eventType="valueChanged" id="BTx-ew-rYG"/>
-                                                    </connections>
-                                                </slider>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cGH-hY-uWZ">
+                                                    <rect key="frame" x="20" y="16" width="374" height="11.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-BE-KgI" userLabel="Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YGJ-TP-mYS">
+                                                            <rect key="frame" x="-2" y="10" width="378" height="2.6666666666666679"/>
+                                                            <connections>
+                                                                <action selector="didSlideVoiceSpeed:" destination="LXh-xF-4WQ" eventType="valueChanged" id="BTx-ew-rYG"/>
+                                                            </connections>
+                                                        </slider>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YGJ-TP-mYS" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leadingMargin" id="2NP-LZ-Uz8"/>
-                                                <constraint firstItem="Ygb-BE-KgI" firstAttribute="top" secondItem="ugI-XK-4PB" secondAttribute="top" constant="8" id="Cik-Wj-6B3"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YGJ-TP-mYS" secondAttribute="bottom" constant="8" id="DKy-uC-eRa"/>
-                                                <constraint firstItem="Ygb-BE-KgI" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leadingMargin" id="Dho-6j-y0Y"/>
-                                                <constraint firstItem="YGJ-TP-mYS" firstAttribute="top" secondItem="Ygb-BE-KgI" secondAttribute="bottom" constant="8" id="QWu-g3-lzv"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ygb-BE-KgI" secondAttribute="trailing" constant="16" id="SFp-lK-KQ4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YGJ-TP-mYS" secondAttribute="trailing" constant="16" id="Vhp-0g-wE8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cGH-hY-uWZ" secondAttribute="trailing" id="DPc-Eh-Th6"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cGH-hY-uWZ" secondAttribute="bottom" constant="16" id="Uw6-B7-jxy"/>
+                                                <constraint firstItem="cGH-hY-uWZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ugI-XK-4PB" secondAttribute="top" constant="16" id="V4e-Pb-c8F"/>
+                                                <constraint firstItem="cGH-hY-uWZ" firstAttribute="centerY" secondItem="ugI-XK-4PB" secondAttribute="centerY" id="g7T-1w-loi"/>
+                                                <constraint firstItem="cGH-hY-uWZ" firstAttribute="leading" secondItem="ugI-XK-4PB" secondAttribute="leadingMargin" id="swY-rA-YLy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoiceSpeed"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kYC-vE-wEG" userLabel="Voice pitch">
                                         <rect key="frame" x="0.0" y="116" width="414" height="44"/>
@@ -505,29 +519,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice pitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMK-f3-MzO" userLabel="Title">
-                                                    <rect key="frame" x="20" y="8" width="76.333333333333329" height="18"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yb3-pG-1Uk">
-                                                    <rect key="frame" x="18" y="34" width="362" height="31"/>
-                                                    <connections>
-                                                        <action selector="didSlideVoicePitch:" destination="LXh-xF-4WQ" eventType="valueChanged" id="qmL-CP-fWn"/>
-                                                    </connections>
-                                                </slider>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZBJ-QQ-iNB">
+                                                    <rect key="frame" x="20" y="16" width="374" height="11.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice pitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMK-f3-MzO" userLabel="Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="2"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yb3-pG-1Uk">
+                                                            <rect key="frame" x="-2" y="10" width="378" height="2.6666666666666679"/>
+                                                            <connections>
+                                                                <action selector="didSlideVoicePitch:" destination="LXh-xF-4WQ" eventType="valueChanged" id="qmL-CP-fWn"/>
+                                                            </connections>
+                                                        </slider>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aMK-f3-MzO" firstAttribute="leading" secondItem="ZL1-pL-f3O" secondAttribute="leadingMargin" id="22z-Df-9CC"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="aMK-f3-MzO" secondAttribute="trailing" constant="16" id="7Pf-98-aPz"/>
-                                                <constraint firstItem="Yb3-pG-1Uk" firstAttribute="top" secondItem="aMK-f3-MzO" secondAttribute="bottom" constant="8" id="C7P-Ya-83h"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yb3-pG-1Uk" secondAttribute="bottom" constant="8" id="QhB-uU-7t3"/>
-                                                <constraint firstItem="Yb3-pG-1Uk" firstAttribute="leading" secondItem="ZL1-pL-f3O" secondAttribute="leadingMargin" id="bUV-G4-WMU"/>
-                                                <constraint firstItem="aMK-f3-MzO" firstAttribute="top" secondItem="ZL1-pL-f3O" secondAttribute="top" constant="8" id="fDd-Ff-SBi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Yb3-pG-1Uk" secondAttribute="trailing" constant="16" id="kRI-u4-4ZP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZBJ-QQ-iNB" secondAttribute="trailing" id="Lfn-Ea-GIs"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZBJ-QQ-iNB" secondAttribute="bottom" constant="16" id="LkU-sK-N8g"/>
+                                                <constraint firstItem="ZBJ-QQ-iNB" firstAttribute="top" secondItem="ZL1-pL-f3O" secondAttribute="top" constant="16" id="Q4G-IK-KpK"/>
+                                                <constraint firstItem="ZBJ-QQ-iNB" firstAttribute="leading" secondItem="ZL1-pL-f3O" secondAttribute="leadingMargin" id="ani-Wq-SmH"/>
+                                                <constraint firstItem="ZBJ-QQ-iNB" firstAttribute="centerY" secondItem="ZL1-pL-f3O" secondAttribute="centerY" id="mhN-DH-Uo3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoicePitch"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gEe-7Z-kFh" userLabel="Preview">
                                         <rect key="frame" x="0.0" y="160" width="414" height="44"/>
@@ -571,6 +589,7 @@
                                                 <constraint firstItem="reA-5s-nuS" firstAttribute="centerY" secondItem="PiU-dk-83k" secondAttribute="centerY" id="vAq-Ue-ZyM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SettingVoicePreview"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -585,6 +604,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-eR-uCg">
                                                     <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchSearchHistory"/>
                                                     <connections>
                                                         <action selector="didClickSearchHistory:" destination="LXh-xF-4WQ" eventType="valueChanged" id="Zz1-UI-Cpy"/>
                                                     </connections>
@@ -627,6 +647,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1c-Nt-CDn" userLabel="Switch RTD">
                                                     <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchRTD"/>
                                                     <connections>
                                                         <action selector="didClickEfficientLayout:" destination="LXh-xF-4WQ" eventType="valueChanged" id="C9a-3x-AN4"/>
                                                     </connections>
@@ -668,7 +689,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwz-2I-Nkm" userLabel="Title">
-                                                    <rect key="frame" x="20.000000000000004" y="31" width="41.333333333333343" height="18"/>
+                                                    <rect key="frame" x="20.000000000000004" y="13" width="41.333333333333343" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -680,6 +701,7 @@
                                                 <constraint firstItem="Qwz-2I-Nkm" firstAttribute="leading" secondItem="cJB-Rm-Oli" secondAttribute="leadingMargin" id="zbv-gV-hgl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="About"/>
                                         <connections>
                                             <segue destination="hqh-0w-WYP" kind="show" id="EhG-sj-KRs"/>
                                         </connections>
@@ -694,6 +716,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="1Wv-H5-jYT"/>
                     <connections>
+                        <outlet property="playButton" destination="reA-5s-nuS" id="bkh-58-saZ"/>
                         <outlet property="selectedVoice" destination="e3K-wm-DDR" id="r0e-Od-Xmt"/>
                         <outlet property="sliderVoicePitch" destination="Yb3-pG-1Uk" id="rx9-HH-xSu"/>
                         <outlet property="sliderVoiceSpeed" destination="YGJ-TP-mYS" id="uIw-Un-LAw"/>

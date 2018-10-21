@@ -36,7 +36,8 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		return fetchedResultsController?.sections.count ?? 0
 	}
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if let sectionName = fetchedResultsController?.sections[section].name {
+		if let sections = fetchedResultsController?.sections, sections.count > section {
+			let sectionName = sections[section].name
 			return NSLocalizedString(sectionName, comment: "")
 		}
 		return nil
@@ -70,6 +71,7 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 			switch (suggestionListItem) {
 			case .clear_history:
 				bindSuggestionCell(cell: cell, imageResource: "ic_delete", suggestion: NSLocalizedString("clear_search_history_list_item", comment: ""), bold: true)
+				cell.accessibilityIdentifier = "cell_delete"
 			case .history_suggestion(let word):
 				bindSuggestionCell(cell: cell, imageResource: "ic_history", suggestion: word, bold: false)
 			case .dictionary_suggestion(let word):

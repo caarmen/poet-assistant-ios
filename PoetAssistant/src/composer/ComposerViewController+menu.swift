@@ -59,17 +59,17 @@ extension ComposerViewController {
 	
 	@objc func menuItemRhymerSelected() {
 		if let selectedText = getSelectedText() {
-			rtdDelegate?.searchRhymer(query:selectedText)
+			rtdDelegate?.searchRhymer(query:selectedText.localizedLowercase)
 		}
 	}
 	@objc func menuItemThesaurusSelected() {
 		if let selectedText = getSelectedText() {
-			rtdDelegate?.searchThesaurus(query:selectedText)
+			rtdDelegate?.searchThesaurus(query:selectedText.localizedLowercase)
 		}
 	}
 	@objc func menuItemDictionarySelected() {
 		if let selectedText = getSelectedText() {
-			rtdDelegate?.searchDictionary(query:selectedText)
+			rtdDelegate?.searchDictionary(query:selectedText.localizedLowercase)
 		}
 	}
 }

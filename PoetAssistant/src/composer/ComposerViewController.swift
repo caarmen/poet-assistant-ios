@@ -20,9 +20,9 @@
 import UIKit
 import AVFoundation
 
-class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
-	private let speechSynthesizer = AVSpeechSynthesizer()
+class ComposerViewController: UIViewController, UITextViewDelegate {
 	private var keyboardHeight:  CGFloat?
+	private var ttsPlayButtonUpdater: TtsPlayButtonConnector?
 	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var shareButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
@@ -46,13 +46,8 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	}
 	
 	@IBAction func didTapPlayButton(_ sender: UIButton) {
-		if speechSynthesizer.isSpeaking {
-			speechSynthesizer.stopSpeaking(at: .immediate)
-		} else {
-			let utterance = Tts.createUtterance(text: getTextToPlay())
-			speechSynthesizer.speak(utterance)
-		}
-		updatePlayButton()
+		ttsPlayButtonUpdater?.textToSpeak = getTextToPlay()
+		ttsPlayButtonUpdater?.didTapPlayButton()
 	}
 	private func getTextToPlay() -> String {
 		if let selectedRange = text.selectedTextRange {
@@ -78,7 +73,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		speechSynthesizer.delegate = self
+		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
 	}
 	
@@ -91,11 +86,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	
 	private func updatePlayButton() {
 		playButton.isEnabled = !text.text.isEmpty
-		if speechSynthesizer.isSpeaking {
-			playButton.setImage(UIImage(imageLiteralResourceName: "ic_stop"), for:.normal)
-		} else {
-			playButton.setImage(UIImage(imageLiteralResourceName: "ic_play"), for:.normal)
-		}
 	}
 	
 	private func getWordCountText(text: String?) -> String {
@@ -110,19 +100,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, AVSpeechSynt
 	func textViewDidChange(_ textView: UITextView) {
 		updateUi()
 		Poem(withText: text.text).saveDraft()
-	}
-	
-	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-		updatePlayButton()
-	}
-	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-		updatePlayButton()
-	}
-	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-		updatePlayButton()
-	}
-	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
-		updatePlayButton()
 	}
 	
 	@IBAction func didClickHideKeyboard(_ sender: UIButton) {

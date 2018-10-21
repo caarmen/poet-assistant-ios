@@ -49,6 +49,14 @@
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B52177B70E00CF8B49 /* Stems.swift */; };
 		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
+		4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D02179047200CF8B49 /* ComposerTest.swift */; };
+		4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */; };
+		4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DA217942C000CF8B49 /* UITestUtils.swift */; };
+		4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03DC217B45D200CF8B49 /* RTDTest.swift */; };
+		4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */; };
+		4FEF0686217B988000D69383 /* AboutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0685217B988000D69383 /* AboutTest.swift */; };
+		4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */; };
+		4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -64,6 +72,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		4F31975D2167E4A800135FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F6613D12164D10700FA10A1;
+			remoteInfo = PoetAssistant;
+		};
+		4FEB03D32179047200CF8B49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
 			proxyType = 1;
@@ -121,6 +136,16 @@
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FEB03B52177B70E00CF8B49 /* Stems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stems.swift; sourceTree = "<group>"; };
 		4FEB03B72177BB7100CF8B49 /* StemsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemsTest.swift; sourceTree = "<group>"; };
+		4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoetAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FEB03D02179047200CF8B49 /* ComposerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerTest.swift; sourceTree = "<group>"; };
+		4FEB03D22179047200CF8B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsTest.swift; sourceTree = "<group>"; };
+		4FEB03DA217942C000CF8B49 /* UITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestUtils.swift; sourceTree = "<group>"; };
+		4FEB03DC217B45D200CF8B49 /* RTDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTest.swift; sourceTree = "<group>"; };
+		4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNotFoundTest.swift; sourceTree = "<group>"; };
+		4FEF0685217B988000D69383 /* AboutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTest.swift; sourceTree = "<group>"; };
+		4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSettingsTest.swift; sourceTree = "<group>"; };
+		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -149,6 +174,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FEB03CB2179047200CF8B49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,6 +189,7 @@
 			children = (
 				4F15B04B217342560072C8BC /* Tts.swift */,
 				4F698A1B21737AD500CD6CB3 /* VoiceList.swift */,
+				4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */,
 			);
 			path = tts;
 			sourceTree = "<group>";
@@ -220,6 +253,7 @@
 			children = (
 				4F6613D42164D10700FA10A1 /* PoetAssistant */,
 				4F3197592167E4A800135FF4 /* PoetAssistantTests */,
+				4FEB03CF2179047200CF8B49 /* PoetAssistantUITests */,
 				4F6613D32164D10700FA10A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -229,6 +263,7 @@
 			children = (
 				4F6613D22164D10700FA10A1 /* PoetAssistant.app */,
 				4F3197582167E4A800135FF4 /* PoetAssistantTests.xctest */,
+				4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,6 +405,21 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		4FEB03CF2179047200CF8B49 /* PoetAssistantUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FEB03D02179047200CF8B49 /* ComposerTest.swift */,
+				4FEB03D22179047200CF8B49 /* Info.plist */,
+				4FEB03D821792E1000CF8B49 /* SearchSuggestionsTest.swift */,
+				4FEB03DA217942C000CF8B49 /* UITestUtils.swift */,
+				4FEB03DC217B45D200CF8B49 /* RTDTest.swift */,
+				4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */,
+				4FEF0685217B988000D69383 /* AboutTest.swift */,
+				4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */,
+			);
+			path = PoetAssistantUITests;
+			sourceTree = "<group>";
+		};
 		4FFB980021722253000469F0 /* about */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +527,24 @@
 			productReference = 4F6613D22164D10700FA10A1 /* PoetAssistant.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4FEB03CD2179047200CF8B49 /* PoetAssistantUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FEB03D72179047200CF8B49 /* Build configuration list for PBXNativeTarget "PoetAssistantUITests" */;
+			buildPhases = (
+				4FEB03CA2179047200CF8B49 /* Sources */,
+				4FEB03CB2179047200CF8B49 /* Frameworks */,
+				4FEB03CC2179047200CF8B49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FEB03D42179047200CF8B49 /* PBXTargetDependency */,
+			);
+			name = PoetAssistantUITests;
+			productName = PoetAssistantUITests;
+			productReference = 4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -493,6 +561,10 @@
 					};
 					4F6613D12164D10700FA10A1 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					4FEB03CD2179047200CF8B49 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 4F6613D12164D10700FA10A1;
 					};
 				};
 			};
@@ -511,6 +583,7 @@
 			targets = (
 				4F6613D12164D10700FA10A1 /* PoetAssistant */,
 				4F3197572167E4A800135FF4 /* PoetAssistantTests */,
+				4FEB03CD2179047200CF8B49 /* PoetAssistantUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -533,6 +606,13 @@
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
 				4F6613DD2164D10700FA10A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FEB03CC2179047200CF8B49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +677,21 @@
 				4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
 				4F661407216533CB00FA10A1 /* SearchSuggestionsController.swift in Sources */,
+				4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FEB03CA2179047200CF8B49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */,
+				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
+				4FEF0686217B988000D69383 /* AboutTest.swift in Sources */,
+				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,
+				4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */,
+				4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */,
+				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +702,11 @@
 			isa = PBXTargetDependency;
 			target = 4F6613D12164D10700FA10A1 /* PoetAssistant */;
 			targetProxy = 4F31975D2167E4A800135FF4 /* PBXContainerItemProxy */;
+		};
+		4FEB03D42179047200CF8B49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F6613D12164D10700FA10A1 /* PoetAssistant */;
+			targetProxy = 4FEB03D32179047200CF8B49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -844,6 +944,46 @@
 			};
 			name = Release;
 		};
+		4FEB03D52179047200CF8B49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
+				INFOPLIST_FILE = PoetAssistantUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoetAssistant;
+			};
+			name = Debug;
+		};
+		4FEB03D62179047200CF8B49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
+				INFOPLIST_FILE = PoetAssistantUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoetAssistant;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -870,6 +1010,15 @@
 			buildConfigurations = (
 				4F6613E72164D10800FA10A1 /* Debug */,
 				4F6613E82164D10800FA10A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FEB03D72179047200CF8B49 /* Build configuration list for PBXNativeTarget "PoetAssistantUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FEB03D52179047200CF8B49 /* Debug */,
+				4FEB03D62179047200CF8B49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

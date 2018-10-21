@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,12 +36,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Qu-q7L">
                                                     <rect key="frame" x="15" y="11.5" width="185" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellWordLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
                                                     <rect key="frame" x="316" y="0.0" width="44" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonDictionary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
                                                         <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
@@ -52,6 +55,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
                                                     <rect key="frame" x="262" y="0.0" width="44" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonThesaurus"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="V9H-br-mze"/>
                                                         <constraint firstAttribute="width" constant="44" id="utw-K2-emc"/>
@@ -63,6 +67,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
                                                     <rect key="frame" x="208" y="0.0" width="44" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonRhymer"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="2xA-JD-WOe"/>
                                                         <constraint firstAttribute="height" constant="44" id="75J-Mg-6nI"/>
@@ -85,6 +90,7 @@
                                                 <constraint firstItem="Ksn-5e-YYn" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vUM-dk-RQJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="RhymerCell"/>
                                         <connections>
                                             <outlet property="buttonDictionary" destination="MDN-Gd-8qR" id="BaU-RL-tdd"/>
                                             <outlet property="buttonRhymer" destination="LzB-D5-qoq" id="HPK-xf-iC5"/>
@@ -96,6 +102,7 @@
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-K0-6Sy" userLabel="EmptyText">
                                 <rect key="frame" x="187.5" y="281" width="0.0" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RhymerEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,6 +112,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-Uc-V2d">
                                         <rect key="frame" x="15" y="0.0" width="48" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="RhymerQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -114,6 +122,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-Nq-Sxh" userLabel="Play">
                                         <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H28-Kc-9ap"/>
@@ -121,6 +130,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-2t-DNg" userLabel="Lookup">
                                         <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nQN-rx-YB3"/>
@@ -128,6 +138,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RhymerResultHeader"/>
                                 <constraints>
                                     <constraint firstItem="7oJ-Nq-Sxh" firstAttribute="leading" secondItem="c4C-2t-DNg" secondAttribute="trailing" constant="16" id="EsA-5O-jkW"/>
                                     <constraint firstItem="c4C-2t-DNg" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="Nv3-lg-98S"/>
@@ -229,12 +240,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e5-yf-lk0">
                                                     <rect key="frame" x="15" y="11.5" width="185" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellWordLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-hD-7jw">
                                                     <rect key="frame" x="316" y="0.0" width="44" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellButtonDictionary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="alQ-Ea-jny"/>
                                                         <constraint firstAttribute="width" constant="44" id="lBD-Ua-8Dp"/>
@@ -279,6 +292,7 @@
                                                 <constraint firstItem="Kdd-C7-Hx2" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="x4K-7i-vJi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ThesaurusCell"/>
                                         <connections>
                                             <outlet property="buttonDictionary" destination="FrO-hD-7jw" id="Swt-WI-O5J"/>
                                             <outlet property="buttonRhymer" destination="Kdd-C7-Hx2" id="8FN-pR-bF0"/>
@@ -290,6 +304,7 @@
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-bd-mtY" userLabel="EmptyText">
                                 <rect key="frame" x="187.5" y="281" width="0.0" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ThesaurusEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -299,6 +314,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-QQ-zCG">
                                         <rect key="frame" x="15" y="0.0" width="48" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ThesaurusQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -308,6 +324,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-02-cIt" userLabel="Play">
                                         <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="U2J-e1-sgj"/>
@@ -315,6 +332,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-gl-gR9" userLabel="Lookup">
                                         <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tea-IQ-Gvn"/>
@@ -322,6 +340,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ThesaurusResultHeader"/>
                                 <constraints>
                                     <constraint firstItem="ohj-02-cIt" firstAttribute="leading" secondItem="HTL-gl-gR9" secondAttribute="trailing" constant="16" id="Ci6-KV-WSX"/>
                                     <constraint firstItem="GZ1-Bg-eJH" firstAttribute="trailing" secondItem="ohj-02-cIt" secondAttribute="trailing" constant="16" id="Fsk-6b-lIO"/>
@@ -398,6 +417,7 @@
                                             <subviews>
                                                 <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-ag-JBK">
                                                     <rect key="frame" x="15" y="11" width="344" height="22"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="DictionaryCellDefinition"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -418,6 +438,7 @@
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
                                 <rect key="frame" x="187.5" y="224" width="0.0" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="DictionaryEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -427,6 +448,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-HG-eyv">
                                         <rect key="frame" x="15" y="0.0" width="0.0" height="0.0"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="DictionaryQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -436,6 +458,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-SF-qgr" userLabel="Lookup">
                                         <rect key="frame" x="295" y="-8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="R1k-c6-ALh"/>
@@ -444,6 +467,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fga-JC-XAb" userLabel="Play">
                                         <rect key="frame" x="335" y="-8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
                                             <action selector="didClickPlayQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="dgi-ap-qH8"/>
@@ -452,6 +476,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="DictionaryResultHeader"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="jfn-HG-eyv" secondAttribute="bottom" constant="8" id="D0j-cJ-P5f"/>
                                     <constraint firstItem="jfn-HG-eyv" firstAttribute="leading" secondItem="4bY-Av-vlk" secondAttribute="leadingMargin" constant="7" id="FXL-Ii-ueS"/>
@@ -510,11 +535,13 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
                                 <rect key="frame" x="16" y="96" width="343" height="474"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerTextViewPoem"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-T8-2fA">
                                 <rect key="frame" x="165.5" y="36" width="44" height="44"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonPlay"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="ic_play"/>
                                 <connections>
@@ -523,12 +550,14 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
                                 <rect key="frame" x="24" y="96" width="335" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerLabelHint"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-Hn-zsg" userLabel="Share Button">
                                 <rect key="frame" x="323" y="40" width="36" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonShare"/>
                                 <state key="normal" image="ic_share"/>
                                 <connections>
                                     <action selector="onShare:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="ngf-TF-A7L"/>
@@ -536,6 +565,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
                                 <rect key="frame" x="24" y="578" width="0.0" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerLabelWordCount"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -548,6 +578,7 @@
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-tE-kWm" userLabel="Hide Keyboard">
                                 <rect key="frame" x="319" y="578" width="56" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonHideKeyboard"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="0.0"/>
                                 <state key="normal" image="ic_keyboard_hide"/>
                                 <connections>
@@ -742,6 +773,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="zXf-f2-7zw">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="SuggestionTitle"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

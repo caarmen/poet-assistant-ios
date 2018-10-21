@@ -49,6 +49,13 @@ class Settings {
 			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
 			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT])
 	}
+	class func clear() {
+		let userDefaults = UserDefaults.init()
+		userDefaults.dictionaryRepresentation().keys.forEach { key in
+			userDefaults.removeObject(forKey: key)
+		}
+		userDefaults.synchronize()
+	}
 	class func getTab() -> Tab {
 		if let tabName = UserDefaults.init().object(forKey: KEY_TAB) as? String {
 			if let tab = Tab(rawValue: tabName) {
