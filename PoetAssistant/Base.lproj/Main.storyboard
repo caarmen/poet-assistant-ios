@@ -534,13 +534,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
-                                <rect key="frame" x="16" y="96" width="343" height="474"/>
+                                <rect key="frame" x="16" y="140" width="343" height="430"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerTextViewPoem"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-T8-2fA">
-                                <rect key="frame" x="165.5" y="36" width="44" height="44"/>
+                                <rect key="frame" x="165.5" y="80" width="44" height="44"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerButtonPlay"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="ic_play"/>
@@ -549,20 +549,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
-                                <rect key="frame" x="24" y="96" width="335" height="20.5"/>
+                                <rect key="frame" x="24" y="140" width="335" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerLabelHint"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-Hn-zsg" userLabel="Share Button">
-                                <rect key="frame" x="323" y="40" width="36" height="36"/>
-                                <accessibility key="accessibilityConfiguration" identifier="ComposerButtonShare"/>
-                                <state key="normal" image="ic_share"/>
-                                <connections>
-                                    <action selector="onShare:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="ngf-TF-A7L"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
                                 <rect key="frame" x="24" y="578" width="0.0" height="40"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerLabelWordCount"/>
@@ -589,8 +581,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" id="1d6-Ng-ajX"/>
-                            <constraint firstItem="wXE-Hn-zsg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ihg-T8-2fA" secondAttribute="trailing" constant="16" id="1oP-ZY-F6Y"/>
-                            <constraint firstItem="W1k-Yd-1yO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wXE-Hn-zsg" secondAttribute="bottom" constant="16" id="28t-XS-KDp"/>
                             <constraint firstItem="W1k-Yd-1yO" firstAttribute="top" secondItem="UvM-C0-zec" secondAttribute="bottom" id="2xM-JV-40M"/>
                             <constraint firstItem="W1k-Yd-1yO" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7gW-rl-Koa"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7qv-8r-x7b"/>
@@ -608,17 +598,18 @@
                             <constraint firstItem="1hH-tE-kWm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UvM-C0-zec" secondAttribute="trailing" constant="16" id="hdn-6n-RxS"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tEA-Om-MWX" secondAttribute="bottom" constant="-16" id="kqc-Dg-ehM"/>
                             <constraint firstItem="EXM-Ie-RKb" firstAttribute="top" secondItem="ihg-T8-2fA" secondAttribute="bottom" constant="16" id="obe-Eu-hhV"/>
-                            <constraint firstItem="wXE-Hn-zsg" firstAttribute="centerY" secondItem="ihg-T8-2fA" secondAttribute="centerY" id="onD-04-v9s"/>
                             <constraint firstItem="Tev-Af-9er" firstAttribute="bottom" secondItem="W1k-Yd-1yO" secondAttribute="bottom" id="pFk-Oc-jer"/>
                             <constraint firstItem="W1k-Yd-1yO" firstAttribute="top" secondItem="1hH-tE-kWm" secondAttribute="bottom" id="pXe-3E-Gcz"/>
                             <constraint firstItem="UvM-C0-zec" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="24" id="utb-jq-jCh"/>
-                            <constraint firstItem="Tev-Af-9er" firstAttribute="trailing" secondItem="wXE-Hn-zsg" secondAttribute="trailing" constant="16" id="zrv-6a-xrJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tev-Af-9er"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Composer" image="ic_composer" selectedImage="ic_composer" id="GNE-fo-Lm9"/>
                     <navigationItem key="navigationItem" id="HFJ-vb-k8L">
-                        <barButtonItem key="rightBarButtonItem" image="ic_settings" id="plG-zv-d7B" userLabel="More"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_more" id="plG-zv-d7B" userLabel="More">
+                            <connections>
+                                <segue destination="313-db-e7b" kind="show" id="NwD-dQ-mqg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -626,14 +617,21 @@
                         <outlet property="hint" destination="tEA-Om-MWX" id="YvO-We-hJW"/>
                         <outlet property="placeholderHeight" destination="piX-I6-F14" id="2tS-nZ-XRQ"/>
                         <outlet property="playButton" destination="ihg-T8-2fA" id="fxY-GG-FBJ"/>
-                        <outlet property="shareButton" destination="wXE-Hn-zsg" id="Xeg-AW-GMd"/>
                         <outlet property="text" destination="EXM-Ie-RKb" id="K6A-NL-pt8"/>
                         <outlet property="wordCount" destination="UvM-C0-zec" id="bka-bI-HqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tad-CJ-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="212"/>
+            <point key="canvasLocation" x="962.39999999999998" y="211.84407796101951"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="tuE-7F-jnJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="More" id="313-db-e7b" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dwz-c2-HH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="-81"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="DJi-hg-4dj">
@@ -714,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usB-th-U4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993.125" y="212.32394366197184"/>
+            <point key="canvasLocation" x="2932" y="211.84407796101951"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -735,24 +733,13 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="XLx-cK-Gtc" kind="relationship" relationship="viewControllers" id="ne1-Ou-IVi"/>
+                        <segue destination="cqG-6O-WSP" kind="relationship" relationship="viewControllers" id="ne1-Ou-IVi"/>
                         <segue destination="k96-hQ-505" kind="relationship" relationship="viewControllers" id="iFg-I7-iix"/>
-                        <segue destination="JrE-UA-3c5" kind="relationship" relationship="viewControllers" id="f9G-Dx-a3S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="995" y="-829"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="SLz-ax-vTY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="JrE-UA-3c5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="qAA-Eo-ret"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ktW-tB-IdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1764" y="-715"/>
         </scene>
         <!--Search Suggestions Controller-->
         <scene sceneID="Jer-rA-uim">
@@ -814,7 +801,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srN-Nc-yGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995.625" y="212.32394366197184"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="211.84407796101951"/>
+        </scene>
+        <!--Composer-->
+        <scene sceneID="Ay8-l8-hf3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cqG-6O-WSP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Composer" image="ic_composer" selectedImage="ic_composer" id="GNE-fo-Lm9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jhe-dI-vmb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XLx-cK-Gtc" kind="relationship" relationship="rootViewController" id="izc-U0-WQP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddM-I4-JVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.199999999999999" y="211.84407796101951"/>
         </scene>
     </scenes>
     <resources>
@@ -822,11 +828,10 @@
         <image name="ic_dictionary" width="25" height="25"/>
         <image name="ic_keyboard_hide" width="24" height="24"/>
         <image name="ic_lexicons" width="25" height="25"/>
+        <image name="ic_more" width="24" height="24"/>
         <image name="ic_play" width="36" height="36"/>
         <image name="ic_play_outline" width="24" height="24"/>
         <image name="ic_rhymer" width="25" height="25"/>
-        <image name="ic_settings" width="24" height="24"/>
-        <image name="ic_share" width="36" height="36"/>
         <image name="ic_thesaurus" width="25" height="25"/>
         <image name="ic_web_search" width="24" height="24"/>
     </resources>

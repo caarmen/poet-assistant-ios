@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7x1-zc-92i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LXh-xF-4WQ">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -794,26 +794,6 @@
             </objects>
             <point key="canvasLocation" x="2928" y="1074"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="PCW-4a-0lm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7x1-zc-92i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="ic_settings" id="dBT-e1-VqH"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JZz-Rr-xQH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LXh-xF-4WQ" kind="relationship" relationship="rootViewController" id="5WS-De-sMr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pl-Y4-wAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1989.5999999999999" y="387.25637181409297"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ic_bug" width="24" height="24"/>
@@ -821,7 +801,6 @@
         <image name="ic_code" width="24" height="24"/>
         <image name="ic_legal" width="24" height="24"/>
         <image name="ic_play" width="36" height="36"/>
-        <image name="ic_settings" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
