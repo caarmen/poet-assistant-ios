@@ -57,6 +57,8 @@
 		4FEF0686217B988000D69383 /* AboutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0685217B988000D69383 /* AboutTest.swift */; };
 		4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */; };
 		4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */; };
+		4FEF068C2182535000D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF068B2182535000D69383 /* More.storyboard */; };
+		4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF068F2182554200D69383 /* MoreTableViewController.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -146,6 +148,8 @@
 		4FEF0685217B988000D69383 /* AboutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTest.swift; sourceTree = "<group>"; };
 		4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSettingsTest.swift; sourceTree = "<group>"; };
 		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
+		4FEF068B2182535000D69383 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		4FEF068F2182554200D69383 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
+				4FEF068B2182535000D69383 /* More.storyboard */,
 				4FA229F321726C800014B1B9 /* Settings.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
@@ -286,6 +291,7 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF068D2182551600D69383 /* more */,
 				4F6613F12164FC4700FA10A1 /* composer */,
 				4F661405216533A600FA10A1 /* search */,
 				4FFB98082172358A000469F0 /* settings */,
@@ -418,6 +424,22 @@
 				4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */,
 			);
 			path = PoetAssistantUITests;
+			sourceTree = "<group>";
+		};
+		4FEF068D2182551600D69383 /* more */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF068E2182551F00D69383 /* controller */,
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		4FEF068E2182551F00D69383 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF068F2182554200D69383 /* MoreTableViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		4FFB980021722253000469F0 /* about */ = {
@@ -602,6 +624,7 @@
 			files = (
 				4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */,
 				4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */,
+				4FEF068C2182535000D69383 /* More.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
@@ -669,6 +692,7 @@
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */,
 				4F6613F721650F6600FA10A1 /* Poem.swift in Sources */,
+				4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */,
 				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
