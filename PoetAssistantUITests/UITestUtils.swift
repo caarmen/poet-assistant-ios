@@ -42,7 +42,6 @@ class UITestUtils {
 	}
 	
 	class func openMore(app: XCUIApplication) {
-		openTab(app: app, position: 0)
 		app.navigationBars.buttons.firstMatch.tap()
 	}
 	class func openSettings(app:XCUIApplication) {
