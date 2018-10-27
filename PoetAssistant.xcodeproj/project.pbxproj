@@ -56,9 +56,9 @@
 		4FEF0686217B988000D69383 /* AboutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0685217B988000D69383 /* AboutTest.swift */; };
 		4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */; };
 		4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */; };
-		4FEF068C2182535000D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF068B2182535000D69383 /* More.storyboard */; };
 		4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF068F2182554200D69383 /* MoreTableViewController.swift */; };
 		4FEF06B82184F40500D69383 /* ComposerViewController+MoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */; };
+		4FEF06B92185087F00D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF06BB2185087F00D69383 /* More.storyboard */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -147,9 +147,10 @@
 		4FEF0685217B988000D69383 /* AboutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTest.swift; sourceTree = "<group>"; };
 		4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSettingsTest.swift; sourceTree = "<group>"; };
 		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
-		4FEF068B2182535000D69383 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		4FEF068F2182554200D69383 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+MoreDelegate.swift"; sourceTree = "<group>"; };
+		4FEF06BC2185089A00D69383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
+		4FEF06BE21850A4700D69383 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/More.strings; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -280,7 +281,7 @@
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
-				4FEF068B2182535000D69383 /* More.storyboard */,
+				4FEF06BB2185087F00D69383 /* More.storyboard */,
 				4FA229F321726C800014B1B9 /* Settings.storyboard */,
 				4F6613E02164D10800FA10A1 /* LaunchScreen.storyboard */,
 				4F6613E32164D10800FA10A1 /* Info.plist */,
@@ -632,7 +633,7 @@
 			files = (
 				4F6613E22164D10800FA10A1 /* LaunchScreen.storyboard in Resources */,
 				4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */,
-				4FEF068C2182535000D69383 /* More.storyboard in Resources */,
+				4FEF06B92185087F00D69383 /* More.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
@@ -775,6 +776,15 @@
 				4FA229F521726C8D0014B1B9 /* en */,
 			);
 			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		4FEF06BB2185087F00D69383 /* More.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FEF06BC2185089A00D69383 /* Base */,
+				4FEF06BE21850A4700D69383 /* en */,
+			);
+			name = More.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

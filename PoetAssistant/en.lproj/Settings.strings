@@ -1,6 +1,3 @@
-﻿
-/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "02d-gJ-v6l"; */
-"02d-gJ-v6l.text" = "Privacy Policy";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
 "1Wv-H5-jYT.title" = "Settings";
@@ -14,38 +11,17 @@
 /* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
 "9Lj-6Q-TeV.text" = "Search History";
 
-/* Class = "UILabel"; text = "Report Bugs"; ObjectID = "BIY-1c-ebu"; */
-"BIY-1c-ebu.text" = "Report Bugs";
-
-/* Class = "UILabel"; text = "WordNet Dictionary License"; ObjectID = "GCy-cB-mHR"; */
-"GCy-cB-mHR.text" = "WordNet Dictionary License";
-
-/* Class = "UILabel"; text = "Source code"; ObjectID = "HnG-uC-Ns9"; */
-"HnG-uC-Ns9.text" = "Source code";
-
-/* Class = "UILabel"; text = "Poet Assistant License (GPLv3)"; ObjectID = "IDM-6f-6gZ"; */
-"IDM-6f-6gZ.text" = "Poet Assistant License (GPLv3)";
-
 /* Class = "UILabel"; text = "Efficient layout"; ObjectID = "KlK-43-Sj7"; */
 "KlK-43-Sj7.text" = "Efficient layout";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "LXh-xF-4WQ"; */
 "LXh-xF-4WQ.title" = "Settings";
 
-/* Class = "UILabel"; text = "Copyright © 2018 Carmen Alvarez"; ObjectID = "MIN-pK-fwY"; */
-"MIN-pK-fwY.text" = "Copyright © 2018 Carmen Alvarez";
-
-/* Class = "UITextView"; text = "c@rmen.ca"; ObjectID = "QfS-Pu-ub4"; */
-"QfS-Pu-ub4.text" = "c@rmen.ca";
-
-/* Class = "UILabel"; text = "About"; ObjectID = "Qwz-2I-Nkm"; */
-"Qwz-2I-Nkm.text" = "About";
-
 /* Class = "UILabel"; text = "Voice"; ObjectID = "RKE-Ha-fzm"; */
 "RKE-Ha-fzm.text" = "Voice";
 
-/* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "YZk-HA-0nu"; */
-"YZk-HA-0nu.text" = "Poet Assistant v1.0.0";
+/* Class = "UILabel"; text = "Default"; ObjectID = "UTi-ab-UcT"; */
+"UTi-ab-UcT.text" = "Default";
 
 /* Class = "UILabel"; text = "Voice speed"; ObjectID = "Ygb-BE-KgI"; */
 "Ygb-BE-KgI.text" = "Voice speed";
@@ -53,20 +29,8 @@
 /* Class = "UILabel"; text = "Voice pitch"; ObjectID = "aMK-f3-MzO"; */
 "aMK-f3-MzO.text" = "Voice pitch";
 
-/* Class = "UILabel"; text = "Porter Stemmer algorithm"; ObjectID = "cAX-aF-TZd"; */
-"cAX-aF-TZd.text" = "Porter Stemmer algorithm";
-
 /* Class = "UITableViewSection"; headerTitle = "Voice Settings"; ObjectID = "czk-8K-qjE"; */
 "czk-8K-qjE.headerTitle" = "Voice Settings";
-
-/* Class = "UILabel"; text = "WordNet Thesaurus License"; ObjectID = "d5V-oQ-R4a"; */
-"d5V-oQ-R4a.text" = "WordNet Thesaurus License";
-
-/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "dBT-e1-VqH"; */
-"dBT-e1-VqH.title" = "Settings";
-
-/* Class = "UILabel"; text = "Legal"; ObjectID = "dmh-1O-rQw"; */
-"dmh-1O-rQw.text" = "Legal";
 
 /* Class = "UILabel"; text = "Preview"; ObjectID = "hIj-28-B8O"; */
 "hIj-28-B8O.text" = "Preview";
@@ -74,17 +38,8 @@
 /* Class = "UILabel"; text = "Offer search suggestions based on previous searches"; ObjectID = "hMf-r6-e63"; */
 "hMf-r6-e63.text" = "Offer search suggestions based on previous searches";
 
-/* Class = "UITableViewController"; title = "About"; ObjectID = "hqh-0w-WYP"; */
-"hqh-0w-WYP.title" = "About";
-
 /* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "iiN-CS-dKJ"; */
 "iiN-CS-dKJ.headerTitle" = "Other";
 
 /* Class = "UILabel"; text = "Listen to a voice sample"; ObjectID = "k24-ay-Xe2"; */
 "k24-ay-Xe2.text" = "Listen to a voice sample";
-
-/* Class = "UILabel"; text = "CMU Rhymer License"; ObjectID = "rMy-nv-8oH"; */
-"rMy-nv-8oH.text" = "CMU Rhymer License";
-
-/* Class = "UITextView"; text = "https://rmen.ca"; ObjectID = "xd3-Pv-Zat"; */
-"xd3-Pv-Zat.text" = "https://rmen.ca";

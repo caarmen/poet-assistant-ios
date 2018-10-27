@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "Porter Stemmer algorithm"; ObjectID = "0wV-ou-r88"; */
+"0wV-ou-r88.text" = "Porter Stemmer algorithm";
+
+/* Class = "UITableViewController"; title = "More"; ObjectID = "3j8-v1-YZ1"; */
+"3j8-v1-YZ1.title" = "More";
+
+/* Class = "UILabel"; text = "Legal"; ObjectID = "AHf-3S-HQK"; */
+"AHf-3S-HQK.text" = "Legal";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "Bqu-0a-C0K"; */
+"Bqu-0a-C0K.text" = "Settings";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "ET5-rZ-P0P"; */
+"ET5-rZ-P0P.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "New"; ObjectID = "F8r-Zr-5Hx"; */
+"F8r-Zr-5Hx.text" = "New";
+
+/* Class = "UITableViewController"; title = "About"; ObjectID = "IxT-qc-S8M"; */
+"IxT-qc-S8M.title" = "About";
+
+/* Class = "UITextView"; text = "c@rmen.ca"; ObjectID = "NbR-4x-d1B"; */
+"NbR-4x-d1B.text" = "c@rmen.ca";
+
+/* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "OPk-XL-DQ8"; */
+"OPk-XL-DQ8.text" = "Poet Assistant v1.0.0";
+
+/* Class = "UITextView"; text = "https://rmen.ca"; ObjectID = "QQg-Hv-epO"; */
+"QQg-Hv-epO.text" = "https://rmen.ca";
+
+/* Class = "UILabel"; text = "Copyright © 2018 Carmen Alvarez"; ObjectID = "SUA-Mb-1Y8"; */
+"SUA-Mb-1Y8.text" = "Copyright © 2018 Carmen Alvarez";
+
+/* Class = "UILabel"; text = "WordNet Dictionary License"; ObjectID = "Vvx-oR-P42"; */
+"Vvx-oR-P42.text" = "WordNet Dictionary License";
+
+/* Class = "UINavigationItem"; title = "More"; ObjectID = "YHW-VQ-qOE"; */
+"YHW-VQ-qOE.title" = "More";
+
+/* Class = "UILabel"; text = "Poet Assistant License (GPLv3)"; ObjectID = "bs0-tm-Sw4"; */
+"bs0-tm-Sw4.text" = "Poet Assistant License (GPLv3)";
+
+/* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "cZB-v8-url"; */
+"cZB-v8-url.headerTitle" = "General";
+
+/* Class = "UITableViewSection"; headerTitle = "File"; ObjectID = "dWi-1n-Fjb"; */
+"dWi-1n-Fjb.headerTitle" = "File";
+
+/* Class = "UILabel"; text = "Import"; ObjectID = "iSI-e8-UVp"; */
+"iSI-e8-UVp.text" = "Import";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "rSW-Fj-GCn"; */
+"rSW-Fj-GCn.text" = "About";
+
+/* Class = "UILabel"; text = "Report Bugs"; ObjectID = "tQu-YI-1S3"; */
+"tQu-YI-1S3.text" = "Report Bugs";
+
+/* Class = "UILabel"; text = "Source code"; ObjectID = "tmC-wi-Jv0"; */
+"tmC-wi-Jv0.text" = "Source code";
+
+/* Class = "UILabel"; text = "Share poem text"; ObjectID = "ujd-W9-BjM"; */
+"ujd-W9-BjM.text" = "Share poem text";
+
+/* Class = "UILabel"; text = "WordNet Thesaurus License"; ObjectID = "yeN-xm-b8G"; */
+"yeN-xm-b8G.text" = "WordNet Thesaurus License";
+
+/* Class = "UILabel"; text = "Save as"; ObjectID = "yoa-gB-bgI"; */
+"yoa-gB-bgI.text" = "Save as";
+
+/* Class = "UILabel"; text = "CMU Rhymer License"; ObjectID = "ywM-V4-35T"; */
+"ywM-V4-35T.text" = "CMU Rhymer License";
