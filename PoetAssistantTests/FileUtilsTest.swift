@@ -26,7 +26,7 @@ class FileUtilsTest: XCTestCase {
 		testGetUsableFilename(expectedFilename:"YoLo.txt", actualUserInput:"YoLo.txt")
 		testGetUsableFilename(expectedFilename:"hello.txt", actualUserInput:"hello")
 		testGetUsableFilename(expectedFilename:"poem.txt", actualUserInput:"👨🏽‍✈️")
-		testGetUsableFilename(expectedFilename:"somefileswithspaces.txt", actualUserInput:"some files with spaces")
+		testGetUsableFilename(expectedFilename:"some files with spaces.txt", actualUserInput:"some files with spaces")
 		testGetUsableFilename(expectedFilename:"slash.txt", actualUserInput:"slash/")
 	}
 	

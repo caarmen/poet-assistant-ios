@@ -25,11 +25,7 @@ class FileUtils {
 
 	class func deleteAllDocuments() {
 		let fileManager = FileManager()
-		let documentsFolderUrl = try! FileManager.default.url(
-			for: .documentDirectory,
-			in: .userDomainMask,
-			appropriateFor: nil,
-			create: true)
+		let documentsFolderUrl = getDocumentFolderUrl()
 		let documentsUrls = try! fileManager.contentsOfDirectory(at: documentsFolderUrl, includingPropertiesForKeys: nil, options: [])
 		documentsUrls.forEach { url in
 			try! fileManager.removeItem(at: url)
@@ -37,13 +33,17 @@ class FileUtils {
 	}
 
 	class func buildDocumentUrl(filename: String) -> URL {
+		return getDocumentFolderUrl().appendingPathComponent(filename)
+	}
+	
+	private class func getDocumentFolderUrl() -> URL{
 		return try! FileManager.default.url(
 			for: .documentDirectory,
 			in: .userDomainMask,
 			appropriateFor: nil,
-			create: true).appendingPathComponent(filename)
+			create: true)
 	}
-	
+
 	class func save(url: URL, text: String) {
 		if let data = text.data(using: .utf8) {
 			do {
@@ -58,7 +58,7 @@ class FileUtils {
 		var result = userEnteredFilename
 		
 		let range = NSMakeRange(0, result.utf16.count)
-		let regex = try! NSRegularExpression(pattern: "[^\\p{L}\\p{N}\\.]", options: NSRegularExpression.Options.caseInsensitive)
+		let regex = try! NSRegularExpression(pattern: "[^\\p{L}\\p{N}\\. ]", options: NSRegularExpression.Options.caseInsensitive)
 		result = regex.stringByReplacingMatches(in: result, options: [], range: range, withTemplate: "")
 		if result.isEmpty {
 			result = "poem"
