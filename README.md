@@ -17,9 +17,9 @@ These are all the screens so far:
 
 ## Todo list
 Many features aren't available yet on iOS (they're on Android). This is probably the order in which I'll start to add them:
-* ~~Word count in the composer tab~~
-* ~~Show recently searched words when opening the search screen~~
-* Save the poem to a file, open a text file.
+* ~Word count in the composer tab~
+* ~Show recently searched words when opening the search screen~
+* ~Save the poem to a file, open a text file.~
 * Star favorite words
 * Random word
 * Words of the day: list and system notification
