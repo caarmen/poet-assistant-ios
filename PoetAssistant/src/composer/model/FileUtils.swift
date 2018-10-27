@@ -55,10 +55,17 @@ class FileUtils {
 	}
 	
 	class func getUsableFilename(userEnteredFilename: String) -> String {
-		var filenameWithExtension = userEnteredFilename
-		if !filenameWithExtension.hasSuffix(".txt") {
-			filenameWithExtension.append(".txt")
+		var result = userEnteredFilename
+		
+		let range = NSMakeRange(0, result.utf16.count)
+		let regex = try! NSRegularExpression(pattern: "[^\\p{L}\\p{N}\\.]", options: NSRegularExpression.Options.caseInsensitive)
+		result = regex.stringByReplacingMatches(in: result, options: [], range: range, withTemplate: "")
+		if result.isEmpty {
+			result = "poem"
 		}
-		return filenameWithExtension
+		if !result.hasSuffix(".txt") {
+			result.append(".txt")
+		}
+		return result
 	}
 }

@@ -61,6 +61,7 @@
 		4FEF06B92185087F00D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF06BB2185087F00D69383 /* More.storyboard */; };
 		4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06BF21850FFF00D69383 /* FileUtils.swift */; };
 		4FEF06C22185110600D69383 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C12185110600D69383 /* FileTest.swift */; };
+		4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -155,6 +156,7 @@
 		4FEF06BE21850A4700D69383 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/More.strings; sourceTree = "<group>"; };
 		4FEF06BF21850FFF00D69383 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		4FEF06C12185110600D69383 /* FileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
+		4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				4F3197622167E4ED00135FF4 /* PorterStemmerTest.swift */,
 				4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */,
 				4FEB03B72177BB7100CF8B49 /* StemsTest.swift */,
+				4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */,
 			);
 			path = PoetAssistantTests;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
 				4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */,
 				4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */,
+				4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
