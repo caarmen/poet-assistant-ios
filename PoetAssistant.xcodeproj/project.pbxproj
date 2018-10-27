@@ -59,6 +59,8 @@
 		4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF068F2182554200D69383 /* MoreTableViewController.swift */; };
 		4FEF06B82184F40500D69383 /* ComposerViewController+MoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */; };
 		4FEF06B92185087F00D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF06BB2185087F00D69383 /* More.storyboard */; };
+		4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06BF21850FFF00D69383 /* FileUtils.swift */; };
+		4FEF06C22185110600D69383 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C12185110600D69383 /* FileTest.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -151,6 +153,8 @@
 		4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+MoreDelegate.swift"; sourceTree = "<group>"; };
 		4FEF06BC2185089A00D69383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
 		4FEF06BE21850A4700D69383 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/More.strings; sourceTree = "<group>"; };
+		4FEF06BF21850FFF00D69383 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		4FEF06C12185110600D69383 /* FileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -422,6 +426,7 @@
 				4FEF0683217B83F000D69383 /* WordNotFoundTest.swift */,
 				4FEF0685217B988000D69383 /* AboutTest.swift */,
 				4FEF0687217BC41100D69383 /* TtsSettingsTest.swift */,
+				4FEF06C12185110600D69383 /* FileTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 			children = (
 				4F6613F4216506B500FA10A1 /* PoemDocument.swift */,
 				4FFBA5BD216A542500AD3AD6 /* WordCounter.swift */,
+				4FEF06BF21850FFF00D69383 /* FileUtils.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -692,6 +698,7 @@
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
 				4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
+				4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */,
 				4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
@@ -719,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */,
+				4FEF06C22185110600D69383 /* FileTest.swift in Sources */,
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
 				4FEF0686217B988000D69383 /* AboutTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,
