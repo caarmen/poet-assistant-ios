@@ -59,7 +59,7 @@ class SearchSuggestionsTest: XCTestCase {
 	}
 	
 	func testSearchHistoryDisabled() {
-		UITestUtils.openSettingsTab(app: app)
+		UITestUtils.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchSearchHistory").firstMatch.tap()
 		UITestUtils.openDictionariesTab(app: app)
 		
