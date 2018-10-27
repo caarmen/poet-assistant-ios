@@ -27,6 +27,7 @@ class Settings {
 	public static let MAX_VOICE_PITCH = Float(2.0)
 	private static let KEY_TAB = "tab"
 	private static let KEY_LEXICON = "lexicon"
+	private static let KEY_POEM_URL = "poem_url"
 	private static let KEY_SEARCH_HISTORY = "search_history"
 	private static let KEY_VOICE_SPEED = "voice_speed"
 	private static let KEY_VOICE_PITCH = "voice_pitch"
@@ -80,6 +81,23 @@ class Settings {
 		return DEFAULT_LEXICON
 	}
 	
+	class func getPoemUrl() -> URL? {
+		if let bookmarkedUrl = UserDefaults.init().data(forKey: KEY_POEM_URL) {
+			if let nsurl = try? NSURL(resolvingBookmarkData: bookmarkedUrl, options: [], relativeTo: nil, bookmarkDataIsStale: nil) {
+				if let urlString = nsurl.absoluteString {
+					return URL(string: urlString)
+				}
+			}
+		}
+		return nil
+	}
+	class func setPoemUrl(url: URL) {
+		do {
+			try setPref(key: KEY_POEM_URL, value: url.bookmarkData())
+		} catch let error {
+			print("Error saving poem at url \(url): \(error)")
+		}
+	}
 	class func setLexicon(lexicon: Lexicon) {
 		let userDefaults = UserDefaults.init()
 		userDefaults.setValue(lexicon.rawValue, forKey: KEY_LEXICON)
@@ -148,5 +166,6 @@ class Settings {
 		let userDefaults = UserDefaults.init()
 		userDefaults.setValue(value, forKey: key)
 		userDefaults.synchronize()
+		print ("Saved \(key) = \(value)")
 	}
 }

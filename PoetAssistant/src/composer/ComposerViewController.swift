@@ -21,8 +21,13 @@ import UIKit
 import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
+	private lazy var document: PoemDocument = {
+		return PoemDocument.loadSavedPoem()
+	}()
+
 	private var keyboardHeight:  CGFloat?
 	private var ttsPlayButtonUpdater: TtsPlayButtonConnector?
+	
 	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
 		didSet {
@@ -62,7 +67,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		text.text = Poem.readDraft().text
+		if (document.documentState == .normal) {
+			text.text = document.text
+		}
 		updateUi()
 	}
 	
@@ -70,8 +77,16 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		super.viewDidLoad()
 		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
+		NotificationCenter.default.addObserver(self, selector:#selector(documentStateChanged), name:UIDocument.stateChangedNotification, object:document)
 	}
-	
+
+	@objc
+	func documentStateChanged(notification: Notification) {
+		if (document.documentState == .normal) {
+			text.text = document.text
+			updateUi()
+		}
+	}
 	private func updateUi() {
 		hint.isHidden = !text.text.isEmpty
 		updatePlayButton()
@@ -93,7 +108,10 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	func textViewDidChange(_ textView: UITextView) {
 		updateUi()
-		Poem(withText: text.text).saveDraft()
+		if (document.documentState == .normal) {
+			document.text = text.text
+			document.updateChangeCount(.done)
+		}
 	}
 	
 	@IBAction func didClickHideKeyboard(_ sender: UIButton) {
