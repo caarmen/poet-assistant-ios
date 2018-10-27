@@ -49,7 +49,7 @@ class TtsSettingsTest: XCTestCase {
 		let voiceSpeedSlider = getSlider(cellIdentifier: "SettingVoiceSpeed")
 		let voicePreviewButton = getVoicePreviewButton()
 		let previewDurationNormalSpeed = timePreview(withVoiceSpeed: 0.5, voiceSpeedSlider: voiceSpeedSlider, playButton: voicePreviewButton)
-		let previewDurationFast = timePreview(withVoiceSpeed: 1.0, voiceSpeedSlider: voiceSpeedSlider, playButton: voicePreviewButton)
+		let previewDurationFast = timePreview(withVoiceSpeed: 0.95, voiceSpeedSlider: voiceSpeedSlider, playButton: voicePreviewButton)
 		let previewDurationSlow = timePreview(withVoiceSpeed: 0.0, voiceSpeedSlider: voiceSpeedSlider, playButton: voicePreviewButton)
 		XCTAssertGreaterThan(previewDurationSlow, previewDurationNormalSpeed)
 		XCTAssertGreaterThan(previewDurationNormalSpeed, previewDurationFast)
