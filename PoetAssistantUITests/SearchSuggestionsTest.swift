@@ -84,7 +84,7 @@ class SearchSuggestionsTest: XCTestCase {
 	private func clearSearchHistory() {
 		let deleteCell = app.tables.cells.matching(identifier: "cell_delete").firstMatch
 		deleteCell.tap()
-		UITestUtils.cancelDialog(app:app)
+		UITestUtils.acceptDialog(app:app)
 		waitForSearchHistoryDeletionDialogToDismiss()
 	}
 	
