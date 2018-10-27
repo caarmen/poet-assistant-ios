@@ -607,7 +607,7 @@
                     <navigationItem key="navigationItem" id="HFJ-vb-k8L">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_more" id="plG-zv-d7B" userLabel="More">
                             <connections>
-                                <segue destination="313-db-e7b" kind="show" id="NwD-dQ-mqg"/>
+                                <segue destination="313-db-e7b" kind="show" identifier="More" id="NwD-dQ-mqg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
