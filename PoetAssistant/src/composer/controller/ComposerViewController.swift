@@ -20,9 +20,8 @@
 import UIKit
 import AVFoundation
 
-class ComposerViewController: UIViewController, UITextViewDelegate, MoreDelegate, PoemDocumentDelegate {
-
-	private lazy var document: PoemDocument = {
+class ComposerViewController: UIViewController, UITextViewDelegate {
+	internal lazy var document: PoemDocument = {
 		return PoemDocument.loadSavedPoem()
 	}()
 
@@ -78,7 +77,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate, MoreDelegate
 		super.viewDidLoad()
 		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
-		document.delegate = self
 		NotificationCenter.default.addObserver(self, selector:#selector(documentStateChanged), name:UIDocument.stateChangedNotification, object:document)
 	}
 
@@ -89,24 +87,17 @@ class ComposerViewController: UIViewController, UITextViewDelegate, MoreDelegate
 			updateUi()
 		}
 	}
-	func documentWasSaved() {
-		updateUi()
-	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for:segue, sender:sender)
 		if segue.identifier == "More" {
 			if let moreViewController = segue.destination as? MoreTableViewController {
-				moreViewController.document = document
 				moreViewController.delegate = self
 			}
 		}
 	}
-	func didFinish() {
-		navigationController?.popViewController(animated: true)
-		updateUi()
-	}
 
-	private func updateUi() {
+	internal func updateUi() {
 		hint.isHidden = !text.text.isEmpty
 		updatePlayButton()
 		wordCount.text = getWordCountText(text: text.text)
