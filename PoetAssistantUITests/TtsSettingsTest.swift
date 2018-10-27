@@ -25,7 +25,7 @@ class TtsSettingsTest: XCTestCase {
 	override func setUp() {
 		continueAfterFailure = false
 		app = UITestUtils.launchApp()
-		UITestUtils.openSettingsTab(app: app)
+		UITestUtils.openSettings(app: app)
 	}
 
     override func tearDown() {

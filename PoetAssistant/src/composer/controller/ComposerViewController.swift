@@ -93,6 +93,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		if segue.identifier == "More" {
 			if let moreViewController = segue.destination as? MoreTableViewController {
 				moreViewController.delegate = self
+				moreViewController.emptyPoem = document.text.isEmpty
 			}
 		}
 	}

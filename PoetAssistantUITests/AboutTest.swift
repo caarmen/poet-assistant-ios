@@ -31,9 +31,7 @@ class AboutTest: XCTestCase {
 	}
 	
 	func testAbout() {
-		UITestUtils.openSettingsTab(app: app)
-		app.swipeUp()
-		
+		UITestUtils.openMore(app: app)
 		let aboutElement = app.tables.cells.matching(identifier: "About").firstMatch
 		XCTAssert(aboutElement.exists)
 		XCTAssert(aboutElement.isHittable)

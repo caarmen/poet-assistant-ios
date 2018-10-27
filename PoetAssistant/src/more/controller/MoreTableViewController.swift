@@ -26,6 +26,8 @@ protocol MoreDelegate:class {
 }
 class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 	weak var delegate: MoreDelegate? = nil
+	var emptyPoem = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -54,6 +56,14 @@ class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 		}
 	}
 	
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		let cell = super.tableView(tableView, cellForRowAt: indexPath)
+		if cell == cellSharePoemText && emptyPoem {
+			return 0
+		} else {
+			return super.tableView(tableView, heightForRowAt: indexPath)
+		}
+	}
 	func documentPicker(_ controller: UIDocumentPickerViewController,
 						didPickDocumentsAt urls: [URL]) {
 		if let url = urls.first, controller.documentPickerMode == UIDocumentPickerMode.import {

@@ -41,8 +41,13 @@ class UITestUtils {
 		openTab(app: app, position: 1)
 	}
 	
-	class func openSettingsTab(app:XCUIApplication) {
-		openTab(app: app, position: 2)
+	class func openMore(app: XCUIApplication) {
+		openTab(app: app, position: 0)
+		app.navigationBars.buttons.firstMatch.tap()
+	}
+	class func openSettings(app:XCUIApplication) {
+		openMore(app: app)
+		app.tables.cells.matching(identifier: "Settings").firstMatch.tap()
 	}
 	
 	class func moveToRhymer(app:XCUIApplication) {
