@@ -102,7 +102,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		hint.isHidden = !text.text.isEmpty
 		updatePlayButton()
 		wordCount.text = getWordCountText(text: text.text)
-		navigationItem.title = document.localizedName
+		navigationItem.title = document.localizedName.capitalized
 	}
 	
 	private func updatePlayButton() {
