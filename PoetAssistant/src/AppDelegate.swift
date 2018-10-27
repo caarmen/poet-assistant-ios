@@ -30,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		if CommandLine.arguments.contains("UITesting") {
 			Settings.clear()
 			Suggestion.clearHistory(completion: nil)
-			Poem(withText:"").saveDraft()
+			let doc = PoemDocument.loadSavedPoem()
+			doc.text = ""
+			doc.updateChangeCount(.done)
 		}
 		return true
 	}

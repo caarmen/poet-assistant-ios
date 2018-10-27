@@ -20,7 +20,7 @@ class MoreTableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)
 		if cell == cellSharePoemText {
-			let poemText = Poem.readDraft().text
+			let poemText = PoemDocument.loadSavedPoem().text
 			present(UIActivityViewController(activityItems: [poemText], applicationActivities: nil), animated:true, completion:nil)
 		}
 	}
