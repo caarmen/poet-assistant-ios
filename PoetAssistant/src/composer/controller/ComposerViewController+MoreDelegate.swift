@@ -17,10 +17,29 @@ You should have received a copy of the GNU General Public License
 along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import Foundation
-
-enum Lexicon: String {
-	case rhymer = "rhymer"
-	case thesaurus = "thesaurus"
-	case dictionary = "dictionary"
+import UIKit
+extension ComposerViewController : MoreDelegate {
+	func didShare() {
+		didFinish()
+		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
+	}
+	
+	func didImport(url: URL) {
+		didFinish()
+		document.importDocument(url: url) { self.updateUi()}
+	}
+	
+	func didCreateNewDocument(newFilename: String) {
+		didFinish()
+		document.newDocument(filename: newFilename) {self.updateUi()}
+	}
+	
+	func didSaveAs(newFilename: String) {
+		didFinish()
+		document.saveAs(newFilename: newFilename) {self.updateUi()}
+	}
+	
+	private func didFinish() {
+		navigationController?.popViewController(animated: true)
+	}
 }

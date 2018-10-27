@@ -59,7 +59,7 @@ class SearchSuggestionsTest: XCTestCase {
 	}
 	
 	func testSearchHistoryDisabled() {
-		UITestUtils.openSettingsTab(app: app)
+		UITestUtils.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchSearchHistory").firstMatch.tap()
 		UITestUtils.openDictionariesTab(app: app)
 		
@@ -84,8 +84,7 @@ class SearchSuggestionsTest: XCTestCase {
 	private func clearSearchHistory() {
 		let deleteCell = app.tables.cells.matching(identifier: "cell_delete").firstMatch
 		deleteCell.tap()
-		let clearButton = app.alerts.firstMatch.buttons.element(boundBy: 1)
-		clearButton.tap()
+		UITestUtils.acceptDialog(app:app)
 		waitForSearchHistoryDeletionDialogToDismiss()
 	}
 	

@@ -41,8 +41,12 @@ class UITestUtils {
 		openTab(app: app, position: 1)
 	}
 	
-	class func openSettingsTab(app:XCUIApplication) {
-		openTab(app: app, position: 2)
+	class func openMore(app: XCUIApplication) {
+		app.navigationBars.buttons.firstMatch.tap()
+	}
+	class func openSettings(app:XCUIApplication) {
+		openMore(app: app)
+		app.tables.cells.matching(identifier: "Settings").firstMatch.tap()
 	}
 	
 	class func moveToRhymer(app:XCUIApplication) {
@@ -57,7 +61,12 @@ class UITestUtils {
 	private class func moveToLexicon(app:XCUIApplication, position: Int) {
 		app.segmentedControls.buttons.element(boundBy: position).tap()
 	}
-	
+	class func acceptDialog(app: XCUIApplication) {
+		app.alerts.firstMatch.buttons.element(boundBy: 1).firstMatch.tap()
+	}
+	class func cancelDialog(app: XCUIApplication) {
+		app.alerts.firstMatch.buttons.element(boundBy: 0).firstMatch.tap()
+	}
 	class func search(test: XCTestCase, app:XCUIApplication, query: String) {
 		openDictionariesTab(app: app)
 		app.searchFields.firstMatch.typeText("\(query)\n")

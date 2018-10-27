@@ -113,15 +113,17 @@ class ComposerTest: XCTestCase {
 	}
 	
 	func testShare() {
-		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
-		let buttonShare = app.buttons.matching(identifier: "ComposerButtonShare").firstMatch
-		assertVisible(element:textViewPoem)
-		assertVisible(element:buttonShare)
-		XCTAssert(!buttonShare.isEnabled)
-		textViewPoem.tap()
-		textViewPoem.typeText("Hello there")
-		XCTAssert(buttonShare.isEnabled)
-		buttonShare.tap()
+		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
+		assertVisible(element:textViewPoem.firstMatch)
+		UITestUtils.openMore(app: app)
+		let shareQuery = app.tables.cells.matching(identifier: "Share")
+		XCTAssert(shareQuery.firstMatch.frame.height < 1)
+		app.navigationBars.buttons.firstMatch.tap()
+		textViewPoem.firstMatch.tap()
+		textViewPoem.firstMatch.typeText("Hello there")
+		UITestUtils.openMore(app: app)
+		XCTAssert(shareQuery.firstMatch.frame.height > 1)
+		shareQuery.firstMatch.tap()
 		let predicate = NSPredicate(format: "label =[cd] 'Cancel'")
 		let buttonCancelShare = app.buttons.matching(predicate).firstMatch
 		assertVisible(element: buttonCancelShare)

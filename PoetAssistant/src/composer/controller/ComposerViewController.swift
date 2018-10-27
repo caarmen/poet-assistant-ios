@@ -21,10 +21,14 @@ import UIKit
 import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
+	internal lazy var document: PoemDocument = {
+		return PoemDocument.loadSavedPoem()
+	}()
+
 	private var keyboardHeight:  CGFloat?
 	private var ttsPlayButtonUpdater: TtsPlayButtonConnector?
+	
 	@IBOutlet weak var playButton: UIButton!
-	@IBOutlet weak var shareButton: UIButton!
 	@IBOutlet weak var text: UITextView! {
 		didSet {
 			text.delegate = self
@@ -40,10 +44,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	internal let menuItemThesaurus = UIMenuItem(title: NSLocalizedString("thesaurus", comment:""), action: #selector(menuItemThesaurusSelected))
 	internal let menuItemDictionary = UIMenuItem(title: NSLocalizedString("dictionary", comment:""), action: #selector(menuItemDictionarySelected))
 	var rtdDelegate : RTDDelegate? = nil
-
-	@IBAction func onShare(_ sender: Any) {
-		present(UIActivityViewController(activityItems: [text.text], applicationActivities: nil), animated:true, completion:nil)
-	}
 	
 	@IBAction func didTapPlayButton(_ sender: UIButton) {
 		ttsPlayButtonUpdater?.textToSpeak = getTextToPlay()
@@ -67,7 +67,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		text.text = Poem.readDraft().text
+		if (document.documentState == .normal) {
+			text.text = document.text
+		}
 		updateUi()
 	}
 	
@@ -75,13 +77,32 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 		super.viewDidLoad()
 		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
+		NotificationCenter.default.addObserver(self, selector:#selector(documentStateChanged), name:UIDocument.stateChangedNotification, object:document)
 	}
-	
-	private func updateUi() {
+
+	@objc
+	func documentStateChanged(notification: Notification) {
+		if (document.documentState.contains(.normal)) {
+			text.text = document.text
+			updateUi()
+		}
+	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for:segue, sender:sender)
+		if segue.identifier == "More" {
+			if let moreViewController = segue.destination as? MoreTableViewController {
+				moreViewController.delegate = self
+				moreViewController.emptyPoem = document.text.isEmpty
+			}
+		}
+	}
+
+	internal func updateUi() {
 		hint.isHidden = !text.text.isEmpty
-		shareButton.isEnabled = !text.text.isEmpty
 		updatePlayButton()
 		wordCount.text = getWordCountText(text: text.text)
+		navigationItem.title = document.localizedName.capitalized
 	}
 	
 	private func updatePlayButton() {
@@ -99,7 +120,10 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	func textViewDidChange(_ textView: UITextView) {
 		updateUi()
-		Poem(withText: text.text).saveDraft()
+		if (document.documentState == .normal) {
+			document.text = text.text
+			document.updateChangeCount(.done)
+		}
 	}
 	
 	@IBAction func didClickHideKeyboard(_ sender: UIButton) {

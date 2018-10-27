@@ -33,3 +33,7 @@
 "voice_quality_enhanced" = "High quality";
 "voice_quality_default" = "Normal quality";
 "voice_default" = "Default";
+"save_as_title" = "New document name";
+"save_as_action_rename" = "Save";
+"save_as_action_cancel" = "Cancel";
+"save_as_action_create" = "Create";

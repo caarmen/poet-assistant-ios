@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		if CommandLine.arguments.contains("UITesting") {
 			Settings.clear()
 			Suggestion.clearHistory(completion: nil)
-			Poem(withText:"").saveDraft()
+			FileUtils.deleteAllDocuments()
 		}
 		return true
 	}

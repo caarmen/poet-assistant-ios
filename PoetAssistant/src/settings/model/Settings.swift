@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 import AVFoundation
+import FileProvider
 
 class Settings {
 	public static let MIN_VOICE_SPEED = AVSpeechUtteranceMinimumSpeechRate
@@ -27,12 +28,14 @@ class Settings {
 	public static let MAX_VOICE_PITCH = Float(2.0)
 	private static let KEY_TAB = "tab"
 	private static let KEY_LEXICON = "lexicon"
+	private static let KEY_POEM_FILENAME = "poem_filename"
 	private static let KEY_SEARCH_HISTORY = "search_history"
 	private static let KEY_VOICE_SPEED = "voice_speed"
 	private static let KEY_VOICE_PITCH = "voice_pitch"
 	private static let KEY_VOICE_IDENTIFIER = "voice_identifier"
 	private static let KEY_EFFICIENT_LAYOUT = "efficient_layout"
 	
+	private static let DEFAULT_POEM_FILENAME = "poem.txt"
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
 	private static let DEFAULT_VOICE_PITCH = Float(1.0)
 	private static let DEFAULT_TAB = Tab.composer
@@ -44,6 +47,7 @@ class Settings {
 		UserDefaults.init().register(defaults:
 			[KEY_TAB: DEFAULT_TAB.rawValue,
 			 KEY_LEXICON: DEFAULT_LEXICON.rawValue,
+			 KEY_POEM_FILENAME: DEFAULT_POEM_FILENAME,
 			 KEY_SEARCH_HISTORY: DEFAULT_SEARCH_HISTORY_ENABLED,
 			 KEY_VOICE_SPEED: DEFAULT_VOICE_SPEED,
 			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
@@ -79,7 +83,13 @@ class Settings {
 		}
 		return DEFAULT_LEXICON
 	}
-	
+
+	class func getPoemFilename() -> String {
+		return getStringPref(key: KEY_POEM_FILENAME, defaultValue: DEFAULT_POEM_FILENAME)
+	}
+	class func setPoemFilename(poemFilename: String) {
+		setPref(key: KEY_POEM_FILENAME, value: poemFilename)
+	}
 	class func setLexicon(lexicon: Lexicon) {
 		let userDefaults = UserDefaults.init()
 		userDefaults.setValue(lexicon.rawValue, forKey: KEY_LEXICON)
@@ -107,7 +117,7 @@ class Settings {
 	class func getVoiceSpeed() -> Float {
 		return getFloatPref(key: KEY_VOICE_SPEED, defaultValue: DEFAULT_VOICE_SPEED)
 	}
-
+	
 	class func setVoiceSpeed(speed: Float) {
 		setPref(key: KEY_VOICE_SPEED, value: speed)
 	}
@@ -128,6 +138,13 @@ class Settings {
 		setPref(key: KEY_EFFICIENT_LAYOUT, value: enabled)
 	}
 	
+	private class func getStringPref(key: String, defaultValue: String) -> String {
+		let userDefaults = UserDefaults.init()
+		if userDefaults.string(forKey: key) == nil {
+			userDefaults.setValue(defaultValue, forKey: key)
+		}
+		return userDefaults.string(forKey: key)!
+	}
 	private class func getBoolPref(key: String, defaultValue: Bool) -> Bool {
 		let userDefaults = UserDefaults.init()
 		if userDefaults.object(forKey: key) == nil {
@@ -135,7 +152,7 @@ class Settings {
 		}
 		return userDefaults.bool(forKey: key)
 	}
-
+	
 	private class func getFloatPref(key: String, defaultValue: Float) -> Float {
 		let userDefaults = UserDefaults.init()
 		if userDefaults.object(forKey: key) == nil {
@@ -148,5 +165,6 @@ class Settings {
 		let userDefaults = UserDefaults.init()
 		userDefaults.setValue(value, forKey: key)
 		userDefaults.synchronize()
+		print ("Saved \(key) = \(value)")
 	}
 }
