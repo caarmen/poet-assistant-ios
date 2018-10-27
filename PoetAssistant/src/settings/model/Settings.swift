@@ -55,16 +55,6 @@ class Settings {
 	}
 	class func clear() {
 		let userDefaults = UserDefaults.init()
-		let fileManager = FileManager()
-		let documentsFolderUrl = try! FileManager.default.url(
-			for: .documentDirectory,
-			in: .userDomainMask,
-			appropriateFor: nil,
-			create: true)
-		let documentsUrls = try! fileManager.contentsOfDirectory(at: documentsFolderUrl, includingPropertiesForKeys: nil, options: [])
-		documentsUrls.forEach { url in
-			try! fileManager.removeItem(at: url)
-		}
 		userDefaults.dictionaryRepresentation().keys.forEach { key in
 			userDefaults.removeObject(forKey: key)
 		}
