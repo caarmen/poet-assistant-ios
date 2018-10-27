@@ -58,6 +58,7 @@
 		4FEF068A217BCC2D00D69383 /* TtsPlayButtonConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */; };
 		4FEF068C2182535000D69383 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF068B2182535000D69383 /* More.storyboard */; };
 		4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF068F2182554200D69383 /* MoreTableViewController.swift */; };
+		4FEF06B82184F40500D69383 /* ComposerViewController+MoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */; };
 		4FFB97F7216EA070000469F0 /* DictionaryQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */; };
 		4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
@@ -148,7 +149,7 @@
 		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
 		4FEF068B2182535000D69383 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		4FEF068F2182554200D69383 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
-		4FEF06B52184A7D600D69383 /* PoetAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistant.entitlements; sourceTree = "<group>"; };
+		4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+MoreDelegate.swift"; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -274,7 +275,6 @@
 		4F6613D42164D10700FA10A1 /* PoetAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				4FEF06B52184A7D600D69383 /* PoetAssistant.entitlements */,
 				4F66141A2166501A00FA10A1 /* en.lproj */,
 				4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */,
 				4F6613EE2164FBEE00FA10A1 /* src */,
@@ -313,8 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFBA5BC216A540B00AD3AD6 /* model */,
-				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
-				4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */,
+				4FEF06B62184F3E300D69383 /* controller */,
 			);
 			path = composer;
 			sourceTree = "<group>";
@@ -438,6 +437,16 @@
 			isa = PBXGroup;
 			children = (
 				4FEF068F2182554200D69383 /* MoreTableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4FEF06B62184F3E300D69383 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
+				4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */,
+				4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -582,11 +591,6 @@
 					};
 					4F6613D12164D10700FA10A1 = {
 						CreatedOnToolsVersion = 10.0;
-						SystemCapabilities = {
-							com.apple.iCloud = {
-								enabled = 1;
-							};
-						};
 					};
 					4FEB03CD2179047200CF8B49 = {
 						CreatedOnToolsVersion = 10.0;
@@ -664,6 +668,7 @@
 				4F31973B2166C28700135FF4 /* WordVariants.swift in Sources */,
 				4F661404216531C800FA10A1 /* DictionaryViewController.swift in Sources */,
 				4F6613DA2164D10700FA10A1 /* ThesaurusViewController.swift in Sources */,
+				4FEF06B82184F40500D69383 /* ComposerViewController+MoreDelegate.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4FFBA616216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift in Sources */,
 				4F15B04C217342560072C8BC /* Tts.swift in Sources */,
@@ -935,7 +940,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
@@ -956,7 +960,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
