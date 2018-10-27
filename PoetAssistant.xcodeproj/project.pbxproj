@@ -148,6 +148,7 @@
 		4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlayButtonConnector.swift; sourceTree = "<group>"; };
 		4FEF068B2182535000D69383 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		4FEF068F2182554200D69383 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		4FEF06B52184A7D600D69383 /* PoetAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistant.entitlements; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		4F6613D42164D10700FA10A1 /* PoetAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF06B52184A7D600D69383 /* PoetAssistant.entitlements */,
 				4F66141A2166501A00FA10A1 /* en.lproj */,
 				4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */,
 				4F6613EE2164FBEE00FA10A1 /* src */,
@@ -580,6 +582,11 @@
 					};
 					4F6613D12164D10700FA10A1 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					4FEB03CD2179047200CF8B49 = {
 						CreatedOnToolsVersion = 10.0;
@@ -928,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
@@ -948,6 +956,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
