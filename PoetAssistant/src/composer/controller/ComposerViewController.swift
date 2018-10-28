@@ -94,7 +94,6 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 			if let moreViewController = segue.destination as? MoreTableViewController {
 				moreViewController.delegate = self
 				moreViewController.emptyPoem = document.text.isEmpty
-				moreViewController.currentPoemFilename = document.fileURL.lastPathComponent
 			}
 		}
 	}

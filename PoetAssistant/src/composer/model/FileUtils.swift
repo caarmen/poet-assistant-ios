@@ -19,6 +19,9 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 class FileUtils {
+	private static let NEW_FILE_PREFIX = "poem-"
+	private static let FILE_EXTENSION = ".txt"
+	private static let VALID_FILENAME_CHARACTERS = "\\p{L}\\p{N}\\. -"
 	private init() {
 		// Prevent instantiation
 	}
@@ -32,6 +35,14 @@ class FileUtils {
 		}
 	}
 
+	class func getSuggestedNewFilename() -> String {
+		let now = Date()
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale.current
+		dateFormatter.dateFormat = "YYYYMMdd-hhmmss"
+		let formattedDate = dateFormatter.string(from: now)
+		return "\(NEW_FILE_PREFIX)\(formattedDate)\(FILE_EXTENSION)"
+	}
 	class func buildDocumentUrl(filename: String) -> URL {
 		return getDocumentFolderUrl().appendingPathComponent(filename)
 	}
@@ -58,13 +69,13 @@ class FileUtils {
 		var result = userEnteredFilename
 		
 		let range = NSMakeRange(0, result.utf16.count)
-		let regex = try! NSRegularExpression(pattern: "[^\\p{L}\\p{N}\\. ]", options: NSRegularExpression.Options.caseInsensitive)
+		let regex = try! NSRegularExpression(pattern: "[^\(VALID_FILENAME_CHARACTERS)]", options: NSRegularExpression.Options.caseInsensitive)
 		result = regex.stringByReplacingMatches(in: result, options: [], range: range, withTemplate: "")
 		if result.isEmpty {
 			result = "poem"
 		}
-		if !result.hasSuffix(".txt") {
-			result.append(".txt")
+		if !result.hasSuffix(FILE_EXTENSION) {
+			result.append(FILE_EXTENSION)
 		}
 		return result
 	}
