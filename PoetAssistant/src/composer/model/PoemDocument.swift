@@ -77,12 +77,17 @@ class PoemDocument: UIDocument {
 	
 	private func saveAs(newText: String, newFilename: String, completionHandler: (() -> Void)?) {
 		let (oldUrl, oldText) = (fileURL, text)
-		text = newText
 		let usableFilename = FileUtils.getUsableFilename(userEnteredFilename: newFilename)
 		let url = FileUtils.buildDocumentUrl(filename: usableFilename)
-		save(to: url, for: .forCreating) { [weak self] saved in
+		if url.absoluteString == fileURL.absoluteString && newText == text {
+			print ("No changes to document, not performing save as")
 			completionHandler?()
-			self?.backupOldDocument(oldUrl: oldUrl, oldText: oldText)
+		} else {
+			text = newText
+			save(to: url, for: .forCreating) { [weak self] saved in
+				completionHandler?()
+				self?.backupOldDocument(oldUrl: oldUrl, oldText: oldText)
+			}
 		}
 	}
 

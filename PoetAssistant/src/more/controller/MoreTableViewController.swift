@@ -27,6 +27,7 @@ protocol MoreDelegate:class {
 class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 	weak var delegate: MoreDelegate? = nil
 	var emptyPoem = false
+	var currentPoemFilename: String? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,9 @@ class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 					block(filename)
 				}
 		}))
-		alert.addTextField(configurationHandler: nil)
+		alert.addTextField(configurationHandler: { [weak self] textField in
+			textField.text = self?.currentPoemFilename
+		})
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString("save_as_action_cancel", comment: ""),
 			style: UIAlertAction.Style.cancel, handler: nil))
