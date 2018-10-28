@@ -71,8 +71,8 @@ class TtsSettingsTest: XCTestCase {
 		return cell.sliders.firstMatch
 	}
 	private func timePreview(withVoiceSpeed: Double, voiceSpeedSlider: XCUIElement, playButton: XCUIElement) -> TimeInterval {
-		let beforeTimestamp = NSDate().timeIntervalSince1970
 		dragSlider(slider: voiceSpeedSlider, toPosition: withVoiceSpeed)
+		let beforeTimestamp = NSDate().timeIntervalSince1970
 		playPreview(playButton: playButton)
 		let afterTimestamp = NSDate().timeIntervalSince1970
 		return afterTimestamp - beforeTimestamp

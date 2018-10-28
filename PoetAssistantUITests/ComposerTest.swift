@@ -126,7 +126,11 @@ class ComposerTest: XCTestCase {
 		shareQuery.firstMatch.tap()
 		let predicate = NSPredicate(format: "label =[cd] 'Cancel'")
 		let buttonCancelShare = app.buttons.matching(predicate).firstMatch
-		assertVisible(element: buttonCancelShare)
+		if UIDevice.current.userInterfaceIdiom == .phone {
+			assertVisible(element: buttonCancelShare)
+		} else {
+			XCTAssertFalse(buttonCancelShare.exists)
+		}
 	}
 
 	func testMenu() {
