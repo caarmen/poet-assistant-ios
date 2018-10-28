@@ -29,9 +29,9 @@ class UITestUtils {
 	}
 	class func clearText(element: XCUIElement) {
 		let text = element.value as! String
-		for _ in 0..<text.count {
-			element.typeText(XCUIKeyboardKey.delete.rawValue)
-		}
+		// https://stackoverflow.com/questions/32821880/ui-test-deleting-text-in-text-field
+		let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: text.count)
+		element.typeText(deleteString)
 	}
 	
 	class func openComposerTab(app:XCUIApplication) {
