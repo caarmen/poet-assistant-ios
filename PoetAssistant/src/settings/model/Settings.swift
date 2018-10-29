@@ -34,6 +34,7 @@ class Settings {
 	private static let KEY_VOICE_PITCH = "voice_pitch"
 	private static let KEY_VOICE_IDENTIFIER = "voice_identifier"
 	private static let KEY_EFFICIENT_LAYOUT = "efficient_layout"
+	private static let KEY_DARK_THEME = "dark_theme"
 	
 	private static let DEFAULT_POEM_FILENAME = "poem.txt"
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
@@ -42,6 +43,7 @@ class Settings {
 	private static let DEFAULT_LEXICON = Lexicon.rhymer
 	private static let DEFAULT_SEARCH_HISTORY_ENABLED = true
 	private static let DEFAULT_EFFICIENT_LAYOUT = false
+	private static let DEFAULT_DARK_THEME = false
 	
 	class func registerDefaults() {
 		UserDefaults.init().register(defaults:
@@ -51,7 +53,8 @@ class Settings {
 			 KEY_SEARCH_HISTORY: DEFAULT_SEARCH_HISTORY_ENABLED,
 			 KEY_VOICE_SPEED: DEFAULT_VOICE_SPEED,
 			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
-			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT])
+			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT,
+			 KEY_DARK_THEME: DEFAULT_DARK_THEME])
 	}
 	class func clear() {
 		let userDefaults = UserDefaults.init()
@@ -136,6 +139,19 @@ class Settings {
 	
 	class func setEfficientLayoutEnabled(enabled: Bool) {
 		setPref(key: KEY_EFFICIENT_LAYOUT, value: enabled)
+	}
+	
+	class func getTheme() -> Theme {
+		let useDarkTheme = getBoolPref(key: KEY_DARK_THEME, defaultValue: DEFAULT_DARK_THEME)
+		if useDarkTheme {
+			return Theme.DARK_THEME
+		} else {
+			return Theme.LIGHT_THEME
+		}
+	}
+	
+	class func setTheme(theme: Theme) {
+		setPref(key: KEY_DARK_THEME, value: theme.name == Theme.DARK_THEME.name)
 	}
 	
 	private class func getStringPref(key: String, defaultValue: String) -> String {

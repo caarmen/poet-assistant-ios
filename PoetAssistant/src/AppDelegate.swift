@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			Suggestion.clearHistory(completion: nil)
 			FileUtils.deleteAllDocuments()
 		}
+		Settings.getTheme().apply()
 		return true
 	}
 

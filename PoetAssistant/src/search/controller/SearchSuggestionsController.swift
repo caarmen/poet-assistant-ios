@@ -32,6 +32,10 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	private var fetchedResultsController: SuggestionsFetchedResultsControllerWrapper?
 	weak var delegate: SearchSuggestionsDelegate?
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		view.backgroundColor = Settings.getTheme().backgroundColor
+	}
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return fetchedResultsController?.sections.count ?? 0
 	}
@@ -126,6 +130,7 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 				delegate?.didSelectSuggestion(suggestion: word)
 			}
 		}
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	
 	func clear() {

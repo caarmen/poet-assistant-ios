@@ -28,10 +28,6 @@ class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 	weak var delegate: MoreDelegate? = nil
 	var emptyPoem = false
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 	@IBOutlet weak var cellSharePoemText: UITableViewCell!
 	
 	@IBOutlet weak var cellNew: UITableViewCell!
@@ -54,6 +50,7 @@ class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 			present(picker, animated:true, completion:nil)
 			picker.delegate = self
 		}
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

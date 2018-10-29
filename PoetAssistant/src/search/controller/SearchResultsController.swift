@@ -55,7 +55,10 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		super.viewDidLoad()
 		updateUI()
 	}
-
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		view.backgroundColor = Settings.getTheme().backgroundColor
+	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		efficientLayoutEnabled = Settings.getEfficientLayoutEnabled()
