@@ -39,7 +39,7 @@ class FileUtils {
 		let now = Date()
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale.current
-		dateFormatter.dateFormat = "YYYYMMdd-hhmmss"
+		dateFormatter.dateFormat = "YYYYMMdd-HHmmss"
 		let formattedDate = dateFormatter.string(from: now)
 		return "\(NEW_FILE_PREFIX)\(formattedDate)\(FILE_EXTENSION)"
 	}
