@@ -20,9 +20,11 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 import UIKit
 
 class AboutViewController: UITableViewController {
+
+	@IBOutlet weak var cellAppName: UITableViewCell!
 	
 	@IBOutlet weak var cellSourceCode: UITableViewCell!
-	
+
 	@IBOutlet weak var cellReportBugs: UITableViewCell!
 	
 	@IBOutlet weak var cellPrivacyPolicy: UITableViewCell!
@@ -36,6 +38,22 @@ class AboutViewController: UITableViewController {
 	@IBOutlet weak var cellDictionaryLicense: UITableViewCell!
 	
 	@IBOutlet weak var cellPorterStemmer: UITableViewCell!
+
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = super.tableView(tableView, cellForRowAt: indexPath)
+		if (cell == cellAppName) {
+			if let infoDictionary = Bundle.main.infoDictionary,
+				let appName = infoDictionary["CFBundleDisplayName"] as? String,
+				let appVersionName = infoDictionary["CFBundleShortVersionString"] as? String,
+				let bundleVersion = infoDictionary["CFBundleVersion"] as? String {
+				cell.textLabel?.text = String(format: NSLocalizedString("about_title", comment:""),
+											  appName,
+											  appVersionName,
+											  bundleVersion)
+			}
+		}
+		return cell
+	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let selectedCell = tableView.cellForRow(at: indexPath)

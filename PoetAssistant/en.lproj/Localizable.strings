@@ -37,3 +37,4 @@
 "save_as_action_rename" = "Save";
 "save_as_action_cancel" = "Cancel";
 "save_as_action_create" = "Create";
+"about_title" = "%@ v%@(%@)";
