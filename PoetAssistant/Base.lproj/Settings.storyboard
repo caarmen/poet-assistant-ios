@@ -272,7 +272,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-xl-l4Q" userLabel="Switch dark theme">
                                                     <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchRTD"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchDarkTheme"/>
                                                     <connections>
                                                         <action selector="didClickDarkTheme:" destination="LXh-xF-4WQ" eventType="valueChanged" id="SVf-lb-xoQ"/>
                                                     </connections>
