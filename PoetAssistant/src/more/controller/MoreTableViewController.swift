@@ -75,7 +75,7 @@ class MoreTableViewController: UITableViewController, UIDocumentPickerDelegate {
 			preferredStyle: UIAlertController.Style.alert)
 		alert.addAction(UIAlertAction(
 			title: NSLocalizedString(okButtonLabelId, comment: ""),
-			style: UIAlertAction.Style.destructive, handler: { action in
+			style: UIAlertAction.Style.default, handler: { action in
 				if let filename = alert.textFields?.first?.text {
 					block(filename)
 				}
