@@ -70,6 +70,8 @@ class RTDTest: XCTestCase {
 	private func chooseEfficientLayout() {
 		UITestUtils.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchRTD").firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
 	}
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
 		UITestUtils.search(test: self, app: app, query: data.query)
