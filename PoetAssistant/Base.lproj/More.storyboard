@@ -13,7 +13,7 @@
         <!--More-->
         <scene sceneID="A1n-JU-ah2">
             <objects>
-                <tableViewController title="More" id="3j8-v1-YZ1" customClass="MoreTableViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="More" hidesBottomBarWhenPushed="YES" id="3j8-v1-YZ1" customClass="MoreTableViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XKH-xp-O8D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
