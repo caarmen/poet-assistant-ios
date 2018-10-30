@@ -19,7 +19,19 @@ class AppStoreScreenshots: XCTestCase {
 	override func tearDown() {
 	}
 	
-	func testScreenshots() {
+	func testScreenshotsLightTheme() {
+		takeScreenshots()
+	}
+	
+	func testScreenshotsDarkTheme() {
+		UITestUtils.openSettings(app: app)
+		app.switches.matching(identifier: "SwitchDarkTheme").firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
+		takeScreenshots()
+	}
+	
+	func takeScreenshots() {
 		UITestUtils.openComposerTab(app: app)
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		textViewPoem.tap()
@@ -38,7 +50,6 @@ class AppStoreScreenshots: XCTestCase {
 		UITestUtils.moveToDictionary(app: app)
 		attachScreenshot(name: "dictionary")
 	}
-	
 	private func attachScreenshot(name: String) {
 		let screenshot = XCUIScreen.main.screenshot()
 		let attachment = XCTAttachment(screenshot: screenshot)
