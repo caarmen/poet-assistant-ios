@@ -21,6 +21,7 @@ import Foundation
 import CoreData
 
 enum SuggestionListItem {
+	case random_word
 	case clear_history
 	case history_suggestion(String)
 	case dictionary_suggestion(String)
@@ -29,6 +30,7 @@ enum SuggestionListItem {
 class SuggestionsFetchedResultsControllerWrapper {
 	private var historyFetchedResultsController: NSFetchedResultsController<Suggestion>?
 	private var dictionaryFetchedResultsController: NSFetchedResultsController<NSDictionary>?
+	private static let SECTION_SUGGESTIONS = "suggestions_section_suggestions"
 	private static let SECTION_HISTORY = "suggestions_section_history"
 	private static let SECTION_DICTIONARY = "suggestions_section_dictionary"
 	private let queryText: String?
@@ -40,8 +42,10 @@ class SuggestionsFetchedResultsControllerWrapper {
 	
 	func object(at: IndexPath) -> SuggestionListItem {
 		let sectionName = sections[at.section].name
-		if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY {
-			if at.row == ((historyFetchedResultsController?.sections?[at.section].numberOfObjects ?? 0)) {
+		if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_SUGGESTIONS {
+			return sections[0].objects![0] as! SuggestionListItem
+		} else if sectionName == SuggestionsFetchedResultsControllerWrapper.SECTION_HISTORY {
+			if at.row == ((historyFetchedResultsController?.sections?[0].numberOfObjects ?? 0)) {
 				return SuggestionListItem.clear_history
 			} else {
 				let historySuggestion = historyFetchedResultsController?.object(at: IndexPath(row: at.row, section: 0))
@@ -65,6 +69,10 @@ class SuggestionsFetchedResultsControllerWrapper {
 			do {
 				try self?.historyFetchedResultsController?.performFetch()
 				try self?.dictionaryFetchedResultsController?.performFetch()
+				self?.sections.append(SectionInfo(
+					name: SuggestionsFetchedResultsControllerWrapper.SECTION_SUGGESTIONS,
+					numberOfObjects: 1,
+					objects: [SuggestionListItem.random_word]))
 				if let historySearchSections = self?.historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
 					var historySearchObjects = [Any]()
 					historySearchObjects += historySearchSections[0].objects ?? []

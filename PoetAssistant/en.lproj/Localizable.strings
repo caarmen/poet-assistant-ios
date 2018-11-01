@@ -18,8 +18,10 @@
 "thesaurus_antonyms_title" = "Antonyms:";
 "search_placeholder" = "Lookup a word";
 "word_count" = "%@ words, %@ characters";
+"suggestions_section_suggestions" = "Suggestions";
 "suggestions_section_history" = "History";
 "suggestions_section_dictionary" = "Dictionary entries";
+"random_word" = "Random word";
 "clear_search_history_list_item" = "Clear search history?";
 "clear_search_history_dialog_title" = "Clear search history";
 "clear_search_history_dialog_message" = "Remove previously searched items from search suggestions?";
