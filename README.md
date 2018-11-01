@@ -20,7 +20,7 @@ Many features aren't available yet on iOS (they're on Android). This is probably
 * ~Word count in the composer tab~
 * ~Show recently searched words when opening the search screen~
 * ~Save the poem to a file, open a text file.~
-* Star favorite words
+* ~Star favorite words~
 * ~Random word~
 * Words of the day: list and system notification
 * Settings:

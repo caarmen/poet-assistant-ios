@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
+		4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93C9218BA71600469CD5 /* Favorite.swift */; };
+		4F1C93CC218BAADF00469CD5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CB218BAADF00469CD5 /* FavoritesViewController.swift */; };
+		4F1C93CE218C5D7300469CD5 /* FavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CD218C5D7300469CD5 /* FavoriteDelegate.swift */; };
+		4F1C93D0218C6C9300469CD5 /* CoreDataNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */; };
+		4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -97,6 +102,12 @@
 
 /* Begin PBXFileReference section */
 		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
+		4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "userdata 2.xcdatamodel"; sourceTree = "<group>"; };
+		4F1C93C9218BA71600469CD5 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		4F1C93CB218BAADF00469CD5 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		4F1C93CD218C5D7300469CD5 /* FavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDelegate.swift; sourceTree = "<group>"; };
+		4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNotificationHelper.swift; sourceTree = "<group>"; };
+		4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonHelper.swift; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -209,6 +220,41 @@
 				4FEF0689217BCC2D00D69383 /* TtsPlayButtonConnector.swift */,
 			);
 			path = tts;
+			sourceTree = "<group>";
+		};
+		4F1C93D1218C943000469CD5 /* favorites */ = {
+			isa = PBXGroup;
+			children = (
+				4F1C93D2218C944700469CD5 /* model */,
+				4F1C93D3218C945300469CD5 /* controller */,
+				4F1C93D4218C949500469CD5 /* view */,
+			);
+			path = favorites;
+			sourceTree = "<group>";
+		};
+		4F1C93D2218C944700469CD5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F1C93C9218BA71600469CD5 /* Favorite.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4F1C93D3218C945300469CD5 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F1C93CB218BAADF00469CD5 /* FavoritesViewController.swift */,
+				4F1C93CD218C5D7300469CD5 /* FavoriteDelegate.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4F1C93D4218C949500469CD5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		4F3197382166C0E100135FF4 /* model */ = {
@@ -364,6 +410,7 @@
 		4F661405216533A600FA10A1 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				4F1C93D1218C943000469CD5 /* favorites */,
 				4F6613F22164FC5800FA10A1 /* rhymer */,
 				4F6613F32164FC6200FA10A1 /* thesaurus */,
 				4F6614022165318900FA10A1 /* dictionary */,
@@ -523,6 +570,7 @@
 				4FFBA608216A97CF00AD3AD6 /* Suggestion.swift */,
 				4FFBA60A216A9D8E00AD3AD6 /* SuggestionsFetchedResultsControllerWrapper.swift */,
 				4FEB03B52177B70E00CF8B49 /* Stems.swift */,
+				4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -692,9 +740,12 @@
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4FFBA616216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift in Sources */,
 				4F15B04C217342560072C8BC /* Tts.swift in Sources */,
+				4F1C93CC218BAADF00469CD5 /* FavoritesViewController.swift in Sources */,
+				4F1C93CE218C5D7300469CD5 /* FavoriteDelegate.swift in Sources */,
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
 				4F3849E02187970F00613B53 /* Theme.swift in Sources */,
 				4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */,
+				4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */,
 				4F3197532167D59A00135FF4 /* PorterStemmer.swift in Sources */,
 				4F3197452167129400135FF4 /* Thesaurus.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
@@ -727,6 +778,8 @@
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
+				4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */,
+				4F1C93D0218C6C9300469CD5 /* CoreDataNotificationHelper.swift in Sources */,
 				4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */,
 				4F6613D82164D10700FA10A1 /* RhymerViewController.swift in Sources */,
 				4F6613FC2165295400FA10A1 /* dictionaries.xcdatamodeld in Sources */,
@@ -1105,9 +1158,10 @@
 		4FFBA612216AB88100AD3AD6 /* userdata.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */,
 				4FFBA613216AB88100AD3AD6 /* userdata.xcdatamodel */,
 			);
-			currentVersion = 4FFBA613216AB88100AD3AD6 /* userdata.xcdatamodel */;
+			currentVersion = 4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */;
 			path = userdata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

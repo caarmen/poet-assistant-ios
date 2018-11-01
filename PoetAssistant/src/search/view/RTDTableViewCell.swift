@@ -21,11 +21,27 @@ import UIKit
 
 class RTDTableViewCell: UITableViewCell {
 	weak var rtdDelegate: RTDDelegate? = nil
+	weak var favoriteDelegate: FavoriteDelegate? = nil
 	
+	@IBOutlet weak var constraintRtdLeading: NSLayoutConstraint!
+	@IBOutlet weak var buttonFavorite: UIButton! {
+		didSet {
+			FavoriteButtonHelper.setupButton(button: buttonFavorite)
+		}
+	}
 	@IBOutlet weak var labelWord: UILabel!
 	@IBOutlet weak var buttonRhymer: UIButton!
 	@IBOutlet weak var buttonThesaurus: UIButton!
 	@IBOutlet weak var buttonDictionary: UIButton!
+	
+	@IBAction func toggleFavorite(_ sender: UIButton) {
+		// Technically we don't have to set the selected state here, as it
+		// will be updated by the view controller after a data refresh.
+		// However, this data refresh may take a moment, and we don't want
+		// the app to appear slow.
+		buttonFavorite.isSelected = !buttonFavorite.isSelected
+		favoriteDelegate?.toggleFavorite(query: labelWord.text!)
+	}
 	@IBAction func searchRhymer(_ sender: UIButton) {
 		rtdDelegate?.searchRhymer(query: labelWord.text!)
 	}
@@ -36,11 +52,19 @@ class RTDTableViewCell: UITableViewCell {
 		rtdDelegate?.searchDictionary(query: labelWord.text!)
 	}
 	
+	func bind(word: String, isFavorite: Bool, showRTD: Bool,
+			  rtdDelegate: RTDDelegate?, favoriteDelegate: FavoriteDelegate) {
+		labelWord.text = word
+		buttonFavorite.isSelected = isFavorite
+		self.rtdDelegate = rtdDelegate
+		self.favoriteDelegate = favoriteDelegate
+		setRTDVisible(visible: showRTD, animate: false)
+	}
 	func toggleRTDVisibility() {
 		setRTDVisible(visible: buttonRhymer.isHidden, animate: true)
 	}
 	func setRTDVisible(visible: Bool, animate: Bool) {
-		RTDAnimator.setRTDVisible(rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
+		RTDAnimator.setRTDVisible(rtdLeadingConstraint:constraintRtdLeading, rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
 								  visible:visible, animate:animate)
 	}
 
