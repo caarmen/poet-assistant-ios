@@ -263,6 +263,43 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="crD-J4-HSj" userLabel="Dark theme">
+                                        <rect key="frame" x="0.0" y="320" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="crD-J4-HSj" id="oeg-O9-Mq1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-xl-l4Q" userLabel="Switch dark theme">
+                                                    <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchDarkTheme"/>
+                                                    <connections>
+                                                        <action selector="didClickDarkTheme:" destination="LXh-xF-4WQ" eventType="valueChanged" id="SVf-lb-xoQ"/>
+                                                    </connections>
+                                                </switch>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-fG-cvs">
+                                                    <rect key="frame" x="20" y="16" width="79.666666666666671" height="11.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etr-dz-365" userLabel="Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="11.666666666666666"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Px-xl-l4Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jen-fG-cvs" secondAttribute="trailing" constant="16" id="1Zp-e1-lNf"/>
+                                                <constraint firstItem="7Px-xl-l4Q" firstAttribute="centerY" secondItem="oeg-O9-Mq1" secondAttribute="centerY" id="24Z-f5-HdJ"/>
+                                                <constraint firstItem="Jen-fG-cvs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oeg-O9-Mq1" secondAttribute="top" constant="16" id="8R1-iw-MIc"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jen-fG-cvs" secondAttribute="bottom" constant="16" id="NiZ-3V-3Hy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Px-xl-l4Q" secondAttribute="trailing" id="Oks-lG-9VV"/>
+                                                <constraint firstItem="Jen-fG-cvs" firstAttribute="centerY" secondItem="oeg-O9-Mq1" secondAttribute="centerY" id="iuj-Xb-MoF"/>
+                                                <constraint firstItem="Jen-fG-cvs" firstAttribute="leading" secondItem="oeg-O9-Mq1" secondAttribute="leadingMargin" id="kjl-bM-m6K"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -277,6 +314,7 @@
                         <outlet property="selectedVoice" destination="e3K-wm-DDR" id="r0e-Od-Xmt"/>
                         <outlet property="sliderVoicePitch" destination="Yb3-pG-1Uk" id="rx9-HH-xSu"/>
                         <outlet property="sliderVoiceSpeed" destination="YGJ-TP-mYS" id="uIw-Un-LAw"/>
+                        <outlet property="switchDarkTheme" destination="7Px-xl-l4Q" id="Qlp-lp-oLT"/>
                         <outlet property="switchEfficientLayout" destination="m1c-Nt-CDn" id="pvg-Oh-p1F"/>
                         <outlet property="switchSearchHistory" destination="Nc1-eR-uCg" id="iiw-sX-UuT"/>
                     </connections>

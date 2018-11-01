@@ -61,6 +61,8 @@ class SearchSuggestionsTest: XCTestCase {
 	func testSearchHistoryDisabled() {
 		UITestUtils.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchSearchHistory").firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
 		UITestUtils.openDictionariesTab(app: app)
 		
 		let searchField = app.searchFields.firstMatch

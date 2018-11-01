@@ -67,6 +67,12 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		let themeName = Settings.getTheme().name
+		if let backgroundImage = UIImage(named: "background_\(themeName).png") {
+			let backgroundColor = UIColor(patternImage: backgroundImage)
+			self.view.backgroundColor = backgroundColor
+		}
+		hint.textColor = Settings.getTheme().secondaryTextColor
 		if (document.documentState == .normal) {
 			text.text = document.text
 		}
@@ -75,6 +81,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
 		NotificationCenter.default.addObserver(self, selector:#selector(documentStateChanged), name:UIDocument.stateChangedNotification, object:document)
@@ -96,6 +103,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 				moreViewController.emptyPoem = document.text.isEmpty
 			}
 		}
+		text.endEditing(true)
 	}
 
 	internal func updateUi() {

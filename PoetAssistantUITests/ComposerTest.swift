@@ -99,17 +99,19 @@ class ComposerTest: XCTestCase {
 	func testKeyboard() {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		let buttonHideKeyboard = app.buttons.matching(identifier: "ComposerButtonHideKeyboard").firstMatch
-		let tabs = app.tabBars.firstMatch
+		let tabs = app.tabBars
 		assertVisible(element: textViewPoem)
-		assertVisible(element: tabs)
+		assertVisible(element: tabs.firstMatch)
 		assertHidden(element: buttonHideKeyboard)
+		assertHidden(element: app.keyboards.firstMatch)
 		textViewPoem.tap()
 		textViewPoem.typeText("hello")
-		assertHidden(element: tabs)
+		assertVisible(element: app.keyboards.firstMatch)
 		assertVisible(element: buttonHideKeyboard)
 		buttonHideKeyboard.tap()
-		assertVisible(element: tabs)
+		assertVisible(element: tabs.firstMatch)
 		assertHidden(element: buttonHideKeyboard)
+		assertHidden(element: app.keyboards.firstMatch)
 	}
 	
 	func testShare() {
@@ -169,7 +171,9 @@ class ComposerTest: XCTestCase {
 
 	private func assertVisible(element: XCUIElement) {
 		let window = app.windows.element(boundBy: 0)
-		XCTAssert(window.frame.contains(element.frame))
+		let elementFrame = CGRect(origin: CGPoint(x: Int(element.frame.minX), y: Int(element.frame.minY)),
+								  size: CGSize(width: Int(element.frame.width), height: Int(element.frame.height)))
+		XCTAssert(window.frame.contains(elementFrame))
 	}
 	
 	private func assertHidden(element: XCUIElement) {

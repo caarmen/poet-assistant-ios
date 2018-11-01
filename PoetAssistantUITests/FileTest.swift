@@ -100,7 +100,15 @@ class FileTest: XCTestCase {
 	
 	private func typePoem(textViewPoem: XCUIElementQuery, poemText: String) {
 		let initialText = textViewPoem.firstMatch.value as! String
-		textViewPoem.firstMatch.tap()
+		let matchedTextView = textViewPoem.firstMatch
+		let textViewFrame = matchedTextView.frame
+		// Tap at the end of the TextView
+		app.coordinate(withNormalizedOffset: CGVector.zero)
+			.withOffset(
+				CGVector(
+					dx:textViewFrame.origin.x + textViewFrame.size.width - 1,
+					dy:textViewFrame.origin.y + textViewFrame.size.height - 1))
+			.tap()
 		app.typeText(poemText)
 		XCTAssertEqual("\(initialText)\(poemText)", textViewPoem.firstMatch.value as! String)
 	}

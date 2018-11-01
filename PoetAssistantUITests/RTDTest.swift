@@ -70,6 +70,8 @@ class RTDTest: XCTestCase {
 	private func chooseEfficientLayout() {
 		UITestUtils.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchRTD").firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
+		app.navigationBars.buttons.firstMatch.tap()
 	}
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
 		UITestUtils.search(test: self, app: app, query: data.query)
@@ -93,22 +95,24 @@ class RTDTest: XCTestCase {
 	}
 	
 	private func checkRhymes(query: String, expectedFirstRhyme: String, expectedSecondRhyme: String) {
-		let table = app.tables.element
+		let table = app.tables.firstMatch
 		XCTAssertTrue(table.exists)
-		let cell0 = table.cells.element(boundBy: 0)
+		let cell0 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedFirstRhyme)).firstMatch
 		XCTAssertTrue(cell0.exists)
-		let cell1 = table.cells.element(boundBy: 1)
+		let cell1 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedSecondRhyme)).firstMatch
 		XCTAssertTrue(cell1.exists)
-		let actualRhyme0 = cell0.staticTexts.matching(identifier: "RhymerCellWordLabel").firstMatch.label
-		let actualRhyme1 = cell1.staticTexts.matching(identifier: "RhymerCellWordLabel").firstMatch.label
 		
-		checkRhyme(query:query, expectedRhyme: expectedFirstRhyme, actualRhyme: actualRhyme0)
-		checkRhyme(query:query, expectedRhyme: expectedSecondRhyme, actualRhyme: actualRhyme1)
+		// We query for the first cells that we find with the expected rhymes,
+		// instead of directly accessing the 1st and 2nd cells in the table,
+		// for performance issues.
+		// So we can't add assertions for the "first" and "second" rhymes.
+		// But we can at least add assertions that both rhymes are visible,
+		// and the first one is above the second one.
+		XCTAssertTrue(cell0.frame.minY < cell1.frame.minY)
+		XCTAssertTrue(cell0.isHittable)
+		XCTAssertTrue(cell1.isHittable)
 	}
 	
-	private func checkRhyme(query: String, expectedRhyme: String, actualRhyme: String) {
-		XCTAssertEqual(expectedRhyme, actualRhyme, "Expected first rhyme for \(query) to be \(expectedRhyme) but found \(actualRhyme)")
-	}
 	private func openThesaurusFromRhymerCleanLayout(rhyme: String, efficientLayoutEnabled: Bool) {
 		let rhymerRow = app.cells.matching(identifier: "RhymerCell").containing(NSPredicate(format: "identifier = 'RhymerCellWordLabel' and label=%@", rhyme)).firstMatch
 		if (!efficientLayoutEnabled) {
