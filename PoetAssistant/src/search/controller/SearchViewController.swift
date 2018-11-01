@@ -195,6 +195,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			let randomWord = Stems.findRandomWord(context: context)
 			DispatchQueue.main.async { [weak self] in
 				self?.handleSelection(selection: randomWord, persistSuggestion: false)
+				self?.showLexicon(lexicon: .dictionary)
 			}
 		}
 	}
