@@ -103,6 +103,7 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 				moreViewController.emptyPoem = document.text.isEmpty
 			}
 		}
+		text.endEditing(true)
 	}
 
 	internal func updateUi() {
