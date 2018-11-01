@@ -34,7 +34,7 @@ class RhymerViewController: SearchResultsController {
 		super.viewDidLoad()
 		lexicon = Lexicon.rhymer
 	}
-	weak var delegate: RTDDelegate?
+	weak var rtdDelegate: RTDDelegate?
 	private var rhymeFetcher: RhymeFetcher? = nil
 	
 	override func getEmptyText(query: String) -> String {
@@ -42,10 +42,15 @@ class RhymerViewController: SearchResultsController {
 	}
 	
 	override func fetch(word: String, completion: @escaping () -> Void) {
-		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			self?.rhymeFetcher = WordVariants.createRhymeFetcher(context: context, queryText: word)
-			try? self?.rhymeFetcher?.performFetch()
-			DispatchQueue.main.async(execute:completion)
+		let favorites = Favorite.fetchFavorites(context: AppDelegate.persistentUserDbContainer.viewContext)
+		rhymeFetcher = nil
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask { dictionariesContext in
+			let fetcher = WordVariants.createRhymeFetcher(context: dictionariesContext, queryText: word, favorites: favorites)
+			try? fetcher.performFetch()
+			DispatchQueue.main.async { [weak self] in
+				self?.rhymeFetcher = fetcher
+				completion()
+			}
 		}
 	}
 	
@@ -72,11 +77,14 @@ class RhymerViewController: SearchResultsController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rhymerWordCell = tableView.dequeueReusableCell(withIdentifier: "RhymerWordCell") as? RTDTableViewCell {
-			if let rhyme = rhymeFetcher?.rhyme(at: indexPath) {
-				rhymerWordCell.labelWord.text = rhyme
-				rhymerWordCell.rtdDelegate = delegate
+			if let rhymeEntry = rhymeFetcher?.rhyme(at: indexPath) {
+				rhymerWordCell.bind(
+					word: rhymeEntry.word,
+					isFavorite: rhymeEntry.isFavorite,
+					showRTD: efficientLayoutEnabled,
+					rtdDelegate: rtdDelegate,
+					favoriteDelegate: self)
 			}
-			rhymerWordCell.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
 			return rhymerWordCell
 		}
 		return UITableViewCell()

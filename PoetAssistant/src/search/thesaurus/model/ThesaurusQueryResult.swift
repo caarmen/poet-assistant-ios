@@ -25,9 +25,12 @@ enum WordRelationship {
 }
 enum ThesaurusListItem {
 	case subtitle(WordRelationship)
-	case word(String)
+	case wordEntry(ThesaurusWordEntry)
 }
-
+struct ThesaurusWordEntry {
+	let word: String
+	let isFavorite: Bool
+}
 class ThesaurusListSection {
 	let partOfSpeech: PartOfSpeech
 	let entries: [ThesaurusListItem]

@@ -24,6 +24,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	private var searchController: UISearchController? = nil
 
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	@IBOutlet weak var favoritesContainer: UIView!
 	@IBOutlet weak var rhymerContainer: UIView!
 	@IBOutlet weak var thesaurusContainer: UIView!
 	@IBOutlet weak var dictionaryContainer: UIView!
@@ -31,6 +32,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	private var rhymerController: RhymerViewController?
 	private var thesaurusController: ThesaurusViewController?
 	private var dictionaryController: DictionaryViewController?
+	private var favoritesController: FavoritesViewController?
 	private var searchSuggestionsController: SearchSuggestionsController?
 	private var rightButtonBarItem: UIBarButtonItem?
 	
@@ -52,6 +54,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		rightButtonBarItem = navigationItem.rightBarButtonItem
 		definesPresentationContext = true
 	}
+
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		view.backgroundColor = Settings.getTheme().backgroundColor
@@ -71,12 +74,15 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		switch (segue.identifier) {
 		case "EmbedRhymer":
 			rhymerController = segue.destination as? RhymerViewController
-			rhymerController?.delegate = self
+			rhymerController?.rtdDelegate = self
 		case "EmbedThesaurus":
 			thesaurusController = segue.destination as? ThesaurusViewController
-			thesaurusController?.delegate = self
+			thesaurusController?.rtdDelegate = self
 		case "EmbedDictionary":
 			dictionaryController = segue.destination as? DictionaryViewController
+		case "EmbedFavorites":
+			favoritesController = segue.destination as? FavoritesViewController
+			favoritesController?.rtdDelegate = self
 		case "EmbedSearchSuggestions":
 			searchSuggestionsController = segue.destination as? SearchSuggestionsController
 			searchSuggestionsController?.delegate = self
@@ -107,10 +113,11 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		case 0: return rhymerContainer
 		case 1: return thesaurusContainer
 		case 2: return dictionaryContainer
+		case 3: return favoritesContainer
 		default: return nil
 		}
 	}
-	private func getSegmentedControlIndex(lexicon: Lexicon) -> Int? {
+	private func getSegmentedControlIndex(lexicon: Lexicon) -> Int {
 		switch(lexicon) {
 		case .rhymer: return 0
 		case .thesaurus: return 1
@@ -126,12 +133,11 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		}
 	}
 	private func showLexicon(lexicon: Lexicon) {
-		if let segmentedControlIndex = getSegmentedControlIndex(lexicon: lexicon) {
-			if (segmentedControl.selectedSegmentIndex != segmentedControlIndex) {
-				segmentedControl.selectedSegmentIndex = segmentedControlIndex
-			}
-			showSelectedSegment()
+		let segmentedControlIndex = getSegmentedControlIndex(lexicon: lexicon)
+		if (segmentedControl.selectedSegmentIndex != segmentedControlIndex) {
+			segmentedControl.selectedSegmentIndex = segmentedControlIndex
 		}
+		showSelectedSegment()
 	}
 	private func showSelectedSegment () {
 		let selectedContainer = getContainerForSegmentedControlIndex(index: segmentedControl.selectedSegmentIndex)
@@ -146,15 +152,17 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		rhymerContainer.isHidden = true
 		thesaurusContainer.isHidden = true
 		dictionaryContainer.isHidden = true
+		favoritesContainer.isHidden = true
 		container!.isHidden = false
 	}
-	func getSearchResultsController(lexicon: Lexicon) -> SearchResultsController? {
+	private func getSearchResultsController(lexicon: Lexicon) -> SearchResultsController? {
 		switch(lexicon) {
 		case .rhymer: return rhymerController
 		case .thesaurus: return thesaurusController
 		case .dictionary: return dictionaryController
 		}
 	}
+
 	func searchRhymer(query: String) {
 		wordSelected(word:query, lexicon: .rhymer)
 	}

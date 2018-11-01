@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,33 +15,45 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="RhymerViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVH-e9-q2f">
-                                <rect key="frame" x="0.0" y="52" width="375" height="458"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="gXh-Jt-jlj">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RhymerWordCell" id="jwo-BJ-c8G" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwo-BJ-c8G" id="1lf-HL-7DB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE9-Sb-0by" userLabel="Button Favorite">
+                                                    <rect key="frame" x="20" y="0.0" width="32" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="HTM-AD-faG"/>
+                                                        <constraint firstAttribute="width" constant="32" id="KAf-4Z-2Cv"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                    <state key="normal" image="ic_star_outline"/>
+                                                    <connections>
+                                                        <action selector="toggleFavorite:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="mWt-qP-rn4"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Qu-q7L">
-                                                    <rect key="frame" x="15" y="11.5" width="185" height="21"/>
+                                                    <rect key="frame" x="52" y="11.666666666666664" width="182" height="21"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RhymerCellWordLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
-                                                    <rect key="frame" x="316" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonDictionary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
@@ -53,7 +65,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
-                                                    <rect key="frame" x="262" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonThesaurus"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="V9H-br-mze"/>
@@ -65,7 +77,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
-                                                    <rect key="frame" x="208" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonRhymer"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="2xA-JD-WOe"/>
@@ -81,36 +93,42 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="MDN-Gd-8qR" secondAttribute="trailing" id="05n-oK-Mku"/>
                                                 <constraint firstItem="Ksn-5e-YYn" firstAttribute="leading" secondItem="LzB-D5-qoq" secondAttribute="trailing" constant="10" id="1kQ-Fo-REQ"/>
                                                 <constraint firstItem="MDN-Gd-8qR" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="3CC-lH-1kP"/>
-                                                <constraint firstItem="LzB-D5-qoq" firstAttribute="leading" secondItem="G1t-Qu-q7L" secondAttribute="trailing" constant="8" id="939-00-UB2"/>
+                                                <constraint firstItem="LzB-D5-qoq" firstAttribute="leading" secondItem="G1t-Qu-q7L" secondAttribute="trailing" priority="750" constant="8" id="939-00-UB2"/>
+                                                <constraint firstItem="G1t-Qu-q7L" firstAttribute="leading" secondItem="HE9-Sb-0by" secondAttribute="trailing" id="ELa-IW-CRC"/>
                                                 <constraint firstItem="G1t-Qu-q7L" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="QGe-3V-Bny"/>
-                                                <constraint firstItem="G1t-Qu-q7L" firstAttribute="leading" secondItem="1lf-HL-7DB" secondAttribute="leadingMargin" id="Wpr-Cr-oV2"/>
                                                 <constraint firstItem="MDN-Gd-8qR" firstAttribute="leading" secondItem="Ksn-5e-YYn" secondAttribute="trailing" constant="10" id="jdy-sL-cMZ"/>
                                                 <constraint firstItem="LzB-D5-qoq" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="qg9-b5-z7Y"/>
+                                                <constraint firstItem="HE9-Sb-0by" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vO7-dL-fuH"/>
                                                 <constraint firstItem="Ksn-5e-YYn" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vUM-dk-RQJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="RhymerCell"/>
+                                        <constraints>
+                                            <constraint firstItem="HE9-Sb-0by" firstAttribute="leading" secondItem="jwo-BJ-c8G" secondAttribute="leadingMargin" id="GGI-cf-dS7"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="buttonDictionary" destination="MDN-Gd-8qR" id="BaU-RL-tdd"/>
+                                            <outlet property="buttonFavorite" destination="HE9-Sb-0by" id="Sqq-eD-SxA"/>
                                             <outlet property="buttonRhymer" destination="LzB-D5-qoq" id="HPK-xf-iC5"/>
                                             <outlet property="buttonThesaurus" destination="Ksn-5e-YYn" id="Tow-gp-Vj6"/>
+                                            <outlet property="constraintRtdLeading" destination="939-00-UB2" id="4P0-CU-WdQ"/>
                                             <outlet property="labelWord" destination="G1t-Qu-q7L" id="5SH-hA-Bdn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-K0-6Sy" userLabel="EmptyText">
-                                <rect key="frame" x="187.5" y="281" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="319.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="RhymerEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-dM-s2U">
-                                <rect key="frame" x="0.0" y="20" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-Uc-V2d">
-                                        <rect key="frame" x="15" y="0.0" width="48" height="24"/>
+                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="RhymerQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
@@ -120,7 +138,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-Nq-Sxh" userLabel="Play">
-                                        <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
@@ -128,22 +146,31 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-2t-DNg" userLabel="Lookup">
-                                        <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nQN-rx-YB3"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-4h-zRb" userLabel="Favorite">
+                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <state key="normal" image="ic_star_outline"/>
+                                        <connections>
+                                            <action selector="didClickFavoriteQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gDH-GO-X7F"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <accessibility key="accessibilityConfiguration" identifier="RhymerResultHeader"/>
                                 <constraints>
                                     <constraint firstItem="7oJ-Nq-Sxh" firstAttribute="leading" secondItem="c4C-2t-DNg" secondAttribute="trailing" constant="16" id="EsA-5O-jkW"/>
+                                    <constraint firstItem="wuy-4h-zRb" firstAttribute="leading" secondItem="ts6-Uc-V2d" secondAttribute="trailing" constant="8" id="J7L-9C-ZO1"/>
                                     <constraint firstItem="c4C-2t-DNg" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="Nv3-lg-98S"/>
                                     <constraint firstAttribute="trailing" secondItem="7oJ-Nq-Sxh" secondAttribute="trailing" constant="16" id="c9b-70-SCk"/>
                                     <constraint firstItem="7oJ-Nq-Sxh" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="ddL-nx-bwC"/>
-                                    <constraint firstItem="c4C-2t-DNg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ts6-Uc-V2d" secondAttribute="trailing" constant="16" id="luK-9r-tWD"/>
-                                    <constraint firstItem="ts6-Uc-V2d" firstAttribute="top" secondItem="hbl-dM-s2U" secondAttribute="top" id="tze-AC-HRh"/>
+                                    <constraint firstItem="wuy-4h-zRb" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="kXF-4b-JN5"/>
+                                    <constraint firstItem="c4C-2t-DNg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wuy-4h-zRb" secondAttribute="trailing" constant="16" id="luK-9r-tWD"/>
+                                    <constraint firstItem="ts6-Uc-V2d" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="tze-AC-HRh"/>
                                     <constraint firstItem="ts6-Uc-V2d" firstAttribute="leading" secondItem="hbl-dM-s2U" secondAttribute="leadingMargin" constant="7" id="vZS-cA-hUp"/>
                                     <constraint firstAttribute="bottom" secondItem="ts6-Uc-V2d" secondAttribute="bottom" constant="8" id="voe-1V-HLt"/>
                                 </constraints>
@@ -174,6 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <connections>
+                        <outlet property="buttonFavorite" destination="wuy-4h-zRb" id="7dY-mn-1gs"/>
                         <outlet property="emptyText" destination="BrB-K0-6Sy" id="Vmy-rz-Ucu"/>
                         <outlet property="labelQuery" destination="ts6-Uc-V2d" id="iHr-Ge-S12"/>
                         <outlet property="tableView" destination="XVH-e9-q2f" id="3ao-tP-O6n"/>
@@ -189,26 +217,26 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ThesaurusViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-59-phd">
-                                <rect key="frame" x="0.0" y="52" width="375" height="458"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="8qR-Wn-Yvh">
-                                    <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThesaurusSubheading" id="6Oz-kH-5nO" customClass="ThesaurusRelationshipViewCell" customModule="PoetAssistant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Oz-kH-5nO" id="Hc2-LW-9Mn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-0o-tFr">
-                                                    <rect key="frame" x="15" y="24" width="42" height="12"/>
+                                                    <rect key="frame" x="16" y="24" width="42" height="12"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -229,21 +257,33 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThesaurusWord" id="kIV-Br-Ajk" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kIV-Br-Ajk" id="UIG-Yq-92h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-ZW-YWk" userLabel="Button Favorite">
+                                                    <rect key="frame" x="20" y="0.0" width="32" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="RKd-7q-K4L"/>
+                                                        <constraint firstAttribute="width" constant="32" id="WpA-jW-PNT"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                    <state key="normal" image="ic_star_outline"/>
+                                                    <connections>
+                                                        <action selector="toggleFavorite:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="cgz-2d-Ku9"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e5-yf-lk0">
-                                                    <rect key="frame" x="15" y="11.5" width="185" height="21"/>
+                                                    <rect key="frame" x="52" y="11.666666666666664" width="182" height="21"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellWordLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-hD-7jw">
-                                                    <rect key="frame" x="316" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellButtonDictionary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="alQ-Ea-jny"/>
@@ -255,7 +295,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyi-K6-LOR">
-                                                    <rect key="frame" x="262" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="7FO-5a-q6C"/>
                                                         <constraint firstAttribute="width" constant="44" id="pAv-iB-BFi"/>
@@ -266,7 +306,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-C7-Hx2">
-                                                    <rect key="frame" x="208" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="6lF-iC-c3i"/>
                                                         <constraint firstAttribute="height" constant="44" id="t7z-F5-WJc"/>
@@ -278,39 +318,45 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6e5-yf-lk0" firstAttribute="leading" secondItem="UIG-Yq-92h" secondAttribute="leadingMargin" id="AFa-u3-Uuy"/>
+                                                <constraint firstItem="6e5-yf-lk0" firstAttribute="leading" secondItem="TA1-ZW-YWk" secondAttribute="trailing" id="AFa-u3-Uuy"/>
                                                 <constraint firstItem="Fyi-K6-LOR" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="AIf-E8-ey0"/>
                                                 <constraint firstItem="Fyi-K6-LOR" firstAttribute="leading" secondItem="Kdd-C7-Hx2" secondAttribute="trailing" constant="10" id="Elo-i3-EwE"/>
                                                 <constraint firstItem="FrO-hD-7jw" firstAttribute="leading" secondItem="Fyi-K6-LOR" secondAttribute="trailing" constant="10" id="KU8-un-YkZ"/>
                                                 <constraint firstItem="6e5-yf-lk0" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="TVM-oo-NfT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="FrO-hD-7jw" secondAttribute="trailing" id="crK-Rg-KDy"/>
+                                                <constraint firstItem="TA1-ZW-YWk" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="hDq-65-7Dj"/>
                                                 <constraint firstItem="FrO-hD-7jw" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="izc-bw-yag"/>
-                                                <constraint firstItem="Kdd-C7-Hx2" firstAttribute="leading" secondItem="6e5-yf-lk0" secondAttribute="trailing" constant="8" id="mTX-eE-5he"/>
+                                                <constraint firstItem="Kdd-C7-Hx2" firstAttribute="leading" secondItem="6e5-yf-lk0" secondAttribute="trailing" priority="750" constant="8" id="mTX-eE-5he"/>
                                                 <constraint firstItem="Kdd-C7-Hx2" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="x4K-7i-vJi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ThesaurusCell"/>
+                                        <constraints>
+                                            <constraint firstItem="TA1-ZW-YWk" firstAttribute="leading" secondItem="kIV-Br-Ajk" secondAttribute="leadingMargin" id="Mry-dk-ZcS"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="buttonDictionary" destination="FrO-hD-7jw" id="Swt-WI-O5J"/>
+                                            <outlet property="buttonFavorite" destination="TA1-ZW-YWk" id="pbg-XZ-9Lv"/>
                                             <outlet property="buttonRhymer" destination="Kdd-C7-Hx2" id="8FN-pR-bF0"/>
                                             <outlet property="buttonThesaurus" destination="Fyi-K6-LOR" id="rAO-Rs-yvi"/>
+                                            <outlet property="constraintRtdLeading" destination="mTX-eE-5he" id="8PD-Im-2s7"/>
                                             <outlet property="labelWord" destination="6e5-yf-lk0" id="i9P-je-t3I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-bd-mtY" userLabel="EmptyText">
-                                <rect key="frame" x="187.5" y="281" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="319.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ThesaurusEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOP-LL-0nL">
-                                <rect key="frame" x="0.0" y="20" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-QQ-zCG">
-                                        <rect key="frame" x="15" y="0.0" width="48" height="24"/>
+                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="ThesaurusQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
@@ -320,7 +366,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-02-cIt" userLabel="Play">
-                                        <rect key="frame" x="335" y="4" width="24" height="24"/>
+                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
@@ -328,11 +374,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-gl-gR9" userLabel="Lookup">
-                                        <rect key="frame" x="295" y="4" width="24" height="24"/>
+                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tea-IQ-Gvn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t49-04-i5A" userLabel="Favorite">
+                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <state key="normal" image="ic_star_outline"/>
+                                        <connections>
+                                            <action selector="didClickFavoriteQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x4l-9V-uxd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -342,11 +395,13 @@
                                     <constraint firstItem="GZ1-Bg-eJH" firstAttribute="trailing" secondItem="ohj-02-cIt" secondAttribute="trailing" constant="16" id="Fsk-6b-lIO"/>
                                     <constraint firstItem="iCD-QQ-zCG" firstAttribute="leading" secondItem="rOP-LL-0nL" secondAttribute="leadingMargin" constant="7" id="Jov-Th-Sd5"/>
                                     <constraint firstItem="HTL-gl-gR9" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="Nm1-4u-MIL"/>
-                                    <constraint firstItem="HTL-gl-gR9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iCD-QQ-zCG" secondAttribute="trailing" constant="8" id="PJJ-si-yLR">
+                                    <constraint firstItem="HTL-gl-gR9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t49-04-i5A" secondAttribute="trailing" constant="8" id="PJJ-si-yLR">
                                         <variation key="widthClass=regular" constant="72"/>
                                     </constraint>
-                                    <constraint firstItem="iCD-QQ-zCG" firstAttribute="top" secondItem="rOP-LL-0nL" secondAttribute="top" id="icv-dc-49h"/>
+                                    <constraint firstItem="t49-04-i5A" firstAttribute="leading" secondItem="iCD-QQ-zCG" secondAttribute="trailing" constant="8" id="gAZ-gI-YuG"/>
+                                    <constraint firstItem="iCD-QQ-zCG" firstAttribute="centerY" secondItem="rOP-LL-0nL" secondAttribute="centerY" id="icv-dc-49h"/>
                                     <constraint firstItem="ohj-02-cIt" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="n3x-gi-kxh"/>
+                                    <constraint firstItem="t49-04-i5A" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="oxG-lO-dVQ"/>
                                     <constraint firstAttribute="bottom" secondItem="iCD-QQ-zCG" secondAttribute="bottom" constant="8" id="r0i-gF-VkH"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="GZ1-Bg-eJH"/>
@@ -377,6 +432,7 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonFavorite" destination="t49-04-i5A" id="8Il-zM-9kG"/>
                         <outlet property="emptyText" destination="xAR-bd-mtY" id="N0e-pO-IAb"/>
                         <outlet property="labelQuery" destination="iCD-QQ-zCG" id="ZgD-9a-4zT"/>
                         <outlet property="tableView" destination="VjO-59-phd" id="7uv-Sk-Kzq"/>
@@ -392,26 +448,26 @@
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="KSz-7M-5ZO" customClass="DictionaryViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqA-di-fh8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-7I-wBQ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="433"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="23m-bc-UqX">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DictionaryEntry" id="5DP-Dr-WQ0" customClass="DictionaryTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5DP-Dr-WQ0" id="bFi-z7-xg2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-ag-JBK">
-                                                    <rect key="frame" x="15" y="11" width="344" height="22"/>
+                                                    <rect key="frame" x="16" y="11" width="288" height="22"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="DictionaryCellDefinition"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -432,17 +488,17 @@
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
-                                <rect key="frame" x="187.5" y="224" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="274.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="DictionaryEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bY-Av-vlk" userLabel="QueryView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="8"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-HG-eyv">
-                                        <rect key="frame" x="15" y="0.0" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-HG-eyv">
+                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="DictionaryQueryLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
@@ -451,17 +507,23 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bold" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-j9-AAX" userLabel="Favorite">
+                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <state key="normal" image="ic_star_outline"/>
+                                        <connections>
+                                            <action selector="didClickFavoriteQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="Lkv-SS-3hk"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-SF-qgr" userLabel="Lookup">
-                                        <rect key="frame" x="295" y="-8" width="24" height="24"/>
+                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                                         <state key="normal" image="ic_web_search"/>
                                         <connections>
                                             <action selector="didClickLookupQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="R1k-c6-ALh"/>
-                                            <action selector="didClickLookupQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ejE-Ie-nuh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fga-JC-XAb" userLabel="Play">
-                                        <rect key="frame" x="335" y="-8" width="24" height="24"/>
+                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                                         <state key="normal" image="ic_play_outline"/>
                                         <connections>
@@ -475,11 +537,13 @@
                                     <constraint firstAttribute="bottom" secondItem="jfn-HG-eyv" secondAttribute="bottom" constant="8" id="D0j-cJ-P5f"/>
                                     <constraint firstItem="jfn-HG-eyv" firstAttribute="leading" secondItem="4bY-Av-vlk" secondAttribute="leadingMargin" constant="7" id="FXL-Ii-ueS"/>
                                     <constraint firstItem="fga-JC-XAb" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="GTb-yl-yeb"/>
-                                    <constraint firstItem="jfn-HG-eyv" firstAttribute="top" secondItem="4bY-Av-vlk" secondAttribute="top" id="QDm-6f-dhB"/>
+                                    <constraint firstItem="jfn-HG-eyv" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="QDm-6f-dhB"/>
+                                    <constraint firstItem="ppW-j9-AAX" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="TgD-UB-YgI"/>
                                     <constraint firstAttribute="trailing" secondItem="fga-JC-XAb" secondAttribute="trailing" constant="16" id="VFT-0N-9NB"/>
+                                    <constraint firstItem="ppW-j9-AAX" firstAttribute="leading" secondItem="jfn-HG-eyv" secondAttribute="trailing" constant="8" id="aaS-6X-pKy"/>
                                     <constraint firstItem="fga-JC-XAb" firstAttribute="leading" secondItem="Qf4-SF-qgr" secondAttribute="trailing" constant="16" id="cUJ-uw-H8h"/>
                                     <constraint firstItem="Qf4-SF-qgr" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="ioM-6z-eEl"/>
-                                    <constraint firstItem="Qf4-SF-qgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jfn-HG-eyv" secondAttribute="trailing" constant="16" id="oYW-43-Whs"/>
+                                    <constraint firstItem="Qf4-SF-qgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ppW-j9-AAX" secondAttribute="trailing" constant="16" id="oYW-43-Whs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -509,6 +573,7 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonFavorite" destination="ppW-j9-AAX" id="msp-8I-R3T"/>
                         <outlet property="emptyText" destination="Ua2-db-8ud" id="tTn-Py-KEe"/>
                         <outlet property="labelQuery" destination="jfn-HG-eyv" id="yIs-cP-ofU"/>
                         <outlet property="tableView" destination="Xge-7I-wBQ" id="P0w-6n-dkp"/>
@@ -519,22 +584,161 @@
             </objects>
             <point key="canvasLocation" x="2553" y="1277"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="1Jp-Uf-J7Q">
+            <objects>
+                <viewController id="XxL-Wl-d30" userLabel="Favorites" customClass="FavoritesViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mSD-na-DkH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtS-30-6Uc" userLabel="DeleteAll">
+                                <rect key="frame" x="354" y="547" width="44" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5pt-ND-GNa"/>
+                                    <constraint firstAttribute="width" constant="44" id="O4J-e6-2a2"/>
+                                </constraints>
+                                <state key="normal" image="ic_delete_24"/>
+                                <connections>
+                                    <action selector="didClickDeleteAll:" destination="XxL-Wl-d30" eventType="touchUpInside" id="W3H-dG-PU9"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ayA-m7-mEg">
+                                <rect key="frame" x="0.0" y="20" width="414" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavoritesCell" id="3aV-8m-ste" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3aV-8m-ste" id="SKe-nW-x4R">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a1-VA-P6P" userLabel="Favorite">
+                                                    <rect key="frame" x="20" y="0.0" width="32" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="5rP-Zd-oU1"/>
+                                                        <constraint firstAttribute="width" constant="32" id="7Jb-BZ-GmN"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                    <state key="normal" image="ic_star_solid"/>
+                                                    <connections>
+                                                        <action selector="toggleFavorite:" destination="3aV-8m-ste" eventType="touchUpInside" id="qCz-aT-GOw"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjO-FZ-Grd" userLabel="Word">
+                                                    <rect key="frame" x="52" y="11.666666666666664" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leS-qS-UXB" userLabel="Rhymer">
+                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="NJE-jm-AFe"/>
+                                                        <constraint firstAttribute="height" constant="44" id="mio-Ti-jp7"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_rhymer"/>
+                                                    <connections>
+                                                        <action selector="searchRhymer:" destination="3aV-8m-ste" eventType="touchUpInside" id="v9P-aF-fR4"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-hF-4wq" userLabel="Thesaurus">
+                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="5oA-71-qUH"/>
+                                                        <constraint firstAttribute="height" constant="44" id="iBu-4H-Pt6"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_thesaurus"/>
+                                                    <connections>
+                                                        <action selector="searchThesaurus:" destination="3aV-8m-ste" eventType="touchUpInside" id="pdE-or-aXC"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-IW-cbz" userLabel="Dictionary">
+                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="PTe-31-Wu5"/>
+                                                        <constraint firstAttribute="width" constant="44" id="lkp-19-UH3"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_dictionary"/>
+                                                    <connections>
+                                                        <action selector="searchDictionary:" destination="3aV-8m-ste" eventType="touchUpInside" id="DY2-EU-9uC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="leS-qS-UXB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kjO-FZ-Grd" secondAttribute="trailing" priority="750" constant="8" id="BDU-gH-a0t"/>
+                                                <constraint firstItem="Oki-IW-cbz" firstAttribute="leading" secondItem="vM9-hF-4wq" secondAttribute="trailing" constant="10" id="BcT-I6-xJE"/>
+                                                <constraint firstItem="kjO-FZ-Grd" firstAttribute="leading" secondItem="0a1-VA-P6P" secondAttribute="trailing" id="Bpy-OR-XIt"/>
+                                                <constraint firstItem="leS-qS-UXB" firstAttribute="centerY" secondItem="SKe-nW-x4R" secondAttribute="centerY" id="Uid-8a-Hot"/>
+                                                <constraint firstItem="vM9-hF-4wq" firstAttribute="leading" secondItem="leS-qS-UXB" secondAttribute="trailing" constant="10" id="nbM-t9-buc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Oki-IW-cbz" secondAttribute="trailing" id="3zt-rd-ER9"/>
+                                            <constraint firstItem="0a1-VA-P6P" firstAttribute="leading" secondItem="3aV-8m-ste" secondAttribute="leadingMargin" id="G7r-ZY-WDG"/>
+                                            <constraint firstItem="kjO-FZ-Grd" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="MSg-hJ-hDD"/>
+                                            <constraint firstItem="vM9-hF-4wq" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="cEx-I5-f05"/>
+                                            <constraint firstItem="0a1-VA-P6P" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="cGd-VL-HmJ"/>
+                                            <constraint firstItem="Oki-IW-cbz" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerYWithinMargins" id="lIN-cE-oFI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buttonDictionary" destination="Oki-IW-cbz" id="ylh-93-ZxW"/>
+                                            <outlet property="buttonFavorite" destination="0a1-VA-P6P" id="00M-xU-jxs"/>
+                                            <outlet property="buttonRhymer" destination="leS-qS-UXB" id="aCP-II-Arq"/>
+                                            <outlet property="buttonThesaurus" destination="vM9-hF-4wq" id="fK7-tk-gpw"/>
+                                            <outlet property="constraintRtdLeading" destination="BDU-gH-a0t" id="dJR-QA-9Ac"/>
+                                            <outlet property="labelWord" destination="kjO-FZ-Grd" id="0Z4-hD-nMg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't starred any words yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-KN-AAJ" userLabel="EmptyText">
+                                <rect key="frame" x="72.333333333333343" y="289" width="269.33333333333326" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qtS-30-6Uc" firstAttribute="bottom" secondItem="MCM-S3-SQN" secondAttribute="bottom" constant="-8" id="458-k8-SUE"/>
+                            <constraint firstItem="qtS-30-6Uc" firstAttribute="top" secondItem="ayA-m7-mEg" secondAttribute="bottom" constant="8" id="696-gf-f0d"/>
+                            <constraint firstItem="MCM-S3-SQN" firstAttribute="trailing" secondItem="qtS-30-6Uc" secondAttribute="trailing" constant="16" id="CoO-0A-tft"/>
+                            <constraint firstItem="ayA-m7-mEg" firstAttribute="top" secondItem="MCM-S3-SQN" secondAttribute="top" id="YgX-Ve-0A3"/>
+                            <constraint firstItem="MCM-S3-SQN" firstAttribute="trailing" secondItem="ayA-m7-mEg" secondAttribute="trailing" id="cgc-Xt-ELI"/>
+                            <constraint firstItem="ayA-m7-mEg" firstAttribute="leading" secondItem="MCM-S3-SQN" secondAttribute="leading" id="iM3-Ol-TS1"/>
+                            <constraint firstItem="qtS-30-6Uc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MCM-S3-SQN" secondAttribute="leading" constant="16" id="iWD-xF-yge"/>
+                            <constraint firstItem="x22-KN-AAJ" firstAttribute="centerX" secondItem="MCM-S3-SQN" secondAttribute="centerX" id="lM4-cU-DYh"/>
+                            <constraint firstItem="x22-KN-AAJ" firstAttribute="centerY" secondItem="MCM-S3-SQN" secondAttribute="centerY" id="yvJ-ZU-fKQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MCM-S3-SQN"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelEmptyText" destination="x22-KN-AAJ" id="gUm-0f-fVZ"/>
+                        <outlet property="tableView" destination="ayA-m7-mEg" id="PUq-Gu-RG8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hvx-HM-oVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3249.375" y="1276.5845070422536"/>
+        </scene>
         <!--Composer-->
         <scene sceneID="lvC-UM-TLK">
             <objects>
                 <viewController id="XLx-cK-Gtc" userLabel="Composer" customClass="ComposerViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yzy-7P-6Ra">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EXM-Ie-RKb">
-                                <rect key="frame" x="16" y="140" width="343" height="430"/>
+                                <rect key="frame" x="16" y="140" width="382" height="499"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerTextViewPoem"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-T8-2fA">
-                                <rect key="frame" x="165.5" y="80" width="44" height="44"/>
+                                <rect key="frame" x="185" y="80" width="44" height="44"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerButtonPlay"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="ic_play"/>
@@ -543,27 +747,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
-                                <rect key="frame" x="24" y="140" width="335" height="20.5"/>
+                                <rect key="frame" x="24" y="140" width="374" height="20.666666666666657"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerLabelHint"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-C0-zec" userLabel="Word Count">
-                                <rect key="frame" x="24" y="578" width="0.0" height="40"/>
+                                <rect key="frame" x="24" y="647" width="0.0" height="40"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerLabelWordCount"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1k-Yd-1yO" userLabel="Placeholder">
-                                <rect key="frame" x="16" y="618" width="343" height="0.0"/>
+                                <rect key="frame" x="16" y="687" width="382" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="piX-I6-F14"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-tE-kWm" userLabel="Hide Keyboard">
-                                <rect key="frame" x="319" y="578" width="56" height="40"/>
+                                <rect key="frame" x="358" y="647" width="56" height="40"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerButtonHideKeyboard"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="0.0"/>
                                 <state key="normal" image="ic_keyboard_hide"/>
@@ -632,40 +836,47 @@
             <objects>
                 <viewController id="dQg-uc-ADU" customClass="SearchViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTf-RG-2Ob">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoH-jk-KWk" userLabel="RhymerContainer">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
                                 <connections>
                                     <segue destination="9pv-A4-QxB" kind="embed" identifier="EmbedRhymer" id="BV3-47-CFR"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-wE-64Y" userLabel="ThesaurusContainer">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
                                 <connections>
                                     <segue destination="8rJ-Kc-sve" kind="embed" identifier="EmbedThesaurus" id="zrP-7G-uYi"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqG-s1-GFf" userLabel="DictionaryContainer">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
                                 <connections>
                                     <segue destination="KSz-7M-5ZO" kind="embed" identifier="EmbedDictionary" id="qkT-RZ-6wv"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmF-2C-g6S" userLabel="FavoritesContainer">
+                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <connections>
+                                    <segue destination="XxL-Wl-d30" kind="embed" identifier="EmbedFavorites" id="dBa-gP-CJ9"/>
+                                </connections>
+                            </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="twx-gO-fQb">
-                                <rect key="frame" x="69.5" y="72" width="236" height="29"/>
+                                <rect key="frame" x="49.666666666666657" y="72" width="315" height="29"/>
                                 <segments>
                                     <segment title="Rhymer"/>
                                     <segment title="Thesaurus"/>
                                     <segment title="Dictionary"/>
+                                    <segment title="Favorites"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentedControlValueChanged:" destination="dQg-uc-ADU" eventType="valueChanged" id="TXa-rH-aOh"/>
                                 </connections>
                             </segmentedControl>
                             <containerView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLL-BI-mD4" userLabel="SearchSuggestionsContainer">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <connections>
                                     <segue destination="ROG-mD-2rX" kind="embed" identifier="EmbedSearchSuggestions" id="PTs-lJ-7Oz"/>
                                 </connections>
@@ -680,15 +891,19 @@
                             <constraint firstItem="aqG-s1-GFf" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="HVY-pC-nVy"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="pLL-BI-mD4" secondAttribute="bottom" id="HgH-4q-OrH"/>
                             <constraint firstItem="GoH-jk-KWk" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="I1w-Oo-BcV"/>
+                            <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="BmF-2C-g6S" secondAttribute="bottom" id="Kg8-PQ-WyV"/>
                             <constraint firstItem="twx-gO-fQb" firstAttribute="top" secondItem="cin-b1-hfA" secondAttribute="top" constant="8" id="Ml3-9B-lTM"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="Rwe-wa-xCg"/>
+                            <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="BmF-2C-g6S" secondAttribute="trailing" id="SWf-El-DXG"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="pLL-BI-mD4" secondAttribute="trailing" id="UcJ-wk-qNf"/>
                             <constraint firstItem="pLL-BI-mD4" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="V8e-Fg-v9X"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="GoH-jk-KWk" secondAttribute="trailing" id="VHq-e6-5Vs"/>
+                            <constraint firstItem="BmF-2C-g6S" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="WO2-Ol-2va"/>
                             <constraint firstItem="twx-gO-fQb" firstAttribute="centerX" secondItem="cin-b1-hfA" secondAttribute="centerX" id="agW-Lb-nDi"/>
                             <constraint firstItem="pLL-BI-mD4" firstAttribute="top" secondItem="cin-b1-hfA" secondAttribute="top" id="akV-xg-e1I"/>
                             <constraint firstItem="GoH-jk-KWk" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="duT-fZ-UwT"/>
                             <constraint firstItem="Ywm-wE-64Y" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="iKq-e8-ifB"/>
+                            <constraint firstItem="BmF-2C-g6S" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="it5-zr-ayo"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="GoH-jk-KWk" secondAttribute="bottom" id="oFA-gK-1gh"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="aqG-s1-GFf" secondAttribute="bottom" id="yBo-4b-6BE"/>
                             <constraint firstItem="aqG-s1-GFf" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="yd4-Kn-A1d"/>
@@ -698,6 +913,7 @@
                     <navigationItem key="navigationItem" id="lk9-kp-IaR"/>
                     <connections>
                         <outlet property="dictionaryContainer" destination="aqG-s1-GFf" id="NQJ-0p-7VH"/>
+                        <outlet property="favoritesContainer" destination="BmF-2C-g6S" id="jC7-Vh-ahv"/>
                         <outlet property="rhymerContainer" destination="GoH-jk-KWk" id="mr3-53-0y6"/>
                         <outlet property="searchContainer" destination="pLL-BI-mD4" id="NJj-R2-GZm"/>
                         <outlet property="segmentedControl" destination="twx-gO-fQb" id="beY-FG-UUQ"/>
@@ -740,19 +956,19 @@
             <objects>
                 <tableViewController modalTransitionStyle="crossDissolve" id="ROG-mD-2rX" customClass="SearchSuggestionsController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VI1-8Y-QvC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="zXf-f2-7zw" style="IBUITableViewCellStyleDefault" id="Wia-JC-KWF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wia-JC-KWF" id="uf7-V5-MsJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="zXf-f2-7zw">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SuggestionTitle"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -771,7 +987,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JT-QH-dIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3227" y="1290"/>
+            <point key="canvasLocation" x="3953" y="1300"/>
         </scene>
         <!--Dictionaries-->
         <scene sceneID="QmK-RE-QOQ">
@@ -780,7 +996,7 @@
                     <tabBarItem key="tabBarItem" title="Dictionaries" image="ic_lexicons" id="6Yy-f2-0S0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="me6-Gk-AfH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -804,7 +1020,7 @@
                     <tabBarItem key="tabBarItem" title="Composer" image="ic_composer" selectedImage="ic_composer" id="GNE-fo-Lm9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jhe-dI-vmb">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -819,6 +1035,7 @@
     </scenes>
     <resources>
         <image name="ic_composer" width="25" height="25"/>
+        <image name="ic_delete_24" width="24" height="24"/>
         <image name="ic_dictionary" width="25" height="25"/>
         <image name="ic_keyboard_hide" width="24" height="24"/>
         <image name="ic_lexicons" width="25" height="25"/>
@@ -826,6 +1043,8 @@
         <image name="ic_play" width="36" height="36"/>
         <image name="ic_play_outline" width="24" height="24"/>
         <image name="ic_rhymer" width="25" height="25"/>
+        <image name="ic_star_outline" width="24" height="24"/>
+        <image name="ic_star_solid" width="24" height="24"/>
         <image name="ic_thesaurus" width="25" height="25"/>
         <image name="ic_web_search" width="24" height="24"/>
     </resources>

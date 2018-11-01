@@ -26,14 +26,14 @@ class ThesaurusResultsFetcher {
 														   "ADV": .adverb,
 														   "VERB": .verb]
 	
-	func fetch(context: NSManagedObjectContext, queryText: String) throws -> ThesaurusQueryResult {
+	func fetch(context: NSManagedObjectContext, queryText: String, favorites: [String]) throws -> ThesaurusQueryResult {
 		
 		do {
 			var usedQueryText = queryText
-			var sections = try fetchImpl(context: context, queryText: queryText)
+			var sections = try fetchImpl(context: context, queryText: queryText, favorites: favorites)
 			if sections.count == 0 {
 				if let closestWord = Stems.findClosestWord(word: queryText, context: context), closestWord != queryText {
-					sections = try fetchImpl(context:context, queryText: closestWord)
+					sections = try fetchImpl(context:context, queryText: closestWord, favorites: favorites)
 					if (sections.count != 0) {
 						usedQueryText = closestWord
 					}
@@ -54,7 +54,7 @@ class ThesaurusResultsFetcher {
 	// Note that in the original data source, a given word may have multiple rows: each
 	// row corresponds to a different "meaning" of the word.
 	//
-	private func fetchImpl(context: NSManagedObjectContext, queryText: String) throws -> [ThesaurusListSection]  {
+	private func fetchImpl(context: NSManagedObjectContext, queryText: String, favorites: [String]) throws -> [ThesaurusListSection]  {
 		do {
 			var resultSections = [ThesaurusListSection]()
 			let fetchedResultsController = createNSFetchedResultsController(context: context, queryText: queryText)
@@ -75,10 +75,10 @@ class ThesaurusResultsFetcher {
 					for originalRowIndex in 0..<numberOfObjects {
 						let originalEntry = fetchedResultsController.object(at: IndexPath(row: originalRowIndex, section:originalSectionIndex))
 						if let synonyms = originalEntry.synonyms {
-							thesaurusListItems.append(contentsOf: createThesaurusListItems(wordRelationship: .synonym, listOfWords: synonyms))
+							thesaurusListItems.append(contentsOf: createThesaurusListItems(wordRelationship: .synonym, listOfWords: synonyms, favorites: favorites))
 						}
 						if let antonyms = originalEntry.antonyms {
-							thesaurusListItems.append(contentsOf: createThesaurusListItems(wordRelationship: .antonym, listOfWords: antonyms))
+							thesaurusListItems.append(contentsOf: createThesaurusListItems(wordRelationship: .antonym, listOfWords: antonyms, favorites: favorites))
 						}
 					}
 					let partOfSpeech = ThesaurusResultsFetcher.PARTS_OF_SPEECH[originalSection.name] ?? .noun
@@ -105,14 +105,15 @@ class ThesaurusResultsFetcher {
 			cacheName: nil)
 	}
 	
-	private func createThesaurusListItems(wordRelationship: WordRelationship, listOfWords: String) -> [ThesaurusListItem] {
+	private func createThesaurusListItems(wordRelationship: WordRelationship, listOfWords: String, favorites: [String]) -> [ThesaurusListItem] {
 		if (listOfWords.isEmpty) {
 			return []
 		}
 		var result = [ThesaurusListItem]()
 		result.append(ThesaurusListItem.subtitle(wordRelationship))
 		result.append(contentsOf:
-			listOfWords.components(separatedBy: ",").map { word in ThesaurusListItem.word(word) })
+			listOfWords.components(separatedBy: ",").map { word in
+				ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: word, isFavorite: favorites.contains(word))) })
 		return result
 	}
 }

@@ -28,7 +28,7 @@ class ThesaurusViewController: SearchResultsController {
 																 .verb: "part_of_speech_v"]
 	private var thesaurusQueryResult: ThesaurusQueryResult? = nil
 	
-	weak var delegate: RTDDelegate?
+	weak var rtdDelegate: RTDDelegate?
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lexicon = Lexicon.thesaurus
@@ -39,8 +39,9 @@ class ThesaurusViewController: SearchResultsController {
 	}
 	
 	override func fetch(word: String, completion: @escaping () -> Void) {
+		let favorites = Favorite.fetchFavorites(context: AppDelegate.persistentUserDbContainer.viewContext)
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word)
+			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word, favorites: favorites)
 			DispatchQueue.main.async { [weak self] in
 				self?.labelQuery.text = self?.thesaurusQueryResult?.queryText
 				completion()
@@ -78,9 +79,9 @@ class ThesaurusViewController: SearchResultsController {
 				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusSubheading") as? ThesaurusRelationshipViewCell
 				bindRelationshipCell(
 					cellView: thesaurusCell as! ThesaurusRelationshipViewCell, relationship: subtitle)
-			case .word (let word):
+			case .wordEntry (let wordEntry):
 				thesaurusCell = tableView.dequeueReusableCell(withIdentifier: "ThesaurusWord") as? RTDTableViewCell
-				bindWordCell(cellView: thesaurusCell as! RTDTableViewCell, word: word)
+				bindWordCell(cellView: thesaurusCell as! RTDTableViewCell, wordEntry: wordEntry)
 			}
 			if (thesaurusCell != nil) {
 				return thesaurusCell!
@@ -97,10 +98,13 @@ class ThesaurusViewController: SearchResultsController {
 			cellView.labelRelationship.text = NSLocalizedString("thesaurus_antonyms_title", comment: "")
 		}
 	}
-	private func bindWordCell(cellView: RTDTableViewCell, word: String) {
-		cellView.labelWord.text = word
-		cellView.rtdDelegate = delegate
-		cellView.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
+	private func bindWordCell(cellView: RTDTableViewCell, wordEntry: ThesaurusWordEntry) {
+		cellView.bind(
+			word: wordEntry.word,
+			isFavorite: wordEntry.isFavorite,
+			showRTD: efficientLayoutEnabled,
+			rtdDelegate: rtdDelegate,
+			favoriteDelegate: self)
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
