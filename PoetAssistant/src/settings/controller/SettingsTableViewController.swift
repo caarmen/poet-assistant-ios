@@ -77,7 +77,9 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		let theme = sender.isOn ? Theme.DARK_THEME : Theme.LIGHT_THEME
 		Settings.setTheme(theme: theme)
 		theme.apply()
-		theme.reload()
+		if let window = view.window {
+			theme.reload(window: window)
+		}
 		view.backgroundColor = theme.backgroundColor
 	}
 

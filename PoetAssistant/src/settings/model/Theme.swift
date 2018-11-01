@@ -68,15 +68,13 @@ struct Theme {
 		tintGlobalViews()
 	}
 	// https://stackoverflow.com/questions/20875107/force-view-controller-to-reload-to-refresh-uiappearance-changes
-	func reload() {
-		for window in UIApplication.shared.windows {
-			for view in window.subviews {
-				view.removeFromSuperview()
-				window.addSubview(view)
-			}
-			// update the status bar if you change the appearance of it.
-			window.rootViewController?.setNeedsStatusBarAppearanceUpdate()
+	func reload(window: UIWindow) {
+		for view in window.subviews {
+			view.removeFromSuperview()
+			window.addSubview(view)
 		}
+		// update the status bar if you change the appearance of it.
+		window.rootViewController?.setNeedsStatusBarAppearanceUpdate()
 	}
 	private func tintTables() {
 		UITableView.appearance().backgroundColor = backgroundColor
