@@ -34,14 +34,19 @@ class RTDAnimator {
 		selectedCell.toggleRTDVisibility()
 	}
 	
-	class func setRTDVisible(rtdViews: [UIView], visible: Bool, animate: Bool) {
+	class func setRTDVisible(rtdLeadingConstraint: NSLayoutConstraint, rtdViews: [UIView], visible: Bool, animate: Bool) {
 		if (animate) {
-			if (visible) {
-				rtdViews.forEach { showView(view: $0)}
-			} else {
-				rtdViews.forEach { hideView(view: $0)}
-			}
+			UIView.animate(withDuration: ANIMATION_DURATION, animations: {
+				rtdLeadingConstraint.priority = visible ? UILayoutPriority(rawValue: 999) : UILayoutPriority.defaultLow
+			}, completion: { animationFinished in
+				if (visible) {
+					rtdViews.forEach { showView(view: $0)}
+				} else {
+					rtdViews.forEach { hideView(view: $0)}
+				}
+			})
 		} else {
+			rtdLeadingConstraint.priority = visible ? UILayoutPriority(rawValue: 999) : UILayoutPriority.defaultLow
 			rtdViews.forEach {$0.isHidden = !visible}
 		}
 	}

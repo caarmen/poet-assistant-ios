@@ -24,8 +24,14 @@ import AVFoundation
 /**
 Displays the search results for a given query
 */
-class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate {
+	
 	private let speechSynthesizer = AVSpeechSynthesizer()
+	@IBOutlet weak var buttonFavorite: UIButton! {
+		didSet {
+			FavoriteButtonHelper.setupButton(button: buttonFavorite)
+		}
+	}
 	@IBOutlet weak var viewResultHeader: UIView!
 	@IBOutlet weak var labelQuery: UILabel!
 	@IBOutlet weak var tableView: UITableView!{
@@ -53,6 +59,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		NotificationCenter.default.addObserver(self, selector:#selector(userDataChanged), name:Notification.Name.NSManagedObjectContextDidSave, object:nil)
 		updateUI()
 	}
 	override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +69,12 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		efficientLayoutEnabled = Settings.getEfficientLayoutEnabled()
+	}
+	@objc
+	func userDataChanged(notification: Notification) {
+		if CoreDataNotificationHelper.isNotificationForFavorites(notification: notification) {
+			updateUI()
+		}
 	}
 	private func updateUI() {
 		labelQuery.text = query.localizedLowercase
@@ -85,16 +98,18 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		} else {
 			emptyText.isHidden = true
 			viewResultHeader.isHidden = false
+			buttonFavorite.isSelected = Favorite.isFavorite(context: AppDelegate.persistentUserDbContainer.viewContext, word: query)
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UITableView.automaticDimension
 	}
+	@IBAction func didClickFavoriteQueryWord(_ sender: UIButton) {
+		buttonFavorite.isSelected = !buttonFavorite.isSelected
+		toggleFavorite(query: query)
+	}
 	@IBAction func didClickLookupQueryWord(_ sender: UIButton) {
-		//let vcLookup = UIReferenceLibraryViewController(term:query)
-		//vcLookup.modalPresentationStyle = .popover
-		//present(vcLookup, animated: true, completion: nil)
 		if let urlString = "https://www.google.com/search?q=\(query)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
 			if let url = URL(string: urlString) {
 				UIApplication.shared.open(url, options:[:])
@@ -108,7 +123,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 			speechSynthesizer.speak(utterance)
 		}
 	}
-	
+
 	//--------------------------------------------
 	// Methods to be implemented by the subclasses
 	//--------------------------------------------

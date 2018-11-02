@@ -21,8 +21,9 @@ import CoreData
 
 class WordVariants: NSManagedObject {
 	
-	class func createRhymeFetcher(context: NSManagedObjectContext, queryText: String) -> RhymeFetcher {
+	class func createRhymeFetcher(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> RhymeFetcher {
 		let result = RhymeFetcher()
+		result.favorites = favorites
 		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(WordVariants.variant_number), ascending: true)]
 		if !queryText.isEmpty {

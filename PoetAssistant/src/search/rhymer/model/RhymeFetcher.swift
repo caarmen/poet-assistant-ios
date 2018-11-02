@@ -29,18 +29,23 @@ class RhymeFetcher {
 	private(set) var sectionCount = 0
 	private var fetchedResultsControllers = [NSFetchedResultsController<NSDictionary>]()
 	private var rhymeTypes = [RhymeType]()
+	internal var favorites = [String]()
 	private var variants = [Int?]()
-	
+		
 	func add(rhymeType:RhymeType, variant:Int?, fetchedResultsController: NSFetchedResultsController<NSDictionary>) {
 		rhymeTypes.append(rhymeType)
 		variants.append(variant)
 		fetchedResultsControllers.append(fetchedResultsController)
 	}
 	
-	func rhyme(at: IndexPath) -> String? {
+	func rhyme(at: IndexPath) -> RhymeEntry? {
 		let indexPath = IndexPath(row: at.row, section: 0)
 		let value = fetchedResultsControllers[at.section].object(at: indexPath)
-		return value[#keyPath(WordVariants.word)] as? String
+		if let word = value[#keyPath(WordVariants.word)] as? String {
+			return RhymeEntry(word: word, isFavorite: favorites.contains(word))
+		} else {
+			return nil
+		}
 	}
 	
 	func performFetch() throws {
@@ -68,6 +73,10 @@ class RhymeFetcher {
 	func variant(section: Int) -> Int?{
 		return variants[section]
 	}
+}
+struct RhymeEntry {
+	let word: String
+	let isFavorite: Bool
 }
 enum RhymeType {
 	case strict

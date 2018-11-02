@@ -28,6 +28,9 @@
 "clear_search_history_deleted" = "Search history has been cleared";
 "clear_search_history_action_clear" = "Clear";
 "clear_search_history_action_cancel" = "Cancel";
+"delete_favorites_dialog_title" = "Delete all favorite words?";
+"delete_favorites_action_delete" = "Delete";
+"delete_favorites_action_cancel" = "Cancel";
 "rhymer" = "Rhymer";
 "thesaurus" = "Thesaurus";
 "dictionary" = "Dictionary";
