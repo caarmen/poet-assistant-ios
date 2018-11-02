@@ -35,6 +35,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE9-Sb-0by" userLabel="Button Favorite">
                                                     <rect key="frame" x="202" y="0.0" width="32" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="HTM-AD-faG"/>
                                                         <constraint firstAttribute="width" constant="32" id="KAf-4Z-2Cv"/>
@@ -155,6 +156,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-4h-zRb" userLabel="Favorite">
                                         <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="RhymerQueryFavorite"/>
                                         <state key="normal" image="ic_star_outline"/>
                                         <connections>
                                             <action selector="didClickFavoriteQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gDH-GO-X7F"/>
@@ -265,6 +267,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-ZW-YWk" userLabel="Button Favorite">
                                                     <rect key="frame" x="202" y="0.0" width="32" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="RKd-7q-K4L"/>
                                                         <constraint firstAttribute="width" constant="32" id="WpA-jW-PNT"/>
@@ -383,6 +386,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t49-04-i5A" userLabel="Favorite">
                                         <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ThesaurusQueryFavorite"/>
                                         <state key="normal" image="ic_star_outline"/>
                                         <connections>
                                             <action selector="didClickFavoriteQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x4l-9V-uxd"/>
@@ -467,7 +471,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-ag-JBK">
-                                                    <rect key="frame" x="20" y="11" width="860" height="22"/>
+                                                    <rect key="frame" x="20" y="11" width="378" height="22"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="DictionaryCellDefinition"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -509,6 +513,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-j9-AAX" userLabel="Favorite">
                                         <rect key="frame" x="71" y="8" width="24" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="DictionaryQueryFavorite"/>
                                         <state key="normal" image="ic_star_outline"/>
                                         <connections>
                                             <action selector="didClickFavoriteQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="Lkv-SS-3hk"/>
@@ -594,6 +599,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtS-30-6Uc" userLabel="DeleteAll">
                                 <rect key="frame" x="370" y="547" width="44" height="24"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ButtonClearFavorites"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5pt-ND-GNa"/>
                                     <constraint firstAttribute="width" constant="44" id="O4J-e6-2a2"/>
@@ -616,6 +622,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a1-VA-P6P" userLabel="Favorite">
                                                     <rect key="frame" x="202" y="0.0" width="32" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="5rP-Zd-oU1"/>
                                                         <constraint firstAttribute="width" constant="32" id="7Jb-BZ-GmN"/>
@@ -674,6 +681,7 @@
                                                 <constraint firstItem="vM9-hF-4wq" firstAttribute="leading" secondItem="leS-qS-UXB" secondAttribute="trailing" constant="10" id="nbM-t9-buc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="FavoriteCell"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="Oki-IW-cbz" secondAttribute="trailing" id="3zt-rd-ER9"/>
                                             <constraint firstItem="0a1-VA-P6P" firstAttribute="leading" secondItem="kjO-FZ-Grd" secondAttribute="trailing" constant="8" id="G7r-ZY-WDG"/>
@@ -868,7 +876,7 @@
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="twx-gO-fQb">
-                                <rect key="frame" x="49.666666666666629" y="72" width="315" height="29"/>
+                                <rect key="frame" x="49.666666666666657" y="72" width="315" height="29"/>
                                 <segments>
                                     <segment title="Rhymer"/>
                                     <segment title="Thesaurus"/>

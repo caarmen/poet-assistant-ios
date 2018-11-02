@@ -13,6 +13,7 @@
 		4F1C93CE218C5D7300469CD5 /* FavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CD218C5D7300469CD5 /* FavoriteDelegate.swift */; };
 		4F1C93D0218C6C9300469CD5 /* CoreDataNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */; };
 		4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */; };
+		4F1C93D8218CFAB400469CD5 /* FavoritesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -108,6 +109,7 @@
 		4F1C93CD218C5D7300469CD5 /* FavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDelegate.swift; sourceTree = "<group>"; };
 		4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNotificationHelper.swift; sourceTree = "<group>"; };
 		4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonHelper.swift; sourceTree = "<group>"; };
+		4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTest.swift; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				4FEF06C12185110600D69383 /* FileTest.swift */,
 				4F3849DD2185C75D00613B53 /* AppStoreScreenshots.swift */,
 				4F3849E121890B9500613B53 /* ThemeTest.swift */,
+				4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1C93D8218CFAB400469CD5 /* FavoritesTest.swift in Sources */,
 				4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */,
 				4FEF06C22185110600D69383 /* FileTest.swift in Sources */,
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,

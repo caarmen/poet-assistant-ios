@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		if CommandLine.arguments.contains("UITesting") {
 			Settings.clear()
 			Suggestion.clearHistory(completion: nil)
+			Favorite.clearFavorites {}
 			FileUtils.deleteAllDocuments()
 		}
 		Settings.getTheme().apply()

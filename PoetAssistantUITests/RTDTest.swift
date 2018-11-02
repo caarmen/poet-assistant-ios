@@ -117,7 +117,7 @@ class RTDTest: XCTestCase {
 		let rhymerRow = app.cells.matching(identifier: "RhymerCell").containing(NSPredicate(format: "identifier = 'RhymerCellWordLabel' and label=%@", rhyme)).firstMatch
 		if (!efficientLayoutEnabled) {
 			rhymerRow.tap()
-			waitForRTDToShow(row: rhymerRow)
+			UITestUtils.waitForRTDToShow(test:self, row: rhymerRow)
 		}
 		rhymerRow.buttons.matching(identifier: "RhymerCellButtonThesaurus").firstMatch.tap()
 		UITestUtils.wait(test: self, timeout: 2)
@@ -141,11 +141,11 @@ class RTDTest: XCTestCase {
 		let thesaurusRow = app.cells.matching(identifier: "ThesaurusCell").containing(NSPredicate(format: "identifier = 'ThesaurusCellWordLabel' and label=%@", synonym)).firstMatch
 		if (!efficientLayoutEnabled) {
 			thesaurusRow.tap()
-			waitForRTDToShow(row: thesaurusRow)
+			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
 			thesaurusRow.tap()
 			waitForRTDToHide(row: thesaurusRow)
 			thesaurusRow.tap()
-			waitForRTDToShow(row: thesaurusRow)
+			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
 		}
 		thesaurusRow.buttons.matching(identifier: "ThesaurusCellButtonDictionary").firstMatch.tap()
 		UITestUtils.wait(test: self, timeout: 2)
@@ -156,12 +156,6 @@ class RTDTest: XCTestCase {
 		XCTAssertEqual(expectedFirstDefinition, actualDefinition, "Expected definition for \(query) to be \(expectedFirstDefinition) but got \(actualDefinition)")
 	}
 
-	private func waitForRTDToShow(row: XCUIElement) {
-		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
-		UITestUtils.waitFor(test:self, timeout: 1.5) {
-			return dictionaryButton.isHittable
-		}
-	}
 	private func waitForRTDToHide(row: XCUIElement) {
 		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
 		UITestUtils.waitFor(test:self, timeout: 1.5) {
