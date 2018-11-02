@@ -75,6 +75,21 @@ class Favorite: NSManagedObject {
 				let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 				try context.execute(deleteRequest)
 				try context.save()
+				// Core data won't broadcast any notification for the batch delete
+				// So let's hack around this by also doing an individual insert
+				// followed by an individual delete, so core data will broadcast a
+				// notification. I don't want to implement my own additional notification
+				// and listeners for this.........
+				
+				// Add a favorite
+				let favorite = Favorite(context:context)
+				favorite.word = "poem"
+				try context.save()
+				
+				// Remove the favorite
+				context.delete(favorite)
+				try context.save()
+				
 				DispatchQueue.main.async(execute: completion)
 			} catch let error {
 				print ("Error clearing favorites \(error)")

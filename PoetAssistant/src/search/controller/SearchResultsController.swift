@@ -59,7 +59,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		NotificationCenter.default.addObserver(self, selector:#selector(userDataChanged), name:Notification.Name.NSManagedObjectContextDidSave, object:AppDelegate.persistentUserDbContainer.viewContext)
+		NotificationCenter.default.addObserver(self, selector:#selector(userDataChanged), name:Notification.Name.NSManagedObjectContextDidSave, object:nil)
 		updateUI()
 	}
 	override func viewWillAppear(_ animated: Bool) {
