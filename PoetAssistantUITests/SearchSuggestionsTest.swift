@@ -82,6 +82,23 @@ class SearchSuggestionsTest: XCTestCase {
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmelite"], expectedClearHistory: false)
 	}
 	
+	func testRandomWord() {
+		UITestUtils.openDictionariesTab(app: app)
+		selectRandomWord()
+		// The word should be present in at least one of the lexicons
+		let definitionsFound = app.staticTexts.matching(identifier: "DictionaryQueryLabel").firstMatch.exists
+		UITestUtils.moveToThesaurus(app: app)
+		let synonymsFound = app.staticTexts.matching(identifier: "ThesaurusQueryLabel").firstMatch.exists
+		UITestUtils.moveToRhymer(app: app)
+		let rhymesFound = app.staticTexts.matching(identifier: "RhymerQueryLabel").firstMatch.exists
+
+		XCTAssertTrue(rhymesFound || synonymsFound || definitionsFound)
+		
+		// Make sure the word wasn't added to suggestions
+		let searchField = app.searchFields
+		searchField.firstMatch.tap()
+		waitForSearchSuggestion(searchField: searchField.firstMatch, table: app.tables.firstMatch, query: "", expectedSuggestions: [], expectedClearHistory: false)
+	}
 
 	private func clearSearchHistory() {
 		let deleteCell = app.tables.cells.matching(identifier: "cell_delete").firstMatch
@@ -90,6 +107,11 @@ class SearchSuggestionsTest: XCTestCase {
 		waitForSearchHistoryDeletionDialogToDismiss()
 	}
 	
+	private func selectRandomWord() {
+		let randomWordCell = app.tables.cells.matching(identifier: "cell_random_word").firstMatch
+		randomWordCell.tap()
+	}
+
 	private func waitForSearchHistoryDeletionDialogToDismiss() {
 		let expectedDialogGone = expectation(description: "expected search history dialog gone")
 		DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 3.0) {
@@ -104,7 +126,8 @@ class SearchSuggestionsTest: XCTestCase {
 		let expectedSuggestionsExpectation = expectation(description: "expected suggestions")
 		DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 1.5) {
 			// If there are any suggestions, there will also be an additional row item to clear history
-			let expectedSuggestionCount = expectedClearHistory ? expectedSuggestions.count + 1 : expectedSuggestions.count
+			// There's always a row for "random word"
+			let expectedSuggestionCount = expectedClearHistory ? expectedSuggestions.count + 2 : expectedSuggestions.count + 1
 			let actualSuggestionTitles = table.staticTexts.matching(identifier: "SuggestionTitle")
 			XCTAssertEqual(expectedSuggestionCount, actualSuggestionTitles.count, "Expected \(expectedSuggestionCount) suggestions but got \(actualSuggestionTitles.count) for \(query)")
 			expectedSuggestions.forEach { suggestion in

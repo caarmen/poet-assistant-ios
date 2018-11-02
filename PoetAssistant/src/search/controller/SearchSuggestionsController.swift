@@ -22,6 +22,7 @@ import CoreData
 
 protocol SearchSuggestionsDelegate:class {
 	func didSelectSuggestion(suggestion: String)
+	func didSelectRandomWord()
 	func didClearSearchHistory()
 }
 /**
@@ -73,6 +74,9 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
 		if let suggestionListItem = fetchedResultsController?.object(at: indexPath) {
 			switch (suggestionListItem) {
+			case .random_word:
+				bindSuggestionCell(cell: cell, imageResource: "ic_random_word", suggestion: NSLocalizedString("random_word", comment: ""), bold: true)
+				cell.accessibilityIdentifier = "cell_random_word"
 			case .clear_history:
 				bindSuggestionCell(cell: cell, imageResource: "ic_delete", suggestion: NSLocalizedString("clear_search_history_list_item", comment: ""), bold: true)
 				cell.accessibilityIdentifier = "cell_delete"
@@ -124,6 +128,8 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let selection = fetchedResultsController?.object(at: indexPath) {
 			switch(selection) {
+			case .random_word:
+				delegate?.didSelectRandomWord()
 			case .clear_history:
 				presentClearSearchHistoryDialog()
 			case .history_suggestion(let word), .dictionary_suggestion(let word):

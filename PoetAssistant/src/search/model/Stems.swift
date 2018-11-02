@@ -22,6 +22,12 @@ import CoreData
 
 class Stems: NSManagedObject {
 	
+	// When looking up random words, their "frequency" is a factor in the selection.
+	// Words which are too frequent (a, the, why) are not interesting words.
+	// Words which are too rare (aalto) are likely not interesting either.
+	private static let MIN_INTERESTING_FREQUENCY = 1500
+	private static let MAX_INTERESTING_FREQUENCY = 25000
+	
 	class func findClosestWord(word: String, context: NSManagedObjectContext) -> String? {
 		let stem = PorterStemmer().stemWord(word: word)
 		let similarWords = fetchWordsWithStem(context: context, stem: stem)
@@ -60,5 +66,20 @@ class Stems: NSManagedObject {
 	class func calculateSimilarityScore(word1: String, word2: String) -> Int {
 		let length = min(word1.count, word2.count)
 		return (0..<length).first(where: { word1[$0] != word2[$0] }) ?? length
+	}
+	
+	class func findRandomWord(context: NSManagedObjectContext) -> String {
+		let request: NSFetchRequest<Stems> = Stems.fetchRequest()
+		request.predicate = NSPredicate(format: "\(#keyPath(Stems.google_ngram_frequency)) > %d AND \(#keyPath(Stems.google_ngram_frequency)) < %d", MIN_INTERESTING_FREQUENCY, MAX_INTERESTING_FREQUENCY)
+		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Stems.word), ascending: true)]
+		do {
+			let result = try request.execute()
+			if let word = result.randomElement()?.word {
+				return word
+			}
+		} catch let error {
+			print ("Error finding random word: \(error)")
+		}
+		return "error" // why not
 	}
 }

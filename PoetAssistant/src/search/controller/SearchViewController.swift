@@ -190,16 +190,27 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchController?.searchBar.text = suggestion
 		handleSelection(selection: suggestion)
 	}
+	func didSelectRandomWord() {
+		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
+			let randomWord = Stems.findRandomWord(context: context)
+			DispatchQueue.main.async { [weak self] in
+				self?.handleSelection(selection: randomWord, persistSuggestion: false)
+				self?.showLexicon(lexicon: .dictionary)
+			}
+		}
+	}
 	func didClearSearchHistory() {
 		handleSelection(selection:nil)
 	}
-	private func handleSelection(selection: String?) {
+	private func handleSelection(selection: String?, persistSuggestion: Bool = true) {
 		if (selection != nil && !selection!.isEmpty) {
 			let selectionLowerCase = selection!.localizedLowercase
 			rhymerController?.query = selectionLowerCase
 			thesaurusController?.query = selectionLowerCase
 			dictionaryController?.query = selectionLowerCase
-			Suggestion.addSuggestion(word: selectionLowerCase)
+			if (persistSuggestion) {
+				Suggestion.addSuggestion(word: selectionLowerCase)
+			}
 		}
 		searchSuggestionsController?.clear()
 		searchContainer.isHidden = true
