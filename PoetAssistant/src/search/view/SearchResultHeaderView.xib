@@ -32,33 +32,36 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p12-KG-NZH" userLabel="ButtonFavorite">
-                    <rect key="frame" x="54.5" y="331.5" width="44" height="24"/>
+                    <rect key="frame" x="46.5" y="331.5" width="40" height="24"/>
                     <accessibility key="accessibilityConfiguration" identifier="HeaderButtonFavorite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="hVs-UG-dsy"/>
+                        <constraint firstAttribute="width" constant="40" id="hVs-UG-dsy"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                     <state key="normal" image="ic_star_outline"/>
                     <connections>
                         <action selector="didClickFavorite:" destination="-1" eventType="touchUpInside" id="Tyj-L1-fe5"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9L-tz-Pss" userLabel="ButtonLookup">
-                    <rect key="frame" x="271" y="331.5" width="44" height="24"/>
+                    <rect key="frame" x="303" y="331.5" width="40" height="24"/>
                     <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="fo7-Wd-qLM"/>
+                        <constraint firstAttribute="width" constant="40" id="fo7-Wd-qLM"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                     <state key="normal" image="ic_web_search"/>
                     <connections>
                         <action selector="didClickLookup:" destination="-1" eventType="touchUpInside" id="cWd-bN-mJw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nO6-QE-HiI" userLabel="ButtonPlay">
-                    <rect key="frame" x="331" y="331.5" width="44" height="24"/>
+                    <rect key="frame" x="343" y="331.5" width="32" height="24"/>
                     <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="Fb3-RG-RwI"/>
+                        <constraint firstAttribute="width" constant="32" id="Fb3-RG-RwI"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="ic_play_outline"/>
                     <connections>
                         <action selector="didClickPlay:" destination="-1" eventType="touchUpInside" id="lhx-rs-GHE"/>
@@ -67,14 +70,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="p12-KG-NZH" firstAttribute="leading" secondItem="IhE-kg-mTE" secondAttribute="trailing" constant="8" id="2im-Rt-Khb"/>
+                <constraint firstItem="p12-KG-NZH" firstAttribute="leading" secondItem="IhE-kg-mTE" secondAttribute="trailing" id="2im-Rt-Khb"/>
                 <constraint firstItem="G9L-tz-Pss" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="PjC-uF-jaN"/>
                 <constraint firstItem="IhE-kg-mTE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SnR-6h-p3L"/>
                 <constraint firstAttribute="trailing" secondItem="nO6-QE-HiI" secondAttribute="trailing" id="UdW-uL-FIT"/>
                 <constraint firstItem="nO6-QE-HiI" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ZKw-cU-Og3"/>
-                <constraint firstItem="nO6-QE-HiI" firstAttribute="leading" secondItem="G9L-tz-Pss" secondAttribute="trailing" constant="16" id="gVx-Pc-QhF"/>
+                <constraint firstItem="nO6-QE-HiI" firstAttribute="leading" secondItem="G9L-tz-Pss" secondAttribute="trailing" id="gVx-Pc-QhF"/>
                 <constraint firstItem="IhE-kg-mTE" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="lDZ-Xs-rzq"/>
-                <constraint firstItem="G9L-tz-Pss" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p12-KG-NZH" secondAttribute="trailing" constant="16" id="nuz-4p-tI3"/>
+                <constraint firstItem="G9L-tz-Pss" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p12-KG-NZH" secondAttribute="trailing" id="nuz-4p-tI3"/>
                 <constraint firstItem="p12-KG-NZH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="sJ8-a1-3AU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
