@@ -24,16 +24,11 @@ import AVFoundation
 /**
 Displays the search results for a given query
 */
-class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate {
+class SearchResultsController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate, SearchResultHeaderDelegate {
 	
+	@IBOutlet weak var viewResultHeader: SearchResultHeaderView!
 	private let speechSynthesizer = AVSpeechSynthesizer()
-	@IBOutlet weak var buttonFavorite: UIButton! {
-		didSet {
-			FavoriteButtonHelper.setupButton(button: buttonFavorite)
-		}
-	}
-	@IBOutlet weak var viewResultHeader: UIView!
-	@IBOutlet weak var labelQuery: UILabel!
+	
 	@IBOutlet weak var tableView: UITableView!{
 		didSet {
 			tableView.delegate = self
@@ -60,6 +55,7 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		NotificationCenter.default.addObserver(self, selector:#selector(userDataChanged), name:Notification.Name.NSManagedObjectContextDidSave, object:nil)
+		viewResultHeader.delegate = self
 		updateUI()
 	}
 	override func viewWillAppear(_ animated: Bool) {
@@ -79,8 +75,8 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		}
 	}
 	private func updateUI() {
-		labelQuery.text = query.localizedLowercase
-		if let nonEmptyQuery = labelQuery.text, !nonEmptyQuery.isEmpty {
+		viewResultHeader.labelWord.text = query.localizedLowercase
+		if let nonEmptyQuery = viewResultHeader.labelWord.text, !nonEmptyQuery.isEmpty {
 			fetch(word: query, completion: {[weak self] in
 				self?.queryResultsFetched(query:nonEmptyQuery)})
 		} else {
@@ -100,30 +96,28 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		} else {
 			emptyText.isHidden = true
 			viewResultHeader.isHidden = false
-			buttonFavorite.isSelected = Favorite.isFavorite(context: AppDelegate.persistentUserDbContainer.viewContext, word: query)
+			viewResultHeader.buttonFavorite.isSelected = Favorite.isFavorite(context: AppDelegate.persistentUserDbContainer.viewContext, word: query)
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UITableView.automaticDimension
 	}
-	@IBAction func didClickFavoriteQueryWord(_ sender: UIButton) {
-		buttonFavorite.isSelected = !buttonFavorite.isSelected
-		toggleFavorite(query: query)
+	func didClickFavorite(word: String) {
+		viewResultHeader.buttonFavorite.isSelected = !viewResultHeader.buttonFavorite.isSelected
+		toggleFavorite(query: word)
 	}
-	@IBAction func didClickLookupQueryWord(_ sender: UIButton) {
-		if let urlString = "https://www.google.com/search?q=\(query)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+	func didClickLookup(word: String) {
+		if let urlString = "https://www.google.com/search?q=\(word)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
 			if let url = URL(string: urlString) {
 				UIApplication.shared.open(url, options:[:])
 			}
 		}
 	}
 	
-	@IBAction func didClickPlayQueryWord(_ sender: UIButton) {
-		if let queryText = labelQuery.text {
-			let utterance = Tts.createUtterance(text: queryText)
-			speechSynthesizer.speak(utterance)
-		}
+	func didClickPlay(word: String) {
+		let utterance = Tts.createUtterance(text: word)
+		speechSynthesizer.speak(utterance)
 	}
 
 	//--------------------------------------------

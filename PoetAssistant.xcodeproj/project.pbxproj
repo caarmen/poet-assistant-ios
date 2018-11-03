@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F054B5F218DCA9F00386FBC /* RTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B5E218DCA9F00386FBC /* RTDView.swift */; };
+		4F054B61218DCE1000386FBC /* RTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B60218DCE1000386FBC /* RTDTableViewCell.swift */; };
+		4F054B65218DE1AC00386FBC /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */; };
+		4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */; };
 		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
 		4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93C9218BA71600469CD5 /* Favorite.swift */; };
 		4F1C93CC218BAADF00469CD5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CB218BAADF00469CD5 /* FavoritesViewController.swift */; };
@@ -14,6 +18,7 @@
 		4F1C93D0218C6C9300469CD5 /* CoreDataNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */; };
 		4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */; };
 		4F1C93D8218CFAB400469CD5 /* FavoritesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */; };
+		4F1C93DA218DC58E00469CD5 /* RTDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1C93D9218DC58E00469CD5 /* RTDView.xib */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -53,7 +58,6 @@
 		4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1B21737AD500CD6CB3 /* VoiceList.swift */; };
 		4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */; };
 		4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A202175410200CD6CB3 /* RTDAnimator.swift */; };
-		4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B52177B70E00CF8B49 /* Stems.swift */; };
 		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
@@ -102,6 +106,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F054B5E218DCA9F00386FBC /* RTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDView.swift; sourceTree = "<group>"; };
+		4F054B60218DCE1000386FBC /* RTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTableViewCell.swift; sourceTree = "<group>"; };
+		4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
+		4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
 		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
 		4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "userdata 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F1C93C9218BA71600469CD5 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 		4F1C93CF218C6C9300469CD5 /* CoreDataNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNotificationHelper.swift; sourceTree = "<group>"; };
 		4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonHelper.swift; sourceTree = "<group>"; };
 		4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTest.swift; sourceTree = "<group>"; };
+		4F1C93D9218DC58E00469CD5 /* RTDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTDView.xib; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -154,7 +163,6 @@
 		4F698A1B21737AD500CD6CB3 /* VoiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceList.swift; sourceTree = "<group>"; };
 		4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
 		4F698A202175410200CD6CB3 /* RTDAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDAnimator.swift; sourceTree = "<group>"; };
-		4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDTableViewCell.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		4FEB03B52177B70E00CF8B49 /* Stems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stems.swift; sourceTree = "<group>"; };
@@ -467,8 +475,12 @@
 		4F698A222175421F00CD6CB3 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4F1C93D9218DC58E00469CD5 /* RTDView.xib */,
+				4F054B5E218DCA9F00386FBC /* RTDView.swift */,
 				4F698A202175410200CD6CB3 /* RTDAnimator.swift */,
-				4F698A23217542BE00CD6CB3 /* RTDTableViewCell.swift */,
+				4F054B60218DCE1000386FBC /* RTDTableViewCell.swift */,
+				4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */,
+				4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -706,6 +718,8 @@
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
 				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
+				4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */,
+				4F1C93DA218DC58E00469CD5 /* RTDView.xib in Resources */,
 				4F6613DD2164D10700FA10A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,24 +777,26 @@
 				4F6613F02164FC2E00FA10A1 /* ComposerViewController.swift in Sources */,
 				4F66140121652F6C00FA10A1 /* EmbeddedDb.swift in Sources */,
 				4F31973D2166C79600135FF4 /* RhymeFetcher.swift in Sources */,
+				4F054B65218DE1AC00386FBC /* SearchResultHeaderView.swift in Sources */,
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
 				4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
 				4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */,
 				4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
+				4F054B61218DCE1000386FBC /* RTDTableViewCell.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
 				4F6613F92165241D00FA10A1 /* TabBarController.swift in Sources */,
 				4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */,
 				4FFB980221722274000469F0 /* AboutViewController.swift in Sources */,
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
-				4F698A24217542BE00CD6CB3 /* RTDTableViewCell.swift in Sources */,
 				4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */,
 				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,
 				4F3197672168C32800135FF4 /* Lexicon.swift in Sources */,
+				4F054B5F218DCA9F00386FBC /* RTDView.swift in Sources */,
 				4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */,
 				4F1C93D0218C6C9300469CD5 /* CoreDataNotificationHelper.swift in Sources */,
 				4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */,

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonFavorite" destination="p12-KG-NZH" id="29I-Xp-GKh"/>
+                <outlet property="labelWord" destination="IhE-kg-mTE" id="u7w-Fh-J39"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhE-kg-mTE" userLabel="Word">
+                    <rect key="frame" x="0.0" y="331.5" width="48" height="24"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bold" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p12-KG-NZH" userLabel="ButtonFavorite">
+                    <rect key="frame" x="56" y="331.5" width="44" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="hVs-UG-dsy"/>
+                    </constraints>
+                    <state key="normal" image="ic_star_outline"/>
+                    <connections>
+                        <action selector="didClickFavorite:" destination="-1" eventType="touchUpInside" id="Tyj-L1-fe5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9L-tz-Pss" userLabel="ButtonLookup">
+                    <rect key="frame" x="271" y="331.5" width="44" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="fo7-Wd-qLM"/>
+                    </constraints>
+                    <state key="normal" image="ic_web_search"/>
+                    <connections>
+                        <action selector="didClickLookup:" destination="-1" eventType="touchUpInside" id="cWd-bN-mJw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nO6-QE-HiI" userLabel="ButtonPlay">
+                    <rect key="frame" x="331" y="331.5" width="44" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="Fb3-RG-RwI"/>
+                    </constraints>
+                    <state key="normal" image="ic_play_outline"/>
+                    <connections>
+                        <action selector="didClickPlay:" destination="-1" eventType="touchUpInside" id="lhx-rs-GHE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p12-KG-NZH" firstAttribute="leading" secondItem="IhE-kg-mTE" secondAttribute="trailing" constant="8" id="2im-Rt-Khb"/>
+                <constraint firstItem="G9L-tz-Pss" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="PjC-uF-jaN"/>
+                <constraint firstItem="IhE-kg-mTE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SnR-6h-p3L"/>
+                <constraint firstAttribute="trailing" secondItem="nO6-QE-HiI" secondAttribute="trailing" id="UdW-uL-FIT"/>
+                <constraint firstItem="nO6-QE-HiI" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ZKw-cU-Og3"/>
+                <constraint firstItem="nO6-QE-HiI" firstAttribute="leading" secondItem="G9L-tz-Pss" secondAttribute="trailing" constant="16" id="gVx-Pc-QhF"/>
+                <constraint firstItem="IhE-kg-mTE" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="lDZ-Xs-rzq"/>
+                <constraint firstItem="G9L-tz-Pss" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p12-KG-NZH" secondAttribute="trailing" constant="16" id="nuz-4p-tI3"/>
+                <constraint firstItem="p12-KG-NZH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="sJ8-a1-3AU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_play_outline" width="24" height="24"/>
+        <image name="ic_star_outline" width="24" height="24"/>
+        <image name="ic_web_search" width="24" height="24"/>
+    </resources>
+</document>
