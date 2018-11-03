@@ -65,6 +65,7 @@ struct Theme {
 		tintSearchBar()
 		tintSegmentedControl()
 		tintTables()
+		tintCustomViews()
 		tintGlobalViews()
 	}
 	// https://stackoverflow.com/questions/20875107/force-view-controller-to-reload-to-refresh-uiappearance-changes
@@ -96,6 +97,10 @@ struct Theme {
 	}
 	private func tintSegmentedControl() {
 		UIImageView.appearance(whenContainedInInstancesOf: [UISegmentedControl.classForCoder() as! UIAppearanceContainer.Type]).tintColor = segmentedControlColor
+	}
+	private func tintCustomViews() {
+		SearchResultHeaderView.appearance().backgroundColor = backgroundColor
+		RTDView.appearance().backgroundColor = backgroundColor
 	}
 	private func tintGlobalViews() {
 		UIButton.appearance().tintColor = controlColor

@@ -81,7 +81,6 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="xwa-22-ajO" secondAttribute="trailingMargin" constant="8" id="1gm-ks-ZF6"/>
                 <constraint firstItem="G6j-lR-1IK" firstAttribute="leading" secondItem="loP-g8-giL" secondAttribute="trailing" priority="750" constant="8" id="DIE-2Z-2kD"/>
