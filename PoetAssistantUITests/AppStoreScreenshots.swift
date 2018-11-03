@@ -42,11 +42,11 @@ class AppStoreScreenshots: XCTestCase {
 		buttonHideKeyboard.tap()
 		UITestUtils.search(test: self, app:app, query: "chance")
 		UITestUtils.moveToRhymer(app: app)
-		UITestUtils.starWord(test:self, app:app, cellIdentifier: "RhymerCell", word: "askance")
+		UITestUtils.starWord(test:self, app:app, word: "askance")
 		attachScreenshot(name: "rhymer")
 		
 		UITestUtils.moveToThesaurus(app: app)
-		UITestUtils.starWord(test:self, app:app, cellIdentifier: "ThesaurusCell", word: "possibleness")
+		UITestUtils.starWord(test:self, app:app, word: "possibleness")
 		attachScreenshot(name: "thesaurus")
 		
 		UITestUtils.moveToDictionary(app: app)

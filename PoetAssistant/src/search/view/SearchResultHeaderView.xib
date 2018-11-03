@@ -21,8 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhE-kg-mTE" userLabel="Word">
-                    <rect key="frame" x="0.0" y="331.5" width="48" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhE-kg-mTE" userLabel="Word">
+                    <rect key="frame" x="0.0" y="331.5" width="46.5" height="24"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeaderWord"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -31,7 +32,8 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p12-KG-NZH" userLabel="ButtonFavorite">
-                    <rect key="frame" x="56" y="331.5" width="44" height="24"/>
+                    <rect key="frame" x="54.5" y="331.5" width="44" height="24"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeaderButtonFavorite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="hVs-UG-dsy"/>
                     </constraints>
@@ -42,6 +44,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9L-tz-Pss" userLabel="ButtonLookup">
                     <rect key="frame" x="271" y="331.5" width="44" height="24"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="fo7-Wd-qLM"/>
                     </constraints>
@@ -52,6 +55,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nO6-QE-HiI" userLabel="ButtonPlay">
                     <rect key="frame" x="331" y="331.5" width="44" height="24"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="Fb3-RG-RwI"/>
                     </constraints>

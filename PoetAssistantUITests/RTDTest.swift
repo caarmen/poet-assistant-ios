@@ -114,12 +114,12 @@ class RTDTest: XCTestCase {
 	}
 	
 	private func openThesaurusFromRhymerCleanLayout(rhyme: String, efficientLayoutEnabled: Bool) {
-		let rhymerRow = app.cells.matching(identifier: "RhymerCell").containing(NSPredicate(format: "identifier = 'RhymerCellWordLabel' and label=%@", rhyme)).firstMatch
+		let rhymerRow = app.cells.containing(NSPredicate(format: "label=%@", rhyme)).firstMatch
 		if (!efficientLayoutEnabled) {
 			rhymerRow.tap()
 			UITestUtils.waitForRTDToShow(test:self, row: rhymerRow)
 		}
-		rhymerRow.buttons.matching(identifier: "RhymerCellButtonThesaurus").firstMatch.tap()
+		rhymerRow.buttons.matching(identifier: "ButtonThesaurus").firstMatch.tap()
 		UITestUtils.wait(test: self, timeout: 2)
 	}
 	private func checkSynonyms(query: String, expectedFirstSynonym: String, expectedSecondSynonym:String) {
@@ -129,16 +129,14 @@ class RTDTest: XCTestCase {
 		XCTAssertTrue(cell1.exists)
 		let cell2 = table.cells.element(boundBy: 2)
 		XCTAssertTrue(cell2.exists)
-		let actualFirstSynonym = cell1.staticTexts.matching(identifier: "ThesaurusCellWordLabel").firstMatch.label
-		let actualSecondSynonym = cell2.staticTexts.matching(identifier: "ThesaurusCellWordLabel").firstMatch.label
-		checkSynonym(query:query, expectedSynonym: expectedFirstSynonym, actualSynonym: actualFirstSynonym)
-		checkSynonym(query:query, expectedSynonym: expectedSecondSynonym, actualSynonym: actualSecondSynonym)
-	}
-	private func checkSynonym(query: String, expectedSynonym: String, actualSynonym: String) {
-		XCTAssertEqual(expectedSynonym, actualSynonym, "Expected synonum for \(query) to be \(expectedSynonym) but found \(actualSynonym)")
+		// For some reason, on iPad, it takes a moment for the synonyms to become hittable.
+		expectation(for: NSPredicate(format: "isHittable == true"), evaluatedWith: cell1.staticTexts.firstMatch, handler: nil)
+		waitForExpectations(timeout: 2, handler: nil)
+		XCTAssert(cell1.staticTexts[expectedFirstSynonym].isHittable)
+		XCTAssert(cell2.staticTexts[expectedSecondSynonym].isHittable)
 	}
 	private func openDictionaryFromThesaurusCleanLayout(synonym: String, efficientLayoutEnabled: Bool) {
-		let thesaurusRow = app.cells.matching(identifier: "ThesaurusCell").containing(NSPredicate(format: "identifier = 'ThesaurusCellWordLabel' and label=%@", synonym)).firstMatch
+		let thesaurusRow = app.cells.containing(NSPredicate(format: "label=%@", synonym)).firstMatch
 		if (!efficientLayoutEnabled) {
 			thesaurusRow.tap()
 			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
@@ -147,7 +145,7 @@ class RTDTest: XCTestCase {
 			thesaurusRow.tap()
 			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
 		}
-		thesaurusRow.buttons.matching(identifier: "ThesaurusCellButtonDictionary").firstMatch.tap()
+		thesaurusRow.buttons.matching(identifier: "ButtonDictionary").firstMatch.tap()
 		UITestUtils.wait(test: self, timeout: 2)
 	}
 	private func checkDefinition(query: String, expectedFirstDefinition: String) {
@@ -159,7 +157,7 @@ class RTDTest: XCTestCase {
 	private func waitForRTDToHide(row: XCUIElement) {
 		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
 		UITestUtils.waitFor(test:self, timeout: 1.5) {
-			return !dictionaryButton.exists
+			return !(dictionaryButton.exists && dictionaryButton.isHittable)
 		}
 	}
 }

@@ -86,11 +86,11 @@ class SearchSuggestionsTest: XCTestCase {
 		UITestUtils.openDictionariesTab(app: app)
 		selectRandomWord()
 		// The word should be present in at least one of the lexicons
-		let definitionsFound = app.staticTexts.matching(identifier: "DictionaryQueryLabel").firstMatch.exists
+		let definitionsFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
 		UITestUtils.moveToThesaurus(app: app)
-		let synonymsFound = app.staticTexts.matching(identifier: "ThesaurusQueryLabel").firstMatch.exists
+		let synonymsFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
 		UITestUtils.moveToRhymer(app: app)
-		let rhymesFound = app.staticTexts.matching(identifier: "RhymerQueryLabel").firstMatch.exists
+		let rhymesFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
 
 		XCTAssertTrue(rhymesFound || synonymsFound || definitionsFound)
 		

@@ -136,6 +136,7 @@ class ComposerTest: XCTestCase {
 	}
 
 	func testMenu() {
+		let headerWord = app.staticTexts.matching(identifier: "HeaderWord")
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		let poemText = "Here is a poem"
 		textViewPoem.tap()
@@ -144,17 +145,17 @@ class ComposerTest: XCTestCase {
 		beginningPoint.doubleTap()
 		// Lookup "Here" in the rhymer (no localized string for Rhymer, from tests :( )
 		openMenuItem(label:"Rhymer")
-		XCTAssertEqual("here", UITestUtils.getRhymerQueryLabel(app:app).label)
+		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
 		UITestUtils.openComposerTab(app:app)
 		beginningPoint.tap()
 		openMenuItem(label:"Thesaurus")
-		XCTAssertEqual("here", UITestUtils.getThesaurusQueryLabel(app:app).label)
+		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
 		UITestUtils.openComposerTab(app:app)
 		beginningPoint.tap()
 		openMenuItem(label:"Dictionary")
-		XCTAssertEqual("here", UITestUtils.getDictionaryQueryLabel(app:app).label)
+		XCTAssertEqual("here", headerWord.firstMatch.label)
 	}
 	
 	private func openMenuItem(label: String) {
