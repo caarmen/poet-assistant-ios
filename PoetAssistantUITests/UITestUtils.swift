@@ -108,20 +108,6 @@ class UITestUtils {
 		}
 	}
 	
-	class func getRhymerQueryLabel(app: XCUIApplication) -> XCUIElement {
-		return getResultHeaderQueryLabel(header:getRhymerHeader(app:app), queryLabelIdentifier: "RhymerQueryLabel")
-	}
-	class func getThesaurusQueryLabel(app: XCUIApplication)-> XCUIElement {
-		return getResultHeaderQueryLabel(header:getThesaurusHeader(app:app), queryLabelIdentifier: "ThesaurusQueryLabel")
-	}
-	class func getDictionaryQueryLabel(app: XCUIApplication)-> XCUIElement {
-		return getResultHeaderQueryLabel(header:getDictionaryHeader(app:app), queryLabelIdentifier: "DictionaryQueryLabel")
-	}
-	private class func getResultHeaderQueryLabel(header: XCUIElement, queryLabelIdentifier: String) -> XCUIElement {
-		return header
-			.staticTexts.matching(identifier: queryLabelIdentifier)
-			.firstMatch
-	}
 	class func getRhymerHeader(app: XCUIApplication) -> XCUIElement {
 		return getHeader(app:app, headerIdentifier: "RhymerResultHeader")
 	}
@@ -140,15 +126,15 @@ class UITestUtils {
 			return dictionaryButton.isHittable
 		}
 	}
-	class func starWord(test: XCTestCase, app: XCUIApplication, cellIdentifier: String, word: String) {
-		let row = app.cells.matching(identifier: cellIdentifier)
+	class func starWord(test: XCTestCase, app: XCUIApplication, word: String) {
+		let row = app.cells
 			.containing(NSPredicate(format: "label=%@", word))
 			.firstMatch
 		XCTAssert(row.isHittable)
 		wait(test:test, timeout: 1) // Wait for RTD to be visible :(
 		row.tap()
 		waitForRTDToShow(test: test, row: row)
-		app.buttons.matching(identifier: "WordFavorite").firstMatch.tap()
+		row.buttons.matching(identifier: "ButtonFavorite").firstMatch.tap()
 		wait(test:test, timeout: 1) // Wait for the screen to reload :(
 	}
 }

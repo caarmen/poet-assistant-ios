@@ -43,7 +43,7 @@ class ThesaurusViewController: SearchResultsController {
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
 			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word, favorites: favorites)
 			DispatchQueue.main.async { [weak self] in
-				self?.labelQuery.text = self?.thesaurusQueryResult?.queryText
+				self?.viewResultHeader.labelWord.text = self?.thesaurusQueryResult?.queryText
 				completion()
 			}
 		}
