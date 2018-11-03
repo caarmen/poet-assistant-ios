@@ -72,7 +72,9 @@ class UITestUtils {
 	}
 	class func search(test: XCTestCase, app:XCUIApplication, query: String) {
 		openDictionariesTab(app: app)
-		app.searchFields.firstMatch.typeText("\(query)\n")
+		let searchField = app.searchFields.firstMatch
+		searchField.tap()
+		searchField.typeText("\(query)\n")
 		wait(test: test, timeout: 2)
 	}
 	

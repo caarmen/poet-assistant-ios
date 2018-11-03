@@ -51,6 +51,19 @@ class AppStoreScreenshots: XCTestCase {
 		
 		UITestUtils.moveToDictionary(app: app)
 		attachScreenshot(name: "dictionary")
+		
+		starWords(words: "acquiesce", "benight", "deferential", "fractious", "implacable", "obfuscation", "peon")
+		UITestUtils.moveToFavorites(app: app)
+		attachScreenshot(name: "favorites")
+	}
+	
+	private func starWords(words: String...) {
+		UITestUtils.moveToDictionary(app:app)
+		let headerFavoriteButton = app.buttons.matching(identifier: "HeaderButtonFavorite")
+		for word in words {
+			UITestUtils.search(test:self, app:app, query:word)
+			headerFavoriteButton.firstMatch.tap()
+		}
 	}
 	private func attachScreenshot(name: String) {
 		let screenshot = XCUIScreen.main.screenshot()
