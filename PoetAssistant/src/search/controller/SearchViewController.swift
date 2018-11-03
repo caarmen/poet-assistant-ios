@@ -124,12 +124,12 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		case .dictionary: return 2
 		}
 	}
-	private func getSelectedLexicon() -> Lexicon {
+	private func getSelectedLexicon() -> Lexicon? {
 		switch(segmentedControl.selectedSegmentIndex){
 		case 0: return .rhymer
 		case 1: return .thesaurus
 		case 2: return .dictionary
-		default: return .rhymer
+		default: return nil
 		}
 	}
 	private func showLexicon(lexicon: Lexicon) {
@@ -142,7 +142,9 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	private func showSelectedSegment () {
 		let selectedContainer = getContainerForSegmentedControlIndex(index: segmentedControl.selectedSegmentIndex)
 		showContainer(container: selectedContainer)
-		Settings.setLexicon(lexicon: getSelectedLexicon())
+		if let selectedLexicon = getSelectedLexicon() {
+			Settings.setLexicon(lexicon: selectedLexicon)
+		}
 	}
 	
 	private func showContainer(container: UIView?) {
@@ -218,6 +220,10 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			dictionaryController?.query = selectionLowerCase
 			if (persistSuggestion) {
 				Suggestion.addSuggestion(word: selectionLowerCase)
+			}
+			let selectedContainer = getContainerForSegmentedControlIndex(index: segmentedControl.selectedSegmentIndex)
+			if selectedContainer == favoritesContainer {
+				showLexicon(lexicon: Settings.getLexicon())
 			}
 		}
 		searchSuggestionsController?.clear()

@@ -58,6 +58,9 @@ class UITestUtils {
 	class func moveToDictionary(app:XCUIApplication) {
 		moveToLexicon(app:app, position:2)
 	}
+	class func moveToFavorites(app:XCUIApplication) {
+		moveToLexicon(app:app, position:3)
+	}
 	private class func moveToLexicon(app:XCUIApplication, position: Int) {
 		app.segmentedControls.buttons.element(boundBy: position).tap()
 	}
@@ -130,5 +133,22 @@ class UITestUtils {
 	}
 	private class func getHeader(app: XCUIApplication, headerIdentifier: String) -> XCUIElement {
 		return app.otherElements.matching(identifier: headerIdentifier).firstMatch
+	}
+	class func waitForRTDToShow(test: XCTestCase, row: XCUIElement) {
+		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
+		waitFor(test:test, timeout: 1.5) {
+			return dictionaryButton.isHittable
+		}
+	}
+	class func starWord(test: XCTestCase, app: XCUIApplication, cellIdentifier: String, word: String) {
+		let row = app.cells.matching(identifier: cellIdentifier)
+			.containing(NSPredicate(format: "label=%@", word))
+			.firstMatch
+		XCTAssert(row.isHittable)
+		wait(test:test, timeout: 1) // Wait for RTD to be visible :(
+		row.tap()
+		waitForRTDToShow(test: test, row: row)
+		app.buttons.matching(identifier: "WordFavorite").firstMatch.tap()
+		wait(test:test, timeout: 1) // Wait for the screen to reload :(
 	}
 }

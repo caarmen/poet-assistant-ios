@@ -73,7 +73,9 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	@objc
 	func userDataChanged(notification: Notification) {
 		if CoreDataNotificationHelper.isNotificationForFavorites(notification: notification) {
-			updateUI()
+			DispatchQueue.main.async{[weak self] in
+				self?.updateUI()
+			}
 		}
 	}
 	private func updateUI() {

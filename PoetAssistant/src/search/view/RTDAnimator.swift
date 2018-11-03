@@ -28,30 +28,46 @@ class RTDAnimator {
 	Show the RTD icons of the selected cell, and hide the RTD icons of all the other visible cells.
 	*/
 	class func setRTDVisible(selectedCell: RTDTableViewCell, visibleCells:[UITableViewCell]) {
-		visibleCells.filter { $0 is RTDTableViewCell && $0 != selectedCell}.forEach { cell in
-			(cell as! RTDTableViewCell).setRTDVisible(visible: false, animate: true)
+		visibleCells.filter { $0 is RTDTableViewCell
+			&& $0 != selectedCell
+			&& !($0 as! RTDTableViewCell).buttonRhymer.isHidden}.forEach { cell in
+				(cell as! RTDTableViewCell).setRTDVisible(visible: false, animate: true)
 		}
 		selectedCell.toggleRTDVisibility()
 	}
 	
-	class func setRTDVisible(rtdLeadingConstraint: NSLayoutConstraint, rtdViews: [UIView], visible: Bool, animate: Bool) {
+	class func setRTDVisible(rtdLeadingConstraint: NSLayoutConstraint, buttonFavorite: UIButton, rtdViews: [UIView], visible: Bool, animate: Bool) {
 		if (animate) {
-			UIView.animate(withDuration: ANIMATION_DURATION, animations: {
-				rtdLeadingConstraint.priority = visible ? UILayoutPriority(rawValue: 999) : UILayoutPriority.defaultLow
-			}, completion: { animationFinished in
-				if (visible) {
-					rtdViews.forEach { showView(view: $0)}
-				} else {
-					rtdViews.forEach { hideView(view: $0)}
-				}
-			})
+			if visible {
+				animateShowRTD(rtdLeadingConstraint: rtdLeadingConstraint, buttonFavorite: buttonFavorite, rtdViews: rtdViews)
+			} else {
+				animateHideRTD(rtdLeadingConstraint: rtdLeadingConstraint, buttonFavorite: buttonFavorite, rtdViews: rtdViews)
+			}
 		} else {
+			buttonFavorite.isHidden = !visible && !buttonFavorite.isSelected
 			rtdLeadingConstraint.priority = visible ? UILayoutPriority(rawValue: 999) : UILayoutPriority.defaultLow
 			rtdViews.forEach {$0.isHidden = !visible}
 		}
 	}
 	
-	private class func hideView(view: UIView) {
+	private class func animateHideRTD(rtdLeadingConstraint: NSLayoutConstraint, buttonFavorite: UIButton, rtdViews: [UIView]) {
+		rtdViews.forEach { hideView(view: $0)}
+		hideView(view: buttonFavorite) {
+			rtdLeadingConstraint.priority = UILayoutPriority.defaultLow
+			if buttonFavorite.isSelected {
+				buttonFavorite.isHidden = false
+			}
+		}
+	}
+	
+	private class func animateShowRTD(rtdLeadingConstraint: NSLayoutConstraint, buttonFavorite: UIButton, rtdViews: [UIView]) {
+		rtdLeadingConstraint.priority = UILayoutPriority(rawValue: 999)
+		rtdViews.forEach { showView(view: $0)}
+		buttonFavorite.isHidden = true
+		showView(view: buttonFavorite)
+	}
+	
+	private class func hideView(view: UIView, completion:(() -> Void)? = nil) {
 		if (!view.isHidden) {
 			let origFrame = view.frame
 			UIView.animate(withDuration: ANIMATION_DURATION, animations: {
@@ -62,6 +78,7 @@ class RTDAnimator {
 				view.frame = origFrame
 				view.isHidden = true
 				view.alpha = 1.0
+				completion?()
 			})
 		}
 	}

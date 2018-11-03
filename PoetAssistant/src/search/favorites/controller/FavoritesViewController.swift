@@ -113,11 +113,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell") as? RTDTableViewCell {
 			let favorite = favoritesFetchedResultsController.object(at: indexPath)
-			cell.labelWord?.text = favorite.word
-			cell.rtdDelegate = rtdDelegate
-			cell.favoriteDelegate = self
-			cell.setRTDVisible(visible: efficientLayoutEnabled, animate: false)
-			cell.buttonFavorite.isSelected = true
+			cell.bind(word: favorite.word!,
+					  isFavorite: true,
+					  showRTD: efficientLayoutEnabled,
+					  rtdDelegate: rtdDelegate,
+					  favoriteDelegate: self)
 			return cell
 		}
 		return UITableViewCell()

@@ -64,7 +64,7 @@ class RTDTableViewCell: UITableViewCell {
 		setRTDVisible(visible: buttonRhymer.isHidden, animate: true)
 	}
 	func setRTDVisible(visible: Bool, animate: Bool) {
-		RTDAnimator.setRTDVisible(rtdLeadingConstraint:constraintRtdLeading, rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
+		RTDAnimator.setRTDVisible(rtdLeadingConstraint:constraintRtdLeading, buttonFavorite: buttonFavorite, rtdViews: [buttonRhymer, buttonThesaurus, buttonDictionary],
 								  visible:visible, animate:animate)
 	}
 
