@@ -33,14 +33,15 @@ class WordNotFoundTest: XCTestCase {
 	func testSimilarWordFound() {
 		UITestUtils.search(test: self, app: app, query: "animations")
 
+		let headerQueryWord = app.staticTexts.matching(identifier: "HeaderWord")
 		UITestUtils.moveToRhymer(app:app)
-		assertSearchHasResults(minResultCount: 10, queryLabelElement: UITestUtils.getRhymerQueryLabel(app:app), emptyTextElement: getRhymerEmptyText(), expectedQueryLabelValue: "animations")
+		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getRhymerEmptyText(), expectedQueryLabelValue: "animations")
 		
 		UITestUtils.moveToThesaurus(app:app)
-		assertSearchHasResults(minResultCount: 10, queryLabelElement: UITestUtils.getThesaurusQueryLabel(app:app), emptyTextElement: getThesaurusEmptyText(), expectedQueryLabelValue: "animation")
+		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getThesaurusEmptyText(), expectedQueryLabelValue: "animation")
 		
 		UITestUtils.moveToDictionary(app:app)
-		assertSearchHasResults(minResultCount: 6, queryLabelElement: UITestUtils.getDictionaryQueryLabel(app:app), emptyTextElement: getDictionaryEmptyText(), expectedQueryLabelValue: "animation")
+		assertSearchHasResults(minResultCount: 6, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getDictionaryEmptyText(), expectedQueryLabelValue: "animation")
 	}
 	
 	func testNoSimilarWordFound() {

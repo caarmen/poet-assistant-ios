@@ -94,10 +94,6 @@ class RTDView: UIView {
 		contentView?.prepareForInterfaceBuilder()
 	}
 	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		xibSetup()
-	}
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		xibSetup()

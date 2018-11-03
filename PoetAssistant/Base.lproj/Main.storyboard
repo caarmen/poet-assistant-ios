@@ -36,10 +36,12 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-lI-wd4" customClass="RTDView" customModule="PoetAssistant" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="11" width="374" height="22"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RTD">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="RhymerCell"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="WT4-lI-wd4" secondAttribute="trailing" id="9in-3P-mHT"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="WT4-lI-wd4" secondAttribute="bottom" id="QDd-G7-cPL"/>
@@ -62,6 +64,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY6-v1-aRS" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RhymerResultHeader"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Eir-zf-Src"/>
                                 </constraints>
@@ -112,6 +115,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-CS-9Sa" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ThesaurusResultHeader"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="hfU-wy-Fc4"/>
                                 </constraints>
@@ -231,6 +235,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-Aa-uos" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="DictionaryResultHeader"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="mKs-ms-iBP"/>
                                 </constraints>
