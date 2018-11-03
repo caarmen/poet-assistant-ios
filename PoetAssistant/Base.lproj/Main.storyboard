@@ -19,195 +19,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVH-e9-q2f">
-                                <rect key="frame" x="0.0" y="60" width="414" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="gXh-Jt-jlj">
                                     <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RhymerWordCell" id="jwo-BJ-c8G" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RhymerWordCell" id="x5J-4Z-E99" userLabel="RhymerWordCell" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwo-BJ-c8G" id="1lf-HL-7DB">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x5J-4Z-E99" id="ek3-bH-SPb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE9-Sb-0by" userLabel="Button Favorite">
-                                                    <rect key="frame" x="202" y="0.0" width="32" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="HTM-AD-faG"/>
-                                                        <constraint firstAttribute="width" constant="32" id="KAf-4Z-2Cv"/>
-                                                    </constraints>
-                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                    <state key="normal" image="ic_star_outline"/>
-                                                    <connections>
-                                                        <action selector="toggleFavorite:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="mWt-qP-rn4"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Qu-q7L">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="174" height="21"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellWordLabel"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDN-Gd-8qR">
-                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonDictionary"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="kvL-4f-fuY"/>
-                                                        <constraint firstAttribute="width" constant="44" id="p7G-qu-IuO"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_dictionary"/>
-                                                    <connections>
-                                                        <action selector="searchDictionary:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="gsk-XQ-DYC"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-5e-YYn">
-                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonThesaurus"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="V9H-br-mze"/>
-                                                        <constraint firstAttribute="width" constant="44" id="utw-K2-emc"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_thesaurus"/>
-                                                    <connections>
-                                                        <action selector="searchThesaurus:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="1iM-qX-7fw"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-D5-qoq">
-                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RhymerCellButtonRhymer"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="2xA-JD-WOe"/>
-                                                        <constraint firstAttribute="height" constant="44" id="75J-Mg-6nI"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_rhymer"/>
-                                                    <connections>
-                                                        <action selector="searchRhymer:" destination="jwo-BJ-c8G" eventType="touchUpInside" id="KOA-qw-UFo"/>
-                                                    </connections>
-                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-lI-wd4" customClass="RTDView" customModule="PoetAssistant" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="MDN-Gd-8qR" secondAttribute="trailing" id="05n-oK-Mku"/>
-                                                <constraint firstItem="Ksn-5e-YYn" firstAttribute="leading" secondItem="LzB-D5-qoq" secondAttribute="trailing" constant="10" id="1kQ-Fo-REQ"/>
-                                                <constraint firstItem="MDN-Gd-8qR" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="3CC-lH-1kP"/>
-                                                <constraint firstItem="LzB-D5-qoq" firstAttribute="leading" secondItem="HE9-Sb-0by" secondAttribute="trailing" priority="750" constant="8" id="939-00-UB2"/>
-                                                <constraint firstItem="G1t-Qu-q7L" firstAttribute="leading" secondItem="1lf-HL-7DB" secondAttribute="leadingMargin" id="ELa-IW-CRC"/>
-                                                <constraint firstItem="G1t-Qu-q7L" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="QGe-3V-Bny"/>
-                                                <constraint firstItem="MDN-Gd-8qR" firstAttribute="leading" secondItem="Ksn-5e-YYn" secondAttribute="trailing" constant="10" id="jdy-sL-cMZ"/>
-                                                <constraint firstItem="LzB-D5-qoq" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="qg9-b5-z7Y"/>
-                                                <constraint firstItem="HE9-Sb-0by" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vO7-dL-fuH"/>
-                                                <constraint firstItem="Ksn-5e-YYn" firstAttribute="centerY" secondItem="1lf-HL-7DB" secondAttribute="centerY" id="vUM-dk-RQJ"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="RhymerCell"/>
                                         <constraints>
-                                            <constraint firstItem="HE9-Sb-0by" firstAttribute="leading" secondItem="G1t-Qu-q7L" secondAttribute="trailing" constant="8" id="GGI-cf-dS7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="WT4-lI-wd4" secondAttribute="trailing" id="9in-3P-mHT"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="WT4-lI-wd4" secondAttribute="bottom" id="QDd-G7-cPL"/>
+                                            <constraint firstItem="WT4-lI-wd4" firstAttribute="top" secondItem="x5J-4Z-E99" secondAttribute="topMargin" id="ghp-eC-h21"/>
+                                            <constraint firstItem="WT4-lI-wd4" firstAttribute="leading" secondItem="x5J-4Z-E99" secondAttribute="leadingMargin" id="kHZ-W5-tde"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="buttonDictionary" destination="MDN-Gd-8qR" id="BaU-RL-tdd"/>
-                                            <outlet property="buttonFavorite" destination="HE9-Sb-0by" id="Sqq-eD-SxA"/>
-                                            <outlet property="buttonRhymer" destination="LzB-D5-qoq" id="HPK-xf-iC5"/>
-                                            <outlet property="buttonThesaurus" destination="Ksn-5e-YYn" id="Tow-gp-Vj6"/>
-                                            <outlet property="constraintRtdLeading" destination="939-00-UB2" id="4P0-CU-WdQ"/>
-                                            <outlet property="labelWord" destination="G1t-Qu-q7L" id="5SH-hA-Bdn"/>
+                                            <outlet property="viewRTD" destination="WT4-lI-wd4" id="Fh1-QF-fMB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-K0-6Sy" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="319.66666666666669" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="321.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="RhymerEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-dM-s2U">
-                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-Uc-V2d">
-                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="RhymerQueryLabel"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bold" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-Nq-Sxh" userLabel="Play">
-                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
-                                        <state key="normal" image="ic_play_outline"/>
-                                        <connections>
-                                            <action selector="didClickPlayQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H28-Kc-9ap"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-2t-DNg" userLabel="Lookup">
-                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
-                                        <state key="normal" image="ic_web_search"/>
-                                        <connections>
-                                            <action selector="didClickLookupQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nQN-rx-YB3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-4h-zRb" userLabel="Favorite">
-                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="RhymerQueryFavorite"/>
-                                        <state key="normal" image="ic_star_outline"/>
-                                        <connections>
-                                            <action selector="didClickFavoriteQueryWord:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gDH-GO-X7F"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <accessibility key="accessibilityConfiguration" identifier="RhymerResultHeader"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY6-v1-aRS" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="374" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="7oJ-Nq-Sxh" firstAttribute="leading" secondItem="c4C-2t-DNg" secondAttribute="trailing" constant="16" id="EsA-5O-jkW"/>
-                                    <constraint firstItem="wuy-4h-zRb" firstAttribute="leading" secondItem="ts6-Uc-V2d" secondAttribute="trailing" constant="8" id="J7L-9C-ZO1"/>
-                                    <constraint firstItem="c4C-2t-DNg" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="Nv3-lg-98S"/>
-                                    <constraint firstAttribute="trailing" secondItem="7oJ-Nq-Sxh" secondAttribute="trailing" constant="16" id="c9b-70-SCk"/>
-                                    <constraint firstItem="7oJ-Nq-Sxh" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="ddL-nx-bwC"/>
-                                    <constraint firstItem="wuy-4h-zRb" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="kXF-4b-JN5"/>
-                                    <constraint firstItem="c4C-2t-DNg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wuy-4h-zRb" secondAttribute="trailing" constant="16" id="luK-9r-tWD"/>
-                                    <constraint firstItem="ts6-Uc-V2d" firstAttribute="centerY" secondItem="hbl-dM-s2U" secondAttribute="centerY" id="tze-AC-HRh"/>
-                                    <constraint firstItem="ts6-Uc-V2d" firstAttribute="leading" secondItem="hbl-dM-s2U" secondAttribute="leadingMargin" constant="7" id="vZS-cA-hUp"/>
-                                    <constraint firstAttribute="bottom" secondItem="ts6-Uc-V2d" secondAttribute="bottom" constant="8" id="voe-1V-HLt"/>
+                                    <constraint firstAttribute="height" constant="44" id="Eir-zf-Src"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hbl-dM-s2U" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="3Yt-LU-Cc8"/>
                             <constraint firstItem="BrB-K0-6Sy" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="7hd-YM-Gc3"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XVH-e9-q2f" secondAttribute="trailing" id="LCa-tS-ITI">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="XVH-e9-q2f" secondAttribute="bottom" id="MTU-Lv-WN6"/>
+                            <constraint firstItem="TY6-v1-aRS" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="OMS-a3-QRQ"/>
+                            <constraint firstItem="TY6-v1-aRS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="PYE-fb-mBl">
+                                <variation key="widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="BrB-K0-6Sy" firstAttribute="centerY" secondItem="XVH-e9-q2f" secondAttribute="centerY" id="RyJ-df-Et8"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BrB-K0-6Sy" secondAttribute="trailing" id="Wfs-sw-f4I"/>
-                            <constraint firstItem="hbl-dM-s2U" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Zcb-qQ-qTZ">
-                                <variation key="widthClass=regular" constant="64"/>
-                            </constraint>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="hbl-dM-s2U" secondAttribute="trailing" id="alu-Br-udw">
-                                <variation key="widthClass=regular" constant="64"/>
-                            </constraint>
+                            <constraint firstItem="XVH-e9-q2f" firstAttribute="top" secondItem="TY6-v1-aRS" secondAttribute="bottom" id="XdL-eY-d7R"/>
                             <constraint firstItem="XVH-e9-q2f" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="is8-7F-eyr">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
                             <constraint firstItem="BrB-K0-6Sy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="nHi-jU-B6Q"/>
-                            <constraint firstItem="hbl-dM-s2U" firstAttribute="bottom" secondItem="XVH-e9-q2f" secondAttribute="top" id="tWB-cx-zT1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TY6-v1-aRS" secondAttribute="trailing" id="weH-jw-T4F">
+                                <variation key="widthClass=regular" constant="60"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <connections>
-                        <outlet property="buttonFavorite" destination="wuy-4h-zRb" id="7dY-mn-1gs"/>
                         <outlet property="emptyText" destination="BrB-K0-6Sy" id="Vmy-rz-Ucu"/>
-                        <outlet property="labelQuery" destination="ts6-Uc-V2d" id="iHr-Ge-S12"/>
                         <outlet property="tableView" destination="XVH-e9-q2f" id="3ao-tP-O6n"/>
-                        <outlet property="viewResultHeader" destination="hbl-dM-s2U" id="SAX-fj-X3E"/>
+                        <outlet property="viewResultHeader" destination="TY6-v1-aRS" id="tF5-Cj-e2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -222,8 +109,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-CS-9Sa" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="374" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hfU-wy-Fc4"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-59-phd">
-                                <rect key="frame" x="0.0" y="60" width="414" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="8qR-Wn-Yvh">
                                     <rect key="frame" x="0.0" y="116" width="414" height="44"/>
@@ -265,170 +159,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-ZW-YWk" userLabel="Button Favorite">
-                                                    <rect key="frame" x="202" y="0.0" width="32" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="RKd-7q-K4L"/>
-                                                        <constraint firstAttribute="width" constant="32" id="WpA-jW-PNT"/>
-                                                    </constraints>
-                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                    <state key="normal" image="ic_star_outline"/>
-                                                    <connections>
-                                                        <action selector="toggleFavorite:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="cgz-2d-Ku9"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e5-yf-lk0">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="174" height="21"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellWordLabel"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-hD-7jw">
-                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="ThesaurusCellButtonDictionary"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="alQ-Ea-jny"/>
-                                                        <constraint firstAttribute="width" constant="44" id="lBD-Ua-8Dp"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_dictionary"/>
-                                                    <connections>
-                                                        <action selector="searchDictionary:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="XpV-eG-A4k"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyi-K6-LOR">
-                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="7FO-5a-q6C"/>
-                                                        <constraint firstAttribute="width" constant="44" id="pAv-iB-BFi"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_thesaurus"/>
-                                                    <connections>
-                                                        <action selector="searchThesaurus:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="IjX-Jb-ck1"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-C7-Hx2">
-                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="6lF-iC-c3i"/>
-                                                        <constraint firstAttribute="height" constant="44" id="t7z-F5-WJc"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_rhymer"/>
-                                                    <connections>
-                                                        <action selector="searchRhymer:" destination="kIV-Br-Ajk" eventType="touchUpInside" id="WR3-49-N85"/>
-                                                    </connections>
-                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIk-5a-Guk" customClass="RTDView" customModule="PoetAssistant" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6e5-yf-lk0" firstAttribute="leading" secondItem="UIG-Yq-92h" secondAttribute="leadingMargin" id="AFa-u3-Uuy"/>
-                                                <constraint firstItem="Fyi-K6-LOR" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="AIf-E8-ey0"/>
-                                                <constraint firstItem="Fyi-K6-LOR" firstAttribute="leading" secondItem="Kdd-C7-Hx2" secondAttribute="trailing" constant="10" id="Elo-i3-EwE"/>
-                                                <constraint firstItem="FrO-hD-7jw" firstAttribute="leading" secondItem="Fyi-K6-LOR" secondAttribute="trailing" constant="10" id="KU8-un-YkZ"/>
-                                                <constraint firstItem="6e5-yf-lk0" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="TVM-oo-NfT"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FrO-hD-7jw" secondAttribute="trailing" id="crK-Rg-KDy"/>
-                                                <constraint firstItem="TA1-ZW-YWk" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="hDq-65-7Dj"/>
-                                                <constraint firstItem="FrO-hD-7jw" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="izc-bw-yag"/>
-                                                <constraint firstItem="Kdd-C7-Hx2" firstAttribute="leading" secondItem="TA1-ZW-YWk" secondAttribute="trailing" priority="750" constant="8" id="mTX-eE-5he"/>
-                                                <constraint firstItem="Kdd-C7-Hx2" firstAttribute="centerY" secondItem="UIG-Yq-92h" secondAttribute="centerY" id="x4K-7i-vJi"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ThesaurusCell"/>
                                         <constraints>
-                                            <constraint firstItem="TA1-ZW-YWk" firstAttribute="leading" secondItem="6e5-yf-lk0" secondAttribute="trailing" constant="8" id="Mry-dk-ZcS"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="vIk-5a-Guk" secondAttribute="bottom" id="9gx-rT-mRI"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="vIk-5a-Guk" secondAttribute="trailing" id="JF3-xN-66I"/>
+                                            <constraint firstItem="vIk-5a-Guk" firstAttribute="top" secondItem="kIV-Br-Ajk" secondAttribute="topMargin" id="S65-sX-KcY"/>
+                                            <constraint firstItem="vIk-5a-Guk" firstAttribute="leading" secondItem="kIV-Br-Ajk" secondAttribute="leadingMargin" id="fLU-cH-iIK"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="buttonDictionary" destination="FrO-hD-7jw" id="Swt-WI-O5J"/>
-                                            <outlet property="buttonFavorite" destination="TA1-ZW-YWk" id="pbg-XZ-9Lv"/>
-                                            <outlet property="buttonRhymer" destination="Kdd-C7-Hx2" id="8FN-pR-bF0"/>
-                                            <outlet property="buttonThesaurus" destination="Fyi-K6-LOR" id="rAO-Rs-yvi"/>
-                                            <outlet property="constraintRtdLeading" destination="mTX-eE-5he" id="8PD-Im-2s7"/>
-                                            <outlet property="labelWord" destination="6e5-yf-lk0" id="i9P-je-t3I"/>
+                                            <outlet property="viewRTD" destination="vIk-5a-Guk" id="JVR-Uv-xHt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-bd-mtY" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="319.66666666666669" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="321.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ThesaurusEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOP-LL-0nL">
-                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-QQ-zCG">
-                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="ThesaurusQueryLabel"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bold" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-02-cIt" userLabel="Play">
-                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
-                                        <state key="normal" image="ic_play_outline"/>
-                                        <connections>
-                                            <action selector="didClickPlayQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="U2J-e1-sgj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-gl-gR9" userLabel="Lookup">
-                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
-                                        <state key="normal" image="ic_web_search"/>
-                                        <connections>
-                                            <action selector="didClickLookupQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tea-IQ-Gvn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t49-04-i5A" userLabel="Favorite">
-                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="ThesaurusQueryFavorite"/>
-                                        <state key="normal" image="ic_star_outline"/>
-                                        <connections>
-                                            <action selector="didClickFavoriteQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x4l-9V-uxd"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <accessibility key="accessibilityConfiguration" identifier="ThesaurusResultHeader"/>
-                                <constraints>
-                                    <constraint firstItem="ohj-02-cIt" firstAttribute="leading" secondItem="HTL-gl-gR9" secondAttribute="trailing" constant="16" id="Ci6-KV-WSX"/>
-                                    <constraint firstItem="GZ1-Bg-eJH" firstAttribute="trailing" secondItem="ohj-02-cIt" secondAttribute="trailing" constant="16" id="Fsk-6b-lIO"/>
-                                    <constraint firstItem="iCD-QQ-zCG" firstAttribute="leading" secondItem="rOP-LL-0nL" secondAttribute="leadingMargin" constant="7" id="Jov-Th-Sd5"/>
-                                    <constraint firstItem="HTL-gl-gR9" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="Nm1-4u-MIL"/>
-                                    <constraint firstItem="HTL-gl-gR9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t49-04-i5A" secondAttribute="trailing" constant="8" id="PJJ-si-yLR">
-                                        <variation key="widthClass=regular" constant="72"/>
-                                    </constraint>
-                                    <constraint firstItem="t49-04-i5A" firstAttribute="leading" secondItem="iCD-QQ-zCG" secondAttribute="trailing" constant="8" id="gAZ-gI-YuG"/>
-                                    <constraint firstItem="iCD-QQ-zCG" firstAttribute="centerY" secondItem="rOP-LL-0nL" secondAttribute="centerY" id="icv-dc-49h"/>
-                                    <constraint firstItem="ohj-02-cIt" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="n3x-gi-kxh"/>
-                                    <constraint firstItem="t49-04-i5A" firstAttribute="centerY" secondItem="GZ1-Bg-eJH" secondAttribute="centerY" id="oxG-lO-dVQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="iCD-QQ-zCG" secondAttribute="bottom" constant="8" id="r0i-gF-VkH"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="GZ1-Bg-eJH"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="eCg-CS-9Sa" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="2i9-bJ-u8V">
+                                <variation key="widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="xAR-bd-mtY" firstAttribute="centerY" secondItem="VjO-59-phd" secondAttribute="centerY" id="Aib-NW-dlq"/>
+                            <constraint firstItem="VjO-59-phd" firstAttribute="top" secondItem="eCg-CS-9Sa" secondAttribute="bottom" id="BpW-e0-gQU"/>
                             <constraint firstItem="VjO-59-phd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="GUt-j0-aXe">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="VjO-59-phd" secondAttribute="bottom" id="JdU-fe-CcW"/>
-                            <constraint firstItem="rOP-LL-0nL" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="NFa-DZ-XD4">
-                                <variation key="widthClass=regular" constant="64"/>
-                            </constraint>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="VjO-59-phd" secondAttribute="trailing" id="OvL-mb-PRU">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
-                            <constraint firstItem="rOP-LL-0nL" firstAttribute="bottom" secondItem="VjO-59-phd" secondAttribute="top" id="V2B-o3-0tZ"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="rOP-LL-0nL" secondAttribute="trailing" id="cZw-25-N5c">
-                                <variation key="widthClass=regular" constant="64"/>
+                            <constraint firstItem="eCg-CS-9Sa" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="QDm-wA-Ig7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eCg-CS-9Sa" secondAttribute="trailing" id="azF-Yd-HCO">
+                                <variation key="widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="rOP-LL-0nL" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="fMe-he-Tux"/>
                             <constraint firstItem="xAR-bd-mtY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="leading" id="gwo-2M-EdY"/>
                             <constraint firstItem="xAR-bd-mtY" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="hq0-8d-lWI"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xAR-bd-mtY" secondAttribute="trailing" id="vYD-2Y-R0z"/>
@@ -436,11 +211,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonFavorite" destination="t49-04-i5A" id="8Il-zM-9kG"/>
                         <outlet property="emptyText" destination="xAR-bd-mtY" id="N0e-pO-IAb"/>
-                        <outlet property="labelQuery" destination="iCD-QQ-zCG" id="ZgD-9a-4zT"/>
                         <outlet property="tableView" destination="VjO-59-phd" id="7uv-Sk-Kzq"/>
-                        <outlet property="viewResultHeader" destination="rOP-LL-0nL" id="g1a-N0-LFp"/>
+                        <outlet property="viewResultHeader" destination="eCg-CS-9Sa" id="f5f-df-YqM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -455,8 +228,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-Aa-uos" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="374" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mKs-ms-iBP"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-7I-wBQ">
-                                <rect key="frame" x="0.0" y="60" width="414" height="470"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="466"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="23m-bc-UqX">
                                     <rect key="frame" x="0.0" y="72" width="414" height="44"/>
@@ -492,97 +272,42 @@
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="274.66666666666669" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="276.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="DictionaryEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bY-Av-vlk" userLabel="QueryView">
-                                <rect key="frame" x="0.0" y="20" width="414" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-HG-eyv">
-                                        <rect key="frame" x="15" y="8" width="48" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="DictionaryQueryLabel"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bold" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-j9-AAX" userLabel="Favorite">
-                                        <rect key="frame" x="71" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="DictionaryQueryFavorite"/>
-                                        <state key="normal" image="ic_star_outline"/>
-                                        <connections>
-                                            <action selector="didClickFavoriteQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="Lkv-SS-3hk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-SF-qgr" userLabel="Lookup">
-                                        <rect key="frame" x="334" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
-                                        <state key="normal" image="ic_web_search"/>
-                                        <connections>
-                                            <action selector="didClickLookupQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="R1k-c6-ALh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fga-JC-XAb" userLabel="Play">
-                                        <rect key="frame" x="374" y="8" width="24" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
-                                        <state key="normal" image="ic_play_outline"/>
-                                        <connections>
-                                            <action selector="didClickPlayQueryWord:" destination="KSz-7M-5ZO" eventType="touchUpInside" id="dgi-ap-qH8"/>
-                                            <action selector="didClickPlayQueryWord:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qTj-Bn-s95"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <accessibility key="accessibilityConfiguration" identifier="DictionaryResultHeader"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="jfn-HG-eyv" secondAttribute="bottom" constant="8" id="D0j-cJ-P5f"/>
-                                    <constraint firstItem="jfn-HG-eyv" firstAttribute="leading" secondItem="4bY-Av-vlk" secondAttribute="leadingMargin" constant="7" id="FXL-Ii-ueS"/>
-                                    <constraint firstItem="fga-JC-XAb" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="GTb-yl-yeb"/>
-                                    <constraint firstItem="jfn-HG-eyv" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="QDm-6f-dhB"/>
-                                    <constraint firstItem="ppW-j9-AAX" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="TgD-UB-YgI"/>
-                                    <constraint firstAttribute="trailing" secondItem="fga-JC-XAb" secondAttribute="trailing" constant="16" id="VFT-0N-9NB"/>
-                                    <constraint firstItem="ppW-j9-AAX" firstAttribute="leading" secondItem="jfn-HG-eyv" secondAttribute="trailing" constant="8" id="aaS-6X-pKy"/>
-                                    <constraint firstItem="fga-JC-XAb" firstAttribute="leading" secondItem="Qf4-SF-qgr" secondAttribute="trailing" constant="16" id="cUJ-uw-H8h"/>
-                                    <constraint firstItem="Qf4-SF-qgr" firstAttribute="centerY" secondItem="4bY-Av-vlk" secondAttribute="centerY" id="ioM-6z-eEl"/>
-                                    <constraint firstItem="Qf4-SF-qgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ppW-j9-AAX" secondAttribute="trailing" constant="16" id="oYW-43-Whs"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" secondItem="Xge-7I-wBQ" secondAttribute="trailing" id="3v1-hu-VUs">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
-                            <constraint firstItem="4bY-Av-vlk" firstAttribute="top" secondItem="Cvh-Tg-ldU" secondAttribute="top" id="ANg-CE-89Z"/>
-                            <constraint firstItem="Xge-7I-wBQ" firstAttribute="top" secondItem="4bY-Av-vlk" secondAttribute="bottom" id="HDx-Dw-0wd"/>
+                            <constraint firstItem="5DP-Aa-uos" firstAttribute="leading" secondItem="DqA-di-fh8" secondAttribute="leadingMargin" id="Z7S-9Z-Otk">
+                                <variation key="widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="trailing" constant="16" id="aNc-3f-P8D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5DP-Aa-uos" secondAttribute="trailing" id="bk7-TY-5wV">
+                                <variation key="widthClass=regular" constant="60"/>
+                            </constraint>
+                            <constraint firstItem="5DP-Aa-uos" firstAttribute="top" secondItem="Cvh-Tg-ldU" secondAttribute="top" id="dnz-pX-9aH"/>
                             <constraint firstItem="Ua2-db-8ud" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="g93-Cz-ROx"/>
                             <constraint firstItem="Ua2-db-8ud" firstAttribute="centerX" secondItem="Cvh-Tg-ldU" secondAttribute="centerX" id="h8b-ed-s90"/>
+                            <constraint firstItem="Xge-7I-wBQ" firstAttribute="top" secondItem="5DP-Aa-uos" secondAttribute="bottom" id="nZB-LC-3Cr"/>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="bottom" secondItem="Xge-7I-wBQ" secondAttribute="bottom" id="pc6-Vm-tmh"/>
                             <constraint firstItem="Xge-7I-wBQ" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="qKi-MF-gnw">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
                             <constraint firstItem="Ua2-db-8ud" firstAttribute="centerY" secondItem="Xge-7I-wBQ" secondAttribute="centerY" constant="-20.5" id="reV-e6-UAY"/>
-                            <constraint firstItem="4bY-Av-vlk" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="waK-rP-W1g">
-                                <variation key="widthClass=regular" constant="64"/>
-                            </constraint>
-                            <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" secondItem="4bY-Av-vlk" secondAttribute="trailing" id="zKL-z3-Jsc">
-                                <variation key="widthClass=regular" constant="64"/>
-                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cvh-Tg-ldU"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="buttonFavorite" destination="ppW-j9-AAX" id="msp-8I-R3T"/>
                         <outlet property="emptyText" destination="Ua2-db-8ud" id="tTn-Py-KEe"/>
-                        <outlet property="labelQuery" destination="jfn-HG-eyv" id="yIs-cP-ofU"/>
                         <outlet property="tableView" destination="Xge-7I-wBQ" id="P0w-6n-dkp"/>
-                        <outlet property="viewResultHeader" destination="4bY-Av-vlk" id="dln-Jk-Euz"/>
+                        <outlet property="viewResultHeader" destination="5DP-Aa-uos" id="Dhu-d1-GXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wg5-Ai-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -620,83 +345,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a1-VA-P6P" userLabel="Favorite">
-                                                    <rect key="frame" x="202" y="0.0" width="32" height="44"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="WordFavorite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="5rP-Zd-oU1"/>
-                                                        <constraint firstAttribute="width" constant="32" id="7Jb-BZ-GmN"/>
-                                                    </constraints>
-                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                    <state key="normal" image="ic_star_solid"/>
-                                                    <connections>
-                                                        <action selector="toggleFavorite:" destination="3aV-8m-ste" eventType="touchUpInside" id="qCz-aT-GOw"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjO-FZ-Grd" userLabel="Word">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="174" height="21"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leS-qS-UXB" userLabel="Rhymer">
-                                                    <rect key="frame" x="242" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="NJE-jm-AFe"/>
-                                                        <constraint firstAttribute="height" constant="44" id="mio-Ti-jp7"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_rhymer"/>
-                                                    <connections>
-                                                        <action selector="searchRhymer:" destination="3aV-8m-ste" eventType="touchUpInside" id="v9P-aF-fR4"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-hF-4wq" userLabel="Thesaurus">
-                                                    <rect key="frame" x="296" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="5oA-71-qUH"/>
-                                                        <constraint firstAttribute="height" constant="44" id="iBu-4H-Pt6"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_thesaurus"/>
-                                                    <connections>
-                                                        <action selector="searchThesaurus:" destination="3aV-8m-ste" eventType="touchUpInside" id="pdE-or-aXC"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-IW-cbz" userLabel="Dictionary">
-                                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="PTe-31-Wu5"/>
-                                                        <constraint firstAttribute="width" constant="44" id="lkp-19-UH3"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_dictionary"/>
-                                                    <connections>
-                                                        <action selector="searchDictionary:" destination="3aV-8m-ste" eventType="touchUpInside" id="DY2-EU-9uC"/>
-                                                    </connections>
-                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-gr-ldm" customClass="RTDView" customModule="PoetAssistant" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="leS-qS-UXB" firstAttribute="leading" secondItem="0a1-VA-P6P" secondAttribute="trailing" priority="750" constant="8" id="BDU-gH-a0t"/>
-                                                <constraint firstItem="Oki-IW-cbz" firstAttribute="leading" secondItem="vM9-hF-4wq" secondAttribute="trailing" constant="10" id="BcT-I6-xJE"/>
-                                                <constraint firstItem="kjO-FZ-Grd" firstAttribute="leading" secondItem="SKe-nW-x4R" secondAttribute="leadingMargin" id="Bpy-OR-XIt"/>
-                                                <constraint firstItem="leS-qS-UXB" firstAttribute="centerY" secondItem="SKe-nW-x4R" secondAttribute="centerY" id="Uid-8a-Hot"/>
-                                                <constraint firstItem="vM9-hF-4wq" firstAttribute="leading" secondItem="leS-qS-UXB" secondAttribute="trailing" constant="10" id="nbM-t9-buc"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="FavoriteCell"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Oki-IW-cbz" secondAttribute="trailing" id="3zt-rd-ER9"/>
-                                            <constraint firstItem="0a1-VA-P6P" firstAttribute="leading" secondItem="kjO-FZ-Grd" secondAttribute="trailing" constant="8" id="G7r-ZY-WDG"/>
-                                            <constraint firstItem="kjO-FZ-Grd" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="MSg-hJ-hDD"/>
-                                            <constraint firstItem="vM9-hF-4wq" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="cEx-I5-f05"/>
-                                            <constraint firstItem="0a1-VA-P6P" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerY" id="cGd-VL-HmJ"/>
-                                            <constraint firstItem="Oki-IW-cbz" firstAttribute="centerY" secondItem="3aV-8m-ste" secondAttribute="centerYWithinMargins" id="lIN-cE-oFI"/>
+                                            <constraint firstItem="Si1-gr-ldm" firstAttribute="leading" secondItem="3aV-8m-ste" secondAttribute="leadingMargin" id="H4x-KA-n91"/>
+                                            <constraint firstItem="Si1-gr-ldm" firstAttribute="top" secondItem="3aV-8m-ste" secondAttribute="topMargin" id="Y2h-Mn-suj"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Si1-gr-ldm" secondAttribute="bottom" id="cR6-aL-YuT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Si1-gr-ldm" secondAttribute="trailing" id="uuN-qC-ybB"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="buttonDictionary" destination="Oki-IW-cbz" id="ylh-93-ZxW"/>
-                                            <outlet property="buttonFavorite" destination="0a1-VA-P6P" id="00M-xU-jxs"/>
-                                            <outlet property="buttonRhymer" destination="leS-qS-UXB" id="aCP-II-Arq"/>
-                                            <outlet property="buttonThesaurus" destination="vM9-hF-4wq" id="fK7-tk-gpw"/>
-                                            <outlet property="constraintRtdLeading" destination="BDU-gH-a0t" id="dJR-QA-9Ac"/>
-                                            <outlet property="labelWord" destination="kjO-FZ-Grd" id="0Z4-hD-nMg"/>
+                                            <outlet property="viewRTD" destination="Si1-gr-ldm" id="DBv-T6-Mte"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1048,17 +711,10 @@
     <resources>
         <image name="ic_composer" width="25" height="25"/>
         <image name="ic_delete_24" width="24" height="24"/>
-        <image name="ic_dictionary" width="25" height="25"/>
         <image name="ic_keyboard_hide" width="24" height="24"/>
         <image name="ic_lexicons" width="25" height="25"/>
         <image name="ic_more" width="24" height="24"/>
         <image name="ic_play" width="36" height="36"/>
-        <image name="ic_play_outline" width="24" height="24"/>
-        <image name="ic_rhymer" width="25" height="25"/>
-        <image name="ic_star_outline" width="24" height="24"/>
-        <image name="ic_star_solid" width="24" height="24"/>
-        <image name="ic_thesaurus" width="25" height="25"/>
-        <image name="ic_web_search" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RTDView" customModule="PoetAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonDictionary" destination="xwa-22-ajO" id="SH4-l2-Vby"/>
+                <outlet property="buttonFavorite" destination="loP-g8-giL" id="TYm-fn-6WZ"/>
+                <outlet property="buttonRhymer" destination="G6j-lR-1IK" id="vnO-v0-nHv"/>
+                <outlet property="buttonThesaurus" destination="qNQ-MZ-SDx" id="Q5t-M1-c1A"/>
+                <outlet property="constraintRTDLeading" destination="DIE-2Z-2kD" id="Rf9-Fd-ILC"/>
+                <outlet property="labelWord" destination="I2G-Cd-oIe" id="8Ss-d8-sw2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2G-Cd-oIe" userLabel="Word">
+                    <rect key="frame" x="0.0" y="333" width="163" height="21"/>
+                    <accessibility key="accessibilityConfiguration" identifier="Word"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loP-g8-giL" userLabel="ButtonFavorite">
+                    <rect key="frame" x="171" y="321.5" width="44" height="44"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ButtonFavorite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Iev-KF-qqi"/>
+                        <constraint firstAttribute="width" constant="44" id="bSo-WI-gNc"/>
+                    </constraints>
+                    <state key="normal" image="ic_star_outline"/>
+                    <connections>
+                        <action selector="didClickFavorite:" destination="-1" eventType="touchUpInside" id="xeZ-xk-v5l"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6j-lR-1IK" userLabel="ButtonRhymer">
+                    <rect key="frame" x="223" y="321.5" width="44" height="44"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ButtonRhymer"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="MQt-eD-ZIH"/>
+                        <constraint firstAttribute="height" constant="44" id="tis-Wl-tIy"/>
+                    </constraints>
+                    <state key="normal" image="ic_rhymer"/>
+                    <connections>
+                        <action selector="didClickRhymer:" destination="-1" eventType="touchUpInside" id="c9v-Wg-Yyz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-MZ-SDx" userLabel="ButtonThesaurus">
+                    <rect key="frame" x="277" y="321.5" width="44" height="44"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ButtonThesaurus"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="cnH-C5-aem"/>
+                        <constraint firstAttribute="height" constant="44" id="sUa-CL-iYv"/>
+                    </constraints>
+                    <state key="normal" image="ic_thesaurus"/>
+                    <connections>
+                        <action selector="didClickThesaurus:" destination="-1" eventType="touchUpInside" id="6nk-zv-h7M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwa-22-ajO" userLabel="ButtonDictionary">
+                    <rect key="frame" x="331" y="321.5" width="44" height="44"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ButtonDictionary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="CBr-PF-JAs"/>
+                        <constraint firstAttribute="width" constant="44" id="dva-bn-1Nh"/>
+                    </constraints>
+                    <state key="normal" image="ic_dictionary"/>
+                    <connections>
+                        <action selector="didClickDictionary:" destination="-1" eventType="touchUpInside" id="HYW-FL-6gn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xwa-22-ajO" secondAttribute="trailingMargin" constant="8" id="1gm-ks-ZF6"/>
+                <constraint firstItem="G6j-lR-1IK" firstAttribute="leading" secondItem="loP-g8-giL" secondAttribute="trailing" priority="750" constant="8" id="DIE-2Z-2kD"/>
+                <constraint firstItem="loP-g8-giL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="OmR-1D-jm6"/>
+                <constraint firstItem="qNQ-MZ-SDx" firstAttribute="leading" secondItem="G6j-lR-1IK" secondAttribute="trailing" constant="10" id="PzV-Sv-BYv"/>
+                <constraint firstItem="qNQ-MZ-SDx" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TRs-1d-Fbf"/>
+                <constraint firstItem="I2G-Cd-oIe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZHn-Ib-ga9"/>
+                <constraint firstItem="loP-g8-giL" firstAttribute="leading" secondItem="I2G-Cd-oIe" secondAttribute="trailing" constant="8" id="ewS-Rx-6It"/>
+                <constraint firstItem="G6j-lR-1IK" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="fms-Ys-eu7"/>
+                <constraint firstItem="xwa-22-ajO" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="lHv-Lg-fpQ"/>
+                <constraint firstItem="I2G-Cd-oIe" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="sM4-pl-2gZ"/>
+                <constraint firstItem="xwa-22-ajO" firstAttribute="leading" secondItem="qNQ-MZ-SDx" secondAttribute="trailing" constant="10" id="zRc-Cm-7hg"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="127.2" y="-168.21589205397302"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_dictionary" width="25" height="25"/>
+        <image name="ic_rhymer" width="25" height="25"/>
+        <image name="ic_star_outline" width="24" height="24"/>
+        <image name="ic_thesaurus" width="25" height="25"/>
+    </resources>
+</document>

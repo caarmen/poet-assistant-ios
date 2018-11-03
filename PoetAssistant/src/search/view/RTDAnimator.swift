@@ -30,12 +30,12 @@ class RTDAnimator {
 	class func setRTDVisible(selectedCell: RTDTableViewCell, visibleCells:[UITableViewCell]) {
 		visibleCells.filter { $0 is RTDTableViewCell
 			&& $0 != selectedCell
-			&& !($0 as! RTDTableViewCell).buttonRhymer.isHidden}.forEach { cell in
-				(cell as! RTDTableViewCell).setRTDVisible(visible: false, animate: true)
+			&& !($0 as! RTDTableViewCell).viewRTD.buttonRhymer.isHidden}.forEach { cell in
+				(cell as! RTDTableViewCell).viewRTD.setRTDVisible(visible: false, animate: true)
 		}
-		selectedCell.toggleRTDVisibility()
+		selectedCell.viewRTD.toggleRTDVisibility()
 	}
-	
+
 	class func setRTDVisible(rtdLeadingConstraint: NSLayoutConstraint, buttonFavorite: UIButton, rtdViews: [UIView], visible: Bool, animate: Bool) {
 		if (animate) {
 			if visible {

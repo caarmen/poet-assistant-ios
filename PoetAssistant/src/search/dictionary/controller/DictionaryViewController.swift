@@ -40,7 +40,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask {[weak self] context in
 			self?.dictionaryQueryResult = Dictionary.fetch(context: context, queryText: word)
 			DispatchQueue.main.async { [weak self] in
-				self?.labelQuery.text = self?.dictionaryQueryResult?.queryText
+				self?.viewResultHeader.labelWord.text = self?.dictionaryQueryResult?.queryText
 				completion()
 			}
 		}
