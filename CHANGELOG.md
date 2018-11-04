@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+1.2.0 *(2018-11-04)*
+--------------------
+* Added a dark theme setting
+* Added a "random word" search suggestion
+* Added a "favorites" feature, to star your favorite words.
+
 1.1.0  *(2018-10-28)*
 --------------------
 * Added a "More" item to the "Composer" navigation bar. This menu item contains:
