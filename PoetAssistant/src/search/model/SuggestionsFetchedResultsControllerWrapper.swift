@@ -75,6 +75,10 @@ class SuggestionsFetchedResultsControllerWrapper {
 					objects: [SuggestionListItem.random_word]))
 				if let historySearchSections = self?.historyFetchedResultsController?.sections, historySearchSections.count == 1, historySearchSections[0].numberOfObjects > 0 {
 					var historySearchObjects = [Any]()
+					// TODO sometimes we crash in the following line with Thread 5: EXC_BAD_ACCESS (code=1, address=0x5682470ff818
+					// historySearchObjects is empty, historySearchSections has one item
+					// we're in a background thread.
+					// Another thread is just above in the if let condition
 					historySearchObjects += historySearchSections[0].objects ?? []
 					historySearchObjects += [SuggestionListItem.clear_history]
 					self?.sections.append(SectionInfo(
