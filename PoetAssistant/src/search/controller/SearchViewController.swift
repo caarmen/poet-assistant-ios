@@ -62,6 +62,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 			navigationItem.titleView = searchBar
 			Settings.getTheme().applyTextFieldTint(view: searchBar, color: Settings.getTheme().controlColor)
 		}
+		navigationController?.navigationBar.barTintColor = Settings.getTheme().controlColor
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)

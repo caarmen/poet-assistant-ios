@@ -29,6 +29,7 @@ struct Theme {
 	let tableSectionBackground: UIColor
 	let navigationBarStyle: UIBarStyle
 	let navigationBarIsTranslucent: Bool
+	let statusBarStyle: UIStatusBarStyle
 	
 	static let LIGHT_THEME = Theme(
 		name: "light",
@@ -39,7 +40,8 @@ struct Theme {
 		segmentedControlColor: toColor(hexColor: 0x607D8B),
 		tableSectionBackground: UIColor.groupTableViewBackground,
 		navigationBarStyle: .default,
-		navigationBarIsTranslucent: true)
+		navigationBarIsTranslucent: false,
+		statusBarStyle: UIStatusBarStyle.default)
 	
 	static let DARK_THEME = Theme(
 		name: "dark",
@@ -50,7 +52,8 @@ struct Theme {
 		segmentedControlColor: toColor(hexColor: 0xeeeeee),
 		tableSectionBackground: UIColor.darkGray,
 		navigationBarStyle: .black,
-		navigationBarIsTranslucent: false)
+		navigationBarIsTranslucent: false,
+		statusBarStyle: UIStatusBarStyle.lightContent)
 
 	private static let THEMES : Swift.Dictionary = [LIGHT_THEME.name: LIGHT_THEME, DARK_THEME.name: DARK_THEME]
 	
