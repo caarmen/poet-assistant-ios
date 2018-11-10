@@ -426,8 +426,8 @@
                                     <action selector="didTapPlayButton:" destination="XLx-cK-Gtc" eventType="touchUpInside" id="GTN-MR-3fd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
-                                <rect key="frame" x="24" y="140" width="374" height="20.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose your beautiful poetry here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Om-MWX">
+                                <rect key="frame" x="24" y="144" width="374" height="20.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ComposerLabelHint"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -458,7 +458,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" id="1d6-Ng-ajX"/>
+                            <constraint firstItem="tEA-Om-MWX" firstAttribute="top" secondItem="EXM-Ie-RKb" secondAttribute="top" constant="4" id="1d6-Ng-ajX"/>
                             <constraint firstItem="W1k-Yd-1yO" firstAttribute="top" secondItem="UvM-C0-zec" secondAttribute="bottom" id="2xM-JV-40M"/>
                             <constraint firstItem="W1k-Yd-1yO" firstAttribute="leading" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7gW-rl-Koa"/>
                             <constraint firstItem="ihg-T8-2fA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tev-Af-9er" secondAttribute="leading" constant="16" id="7qv-8r-x7b"/>

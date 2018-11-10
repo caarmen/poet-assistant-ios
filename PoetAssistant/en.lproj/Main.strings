@@ -6,7 +6,7 @@
 "GNE-fo-Lm9.title" = "Composer";
 
 /* Class = "UILabel"; text = "Compose your beautiful poetry here."; ObjectID = "tEA-Om-MWX"; */
-"tEA-Om-MWX.text" = "Compose your beautiful poetry here";
+"tEA-Om-MWX.text" = "Compose your beautiful poetry here and press the play icon to listen to it";
 
 /* Class = "UISegmentedControl"; twx-gO-fQb.segmentTitles[0] = "Rhymer"; ObjectID = "twx-gO-fQb"; */
 "twx-gO-fQb.segmentTitles[0]" = "Rhymer";
