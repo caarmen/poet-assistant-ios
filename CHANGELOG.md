@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+1.3.0 *(2018-11-11)*
+--------------------
+* Added settings for rhymer rules for different pronunciations.
+* Improved the composer text hint (to mention the play icon).
+* Make the status bar the same color as the navigation bar.
+
 1.2.0 *(2018-11-04)*
 --------------------
 * Added a dark theme setting
