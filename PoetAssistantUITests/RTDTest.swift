@@ -76,7 +76,7 @@ class RTDTest: XCTestCase {
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
 		UITestUtils.search(test: self, app: app, query: data.query)
 		tapHeaderButtons(header:UITestUtils.getRhymerHeader(app: app))
-		checkRhymes(query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
+		UITestUtils.checkRhymes(app:app, query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
 		
 		openThesaurusFromRhymerCleanLayout(rhyme: data.firstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
 		tapHeaderButtons(header:UITestUtils.getThesaurusHeader(app: app))
@@ -94,24 +94,7 @@ class RTDTest: XCTestCase {
 		app.activate()
 	}
 	
-	private func checkRhymes(query: String, expectedFirstRhyme: String, expectedSecondRhyme: String) {
-		let table = app.tables.firstMatch
-		XCTAssertTrue(table.exists)
-		let cell0 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedFirstRhyme)).firstMatch
-		XCTAssertTrue(cell0.exists)
-		let cell1 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedSecondRhyme)).firstMatch
-		XCTAssertTrue(cell1.exists)
-		
-		// We query for the first cells that we find with the expected rhymes,
-		// instead of directly accessing the 1st and 2nd cells in the table,
-		// for performance issues.
-		// So we can't add assertions for the "first" and "second" rhymes.
-		// But we can at least add assertions that both rhymes are visible,
-		// and the first one is above the second one.
-		XCTAssertTrue(cell0.frame.minY < cell1.frame.minY)
-		XCTAssertTrue(cell0.isHittable)
-		XCTAssertTrue(cell1.isHittable)
-	}
+
 	
 	private func openThesaurusFromRhymerCleanLayout(rhyme: String, efficientLayoutEnabled: Bool) {
 		let rhymerRow = app.cells.containing(NSPredicate(format: "label=%@", rhyme)).firstMatch

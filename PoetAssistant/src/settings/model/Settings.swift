@@ -35,6 +35,8 @@ class Settings {
 	private static let KEY_VOICE_IDENTIFIER = "voice_identifier"
 	private static let KEY_EFFICIENT_LAYOUT = "efficient_layout"
 	private static let KEY_DARK_THEME = "dark_theme"
+	private static let KEY_MATCH_AOR_AO = "match_aor_ao"
+	private static let KEY_MATCH_AO_AA = "match_ao_aa"
 	
 	private static let DEFAULT_POEM_FILENAME = "poem.txt"
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
@@ -44,6 +46,8 @@ class Settings {
 	private static let DEFAULT_SEARCH_HISTORY_ENABLED = true
 	private static let DEFAULT_EFFICIENT_LAYOUT = false
 	private static let DEFAULT_DARK_THEME = false
+	private static let DEFAULT_MATCH_AOR_AO = false
+	private static let DEFAULT_MATCH_AO_AA = false
 	
 	class func registerDefaults() {
 		UserDefaults.init().register(defaults:
@@ -54,7 +58,9 @@ class Settings {
 			 KEY_VOICE_SPEED: DEFAULT_VOICE_SPEED,
 			 KEY_VOICE_PITCH: DEFAULT_VOICE_PITCH,
 			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT,
-			 KEY_DARK_THEME: DEFAULT_DARK_THEME])
+			 KEY_DARK_THEME: DEFAULT_DARK_THEME,
+			 KEY_MATCH_AOR_AO: DEFAULT_MATCH_AOR_AO,
+			 KEY_MATCH_AO_AA: DEFAULT_MATCH_AO_AA])
 	}
 	class func clear() {
 		let userDefaults = UserDefaults.init()
@@ -154,6 +160,22 @@ class Settings {
 		setPref(key: KEY_DARK_THEME, value: theme.name == Theme.DARK_THEME.name)
 	}
 	
+	class func getMatchAORAOEnabled() -> Bool {
+		return getBoolPref(key: KEY_MATCH_AOR_AO, defaultValue: DEFAULT_MATCH_AOR_AO)
+	}
+
+	class func setMatchAORAOEnabled(enabled: Bool) {
+		setPref(key: KEY_MATCH_AOR_AO, value: enabled)
+	}
+
+	class func getMatchAOAAEnabled() -> Bool {
+		return getBoolPref(key: KEY_MATCH_AO_AA, defaultValue: DEFAULT_MATCH_AO_AA)
+	}
+
+	class func setMatchAOAAEnabled(enabled: Bool) {
+		setPref(key: KEY_MATCH_AO_AA, value: enabled)
+	}
+
 	private class func getStringPref(key: String, defaultValue: String) -> String {
 		let userDefaults = UserDefaults.init()
 		if userDefaults.string(forKey: key) == nil {

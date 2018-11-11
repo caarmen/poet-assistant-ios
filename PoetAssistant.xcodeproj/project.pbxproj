@@ -12,6 +12,7 @@
 		4F054B65218DE1AC00386FBC /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */; };
 		4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */; };
 		4F054B6B2196ADE300386FBC /* UINavigationController+statusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */; };
+		4F1189C8219870A100A4308C /* RhymerSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */; };
 		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
 		4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93C9218BA71600469CD5 /* Favorite.swift */; };
 		4F1C93CC218BAADF00469CD5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93CB218BAADF00469CD5 /* FavoritesViewController.swift */; };
@@ -112,6 +113,7 @@
 		4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 		4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
 		4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+statusBarStyle.swift"; sourceTree = "<group>"; };
+		4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerSettingsTest.swift; sourceTree = "<group>"; };
 		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
 		4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "userdata 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F1C93C9218BA71600469CD5 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				4F3849DD2185C75D00613B53 /* AppStoreScreenshots.swift */,
 				4F3849E121890B9500613B53 /* ThemeTest.swift */,
 				4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */,
+				4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */,
 				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 				4F3849DE2185C75D00613B53 /* AppStoreScreenshots.swift in Sources */,
+				4F1189C8219870A100A4308C /* RhymerSettingsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

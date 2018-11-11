@@ -1,18 +1,18 @@
-
+﻿
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
 "1Wv-H5-jYT.title" = "Settings";
 
 /* Class = "UILabel"; text = "Voice"; ObjectID = "5ac-lg-RHJ"; */
 "5ac-lg-RHJ.text" = "Voice";
 
-/* Class = "UILabel"; text = "Always show R T D icons for quicker access"; ObjectID = "7N5-jd-bgJ"; */
-"7N5-jd-bgJ.text" = "Always show R T D icons for quicker access";
+/* Class = "UILabel"; text = "Always show R T D icons for quicker access"; ObjectID = "qkR-0F-x9d"; */
+"qkR-0F-x9d.text" = "Always show R T D icons for quicker access";
 
-/* Class = "UILabel"; text = "Search History"; ObjectID = "9Lj-6Q-TeV"; */
-"9Lj-6Q-TeV.text" = "Search History";
+/* Class = "UILabel"; text = "Search History"; ObjectID = "mPO-bp-TS4"; */
+"mPO-bp-TS4.text" = "Search History";
 
-/* Class = "UILabel"; text = "Efficient layout"; ObjectID = "KlK-43-Sj7"; */
-"KlK-43-Sj7.text" = "Efficient layout";
+/* Class = "UILabel"; text = "Efficient layout"; ObjectID = "rrH-ys-A0G"; */
+"rrH-ys-A0G.text" = "Efficient layout";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "LXh-xF-4WQ"; */
 "LXh-xF-4WQ.title" = "Settings";
@@ -35,11 +35,30 @@
 /* Class = "UILabel"; text = "Preview"; ObjectID = "hIj-28-B8O"; */
 "hIj-28-B8O.text" = "Preview";
 
-/* Class = "UILabel"; text = "Offer search suggestions based on previous searches"; ObjectID = "hMf-r6-e63"; */
-"hMf-r6-e63.text" = "Offer search suggestions based on previous searches";
+/* Class = "UILabel"; text = "Offer search suggestions based on previous searches"; ObjectID = "LHC-aH-IcF"; */
+"LHC-aH-IcF.text" = "Offer search suggestions based on previous searches";
 
-/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "iiN-CS-dKJ"; */
-"iiN-CS-dKJ.headerTitle" = "Other";
+/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "hSW-yu-zgX"; */
+"hSW-yu-zgX.headerTitle" = "Other";
 
 /* Class = "UILabel"; text = "Listen to a voice sample"; ObjectID = "k24-ay-Xe2"; */
 "k24-ay-Xe2.text" = "Listen to a voice sample";
+
+/* Class = "UILabel"; text = "Dark theme"; ObjectID = "nGy-Y0-zjB"; */
+"nGy-Y0-zjB.text" = "Dark theme";
+
+/* Class = "UITableViewSection"; headerTitle = "Rhymer"; ObjectID = "4Yg-wY-mBJ"; */
+"4Yg-wY-mBJ.headerTitle" = "Rhymer";
+
+/* Class = "UILabel"; text = "AO /ɔ/: \"off\".\nAA /ɑ/: \"father\"."; ObjectID = "eqO-bL-yJJ"; */
+"eqO-bL-yJJ.text" = "AO /ɔ/: \"off\".\nAA /ɑ/: \"father\".";
+
+/* Class = "UILabel"; text = "AO /ɔ/ matches AA /ɑ/"; ObjectID = "VCF-MF-Dxi"; */
+"VCF-MF-Dxi.text" = "AO /ɔ/ matches AA /ɑ/";
+
+/* Class = "UILabel"; text = "AOR /ɔr/ matches AO /ɔ/"; ObjectID = "30G-56-JEf"; */
+"30G-56-JEf.text" = "AOR /ɔr/ matches AO /ɔ/";
+
+/* Class = "UILabel"; text = "AOR /ɔr/: \"more\".\nAO /ɔ/: \"thaw\"."; ObjectID = "LmZ-M1-eJN"; */
+"LmZ-M1-eJN.text" = "AOR /ɔr/: \"more\".\nAO /ɔ/: \"thaw\".";
+
