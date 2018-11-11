@@ -70,6 +70,7 @@ class UITestUtils {
 	class func cancelDialog(app: XCUIApplication) {
 		app.alerts.firstMatch.buttons.element(boundBy: 0).firstMatch.tap()
 	}
+
 	class func search(test: XCTestCase, app:XCUIApplication, query: String) {
 		openDictionariesTab(app: app)
 		let searchField = app.searchFields.firstMatch
@@ -77,7 +78,24 @@ class UITestUtils {
 		searchField.typeText("\(query)\n")
 		wait(test: test, timeout: 2)
 	}
-	
+	class func checkRhymes(app:XCUIApplication, query: String, expectedFirstRhyme: String, expectedSecondRhyme: String) {
+		let table = app.tables.firstMatch
+		XCTAssertTrue(table.exists)
+		let cell0 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedFirstRhyme)).firstMatch
+		XCTAssertTrue(cell0.exists)
+		let cell1 = table.cells.staticTexts.matching(NSPredicate(format: "label = %@", expectedSecondRhyme)).firstMatch
+		XCTAssertTrue(cell1.exists)
+		
+		// We query for the first cells that we find with the expected rhymes,
+		// instead of directly accessing the 1st and 2nd cells in the table,
+		// for performance issues.
+		// So we can't add assertions for the "first" and "second" rhymes.
+		// But we can at least add assertions that both rhymes are visible,
+		// and the first one is above the second one.
+		XCTAssertTrue(cell0.frame.minY < cell1.frame.minY)
+		XCTAssertTrue(cell0.isHittable)
+		XCTAssertTrue(cell1.isHittable)
+	}
 	class func waitForPlayButtonToHavePlayImage(test: XCTestCase, playButton: XCUIElement, timeout: TimeInterval) {
 		waitForButtonToHaveImage(test: test, button: playButton, imageLabel: "ic play", timeout: timeout)
 	}

@@ -68,8 +68,36 @@ class WordVariants: NSManagedObject {
 		return result
 	}
 	
+	// Return a pattern of the given syllables which will match sound1 and sound2 interchangeably.
+	// For example, if we have  syllables=AORNIY, sound1=AOR, sound2=AO, this will return (AOR|AO)NIY, which can then be used to match both AORNIY and AONIY.
+	private class func createSyllableExpression(syllables: String, sounds: String...) -> String {
+		var result = syllables
+		sounds.forEach { sound in
+			result = result.replacingOccurrences(of: sound, with: "__TEMPLATE__")
+		}
+		let pattern = sounds.joined(separator: "|")
+		return result.replacingOccurrences(of: "__TEMPLATE__", with: "(\(pattern))")
+	}
+	private class func createPredicateForSyllableMatch(syllablesColumn: String,
+													   syllablesValue: String) -> NSPredicate {
+		let matchAORAOEnabled = Settings.getMatchAORAOEnabled()
+		let matchAOAAEnabled = Settings.getMatchAOAAEnabled()
+		var syllablesExpression = syllablesValue
+		if (matchAORAOEnabled && !matchAOAAEnabled) {
+			syllablesExpression = createSyllableExpression(syllables: syllablesValue, sounds: "AOR", "AO")
+		} else if (!matchAORAOEnabled && matchAOAAEnabled) {
+			syllablesExpression = createSyllableExpression(syllables: syllablesValue, sounds: "AO", "AA")
+		} else if (matchAORAOEnabled && matchAOAAEnabled) {
+			syllablesExpression = createSyllableExpression(syllables: syllablesValue, sounds: "AOR", "AO", "AA")
+		}
+		if syllablesExpression == syllablesValue {
+			return NSPredicate(format: "\(syllablesColumn) = %@", syllablesValue)
+		} else {
+			return NSPredicate(format: "\(syllablesColumn) MATCHES %@", syllablesExpression)
+		}
+	}
 	private class func createPredicateForStressSyllableMatch(wordVariant: WordVariants) -> NSPredicate {
-		let matchingPredicate = NSPredicate(format: "\(#keyPath(WordVariants.stress_syllables)) =[c] %@", wordVariant.stress_syllables!) // TODO update schema to make stress_syllables not optional
+		let matchingPredicate = createPredicateForSyllableMatch(syllablesColumn: #keyPath(WordVariants.stress_syllables), syllablesValue: wordVariant.stress_syllables!)
 		let excludingPredicate = createPredicateExcludingSameWord(wordVariant: wordVariant)
 		return concatenatePredicates(subpredicates: [matchingPredicate, excludingPredicate])
 	}
@@ -78,7 +106,7 @@ class WordVariants: NSManagedObject {
 		if wordVariant.last_three_syllables == nil {
 			return nil
 		}
-		let matchingPredicate = NSPredicate(format: "\(#keyPath(WordVariants.last_three_syllables)) =[c] %@", wordVariant.last_three_syllables!)
+		let matchingPredicate = createPredicateForSyllableMatch(syllablesColumn: #keyPath(WordVariants.last_three_syllables), syllablesValue: wordVariant.last_three_syllables!)
 		let excludeSameWordPredicate = createPredicateExcludingSameWord(wordVariant: wordVariant)
 		let excludeStressSyllablesPredicate = createPredicateExcludingStressSyllables(wordVariant: wordVariant)
 		return concatenatePredicates(subpredicates: [matchingPredicate, excludeSameWordPredicate, excludeStressSyllablesPredicate])
@@ -88,7 +116,7 @@ class WordVariants: NSManagedObject {
 		if wordVariant.last_two_syllables == nil {
 			return nil
 		}
-		let matchingPredicate = NSPredicate(format: "\(#keyPath(WordVariants.last_two_syllables)) =[c] %@", wordVariant.last_two_syllables!)
+		let matchingPredicate = createPredicateForSyllableMatch(syllablesColumn: #keyPath(WordVariants.last_two_syllables), syllablesValue: wordVariant.last_two_syllables!)
 		let excludeSameWordPredicate = createPredicateExcludingSameWord(wordVariant: wordVariant)
 		let excludeStressSyllablesPredicate = createPredicateExcludingStressSyllables(wordVariant: wordVariant)
 		let excludeLastThreeSyllablesPredicate = createPredicateExcludingLastThreeSyllables(wordVariant: wordVariant)
@@ -96,7 +124,7 @@ class WordVariants: NSManagedObject {
 	}
 	
 	private class func createPredicateForLastSyllableMatch(wordVariant: WordVariants) -> NSPredicate {
-		let matchingPredicate = NSPredicate(format: "\(#keyPath(WordVariants.last_syllable)) =[c] %@", wordVariant.last_syllable!)
+		let matchingPredicate = createPredicateForSyllableMatch(syllablesColumn: #keyPath(WordVariants.last_syllable), syllablesValue: wordVariant.last_syllable!)
 		let excludeSameWordPredicate = createPredicateExcludingSameWord(wordVariant: wordVariant)
 		let excludeStressSyllablesPredicate = createPredicateExcludingStressSyllables(wordVariant: wordVariant)
 		let excludeLastThreeSyllablesPredicate = createPredicateExcludingLastThreeSyllables(wordVariant: wordVariant)

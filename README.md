@@ -25,7 +25,7 @@ Many features aren't available yet on iOS (they're on Android). This is probably
 * Words of the day: list and system notification
 * Settings:
   - ~voice selection, speed, and pitch~
-  - some tweaks for rhyming rules, to take into account different accents
+  - ~some tweaks for rhyming rules, to take into account different accents~
   - thesaurus reverse lookup
   - ~dark theme~
 

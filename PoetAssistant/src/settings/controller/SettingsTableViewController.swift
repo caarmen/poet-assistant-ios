@@ -29,8 +29,11 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBOutlet weak var sliderVoicePitch: UISlider!
 	
 	@IBOutlet weak var playButton: UIButton!
-	@IBOutlet weak var switchSearchHistory: UISwitch!
+	@IBOutlet weak var switchMatchAORAO: UISwitch!
+	@IBOutlet weak var switchMatchAOAA: UISwitch!
+
 	
+	@IBOutlet weak var switchSearchHistory: UISwitch!
 	@IBOutlet weak var switchEfficientLayout: UISwitch!
 	@IBOutlet weak var switchDarkTheme: UISwitch!
 	private var ttsPlayButtonConnector: TtsPlayButtonConnector?
@@ -50,6 +53,8 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		sliderVoicePitch.minimumValue = Settings.MIN_VOICE_PITCH
 		sliderVoicePitch.maximumValue = Settings.MAX_VOICE_PITCH
 		sliderVoicePitch.value = Settings.getVoicePitch()
+		switchMatchAORAO.isOn = Settings.getMatchAORAOEnabled()
+		switchMatchAOAA.isOn = Settings.getMatchAOAAEnabled()
 		switchEfficientLayout.isOn = Settings.getEfficientLayoutEnabled()
 		switchDarkTheme.isOn = Settings.getTheme().name == Theme.DARK_THEME.name
 		updateVoiceSelection()
@@ -64,6 +69,12 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBAction func didClickPreview(_ sender: UIButton) {
 		ttsPlayButtonConnector?.textToSpeak = NSLocalizedString("voice_preview", comment: "")
 		ttsPlayButtonConnector?.didTapPlayButton()
+	}
+	@IBAction func didClickMatchAORAO(_ sender: UISwitch) {
+		Settings.setMatchAORAOEnabled(enabled: sender.isOn)
+	}
+	@IBAction func didClickMatchAOAA(_ sender: UISwitch) {
+		Settings.setMatchAOAAEnabled(enabled: sender.isOn)
 	}
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)
