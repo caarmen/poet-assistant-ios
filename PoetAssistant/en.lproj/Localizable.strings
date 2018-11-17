@@ -6,6 +6,10 @@
 "part_of_speech_v" = "Verbs";
 "part_of_speech_a" = "Adjectives";
 "part_of_speech_r" = "Adverbs";
+"part_of_speech_n_abbr" = "n.";
+"part_of_speech_v_abbr" = "v.";
+"part_of_speech_a_abbr" = "adj.";
+"part_of_speech_r_abbr" = "adv.";
 "rhyme_variant_match_type_0" = "%@(%@) Strict matches";
 "rhyme_variant_match_type_1" = "%@(%@) Last syllable";
 "rhyme_variant_match_type_2" = "%@(%@) Last two syllables";
@@ -24,7 +28,7 @@
 "share_thesaurus_subtitle_antonym" = "\n Antonyms:\n";
 "share_thesaurus_word" = "  %@\n";
 "share_dictionary_title" = "Definitions of %@: \n";
-"share_dictionary_definition" = "* %@\n";
+"share_dictionary_definition" = "%@  %@\n";
 "search_placeholder" = "Lookup a word";
 "word_count" = "%@ words, %@ characters";
 "suggestions_section_suggestions" = "Suggestions";

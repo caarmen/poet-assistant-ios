@@ -55,7 +55,7 @@ class ThesaurusQueryResult {
 	func toText() -> String {
 		var result = String(format: NSLocalizedString("share_thesaurus_title", comment: ""), queryText)
 		sections.forEach { section in
-			result.append("\n\(section.partOfSpeech.toLocalizedString())\n")
+			result.append("\n\(section.partOfSpeech.localizedSectionLabel())\n")
 			section.entries.forEach { entry in
 				switch(entry) {
 				case .subtitle(let wordRelationship):

@@ -25,14 +25,24 @@ enum PartOfSpeech {
 	case adjective
 	case adverb
 	
-	func toLocalizedString() -> String {
-		var partOfSpeechStringId: String
+	func localizedSectionLabel() -> String {
+		var stringId: String
 		switch (self) {
-		case .noun: partOfSpeechStringId = "part_of_speech_n"
-		case .verb: partOfSpeechStringId = "part_of_speech_v"
-		case .adverb: partOfSpeechStringId = "part_of_speech_r"
-		case .adjective: partOfSpeechStringId = "part_of_speech_a"
+		case .noun: stringId = "part_of_speech_n"
+		case .verb: stringId = "part_of_speech_v"
+		case .adverb: stringId = "part_of_speech_r"
+		case .adjective: stringId = "part_of_speech_a"
 		}
-		return NSLocalizedString(partOfSpeechStringId, comment: "")
+		return NSLocalizedString(stringId, comment: "")
+	}
+	func localizedAbbreviation() -> String {
+		var stringId: String
+		switch (self) {
+		case .noun: stringId = "part_of_speech_n_abbr"
+		case .verb: stringId = "part_of_speech_v_abbr"
+		case .adverb: stringId = "part_of_speech_r_abbr"
+		case .adjective: stringId = "part_of_speech_a_abbr"
+		}
+		return NSLocalizedString(stringId, comment: "")
 	}
 }

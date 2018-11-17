@@ -62,7 +62,7 @@ class ThesaurusViewController: SearchResultsController {
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = thesaurusQueryResult?.sections, sections.count > section {
 			let partOfSpeech = sections[section].partOfSpeech
-			return partOfSpeech.toLocalizedString()
+			return partOfSpeech.localizedSectionLabel()
 		} else {
 			return nil
 		}

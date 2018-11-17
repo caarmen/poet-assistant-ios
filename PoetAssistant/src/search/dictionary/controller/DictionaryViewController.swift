@@ -53,7 +53,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return dictionaryQueryResult?.partOfSpeech(section:section)?.toLocalizedString()
+		return dictionaryQueryResult?.partOfSpeech(section:section)?.localizedSectionLabel()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
