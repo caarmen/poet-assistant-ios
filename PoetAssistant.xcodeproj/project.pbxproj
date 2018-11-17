@@ -61,6 +61,7 @@
 		4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */; };
 		4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A202175410200CD6CB3 /* RTDAnimator.swift */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
+		4FD3B68E21A0746700EB3D89 /* ShareTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3B68D21A0746700EB3D89 /* ShareTest.swift */; };
 		4FEB03B62177B70E00CF8B49 /* Stems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B52177B70E00CF8B49 /* Stems.swift */; };
 		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
 		4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03D02179047200CF8B49 /* ComposerTest.swift */; };
@@ -169,6 +170,7 @@
 		4F698A202175410200CD6CB3 /* RTDAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDAnimator.swift; sourceTree = "<group>"; };
 		4FA229F221726C800014B1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		4FA229F521726C8D0014B1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		4FD3B68D21A0746700EB3D89 /* ShareTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTest.swift; sourceTree = "<group>"; };
 		4FEB03B52177B70E00CF8B49 /* Stems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stems.swift; sourceTree = "<group>"; };
 		4FEB03B72177BB7100CF8B49 /* StemsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemsTest.swift; sourceTree = "<group>"; };
 		4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoetAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -506,6 +508,7 @@
 				4F3849E121890B9500613B53 /* ThemeTest.swift */,
 				4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */,
 				4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */,
+				4FD3B68D21A0746700EB3D89 /* ShareTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				4FEF0688217BC41100D69383 /* TtsSettingsTest.swift in Sources */,
 				4FEF06C22185110600D69383 /* FileTest.swift in Sources */,
 				4FEB03DD217B45D200CF8B49 /* RTDTest.swift in Sources */,
+				4FD3B68E21A0746700EB3D89 /* ShareTest.swift in Sources */,
 				4F3849E221890B9500613B53 /* ThemeTest.swift in Sources */,
 				4FEF0686217B988000D69383 /* AboutTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,

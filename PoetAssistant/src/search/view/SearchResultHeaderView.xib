@@ -69,6 +69,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-fV-XRG" userLabel="ButtonShare">
                     <rect key="frame" x="327" y="331.5" width="32" height="24"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeaderButtonShare"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="oly-ub-n71"/>
                     </constraints>
