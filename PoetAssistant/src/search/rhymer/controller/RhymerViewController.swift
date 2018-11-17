@@ -22,14 +22,7 @@ import CoreData
 
 class RhymerViewController: SearchResultsController {
 	
-	private static let RHYME_TYPE_LABELS:[RhymeType:String] = [.strict: "rhyme_match_type_0",
-															   .last_three_syllables: "rhyme_match_type_3",
-															   .last_two_syllables: "rhyme_match_type_2",
-															   .last_syllable: "rhyme_match_type_1"]
-	private static let VARIANT_RHYME_TYPE_LABELS:[RhymeType:String] = [.strict: "rhyme_variant_match_type_0",
-																	   .last_three_syllables: "rhyme_variant_match_type_3",
-																	   .last_two_syllables: "rhyme_variant_match_type_2",
-																	   .last_syllable: "rhyme_variant_match_type_1"]
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lexicon = Lexicon.rhymer
@@ -53,7 +46,9 @@ class RhymerViewController: SearchResultsController {
 			}
 		}
 	}
-	
+	override func getShareText() -> String? {
+		return rhymeFetcher?.toText(query: query)
+	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return rhymeFetcher?.sectionCount ?? 0
 	}
@@ -65,11 +60,9 @@ class RhymerViewController: SearchResultsController {
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let rhymeType = rhymeFetcher?.rhymeType(section: section) {
 			if let variantNumber = rhymeFetcher?.variant(section: section) {
-				if let rhymeStringKey = RhymerViewController.VARIANT_RHYME_TYPE_LABELS[rhymeType] {
-					return String(format: NSLocalizedString(rhymeStringKey, comment: ""), query, String(variantNumber))
-				}
-			} else if let rhymeStringKey = RhymerViewController.RHYME_TYPE_LABELS[rhymeType] {
-				return NSLocalizedString(rhymeStringKey, comment: "")
+				return String(format: NSLocalizedString(rhymeType.localizedStringIdForVariant, comment: ""), query, String(variantNumber))
+			} else {
+				return NSLocalizedString(rhymeType.localizedStringId, comment: "")
 			}
 		}
 		return nil

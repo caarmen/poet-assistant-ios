@@ -52,4 +52,20 @@ class ThesaurusQueryResult {
 		let section = sections[at.section]
 		return section.entries[at.row]
 	}
+	func toText() -> String {
+		var result = String(format: NSLocalizedString("share_thesaurus_title", comment: ""), queryText)
+		sections.forEach { section in
+			result.append("\n\(section.partOfSpeech.toLocalizedString())\n")
+			section.entries.forEach { entry in
+				switch(entry) {
+				case .subtitle(let wordRelationship):
+					let subtitleStringId = wordRelationship == .synonym ? "share_thesaurus_subtitle_synonym" : "share_thesaurus_subtitle_antonym"
+					result.append(NSLocalizedString(subtitleStringId, comment: ""))
+				case .wordEntry(let thesaurusWordEntry):
+					result.append(String(format: NSLocalizedString("share_thesaurus_word", comment: ""), thesaurusWordEntry.word))
+				}
+			}
+		}
+		return result
+	}
 }

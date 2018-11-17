@@ -62,7 +62,7 @@ class UITestUtils {
 		moveToLexicon(app:app, position:3)
 	}
 	private class func moveToLexicon(app:XCUIApplication, position: Int) {
-		app.segmentedControls.buttons.element(boundBy: position).tap()
+		app.segmentedControls.firstMatch.buttons.element(boundBy: position).tap()
 	}
 	class func acceptDialog(app: XCUIApplication) {
 		app.alerts.firstMatch.buttons.element(boundBy: 1).firstMatch.tap()
@@ -156,5 +156,17 @@ class UITestUtils {
 		waitForRTDToShow(test: test, row: row)
 		row.buttons.matching(identifier: "ButtonFavorite").firstMatch.tap()
 		wait(test:test, timeout: 1) // Wait for the screen to reload :(
+	}
+	
+	class func assertVisible(app: XCUIApplication, element: XCUIElement) {
+		let window = app.windows.element(boundBy: 0)
+		let elementFrame = CGRect(origin: CGPoint(x: Int(element.frame.minX), y: Int(element.frame.minY)),
+								  size: CGSize(width: Int(element.frame.width), height: Int(element.frame.height)))
+		XCTAssert(window.frame.contains(elementFrame))
+	}
+	
+	class func assertHidden(app: XCUIApplication, element: XCUIElement) {
+		let window = app.windows.element(boundBy: 0)
+		XCTAssert(!element.exists || !window.frame.contains(element.frame) || !element.isHittable)
 	}
 }

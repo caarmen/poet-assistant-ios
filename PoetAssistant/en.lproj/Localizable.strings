@@ -16,6 +16,15 @@
 "rhyme_match_type_3" = "Last three syllables";
 "thesaurus_synonyms_title" = "Synonyms:";
 "thesaurus_antonyms_title" = "Antonyms:";
+"share_rhymes_title" = "Rhymes for %@: \n";
+"share_rhymes_subtitle" = "\n  %@: \n";
+"share_rhymes_word" = "   %@ \n";
+"share_thesaurus_title" = "Synonyms for %@: \n";
+"share_thesaurus_subtitle_synonym" = "\n Synonyms:\n";
+"share_thesaurus_subtitle_antonym" = "\n Antonyms:\n";
+"share_thesaurus_word" = "  %@\n";
+"share_dictionary_title" = "Definitions of %@: \n";
+"share_dictionary_definition" = "* %@\n";
 "search_placeholder" = "Lookup a word";
 "word_count" = "%@ words, %@ characters";
 "suggestions_section_suggestions" = "Suggestions";

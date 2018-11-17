@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="RhymerViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVH-e9-q2f">
-                                <rect key="frame" x="0.0" y="64" width="414" height="515"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="gXh-Jt-jlj">
                                     <rect key="frame" x="0.0" y="72" width="414" height="44"/>
@@ -54,19 +54,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-K0-6Sy" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="321.66666666666669" width="0.0" height="0.0"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-K0-6Sy" userLabel="EmptyText">
+                                <rect key="frame" x="207" y="303.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="RhymerEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY6-v1-aRS" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="TY6-v1-aRS" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="RhymerResultHeader"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Eir-zf-Src"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Eir-zf-Src"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -81,13 +81,13 @@
                             <constraint firstItem="TY6-v1-aRS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="PYE-fb-mBl">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="BrB-K0-6Sy" firstAttribute="centerY" secondItem="XVH-e9-q2f" secondAttribute="centerY" id="RyJ-df-Et8"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BrB-K0-6Sy" secondAttribute="trailing" id="Wfs-sw-f4I"/>
+                            <constraint firstItem="BrB-K0-6Sy" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="RyJ-df-Et8"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="BrB-K0-6Sy" secondAttribute="trailing" id="Wfs-sw-f4I"/>
                             <constraint firstItem="XVH-e9-q2f" firstAttribute="top" secondItem="TY6-v1-aRS" secondAttribute="bottom" id="XdL-eY-d7R"/>
                             <constraint firstItem="XVH-e9-q2f" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="is8-7F-eyr">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
-                            <constraint firstItem="BrB-K0-6Sy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="nHi-jU-B6Q"/>
+                            <constraint firstItem="BrB-K0-6Sy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="nHi-jU-B6Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TY6-v1-aRS" secondAttribute="trailing" id="weH-jw-T4F">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
@@ -109,19 +109,19 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ThesaurusViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-CS-9Sa" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-CS-9Sa" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ThesaurusResultHeader"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="hfU-wy-Fc4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="hfU-wy-Fc4"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-59-phd">
-                                <rect key="frame" x="0.0" y="64" width="414" height="515"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="8qR-Wn-Yvh">
                                     <rect key="frame" x="0.0" y="116" width="414" height="44"/>
@@ -182,8 +182,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-bd-mtY" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="321.66666666666669" width="0.0" height="0.0"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-bd-mtY" userLabel="EmptyText">
+                                <rect key="frame" x="207" y="303.66666666666669" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ThesaurusEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
@@ -195,7 +195,7 @@
                             <constraint firstItem="eCg-CS-9Sa" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="2i9-bJ-u8V">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="xAR-bd-mtY" firstAttribute="centerY" secondItem="VjO-59-phd" secondAttribute="centerY" id="Aib-NW-dlq"/>
+                            <constraint firstItem="xAR-bd-mtY" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="Aib-NW-dlq"/>
                             <constraint firstItem="VjO-59-phd" firstAttribute="top" secondItem="eCg-CS-9Sa" secondAttribute="bottom" id="BpW-e0-gQU"/>
                             <constraint firstItem="VjO-59-phd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="GUt-j0-aXe">
                                 <variation key="widthClass=regular" constant="64"/>
@@ -208,9 +208,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="eCg-CS-9Sa" secondAttribute="trailing" id="azF-Yd-HCO">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="xAR-bd-mtY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="leading" id="gwo-2M-EdY"/>
+                            <constraint firstItem="xAR-bd-mtY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="gwo-2M-EdY"/>
                             <constraint firstItem="xAR-bd-mtY" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="hq0-8d-lWI"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xAR-bd-mtY" secondAttribute="trailing" id="vYD-2Y-R0z"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xAR-bd-mtY" secondAttribute="trailing" id="vYD-2Y-R0z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -229,19 +229,19 @@
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="KSz-7M-5ZO" customClass="DictionaryViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqA-di-fh8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-Aa-uos" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-Aa-uos" customClass="SearchResultHeaderView" customModule="PoetAssistant" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="374" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="DictionaryResultHeader"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mKs-ms-iBP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mKs-ms-iBP"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-7I-wBQ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="466"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="23m-bc-UqX">
                                     <rect key="frame" x="0.0" y="72" width="414" height="44"/>
@@ -276,8 +276,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
-                                <rect key="frame" x="207" y="276.66666666666669" width="0.0" height="0.0"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-db-8ud" userLabel="EmptyText">
+                                <rect key="frame" x="207" y="279" width="0.0" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration" identifier="DictionaryEmptyText"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
@@ -292,19 +292,19 @@
                             <constraint firstItem="5DP-Aa-uos" firstAttribute="leading" secondItem="DqA-di-fh8" secondAttribute="leadingMargin" id="Z7S-9Z-Otk">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="Cvh-Tg-ldU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="trailing" constant="16" id="aNc-3f-P8D"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ua2-db-8ud" secondAttribute="trailing" id="aNc-3f-P8D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5DP-Aa-uos" secondAttribute="trailing" id="bk7-TY-5wV">
                                 <variation key="widthClass=regular" constant="60"/>
                             </constraint>
                             <constraint firstItem="5DP-Aa-uos" firstAttribute="top" secondItem="Cvh-Tg-ldU" secondAttribute="top" id="dnz-pX-9aH"/>
-                            <constraint firstItem="Ua2-db-8ud" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="g93-Cz-ROx"/>
+                            <constraint firstItem="Ua2-db-8ud" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DqA-di-fh8" secondAttribute="leadingMargin" id="g93-Cz-ROx"/>
                             <constraint firstItem="Ua2-db-8ud" firstAttribute="centerX" secondItem="Cvh-Tg-ldU" secondAttribute="centerX" id="h8b-ed-s90"/>
                             <constraint firstItem="Xge-7I-wBQ" firstAttribute="top" secondItem="5DP-Aa-uos" secondAttribute="bottom" id="nZB-LC-3Cr"/>
                             <constraint firstItem="Cvh-Tg-ldU" firstAttribute="bottom" secondItem="Xge-7I-wBQ" secondAttribute="bottom" id="pc6-Vm-tmh"/>
                             <constraint firstItem="Xge-7I-wBQ" firstAttribute="leading" secondItem="Cvh-Tg-ldU" secondAttribute="leading" id="qKi-MF-gnw">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
-                            <constraint firstItem="Ua2-db-8ud" firstAttribute="centerY" secondItem="Xge-7I-wBQ" secondAttribute="centerY" constant="-20.5" id="reV-e6-UAY"/>
+                            <constraint firstItem="Ua2-db-8ud" firstAttribute="centerY" secondItem="Cvh-Tg-ldU" secondAttribute="centerY" id="reV-e6-UAY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cvh-Tg-ldU"/>
                     </view>
@@ -324,11 +324,11 @@
             <objects>
                 <viewController id="XxL-Wl-d30" userLabel="Favorites" customClass="FavoritesViewController" customModule="PoetAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mSD-na-DkH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtS-30-6Uc" userLabel="DeleteAll">
-                                <rect key="frame" x="370" y="547" width="44" height="24"/>
+                                <rect key="frame" x="370" y="555" width="44" height="24"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ButtonClearFavorites"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5pt-ND-GNa"/>
@@ -340,7 +340,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ayA-m7-mEg">
-                                <rect key="frame" x="0.0" y="20" width="414" height="519"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavoritesCell" id="3aV-8m-ste" customClass="RTDTableViewCell" customModule="PoetAssistant" customModuleProvider="target">
@@ -369,8 +369,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't starred any words yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-KN-AAJ" userLabel="EmptyText">
-                                <rect key="frame" x="72.666666666666686" y="289" width="269" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't starred any words yet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-KN-AAJ" userLabel="EmptyText">
+                                <rect key="frame" x="72.333333333333343" y="293.33333333333331" width="269.66666666666663" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -381,7 +381,7 @@
                             <constraint firstItem="qtS-30-6Uc" firstAttribute="bottom" secondItem="MCM-S3-SQN" secondAttribute="bottom" constant="-8" id="458-k8-SUE"/>
                             <constraint firstItem="qtS-30-6Uc" firstAttribute="top" secondItem="ayA-m7-mEg" secondAttribute="bottom" constant="8" id="696-gf-f0d"/>
                             <constraint firstItem="ayA-m7-mEg" firstAttribute="trailing" secondItem="qtS-30-6Uc" secondAttribute="trailing" id="CoO-0A-tft"/>
-                            <constraint firstItem="ayA-m7-mEg" firstAttribute="top" secondItem="MCM-S3-SQN" secondAttribute="top" id="YgX-Ve-0A3"/>
+                            <constraint firstItem="ayA-m7-mEg" firstAttribute="top" secondItem="MCM-S3-SQN" secondAttribute="top" constant="8" id="YgX-Ve-0A3"/>
                             <constraint firstItem="MCM-S3-SQN" firstAttribute="trailing" secondItem="ayA-m7-mEg" secondAttribute="trailing" id="cgc-Xt-ELI">
                                 <variation key="widthClass=regular" constant="64"/>
                             </constraint>
@@ -520,25 +520,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoH-jk-KWk" userLabel="RhymerContainer">
-                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
                                 <connections>
                                     <segue destination="9pv-A4-QxB" kind="embed" identifier="EmbedRhymer" id="BV3-47-CFR"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-wE-64Y" userLabel="ThesaurusContainer">
-                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
                                 <connections>
                                     <segue destination="8rJ-Kc-sve" kind="embed" identifier="EmbedThesaurus" id="zrP-7G-uYi"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqG-s1-GFf" userLabel="DictionaryContainer">
-                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
                                 <connections>
                                     <segue destination="KSz-7M-5ZO" kind="embed" identifier="EmbedDictionary" id="qkT-RZ-6wv"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmF-2C-g6S" userLabel="FavoritesContainer">
-                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
                                 <connections>
                                     <segue destination="XxL-Wl-d30" kind="embed" identifier="EmbedFavorites" id="dBa-gP-CJ9"/>
                                 </connections>
@@ -578,15 +578,15 @@
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="pLL-BI-mD4" secondAttribute="trailing" id="UcJ-wk-qNf"/>
                             <constraint firstItem="pLL-BI-mD4" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="V8e-Fg-v9X"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="trailing" secondItem="GoH-jk-KWk" secondAttribute="trailing" id="VHq-e6-5Vs"/>
-                            <constraint firstItem="BmF-2C-g6S" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="WO2-Ol-2va"/>
+                            <constraint firstItem="BmF-2C-g6S" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" id="WO2-Ol-2va"/>
                             <constraint firstItem="twx-gO-fQb" firstAttribute="centerX" secondItem="cin-b1-hfA" secondAttribute="centerX" id="agW-Lb-nDi"/>
                             <constraint firstItem="pLL-BI-mD4" firstAttribute="top" secondItem="cin-b1-hfA" secondAttribute="top" id="akV-xg-e1I"/>
-                            <constraint firstItem="GoH-jk-KWk" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="duT-fZ-UwT"/>
-                            <constraint firstItem="Ywm-wE-64Y" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="iKq-e8-ifB"/>
+                            <constraint firstItem="GoH-jk-KWk" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" id="duT-fZ-UwT"/>
+                            <constraint firstItem="Ywm-wE-64Y" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" id="iKq-e8-ifB"/>
                             <constraint firstItem="BmF-2C-g6S" firstAttribute="leading" secondItem="cin-b1-hfA" secondAttribute="leading" id="it5-zr-ayo"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="GoH-jk-KWk" secondAttribute="bottom" id="oFA-gK-1gh"/>
                             <constraint firstItem="cin-b1-hfA" firstAttribute="bottom" secondItem="aqG-s1-GFf" secondAttribute="bottom" id="yBo-4b-6BE"/>
-                            <constraint firstItem="aqG-s1-GFf" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" constant="8" id="yd4-Kn-A1d"/>
+                            <constraint firstItem="aqG-s1-GFf" firstAttribute="top" secondItem="twx-gO-fQb" secondAttribute="bottom" id="yd4-Kn-A1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cin-b1-hfA"/>
                     </view>

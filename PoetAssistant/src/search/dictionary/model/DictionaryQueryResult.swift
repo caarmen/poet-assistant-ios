@@ -47,4 +47,18 @@ class DictionaryQueryResult {
 	func definition(indexPath: IndexPath) -> String? {
 		return controller.object(at: indexPath).definition
 	}
+	func toText() -> String {
+		var result = String(format: NSLocalizedString("share_dictionary_title", comment: ""), queryText)
+		for section in 0..<numberOfSections() {
+			if let partOfSpeech = partOfSpeech(section:section) {
+				result.append("\n\(partOfSpeech.toLocalizedString())\n")
+				for row in 0..<numberOfRowsInSection(section: section) {
+					if let definition = definition(indexPath: IndexPath(row:row, section:section)) {
+						result.append(String(format: NSLocalizedString("share_dictionary_definition", comment: ""), definition))
+					}
+				}
+			}
+		}
+		return result
+	}
 }

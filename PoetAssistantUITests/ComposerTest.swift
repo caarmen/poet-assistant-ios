@@ -34,44 +34,44 @@ class ComposerTest: XCTestCase {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		let labelHint = app.staticTexts.matching(identifier: "ComposerLabelHint").firstMatch
 		let buttonPlay = app.buttons.matching(identifier: "ComposerButtonPlay").firstMatch
-		assertVisible(element:textViewPoem)
-		assertVisible(element:labelHint)
-		assertVisible(element:buttonPlay)
+		UITestUtils.assertVisible(app:app, element:textViewPoem)
+		UITestUtils.assertVisible(app:app, element:labelHint)
+		UITestUtils.assertVisible(app:app, element:buttonPlay)
 		XCTAssertEqual("", textViewPoem.value as! String)
 		XCTAssertFalse(buttonPlay.isEnabled)
 		textViewPoem.tap()
-		assertVisible(element:labelHint)
+		UITestUtils.assertVisible(app:app, element:labelHint)
 		let poemText = "Hello World"
 		app.typeText(poemText)
-		assertHidden(element:labelHint)
+		UITestUtils.assertHidden(app:app, element:labelHint)
 		XCTAssertTrue(buttonPlay.isEnabled)
 		UITestUtils.clearText(element: textViewPoem)
 		XCTAssertEqual("", textViewPoem.value as! String)
-		assertVisible(element: labelHint)
+		UITestUtils.assertVisible(app:app, element: labelHint)
 		XCTAssertFalse(buttonPlay.isEnabled)
 	}
 	
 	func testWordCount() {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		let labelWordCount = app.staticTexts.matching(identifier: "ComposerLabelWordCount").firstMatch
-		assertVisible(element:textViewPoem)
+		UITestUtils.assertVisible(app:app, element:textViewPoem)
 		XCTAssertEqual("", textViewPoem.value as! String)
-		assertHidden(element:labelWordCount)
+		UITestUtils.assertHidden(app:app, element:labelWordCount)
 		let poemText = "Hello World"
 		textViewPoem.tap()
 		app.typeText(poemText)
-		assertVisible(element: labelWordCount)
+		UITestUtils.assertVisible(app:app, element: labelWordCount)
 		var wordCountText = labelWordCount.label
 		XCTAssert(wordCountText.contains("2"))
 		XCTAssert(wordCountText.contains("11"))
 		UITestUtils.clearText(element: textViewPoem)
-		assertHidden(element:labelWordCount)
+		UITestUtils.assertHidden(app:app, element:labelWordCount)
 		app.typeText(" ")
-		assertHidden(element:labelWordCount)
+		UITestUtils.assertHidden(app:app, element:labelWordCount)
 		app.typeText(" 🙆🏻‍♀️ 👨🏽‍✈️")
-		assertHidden(element:labelWordCount)
+		UITestUtils.assertHidden(app:app, element:labelWordCount)
 		app.typeText(" do you like emojis?")
-		assertVisible(element:labelWordCount)
+		UITestUtils.assertVisible(app:app, element:labelWordCount)
 		wordCountText = labelWordCount.label
 		XCTAssert(wordCountText.contains("4"))
 		XCTAssert(wordCountText.contains("23"))
@@ -100,41 +100,20 @@ class ComposerTest: XCTestCase {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		let buttonHideKeyboard = app.buttons.matching(identifier: "ComposerButtonHideKeyboard").firstMatch
 		let tabs = app.tabBars
-		assertVisible(element: textViewPoem)
-		assertVisible(element: tabs.firstMatch)
-		assertHidden(element: buttonHideKeyboard)
-		assertHidden(element: app.keyboards.firstMatch)
+		UITestUtils.assertVisible(app:app, element: textViewPoem)
+		UITestUtils.assertVisible(app:app, element: tabs.firstMatch)
+		UITestUtils.assertHidden(app:app, element: buttonHideKeyboard)
+		UITestUtils.assertHidden(app:app, element: app.keyboards.firstMatch)
 		textViewPoem.tap()
 		textViewPoem.typeText("hello")
-		assertVisible(element: app.keyboards.firstMatch)
-		assertVisible(element: buttonHideKeyboard)
+		UITestUtils.assertVisible(app:app, element: app.keyboards.firstMatch)
+		UITestUtils.assertVisible(app:app, element: buttonHideKeyboard)
 		buttonHideKeyboard.tap()
-		assertVisible(element: tabs.firstMatch)
-		assertHidden(element: buttonHideKeyboard)
-		assertHidden(element: app.keyboards.firstMatch)
+		UITestUtils.assertVisible(app:app, element: tabs.firstMatch)
+		UITestUtils.assertHidden(app:app, element: buttonHideKeyboard)
+		UITestUtils.assertHidden(app:app, element: app.keyboards.firstMatch)
 	}
 	
-	func testShare() {
-		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
-		assertVisible(element:textViewPoem.firstMatch)
-		UITestUtils.openMore(app: app)
-		let shareQuery = app.tables.cells.matching(identifier: "Share")
-		XCTAssert(shareQuery.firstMatch.frame.height < 1)
-		app.navigationBars.buttons.firstMatch.tap()
-		textViewPoem.firstMatch.tap()
-		textViewPoem.firstMatch.typeText("Hello there")
-		UITestUtils.openMore(app: app)
-		XCTAssert(shareQuery.firstMatch.frame.height > 1)
-		shareQuery.firstMatch.tap()
-		let predicate = NSPredicate(format: "label =[cd] 'Cancel'")
-		let buttonCancelShare = app.buttons.matching(predicate).firstMatch
-		if UIDevice.current.userInterfaceIdiom == .phone {
-			assertVisible(element: buttonCancelShare)
-		} else {
-			XCTAssertFalse(buttonCancelShare.exists)
-		}
-	}
-
 	func testMenu() {
 		let headerWord = app.staticTexts.matching(identifier: "HeaderWord")
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
@@ -168,17 +147,5 @@ class ComposerTest: XCTestCase {
 			moreMenuItem.tap()
 			openMenuItem(label: label)
 		}
-	}
-
-	private func assertVisible(element: XCUIElement) {
-		let window = app.windows.element(boundBy: 0)
-		let elementFrame = CGRect(origin: CGPoint(x: Int(element.frame.minX), y: Int(element.frame.minY)),
-								  size: CGSize(width: Int(element.frame.width), height: Int(element.frame.height)))
-		XCTAssert(window.frame.contains(elementFrame))
-	}
-	
-	private func assertHidden(element: XCUIElement) {
-		let window = app.windows.element(boundBy: 0)
-		XCTAssert(!element.exists || !window.frame.contains(element.frame) || !element.isHittable)
 	}
 }
