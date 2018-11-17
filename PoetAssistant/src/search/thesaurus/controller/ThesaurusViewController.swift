@@ -21,11 +21,7 @@ import UIKit
 import CoreData
 
 class ThesaurusViewController: SearchResultsController {
-	
-	private static let PART_OF_SPEECH_LABELS:[PartOfSpeech:String] = [.noun: "part_of_speech_n",
-																 .adjective: "part_of_speech_a",
-																 .adverb: "part_of_speech_r",
-																 .verb: "part_of_speech_v"]
+
 	private var thesaurusQueryResult: ThesaurusQueryResult? = nil
 	
 	weak var rtdDelegate: RTDDelegate?
@@ -48,7 +44,9 @@ class ThesaurusViewController: SearchResultsController {
 			}
 		}
 	}
-	
+	override func getShareText() -> String? {
+		return thesaurusQueryResult?.toText()
+	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return thesaurusQueryResult?.sections.count ?? 0
 	}
@@ -64,8 +62,7 @@ class ThesaurusViewController: SearchResultsController {
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if let sections = thesaurusQueryResult?.sections, sections.count > section {
 			let partOfSpeech = sections[section].partOfSpeech
-			let partOfSpeechStringKey = ThesaurusViewController.PART_OF_SPEECH_LABELS[partOfSpeech] ?? ""
-			return NSLocalizedString(partOfSpeechStringKey, comment: "")
+			return partOfSpeech.toLocalizedString()
 		} else {
 			return nil
 		}

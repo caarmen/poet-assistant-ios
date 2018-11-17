@@ -73,6 +73,26 @@ class RhymeFetcher {
 	func variant(section: Int) -> Int?{
 		return variants[section]
 	}
+	func toText(query: String) -> String {
+		var result = String(format: NSLocalizedString("share_rhymes_title", comment: ""), query)
+		for section in 0..<sectionCount {
+			if let rhymeType = rhymeType(section:section) {
+				var subtitle: String
+				if let variantNumber = variant(section: section) {
+					subtitle = String(format: NSLocalizedString(rhymeType.localizedStringIdForVariant, comment: ""), query, String(variantNumber))
+				} else {
+					subtitle = NSLocalizedString(rhymeType.localizedStringId, comment: "")
+				}
+				result.append(String(format: NSLocalizedString("share_rhymes_subtitle", comment: ""), subtitle))
+				for row in 0..<numberOfRowsInSection(section: section) {
+					if let word = rhyme(at: IndexPath(row:row, section:section))?.word {
+						result.append(String(format: NSLocalizedString("share_rhymes_word", comment: ""), word))
+					}
+				}
+			}
+		}
+		return result
+	}
 }
 struct RhymeEntry {
 	let word: String
@@ -83,4 +103,21 @@ enum RhymeType {
 	case last_three_syllables
 	case last_two_syllables
 	case last_syllable
+	
+	var localizedStringId: String {
+		switch (self) {
+		case .strict: return "rhyme_match_type_0"
+		case .last_three_syllables: return "rhyme_match_type_3"
+		case .last_two_syllables: return "rhyme_match_type_2"
+		case .last_syllable: return "rhyme_match_type_1"
+		}
+	}
+	var localizedStringIdForVariant: String {
+		switch (self) {
+		case .strict: return "rhyme_variant_match_type_0"
+		case .last_three_syllables: return "rhyme_variant_match_type_3"
+		case .last_two_syllables: return "rhyme_variant_match_type_2"
+		case .last_syllable: return "rhyme_variant_match_type_1"
+		}
+	}
 }

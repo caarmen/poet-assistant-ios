@@ -120,6 +120,13 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 		speechSynthesizer.speak(utterance)
 	}
 
+	func didClickShare(sender: UIView) {
+		if let shareText = getShareText() {
+			let shareController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+			shareController.popoverPresentationController?.sourceView = sender
+			present(shareController, animated:true, completion:nil)
+		}
+	}
 	//--------------------------------------------
 	// Methods to be implemented by the subclasses
 	//--------------------------------------------
@@ -133,7 +140,9 @@ class SearchResultsController: UIViewController, UITableViewDelegate, UITableVie
 	open func getEmptyText(query: String) -> String {
 		return ""
 	}
-	
+	open func getShareText() -> String? {
+		return nil
+	}
 	open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 0
 	}

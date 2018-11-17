@@ -17,9 +17,22 @@ You should have received a copy of the GNU General Public License
 along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import Foundation
+
 enum PartOfSpeech {
 	case noun
 	case verb
 	case adjective
 	case adverb
+	
+	func toLocalizedString() -> String {
+		var partOfSpeechStringId: String
+		switch (self) {
+		case .noun: partOfSpeechStringId = "part_of_speech_n"
+		case .verb: partOfSpeechStringId = "part_of_speech_v"
+		case .adverb: partOfSpeechStringId = "part_of_speech_r"
+		case .adjective: partOfSpeechStringId = "part_of_speech_a"
+		}
+		return NSLocalizedString(partOfSpeechStringId, comment: "")
+	}
 }

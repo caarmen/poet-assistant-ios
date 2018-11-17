@@ -21,12 +21,7 @@ import UIKit
 import CoreData
 
 class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
-	
-	// TODO copy paste
-	private static let PART_OF_SPEECH_LABELS:[PartOfSpeech:String] = [.noun: "part_of_speech_n",
-																	  .adjective: "part_of_speech_a",
-																	  .adverb: "part_of_speech_r",
-																	  .verb: "part_of_speech_v"]
+
 	private var dictionaryQueryResult: DictionaryQueryResult? = nil
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -46,6 +41,9 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 		}
 	}
 
+	override func getShareText() -> String? {
+		return dictionaryQueryResult?.toText()
+	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return dictionaryQueryResult?.numberOfSections() ?? 0
 	}
@@ -55,12 +53,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if let partOfSpeech = dictionaryQueryResult?.partOfSpeech(section:section) {
-			let partOfSpeechStringKey = DictionaryViewController.PART_OF_SPEECH_LABELS[partOfSpeech] ?? ""
-			return NSLocalizedString(partOfSpeechStringKey, comment: "")
-		} else {
-			return nil
-		}
+		return dictionaryQueryResult?.partOfSpeech(section:section)?.toLocalizedString()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

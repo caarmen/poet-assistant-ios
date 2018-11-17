@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9L-tz-Pss" userLabel="ButtonLookup">
-                    <rect key="frame" x="303" y="331.5" width="40" height="24"/>
+                    <rect key="frame" x="247" y="331.5" width="40" height="24"/>
                     <accessibility key="accessibilityConfiguration" identifier="HeaderButtonLookup"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="fo7-Wd-qLM"/>
@@ -56,15 +56,26 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nO6-QE-HiI" userLabel="ButtonPlay">
-                    <rect key="frame" x="343" y="331.5" width="32" height="24"/>
+                    <rect key="frame" x="287" y="331.5" width="40" height="24"/>
                     <accessibility key="accessibilityConfiguration" identifier="HeaderButtonPlay"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="32" id="Fb3-RG-RwI"/>
+                        <constraint firstAttribute="width" constant="40" id="Fb3-RG-RwI"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                     <state key="normal" image="ic_play_outline"/>
                     <connections>
                         <action selector="didClickPlay:" destination="-1" eventType="touchUpInside" id="lhx-rs-GHE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-fV-XRG" userLabel="ButtonShare">
+                    <rect key="frame" x="327" y="331.5" width="32" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="oly-ub-n71"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="ic_share"/>
+                    <connections>
+                        <action selector="didClickShare:" destination="-1" eventType="touchUpInside" id="fYY-Mn-hqr"/>
                     </connections>
                 </button>
             </subviews>
@@ -73,12 +84,14 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IhE-kg-mTE" secondAttribute="bottom" constant="8" id="HZt-O0-6TA"/>
                 <constraint firstItem="G9L-tz-Pss" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="PjC-uF-jaN"/>
                 <constraint firstItem="IhE-kg-mTE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SnR-6h-p3L"/>
-                <constraint firstAttribute="trailing" secondItem="nO6-QE-HiI" secondAttribute="trailing" id="UdW-uL-FIT"/>
+                <constraint firstItem="YO6-fV-XRG" firstAttribute="leading" secondItem="nO6-QE-HiI" secondAttribute="trailing" id="UdW-uL-FIT"/>
+                <constraint firstAttribute="trailingMargin" secondItem="YO6-fV-XRG" secondAttribute="trailing" id="Xi7-if-dpM"/>
                 <constraint firstItem="nO6-QE-HiI" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ZKw-cU-Og3"/>
                 <constraint firstItem="nO6-QE-HiI" firstAttribute="leading" secondItem="G9L-tz-Pss" secondAttribute="trailing" id="gVx-Pc-QhF"/>
                 <constraint firstItem="IhE-kg-mTE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="hhy-aj-hZr"/>
                 <constraint firstItem="IhE-kg-mTE" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="lDZ-Xs-rzq"/>
                 <constraint firstItem="G9L-tz-Pss" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p12-KG-NZH" secondAttribute="trailing" id="nuz-4p-tI3"/>
+                <constraint firstItem="YO6-fV-XRG" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="r5K-nN-MEh"/>
                 <constraint firstItem="p12-KG-NZH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="sJ8-a1-3AU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -86,6 +99,7 @@
     </objects>
     <resources>
         <image name="ic_play_outline" width="24" height="24"/>
+        <image name="ic_share" width="24" height="24"/>
         <image name="ic_star_outline" width="24" height="24"/>
         <image name="ic_web_search" width="24" height="24"/>
     </resources>

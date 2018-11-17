@@ -23,7 +23,9 @@ protocol SearchResultHeaderDelegate:class {
 	func didClickFavorite(word: String)
 	func didClickLookup(word: String)
 	func didClickPlay(word: String)
+	func didClickShare(sender: UIView)
 }
+
 @IBDesignable
 class SearchResultHeaderView: UIView {
 	var contentView: UIView?
@@ -54,6 +56,9 @@ class SearchResultHeaderView: UIView {
 		if let word = labelWord.text {
 			delegate?.didClickPlay(word: word)
 		}
+	}
+	@IBAction func didClickShare(_ sender: UIButton) {
+		delegate?.didClickShare(sender: sender)
 	}
 	private func xibSetup() {
 		let bundle = Bundle(for: SearchResultHeaderView.self)
