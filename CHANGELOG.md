@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.4.0 *(2018-11-17)*
+--------------------
+* Added function to share search results
+
 1.3.0 *(2018-11-11)*
 --------------------
 * Added settings for rhymer rules for different pronunciations.
