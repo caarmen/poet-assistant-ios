@@ -1,0 +1,17 @@
+"part_of_speech_n" = "Nouns";
+"part_of_speech_v" = "Verbs";
+"part_of_speech_a" = "Adjectives";
+"part_of_speech_r" = "Adverbs";
+"part_of_speech_n_abbr" = "n.";
+"part_of_speech_v_abbr" = "v.";
+"part_of_speech_a_abbr" = "adj.";
+"part_of_speech_r_abbr" = "adv.";
+"share_rhymes_title" = "Rhymes for %@: \n";
+"share_rhymes_subtitle" = "\n  %@: \n";
+"share_rhymes_word" = "   %@ \n";
+"share_thesaurus_title" = "Synonyms for %@: \n";
+"share_thesaurus_subtitle_synonym" = "\n Synonyms:\n";
+"share_thesaurus_subtitle_antonym" = "\n Antonyms:\n";
+"share_thesaurus_word" = "  %@\n";
+"share_dictionary_title" = "Definitions of %@: \n";
+"share_dictionary_definition" = "%@  %@\n";

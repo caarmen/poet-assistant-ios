@@ -19,6 +19,7 @@
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
 
@@ -42,7 +43,7 @@ class DictionaryViewController: SearchResultsController, UISearchControllerDeleg
 	}
 
 	override func getShareText() -> String? {
-		return dictionaryQueryResult?.toText()
+		return dictionaryQueryResult?.getShareText()
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return dictionaryQueryResult?.numberOfSections() ?? 0

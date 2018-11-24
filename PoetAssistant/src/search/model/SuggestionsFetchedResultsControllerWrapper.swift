@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 import CoreData
+import PoetAssistantLexiconsFramework
 
 enum SuggestionListItem {
 	case random_word
@@ -53,7 +54,7 @@ class SuggestionsFetchedResultsControllerWrapper {
 			}
 		} else {
 			let dictionarySuggestion = dictionaryFetchedResultsController?.object(at: IndexPath(row: at.row, section: 0))
-			return SuggestionListItem.dictionary_suggestion(dictionarySuggestion?[#keyPath(Dictionary.word)] as? String ?? "")
+			return SuggestionListItem.dictionary_suggestion(dictionarySuggestion?[#keyPath(PoetAssistantLexiconsFramework.Dictionary.word)] as? String ?? "")
 		}
 	}
 	

@@ -19,9 +19,9 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import CoreData
 
-class Dictionary: NSManagedObject {
+public class Dictionary: NSManagedObject {
 	
-	class func fetch(context: NSManagedObjectContext, queryText: String) -> DictionaryQueryResult? {
+	public class func fetch(context: NSManagedObjectContext, queryText: String) -> DictionaryQueryResult? {
 		do {
 			var result = try fetchImpl(context:context, queryText:queryText)
 			if result.sections != nil && result.sections!.count > 0 {
