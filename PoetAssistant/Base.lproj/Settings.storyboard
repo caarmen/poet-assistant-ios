@@ -394,6 +394,49 @@ AO /ɔ/: "thaw".</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="YFg-kN-p1g" userLabel="Wotd">
+                                        <rect key="frame" x="0.0" y="480" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YFg-kN-p1g" id="oQy-Lo-13n">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykn-7q-Mes" userLabel="Switch Wotd">
+                                                    <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchWotd"/>
+                                                    <connections>
+                                                        <action selector="didClickWotd:" destination="LXh-xF-4WQ" eventType="valueChanged" id="5Ni-Rj-4oJ"/>
+                                                    </connections>
+                                                </switch>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="58W-wp-lnU">
+                                                    <rect key="frame" x="20" y="16" width="239" height="11.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbu-I0-RNw" userLabel="Word of the day">
+                                                            <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="2"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display a notification once a day with a random word" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLI-P7-90y" userLabel="Display a notification once a day with a random word">
+                                                            <rect key="frame" x="0.0" y="10" width="239" height="1.6666666666666661"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ykn-7q-Mes" secondAttribute="trailing" id="0wq-vw-deU"/>
+                                                <constraint firstItem="58W-wp-lnU" firstAttribute="leading" secondItem="oQy-Lo-13n" secondAttribute="leadingMargin" id="DKv-0l-Jmi"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="58W-wp-lnU" secondAttribute="bottom" constant="16" id="OiW-z2-qED"/>
+                                                <constraint firstItem="Ykn-7q-Mes" firstAttribute="centerY" secondItem="oQy-Lo-13n" secondAttribute="centerY" id="ZfE-pC-kD0"/>
+                                                <constraint firstItem="Ykn-7q-Mes" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="58W-wp-lnU" secondAttribute="trailing" constant="16" id="ewV-KJ-BTt"/>
+                                                <constraint firstItem="58W-wp-lnU" firstAttribute="centerY" secondItem="oQy-Lo-13n" secondAttribute="centerY" id="yRF-DK-hSA"/>
+                                                <constraint firstItem="58W-wp-lnU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oQy-Lo-13n" secondAttribute="top" constant="16" id="zZf-xb-EbN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -413,6 +456,7 @@ AO /ɔ/: "thaw".</string>
                         <outlet property="switchMatchAOAA" destination="rMZ-Qc-kXe" id="lEF-C9-kIG"/>
                         <outlet property="switchMatchAORAO" destination="rcD-EJ-7aQ" id="n6c-Q0-3MB"/>
                         <outlet property="switchSearchHistory" destination="Lkk-k1-ImW" id="Baf-hQ-6Ll"/>
+                        <outlet property="switchWotd" destination="Ykn-7q-Mes" id="ZRf-2c-XXW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05l-hL-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>

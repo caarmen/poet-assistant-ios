@@ -56,3 +56,8 @@
 "save_as_action_cancel" = "Cancel";
 "save_as_action_create" = "Create";
 "about_title" = "%@ v%@(%@)";
+"wotd_notif_permission_title" = "Notification authorization";
+"wotd_notif_permission_message" = "Poet Assistant needs your authorization to display notifications. Open the system settings to grant authorization";
+"wotd_notif_permission_ok" = "Open";
+"wotd_notif_permission_cancel" = "Cancel";
+"wotd_notif_title" = "Word of the day: %@";

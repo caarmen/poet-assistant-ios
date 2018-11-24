@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 import AVFoundation
+import UserNotifications
 
 class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	
@@ -36,6 +37,7 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	@IBOutlet weak var switchEfficientLayout: UISwitch!
 	@IBOutlet weak var switchDarkTheme: UISwitch!
+	@IBOutlet weak var switchWotd: UISwitch!
 	private var ttsPlayButtonConnector: TtsPlayButtonConnector?
 	
 
@@ -57,6 +59,11 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		switchMatchAOAA.isOn = Settings.getMatchAOAAEnabled()
 		switchEfficientLayout.isOn = Settings.getEfficientLayoutEnabled()
 		switchDarkTheme.isOn = Settings.getTheme().name == Theme.DARK_THEME.name
+		Wotd.hasNotificationsScheduled() { [weak self] isOn in
+			Settings.setWotdEnabled(enabled: isOn)
+			self?.switchWotd.isOn = isOn
+		}
+		switchWotd.isOn = Settings.getWotdEnabled()
 		updateVoiceSelection()
 	}
 
@@ -92,6 +99,47 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 			theme.reload(window: window)
 		}
 		view.backgroundColor = theme.backgroundColor
+	}
+
+	@IBAction func didClickWotd(_ sender: UISwitch) {
+		if (!sender.isOn) {
+			Settings.setWotdEnabled(enabled: false)
+			Wotd.disable()
+		} else {
+			let center = UNUserNotificationCenter.current()
+			// Request permission to display alerts and play sounds.
+			center.requestAuthorization(options: [.alert, .sound])
+			{ (granted, error) in
+				DispatchQueue.main.async { [weak self] in
+					Settings.setWotdEnabled(enabled: granted)
+					sender.isOn = granted
+					if (granted) {
+						Wotd.scheduleNotifications()
+					} else {
+						Wotd.disable()
+						self?.promptToOpenNotificationSettings()
+					}
+				}
+			}
+		}
+	}
+	
+	private func promptToOpenNotificationSettings() {
+		let alert = UIAlertController.init(
+			title: NSLocalizedString("wotd_notif_permission_title", comment:""),
+			message: NSLocalizedString("wotd_notif_permission_message", comment:""),
+			preferredStyle: UIAlertController.Style.alert)
+		alert.addAction(UIAlertAction(
+			title: NSLocalizedString("wotd_notif_permission_ok", comment: ""),
+			style: UIAlertAction.Style.default,
+			handler: {alertAction in
+				UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+		}))
+		alert.addAction(UIAlertAction(
+			title: NSLocalizedString("wotd_notif_permission_cancel", comment: ""),
+			style: .cancel,
+			handler:nil))
+		present(alert, animated: true, completion: nil)
 	}
 
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

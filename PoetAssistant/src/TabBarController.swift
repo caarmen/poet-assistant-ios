@@ -75,6 +75,10 @@ class TabBarController: UITabBarController, RTDDelegate {
 		switchToSearchViewController()
 		searchViewController?.searchDictionary(query:query)
 	}
+	func search(query: String) {
+		switchToSearchViewController()
+		searchViewController?.searchAllLexicons(query: query)
+	}
 	
 	private func switchToSearchViewController() {
 		selectedViewController = searchViewController?.navigationController

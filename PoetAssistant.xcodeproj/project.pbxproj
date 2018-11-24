@@ -21,6 +21,11 @@
 		4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */; };
 		4F1C93D8218CFAB400469CD5 /* FavoritesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */; };
 		4F1C93DA218DC58E00469CD5 /* RTDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1C93D9218DC58E00469CD5 /* RTDView.xib */; };
+		4F2CE7DA21A98D4100EB2AF3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE7D921A98D4100EB2AF3 /* Random.swift */; };
+		4F2CE7DC21A98F8B00EB2AF3 /* Wotd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE7DB21A98F8B00EB2AF3 /* Wotd.swift */; };
+		4F2CE7DE21A994E700EB2AF3 /* WotdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE7DD21A994E700EB2AF3 /* WotdTest.swift */; };
+		4F2CE7E121A9B0E900EB2AF3 /* AppDelegate+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE7E021A9B0E900EB2AF3 /* AppDelegate+CoreData.swift */; };
+		4F2CE7E321A9B18600EB2AF3 /* AppDelegate+UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE7E221A9B18600EB2AF3 /* AppDelegate+UserNotifications.swift */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -124,6 +129,11 @@
 		4F1C93D5218C94B200469CD5 /* FavoriteButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonHelper.swift; sourceTree = "<group>"; };
 		4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTest.swift; sourceTree = "<group>"; };
 		4F1C93D9218DC58E00469CD5 /* RTDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTDView.xib; sourceTree = "<group>"; };
+		4F2CE7D921A98D4100EB2AF3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		4F2CE7DB21A98F8B00EB2AF3 /* Wotd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wotd.swift; sourceTree = "<group>"; };
+		4F2CE7DD21A994E700EB2AF3 /* WotdTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WotdTest.swift; sourceTree = "<group>"; };
+		4F2CE7E021A9B0E900EB2AF3 /* AppDelegate+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+CoreData.swift"; sourceTree = "<group>"; };
+		4F2CE7E221A9B18600EB2AF3 /* AppDelegate+UserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UserNotifications.swift"; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -273,6 +283,33 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		4F2CE7D721A98D2800EB2AF3 /* wotd */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE7D821A98D3000EB2AF3 /* model */,
+			);
+			path = wotd;
+			sourceTree = "<group>";
+		};
+		4F2CE7D821A98D3000EB2AF3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE7D921A98D4100EB2AF3 /* Random.swift */,
+				4F2CE7DB21A98F8B00EB2AF3 /* Wotd.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4F2CE7DF21A9B0CE00EB2AF3 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
+				4F2CE7E021A9B0E900EB2AF3 /* AppDelegate+CoreData.swift */,
+				4F2CE7E221A9B18600EB2AF3 /* AppDelegate+UserNotifications.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 		4F3197382166C0E100135FF4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +361,7 @@
 				4FFBA5BF216A5C7A00AD3AD6 /* WordCountTest.swift */,
 				4FEB03B72177BB7100CF8B49 /* StemsTest.swift */,
 				4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */,
+				4F2CE7DD21A994E700EB2AF3 /* WotdTest.swift */,
 			);
 			path = PoetAssistantTests;
 			sourceTree = "<group>";
@@ -367,6 +405,8 @@
 		4F6613EE2164FBEE00FA10A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4F2CE7DF21A9B0CE00EB2AF3 /* app */,
+				4F2CE7D721A98D2800EB2AF3 /* wotd */,
 				4FEF068D2182551600D69383 /* more */,
 				4F6613F12164FC4700FA10A1 /* composer */,
 				4F661405216533A600FA10A1 /* search */,
@@ -374,7 +414,6 @@
 				4FFB980021722253000469F0 /* about */,
 				4F15B04A217342380072C8BC /* tts */,
 				4F661413216627BF00FA10A1 /* extensions */,
-				4F6613D52164D10700FA10A1 /* AppDelegate.swift */,
 				4F6613F82165241D00FA10A1 /* TabBarController.swift */,
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
 				4F31972A2166587100135FF4 /* Tab.swift */,
@@ -748,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
+				4F2CE7DE21A994E700EB2AF3 /* WotdTest.swift in Sources */,
 				4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */,
 				4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */,
 				4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */,
@@ -789,10 +829,12 @@
 				4F31973D2166C79600135FF4 /* RhymeFetcher.swift in Sources */,
 				4F054B65218DE1AC00386FBC /* SearchResultHeaderView.swift in Sources */,
 				4F31974B2167284800135FF4 /* ThesaurusRelationshipViewCell.swift in Sources */,
+				4F2CE7E121A9B0E900EB2AF3 /* AppDelegate+CoreData.swift in Sources */,
 				4F3197512167A2D000135FF4 /* SectionInfo.swift in Sources */,
 				4F6614092165345200FA10A1 /* Dictionary.swift in Sources */,
 				4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */,
 				4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */,
+				4F2CE7DA21A98D4100EB2AF3 /* Random.swift in Sources */,
 				4F6613F5216506B500FA10A1 /* PoemDocument.swift in Sources */,
 				4F054B61218DCE1000386FBC /* RTDTableViewCell.swift in Sources */,
 				4FFB97F9216EA09E000469F0 /* PartOfSpeech.swift in Sources */,
@@ -802,6 +844,8 @@
 				4F3197472167131200135FF4 /* ThesaurusResultsFetcher.swift in Sources */,
 				4F31972B2166587100135FF4 /* Tab.swift in Sources */,
 				4FEF06902182554200D69383 /* MoreTableViewController.swift in Sources */,
+				4F2CE7E321A9B18600EB2AF3 /* AppDelegate+UserNotifications.swift in Sources */,
+				4F2CE7DC21A98F8B00EB2AF3 /* Wotd.swift in Sources */,
 				4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */,
 				4F31974F21679CFD00135FF4 /* RTDDelegate.swift in Sources */,
 				4FFBA614216AB88100AD3AD6 /* userdata.xcdatamodeld in Sources */,

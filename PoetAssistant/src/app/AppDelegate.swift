@@ -19,6 +19,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			FileUtils.deleteAllDocuments()
 		}
 		Settings.getTheme().apply()
+		UNUserNotificationCenter.current().delegate = self
 		return true
 	}
 
 	// MARK: - Core Data stack
-	
 	lazy var persistentEmbeddedDbContainer: NSPersistentContainer = {
 		EmbeddedDb.install()
 		return loadContainer(databaseName: "dictionaries")
@@ -48,39 +49,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return loadContainer(databaseName: "userdata")
 	}()
 	
-	private func loadContainer(databaseName: String) -> NSPersistentContainer {
-		let container = NSPersistentContainer(name: databaseName)
-		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-			if let error = error as NSError? {
-				fatalError("Unresolved error \(error), \(error.userInfo)")
-			}
-		})
-		return container
-	}
-	// MARK: - Core Data Saving support
-	
-	func saveContext () {
-		saveContext(container: persistentEmbeddedDbContainer)
-		saveContext(container: persistentUserDbContainer)
-	}
-	private func saveContext(container: NSPersistentContainer) {
-		let context = container.viewContext
-		if context.hasChanges {
-			do {
-				try context.save()
-			} catch {
-				let nserror = error as NSError
-				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-			}
-		}
-	}
-	
-	static var persistentDictionariesContainer: NSPersistentContainer {
-		return (UIApplication.shared.delegate as! AppDelegate).persistentEmbeddedDbContainer
-	}
-	
-	static var persistentUserDbContainer: NSPersistentContainer {
-		return (UIApplication.shared.delegate as! AppDelegate).persistentUserDbContainer
-	}
 }
-
