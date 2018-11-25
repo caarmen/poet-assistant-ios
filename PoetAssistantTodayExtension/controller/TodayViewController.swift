@@ -54,6 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			self.preferredContentSize = maxSize;
 		}
 		else if self.labelTitle?.text?.count ?? 0 > 0{
+			view.layoutSubviews()
 			self.preferredContentSize.height = stackView.bounds.height
 		}
 	}
