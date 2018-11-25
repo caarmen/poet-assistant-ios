@@ -22,7 +22,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 	}
 	
 	func didReceive(_ notification: UNNotification) {
-		//self.label?.text = notification.request.content.body
 		CoreDataAccess.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
 			let wotd = Wotd.getWordOfTheDay(context: context)
 			if let wotdDefinitions = Dictionary.fetch(context: context, queryText: wotd)?.getDefinitionsText() {

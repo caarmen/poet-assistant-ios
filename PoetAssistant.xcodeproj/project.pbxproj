@@ -48,6 +48,11 @@
 		4F2CE82521AAA67600EB2AF3 /* ThesaurusResultsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */; };
 		4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F2CE82821AAC4DD00EB2AF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CE82721AAC4DD00EB2AF3 /* Localizable.strings */; };
+		4F2CE82F21AADA8900EB2AF3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2CE82E21AADA8900EB2AF3 /* NotificationCenter.framework */; };
+		4F2CE83221AADA8900EB2AF3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */; };
+		4F2CE83521AADA8900EB2AF3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CE83321AADA8900EB2AF3 /* MainInterface.storyboard */; };
+		4F2CE83921AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F2CE82D21AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F2CE83F21AADDBD00EB2AF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CE83E21AADDBD00EB2AF3 /* Localizable.strings */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -120,6 +125,13 @@
 			remoteGlobalIDString = 4F2CE80021AA980400EB2AF3;
 			remoteInfo = PoetAssistantLexiconsFramework;
 		};
+		4F2CE83721AADA8900EB2AF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F2CE82C21AADA8900EB2AF3;
+			remoteInfo = PoetAssistantTodayExtension;
+		};
 		4F31975D2167E4A800135FF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
@@ -144,6 +156,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				4F2CE7F721AA954E00EB2AF3 /* PoetAssistantNotificationExtension.appex in Embed App Extensions */,
+				4F2CE83921AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +207,13 @@
 		4F2CE81221AA9F0300EB2AF3 /* PoetAssistantNotificationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistantNotificationExtension.entitlements; sourceTree = "<group>"; };
 		4F2CE81421AAA18600EB2AF3 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 		4F2CE82721AAC4DD00EB2AF3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4F2CE82D21AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PoetAssistantTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2CE82E21AADA8900EB2AF3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4F2CE83421AADA8900EB2AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4F2CE83621AADA8900EB2AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2CE83D21AADAD500EB2AF3 /* PoetAssistantTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistantTodayExtension.entitlements; sourceTree = "<group>"; };
+		4F2CE83E21AADDBD00EB2AF3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -290,6 +310,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F2CE82A21AADA8900EB2AF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2CE82F21AADA8900EB2AF3 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F3197552167E4A800135FF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +402,7 @@
 			children = (
 				4F2CE7EA21AA954E00EB2AF3 /* UserNotifications.framework */,
 				4F2CE7EC21AA954E00EB2AF3 /* UserNotificationsUI.framework */,
+				4F2CE82E21AADA8900EB2AF3 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -397,6 +426,7 @@
 				4F2CE80E21AA983100EB2AF3 /* lexicons */,
 				4F2CE80321AA980400EB2AF3 /* PoetAssistantLexiconsFramework.h */,
 				4F2CE80421AA980400EB2AF3 /* Info.plist */,
+				4F2CE83E21AADDBD00EB2AF3 /* Localizable.strings */,
 			);
 			path = PoetAssistantLexiconsFramework;
 			sourceTree = "<group>";
@@ -463,6 +493,17 @@
 			path = rhymer;
 			sourceTree = "<group>";
 		};
+		4F2CE83021AADA8900EB2AF3 /* PoetAssistantTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE83D21AADAD500EB2AF3 /* PoetAssistantTodayExtension.entitlements */,
+				4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */,
+				4F2CE83321AADA8900EB2AF3 /* MainInterface.storyboard */,
+				4F2CE83621AADA8900EB2AF3 /* Info.plist */,
+			);
+			path = PoetAssistantTodayExtension;
+			sourceTree = "<group>";
+		};
 		4F3197392166C0EF00135FF4 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +549,7 @@
 				4FEB03CF2179047200CF8B49 /* PoetAssistantUITests */,
 				4F2CE7EE21AA954E00EB2AF3 /* PoetAssistantNotificationExtension */,
 				4F2CE80221AA980400EB2AF3 /* PoetAssistantLexiconsFramework */,
+				4F2CE83021AADA8900EB2AF3 /* PoetAssistantTodayExtension */,
 				4F2CE7E921AA954E00EB2AF3 /* Frameworks */,
 				4F6613D32164D10700FA10A1 /* Products */,
 			);
@@ -521,6 +563,7 @@
 				4FEB03CE2179047200CF8B49 /* PoetAssistantUITests.xctest */,
 				4F2CE7E821AA954E00EB2AF3 /* PoetAssistantNotificationExtension.appex */,
 				4F2CE80121AA980400EB2AF3 /* PoetAssistantLexiconsFramework.framework */,
+				4F2CE82D21AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -819,6 +862,23 @@
 			productReference = 4F2CE80121AA980400EB2AF3 /* PoetAssistantLexiconsFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		4F2CE82C21AADA8900EB2AF3 /* PoetAssistantTodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2CE83A21AADA8900EB2AF3 /* Build configuration list for PBXNativeTarget "PoetAssistantTodayExtension" */;
+			buildPhases = (
+				4F2CE82921AADA8900EB2AF3 /* Sources */,
+				4F2CE82A21AADA8900EB2AF3 /* Frameworks */,
+				4F2CE82B21AADA8900EB2AF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoetAssistantTodayExtension;
+			productName = PoetAssistantTodayExtension;
+			productReference = 4F2CE82D21AADA8900EB2AF3 /* PoetAssistantTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4F3197572167E4A800135FF4 /* PoetAssistantTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F31975F2167E4A800135FF4 /* Build configuration list for PBXNativeTarget "PoetAssistantTests" */;
@@ -852,6 +912,7 @@
 			dependencies = (
 				4F2CE7F621AA954E00EB2AF3 /* PBXTargetDependency */,
 				4F2CE80721AA980400EB2AF3 /* PBXTargetDependency */,
+				4F2CE83821AADA8900EB2AF3 /* PBXTargetDependency */,
 			);
 			name = PoetAssistant;
 			productName = PoetAssistant;
@@ -898,6 +959,14 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
+					4F2CE82C21AADA8900EB2AF3 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					4F3197572167E4A800135FF4 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 4F6613D12164D10700FA10A1;
@@ -934,6 +1003,7 @@
 				4FEB03CD2179047200CF8B49 /* PoetAssistantUITests */,
 				4F2CE7E721AA954E00EB2AF3 /* PoetAssistantNotificationExtension */,
 				4F2CE80021AA980400EB2AF3 /* PoetAssistantLexiconsFramework */,
+				4F2CE82C21AADA8900EB2AF3 /* PoetAssistantTodayExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -953,6 +1023,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */,
+				4F2CE83F21AADDBD00EB2AF3 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2CE82B21AADA8900EB2AF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2CE83521AADA8900EB2AF3 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1094,14 @@
 				4F2CE81A21AAA43600EB2AF3 /* DictionaryQueryResult.swift in Sources */,
 				4F2CE81521AAA18600EB2AF3 /* CoreDataAccess.swift in Sources */,
 				4F2CE81621AAA21900EB2AF3 /* EmbeddedDb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2CE82921AADA8900EB2AF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2CE83221AADA8900EB2AF3 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1115,6 +1202,11 @@
 			target = 4F2CE80021AA980400EB2AF3 /* PoetAssistantLexiconsFramework */;
 			targetProxy = 4F2CE80621AA980400EB2AF3 /* PBXContainerItemProxy */;
 		};
+		4F2CE83821AADA8900EB2AF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F2CE82C21AADA8900EB2AF3 /* PoetAssistantTodayExtension */;
+			targetProxy = 4F2CE83721AADA8900EB2AF3 /* PBXContainerItemProxy */;
+		};
 		4F31975E2167E4A800135FF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F6613D12164D10700FA10A1 /* PoetAssistant */;
@@ -1132,6 +1224,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F2CE7F221AA954E00EB2AF3 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		4F2CE83321AADA8900EB2AF3 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F2CE83421AADA8900EB2AF3 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1287,6 +1387,50 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4F2CE83B21AADA8900EB2AF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PoetAssistantTodayExtension/PoetAssistantTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
+				INFOPLIST_FILE = PoetAssistantTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant.PoetAssistantTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F2CE83C21AADA8900EB2AF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PoetAssistantTodayExtension/PoetAssistantTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
+				INFOPLIST_FILE = PoetAssistantTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant.PoetAssistantTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1547,6 +1691,15 @@
 			buildConfigurations = (
 				4F2CE80B21AA980400EB2AF3 /* Debug */,
 				4F2CE80C21AA980400EB2AF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2CE83A21AADA8900EB2AF3 /* Build configuration list for PBXNativeTarget "PoetAssistantTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2CE83B21AADA8900EB2AF3 /* Debug */,
+				4F2CE83C21AADA8900EB2AF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

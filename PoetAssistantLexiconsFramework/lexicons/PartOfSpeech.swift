@@ -43,6 +43,6 @@ public enum PartOfSpeech {
 		case .adverb: stringId = "part_of_speech_r_abbr"
 		case .adjective: stringId = "part_of_speech_a_abbr"
 		}
-		return NSLocalizedString(stringId, comment: "")
+		return NSLocalizedString(stringId, tableName: nil, bundle: Bundle(identifier: "ca.rmen.PoetAssistantLexiconsFramework")!, comment: "")
 	}
 }

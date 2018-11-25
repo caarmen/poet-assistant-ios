@@ -48,7 +48,12 @@ public class DictionaryQueryResult {
 		return controller.object(at: indexPath).definition
 	}
 	public func toText() -> String {
-		var result = String(format: NSLocalizedString("share_dictionary_title", comment: ""), queryText)
+		var result = String(format: NSLocalizedString(
+			"share_dictionary_title",
+			tableName: nil,
+			bundle: Bundle(identifier: "ca.rmen.PoetAssistantLexiconsFramework")!,
+			comment: ""),
+							queryText)
 		result.append(getDefinitionsText())
 		return result
 	}
@@ -58,7 +63,14 @@ public class DictionaryQueryResult {
 			if let partOfSpeech = partOfSpeech(section:section) {
 				for row in 0..<numberOfRowsInSection(section: section) {
 					if let definition = definition(indexPath: IndexPath(row:row, section:section)) {
-						result.append(String(format: NSLocalizedString("share_dictionary_definition", comment: ""), partOfSpeech.localizedAbbreviation(), definition))
+						result.append(
+							String(format:
+								NSLocalizedString(
+									"share_dictionary_definition",
+									tableName: nil,
+									bundle: Bundle(identifier: "ca.rmen.PoetAssistantLexiconsFramework")!,
+									comment: ""),
+								   partOfSpeech.localizedAbbreviation(), definition))
 					}
 				}
 			}
