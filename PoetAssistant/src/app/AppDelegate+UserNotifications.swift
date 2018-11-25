@@ -39,18 +39,5 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 		}
 		completionHandler()
 	}
-	
-	private func search(query: String) {
-		var vc = self.window?.rootViewController as? TabBarController
-		if vc == nil {
-			let storyboard = UIStoryboard(name: "Main", bundle: nil)
-			vc = storyboard.instantiateInitialViewController() as? TabBarController
-			if vc != nil {
-				self.window = UIWindow(frame: UIScreen.main.bounds)
-				self.window?.rootViewController = vc
-				self.window?.makeKeyAndVisible()
-			}
-		}
-		vc?.search(query: query)
-	}
+
 }

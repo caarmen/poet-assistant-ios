@@ -28,8 +28,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	}
 	@objc
 	func searchWord(sender:UITapGestureRecognizer) {
-		print("tap working")
+		if let queryWord = labelTitle.text {
+			if let url = URL(string: "poetassistant:query/\(queryWord)") {
+				self.extensionContext?.open(url)
+			}
+		}
 	}
+
 	func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
 		if (activeDisplayMode == .compact) {
 			self.preferredContentSize = maxSize;

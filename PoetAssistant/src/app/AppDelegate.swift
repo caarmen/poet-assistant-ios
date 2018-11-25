@@ -1,20 +1,20 @@
 /**
- Copyright (c) 2018 Carmen Alvarez
+Copyright (c) 2018 Carmen Alvarez
 
- This file is part of Poet Assistant.
+This file is part of Poet Assistant.
 
- Poet Assistant is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+Poet Assistant is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
- Poet Assistant is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+Poet Assistant is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
- You should have received a copy of the GNU General Public License
- along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import UIKit
@@ -24,9 +24,9 @@ import PoetAssistantLexiconsFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+	
 	var window: UIWindow?
-
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		Settings.registerDefaults()
 		if CommandLine.arguments.contains("UITesting") {
@@ -39,6 +39,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UNUserNotificationCenter.current().delegate = self
 		return true
 	}
+	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+		let sendingAppID = options[.sourceApplication] as? String
+		if sendingAppID != "ca.rmen.ios.poetassistant.PoetAssistantTodayExtension" {
+			return false
+		}
+		guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+			let queryPath = components.path, queryPath.starts(with: "query/") else {
+				print("Invalid URL or album path missing")
+				return false
+		}
+		if let index = queryPath.lastIndex(of: "/") {
+			let queryWord = queryPath.suffix(from: queryPath.index(index, offsetBy: 1))
+			search(query: String(queryWord))
+			return true
+		}
+		return false
+	}
+	internal func search(query: String) {
+		var vc = self.window?.rootViewController as? TabBarController
+		if vc == nil {
+			let storyboard = UIStoryboard(name: "Main", bundle: nil)
+			vc = storyboard.instantiateInitialViewController() as? TabBarController
+			if vc != nil {
+				self.window = UIWindow(frame: UIScreen.main.bounds)
+				self.window?.rootViewController = vc
+				self.window?.makeKeyAndVisible()
+			}
+		}
+		vc?.search(query: query)
+	}
+	
 	func saveContext () {
 		CoreDataAccess.saveContext()
 		saveContext(container: AppDelegate.persistentUserDbContainer)
