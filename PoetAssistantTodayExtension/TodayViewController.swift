@@ -19,9 +19,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet weak var constraintStackViewBottom: NSLayoutConstraint!
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view from its nib.
+		self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+		let tap = UITapGestureRecognizer(target: self, action: #selector(searchWord))
+		labelTitle.isUserInteractionEnabled = true
+		labelDefinitions.isUserInteractionEnabled = true
+		labelTitle.addGestureRecognizer(tap)
+		labelDefinitions.addGestureRecognizer(tap)
 	}
-	
+	@objc
+	func searchWord(sender:UITapGestureRecognizer) {
+		print("tap working")
+	}
 	func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
 		if (activeDisplayMode == .compact) {
 			self.preferredContentSize = maxSize;
@@ -40,7 +48,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 					definitions.append("line1\nline2\nline3")
 					self?.labelDefinitions.text = definitions
 					self?.resizeToFitWhyDoesntAutoLayoutWork()
-					self?.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
 				}
 			}
 		}
