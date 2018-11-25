@@ -14,6 +14,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet weak var labelTitle: UILabel!
 	
 	@IBOutlet weak var labelDefinitions: UILabel!
+	@IBOutlet weak var stackView: UIStackView!
+	@IBOutlet weak var constraintStackViewTop: NSLayoutConstraint!
+	@IBOutlet weak var constraintStackViewBottom: NSLayoutConstraint!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view from its nib.
@@ -49,15 +52,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			width: self.preferredContentSize.width,
 			height: getContentHeight())
 	}
-	private func getContentHeight() -> CGFloat {
-		return labelTitle.intrinsicContentSize.height
-			+ labelTitle.layoutMargins.top
-			+ labelTitle.layoutMargins.bottom
-			+ labelDefinitions.intrinsicContentSize.height
-			+ labelDefinitions.layoutMargins.top
-			+ labelDefinitions.layoutMargins.bottom
-	}
 	
-	//widgetLargestAvailableDisplayMode: NCWidgetDisplayMode  = NCWidgetDisplayMode.expanded
+	private func getContentHeight() -> CGFloat {
+		var height:CGFloat = 0.0
+		stackView.subviews.forEach { subview in
+			height += subview.intrinsicContentSize.height
+				+ subview.layoutMargins.top
+				+ subview.layoutMargins.bottom
+		}
+		height += constraintStackViewTop.constant + constraintStackViewBottom.constant
+		return height
+	}
 	
 }
