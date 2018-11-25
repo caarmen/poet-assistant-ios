@@ -49,6 +49,11 @@ public class DictionaryQueryResult {
 	}
 	public func toText() -> String {
 		var result = String(format: NSLocalizedString("share_dictionary_title", comment: ""), queryText)
+		result.append(getDefinitionsText())
+		return result
+	}
+	public func getDefinitionsText() -> String {
+		var result = ""
 		for section in 0..<numberOfSections() {
 			if let partOfSpeech = partOfSpeech(section:section) {
 				for row in 0..<numberOfRowsInSection(section: section) {

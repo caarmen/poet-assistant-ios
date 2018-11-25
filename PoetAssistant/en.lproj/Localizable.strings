@@ -60,4 +60,4 @@
 "wotd_notif_permission_message" = "Poet Assistant needs your authorization to display notifications. Open the system settings to grant authorization";
 "wotd_notif_permission_ok" = "Open";
 "wotd_notif_permission_cancel" = "Cancel";
-"wotd_notif_title" = "Word of the day: %@";
+"wotd_notif_title" = "Word of the day";

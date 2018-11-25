@@ -106,13 +106,11 @@ public class Wotd {
 	
 	public class func createNotification(completion: @escaping (UNMutableNotificationContent) -> Void){
 		CoreDataAccess.persistentDictionariesContainer.performBackgroundTask({context in
-			let wotd = getWordOfTheDay(context: context)
+			//let wotd = getWordOfTheDay(context: context)
 			let content = UNMutableNotificationContent()
-			content.title = String(format: NSLocalizedString("wotd_notif_title", comment: ""), wotd)
-			if let wotdDefinitions = Dictionary.fetch(context: context, queryText: wotd)?.toText() {
-				content.body = wotdDefinitions
-			}
-			content.userInfo[NOTIFICATION_KEY_WOTD] = wotd
+			content.title = String(format: NSLocalizedString("wotd_notif_title", comment: ""))
+			content.categoryIdentifier = "Wotd"
+			//content.userInfo[NOTIFICATION_KEY_WOTD] = wotd
 			
 			DispatchQueue.main.async {
 				completion(content)

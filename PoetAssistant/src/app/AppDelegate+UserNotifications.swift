@@ -31,8 +31,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 								didReceive response: UNNotificationResponse,
 								withCompletionHandler completionHandler:
 		@escaping () -> Void) {
-		if let wotd = Wotd.getWotd(notificationResponse: response) {
-			search(query:wotd)
+		CoreDataAccess.persistentDictionariesContainer.performBackgroundTask {[weak self] context in
+			let wotd = Wotd.getWordOfTheDay(context: context)
+			DispatchQueue.main.async {
+				self?.search(query:wotd)
+			}
 		}
 		completionHandler()
 	}

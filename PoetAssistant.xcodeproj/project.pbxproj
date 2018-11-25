@@ -47,6 +47,7 @@
 		4F2CE82421AAA64900EB2AF3 /* ThesaurusQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA615216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift */; };
 		4F2CE82521AAA67600EB2AF3 /* ThesaurusResultsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */; };
 		4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
+		4F2CE82821AAC4DD00EB2AF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CE82721AAC4DD00EB2AF3 /* Localizable.strings */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -192,6 +193,7 @@
 		4F2CE81121AA9EF700EB2AF3 /* PoetAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistant.entitlements; sourceTree = "<group>"; };
 		4F2CE81221AA9F0300EB2AF3 /* PoetAssistantNotificationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoetAssistantNotificationExtension.entitlements; sourceTree = "<group>"; };
 		4F2CE81421AAA18600EB2AF3 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
+		4F2CE82721AAC4DD00EB2AF3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4F31972A2166587100135FF4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4F31972E21666FCF00135FF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4F3197362166A4A500135FF4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				4F2CE7EF21AA954E00EB2AF3 /* NotificationViewController.swift */,
 				4F2CE7F121AA954E00EB2AF3 /* MainInterface.storyboard */,
 				4F2CE7F421AA954E00EB2AF3 /* Info.plist */,
+				4F2CE82721AAC4DD00EB2AF3 /* Localizable.strings */,
 			);
 			path = PoetAssistantNotificationExtension;
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2CE7F321AA954E00EB2AF3 /* MainInterface.storyboard in Resources */,
+				4F2CE82821AAC4DD00EB2AF3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,7 +1191,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistantNotificationExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1209,7 +1213,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistantNotificationExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1226,6 +1230,7 @@
 		4F2CE80B21AA980400EB2AF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1257,6 +1262,7 @@
 		4F2CE80C21AA980400EB2AF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
