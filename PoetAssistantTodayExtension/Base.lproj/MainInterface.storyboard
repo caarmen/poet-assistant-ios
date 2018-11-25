@@ -19,17 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-VA-25k">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-VA-25k">
                                 <rect key="frame" x="32" y="0.0" width="0.0" height="60"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="26"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ED-TO-Y6X">
-                                        <rect key="frame" x="0.0" y="34" width="0.0" height="26"/>
+                                        <rect key="frame" x="0.0" y="60" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +43,7 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="O5p-VA-25k" secondAttribute="bottom" id="bLI-T7-oBy"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="O5p-VA-25k" secondAttribute="bottom" id="bLI-T7-oBy"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="O5p-VA-25k" secondAttribute="trailing" constant="16" id="bbd-6b-OfI"/>
                             <constraint firstItem="O5p-VA-25k" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="16" id="gRu-UP-of3"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="O5p-VA-25k" secondAttribute="top" id="svk-mQ-WQZ"/>

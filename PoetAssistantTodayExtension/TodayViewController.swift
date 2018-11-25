@@ -15,9 +15,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
 	@IBOutlet weak var labelDefinitions: UILabel!
 	override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-    }
+		super.viewDidLoad()
+		// Do any additional setup after loading the view from its nib.
+	}
 	
 	func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
 		if (activeDisplayMode == .compact) {
@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			resizeToFitWhyDoesntAutoLayoutWork()
 		}
 	}
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+	func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
 		CoreDataAccess.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
 			let wotd = Wotd.getWordOfTheDay(context: context)
 			if let wotdDefinitions = Dictionary.fetch(context: context, queryText: wotd)?.getDefinitionsText() {
@@ -36,23 +36,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 					var definitions = wotdDefinitions
 					definitions.append("line1\nline2\nline3")
 					self?.labelDefinitions.text = definitions
-					//self?.view.autoresizingMask = UIView.AutoresizingMask.flexibleHeight
-					//self?.resizeToFitWhyDoesntAutoLayoutWork()
+					self?.resizeToFitWhyDoesntAutoLayoutWork()
 					self?.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-					//let horse = self?.extensionContext?.widgetMaximumSize(for: .expanded)
-					//print("horse \(horse)")
-					
 				}
 			}
 		}
-        completionHandler(NCUpdateResult.newData)
-    }
+		completionHandler(NCUpdateResult.newData)
+	}
 	
 	private func resizeToFitWhyDoesntAutoLayoutWork() {
-		self.preferredContentSize = CGSize(width: self.preferredContentSize.width,
-										   height: labelTitle.intrinsicContentSize.height + labelDefinitions.intrinsicContentSize.height)
+		self.preferredContentSize = CGSize(
+			width: self.preferredContentSize.width,
+			height: getContentHeight())
 	}
-
+	private func getContentHeight() -> CGFloat {
+		return labelTitle.intrinsicContentSize.height
+			+ labelTitle.layoutMargins.top
+			+ labelTitle.layoutMargins.bottom
+			+ labelDefinitions.intrinsicContentSize.height
+			+ labelDefinitions.layoutMargins.top
+			+ labelDefinitions.layoutMargins.bottom
+	}
+	
 	//widgetLargestAvailableDisplayMode: NCWidgetDisplayMode  = NCWidgetDisplayMode.expanded
 	
 }
