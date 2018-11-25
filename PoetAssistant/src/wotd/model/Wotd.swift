@@ -38,7 +38,7 @@ class Wotd {
 		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Stems.word), ascending: true)]
 		do {
 			let result: [Stems] = try context.fetch(request)
-			let random = Random(seed:seed!)
+			let random = Random(inputSeed:seed)
 			let randomIndex = random.nextInt(Int64(result.count))
 			if let word = result[Int(randomIndex)].word {
 				return word
