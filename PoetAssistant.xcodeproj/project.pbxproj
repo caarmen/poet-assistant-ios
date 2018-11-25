@@ -356,23 +356,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		4F2CE7D721A98D2800EB2AF3 /* wotd */ = {
-			isa = PBXGroup;
-			children = (
-				4F2CE7D821A98D3000EB2AF3 /* model */,
-			);
-			path = wotd;
-			sourceTree = "<group>";
-		};
-		4F2CE7D821A98D3000EB2AF3 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				4F2CE7D921A98D4100EB2AF3 /* Random.swift */,
-				4F2CE7DB21A98F8B00EB2AF3 /* Wotd.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
 		4F2CE7DF21A9B0CE00EB2AF3 /* app */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +398,7 @@
 		4F2CE80E21AA983100EB2AF3 /* lexicons */ = {
 			isa = PBXGroup;
 			children = (
+				4F2CE81021AA9CFF00EB2AF3 /* wotd */,
 				4F2CE80F21AA984100EB2AF3 /* dictionary */,
 			);
 			path = lexicons;
@@ -427,6 +411,15 @@
 				4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */,
 			);
 			path = dictionary;
+			sourceTree = "<group>";
+		};
+		4F2CE81021AA9CFF00EB2AF3 /* wotd */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE7D921A98D4100EB2AF3 /* Random.swift */,
+				4F2CE7DB21A98F8B00EB2AF3 /* Wotd.swift */,
+			);
+			path = wotd;
 			sourceTree = "<group>";
 		};
 		4F3197382166C0E100135FF4 /* model */ = {
@@ -530,7 +523,6 @@
 			isa = PBXGroup;
 			children = (
 				4F2CE7DF21A9B0CE00EB2AF3 /* app */,
-				4F2CE7D721A98D2800EB2AF3 /* wotd */,
 				4FEF068D2182551600D69383 /* more */,
 				4F6613F12164FC4700FA10A1 /* composer */,
 				4F661405216533A600FA10A1 /* search */,
