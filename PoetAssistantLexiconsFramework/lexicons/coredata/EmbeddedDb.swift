@@ -22,7 +22,7 @@ class EmbeddedDb {
 	static func install() {
 		let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationSupportDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
 		if (paths.count > 0) {
-			if let toFolder = paths.first, let fromPath = Bundle.main.path(forResource: "dictionaries", ofType: "sqlite") {
+			if let toFolder = paths.first, let fromPath = Bundle(identifier: "ca.rmen.PoetAssistantLexiconsFramework")?.path(forResource: "dictionaries", ofType: "sqlite") {
 				let fromUrl = URL.init(fileURLWithPath: fromPath)
 				let toFilePath = "\(toFolder)/dictionaries.sqlite"
 				let toFolderUrl = URL.init(fileURLWithPath: toFolder)

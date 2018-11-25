@@ -56,12 +56,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
 	}
 	// MARK: - Core Data stack
-	static var persistentDictionariesContainer: NSPersistentContainer = {
+	static let persistentDictionariesContainer: NSPersistentContainer = {
 		return CoreDataAccess.persistentDictionariesContainer
 	}()
 	
-	static var persistentUserDbContainer: NSPersistentContainer = {
-		return CoreDataAccess.loadContainer(databaseName: "userdata")
+	static let persistentUserDbContainer: NSPersistentContainer = {
+		return loadContainer(databaseName: "userdata")
 	}()
+	
+	private class func loadContainer(databaseName: String) -> NSPersistentContainer {
+		let container = NSPersistentContainer(name: databaseName)
+		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+			if let error = error as NSError? {
+				fatalError("Unresolved error \(error), \(error.userInfo)")
+			}
+		})
+		return container
+	}
 	
 }

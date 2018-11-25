@@ -61,7 +61,7 @@ class SuggestionsFetchedResultsControllerWrapper {
 	func performFetch(completion: @escaping () -> Void) {
 		
 		let historyContext = AppDelegate.persistentUserDbContainer.newBackgroundContext()
-		let dictionaryContext = AppDelegate.persistentDictionariesContainer.newBackgroundContext()
+		let dictionaryContext = CoreDataAccess.persistentDictionariesContainer.newBackgroundContext()
 		DispatchQueue.global().async { [weak self] in
 			if (Settings.isSearchHistoryEnabled()) {
 				self?.historyFetchedResultsController = Suggestion.createHistorySearchSuggestionsFetchResultsController(context: historyContext, queryText: self?.queryText)

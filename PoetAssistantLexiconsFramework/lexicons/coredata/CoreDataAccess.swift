@@ -21,13 +21,20 @@ import CoreData
 
 public class CoreDataAccess {
 	// MARK: - Core Data stack
-	public static var persistentDictionariesContainer: NSPersistentContainer = {
+	public static let persistentDictionariesContainer: NSPersistentContainer = {
 		EmbeddedDb.install()
 		return loadContainer(databaseName: "dictionaries")
 	}()
 	
-	public class func loadContainer(databaseName: String) -> NSPersistentContainer {
-		let container = NSPersistentContainer(name: databaseName)
+	private class func loadContainer(databaseName: String) -> NSPersistentContainer {
+		// https://stackoverflow.com/questions/42553749/core-data-failed-to-load-model
+		guard let modelUrl = Bundle(identifier: "ca.rmen.PoetAssistantLexiconsFramework")?.url(forResource: "dictionaries", withExtension:"momd") else {
+			fatalError("Error loading model from bundle")
+		}
+		guard let mom = NSManagedObjectModel(contentsOf: modelUrl) else {
+			fatalError("Error initializing mom from: \(modelUrl)")
+		}
+		let container = NSPersistentContainer(name: "dictionaries", managedObjectModel: mom)
 		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
 			if let error = error as NSError? {
 				fatalError("Unresolved error \(error), \(error.userInfo)")

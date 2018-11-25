@@ -46,6 +46,7 @@
 		4F2CE82321AAA63100EB2AF3 /* PorterStemmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197522167D59A00135FF4 /* PorterStemmer.swift */; };
 		4F2CE82421AAA64900EB2AF3 /* ThesaurusQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA615216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift */; };
 		4F2CE82521AAA67600EB2AF3 /* ThesaurusResultsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */; };
+		4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F31972B2166587100135FF4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972A2166587100135FF4 /* Tab.swift */; };
 		4F31972F21666FCF00135FF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31972E21666FCF00135FF4 /* Settings.swift */; };
 		4F3197372166A4A500135FF4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197362166A4A500135FF4 /* SearchResultsController.swift */; };
@@ -70,7 +71,6 @@
 		4F661404216531C800FA10A1 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661403216531C800FA10A1 /* DictionaryViewController.swift */; };
 		4F661407216533CB00FA10A1 /* SearchSuggestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661406216533CB00FA10A1 /* SearchSuggestionsController.swift */; };
 		4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66141021654FC200FA10A1 /* DictionaryTableViewCell.swift */; };
-		4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F661414216627EB00FA10A1 /* UILabel+fontstyle.swift */; };
 		4F66141B2166501A00FA10A1 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F66141A2166501A00FA10A1 /* en.lproj */; };
 		4F698A1A21736B2B00CD6CB3 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1921736B2B00CD6CB3 /* VoicesTableViewController.swift */; };
@@ -435,6 +435,7 @@
 			children = (
 				4F66140021652F6C00FA10A1 /* EmbeddedDb.swift */,
 				4F6613FA2165295400FA10A1 /* dictionaries.xcdatamodeld */,
+				4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */,
 				4F2CE81421AAA18600EB2AF3 /* CoreDataAccess.swift */,
 			);
 			path = coredata;
@@ -526,7 +527,6 @@
 			children = (
 				4F2CE81121AA9EF700EB2AF3 /* PoetAssistant.entitlements */,
 				4F66141A2166501A00FA10A1 /* en.lproj */,
-				4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */,
 				4F6613EE2164FBEE00FA10A1 /* src */,
 				4F6613DE2164D10800FA10A1 /* Assets.xcassets */,
 				4F6613DB2164D10700FA10A1 /* Main.storyboard */,
@@ -948,6 +948,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,7 +967,6 @@
 				4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */,
 				4FEF06B92185087F00D69383 /* More.storyboard in Resources */,
 				4F6613DF2164D10800FA10A1 /* Assets.xcassets in Resources */,
-				4F661412216556D600FA10A1 /* dictionaries.sqlite in Resources */,
 				4F66141B2166501A00FA10A1 /* en.lproj in Resources */,
 				4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */,
 				4F1C93DA218DC58E00469CD5 /* RTDView.xib in Resources */,
@@ -1155,7 +1155,8 @@
 				4F6613FE21652F2200FA10A1 /* Base */,
 			);
 			name = dictionaries.sqlite;
-			sourceTree = "<group>";
+			path = /Users/calvarez/dev/projects/PoetAssistant/PoetAssistantLexiconsFramework/lexicons/coredata;
+			sourceTree = "<absolute>";
 		};
 		4FA229F321726C800014B1B9 /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
