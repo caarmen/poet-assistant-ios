@@ -19,7 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 import CoreData
 import UserNotifications
 
-class Wotd {
+public class Wotd {
 	
 	// When looking up random words, their "frequency" is a factor in the selection.
 	// Words which are too frequent (a, the, why) are not interesting words.
@@ -32,7 +32,7 @@ class Wotd {
 	private init() {
 		
 	}
-	class func findRandomWord(context: NSManagedObjectContext, seed: Int64?) -> String {
+	public class func findRandomWord(context: NSManagedObjectContext, seed: Int64?) -> String {
 		let request: NSFetchRequest<Stems> = Stems.fetchRequest()
 		request.predicate = NSPredicate(format: "\(#keyPath(Stems.google_ngram_frequency)) > %d AND \(#keyPath(Stems.google_ngram_frequency)) < %d", MIN_INTERESTING_FREQUENCY, MAX_INTERESTING_FREQUENCY)
 		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Stems.word), ascending: true)]
@@ -48,10 +48,10 @@ class Wotd {
 		}
 		return "error" // why not
 	}
-	class func findRandomWord(context: NSManagedObjectContext) -> String {
+	public class func findRandomWord(context: NSManagedObjectContext) -> String {
 		return findRandomWord(context:context, seed:nil)
 	}
-	class func getWordOfTheDay(context: NSManagedObjectContext) -> String {
+	public class func getWordOfTheDay(context: NSManagedObjectContext) -> String {
 		return getWordOfTheDay(context: context, date: Date())
 	}
 	class func getWordOfTheDay(context: NSManagedObjectContext, date: Date) -> String {
@@ -63,11 +63,11 @@ class Wotd {
 		let seed = Int64(cal.startOfDay(for: date).timeIntervalSince1970 * 1000)
 		return findRandomWord(context: context, seed:seed)
 	}
-	class func disable() {
+	public class func disable() {
 		UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [NOTIFICATION_ID])
 		UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers:[NOTIFICATION_ID])
 	}
-	class func hasNotificationsScheduled(handler: @escaping (Bool) -> Void) {
+	public class func hasNotificationsScheduled(handler: @escaping (Bool) -> Void) {
 		UNUserNotificationCenter.current().getNotificationSettings(completionHandler: {settings in
 			if settings.authorizationStatus != .authorized {
 				DispatchQueue.main.async {handler(false)}
@@ -79,7 +79,7 @@ class Wotd {
 		})
 		
 	}
-	class func scheduleNotifications() {
+	public class func scheduleNotifications() {
 		UNUserNotificationCenter.current().getNotificationSettings { (settings) in
 			// Do not schedule notifications if not authorized.
 			guard settings.authorizationStatus == .authorized else {return}
@@ -104,8 +104,8 @@ class Wotd {
 		}
 	}
 	
-	class func createNotification(completion: @escaping (UNMutableNotificationContent) -> Void){
-		AppDelegate.persistentDictionariesContainer.performBackgroundTask({context in
+	public class func createNotification(completion: @escaping (UNMutableNotificationContent) -> Void){
+		CoreDataAccess.persistentDictionariesContainer.performBackgroundTask({context in
 			let wotd = getWordOfTheDay(context: context)
 			let content = UNMutableNotificationContent()
 			content.title = String(format: NSLocalizedString("wotd_notif_title", comment: ""), wotd)
@@ -119,7 +119,7 @@ class Wotd {
 			}
 		})
 	}
-	class func getWotd(notificationResponse: UNNotificationResponse) -> String? {
+	public class func getWotd(notificationResponse: UNNotificationResponse) -> String? {
 		return notificationResponse.notification.request.content.userInfo[NOTIFICATION_KEY_WOTD] as? String
 	}
 }

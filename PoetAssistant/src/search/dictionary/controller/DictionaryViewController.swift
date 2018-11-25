@@ -19,6 +19,7 @@
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class DictionaryViewController: SearchResultsController, UISearchControllerDelegate, UISearchBarDelegate {
 

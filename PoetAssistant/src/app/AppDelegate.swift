@@ -20,6 +20,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import PoetAssistantLexiconsFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,15 +39,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UNUserNotificationCenter.current().delegate = self
 		return true
 	}
-
+	func saveContext () {
+		CoreDataAccess.saveContext()
+		saveContext(container: AppDelegate.persistentUserDbContainer)
+	}
+	
+	private func saveContext(container: NSPersistentContainer) {
+		let context = container.viewContext
+		if context.hasChanges {
+			do {
+				try context.save()
+			} catch {
+				let nserror = error as NSError
+				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+			}
+		}
+	}
 	// MARK: - Core Data stack
-	lazy var persistentEmbeddedDbContainer: NSPersistentContainer = {
-		EmbeddedDb.install()
-		return loadContainer(databaseName: "dictionaries")
+	static var persistentDictionariesContainer: NSPersistentContainer = {
+		return CoreDataAccess.persistentDictionariesContainer
 	}()
 	
-	lazy var persistentUserDbContainer: NSPersistentContainer = {
-		return loadContainer(databaseName: "userdata")
+	static var persistentUserDbContainer: NSPersistentContainer = {
+		return CoreDataAccess.loadContainer(databaseName: "userdata")
 	}()
 	
 }

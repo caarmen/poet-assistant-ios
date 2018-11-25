@@ -20,6 +20,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 import UIKit
 import AVFoundation
 import UserNotifications
+import PoetAssistantLexiconsFramework
 
 class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	

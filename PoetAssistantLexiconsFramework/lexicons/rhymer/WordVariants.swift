@@ -19,9 +19,9 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import CoreData
 
-class WordVariants: NSManagedObject {
+public class WordVariants: NSManagedObject {
 	
-	class func createRhymeFetcher(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> RhymeFetcher {
+	public class func createRhymeFetcher(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> RhymeFetcher {
 		let result = RhymeFetcher()
 		result.favorites = favorites
 		let request: NSFetchRequest<WordVariants> = WordVariants.fetchRequest()
@@ -80,8 +80,8 @@ class WordVariants: NSManagedObject {
 	}
 	private class func createPredicateForSyllableMatch(syllablesColumn: String,
 													   syllablesValue: String) -> NSPredicate {
-		let matchAORAOEnabled = Settings.getMatchAORAOEnabled()
-		let matchAOAAEnabled = Settings.getMatchAOAAEnabled()
+		let matchAORAOEnabled = false // TODO Settings.getMatchAORAOEnabled()
+		let matchAOAAEnabled = false // TODO Settings.getMatchAOAAEnabled()
 		var syllablesExpression = syllablesValue
 		if (matchAORAOEnabled && !matchAOAAEnabled) {
 			syllablesExpression = createSyllableExpression(syllables: syllablesValue, sounds: "AOR", "AO")

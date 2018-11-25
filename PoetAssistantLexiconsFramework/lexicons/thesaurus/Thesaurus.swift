@@ -19,8 +19,8 @@
 
 import CoreData
 
-class Thesaurus: NSManagedObject {
-	class func fetch(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> ThesaurusQueryResult? {
+public class Thesaurus: NSManagedObject {
+	public class func fetch(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> ThesaurusQueryResult? {
 		let fetcher = ThesaurusResultsFetcher()
 		do {
 			return try fetcher.fetch(context: context, queryText: queryText, favorites: favorites)

@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class RhymerViewController: SearchResultsController {
 	

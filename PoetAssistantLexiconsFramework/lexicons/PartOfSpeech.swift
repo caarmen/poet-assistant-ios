@@ -19,13 +19,13 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 
-enum PartOfSpeech {
+public enum PartOfSpeech {
 	case noun
 	case verb
 	case adjective
 	case adverb
 	
-	func localizedSectionLabel() -> String {
+	public func localizedSectionLabel() -> String {
 		var stringId: String
 		switch (self) {
 		case .noun: stringId = "part_of_speech_n"
@@ -35,7 +35,7 @@ enum PartOfSpeech {
 		}
 		return NSLocalizedString(stringId, comment: "")
 	}
-	func localizedAbbreviation() -> String {
+	public func localizedAbbreviation() -> String {
 		var stringId: String
 		switch (self) {
 		case .noun: stringId = "part_of_speech_n_abbr"

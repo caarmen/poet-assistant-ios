@@ -19,6 +19,7 @@
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class ThesaurusViewController: SearchResultsController {
 
@@ -47,7 +48,7 @@ class ThesaurusViewController: SearchResultsController {
 	override func getShareText() -> String? {
 		return thesaurusQueryResult?.toText()
 	}
-	func numberOfSections(in tableView: UITableView) -> Int {
+	public func numberOfSections(in tableView: UITableView) -> Int {
 		return thesaurusQueryResult?.sections.count ?? 0
 	}
 	
