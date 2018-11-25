@@ -129,6 +129,13 @@
 			remoteGlobalIDString = 4F6613D12164D10700FA10A1;
 			remoteInfo = PoetAssistant;
 		};
+		4F588BC421AB60D7000DA76F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F2CE80021AA980400EB2AF3;
+			remoteInfo = PoetAssistantLexiconsFramework;
+		};
 		4FEB03D32179047200CF8B49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F6613CA2164D10700FA10A1 /* Project object */;
@@ -834,6 +841,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4F588BC521AB60D7000DA76F /* PBXTargetDependency */,
 			);
 			name = PoetAssistantTodayExtension;
 			productName = PoetAssistantTodayExtension;
@@ -1143,6 +1151,11 @@
 			isa = PBXTargetDependency;
 			target = 4F6613D12164D10700FA10A1 /* PoetAssistant */;
 			targetProxy = 4F31975D2167E4A800135FF4 /* PBXContainerItemProxy */;
+		};
+		4F588BC521AB60D7000DA76F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F2CE80021AA980400EB2AF3 /* PoetAssistantLexiconsFramework */;
+			targetProxy = 4F588BC421AB60D7000DA76F /* PBXContainerItemProxy */;
 		};
 		4FEB03D42179047200CF8B49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
