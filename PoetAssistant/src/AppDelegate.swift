@@ -39,20 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-		guard let sendingAppID = options[.sourceApplication] as? String else {
-			print("url from empty source")
-			return false
-		}
-		guard let ourMainBundleId = Bundle.main.bundleIdentifier else {
-			print("wtf, we don't know our own bundle id?")
-			return false
-		}
-		if !sendingAppID.hasPrefix(ourMainBundleId) {
-			print("url received from unknown app \(sendingAppID)")
-			return false
-		}
 		guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
-			let queryPath = components.path, queryPath.starts(with: "query/") else {
+			components.host == "query",
+			let queryPath = components.path, queryPath.hasPrefix("/") else {
 				print("Invalid URL \(url)")
 				return false
 		}

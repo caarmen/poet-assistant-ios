@@ -43,7 +43,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		if let queryWord = labelTitle.text {
 			// Would like the URL to be defined only once. Currently it's referenced from
 			// this extension and the Info.plist of the main app target.
-			if let url = URL(string: "poetassistant:query/\(queryWord)") {
+			if let url = URL(string: "poetassistant://query/\(queryWord)") {
 				self.extensionContext?.open(url)
 			}
 		}
