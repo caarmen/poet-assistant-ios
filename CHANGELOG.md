@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.5.0 *(2018-11-26)*
+--------------------
+* Added "word of the day" widget.
+
 1.4.0 *(2018-11-17)*
 --------------------
 * Added function to share search results
