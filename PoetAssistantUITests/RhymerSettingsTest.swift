@@ -32,48 +32,48 @@ class RhymerSettingsTest: XCTestCase {
 	}
 	
     func testAORAOEnabled() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchMatchAORAO").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
-		UITestUtils.search(test: self, app: app, query: "thorny")
-		UITestUtils.checkRhymes(app: app, query: "thorny", expectedFirstRhyme: "barany", expectedSecondRhyme: "brawny")
-		UITestUtils.search(test: self, app: app, query: "brawny")
-		UITestUtils.checkRhymes(app: app, query: "brawny", expectedFirstRhyme: "barany", expectedSecondRhyme: "cornie")
+		UITestActions.search(test: self, app: app, query: "thorny")
+		SearchResultAssertions.assertRhymes(app: app, query: "thorny", expectedFirstRhyme: "barany", expectedSecondRhyme: "brawny")
+		UITestActions.search(test: self, app: app, query: "brawny")
+		SearchResultAssertions.assertRhymes(app: app, query: "brawny", expectedFirstRhyme: "barany", expectedSecondRhyme: "cornie")
     }
 	
 	func testAORAODisabled() {
-		UITestUtils.search(test: self, app: app, query: "thorny")
-		UITestUtils.checkRhymes(app: app, query: "thorny", expectedFirstRhyme: "cornie", expectedSecondRhyme: "corny")
-		UITestUtils.search(test: self, app: app, query: "brawny")
-		UITestUtils.checkRhymes(app: app, query: "brawny", expectedFirstRhyme: "barany", expectedSecondRhyme: "scrawny")
+		UITestActions.search(test: self, app: app, query: "thorny")
+		SearchResultAssertions.assertRhymes(app: app, query: "thorny", expectedFirstRhyme: "cornie", expectedSecondRhyme: "corny")
+		UITestActions.search(test: self, app: app, query: "brawny")
+		SearchResultAssertions.assertRhymes(app: app, query: "brawny", expectedFirstRhyme: "barany", expectedSecondRhyme: "scrawny")
 	}
 
 	func testAOAAEnabled() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchMatchAOAA").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
-		UITestUtils.search(test: self, app: app, query: "trauma")
-		UITestUtils.checkRhymes(app: app, query: "trauma", expectedFirstRhyme: "bahama", expectedSecondRhyme: "cama")
-		UITestUtils.search(test: self, app: app, query: "across")
-		UITestUtils.checkRhymes(app: app, query: "across", expectedFirstRhyme: "alsace", expectedSecondRhyme: "boss")
+		UITestActions.search(test: self, app: app, query: "trauma")
+		SearchResultAssertions.assertRhymes(app: app, query: "trauma", expectedFirstRhyme: "bahama", expectedSecondRhyme: "cama")
+		UITestActions.search(test: self, app: app, query: "across")
+		SearchResultAssertions.assertRhymes(app: app, query: "across", expectedFirstRhyme: "alsace", expectedSecondRhyme: "boss")
 	}
 	
 	func testAOAADisabled() {
-		UITestUtils.search(test: self, app: app, query: "trauma")
-		UITestUtils.checkRhymes(app: app, query: "trauma", expectedFirstRhyme: "abasia", expectedSecondRhyme: "abila")
-		UITestUtils.search(test: self, app: app, query: "across")
-		UITestUtils.checkRhymes(app: app, query: "across", expectedFirstRhyme: "boss", expectedSecondRhyme: "boss'")
+		UITestActions.search(test: self, app: app, query: "trauma")
+		SearchResultAssertions.assertRhymes(app: app, query: "trauma", expectedFirstRhyme: "abasia", expectedSecondRhyme: "abila")
+		UITestActions.search(test: self, app: app, query: "across")
+		SearchResultAssertions.assertRhymes(app: app, query: "across", expectedFirstRhyme: "boss", expectedSecondRhyme: "boss'")
 	}
 	
 	func testAOAAAndAORAOEnabled() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchMatchAOAA").firstMatch.tap()
 		app.switches.matching(identifier: "SwitchMatchAORAO").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
-		UITestUtils.search(test: self, app: app, query: "thorny")
-		UITestUtils.checkRhymes(app: app, query: "thorny", expectedFirstRhyme: "afghani", expectedSecondRhyme: "albani")
+		UITestActions.search(test: self, app: app, query: "thorny")
+		SearchResultAssertions.assertRhymes(app: app, query: "thorny", expectedFirstRhyme: "afghani", expectedSecondRhyme: "albani")
 	}
 }

@@ -33,13 +33,13 @@ class ShareTest: XCTestCase {
 	func testSharePoem() {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
 		UITestUtils.assertVisible(app:app, element:textViewPoem.firstMatch)
-		UITestUtils.openMore(app: app)
+		UITestNavigation.openMore(app: app)
 		let shareQuery = app.tables.cells.matching(identifier: "Share")
 		XCTAssert(shareQuery.firstMatch.frame.height < 1)
 		app.navigationBars.buttons.firstMatch.tap()
 		textViewPoem.firstMatch.tap()
 		textViewPoem.firstMatch.typeText("Hello there")
-		UITestUtils.openMore(app: app)
+		UITestNavigation.openMore(app: app)
 		XCTAssert(shareQuery.firstMatch.frame.height > 1)
 		shareQuery.firstMatch.tap()
 		let predicate = NSPredicate(format: "label =[cd] 'Cancel'")
@@ -52,31 +52,31 @@ class ShareTest: XCTestCase {
 	}
 
 	func testShareRhymer() {
-		UITestUtils.search(test: self, app: app, query: "merge")
-		UITestUtils.moveToRhymer(app: app)
+		UITestActions.search(test: self, app: app, query: "merge")
+		UITestNavigation.moveToRhymer(app: app)
 		testShare(expectedShareTexts: "berge", "upsurge")
 	}
 	
 	func testShareThesaurus() {
-		UITestUtils.search(test: self, app: app, query: "happy")
-		UITestUtils.moveToThesaurus(app: app)
+		UITestActions.search(test: self, app: app, query: "happy")
+		UITestNavigation.moveToThesaurus(app: app)
 		testShare(expectedShareTexts: "halcyon", "well-chosen")
 	}
 	
 	func testShareDictionary() {
-		UITestUtils.search(test: self, app: app, query: "a")
-		UITestUtils.moveToDictionary(app: app)
+		UITestActions.search(test: self, app: app, query: "a")
+		UITestNavigation.moveToDictionary(app: app)
 		testShare(expectedShareTexts: "purine base found in DNA and RNA", "the blood group whose red cells carry the A antigen")
 	}
 
 	private func testShare(expectedShareTexts: String...) {
 		app.buttons.matching(identifier: "HeaderButtonShare").firstMatch.tap()
 		app.buttons["Copy"].tap()
-		UITestUtils.openComposerTab(app: app)
+		UITestNavigation.openComposerTab(app: app)
 		let poemTextView = app.textViews.firstMatch
 		poemTextView.press(forDuration: 1.0)
 		app.menuItems["Paste"].tap()
-		UITestUtils.waitFor(test:self, timeout: 1.0) {
+		UITestWaitHacks.waitFor(test:self, timeout: 1.0) {
 			let poemText = poemTextView.value as! String
 			for i in 0..<expectedShareTexts.count {
 				if !poemText.contains(expectedShareTexts[i]) {

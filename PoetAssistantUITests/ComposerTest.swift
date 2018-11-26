@@ -45,7 +45,7 @@ class ComposerTest: XCTestCase {
 		app.typeText(poemText)
 		UITestUtils.assertHidden(app:app, element:labelHint)
 		XCTAssertTrue(buttonPlay.isEnabled)
-		UITestUtils.clearText(element: textViewPoem)
+		UITestActions.clearText(element: textViewPoem)
 		XCTAssertEqual("", textViewPoem.value as! String)
 		UITestUtils.assertVisible(app:app, element: labelHint)
 		XCTAssertFalse(buttonPlay.isEnabled)
@@ -64,7 +64,7 @@ class ComposerTest: XCTestCase {
 		var wordCountText = labelWordCount.label
 		XCTAssert(wordCountText.contains("2"))
 		XCTAssert(wordCountText.contains("11"))
-		UITestUtils.clearText(element: textViewPoem)
+		UITestActions.clearText(element: textViewPoem)
 		UITestUtils.assertHidden(app:app, element:labelWordCount)
 		app.typeText(" ")
 		UITestUtils.assertHidden(app:app, element:labelWordCount)
@@ -84,16 +84,16 @@ class ComposerTest: XCTestCase {
 		app.typeText("Eeny meeny miney moe. Catch a tiger by the toe. If he hollers let him go. Eeny meeny miney moe.")
 		let timestampBeforePlay = NSDate().timeIntervalSince1970
 		buttonPlay.tap()
-		UITestUtils.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 2)
-		UITestUtils.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 15)
+		UITestWaitHacks.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 2)
+		UITestWaitHacks.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 15)
 		let timestampAfterPlay = NSDate().timeIntervalSince1970
 		// This poem should have taken at least 5 seconds to read.
 		XCTAssertGreaterThan(timestampAfterPlay - timestampBeforePlay, 5)
 		
 		buttonPlay.tap()
-		UITestUtils.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 1)
+		UITestWaitHacks.waitForPlayButtonToHaveStopImage(test: self, playButton: buttonPlay, timeout: 1)
 		buttonPlay.tap()
-		UITestUtils.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 4)
+		UITestWaitHacks.waitForPlayButtonToHavePlayImage(test: self, playButton: buttonPlay, timeout: 4)
 	}
 	
 	func testKeyboard() {
@@ -126,19 +126,19 @@ class ComposerTest: XCTestCase {
 		openMenuItem(label:"Rhymer")
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
-		UITestUtils.openComposerTab(app:app)
+		UITestNavigation.openComposerTab(app:app)
 		beginningPoint.tap()
 		openMenuItem(label:"Thesaurus")
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
-		UITestUtils.openComposerTab(app:app)
+		UITestNavigation.openComposerTab(app:app)
 		beginningPoint.tap()
 		openMenuItem(label:"Dictionary")
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 	}
 	
 	private func openMenuItem(label: String) {
-		UITestUtils.wait(test: self, timeout: 0.5)
+		UITestWaitHacks.wait(test: self, timeout: 0.5)
 		let menuItem = app.menus.menuItems.matching(NSPredicate(format: "label == %@", label)).firstMatch
 		if menuItem.exists {
 			menuItem.tap()

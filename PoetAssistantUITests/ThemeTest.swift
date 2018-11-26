@@ -36,7 +36,7 @@ class ThemeTest: XCTestCase {
 	// to make sure there aren't crashes.
 	func testThemes() {
 		for _ in 0..<3 {
-			UITestUtils.openSettings(app: app)
+			UITestNavigation.openSettings(app: app)
 			app.switches.matching(identifier: "SwitchDarkTheme").firstMatch.tap()
 			app.navigationBars.buttons.firstMatch.tap()
 			app.navigationBars.buttons.firstMatch.tap()

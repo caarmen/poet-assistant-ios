@@ -36,7 +36,7 @@ class AppStoreScreenshots: XCTestCase {
 	}
 	
 	func testScreenshotsDarkTheme() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchDarkTheme").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
@@ -44,7 +44,7 @@ class AppStoreScreenshots: XCTestCase {
 	}
 	
 	func takeScreenshots() {
-		UITestUtils.openComposerTab(app: app)
+		UITestNavigation.openComposerTab(app: app)
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		textViewPoem.tap()
 		textViewPoem.typeText("Roses are red.\nViolets are blue.\nIf you are a poet,\nthis app is for you.")
@@ -52,28 +52,28 @@ class AppStoreScreenshots: XCTestCase {
 		
 		let buttonHideKeyboard = app.buttons.matching(identifier: "ComposerButtonHideKeyboard").firstMatch
 		buttonHideKeyboard.tap()
-		UITestUtils.search(test: self, app:app, query: "chance")
-		UITestUtils.moveToRhymer(app: app)
-		UITestUtils.starWord(test:self, app:app, word: "askance")
+		UITestActions.search(test: self, app:app, query: "chance")
+		UITestNavigation.moveToRhymer(app: app)
+		UITestActions.starWord(test:self, app:app, word: "askance")
 		attachScreenshot(name: "rhymer")
 		
-		UITestUtils.moveToThesaurus(app: app)
-		UITestUtils.starWord(test:self, app:app, word: "possibleness")
+		UITestNavigation.moveToThesaurus(app: app)
+		UITestActions.starWord(test:self, app:app, word: "possibleness")
 		attachScreenshot(name: "thesaurus")
 		
-		UITestUtils.moveToDictionary(app: app)
+		UITestNavigation.moveToDictionary(app: app)
 		attachScreenshot(name: "dictionary")
 		
 		starWords(words: "acquiesce", "benight", "deferential", "fractious", "implacable", "obfuscation", "peon")
-		UITestUtils.moveToFavorites(app: app)
+		UITestNavigation.moveToFavorites(app: app)
 		attachScreenshot(name: "favorites")
 	}
 	
 	private func starWords(words: String...) {
-		UITestUtils.moveToDictionary(app:app)
+		UITestNavigation.moveToDictionary(app:app)
 		let headerFavoriteButton = app.buttons.matching(identifier: "HeaderButtonFavorite")
 		for word in words {
-			UITestUtils.search(test:self, app:app, query:word)
+			UITestActions.search(test:self, app:app, query:word)
 			headerFavoriteButton.firstMatch.tap()
 		}
 	}

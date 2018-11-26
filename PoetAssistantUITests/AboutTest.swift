@@ -31,7 +31,7 @@ class AboutTest: XCTestCase {
 	}
 	
 	func testAbout() {
-		UITestUtils.openMore(app: app)
+		UITestNavigation.openMore(app: app)
 		let aboutElement = app.tables.cells.matching(identifier: "About").firstMatch
 		XCTAssert(aboutElement.exists)
 		XCTAssert(aboutElement.isHittable)
@@ -43,7 +43,7 @@ class AboutTest: XCTestCase {
 	}
 	private func tapAboutListItem(identifier: String) {
 		let element = app.tables.cells.matching(identifier: identifier).firstMatch
-		UITestUtils.waitFor(test:self, timeout:0.5) {
+		UITestWaitHacks.waitFor(test:self, timeout:0.5) {
 			element.exists && element.isHittable
 		}
 		element.tap()

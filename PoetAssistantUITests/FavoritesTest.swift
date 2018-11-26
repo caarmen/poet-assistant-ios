@@ -32,35 +32,35 @@ class FavoritesTest: XCTestCase {
 	}
 
     func testFavorites() {
-		UITestUtils.search(test: self, app: app, query: "cheesecake")
+		UITestActions.search(test: self, app: app, query: "cheesecake")
 		UITestUtils.getRhymerHeader(app: app).buttons.matching(identifier: "HeaderButtonFavorite").firstMatch.tap()
 						
-		UITestUtils.starWord(test:self, app:app, word: "ache")
-		UITestUtils.moveToFavorites(app:app)
+		UITestActions.starWord(test:self, app:app, word: "ache")
+		UITestNavigation.moveToFavorites(app:app)
 		assertExpectedFavorites(favorites: "ache", "cheesecake")
 		
-		UITestUtils.moveToRhymer(app:app)
+		UITestNavigation.moveToRhymer(app:app)
 		app.buttons.matching(identifier: "HeaderButtonFavorite").firstMatch.tap()
-		UITestUtils.moveToFavorites(app:app)
+		UITestNavigation.moveToFavorites(app:app)
 		assertExpectedFavorites(favorites: "ache")
 		
 		app.tables.cells.firstMatch.buttons.matching(identifier: "ButtonFavorite").firstMatch.tap()
 		assertExpectedFavorites()
 		
-		UITestUtils.moveToDictionary(app: app)
+		UITestNavigation.moveToDictionary(app: app)
 		app.buttons.matching(identifier: "HeaderButtonFavorite").firstMatch.tap()
-		UITestUtils.moveToFavorites(app: app)
+		UITestNavigation.moveToFavorites(app: app)
 		assertExpectedFavorites(favorites: "cheesecake")
-		UITestUtils.starWord(test:self, app:app, word: "cheesecake")
+		UITestActions.starWord(test:self, app:app, word: "cheesecake")
 		assertExpectedFavorites()
 		
-		UITestUtils.moveToThesaurus(app: app)
+		UITestNavigation.moveToThesaurus(app: app)
 		app.buttons.matching(identifier: "HeaderButtonFavorite").firstMatch.tap()
-		UITestUtils.moveToFavorites(app: app)
+		UITestNavigation.moveToFavorites(app: app)
 		assertExpectedFavorites(favorites: "cheesecake")
 		
 		app.buttons.matching(identifier: "ButtonClearFavorites").firstMatch.tap()
-		UITestUtils.acceptDialog(app:app)
+		UITestActions.acceptDialog(app:app)
 		assertExpectedFavorites()
     }
 	

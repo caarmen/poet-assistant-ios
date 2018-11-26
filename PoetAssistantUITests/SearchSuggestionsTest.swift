@@ -31,7 +31,7 @@ class SearchSuggestionsTest: XCTestCase {
 	}
 	
 	func testSearchHistory() {
-		UITestUtils.openDictionariesTab(app:app)
+		UITestNavigation.openDictionariesTab(app:app)
 
 		var searchField = app.searchFields.firstMatch
 
@@ -47,7 +47,7 @@ class SearchSuggestionsTest: XCTestCase {
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "awes", expectedSuggestions: ["awesome", "awesomely", "awestruck"], expectedClearHistory: false)
 		
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "o", expectedSuggestions: ["awesome", "awesomely"], expectedClearHistory: false)
-		UITestUtils.clearText(element: searchField)
+		UITestActions.clearText(element: searchField)
 		searchField.tap()
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmen", "carmelite"], expectedClearHistory: true)
 
@@ -59,11 +59,11 @@ class SearchSuggestionsTest: XCTestCase {
 	}
 	
 	func testSearchHistoryDisabled() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchSearchHistory").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
-		UITestUtils.openDictionariesTab(app: app)
+		UITestNavigation.openDictionariesTab(app: app)
 		
 		let searchField = app.searchFields.firstMatch
 		searchField.typeText("carmen\n")
@@ -77,19 +77,19 @@ class SearchSuggestionsTest: XCTestCase {
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "awes", expectedSuggestions: ["awesome", "awesomely", "awestruck"], expectedClearHistory: false)
 		
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "o", expectedSuggestions: ["awesome", "awesomely"], expectedClearHistory: false)
-		UITestUtils.clearText(element: searchField)
+		UITestActions.clearText(element: searchField)
 		searchField.tap()
 		waitForSearchSuggestion(searchField: searchField, table: app.tables.firstMatch, query: "carme", expectedSuggestions: ["carmelite"], expectedClearHistory: false)
 	}
 	
 	func testRandomWord() {
-		UITestUtils.openDictionariesTab(app: app)
+		UITestNavigation.openDictionariesTab(app: app)
 		selectRandomWord()
 		// The word should be present in at least one of the lexicons
 		let definitionsFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
-		UITestUtils.moveToThesaurus(app: app)
+		UITestNavigation.moveToThesaurus(app: app)
 		let synonymsFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
-		UITestUtils.moveToRhymer(app: app)
+		UITestNavigation.moveToRhymer(app: app)
 		let rhymesFound = app.staticTexts.matching(identifier: "HeaderWord").firstMatch.exists
 
 		XCTAssertTrue(rhymesFound || synonymsFound || definitionsFound)
@@ -103,7 +103,7 @@ class SearchSuggestionsTest: XCTestCase {
 	private func clearSearchHistory() {
 		let deleteCell = app.tables.cells.matching(identifier: "cell_delete").firstMatch
 		deleteCell.tap()
-		UITestUtils.acceptDialog(app:app)
+		UITestActions.acceptDialog(app:app)
 		waitForSearchHistoryDeletionDialogToDismiss()
 	}
 	
