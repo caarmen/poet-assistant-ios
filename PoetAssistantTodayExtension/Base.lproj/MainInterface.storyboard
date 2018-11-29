@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-VA-25k">
-                                <rect key="frame" x="32" y="0.0" width="0.0" height="8"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-VA-25k">
+                                <rect key="frame" x="16" y="8" width="288" height="44"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ED-TO-Y6X">
-                                        <rect key="frame" x="0.0" y="8" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="8" width="0.0" height="36"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,9 +38,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6ED-TO-Y6X" secondAttribute="trailing" constant="16" id="81n-Rf-Uhe"/>
-                            <constraint firstItem="O5p-VA-25k" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="16" id="gRu-UP-of3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O5p-VA-25k" secondAttribute="trailing" id="Dg7-Ui-VHG"/>
+                            <constraint firstItem="O5p-VA-25k" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" priority="999" id="e2k-X1-l0W"/>
+                            <constraint firstItem="O5p-VA-25k" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="gRu-UP-of3"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="16" id="pKi-tb-2VE"/>
-                            <constraint firstItem="O5p-VA-25k" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="svk-mQ-WQZ"/>
+                            <constraint firstItem="O5p-VA-25k" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" priority="999" constant="8" id="svk-mQ-WQZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -48,6 +50,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="60"/>
                     <connections>
+                        <outlet property="constraintCenter" destination="e2k-X1-l0W" id="lGX-Jx-LZD"/>
+                        <outlet property="constraintTop" destination="svk-mQ-WQZ" id="tzY-Bp-B4F"/>
                         <outlet property="labelDefinitions" destination="6ED-TO-Y6X" id="897-ez-cZj"/>
                         <outlet property="labelTitle" destination="GcN-lo-r42" id="a2C-o2-PfT"/>
                         <outlet property="stackView" destination="O5p-VA-25k" id="H8s-bb-gDh"/>

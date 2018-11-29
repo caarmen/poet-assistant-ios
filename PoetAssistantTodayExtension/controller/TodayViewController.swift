@@ -27,6 +27,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet weak var labelDefinitions: UILabel!
 	@IBOutlet weak var stackView: UIStackView!
 	
+	@IBOutlet weak var constraintTop: NSLayoutConstraint!
+	@IBOutlet weak var constraintCenter: NSLayoutConstraint!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
@@ -51,9 +53,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
 	func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
 		if (activeDisplayMode == .compact) {
-			self.preferredContentSize = maxSize;
+			self.labelDefinitions.isHidden = true
+			self.stackView.alignment = .center
+			self.constraintCenter.priority = UILayoutPriority.defaultHigh
+			self.constraintTop.priority = UILayoutPriority.defaultLow
+			view.layoutSubviews()
+			self.preferredContentSize.height = stackView.bounds.height
 		}
 		else if self.labelTitle?.text?.count ?? 0 > 0{
+			self.labelDefinitions.isHidden = false
+			self.stackView.alignment = .leading
+			self.constraintCenter.priority = UILayoutPriority.defaultLow
+			self.constraintTop.priority = UILayoutPriority.defaultHigh
 			view.layoutSubviews()
 			self.preferredContentSize.height = stackView.bounds.height
 		}
