@@ -35,8 +35,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		let tap = UITapGestureRecognizer(target: self, action: #selector(searchWord))
 		labelTitle.isUserInteractionEnabled = true
 		labelDefinitions.isUserInteractionEnabled = true
+		view.isUserInteractionEnabled = true
 		labelTitle.addGestureRecognizer(tap)
 		labelDefinitions.addGestureRecognizer(tap)
+		view.addGestureRecognizer(tap)
 		loadFromCache()
 	}
 	
