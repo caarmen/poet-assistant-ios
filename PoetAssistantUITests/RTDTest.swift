@@ -68,24 +68,24 @@ class RTDTest: XCTestCase {
 		runRTDTest(data: scenario, efficientLayoutEnabled: true)
 	}
 	private func chooseEfficientLayout() {
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 		app.switches.matching(identifier: "SwitchRTD").firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 		app.navigationBars.buttons.firstMatch.tap()
 	}
 	private func runRTDTest(data: RTDTestScenario, efficientLayoutEnabled: Bool) {
-		UITestUtils.search(test: self, app: app, query: data.query)
+		UITestActions.search(test: self, app: app, query: data.query)
 		tapHeaderButtons(header:UITestUtils.getRhymerHeader(app: app))
-		UITestUtils.checkRhymes(app:app, query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
+		SearchResultAssertions.assertRhymes(app:app, query: data.query, expectedFirstRhyme: data.firstRhyme, expectedSecondRhyme: data.secondRhyme)
 		
 		openThesaurusFromRhymerCleanLayout(rhyme: data.firstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
 		tapHeaderButtons(header:UITestUtils.getThesaurusHeader(app: app))
 
-		checkSynonyms(query: data.query, expectedFirstSynonym: data.firstSynonymForFirstRhyme, expectedSecondSynonym: data.secondSynonymForFirstRhyme)
+		SearchResultAssertions.assertSynonyms(test:self, app:app, query: data.query, expectedFirstSynonym: data.firstSynonymForFirstRhyme, expectedSecondSynonym: data.secondSynonymForFirstRhyme)
 		
 		openDictionaryFromThesaurusCleanLayout(synonym: data.secondSynonymForFirstRhyme, efficientLayoutEnabled: efficientLayoutEnabled)
 		tapHeaderButtons(header:UITestUtils.getDictionaryHeader(app: app))
-		checkDefinition(query: data.query, expectedFirstDefinition: data.firstDefinitionForSecondSynonym)
+		SearchResultAssertions.assertDefinition(app:app, query: data.query, expectedFirstDefinition: data.firstDefinitionForSecondSynonym)
 	}
 	
 	private func tapHeaderButtons(header: XCUIElement) {
@@ -100,46 +100,30 @@ class RTDTest: XCTestCase {
 		let rhymerRow = app.cells.containing(NSPredicate(format: "label=%@", rhyme)).firstMatch
 		if (!efficientLayoutEnabled) {
 			rhymerRow.tap()
-			UITestUtils.waitForRTDToShow(test:self, row: rhymerRow)
+			UITestWaitHacks.waitForRTDToShow(test:self, row: rhymerRow)
 		}
 		rhymerRow.buttons.matching(identifier: "ButtonThesaurus").firstMatch.tap()
-		UITestUtils.wait(test: self, timeout: 2)
+		UITestWaitHacks.wait(test: self, timeout: 2)
 	}
-	private func checkSynonyms(query: String, expectedFirstSynonym: String, expectedSecondSynonym:String) {
-		let table = app.tables.element
-		XCTAssertTrue(table.exists)
-		let cell1 = table.cells.element(boundBy: 1)
-		XCTAssertTrue(cell1.exists)
-		let cell2 = table.cells.element(boundBy: 2)
-		XCTAssertTrue(cell2.exists)
-		// For some reason, on iPad, it takes a moment for the synonyms to become hittable.
-		expectation(for: NSPredicate(format: "isHittable == true"), evaluatedWith: cell1.staticTexts.firstMatch, handler: nil)
-		waitForExpectations(timeout: 2, handler: nil)
-		XCTAssert(cell1.staticTexts[expectedFirstSynonym].isHittable)
-		XCTAssert(cell2.staticTexts[expectedSecondSynonym].isHittable)
-	}
+
 	private func openDictionaryFromThesaurusCleanLayout(synonym: String, efficientLayoutEnabled: Bool) {
 		let thesaurusRow = app.cells.containing(NSPredicate(format: "label=%@", synonym)).firstMatch
 		if (!efficientLayoutEnabled) {
 			thesaurusRow.tap()
-			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
+			UITestWaitHacks.waitForRTDToShow(test:self, row: thesaurusRow)
 			thesaurusRow.tap()
 			waitForRTDToHide(row: thesaurusRow)
 			thesaurusRow.tap()
-			UITestUtils.waitForRTDToShow(test:self, row: thesaurusRow)
+			UITestWaitHacks.waitForRTDToShow(test:self, row: thesaurusRow)
 		}
 		thesaurusRow.buttons.matching(identifier: "ButtonDictionary").firstMatch.tap()
-		UITestUtils.wait(test: self, timeout: 2)
+		UITestWaitHacks.wait(test: self, timeout: 2)
 	}
-	private func checkDefinition(query: String, expectedFirstDefinition: String) {
-		let definitionCellWordLabels = app.staticTexts.matching(identifier: "DictionaryCellDefinition")
-		let actualDefinition = definitionCellWordLabels.element(boundBy: 0).label
-		XCTAssertEqual(expectedFirstDefinition, actualDefinition, "Expected definition for \(query) to be \(expectedFirstDefinition) but got \(actualDefinition)")
-	}
+
 
 	private func waitForRTDToHide(row: XCUIElement) {
 		let dictionaryButton = row.buttons.matching(NSPredicate(format: "label == 'ic dictionary'")).firstMatch
-		UITestUtils.waitFor(test:self, timeout: 1.5) {
+		UITestWaitHacks.waitFor(test:self, timeout: 1.5) {
 			return !(dictionaryButton.exists && dictionaryButton.isHittable)
 		}
 	}

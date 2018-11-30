@@ -20,7 +20,7 @@
 // https://github.com/caarmen/porter-stemmer/blob/master/library/src/test/java/ca/rmen/porterstemmer/TestPorterStemmer.java
 
 import XCTest
-@testable import PoetAssistant
+@testable import PoetAssistantLexiconsFramework
 class PorterStemmerTest: XCTestCase {
 	
 	private let porterStemmer = PorterStemmer()

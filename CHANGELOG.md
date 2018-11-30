@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.5.1 *(2018-11-30)*
+--------------------
+* Current the distribution warning: use the same bundle version in the main app and the today extension.
+
+1.5.0 *(2018-11-26)*
+--------------------
+* Added "word of the day" widget.
+
 1.4.0 *(2018-11-17)*
 --------------------
 * Added function to share search results

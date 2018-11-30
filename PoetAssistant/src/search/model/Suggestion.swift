@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class Suggestion: NSManagedObject {
 	class func createSearchSuggestionsFetchResultsController(queryText: String?) -> SuggestionsFetchedResultsControllerWrapper {
@@ -41,11 +42,11 @@ class Suggestion: NSManagedObject {
 	
 	class func createSearchSuggestionsFetchResultsController(context: NSManagedObjectContext, queryText: String) -> NSFetchedResultsController<NSDictionary>{
 		let request = NSFetchRequest<NSDictionary>(entityName: "WordVariants")
-		request.propertiesToFetch = [#keyPath(Dictionary.word)]
+		request.propertiesToFetch = [#keyPath(PoetAssistantLexiconsFramework.Dictionary.word)]
 		request.resultType = .dictionaryResultType
 		request.returnsDistinctResults = true
 		request.sortDescriptors = [
-			NSSortDescriptor(key: #keyPath(Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
+			NSSortDescriptor(key: #keyPath(PoetAssistantLexiconsFramework.Dictionary.word), ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
 		if !queryText.isEmpty {
 			request.predicate = NSPredicate(format: "\(#keyPath(WordVariants.word)) beginswith[c] %@ and \(#keyPath(WordVariants.has_definition)) = 1", queryText)
 		}

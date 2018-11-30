@@ -19,6 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 import CoreData
+import PoetAssistantLexiconsFramework
 
 class RhymerViewController: SearchResultsController {
 	
@@ -38,7 +39,11 @@ class RhymerViewController: SearchResultsController {
 		let favorites = Favorite.fetchFavorites(context: AppDelegate.persistentUserDbContainer.viewContext)
 		rhymeFetcher = nil
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask { dictionariesContext in
-			let fetcher = WordVariants.createRhymeFetcher(context: dictionariesContext, queryText: word, favorites: favorites)
+			let fetcher = WordVariants.createRhymeFetcher(context: dictionariesContext,
+														  queryText: word,
+														  matchAORAOEnabled: Settings.getMatchAORAOEnabled(),
+														  matchAOAAEnabled: Settings.getMatchAOAAEnabled(),
+														  favorites: favorites)
 			try? fetcher.performFetch()
 			DispatchQueue.main.async { [weak self] in
 				self?.rhymeFetcher = fetcher
@@ -88,6 +93,5 @@ class RhymerViewController: SearchResultsController {
 			RTDAnimator.setRTDVisible(selectedCell: selectedCell, visibleCells: tableView.visibleCells)
 		}
 	}
-
 }
 

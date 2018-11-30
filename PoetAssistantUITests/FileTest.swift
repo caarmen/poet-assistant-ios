@@ -75,26 +75,26 @@ class FileTest: XCTestCase {
 		XCTAssertEqual("\(poemText)\(newPoemText)", textViewPoem.firstMatch.value as! String)
 	}
 	private func cancelFileOperation(fileOperation: String, newFilename: String) {
-		UITestUtils.openMore(app:app)
+		UITestNavigation.openMore(app:app)
 		app.tables.cells.matching(identifier: fileOperation).firstMatch.tap()
 		// enter a new poem name but cancel
 		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, newValue: newFilename)
-		UITestUtils.cancelDialog(app:app)
+		UITestActions.cancelDialog(app:app)
 		app.navigationBars.buttons.firstMatch.tap()
 	}
 	
 	private func acceptFileOperation(fileOperation: String, newFilename: String) {
-		UITestUtils.openMore(app:app)
+		UITestNavigation.openMore(app:app)
 		app.tables.cells.matching(identifier: fileOperation).firstMatch.tap()
 		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, newValue: newFilename)
-		UITestUtils.acceptDialog(app:app)
+		UITestActions.acceptDialog(app:app)
 	}
 	
 	private func typeFilenameInPrompt(textFieldFilename: XCUIElement, newValue: String) {
 		let prefilledFilename = textFieldFilename.value as! String
 		XCTAssert(prefilledFilename.hasPrefix("poem-"))
 		XCTAssert(prefilledFilename.hasSuffix(".txt"))
-		UITestUtils.clearText(element: textFieldFilename)
+		UITestActions.clearText(element: textFieldFilename)
 		textFieldFilename.typeText(newValue)
 	}
 	
@@ -115,7 +115,7 @@ class FileTest: XCTestCase {
 	
 	private func expectNavigationBarTitle(expectedTitle: String) {
 		let navigationBar = app.navigationBars.matching(identifier: expectedTitle)
-		UITestUtils.waitFor(test: self, timeout: 1.0) {
+		UITestWaitHacks.waitFor(test: self, timeout: 1.0) {
 			return navigationBar.firstMatch.exists
 				&& navigationBar.firstMatch.isHittable
 		}

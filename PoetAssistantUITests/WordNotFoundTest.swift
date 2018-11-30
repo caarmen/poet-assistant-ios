@@ -31,29 +31,29 @@ class WordNotFoundTest: XCTestCase {
 	}
 	
 	func testSimilarWordFound() {
-		UITestUtils.search(test: self, app: app, query: "animations")
+		UITestActions.search(test: self, app: app, query: "animations")
 
 		let headerQueryWord = app.staticTexts.matching(identifier: "HeaderWord")
-		UITestUtils.moveToRhymer(app:app)
+		UITestNavigation.moveToRhymer(app:app)
 		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getRhymerEmptyText(), expectedQueryLabelValue: "animations")
 		
-		UITestUtils.moveToThesaurus(app:app)
+		UITestNavigation.moveToThesaurus(app:app)
 		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getThesaurusEmptyText(), expectedQueryLabelValue: "animation")
 		
-		UITestUtils.moveToDictionary(app:app)
+		UITestNavigation.moveToDictionary(app:app)
 		assertSearchHasResults(minResultCount: 6, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getDictionaryEmptyText(), expectedQueryLabelValue: "animation")
 	}
 	
 	func testNoSimilarWordFound() {
-		UITestUtils.search(test:self, app: app, query: "qsdfasdf")
+		UITestActions.search(test:self, app: app, query: "qsdfasdf")
 
-		UITestUtils.moveToRhymer(app:app)
+		UITestNavigation.moveToRhymer(app:app)
 		assertSearchHasNoResults(header: UITestUtils.getRhymerHeader(app:app), emptyTextLabel: getRhymerEmptyText())
 		
-		UITestUtils.moveToThesaurus(app:app)
+		UITestNavigation.moveToThesaurus(app:app)
 		assertSearchHasNoResults(header: UITestUtils.getThesaurusHeader(app:app), emptyTextLabel: getThesaurusEmptyText())
 
-		UITestUtils.moveToDictionary(app:app)
+		UITestNavigation.moveToDictionary(app:app)
 		assertSearchHasNoResults(header: UITestUtils.getDictionaryHeader(app:app), emptyTextLabel: getDictionaryEmptyText())
 	}
 	private func getRhymerEmptyText() -> XCUIElement {

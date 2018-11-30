@@ -18,6 +18,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import UIKit
+import PoetAssistantLexiconsFramework
 
 class SearchViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, SearchSuggestionsDelegate, RTDDelegate {
 
@@ -175,6 +176,12 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	func searchDictionary(query: String) {
 		wordSelected(word:query, lexicon: .dictionary)
 	}
+	func searchAllLexicons(query: String) {
+		rhymerController?.query = query
+		thesaurusController?.query = query
+		dictionaryController?.query = query
+		showLexicon(lexicon: .dictionary)
+	}
 	private func wordSelected(word: String, lexicon: Lexicon) {
 		getSearchResultsController(lexicon: lexicon)?.query = word
 		showLexicon(lexicon:lexicon)
@@ -203,7 +210,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 	}
 	func didSelectRandomWord() {
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			let randomWord = Stems.findRandomWord(context: context)
+			let randomWord = Wotd.findRandomWord(context: context)
 			DispatchQueue.main.async { [weak self] in
 				self?.handleSelection(selection: randomWord, persistSuggestion: false)
 				self?.showLexicon(lexicon: .dictionary)

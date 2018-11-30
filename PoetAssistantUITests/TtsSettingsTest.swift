@@ -25,7 +25,7 @@ class TtsSettingsTest: XCTestCase {
 	override func setUp() {
 		continueAfterFailure = false
 		app = UITestUtils.launchApp()
-		UITestUtils.openSettings(app: app)
+		UITestNavigation.openSettings(app: app)
 	}
 
     override func tearDown() {
@@ -80,8 +80,8 @@ class TtsSettingsTest: XCTestCase {
 	
 	private func playPreview(playButton: XCUIElement) {
 		playButton.tap()
-		UITestUtils.wait(test:self, timeout: 1)
-		UITestUtils.waitForPlayButtonToHavePlayImage(test: self, playButton: playButton, timeout: 15)
+		UITestWaitHacks.wait(test:self, timeout: 1)
+		UITestWaitHacks.waitForPlayButtonToHavePlayImage(test: self, playButton: playButton, timeout: 15)
 	}
 
 	// https://stackoverflow.com/questions/46785790/ui-testing-slider-fails-to-adjust-when-nested-in-table-view-cell

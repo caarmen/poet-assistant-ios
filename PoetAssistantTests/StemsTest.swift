@@ -20,7 +20,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import XCTest
 
-@testable import PoetAssistant
+@testable import PoetAssistantLexiconsFramework
 class StemsTest: XCTestCase {
 	
 	func testFindClosestWord() {

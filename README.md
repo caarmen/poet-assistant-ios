@@ -22,7 +22,7 @@ Many features aren't available yet on iOS (they're on Android). This is probably
 * ~Save the poem to a file, open a text file.~
 * ~Star favorite words~
 * ~Random word~
-* Words of the day: list and system notification
+* Words of the day: list ~and system notification~
 * Settings:
   - ~voice selection, speed, and pitch~
   - ~some tweaks for rhyming rules, to take into account different accents~
