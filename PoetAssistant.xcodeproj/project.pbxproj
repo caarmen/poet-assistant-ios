@@ -468,15 +468,14 @@
 		4F2CE83021AADA8900EB2AF3 /* PoetAssistantTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
-				4F2CE85821AB407600EB2AF3 /* controller */,
-				4F2CE85321AB39AA00EB2AF3 /* model */,
+				4F588BEA21B0B5E2000DA76F /* src */,
 				4F2CE85121AB2A6A00EB2AF3 /* en.lproj */,
 				4F2CE83D21AADAD500EB2AF3 /* PoetAssistantTodayExtension.entitlements */,
 				4F2CE83321AADA8900EB2AF3 /* MainInterface.storyboard */,
 				4F2CE83621AADA8900EB2AF3 /* Info.plist */,
 			);
 			path = PoetAssistantTodayExtension;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		4F2CE84021AB104300EB2AF3 /* i18n */ = {
 			isa = PBXGroup;
@@ -484,23 +483,6 @@
 				4F2CE84121AB105600EB2AF3 /* Localization.swift */,
 			);
 			path = i18n;
-			sourceTree = "<group>";
-		};
-		4F2CE85321AB39AA00EB2AF3 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				4F2CE85421AB39C600EB2AF3 /* WidgetData.swift */,
-				4F2CE85621AB3D5800EB2AF3 /* WidgetDataRepository.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		4F2CE85821AB407600EB2AF3 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */,
-			);
-			path = controller;
 			sourceTree = "<group>";
 		};
 		4F3197392166C0EF00135FF4 /* controller */ = {
@@ -550,6 +532,32 @@
 				4F588BCF21ACA5AF000DA76F /* UITestWaitHacks.swift */,
 			);
 			path = testhelpers;
+			sourceTree = "<group>";
+		};
+		4F588BEA21B0B5E2000DA76F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4F588BEC21B0B61C000DA76F /* controller */,
+				4F588BEB21B0B5FF000DA76F /* model */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		4F588BEB21B0B5FF000DA76F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE85421AB39C600EB2AF3 /* WidgetData.swift */,
+				4F2CE85621AB3D5800EB2AF3 /* WidgetDataRepository.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4F588BEC21B0B61C000DA76F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		4F6613C92164D10700FA10A1 = {
