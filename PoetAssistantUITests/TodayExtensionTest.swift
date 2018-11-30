@@ -43,7 +43,7 @@ class TodayExtensionTest: XCTestCase {
 		
 		// Add the widget, removing it first if necessary
 		if !addWidget(springboard: springboard) {
-			removeWidget(springboard: springboard)
+			removeWidgets(springboard: springboard)
 			XCTAssert(addWidget(springboard: springboard))
 		}
 		springboard.buttons["Done"].tap()
@@ -60,11 +60,13 @@ class TodayExtensionTest: XCTestCase {
 			return false
 		}
 	}
-	private func removeWidget(springboard: XCUIApplication) {
+	private func removeWidgets(springboard: XCUIApplication) {
 		springboard.scrollViews.firstMatch.swipeDown()
-		let removeWotdButton = springboard.buttons["Delete Word of the day"]
-		removeWotdButton.tap()
-		springboard.buttons["Remove"].tap()
+		let deleteButton = springboard.buttons.matching(NSPredicate(format: "label MATCHES %@", "Delete .*"))
+		while deleteButton.firstMatch.exists {
+			deleteButton.firstMatch.tap()
+			springboard.buttons["Remove"].tap()
+		}
 	}
 	private func testExpandCollapse(springboard: XCUIApplication) {
 		UITestWaitHacks.wait(test:self, timeout:1.0)
@@ -82,16 +84,10 @@ class TodayExtensionTest: XCTestCase {
 	}
 	
 	private func getExpandButton(springboard: XCUIApplication) -> XCUIElement {
-		return getWidgetButton(springboard: springboard, buttonLabel: "Show More")
+		return springboard.buttons["Show More"].firstMatch
 	}
 	private func getCollapseButton(springboard: XCUIApplication) -> XCUIElement {
-		return getWidgetButton(springboard: springboard, buttonLabel: "Show Less")
-	}
-	private func getWidgetButton(springboard: XCUIApplication, buttonLabel: String) -> XCUIElement {
-		return springboard.otherElements
-			.containing(NSPredicate(format: "identifier=%@", "TodayTitle"))
-			.containing(NSPredicate(format: "label=%@", buttonLabel))
-			.buttons[buttonLabel].firstMatch
+		return springboard.buttons["Show Less"].firstMatch
 	}
 	
 	private func testExpand(springboard: XCUIApplication, expandButton: XCUIElement) {
