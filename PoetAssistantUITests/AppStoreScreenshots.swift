@@ -48,25 +48,25 @@ class AppStoreScreenshots: XCTestCase {
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		textViewPoem.tap()
 		textViewPoem.typeText("Roses are red.\nViolets are blue.\nIf you are a poet,\nthis app is for you.")
-		attachScreenshot(name: "composer")
+		UITestUtils.attachScreenshot(test: self, name: "composer")
 		
 		let buttonHideKeyboard = app.buttons.matching(identifier: "ComposerButtonHideKeyboard").firstMatch
 		buttonHideKeyboard.tap()
 		UITestActions.search(test: self, app:app, query: "chance")
 		UITestNavigation.moveToRhymer(app: app)
 		UITestActions.starWord(test:self, app:app, word: "askance")
-		attachScreenshot(name: "rhymer")
+		UITestUtils.attachScreenshot(test: self, name: "rhymer")
 		
 		UITestNavigation.moveToThesaurus(app: app)
 		UITestActions.starWord(test:self, app:app, word: "possibleness")
-		attachScreenshot(name: "thesaurus")
+		UITestUtils.attachScreenshot(test: self, name: "thesaurus")
 		
 		UITestNavigation.moveToDictionary(app: app)
-		attachScreenshot(name: "dictionary")
+		UITestUtils.attachScreenshot(test: self, name: "dictionary")
 		
 		starWords(words: "acquiesce", "benight", "deferential", "fractious", "implacable", "obfuscation", "peon")
 		UITestNavigation.moveToFavorites(app: app)
-		attachScreenshot(name: "favorites")
+		UITestUtils.attachScreenshot(test: self, name: "favorites")
 	}
 	
 	private func starWords(words: String...) {
@@ -77,12 +77,4 @@ class AppStoreScreenshots: XCTestCase {
 			headerFavoriteButton.firstMatch.tap()
 		}
 	}
-	private func attachScreenshot(name: String) {
-		let screenshot = XCUIScreen.main.screenshot()
-		let attachment = XCTAttachment(screenshot: screenshot)
-		attachment.lifetime = .keepAlways
-		attachment.name = name
-		add(attachment)
-	}
-
 }

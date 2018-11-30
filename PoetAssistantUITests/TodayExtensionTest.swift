@@ -95,6 +95,7 @@ class TodayExtensionTest: XCTestCase {
 		XCTAssert(!definitionsText.exists)
 		expandButton.tap()
 		XCTAssert(definitionsText.exists)
+		UITestUtils.attachScreenshot(test: self, name: "widget")
 	}
 	private func testCollapse(springboard: XCUIApplication, collapseButton: XCUIElement) {
 		let definitionsText = springboard.staticTexts.matching(identifier: "TodayDefinitions").firstMatch

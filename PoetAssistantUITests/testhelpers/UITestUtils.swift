@@ -52,4 +52,12 @@ class UITestUtils {
 		let window = app.windows.element(boundBy: 0)
 		XCTAssert(!element.exists || !window.frame.contains(element.frame) || !element.isHittable)
 	}
+	
+	class func attachScreenshot(test: XCTestCase, name: String) {
+		let screenshot = XCUIScreen.main.screenshot()
+		let attachment = XCTAttachment(screenshot: screenshot)
+		attachment.lifetime = .keepAlways
+		attachment.name = name
+		test.add(attachment)
+	}
 }
