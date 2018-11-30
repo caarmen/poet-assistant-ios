@@ -40,7 +40,6 @@
 		4F2CE82321AAA63100EB2AF3 /* PorterStemmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197522167D59A00135FF4 /* PorterStemmer.swift */; };
 		4F2CE82421AAA64900EB2AF3 /* ThesaurusQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBA615216D4EDF00AD3AD6 /* ThesaurusQueryResult.swift */; };
 		4F2CE82521AAA67600EB2AF3 /* ThesaurusResultsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3197462167131200135FF4 /* ThesaurusResultsFetcher.swift */; };
-		4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4F2CE82F21AADA8900EB2AF3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2CE82E21AADA8900EB2AF3 /* NotificationCenter.framework */; };
 		4F2CE83221AADA8900EB2AF3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */; };
 		4F2CE83521AADA8900EB2AF3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CE83321AADA8900EB2AF3 /* MainInterface.storyboard */; };
@@ -86,6 +85,7 @@
 		4F698A1C21737AD500CD6CB3 /* VoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1B21737AD500CD6CB3 /* VoiceList.swift */; };
 		4F698A1F21738F3600CD6CB3 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A1E21738F3600CD6CB3 /* VoiceTableViewCell.swift */; };
 		4F698A212175410200CD6CB3 /* RTDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F698A202175410200CD6CB3 /* RTDAnimator.swift */; };
+		4F798F3321B1CAA200CB4C25 /* dictionaries.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4F6613FD21652F2200FA10A1 /* dictionaries.sqlite */; };
 		4FA229F121726C800014B1B9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA229F321726C800014B1B9 /* Settings.storyboard */; };
 		4FD3B68E21A0746700EB3D89 /* ShareTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3B68D21A0746700EB3D89 /* ShareTest.swift */; };
 		4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB03B72177BB7100CF8B49 /* StemsTest.swift */; };
@@ -393,11 +393,8 @@
 		4F2CE80221AA980400EB2AF3 /* PoetAssistantLexiconsFramework */ = {
 			isa = PBXGroup;
 			children = (
+				4F588BED21B1C93C000DA76F /* src */,
 				4F2CE84A21AB279D00EB2AF3 /* en.lproj */,
-				4F2CE84021AB104300EB2AF3 /* i18n */,
-				4F2CE81021AA9CFF00EB2AF3 /* wotd */,
-				4F2CE80E21AA983100EB2AF3 /* lexicons */,
-				4F2CE80321AA980400EB2AF3 /* PoetAssistantLexiconsFramework.h */,
 				4F2CE80421AA980400EB2AF3 /* Info.plist */,
 			);
 			path = PoetAssistantLexiconsFramework;
@@ -558,6 +555,17 @@
 				4F2CE83121AADA8900EB2AF3 /* TodayViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		4F588BED21B1C93C000DA76F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4F2CE80321AA980400EB2AF3 /* PoetAssistantLexiconsFramework.h */,
+				4F2CE84021AB104300EB2AF3 /* i18n */,
+				4F2CE81021AA9CFF00EB2AF3 /* wotd */,
+				4F2CE80E21AA983100EB2AF3 /* lexicons */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		4F6613C92164D10700FA10A1 = {
@@ -1006,7 +1014,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2CE82621AAB20A00EB2AF3 /* dictionaries.sqlite in Resources */,
+				4F798F3321B1CAA200CB4C25 /* dictionaries.sqlite in Resources */,
 				4F2CE84B21AB279D00EB2AF3 /* en.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1236,7 +1244,7 @@
 				4F6613FE21652F2200FA10A1 /* Base */,
 			);
 			name = dictionaries.sqlite;
-			path = /Users/calvarez/dev/projects/PoetAssistant/PoetAssistantLexiconsFramework/lexicons/coredata;
+			path = /Users/calvarez/dev/projects/PoetAssistant/PoetAssistantLexiconsFramework/src/lexicons/coredata;
 			sourceTree = "<absolute>";
 		};
 		4FA229F321726C800014B1B9 /* Settings.storyboard */ = {
