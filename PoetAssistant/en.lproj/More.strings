@@ -1,4 +1,4 @@
-
+﻿
 /* Class = "UILabel"; text = "Porter Stemmer algorithm"; ObjectID = "0wV-ou-r88"; */
 "0wV-ou-r88.text" = "Porter Stemmer algorithm";
 
@@ -17,14 +17,14 @@
 /* Class = "UILabel"; text = "New"; ObjectID = "F8r-Zr-5Hx"; */
 "F8r-Zr-5Hx.text" = "New";
 
+/* Class = "UILabel"; text = "About"; ObjectID = "HD0-OR-B77"; */
+"HD0-OR-B77.text" = "About";
+
 /* Class = "UITableViewController"; title = "About"; ObjectID = "IxT-qc-S8M"; */
 "IxT-qc-S8M.title" = "About";
 
 /* Class = "UITextView"; text = "c@rmen.ca"; ObjectID = "NbR-4x-d1B"; */
 "NbR-4x-d1B.text" = "c@rmen.ca";
-
-/* Class = "UILabel"; text = "Poet Assistant v1.0.0"; ObjectID = "OPk-XL-DQ8"; */
-"OPk-XL-DQ8.text" = "Poet Assistant v1.0.0";
 
 /* Class = "UITextView"; text = "https://rmen.ca"; ObjectID = "QQg-Hv-epO"; */
 "QQg-Hv-epO.text" = "https://rmen.ca";
@@ -50,8 +50,11 @@
 /* Class = "UILabel"; text = "Import"; ObjectID = "iSI-e8-UVp"; */
 "iSI-e8-UVp.text" = "Import";
 
-/* Class = "UILabel"; text = "About"; ObjectID = "rSW-Fj-GCn"; */
-"rSW-Fj-GCn.text" = "About";
+/* Class = "UITableViewController"; title = "Words of the day"; ObjectID = "qOR-RA-Mdg"; */
+"qOR-RA-Mdg.title" = "Words of the day";
+
+/* Class = "UILabel"; text = "Words of the day"; ObjectID = "rSW-Fj-GCn"; */
+"rSW-Fj-GCn.text" = "Words of the day";
 
 /* Class = "UILabel"; text = "Report Bugs"; ObjectID = "tQu-YI-1S3"; */
 "tQu-YI-1S3.text" = "Report Bugs";

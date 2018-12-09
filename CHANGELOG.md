@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.6.0 *(2018-12-09)*
+--------------------
+* Add a list of the previous words of the day.
+
 1.5.1 *(2018-11-30)*
 --------------------
 * Current the distribution warning: use the same bundle version in the main app and the today extension.

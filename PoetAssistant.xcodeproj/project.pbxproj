@@ -103,6 +103,8 @@
 		4FEF06C021850FFF00D69383 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06BF21850FFF00D69383 /* FileUtils.swift */; };
 		4FEF06C22185110600D69383 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C12185110600D69383 /* FileTest.swift */; };
 		4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */; };
+		4FF9C4F021BD65E90025AD5C /* WotdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4EF21BD65E90025AD5C /* WotdTableViewController.swift */; };
+		4FF9C4F221BD7B620025AD5C /* WotdListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4F121BD7B620025AD5C /* WotdListTest.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
 		4FFB980221722274000469F0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980121722274000469F0 /* AboutViewController.swift */; };
 		4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980B21724595000469F0 /* SettingsTableViewController.swift */; };
@@ -283,6 +285,8 @@
 		4FEF06BF21850FFF00D69383 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		4FEF06C12185110600D69383 /* FileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
 		4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTest.swift; sourceTree = "<group>"; };
+		4FF9C4EF21BD65E90025AD5C /* WotdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WotdTableViewController.swift; sourceTree = "<group>"; };
+		4FF9C4F121BD7B620025AD5C /* WotdListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WotdListTest.swift; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -742,6 +746,7 @@
 				4FD3B68D21A0746700EB3D89 /* ShareTest.swift */,
 				4F588BC621AC9355000DA76F /* DeepLinkTest.swift */,
 				4F588BD121B09FE5000DA76F /* TodayExtensionTest.swift */,
+				4FF9C4F121BD7B620025AD5C /* WotdListTest.swift */,
 			);
 			path = PoetAssistantUITests;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				4FEF068F2182554200D69383 /* MoreTableViewController.swift */,
+				4FF9C4EF21BD65E90025AD5C /* WotdTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1121,6 +1127,7 @@
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
 				4F3849E02187970F00613B53 /* Theme.swift in Sources */,
 				4FFBA609216A97CF00AD3AD6 /* Suggestion.swift in Sources */,
+				4FF9C4F021BD65E90025AD5C /* WotdTableViewController.swift in Sources */,
 				4F1C93D6218C94B200469CD5 /* FavoriteButtonHelper.swift in Sources */,
 				4F6613D62164D10700FA10A1 /* AppDelegate.swift in Sources */,
 				4FFBA5BE216A542500AD3AD6 /* WordCounter.swift in Sources */,
@@ -1167,6 +1174,7 @@
 				4FD3B68E21A0746700EB3D89 /* ShareTest.swift in Sources */,
 				4F588BD021ACA5AF000DA76F /* UITestWaitHacks.swift in Sources */,
 				4F3849E221890B9500613B53 /* ThemeTest.swift in Sources */,
+				4FF9C4F221BD7B620025AD5C /* WotdListTest.swift in Sources */,
 				4FEF0686217B988000D69383 /* AboutTest.swift in Sources */,
 				4FEB03DB217942C000CF8B49 /* UITestUtils.swift in Sources */,
 				4F588BC921ACA34B000DA76F /* SearchResultAssertions.swift in Sources */,
