@@ -86,6 +86,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return container
 	}
 
+	static func search(query: String) {
+		(UIApplication.shared.delegate as! AppDelegate).search(query: query)
+	}
+
 	static var persistentDictionariesContainer: NSPersistentContainer {
 		return (UIApplication.shared.delegate as! AppDelegate).persistentEmbeddedDbContainer
 	}

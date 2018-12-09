@@ -18,6 +18,11 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 */
 import CoreData
 
+public struct WotdEntry {
+	public let word: String
+	public let date: Date
+}
+
 public class Wotd {
 	
 	// When looking up random words, their "frequency" is a factor in the selection.
@@ -29,11 +34,8 @@ public class Wotd {
 	private init() {		
 	}
 	public class func findRandomWord(context: NSManagedObjectContext, seed: Int64?) -> String {
-		let request: NSFetchRequest<Stems> = Stems.fetchRequest()
-		request.predicate = NSPredicate(format: "\(#keyPath(Stems.google_ngram_frequency)) > %d AND \(#keyPath(Stems.google_ngram_frequency)) < %d", MIN_INTERESTING_FREQUENCY, MAX_INTERESTING_FREQUENCY)
-		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Stems.word), ascending: true)]
 		do {
-			let result: [Stems] = try context.fetch(request)
+			let result: [Stems] = try getWotdFetchResult(context:context)
 			let random = Random(inputSeed:seed)
 			let randomIndex = random.nextInt(Int64(result.count))
 			if let word = result[Int(randomIndex)].word {
@@ -60,11 +62,48 @@ public class Wotd {
 		return findRandomWord(context: context, seed:seed)
 	}
 	
+	public class func getLastWordsOfTheDay(context: NSManagedObjectContext, count: Int) -> [WotdEntry] {
+		var wotdEntries: [WotdEntry] = []
+
+		do {
+			var cal = Calendar.current
+			if let utc = TimeZone.init(abbreviation: "UTC") {
+				cal.timeZone = utc
+			}
+			let todayUTC = getTodayUTC()
+
+			let stems: [Stems] = try getWotdFetchResult(context: context)
+			
+			for i in 0..<count {
+				if let date = cal.date(byAdding: .day, value: -i, to: todayUTC) {
+					let seed = Int64(cal.startOfDay(for: date).timeIntervalSince1970 * 1000)
+					let random = Random(inputSeed:seed)
+					let randomIndex = random.nextInt(Int64(stems.count))
+					if let word = stems[Int(randomIndex)].word {
+						let wotdEntry = WotdEntry(word: word, date: date)
+						wotdEntries.append(wotdEntry)
+					}
+				}
+			}
+		} catch let error {
+			print ("Error finding random word: \(error)")
+		}
+		return wotdEntries
+	}
+	
+	private class func getWotdFetchResult(context: NSManagedObjectContext) throws -> [Stems] {
+		let request: NSFetchRequest<Stems> = Stems.fetchRequest()
+		request.predicate = NSPredicate(format: "\(#keyPath(Stems.google_ngram_frequency)) > %d AND \(#keyPath(Stems.google_ngram_frequency)) < %d", MIN_INTERESTING_FREQUENCY, MAX_INTERESTING_FREQUENCY)
+		request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Stems.word), ascending: true)]
+		return try context.fetch(request)
+	}
+	
 	private class func getTodayUTC() -> Date {
 		var now = Calendar.current.dateComponents(in: TimeZone.current, from: Date())
 		now.hour = 0
 		now.minute = 0
 		now.second = 0
+		now.nanosecond = 0
 		if let utc = TimeZone.init(abbreviation: "UTC") {
 			now.timeZone = utc
 		}

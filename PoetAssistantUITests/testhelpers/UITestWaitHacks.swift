@@ -54,4 +54,10 @@ class UITestWaitHacks {
 		}
 	}
 	
+	// http://masilotti.com/xctest-waiting/
+	class func waitForElementToExist(test: XCTestCase, element: XCUIElement, timeout: TimeInterval) {
+		let existsPredicate = NSPredicate(format: "exists == true")
+		test.expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+		test.waitForExpectations(timeout: timeout, handler: nil)
+	}
 }
