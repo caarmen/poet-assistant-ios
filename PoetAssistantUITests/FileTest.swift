@@ -33,67 +33,72 @@ class FileTest: XCTestCase {
 		let poemText = "Hello World"
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
 		typePoem(textViewPoem: textViewPoem, poemText: poemText)
-		cancelFileOperation(fileOperation: "New", newFilename: "my poem")
+		cancelNewFile()
 		XCTAssertEqual(poemText, textViewPoem.firstMatch.value as! String)
 		expectNavigationBarTitle(expectedTitle: "Poem")
-		acceptFileOperation(fileOperation: "New", newFilename: "my poem")
+		acceptNewFile()
 		XCTAssertEqual("", textViewPoem.firstMatch.value as! String)
-		expectNavigationBarTitle(expectedTitle: "My Poem")
+		expectNavigationBarTitle(expectedTitle: "Poem")
 	}
 	
 	func testSaveAs() {
 		let poemText = "Hello World"
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
 		typePoem(textViewPoem: textViewPoem, poemText: poemText)
-		cancelFileOperation(fileOperation: "SaveAs", newFilename: "my poem")
+		cancelSaveAs(expectedSuggestedFilename: "Hello-World.txt", newFilename: "my poem")
 		XCTAssertEqual(poemText, textViewPoem.firstMatch.value as! String)
 		expectNavigationBarTitle(expectedTitle: "Poem")
-		acceptFileOperation(fileOperation: "SaveAs", newFilename: "my poem")
+		acceptSaveAs(expectedSuggestedFilename: "Hello-World.txt", newFilename: "my poem")
 		XCTAssertEqual(poemText, textViewPoem.firstMatch.value as! String)
 		expectNavigationBarTitle(expectedTitle: "My Poem")
 	}
 	
-	func testNewFileSameName() {
-		let poemText = "Hello World"
-		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
-		typePoem(textViewPoem: textViewPoem, poemText: poemText)
-		acceptFileOperation(fileOperation: "New", newFilename: "my poem")
-		XCTAssertEqual("", textViewPoem.firstMatch.value as! String)
-		typePoem(textViewPoem: textViewPoem, poemText: "roses are red")
-		acceptFileOperation(fileOperation: "New", newFilename: "my poem")
-		XCTAssertEqual("", textViewPoem.firstMatch.value as! String)
-	}
 	func testSaveAsSameName() {
 		let poemText = "Hello World"
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem")
 		typePoem(textViewPoem: textViewPoem, poemText: poemText)
-		acceptFileOperation(fileOperation: "SaveAs", newFilename: "my poem")
+		acceptSaveAs(expectedSuggestedFilename: "Hello-World.txt", newFilename: "my poem")
 		XCTAssertEqual(poemText, textViewPoem.firstMatch.value as! String)
+		expectNavigationBarTitle(expectedTitle: "My Poem")
 		let newPoemText = "Roses are red"
 		typePoem(textViewPoem: textViewPoem, poemText: newPoemText)
-		acceptFileOperation(fileOperation: "SaveAs", newFilename: "my poem")
+		acceptSaveAs(expectedSuggestedFilename: "my poem.txt", newFilename: "my poem")
 		XCTAssertEqual("\(poemText)\(newPoemText)", textViewPoem.firstMatch.value as! String)
+		expectNavigationBarTitle(expectedTitle: "My Poem")
+
 	}
-	private func cancelFileOperation(fileOperation: String, newFilename: String) {
+	private func cancelNewFile() {
 		UITestNavigation.openMore(app:app)
-		app.tables.cells.matching(identifier: fileOperation).firstMatch.tap()
-		// enter a new poem name but cancel
-		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, newValue: newFilename)
+		app.tables.cells.matching(identifier: "New").firstMatch.tap()
 		UITestActions.cancelDialog(app:app)
 		app.navigationBars.buttons.firstMatch.tap()
 	}
 	
-	private func acceptFileOperation(fileOperation: String, newFilename: String) {
+	private func acceptNewFile() {
 		UITestNavigation.openMore(app:app)
-		app.tables.cells.matching(identifier: fileOperation).firstMatch.tap()
-		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, newValue: newFilename)
+		app.tables.cells.matching(identifier: "New").firstMatch.tap()
 		UITestActions.acceptDialog(app:app)
 	}
 	
-	private func typeFilenameInPrompt(textFieldFilename: XCUIElement, newValue: String) {
+	private func cancelSaveAs(expectedSuggestedFilename: String, newFilename: String) {
+		UITestNavigation.openMore(app:app)
+		app.tables.cells.matching(identifier: "SaveAs").firstMatch.tap()
+		// enter a new poem name but cancel
+		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, expectedSuggestedFilename: expectedSuggestedFilename, newValue: newFilename)
+		UITestActions.cancelDialog(app:app)
+		app.navigationBars.buttons.firstMatch.tap()
+	}
+	
+	private func acceptSaveAs(expectedSuggestedFilename: String, newFilename: String) {
+		UITestNavigation.openMore(app:app)
+		app.tables.cells.matching(identifier: "SaveAs").firstMatch.tap()
+		typeFilenameInPrompt(textFieldFilename: app.textFields.firstMatch, expectedSuggestedFilename: expectedSuggestedFilename, newValue: newFilename)
+		UITestActions.acceptDialog(app:app)
+	}
+	
+	private func typeFilenameInPrompt(textFieldFilename: XCUIElement, expectedSuggestedFilename: String, newValue: String) {
 		let prefilledFilename = textFieldFilename.value as! String
-		XCTAssert(prefilledFilename.hasPrefix("poem-"))
-		XCTAssert(prefilledFilename.hasSuffix(".txt"))
+		XCTAssertEqual(expectedSuggestedFilename, prefilledFilename)
 		UITestActions.clearText(element: textFieldFilename)
 		textFieldFilename.typeText(newValue)
 	}

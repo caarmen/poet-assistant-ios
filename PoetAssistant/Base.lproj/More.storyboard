@@ -43,27 +43,27 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="New"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="iSI-e8-UVp" imageView="hds-wP-uoJ" style="IBUITableViewCellStyleDefault" id="l9s-7o-b21" userLabel="Import">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="iSI-e8-UVp" imageView="hds-wP-uoJ" style="IBUITableViewCellStyleDefault" id="l9s-7o-b21" userLabel="Open">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l9s-7o-b21" id="iGc-o2-nWD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Import" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSI-e8-UVp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSI-e8-UVp">
                                                     <rect key="frame" x="75" y="0.0" width="284" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="ic_import" id="hds-wP-uoJ">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="ic_open" id="hds-wP-uoJ">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="Import"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Open"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="yoa-gB-bgI" imageView="HAz-s5-QSM" style="IBUITableViewCellStyleDefault" id="PEG-dT-IPt" userLabel="Save as">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -198,8 +198,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="YHW-VQ-qOE"/>
                     <connections>
-                        <outlet property="cellImport" destination="l9s-7o-b21" id="cFK-Tq-V6h"/>
                         <outlet property="cellNew" destination="Iit-mC-Ss4" id="dEi-ef-RON"/>
+                        <outlet property="cellOpen" destination="l9s-7o-b21" id="cFK-Tq-V6h"/>
                         <outlet property="cellSaveAs" destination="PEG-dT-IPt" id="Xw9-jV-be4"/>
                         <outlet property="cellSharePoemText" destination="lAp-tN-9jc" id="uY6-sX-V04"/>
                     </connections>
@@ -721,10 +721,10 @@
         <image name="ic_bug" width="48" height="48"/>
         <image name="ic_chevron_right" width="48" height="48"/>
         <image name="ic_code" width="48" height="48"/>
-        <image name="ic_import" width="48" height="48"/>
         <image name="ic_info" width="48" height="48"/>
         <image name="ic_legal" width="48" height="48"/>
         <image name="ic_new" width="48" height="48"/>
+        <image name="ic_open" width="48" height="48"/>
         <image name="ic_save" width="48" height="48"/>
         <image name="ic_settings" width="48" height="48"/>
         <image name="ic_share" width="48" height="48"/>

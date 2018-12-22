@@ -1,4 +1,4 @@
-﻿
+
 /* Class = "UILabel"; text = "Porter Stemmer algorithm"; ObjectID = "0wV-ou-r88"; */
 "0wV-ou-r88.text" = "Porter Stemmer algorithm";
 
@@ -47,8 +47,8 @@
 /* Class = "UITableViewSection"; headerTitle = "File"; ObjectID = "dWi-1n-Fjb"; */
 "dWi-1n-Fjb.headerTitle" = "File";
 
-/* Class = "UILabel"; text = "Import"; ObjectID = "iSI-e8-UVp"; */
-"iSI-e8-UVp.text" = "Import";
+/* Class = "UILabel"; text = "Open"; ObjectID = "iSI-e8-UVp"; */
+"iSI-e8-UVp.text" = "Open";
 
 /* Class = "UITableViewController"; title = "Words of the day"; ObjectID = "qOR-RA-Mdg"; */
 "qOR-RA-Mdg.title" = "Words of the day";

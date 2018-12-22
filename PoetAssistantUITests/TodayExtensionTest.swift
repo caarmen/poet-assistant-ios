@@ -39,7 +39,9 @@ class TodayExtensionTest: XCTestCase {
 		// Open Today View
 		let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
 		springboard.scrollViews.firstMatch.swipeRight()
-		springboard.buttons["Edit"].tap()
+		let editButton = springboard.buttons["Edit"]
+		UITestWaitHacks.waitForElementToExist(test: self, element: editButton, timeout: 2.0)
+		editButton.tap()
 		
 		// Add the widget, removing it first if necessary
 		if !addWidget(springboard: springboard) {
@@ -62,6 +64,7 @@ class TodayExtensionTest: XCTestCase {
 	}
 	private func removeWidgets(springboard: XCUIApplication) {
 		springboard.scrollViews.firstMatch.swipeDown()
+		UITestWaitHacks.wait(test: self, timeout: 1.0)
 		let deleteButton = springboard.buttons.matching(NSPredicate(format: "label MATCHES %@", "Delete .*"))
 		while deleteButton.firstMatch.exists {
 			deleteButton.firstMatch.tap()

@@ -105,6 +105,8 @@
 		4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */; };
 		4FF9C4F021BD65E90025AD5C /* WotdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4EF21BD65E90025AD5C /* WotdTableViewController.swift */; };
 		4FF9C4F221BD7B620025AD5C /* WotdListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4F121BD7B620025AD5C /* WotdListTest.swift */; };
+		4FF9C4F421CE92CA0025AD5C /* ComposerViewController+keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4F321CE92C90025AD5C /* ComposerViewController+keyboard.swift */; };
+		4FF9C4F621CE95F90025AD5C /* ComposerViewController+documentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9C4F521CE95F90025AD5C /* ComposerViewController+documentState.swift */; };
 		4FFB97FD2171E45C000469F0 /* ComposerViewController+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */; };
 		4FFB980221722274000469F0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980121722274000469F0 /* AboutViewController.swift */; };
 		4FFB980C21724595000469F0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB980B21724595000469F0 /* SettingsTableViewController.swift */; };
@@ -287,6 +289,8 @@
 		4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTest.swift; sourceTree = "<group>"; };
 		4FF9C4EF21BD65E90025AD5C /* WotdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WotdTableViewController.swift; sourceTree = "<group>"; };
 		4FF9C4F121BD7B620025AD5C /* WotdListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WotdListTest.swift; sourceTree = "<group>"; };
+		4FF9C4F321CE92C90025AD5C /* ComposerViewController+keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+keyboard.swift"; sourceTree = "<group>"; };
+		4FF9C4F521CE95F90025AD5C /* ComposerViewController+documentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+documentState.swift"; sourceTree = "<group>"; };
 		4FFB97F6216EA070000469F0 /* DictionaryQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryQueryResult.swift; sourceTree = "<group>"; };
 		4FFB97F8216EA09E000469F0 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposerViewController+menu.swift"; sourceTree = "<group>"; };
@@ -774,6 +778,8 @@
 				4F6613EF2164FC2E00FA10A1 /* ComposerViewController.swift */,
 				4FFB97FC2171E45C000469F0 /* ComposerViewController+menu.swift */,
 				4FEF06B72184F40500D69383 /* ComposerViewController+MoreDelegate.swift */,
+				4FF9C4F321CE92C90025AD5C /* ComposerViewController+keyboard.swift */,
+				4FF9C4F521CE95F90025AD5C /* ComposerViewController+documentState.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1115,6 +1121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF9C4F621CE95F90025AD5C /* ComposerViewController+documentState.swift in Sources */,
 				4F3197652168AD0F00135FF4 /* SearchViewController.swift in Sources */,
 				4F661404216531C800FA10A1 /* DictionaryViewController.swift in Sources */,
 				4F6613DA2164D10700FA10A1 /* ThesaurusViewController.swift in Sources */,
@@ -1122,6 +1129,7 @@
 				4F054B6B2196ADE300386FBC /* UINavigationController+statusBarStyle.swift in Sources */,
 				4F66141121654FC200FA10A1 /* DictionaryTableViewCell.swift in Sources */,
 				4F15B04C217342560072C8BC /* Tts.swift in Sources */,
+				4FF9C4F421CE92CA0025AD5C /* ComposerViewController+keyboard.swift in Sources */,
 				4F1C93CC218BAADF00469CD5 /* FavoritesViewController.swift in Sources */,
 				4F1C93CE218C5D7300469CD5 /* FavoriteDelegate.swift in Sources */,
 				4F661415216627EB00FA10A1 /* UILabel+fontstyle.swift in Sources */,
