@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.6.1 *(2018-12-23)*
+--------------------
+* Issue #21: Improve file handling. Show a saving/saved status in the composer.
+
 1.6.0 *(2018-12-09)*
 --------------------
 * Add a list of the previous words of the day.
