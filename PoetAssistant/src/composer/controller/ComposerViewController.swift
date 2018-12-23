@@ -21,11 +21,12 @@ import UIKit
 import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
+	
 	internal lazy var document: PoemDocument = {
 		return PoemDocument.loadSavedPoem()
 	}()
 
-	private var keyboardHeight:  CGFloat?
+
 	private var ttsPlayButtonUpdater: TtsPlayButtonConnector?
 	
 	@IBOutlet weak var playButton: UIButton!
@@ -34,9 +35,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 			text.delegate = self
 		}
 	}
-	
+	@IBOutlet weak var constraintKeyboardHidden: NSLayoutConstraint!
+	@IBOutlet weak var constraintKeyboardVisible: NSLayoutConstraint!
 	@IBOutlet weak var hideKeyboardButton: UIButton!
 	@IBOutlet weak var wordCount: UILabel!
+	@IBOutlet weak var labelSaving: UILabel!
 	@IBOutlet weak var hint: UILabel!
 	@IBOutlet weak var placeholderHeight: NSLayoutConstraint!
 
@@ -81,26 +84,17 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		ttsPlayButtonUpdater = TtsPlayButtonConnector(playButton: playButton)
 		registerForKeyboardNotifications()
-		NotificationCenter.default.addObserver(self, selector:#selector(documentStateChanged), name:UIDocument.stateChangedNotification, object:document)
+		registerForDocumentChanges()
 	}
-
-	@objc
-	func documentStateChanged(notification: Notification) {
-		if (document.documentState.contains(.normal)) {
-			text.text = document.text
-			updateUi()
-		}
-	}
-
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for:segue, sender:sender)
 		if segue.identifier == "More" {
 			if let moreViewController = segue.destination as? MoreTableViewController {
 				moreViewController.delegate = self
-				moreViewController.emptyPoem = document.text.isEmpty
+				moreViewController.poemText = document.text
 			}
 		}
 		text.endEditing(true)
@@ -108,13 +102,9 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 
 	internal func updateUi() {
 		hint.isHidden = !text.text.isEmpty
-		updatePlayButton()
+		playButton.isEnabled = !text.text.isEmpty
 		wordCount.text = getWordCountText(text: text.text)
 		navigationItem.title = document.localizedName.capitalized
-	}
-	
-	private func updatePlayButton() {
-		playButton.isEnabled = !text.text.isEmpty
 	}
 	
 	private func getWordCountText(text: String?) -> String {
@@ -128,51 +118,11 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	
 	func textViewDidChange(_ textView: UITextView) {
 		updateUi()
-		if (document.documentState == .normal) {
-			document.text = text.text
-			document.updateChangeCount(.done)
-		}
+		updateDocumentText(text: text.text)
 	}
 	
 	@IBAction func didClickHideKeyboard(_ sender: UIButton) {
 		text.endEditing(true)
 		setPlaceholderHeight(height: 0.0)
-	}
-	
-	// Adapt the location of the text view when the keyboard appears. Otherwise the keyboard will remain
-	// on top of the text view.
-	// https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW7
-	private func registerForKeyboardNotifications() {
-		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown), name:UIResponder.keyboardDidShowNotification, object:nil)
-		NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillBeHidden), name:UIResponder.keyboardWillHideNotification, object:nil)
-	}
-	@objc func keyboardWasShown(notification: Notification) {
-		if let kbSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size {
-			if let tabBarHeight = tabBarController?.tabBar.frame.height {
-				setPlaceholderHeight(height: kbSize.height - tabBarHeight)
-			}
-		}
-	}
-	@objc func keyboardWillBeHidden(notification: Notification) {
-		setPlaceholderHeight(height: 0.0)
-	}
-	private func setPlaceholderHeight(height: CGFloat) {
-		placeholderHeight.constant = height
-		hideKeyboardButton.isHidden = height <= 0
-		DispatchQueue.main.async {
-			self.scrollToCursor(keyboardHeight: height)
-		}
-	}
-	
-	private func scrollToCursor(keyboardHeight: CGFloat) {
-		if let selectedRange = text.selectedTextRange {
-			let caretRectInTextView = text.caretRect(for: selectedRange.end)
-			let caretRectInRootView = view.convert(caretRectInTextView, from: text)
-			
-			let visibleTextFrame = text.frame
-			if (!visibleTextFrame.contains(caretRectInRootView)) {
-				text.scrollRectToVisible(caretRectInTextView, animated: true)
-			}
-		}
 	}
 }

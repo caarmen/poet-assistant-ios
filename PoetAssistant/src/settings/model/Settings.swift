@@ -38,7 +38,7 @@ class Settings {
 	private static let KEY_MATCH_AOR_AO = "match_aor_ao"
 	private static let KEY_MATCH_AO_AA = "match_ao_aa"
 	
-	private static let DEFAULT_POEM_FILENAME = "poem.txt"
+	static let DEFAULT_POEM_FILENAME = "poem.txt"
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
 	private static let DEFAULT_VOICE_PITCH = Float(1.0)
 	private static let DEFAULT_TAB = Tab.composer

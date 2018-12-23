@@ -19,7 +19,6 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 class FileUtils {
-	private static let NEW_FILE_PREFIX = "poem-"
 	private static let FILE_EXTENSION = ".txt"
 	private static let VALID_FILENAME_CHARACTERS = "\\p{L}\\p{N}\\. -"
 	private init() {
@@ -34,15 +33,37 @@ class FileUtils {
 			try! fileManager.removeItem(at: url)
 		}
 	}
-
-	class func getSuggestedNewFilename() -> String {
-		let now = Date()
-		let dateFormatter = DateFormatter()
-		dateFormatter.locale = Locale.current
-		dateFormatter.dateFormat = "YYYYMMdd-HHmmss"
-		let formattedDate = dateFormatter.string(from: now)
-		return "\(NEW_FILE_PREFIX)\(formattedDate)\(FILE_EXTENSION)"
+	class func getSuggestedNewFilename(poemText: String) -> String {
+		var suggestedFilename: String? = Settings.getPoemFilename()
+		if suggestedFilename == Settings.DEFAULT_POEM_FILENAME {
+			suggestedFilename = generateFilenameFromPoemText(poemText: poemText)
+		}
+		if suggestedFilename != nil {
+			return suggestedFilename!
+		}
+		return Settings.DEFAULT_POEM_FILENAME
 	}
+	
+	private class func generateFilenameFromPoemText(poemText: String) -> String? {
+		let minLength = 8
+		let maxLength = 16
+		let result = poemText
+			// replace all non-letters by hyphens
+			.replacingOccurrences(of: "[^\\p{L}]+", with: "-", options: .regularExpression)
+			// remove a leading hyphen
+			.replacingOccurrences(of: "^-", with: "", options: .regularExpression)
+			// get a substring of maxLength (it may be more complicated using regex, but we can chain it this way)
+			.replacingOccurrences(of: "(.{\(maxLength)}).*$", with: "$1", options: .regularExpression)
+			// remove the last partial word
+			.replacingOccurrences(of: "(.{\(minLength)}[^-]*)-[^-]*$", with: "$1", options: .regularExpression)
+
+		// If there's nothing left, give up.
+		if result.isEmpty {
+			return nil
+		}
+		return "\(result)\(FILE_EXTENSION)"
+	}
+
 	class func buildDocumentUrl(filename: String) -> URL {
 		return getDocumentFolderUrl().appendingPathComponent(filename)
 	}

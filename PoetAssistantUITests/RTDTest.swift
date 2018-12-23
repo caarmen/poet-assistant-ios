@@ -109,11 +109,11 @@ class RTDTest: XCTestCase {
 	private func openDictionaryFromThesaurusCleanLayout(synonym: String, efficientLayoutEnabled: Bool) {
 		let thesaurusRow = app.cells.containing(NSPredicate(format: "label=%@", synonym)).firstMatch
 		if (!efficientLayoutEnabled) {
-			thesaurusRow.tap()
+			thesaurusRow.staticTexts.firstMatch.tap()
 			UITestWaitHacks.waitForRTDToShow(test:self, row: thesaurusRow)
-			thesaurusRow.tap()
+			thesaurusRow.staticTexts.firstMatch.tap()
 			waitForRTDToHide(row: thesaurusRow)
-			thesaurusRow.tap()
+			thesaurusRow.staticTexts.firstMatch.tap()
 			UITestWaitHacks.waitForRTDToShow(test:self, row: thesaurusRow)
 		}
 		thesaurusRow.buttons.matching(identifier: "ButtonDictionary").firstMatch.tap()

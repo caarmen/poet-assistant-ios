@@ -26,14 +26,14 @@ extension ComposerViewController : MoreDelegate {
 		present(shareController, animated:true, completion:nil)
 	}
 	
-	func didImport(url: URL) {
+	func didOpen(url: URL) {
 		didFinish()
 		document.importDocument(url: url) { self.updateUi()}
 	}
 	
-	func didCreateNewDocument(newFilename: String) {
+	func didCreateNewDocument() {
 		didFinish()
-		document.newDocument(filename: newFilename) {self.updateUi()}
+		document.newDocument() {self.updateUi()}
 	}
 	
 	func didSaveAs(newFilename: String) {

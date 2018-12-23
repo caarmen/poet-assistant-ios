@@ -19,15 +19,22 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import UIKit
 
+protocol PoemDocumentDelegate:class {
+	func didSaveStart()
+	func didSaveComplete()
+}
 class PoemDocument: UIDocument {
 	var text: String = ""
+	weak var delegate: PoemDocumentDelegate?
 	
 	class func loadSavedPoem() -> PoemDocument {
 		let poemFilename = Settings.getPoemFilename()
 		let url = FileUtils.buildDocumentUrl(filename: poemFilename)
 		let doc = PoemDocument(fileURL: url)
 		if FileManager().fileExists(atPath: url.path) {
-			doc.open()
+			doc.open(completionHandler: {result in
+				doc.delegate?.didSaveComplete()
+			})
 		} else {
 			doc.save(to: url, for: .forCreating)
 		}
@@ -35,7 +42,11 @@ class PoemDocument: UIDocument {
 	}
 
 	override func save(to url: URL, for saveOperation: UIDocument.SaveOperation, completionHandler: ((Bool) -> Void)? = nil) {
-		super.save(to:url, for:saveOperation, completionHandler:completionHandler)
+		delegate?.didSaveStart()
+		super.save(to:url, for:saveOperation, completionHandler: { [weak self] result in
+			self?.delegate?.didSaveComplete()
+			completionHandler?(result)
+		})
 		Settings.setPoemFilename(poemFilename: url.lastPathComponent)
 	}
 	
@@ -53,8 +64,10 @@ class PoemDocument: UIDocument {
 		}
 	}
 	
-	func newDocument(filename: String, completionHandler: (() -> Void)?) {
-		saveAs(newText: "", newFilename: filename, completionHandler:completionHandler)
+	func newDocument(completionHandler: (() -> Void)?) {
+		saveAs(newText: "",
+			   newFilename: Settings.DEFAULT_POEM_FILENAME,
+			   completionHandler:completionHandler)
 	}
 	
 	func importDocument(url: URL, completionHandler: (() -> Void)?) {
