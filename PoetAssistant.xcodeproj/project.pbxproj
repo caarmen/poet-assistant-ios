@@ -62,6 +62,7 @@
 		4F3849E02187970F00613B53 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3849DF2187970F00613B53 /* Theme.swift */; };
 		4F3849E221890B9500613B53 /* ThemeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3849E121890B9500613B53 /* ThemeTest.swift */; };
 		4F4B778021D7A6EA00FCE173 /* ThesaurusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B777F21D7A6EA00FCE173 /* ThesaurusTest.swift */; };
+		4F4B778221D8261D00FCE173 /* ThesaurusSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B778121D8261D00FCE173 /* ThesaurusSettingsTest.swift */; };
 		4F588BC721AC9355000DA76F /* DeepLinkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F588BC621AC9355000DA76F /* DeepLinkTest.swift */; };
 		4F588BC921ACA34B000DA76F /* SearchResultAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F588BC821ACA34B000DA76F /* SearchResultAssertions.swift */; };
 		4F588BCC21ACA47D000DA76F /* UITestNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F588BCB21ACA47D000DA76F /* UITestNavigation.swift */; };
@@ -236,6 +237,7 @@
 		4F3849DF2187970F00613B53 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4F3849E121890B9500613B53 /* ThemeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTest.swift; sourceTree = "<group>"; };
 		4F4B777F21D7A6EA00FCE173 /* ThesaurusTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusTest.swift; sourceTree = "<group>"; };
+		4F4B778121D8261D00FCE173 /* ThesaurusSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusSettingsTest.swift; sourceTree = "<group>"; };
 		4F588BC621AC9355000DA76F /* DeepLinkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTest.swift; sourceTree = "<group>"; };
 		4F588BC821ACA34B000DA76F /* SearchResultAssertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultAssertions.swift; sourceTree = "<group>"; };
 		4F588BCB21ACA47D000DA76F /* UITestNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestNavigation.swift; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 				4F3849E121890B9500613B53 /* ThemeTest.swift */,
 				4F1C93D7218CFAB400469CD5 /* FavoritesTest.swift */,
 				4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */,
+				4F4B778121D8261D00FCE173 /* ThesaurusSettingsTest.swift */,
 				4FD3B68D21A0746700EB3D89 /* ShareTest.swift */,
 				4F588BC621AC9355000DA76F /* DeepLinkTest.swift */,
 				4F588BD121B09FE5000DA76F /* TodayExtensionTest.swift */,
@@ -1195,6 +1198,7 @@
 				4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */,
 				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 				4F3849DE2185C75D00613B53 /* AppStoreScreenshots.swift in Sources */,
+				4F4B778221D8261D00FCE173 /* ThesaurusSettingsTest.swift in Sources */,
 				4F588BD221B09FE5000DA76F /* TodayExtensionTest.swift in Sources */,
 				4F1189C8219870A100A4308C /* RhymerSettingsTest.swift in Sources */,
 				4F588BCE21ACA4F1000DA76F /* UITestActions.swift in Sources */,
