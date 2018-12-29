@@ -31,7 +31,7 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	@IBOutlet weak var playButton: UIButton!
 	@IBOutlet weak var switchMatchAORAO: UISwitch!
 	@IBOutlet weak var switchMatchAOAA: UISwitch!
-
+	@IBOutlet weak var switchReverseThesaurus: UISwitch!
 	
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	@IBOutlet weak var switchEfficientLayout: UISwitch!
@@ -55,6 +55,7 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		sliderVoicePitch.value = Settings.getVoicePitch()
 		switchMatchAORAO.isOn = Settings.getMatchAORAOEnabled()
 		switchMatchAOAA.isOn = Settings.getMatchAOAAEnabled()
+		switchReverseThesaurus.isOn = Settings.getReverseThesaurusEnabled()
 		switchEfficientLayout.isOn = Settings.getEfficientLayoutEnabled()
 		switchDarkTheme.isOn = Settings.getTheme().name == Theme.DARK_THEME.name
 		updateVoiceSelection()
@@ -75,6 +76,10 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	}
 	@IBAction func didClickMatchAOAA(_ sender: UISwitch) {
 		Settings.setMatchAOAAEnabled(enabled: sender.isOn)
+	}
+	
+	@IBAction func didClickReverseThesaurus(_ sender: UISwitch) {
+		Settings.setReverseThesaurusEnabled(enabled: sender.isOn)
 	}
 	@IBAction func didClickSearchHistory(_ sender: UISwitch) {
 		Settings.setSearchHistoryEnabled(enabled: sender.isOn)

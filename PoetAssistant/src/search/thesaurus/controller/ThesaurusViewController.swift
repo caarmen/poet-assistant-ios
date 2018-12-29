@@ -38,7 +38,7 @@ class ThesaurusViewController: SearchResultsController {
 	override func fetch(word: String, completion: @escaping () -> Void) {
 		let favorites = Favorite.fetchFavorites(context: AppDelegate.persistentUserDbContainer.viewContext)
 		AppDelegate.persistentDictionariesContainer.performBackgroundTask { [weak self] context in
-			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word, favorites: favorites)
+			self?.thesaurusQueryResult = Thesaurus.fetch(context: context, queryText: word, favorites: favorites, includeReverseLookup: Settings.getReverseThesaurusEnabled())
 			DispatchQueue.main.async { [weak self] in
 				self?.viewResultHeader.labelWord.text = self?.thesaurusQueryResult?.queryText
 				completion()
