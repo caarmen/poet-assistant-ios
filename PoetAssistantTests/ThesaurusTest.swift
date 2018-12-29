@@ -23,7 +23,7 @@ import XCTest
 class ThesaurusTest: XCTestCase {
 	
 	
-	func testThesaurusLookup() {
+	func testThesaurusLookupMistake() {
 		guard let thesaurusQueryResult = Thesaurus.fetch(context: CoreDataAccess.persistentDictionariesContainer.viewContext, queryText: "mistake", favorites: []) else {
 			XCTFail("no thesaurus result")
 			return
@@ -31,11 +31,19 @@ class ThesaurusTest: XCTestCase {
 		
 		XCTAssertEqual(2, thesaurusQueryResult.sections.count)
 		assertExpectedForwardThesaurusEntryForMistake(thesaurusQueryResult: thesaurusQueryResult)
-		
-		
 	}
 	
-	func testReverseThesaurusLookup() {
+	func testThesaurusLookupNonattendance() {
+		guard let thesaurusQueryResult = Thesaurus.fetch(context: CoreDataAccess.persistentDictionariesContainer.viewContext, queryText: "nonattendance", favorites: []) else {
+			XCTFail("no thesaurus result")
+			return
+		}
+		
+		XCTAssertEqual(1, thesaurusQueryResult.sections.count)
+		assertExpectedForwardThesaurusEntryForNonattendance(thesaurusQueryResult: thesaurusQueryResult)
+	}
+
+	func testReverseThesaurusLookupMistake() {
 		guard let thesaurusQueryResult = Thesaurus.fetch(context: CoreDataAccess.persistentDictionariesContainer.viewContext, queryText: "mistake", favorites: [], includeReverseLookup: true) else {
 			XCTFail("no thesaurus result")
 			return
@@ -111,6 +119,24 @@ class ThesaurusTest: XCTestCase {
 								   actualThesaurusListSection: thesaurusQueryResult.sections[partOfSpeechIndex])
 	}
 	
+	func testThesaurusReverseLookupNonattendance() {
+		guard let thesaurusQueryResult = Thesaurus.fetch(context: CoreDataAccess.persistentDictionariesContainer.viewContext, queryText: "nonattendance", favorites: [], includeReverseLookup: true) else {
+			XCTFail("no thesaurus result")
+			return
+		}
+		XCTAssertEqual(2, thesaurusQueryResult.sections.count)
+		assertExpectedForwardThesaurusEntryForNonattendance(thesaurusQueryResult: thesaurusQueryResult)
+		assertThesaurusListSection(expectedPartOfSpeech: .noun,
+								   expectedEntries:[
+									ThesaurusListItem.subtitle(.synonym),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "absence", isFavorite: false)),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "hooky", isFavorite: false)),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "nonappearance", isFavorite: false)),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "truancy", isFavorite: false)),
+									ThesaurusListItem.subtitle(.antonym),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "attending", isFavorite: false))],
+								   actualThesaurusListSection: thesaurusQueryResult.sections[1])
+	}
 	private func assertExpectedForwardThesaurusEntryForMistake(thesaurusQueryResult: ThesaurusQueryResult) {
 		var partOfSpeechIndex: Int = 0
 		assertThesaurusListSection(expectedPartOfSpeech: .noun,
@@ -141,6 +167,16 @@ class ThesaurusTest: XCTestCase {
 									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "slip", isFavorite: false))],
 								   actualThesaurusListSection: thesaurusQueryResult.sections[partOfSpeechIndex])
 		
+	}
+	
+	private func assertExpectedForwardThesaurusEntryForNonattendance(thesaurusQueryResult: ThesaurusQueryResult) {
+		assertThesaurusListSection(expectedPartOfSpeech: .noun,
+								   expectedEntries: [
+									ThesaurusListItem.subtitle(WordRelationship.synonym),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "group action", isFavorite: false)),
+									ThesaurusListItem.subtitle(WordRelationship.antonym),
+									ThesaurusListItem.wordEntry(ThesaurusWordEntry(word: "attendance", isFavorite: false))],
+								   actualThesaurusListSection: thesaurusQueryResult.sections[0])
 	}
 	private func assertThesaurusListSection(expectedPartOfSpeech: PartOfSpeech, expectedEntries: [ThesaurusListItem], actualThesaurusListSection: ThesaurusListSection) {
 		XCTAssertEqual(expectedPartOfSpeech, actualThesaurusListSection.partOfSpeech)

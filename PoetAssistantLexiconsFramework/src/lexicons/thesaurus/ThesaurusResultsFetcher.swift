@@ -149,7 +149,8 @@ class ThesaurusResultsFetcher {
 	private func createReverseSearchResultsController(context: NSManagedObjectContext, relationshipColumn: String, queryText: String) -> NSFetchedResultsController<Thesaurus> {
 		let request: NSFetchRequest<Thesaurus> = Thesaurus.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: "\(#keyPath(Thesaurus.word_type))", ascending: true)]
-		request.predicate = NSPredicate(format: "\(relationshipColumn) beginsWith[c] %@ OR \(relationshipColumn) endsWith[c] %@ OR \(relationshipColumn) contains[c] %@",
+		request.predicate = NSPredicate(format: "\(relationshipColumn) =[c] %@ OR \(relationshipColumn) beginsWith[c] %@ OR \(relationshipColumn) endsWith[c] %@ OR \(relationshipColumn) contains[c] %@",
+			queryText, // only related word
 			"\(queryText),", // first related word
 			",\(queryText)", // last related word
 			",\(queryText)," // somewhere in the list of related words
