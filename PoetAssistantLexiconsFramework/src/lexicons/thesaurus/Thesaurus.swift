@@ -20,10 +20,10 @@
 import CoreData
 
 public class Thesaurus: NSManagedObject {
-	public class func fetch(context: NSManagedObjectContext, queryText: String, favorites: [String]) -> ThesaurusQueryResult? {
+	public class func fetch(context: NSManagedObjectContext, queryText: String, favorites: [String], includeReverseLookup: Bool = false) -> ThesaurusQueryResult? {
 		let fetcher = ThesaurusResultsFetcher()
 		do {
-			return try fetcher.fetch(context: context, queryText: queryText, favorites: favorites)
+			return try fetcher.fetch(context: context, queryText: queryText, favorites: favorites, includeReverseLookup: includeReverseLookup)
 		} catch let error {
 			print ("Error fetching thesaurus results for \(queryText): \(error)")
 			return nil

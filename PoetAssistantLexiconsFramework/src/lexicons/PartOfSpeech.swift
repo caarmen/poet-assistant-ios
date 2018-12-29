@@ -19,7 +19,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 
-public enum PartOfSpeech {
+public enum PartOfSpeech : CaseIterable {
 	case noun
 	case verb
 	case adjective
