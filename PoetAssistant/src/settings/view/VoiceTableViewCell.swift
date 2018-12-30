@@ -20,7 +20,7 @@ along with Poet Assistant.  If not, see <http://www.gnu.org/licenses/>.
 import UIKit
 
 protocol VoiceTableViewCellDelegate:class {
-	func didClickPlayButton(sender: UITableViewCell)
+	func didClickPlayButton(sender: VoiceTableViewCell)
 }
 class VoiceTableViewCell: UITableViewCell {
 
@@ -29,7 +29,7 @@ class VoiceTableViewCell: UITableViewCell {
 	@IBOutlet weak var imageCheck: UIImageView!
 	@IBOutlet weak var labelVoiceName: UILabel!
 	@IBOutlet weak var labelVoiceQuality: UILabel!
-	
+	@IBOutlet weak var buttonPlay: UIButton!
 	@IBAction func didClickPlayButton(_ sender: UIButton) {
 		delegate?.didClickPlayButton(sender: self)
 	}

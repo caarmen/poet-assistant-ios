@@ -23,13 +23,14 @@ import AVFoundation
 protocol VoiceListDelegate {
 	func voiceSelected(voice: AVSpeechSynthesisVoice)
 }
-class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelegate {
+class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelegate, AVSpeechSynthesizerDelegate {
 	private let speechSynthesizer = AVSpeechSynthesizer()
 
 	var voiceListDelegate: VoiceListDelegate?
 	
 	private let voices = VoiceList.getVoiceList()
 	private var selectedVoiceIdentifier: String?
+	private var currentlyPlayingVoiceIdentifier: String?
 	
 	private class func getLanguageCode(identifier: String) -> String {
 		let nsLocale = NSLocale.autoupdatingCurrent
@@ -37,6 +38,7 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 	}
 	override func viewDidLoad() {
 		selectedVoiceIdentifier = Settings.getVoiceIdentifier()
+		speechSynthesizer.delegate = self
 		super.viewDidLoad()
 		tableView.reloadData()
 	}
@@ -64,10 +66,11 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 			voiceCell.imageCheck.isHidden = !isSelectedVoice
 			voiceCell.labelVoiceName.bold = isSelectedVoice
 			voiceCell.labelVoiceQuality.bold = isSelectedVoice
+			updatePlayButton(playButton: voiceCell.buttonPlay, isPlaying: currentlyPlayingVoiceIdentifier == voice.identifier)
+
 			voiceCell.delegate = self
 		}
 		return cell
-		
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,10 +78,43 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 		voiceListDelegate?.voiceSelected(voice: voice)
 	}
 	
-	func didClickPlayButton(sender: UITableViewCell) {
-		if !speechSynthesizer.isSpeaking, let indexPath = tableView.indexPath(for: sender) {
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+		currentlyPlayingVoiceIdentifier = nil
+		resetPlayButtons()
+	}
+	
+	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+		currentlyPlayingVoiceIdentifier = nil
+		resetPlayButtons()
+	}
+
+	private func resetPlayButtons() {
+		tableView.visibleCells.forEach { cell in
+			if let voiceCell = cell as? VoiceTableViewCell {
+				if let indexPath = tableView.indexPath(for: voiceCell) {
+					let voice = voices[indexPath.section].voices[indexPath.row]
+					updatePlayButton(playButton: voiceCell.buttonPlay, isPlaying: currentlyPlayingVoiceIdentifier == voice.identifier)
+				}
+			}
+		}
+	}
+	
+	private func updatePlayButton(playButton: UIButton, isPlaying: Bool) {
+		if isPlaying {
+			playButton.setImage(UIImage(imageLiteralResourceName: "ic_stop"), for:.normal)
+		}
+		else {
+			playButton.setImage(UIImage(imageLiteralResourceName: "ic_play"), for:.normal)
+		}
+	}
+	func didClickPlayButton(sender: VoiceTableViewCell) {
+		if speechSynthesizer.isSpeaking {
+			speechSynthesizer.stopSpeaking(at: .immediate)
+		} else if let indexPath = tableView.indexPath(for: sender) {
 			let voice = voices[indexPath.section].voices[indexPath.row]
+			currentlyPlayingVoiceIdentifier = voice.identifier
 			speechSynthesizer.speak(Tts.createUtterance(text: NSLocalizedString("voice_preview", comment: ""), voiceIdentifier: voice.identifier))
+			updatePlayButton(playButton: sender.buttonPlay, isPlaying: true)
 		}
 	}
 }

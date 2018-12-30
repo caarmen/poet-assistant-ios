@@ -509,7 +509,8 @@ AO /ɔ/: "thaw".</string>
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-jn-oOc">
-                                            <rect key="frame" x="359" y="21" width="19" height="22"/>
+                                            <rect key="frame" x="343" y="13" width="51" height="38"/>
+                                            <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <state key="normal" image="ic_play"/>
                                             <connections>
                                                 <action selector="didClickPlayButton:" destination="4eK-UX-2Pm" eventType="touchUpInside" id="D7B-WU-Jk6"/>
@@ -519,8 +520,8 @@ AO /ɔ/: "thaw".</string>
                                     <constraints>
                                         <constraint firstItem="Cfh-4K-ObG" firstAttribute="leading" secondItem="Okn-fB-gG6" secondAttribute="trailing" constant="16" id="2Ij-kc-cem"/>
                                         <constraint firstItem="Okn-fB-gG6" firstAttribute="leading" secondItem="lz1-L4-HDM" secondAttribute="leadingMargin" id="CZG-u6-pNA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Blx-jn-oOc" secondAttribute="trailing" constant="16" id="VWc-Dg-WHi"/>
-                                        <constraint firstItem="Blx-jn-oOc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cfh-4K-ObG" secondAttribute="trailing" constant="16" id="ZsE-Av-5Zh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Blx-jn-oOc" secondAttribute="trailing" id="VWc-Dg-WHi"/>
+                                        <constraint firstItem="Blx-jn-oOc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cfh-4K-ObG" secondAttribute="trailing" id="ZsE-Av-5Zh"/>
                                         <constraint firstItem="Okn-fB-gG6" firstAttribute="centerY" secondItem="lz1-L4-HDM" secondAttribute="centerY" id="f3u-QV-ABV"/>
                                         <constraint firstItem="Cfh-4K-ObG" firstAttribute="centerY" secondItem="lz1-L4-HDM" secondAttribute="centerY" id="w72-3v-Xot"/>
                                     </constraints>
@@ -529,6 +530,7 @@ AO /ɔ/: "thaw".</string>
                                     <constraint firstItem="Blx-jn-oOc" firstAttribute="centerY" secondItem="4eK-UX-2Pm" secondAttribute="centerY" id="Dut-f7-UNQ"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="buttonPlay" destination="Blx-jn-oOc" id="BFi-CJ-CFd"/>
                                     <outlet property="imageCheck" destination="Okn-fB-gG6" id="qaR-NO-Cac"/>
                                     <outlet property="labelVoiceName" destination="RKE-Ha-fzm" id="qZ1-m3-dtD"/>
                                     <outlet property="labelVoiceQuality" destination="UTi-ab-UcT" id="u1l-OJ-9jC"/>
