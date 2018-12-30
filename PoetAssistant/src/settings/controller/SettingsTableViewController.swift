@@ -21,8 +21,6 @@ import UIKit
 import AVFoundation
 
 class SettingsTableViewController: UITableViewController, VoiceListDelegate {
-	
-	private let speechSynthesizer = AVSpeechSynthesizer()
 
 	@IBOutlet weak var selectedVoice: UILabel!
 	@IBOutlet weak var sliderVoiceSpeed: UISlider!

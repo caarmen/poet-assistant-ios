@@ -18,7 +18,6 @@
 */
 
 import UIKit
-import AVFoundation
 
 class ComposerViewController: UIViewController, UITextViewDelegate {
 	
