@@ -484,6 +484,30 @@ AO /ɔ/: "thaw".</string>
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="63.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-fB-gG6">
+                                            <rect key="frame" x="20" y="20" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="UfX-QI-v6P"/>
+                                                <constraint firstAttribute="height" constant="24" id="n6T-iy-aal"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cfh-4K-ObG">
+                                            <rect key="frame" x="60" y="11" width="43.666666666666657" height="41.666666666666664"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKE-Ha-fzm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="18"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTi-ab-UcT">
+                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="43.666666666666664" height="15.666666666666668"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-jn-oOc">
                                             <rect key="frame" x="359" y="21" width="19" height="22"/>
                                             <state key="normal" image="ic_play"/>
@@ -491,34 +515,21 @@ AO /ɔ/: "thaw".</string>
                                                 <action selector="didClickPlayButton:" destination="4eK-UX-2Pm" eventType="touchUpInside" id="D7B-WU-Jk6"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKE-Ha-fzm">
-                                            <rect key="frame" x="20" y="8" width="38" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTi-ab-UcT">
-                                            <rect key="frame" x="20" y="34" width="44" height="16"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RKE-Ha-fzm" firstAttribute="top" secondItem="lz1-L4-HDM" secondAttribute="top" constant="8" id="5dC-S8-Ml4"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UTi-ab-UcT" secondAttribute="bottom" constant="8" id="655-WA-8LA"/>
-                                        <constraint firstItem="UTi-ab-UcT" firstAttribute="leading" secondItem="lz1-L4-HDM" secondAttribute="leadingMargin" id="Da6-qD-0bY"/>
+                                        <constraint firstItem="Cfh-4K-ObG" firstAttribute="leading" secondItem="Okn-fB-gG6" secondAttribute="trailing" constant="16" id="2Ij-kc-cem"/>
+                                        <constraint firstItem="Okn-fB-gG6" firstAttribute="leading" secondItem="lz1-L4-HDM" secondAttribute="leadingMargin" id="CZG-u6-pNA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Blx-jn-oOc" secondAttribute="trailing" constant="16" id="VWc-Dg-WHi"/>
-                                        <constraint firstItem="RKE-Ha-fzm" firstAttribute="leading" secondItem="lz1-L4-HDM" secondAttribute="leadingMargin" id="aCV-Nf-KSP"/>
-                                        <constraint firstItem="UTi-ab-UcT" firstAttribute="top" secondItem="RKE-Ha-fzm" secondAttribute="bottom" constant="8" id="lZo-QM-lCu"/>
-                                        <constraint firstItem="Blx-jn-oOc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RKE-Ha-fzm" secondAttribute="trailing" constant="16" id="rsG-nJ-nPE"/>
-                                        <constraint firstItem="Blx-jn-oOc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UTi-ab-UcT" secondAttribute="trailing" constant="16" id="zGB-wD-axJ"/>
+                                        <constraint firstItem="Blx-jn-oOc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cfh-4K-ObG" secondAttribute="trailing" constant="16" id="ZsE-Av-5Zh"/>
+                                        <constraint firstItem="Okn-fB-gG6" firstAttribute="centerY" secondItem="lz1-L4-HDM" secondAttribute="centerY" id="f3u-QV-ABV"/>
+                                        <constraint firstItem="Cfh-4K-ObG" firstAttribute="centerY" secondItem="lz1-L4-HDM" secondAttribute="centerY" id="w72-3v-Xot"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <constraints>
                                     <constraint firstItem="Blx-jn-oOc" firstAttribute="centerY" secondItem="4eK-UX-2Pm" secondAttribute="centerY" id="Dut-f7-UNQ"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageCheck" destination="Okn-fB-gG6" id="qaR-NO-Cac"/>
                                     <outlet property="labelVoiceName" destination="RKE-Ha-fzm" id="qZ1-m3-dtD"/>
                                     <outlet property="labelVoiceQuality" destination="UTi-ab-UcT" id="u1l-OJ-9jC"/>
                                 </connections>
@@ -536,6 +547,7 @@ AO /ɔ/: "thaw".</string>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_check" width="72" height="72"/>
         <image name="ic_play" width="19.200000762939453" height="19.200000762939453"/>
     </resources>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

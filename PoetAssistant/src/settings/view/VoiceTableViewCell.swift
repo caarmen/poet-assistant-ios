@@ -26,6 +26,7 @@ class VoiceTableViewCell: UITableViewCell {
 
 	weak var delegate: VoiceTableViewCellDelegate? = nil
 	
+	@IBOutlet weak var imageCheck: UIImageView!
 	@IBOutlet weak var labelVoiceName: UILabel!
 	@IBOutlet weak var labelVoiceQuality: UILabel!
 	

@@ -61,6 +61,7 @@ class VoicesTableViewController: UITableViewController, VoiceTableViewCellDelega
 			let qualityString = NSLocalizedString(qualityStringKey, comment: "")
 			voiceCell.labelVoiceQuality.text = qualityString
 			let isSelectedVoice = voice.identifier == selectedVoiceIdentifier
+			voiceCell.imageCheck.isHidden = !isSelectedVoice
 			voiceCell.labelVoiceName.bold = isSelectedVoice
 			voiceCell.labelVoiceQuality.bold = isSelectedVoice
 			voiceCell.delegate = self
