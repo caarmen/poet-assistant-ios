@@ -23,11 +23,19 @@ public enum WordRelationship {
 	case synonym
 	case antonym
 }
-public enum ThesaurusListItem {
+public enum ThesaurusListItem : Equatable {
+	public static func == (lhs: ThesaurusListItem, rhs: ThesaurusListItem) -> Bool {
+		switch (lhs, rhs) {
+		case (let subtitle(lhsWordRelationship), let subtitle(rhsWordRelationship)): return lhsWordRelationship == rhsWordRelationship
+		case (let wordEntry(lhsWordEntry), let wordEntry(rhsWordEntry)): return  lhsWordEntry == rhsWordEntry
+		default: return false
+		}
+	}
+	
 	case subtitle(WordRelationship)
 	case wordEntry(ThesaurusWordEntry)
 }
-public struct ThesaurusWordEntry {
+public struct ThesaurusWordEntry : Equatable {
 	public let word: String
 	public let isFavorite: Bool
 }

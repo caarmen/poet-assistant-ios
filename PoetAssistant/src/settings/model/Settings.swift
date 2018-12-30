@@ -37,6 +37,7 @@ class Settings {
 	private static let KEY_DARK_THEME = "dark_theme"
 	private static let KEY_MATCH_AOR_AO = "match_aor_ao"
 	private static let KEY_MATCH_AO_AA = "match_ao_aa"
+	private static let KEY_REVERSE_THESAURUS = "reverse_thesaurus"
 	
 	static let DEFAULT_POEM_FILENAME = "poem.txt"
 	private static let DEFAULT_VOICE_SPEED = AVSpeechUtteranceDefaultSpeechRate
@@ -48,6 +49,7 @@ class Settings {
 	private static let DEFAULT_DARK_THEME = false
 	private static let DEFAULT_MATCH_AOR_AO = false
 	private static let DEFAULT_MATCH_AO_AA = false
+	private static let DEFAULT_REVERSE_THESAURUS = false
 	
 	class func registerDefaults() {
 		UserDefaults.init().register(defaults:
@@ -60,7 +62,8 @@ class Settings {
 			 KEY_EFFICIENT_LAYOUT: DEFAULT_EFFICIENT_LAYOUT,
 			 KEY_DARK_THEME: DEFAULT_DARK_THEME,
 			 KEY_MATCH_AOR_AO: DEFAULT_MATCH_AOR_AO,
-			 KEY_MATCH_AO_AA: DEFAULT_MATCH_AO_AA])
+			 KEY_MATCH_AO_AA: DEFAULT_MATCH_AO_AA,
+			 KEY_REVERSE_THESAURUS: DEFAULT_REVERSE_THESAURUS])
 	}
 	class func clear() {
 		let userDefaults = UserDefaults.init()
@@ -174,6 +177,14 @@ class Settings {
 
 	class func setMatchAOAAEnabled(enabled: Bool) {
 		setPref(key: KEY_MATCH_AO_AA, value: enabled)
+	}
+	
+	class func getReverseThesaurusEnabled() -> Bool {
+		return getBoolPref(key: KEY_REVERSE_THESAURUS, defaultValue: DEFAULT_REVERSE_THESAURUS)
+	}
+	
+	class func setReverseThesaurusEnabled(enabled: Bool) {
+		setPref(key: KEY_REVERSE_THESAURUS, value: enabled)
 	}
 
 	private class func getStringPref(key: String, defaultValue: String) -> String {

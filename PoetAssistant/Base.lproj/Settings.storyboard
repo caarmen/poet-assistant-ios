@@ -154,7 +154,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reA-5s-nuS" userLabel="Play">
-                                                    <rect key="frame" x="358" y="4" width="36" height="36"/>
+                                                    <rect key="frame" x="375" y="11" width="19" height="22"/>
                                                     <state key="normal" image="ic_play"/>
                                                     <connections>
                                                         <action selector="didClickPreview:" destination="LXh-xF-4WQ" eventType="touchUpInside" id="rQJ-5W-MM8"/>
@@ -269,10 +269,58 @@ AO /ɔ/: "thaw".</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Thesaurus" id="2CO-eL-ZBq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="RPa-R1-M9N" userLabel="Include reverse lookup">
+                                        <rect key="frame" x="0.0" y="348" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RPa-R1-M9N" id="8TH-Ed-9qa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xB-hj-NN8">
+                                                    <rect key="frame" x="345" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="SwitchReverseThesaurus"/>
+                                                    <connections>
+                                                        <action selector="didClickReverseThesaurus:" destination="LXh-xF-4WQ" eventType="valueChanged" id="d5G-q5-gDa"/>
+                                                        <action selector="didClickSearchHistory:" destination="LXh-xF-4WQ" eventType="valueChanged" id="JzO-zA-kMb"/>
+                                                    </connections>
+                                                </switch>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-Yt-Iso">
+                                                    <rect key="frame" x="20" y="16" width="309" height="11.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include reverse lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2p-BE-Zfr" userLabel="Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="2"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May be slower and include less relevant results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-Vn-71p" userLabel="Summary">
+                                                            <rect key="frame" x="0.0" y="10" width="284.33333333333331" height="1.6666666666666661"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GjD-Yt-Iso" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8TH-Ed-9qa" secondAttribute="top" constant="16" id="6XR-jc-K8d"/>
+                                                <constraint firstItem="GjD-Yt-Iso" firstAttribute="leading" secondItem="8TH-Ed-9qa" secondAttribute="leadingMargin" id="HQp-Pl-YFv"/>
+                                                <constraint firstItem="GjD-Yt-Iso" firstAttribute="centerY" secondItem="8TH-Ed-9qa" secondAttribute="centerY" id="RRm-gn-VlY"/>
+                                                <constraint firstItem="4xB-hj-NN8" firstAttribute="centerY" secondItem="8TH-Ed-9qa" secondAttribute="centerY" id="Sxw-CH-A5F"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4xB-hj-NN8" secondAttribute="trailing" id="cAO-pE-KzE"/>
+                                                <constraint firstItem="4xB-hj-NN8" firstAttribute="leading" secondItem="GjD-Yt-Iso" secondAttribute="trailing" constant="16" id="voK-iL-Xrz"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GjD-Yt-Iso" secondAttribute="bottom" constant="16" id="xqf-GD-nE2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Other" id="hSW-yu-zgX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Mas-0R-pPm" userLabel="Search History">
-                                        <rect key="frame" x="0.0" y="348" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="420" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mas-0R-pPm" id="MhY-gh-RDr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -315,7 +363,7 @@ AO /ɔ/: "thaw".</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="O9d-TH-Ym6" userLabel="Layout">
-                                        <rect key="frame" x="0.0" y="392" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="464" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O9d-TH-Ym6" id="vJ1-v7-7dP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -358,7 +406,7 @@ AO /ɔ/: "thaw".</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="N7S-cY-3uU" userLabel="Dark theme">
-                                        <rect key="frame" x="0.0" y="436" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="508" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N7S-cY-3uU" id="pwT-F1-c9B">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -412,6 +460,7 @@ AO /ɔ/: "thaw".</string>
                         <outlet property="switchEfficientLayout" destination="HWT-r8-724" id="u7r-YS-cfi"/>
                         <outlet property="switchMatchAOAA" destination="rMZ-Qc-kXe" id="lEF-C9-kIG"/>
                         <outlet property="switchMatchAORAO" destination="rcD-EJ-7aQ" id="n6c-Q0-3MB"/>
+                        <outlet property="switchReverseThesaurus" destination="4xB-hj-NN8" id="hWK-OI-rb7"/>
                         <outlet property="switchSearchHistory" destination="Lkk-k1-ImW" id="Baf-hQ-6Ll"/>
                     </connections>
                 </tableViewController>
@@ -436,7 +485,7 @@ AO /ɔ/: "thaw".</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-jn-oOc">
-                                            <rect key="frame" x="342" y="14" width="36" height="36"/>
+                                            <rect key="frame" x="359" y="21" width="19" height="22"/>
                                             <state key="normal" image="ic_play"/>
                                             <connections>
                                                 <action selector="didClickPlayButton:" destination="4eK-UX-2Pm" eventType="touchUpInside" id="D7B-WU-Jk6"/>
@@ -487,7 +536,7 @@ AO /ɔ/: "thaw".</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ic_play" width="36" height="36"/>
+        <image name="ic_play" width="19.200000762939453" height="19.200000762939453"/>
     </resources>
     <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
