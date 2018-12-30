@@ -1,4 +1,4 @@
-﻿
+
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "1Wv-H5-jYT"; */
 "1Wv-H5-jYT.title" = "Settings";
 
@@ -61,4 +61,13 @@
 
 /* Class = "UILabel"; text = "AOR /ɔr/: \"more\".\nAO /ɔ/: \"thaw\"."; ObjectID = "LmZ-M1-eJN"; */
 "LmZ-M1-eJN.text" = "AOR /ɔr/: \"more\".\nAO /ɔ/: \"thaw\".";
+
+/* Class = "UITableViewSection"; headerTitle = "Thesaurus"; ObjectID = "2CO-eL-ZBq"; */
+"2CO-eL-ZBq.headerTitle" = "Thesaurus";
+
+/* Class = "UILabel"; text = "Include reverse lookup"; ObjectID = "Y2p-BE-Zfr"; */
+"Y2p-BE-Zfr.text" = "Include reverse lookup";
+
+/* Class = "UILabel"; text = "May be slower and include less relevant results"; ObjectID = "4Cj-Vn-71p"; */
+"4Cj-Vn-71p.text" = "May be slower and include less relevant results";
 
