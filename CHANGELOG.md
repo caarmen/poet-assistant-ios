@@ -4,6 +4,9 @@ Change Log
 1.7.0 *(2018-12-29)*
 --------------------
 * Add a setting for reverse thesaurus lookup.
+* Improve voice selection list:
+  - Show a checkmark on the selected voice
+  - Allow stopping playback
 
 1.6.1 *(2018-12-23)*
 --------------------
