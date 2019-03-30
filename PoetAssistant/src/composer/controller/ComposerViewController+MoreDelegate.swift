@@ -21,7 +21,7 @@ import UIKit
 extension ComposerViewController : MoreDelegate {
 	func didShare() {
 		didFinish()
-		let shareController = UIActivityViewController(activityItems: [text.text], applicationActivities: nil)
+		let shareController = UIActivityViewController(activityItems: [text.text!], applicationActivities: nil)
 		shareController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
 		present(shareController, animated:true, completion:nil)
 	}
