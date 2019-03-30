@@ -27,11 +27,11 @@ class RTDTableViewCell: UITableViewCell {
 			  rtdDelegate: RTDDelegate?, favoriteDelegate: FavoriteDelegate) {
 		viewRTD.bind(word:word, isFavorite: isFavorite, showRTD: showRTD,
 					 rtdDelegate: rtdDelegate, favoriteDelegate: favoriteDelegate)
-		accessibilityElements = [viewRTD.labelWord,
-								 viewRTD.buttonFavorite,
-								 viewRTD.buttonRhymer,
-								 viewRTD.buttonThesaurus,
-								 viewRTD.buttonDictionary,]
+		accessibilityElements = [viewRTD.labelWord!,
+								 viewRTD.buttonFavorite!,
+								 viewRTD.buttonRhymer!,
+								 viewRTD.buttonThesaurus!,
+								 viewRTD.buttonDictionary!]
 	}
 	
 }

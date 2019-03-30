@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.7.1 *(2019-03-30)*
+--------------------
+* Update to Swift 5
+
 1.7.0 *(2018-12-29)*
 --------------------
 * Add a setting for reverse thesaurus lookup.
