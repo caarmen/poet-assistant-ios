@@ -61,7 +61,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		view.backgroundColor = Settings.getTheme().backgroundColor
 		if let searchBar = searchController?.searchBar {
 			navigationItem.titleView = searchBar
-			Settings.getTheme().applyTextFieldTint(view: searchBar, color: Settings.getTheme().controlColor)
+			Settings.getTheme().applySearchBarColors(view: searchBar)
 		}
 		navigationController?.navigationBar.barTintColor = Settings.getTheme().controlColor
 	}

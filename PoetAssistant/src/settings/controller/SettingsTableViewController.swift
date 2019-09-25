@@ -94,6 +94,11 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		if let window = view.window {
 			theme.reload(window: window)
 		}
+
+		if let navigationBar = navigationController?.navigationBar {
+			theme.reload(navigationBar: navigationBar)
+		}
+
 		view.backgroundColor = theme.backgroundColor
 	}
 

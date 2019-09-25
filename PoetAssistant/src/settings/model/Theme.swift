@@ -80,6 +80,13 @@ struct Theme {
 		// update the status bar if you change the appearance of it.
 		window.rootViewController?.setNeedsStatusBarAppearanceUpdate()
 	}
+	// https://stackoverflow.com/questions/43706103/how-to-change-navigationitem-title-color/43706323
+	func reload(navigationBar: UINavigationBar) {
+		var textAttributes = navigationBar.titleTextAttributes ?? [:]
+		textAttributes[NSAttributedString.Key.foregroundColor] = primaryTextColor
+		navigationBar.titleTextAttributes = textAttributes
+	}
+
 	private func tintTables() {
 		UITableView.appearance().backgroundColor = backgroundColor
 		UITableViewCell.appearance().backgroundColor = backgroundColor
@@ -97,9 +104,12 @@ struct Theme {
 			], for: .normal)
 		UISearchBar.appearance().backgroundColor = controlColor
 		UISearchBar.appearance().tintColor = controlColor
+		applySearchBarColors(view: UISearchBar.appearance())
 	}
+
 	private func tintSegmentedControl() {
 		UIImageView.appearance(whenContainedInInstancesOf: [UISegmentedControl.classForCoder() as! UIAppearanceContainer.Type]).tintColor = segmentedControlColor
+		UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.classForCoder() as! UIAppearanceContainer.Type]).textColor = controlColor
 	}
 	private func tintCustomViews() {
 		SearchResultHeaderView.appearance().backgroundColor = backgroundColor
@@ -112,12 +122,15 @@ struct Theme {
 	}
 	// https://stackoverflow.com/questions/21453838/cursor-invisible-in-uisearchbar-ios-7/42444940#42444940
 	// Workaround to have a dark cursor yet a light "Cancel" text.
-	func applyTextFieldTint(view: UIView, color: UIColor) {
-		if view is UITextField {
-			view.tintColor = color
-		} else {
-			view.subviews.forEach {applyTextFieldTint(view:$0, color:color)}
+	func applySearchBarColors(view: UIView) {
+		if let textField = view as? UITextField {
+			textField.tintColor = controlColor
+			textField.textColor = primaryTextColor
+			textField.backgroundColor = backgroundColor
+		} else if let imageView = view as? UIImageView {
+			imageView.tintColor = secondaryTextColor
 		}
+		view.subviews.forEach {applySearchBarColors(view:$0)}
 	}
 	
 	// https://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values

@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.7.2 *(2019-09-25)*
+--------------------
+* Update for Xcode 11 compatibility:
+  - Change the certificate type
+  - Disable the system dark mode and fix some issues with the manual dark mode
+    -  When changing the theme, manually apply the theme changes to the navigation bar and search bar
+    -  Set the text color of the segmented control
+
 1.7.1 *(2019-03-30)*
 --------------------
 * Update to Swift 5
