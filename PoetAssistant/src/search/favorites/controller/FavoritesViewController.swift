@@ -56,10 +56,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 		}
 		updateUI()
 	}
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		view.backgroundColor = Settings.getTheme().backgroundColor
-	}
 
 	@IBAction func didClickDeleteAll(_ sender: UIButton) {
 		presentClearFavoritesDialog()

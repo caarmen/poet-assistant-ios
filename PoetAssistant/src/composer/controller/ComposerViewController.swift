@@ -69,12 +69,10 @@ class ComposerViewController: UIViewController, UITextViewDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		let themeName = Settings.getTheme().name
-		if let backgroundImage = UIImage(named: "background_\(themeName).png") {
+		if let backgroundImage = UIImage(named: "background.png") {
 			let backgroundColor = UIColor(patternImage: backgroundImage)
 			self.view.backgroundColor = backgroundColor
 		}
-		hint.textColor = Settings.getTheme().secondaryTextColor
 		if (document.documentState == .normal) {
 			text.text = document.text
 		}

@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			Favorite.clearFavorites {}
 			FileUtils.deleteAllDocuments()
 		}
-		Settings.getTheme().apply()
 		return true
 	}
 	

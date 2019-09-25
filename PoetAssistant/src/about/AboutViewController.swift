@@ -39,10 +39,6 @@ class AboutViewController: UITableViewController {
 	
 	@IBOutlet weak var cellPorterStemmer: UITableViewCell!
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		view.backgroundColor = Settings.getTheme().backgroundColor
-	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = super.tableView(tableView, cellForRowAt: indexPath)
 		if (cell == cellAppName) {

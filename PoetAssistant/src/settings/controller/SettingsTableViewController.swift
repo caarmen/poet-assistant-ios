@@ -33,7 +33,6 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	
 	@IBOutlet weak var switchSearchHistory: UISwitch!
 	@IBOutlet weak var switchEfficientLayout: UISwitch!
-	@IBOutlet weak var switchDarkTheme: UISwitch!
 	private var ttsPlayButtonConnector: TtsPlayButtonConnector?
 	
 
@@ -43,7 +42,6 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		view.backgroundColor = Settings.getTheme().backgroundColor
 		switchSearchHistory.isOn = Settings.isSearchHistoryEnabled()
 		sliderVoiceSpeed.minimumValue = Settings.MIN_VOICE_SPEED
 		sliderVoiceSpeed.maximumValue = Settings.MAX_VOICE_SPEED
@@ -55,7 +53,6 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 		switchMatchAOAA.isOn = Settings.getMatchAOAAEnabled()
 		switchReverseThesaurus.isOn = Settings.getReverseThesaurusEnabled()
 		switchEfficientLayout.isOn = Settings.getEfficientLayoutEnabled()
-		switchDarkTheme.isOn = Settings.getTheme().name == Theme.DARK_THEME.name
 		updateVoiceSelection()
 	}
 
@@ -85,21 +82,6 @@ class SettingsTableViewController: UITableViewController, VoiceListDelegate {
 
 	@IBAction func didClickEfficientLayout(_ sender: UISwitch) {
 		Settings.setEfficientLayoutEnabled(enabled: sender.isOn)
-	}
-	
-	@IBAction func didClickDarkTheme(_ sender: UISwitch) {
-		let theme = sender.isOn ? Theme.DARK_THEME : Theme.LIGHT_THEME
-		Settings.setTheme(theme: theme)
-		theme.apply()
-		if let window = view.window {
-			theme.reload(window: window)
-		}
-
-		if let navigationBar = navigationController?.navigationBar {
-			theme.reload(navigationBar: navigationBar)
-		}
-
-		view.backgroundColor = theme.backgroundColor
 	}
 
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

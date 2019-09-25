@@ -58,12 +58,9 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		view.backgroundColor = Settings.getTheme().backgroundColor
 		if let searchBar = searchController?.searchBar {
 			navigationItem.titleView = searchBar
-			Settings.getTheme().applySearchBarColors(view: searchBar)
 		}
-		navigationController?.navigationBar.barTintColor = Settings.getTheme().controlColor
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)

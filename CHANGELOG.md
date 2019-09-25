@@ -5,9 +5,7 @@ Change Log
 --------------------
 * Update for Xcode 11 compatibility:
   - Change the certificate type
-  - Disable the system dark mode and fix some issues with the manual dark mode
-    -  When changing the theme, manually apply the theme changes to the navigation bar and search bar
-    -  Set the text color of the segmented control
+  - Remove the custom theme setting and rely on the system theme setting
 
 1.7.1 *(2019-03-30)*
 --------------------
