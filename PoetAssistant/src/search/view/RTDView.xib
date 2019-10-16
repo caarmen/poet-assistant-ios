@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +24,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2G-Cd-oIe" userLabel="Word">
-                    <rect key="frame" x="0.0" y="333" width="163" height="21"/>
+                    <rect key="frame" x="0.0" y="323" width="163" height="21"/>
                     <accessibility key="accessibilityConfiguration" identifier="Word"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loP-g8-giL" userLabel="ButtonFavorite">
-                    <rect key="frame" x="171" y="321.5" width="44" height="44"/>
+                    <rect key="frame" x="171" y="311.5" width="44" height="44"/>
                     <accessibility key="accessibilityConfiguration" identifier="ButtonFavorite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Iev-KF-qqi"/>
@@ -45,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6j-lR-1IK" userLabel="ButtonRhymer">
-                    <rect key="frame" x="223" y="321.5" width="44" height="44"/>
+                    <rect key="frame" x="223" y="311.5" width="44" height="44"/>
                     <accessibility key="accessibilityConfiguration" identifier="ButtonRhymer"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="MQt-eD-ZIH"/>
@@ -57,7 +55,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-MZ-SDx" userLabel="ButtonThesaurus">
-                    <rect key="frame" x="277" y="321.5" width="44" height="44"/>
+                    <rect key="frame" x="277" y="311.5" width="44" height="44"/>
                     <accessibility key="accessibilityConfiguration" identifier="ButtonThesaurus"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="cnH-C5-aem"/>
@@ -69,7 +67,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwa-22-ajO" userLabel="ButtonDictionary">
-                    <rect key="frame" x="331" y="321.5" width="44" height="44"/>
+                    <rect key="frame" x="331" y="311.5" width="44" height="44"/>
                     <accessibility key="accessibilityConfiguration" identifier="ButtonDictionary"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="CBr-PF-JAs"/>
@@ -81,6 +79,7 @@
                     </connections>
                 </button>
             </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="xwa-22-ajO" secondAttribute="trailingMargin" constant="8" id="1gm-ks-ZF6"/>
                 <constraint firstItem="G6j-lR-1IK" firstAttribute="leading" secondItem="loP-g8-giL" secondAttribute="trailing" priority="750" constant="8" id="DIE-2Z-2kD"/>

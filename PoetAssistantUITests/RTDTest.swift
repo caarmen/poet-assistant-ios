@@ -100,7 +100,7 @@ class RTDTest: XCTestCase {
 		let rhymerRow = app.cells.containing(NSPredicate(format: "label=%@", rhyme)).firstMatch
 		if (!efficientLayoutEnabled) {
 			rhymerRow.tap()
-			UITestWaitHacks.waitForRTDToShow(test:self, row: rhymerRow)
+			//UITestWaitHacks.waitForRTDToShow(test:self, row: rhymerRow)
 		}
 		rhymerRow.buttons.matching(identifier: "ButtonThesaurus").firstMatch.tap()
 		UITestWaitHacks.wait(test: self, timeout: 2)

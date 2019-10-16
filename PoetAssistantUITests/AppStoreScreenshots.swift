@@ -31,19 +31,7 @@ class AppStoreScreenshots: XCTestCase {
 	override func tearDown() {
 	}
 	
-	func testScreenshotsLightTheme() {
-		takeScreenshots()
-	}
-	
-	func testScreenshotsDarkTheme() {
-		UITestNavigation.openSettings(app: app)
-		app.switches.matching(identifier: "SwitchDarkTheme").firstMatch.tap()
-		app.navigationBars.buttons.firstMatch.tap()
-		app.navigationBars.buttons.firstMatch.tap()
-		takeScreenshots()
-	}
-	
-	func takeScreenshots() {
+	func testTakeScreenshots() {
 		UITestNavigation.openComposerTab(app: app)
 		let textViewPoem = app.textViews.matching(identifier: "ComposerTextViewPoem").firstMatch
 		textViewPoem.tap()

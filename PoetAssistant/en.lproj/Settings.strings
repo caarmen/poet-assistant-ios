@@ -44,9 +44,6 @@
 /* Class = "UILabel"; text = "Listen to a voice sample"; ObjectID = "k24-ay-Xe2"; */
 "k24-ay-Xe2.text" = "Listen to a voice sample";
 
-/* Class = "UILabel"; text = "Dark theme"; ObjectID = "nGy-Y0-zjB"; */
-"nGy-Y0-zjB.text" = "Dark theme";
-
 /* Class = "UITableViewSection"; headerTitle = "Rhymer"; ObjectID = "4Yg-wY-mBJ"; */
 "4Yg-wY-mBJ.headerTitle" = "Rhymer";
 

@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+1.7.2 *(2019-09-25)*
+--------------------
+* Update for Xcode 11 compatibility:
+  - Change the certificate type
+  - Remove the custom theme setting and rely on the system theme setting
+
 1.7.1 *(2019-03-30)*
 --------------------
 * Update to Swift 5

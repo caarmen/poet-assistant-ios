@@ -127,12 +127,12 @@ class ComposerTest: XCTestCase {
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
 		UITestNavigation.openComposerTab(app:app)
-		beginningPoint.tap()
+		beginningPoint.doubleTap()
 		openMenuItem(label:"Thesaurus")
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 		
 		UITestNavigation.openComposerTab(app:app)
-		beginningPoint.tap()
+		beginningPoint.doubleTap()
 		openMenuItem(label:"Dictionary")
 		XCTAssertEqual("here", headerWord.firstMatch.label)
 	}
@@ -143,7 +143,8 @@ class ComposerTest: XCTestCase {
 		if menuItem.exists {
 			menuItem.tap()
 		} else {
-			let moreMenuItem = app.menus.menuItems.element(boundBy: app.menus.menuItems.count - 1).firstMatch
+			let menuItemCount = app.menus.menuItems.count
+			let moreMenuItem = app.menus.menuItems.element(at: menuItemCount - 1).firstMatch
 			moreMenuItem.tap()
 			openMenuItem(label: label)
 		}

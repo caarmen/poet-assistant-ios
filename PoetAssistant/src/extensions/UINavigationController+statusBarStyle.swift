@@ -24,7 +24,7 @@ extension UINavigationController {
 		if topViewController is SearchViewController {
 			return UIStatusBarStyle.lightContent
 		} else {
-			return Settings.getTheme().statusBarStyle
+			return UIStatusBarStyle.default
 		}
 	}
 }
