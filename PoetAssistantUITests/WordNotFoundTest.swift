@@ -31,17 +31,17 @@ class WordNotFoundTest: XCTestCase {
 	}
 	
 	func testSimilarWordFound() {
-		UITestActions.search(test: self, app: app, query: "animations")
+		UITestActions.search(test: self, app: app, query: "haikus")
 
 		let headerQueryWord = app.staticTexts.matching(identifier: "HeaderWord")
 		UITestNavigation.moveToRhymer(app:app)
-		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getRhymerEmptyText(), expectedQueryLabelValue: "animations")
+		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getRhymerEmptyText(), expectedQueryLabelValue: "haikus")
 		
 		UITestNavigation.moveToThesaurus(app:app)
-		assertSearchHasResults(minResultCount: 10, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getThesaurusEmptyText(), expectedQueryLabelValue: "animation")
+		assertSearchHasResults(minResultCount: 2, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getThesaurusEmptyText(), expectedQueryLabelValue: "haiku")
 		
 		UITestNavigation.moveToDictionary(app:app)
-		assertSearchHasResults(minResultCount: 6, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getDictionaryEmptyText(), expectedQueryLabelValue: "animation")
+		assertSearchHasResults(minResultCount: 1, queryLabelElement: headerQueryWord.firstMatch, emptyTextElement: getDictionaryEmptyText(), expectedQueryLabelValue: "haiku")
 	}
 	
 	func testNoSimilarWordFound() {
