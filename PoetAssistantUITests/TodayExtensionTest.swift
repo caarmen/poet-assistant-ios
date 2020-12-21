@@ -32,23 +32,30 @@ class TodayExtensionTest: XCTestCase {
 	
 	func testWidget() {
 		// https://stackoverflow.com/questions/36307895/xcuitest-and-today-widget
-		let app = XCUIApplication()
-		// Open Notification Center
-		let bottomPoint = app.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 2))
-		app.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).press(forDuration: 0.1, thenDragTo: bottomPoint)
-		// Open Today View
+		XCUIDevice.shared.press(XCUIDevice.Button.home)
+
+		// Open Today View by pressing home and swiping right
 		let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-		springboard.scrollViews.firstMatch.swipeRight()
+		springboard.swipeRight()
+		springboard.swipeRight()
+
+		// Edit the list of widgets
 		let editButton = springboard.buttons["Edit"]
 		UITestWaitHacks.waitForElementToExist(test: self, element: editButton, timeout: 2.0)
 		editButton.tap()
+
+		let customizeButton = springboard.buttons["Customize"]
+		UITestWaitHacks.waitForElementToExist(test: self, element: customizeButton, timeout: 2.0)
+		customizeButton.tap()
 		
 		// Add the widget, removing it first if necessary
 		if !addWidget(springboard: springboard) {
 			removeWidgets(springboard: springboard)
 			XCTAssert(addWidget(springboard: springboard))
 		}
-		springboard.buttons["Done"].tap()
+		let doneButton = springboard.navigationBars.firstMatch.buttons["Done"]
+		UITestWaitHacks.waitForElementToExist(test: self, element: doneButton, timeout: 2.0)
+		doneButton.firstMatch.tap()
 		testExpandCollapse(springboard: springboard)
 	}
 	
