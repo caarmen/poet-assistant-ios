@@ -44,7 +44,6 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchController?.searchResultsUpdater = searchSuggestionsController
 		searchController?.obscuresBackgroundDuringPresentation = false
 		searchController?.hidesNavigationBarDuringPresentation = false
-		searchController?.dimsBackgroundDuringPresentation = false
 		searchController?.definesPresentationContext = true
 		searchController?.delegate = self
 		searchController?.searchBar.delegate = self
