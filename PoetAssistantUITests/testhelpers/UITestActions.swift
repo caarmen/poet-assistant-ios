@@ -46,8 +46,8 @@ class UITestActions {
 		let row = app.cells
 			.containing(NSPredicate(format: "label=%@", word))
 			.firstMatch
-		XCTAssert(row.isHittable)
 		UITestWaitHacks.wait(test:test, timeout: 1) // Wait for RTD to be visible :(
+		XCTAssert(row.isHittable)
 		row.tap()
 		UITestWaitHacks.waitForRTDToShow(test: test, row: row)
 		row.buttons.matching(identifier: "ButtonFavorite").firstMatch.tap()
