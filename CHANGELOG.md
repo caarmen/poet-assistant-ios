@@ -1,6 +1,15 @@
 Change Log
 ==========
 
+1.7.3 *(2020-12-21)*
+--------------------
+* Maintenance updates:
+  - Set deployment target to 12
+  - Swift version: 5.0 -> 5.3.2
+  - Remove/replace deprecated code
+  - Fix some tests which failed due to timeouts
+  - Fix some tests which failed due to OS UI changes in iOS 14 (share dialog, springboard)
+
 1.7.2 *(2019-09-25)*
 --------------------
 * Update for Xcode 11 compatibility:
