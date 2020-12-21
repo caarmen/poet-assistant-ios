@@ -144,7 +144,7 @@ class ComposerTest: XCTestCase {
 			menuItem.tap()
 		} else {
 			let menuItemCount = app.menus.menuItems.count
-			let moreMenuItem = app.menus.menuItems.element(at: menuItemCount - 1).firstMatch
+			let moreMenuItem = app.menus.menuItems.element(boundBy: menuItemCount - 1).firstMatch
 			moreMenuItem.tap()
 			openMenuItem(label: label)
 		}
