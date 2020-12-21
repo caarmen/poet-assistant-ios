@@ -1264,7 +1264,7 @@
 				4F6613FE21652F2200FA10A1 /* Base */,
 			);
 			name = dictionaries.sqlite;
-			path = /Users/calvarez/dev/projects/PoetAssistant/PoetAssistantLexiconsFramework/src/lexicons/coredata;
+			path = PoetAssistantLexiconsFramework/src/lexicons/coredata;
 			sourceTree = "<absolute>";
 		};
 		4FA229F321726C800014B1B9 /* Settings.storyboard */ = {
