@@ -13,6 +13,7 @@
 		4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */; };
 		4F054B6B2196ADE300386FBC /* UINavigationController+statusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */; };
 		4F05BE642590DF7400DE56ED /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05BE632590DF7400DE56ED /* WidgetUtils.swift */; };
+		4F05BE7225911B7800DE56ED /* TtsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05BE7125911B7800DE56ED /* TtsTest.swift */; };
 		4F1189C8219870A100A4308C /* RhymerSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */; };
 		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
 		4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93C9218BA71600469CD5 /* Favorite.swift */; };
@@ -188,6 +189,7 @@
 		4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
 		4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+statusBarStyle.swift"; sourceTree = "<group>"; };
 		4F05BE632590DF7400DE56ED /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
+		4F05BE7125911B7800DE56ED /* TtsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsTest.swift; sourceTree = "<group>"; };
 		4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerSettingsTest.swift; sourceTree = "<group>"; };
 		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
 		4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "userdata 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				4FEF06C321851C0D00D69383 /* FileUtilsTest.swift */,
 				4F2CE7DD21A994E700EB2AF3 /* WotdTest.swift */,
 				4F4B777F21D7A6EA00FCE173 /* ThesaurusTest.swift */,
+				4F05BE7125911B7800DE56ED /* TtsTest.swift */,
 			);
 			path = PoetAssistantTests;
 			sourceTree = "<group>";
@@ -1119,6 +1122,7 @@
 				4F4B778021D7A6EA00FCE173 /* ThesaurusTest.swift in Sources */,
 				4F3197632167E4ED00135FF4 /* PorterStemmerTest.swift in Sources */,
 				4F2CE7DE21A994E700EB2AF3 /* WotdTest.swift in Sources */,
+				4F05BE7225911B7800DE56ED /* TtsTest.swift in Sources */,
 				4FFBA5C0216A5C7A00AD3AD6 /* WordCountTest.swift in Sources */,
 				4FEB03B82177BB7100CF8B49 /* StemsTest.swift in Sources */,
 				4FEF06C421851C0D00D69383 /* FileUtilsTest.swift in Sources */,

@@ -23,8 +23,9 @@ import AVFoundation
 class TtsPlayButtonConnector: NSObject, AVSpeechSynthesizerDelegate {
 	
 	private weak var playButton: UIButton?
-	private let speechSynthesizer: AVSpeechSynthesizer
+	private var speechSynthesizer: AVSpeechSynthesizer
 	var textToSpeak: String?
+	var isHackRecreateSynthesizerNeeded = false
 
 	init(playButton: UIButton) {
 		self.speechSynthesizer = AVSpeechSynthesizer()
@@ -36,13 +37,26 @@ class TtsPlayButtonConnector: NSObject, AVSpeechSynthesizerDelegate {
 	func didTapPlayButton() {
 		if speechSynthesizer.isSpeaking {
 			speechSynthesizer.stopSpeaking(at: .immediate)
+			// If we stop the speaking between utterances (during the preUtteranceDelay of one of
+			// the utterances), then subsequent calls to speak() don't work: no speech is heard,
+			// and our delegate callbacks aren't called.
+			// The workaround is to create a new synthesizer after stopping speech
+			// https://stackoverflow.com/questions/19672814/an-issue-with-avspeechsynthesizer-any-workarounds/39422205#39422205
+			if (isHackRecreateSynthesizerNeeded) {
+				speechSynthesizer = AVSpeechSynthesizer()
+				speechSynthesizer.delegate = self
+				updatePlayButton()
+			}
 		} else {
-			let utterance = Tts.createUtterance(text: textToSpeak ?? "")
-			speechSynthesizer.speak(utterance)
+			let utterances = Tts.createUtterances(text: textToSpeak ?? "")
+			utterances.forEach {utterance in
+				speechSynthesizer.speak(utterance)
+			}
 		}
 	}
 
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+		isHackRecreateSynthesizerNeeded = utterance.preUtteranceDelay > TimeInterval(0)
 		updatePlayButton()
 	}
 	func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
