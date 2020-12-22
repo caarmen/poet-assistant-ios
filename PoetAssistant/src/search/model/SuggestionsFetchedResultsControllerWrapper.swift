@@ -34,7 +34,7 @@ class SuggestionsFetchedResultsControllerWrapper {
 	private static let SECTION_SUGGESTIONS = "suggestions_section_suggestions"
 	private static let SECTION_HISTORY = "suggestions_section_history"
 	private static let SECTION_DICTIONARY = "suggestions_section_dictionary"
-	private let queryText: String?
+	let queryText: String?
 	
 	init(queryText: String?) {
 		self.queryText = queryText
