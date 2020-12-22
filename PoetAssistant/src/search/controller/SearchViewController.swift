@@ -44,12 +44,14 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
 		searchController?.searchResultsUpdater = searchSuggestionsController
 		searchController?.obscuresBackgroundDuringPresentation = false
 		searchController?.hidesNavigationBarDuringPresentation = false
-		searchController?.dimsBackgroundDuringPresentation = false
 		searchController?.definesPresentationContext = true
 		searchController?.delegate = self
 		searchController?.searchBar.delegate = self
 		searchController?.searchBar.sizeToFit()
 		searchController?.searchBar.placeholder = NSLocalizedString("search_placeholder", comment: "")
+		if #available(iOS 13.0, *) {
+			searchController?.searchBar.searchTextField.backgroundColor = UIColor.systemBackground
+		}
 		searchController?.isActive = true
 		navigationItem.hidesSearchBarWhenScrolling = false
 		rightButtonBarItem = navigationItem.rightBarButtonItem

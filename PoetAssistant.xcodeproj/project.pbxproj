@@ -12,6 +12,7 @@
 		4F054B65218DE1AC00386FBC /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */; };
 		4F054B67218DE24500386FBC /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */; };
 		4F054B6B2196ADE300386FBC /* UINavigationController+statusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */; };
+		4F05BE642590DF7400DE56ED /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05BE632590DF7400DE56ED /* WidgetUtils.swift */; };
 		4F1189C8219870A100A4308C /* RhymerSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */; };
 		4F15B04C217342560072C8BC /* Tts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15B04B217342560072C8BC /* Tts.swift */; };
 		4F1C93CA218BA71600469CD5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C93C9218BA71600469CD5 /* Favorite.swift */; };
@@ -186,6 +187,7 @@
 		4F054B64218DE1AC00386FBC /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 		4F054B66218DE24500386FBC /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
 		4F054B6A2196ADE300386FBC /* UINavigationController+statusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+statusBarStyle.swift"; sourceTree = "<group>"; };
+		4F05BE632590DF7400DE56ED /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
 		4F1189C7219870A100A4308C /* RhymerSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhymerSettingsTest.swift; sourceTree = "<group>"; };
 		4F15B04B217342560072C8BC /* Tts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tts.swift; sourceTree = "<group>"; };
 		4F1C93C8218BA0FA00469CD5 /* userdata 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "userdata 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 				4F588BCB21ACA47D000DA76F /* UITestNavigation.swift */,
 				4F588BCD21ACA4F1000DA76F /* UITestActions.swift */,
 				4F588BCF21ACA5AF000DA76F /* UITestWaitHacks.swift */,
+				4F05BE632590DF7400DE56ED /* WidgetUtils.swift */,
 			);
 			path = testhelpers;
 			sourceTree = "<group>";
@@ -966,7 +969,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Carmen Alvarez";
 				TargetAttributes = {
 					4F2CE80021AA980400EB2AF3 = {
@@ -1191,6 +1194,7 @@
 				4F588BC921ACA34B000DA76F /* SearchResultAssertions.swift in Sources */,
 				4FEB03D12179047200CF8B49 /* ComposerTest.swift in Sources */,
 				4F588BC721AC9355000DA76F /* DeepLinkTest.swift in Sources */,
+				4F05BE642590DF7400DE56ED /* WidgetUtils.swift in Sources */,
 				4FEF0684217B83F000D69383 /* WordNotFoundTest.swift in Sources */,
 				4FEB03D921792E1000CF8B49 /* SearchSuggestionsTest.swift in Sources */,
 				4F3849DE2185C75D00613B53 /* AppStoreScreenshots.swift in Sources */,
@@ -1303,7 +1307,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PoetAssistantLexiconsFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1313,7 +1317,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1335,7 +1339,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PoetAssistantLexiconsFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1344,7 +1348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant.lexiconsframework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1357,18 +1361,20 @@
 				CODE_SIGN_ENTITLEMENTS = PoetAssistantTodayExtension/PoetAssistantTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistantTodayExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant.todayextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1379,18 +1385,20 @@
 				CODE_SIGN_ENTITLEMENTS = PoetAssistantTodayExtension/PoetAssistantTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistantTodayExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant.todayextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1409,7 +1417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoetAssistant.app/PoetAssistant";
 			};
@@ -1429,7 +1437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoetAssistant.app/PoetAssistant";
 			};
@@ -1461,6 +1469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1486,13 +1495,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.3.2;
 			};
 			name = Debug;
 		};
@@ -1522,6 +1532,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1541,12 +1552,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.3.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1559,16 +1571,18 @@
 				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1581,16 +1595,18 @@
 				CODE_SIGN_ENTITLEMENTS = PoetAssistant/PoetAssistant.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = F5C7EM458Y;
 				INFOPLIST_FILE = PoetAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.ios.poetassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1609,7 +1625,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PoetAssistant;
 			};
@@ -1629,7 +1645,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.PoetAssistantUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PoetAssistant;
 			};

@@ -42,7 +42,7 @@ class ShareTest: XCTestCase {
 		UITestNavigation.openMore(app: app)
 		XCTAssert(shareQuery.firstMatch.frame.height > 1)
 		shareQuery.firstMatch.tap()
-		let predicate = NSPredicate(format: "label =[cd] 'Cancel'")
+		let predicate = NSPredicate(format: "label =[cd] 'Close'")
 		let buttonCancelShare = app.buttons.matching(predicate).firstMatch
 		if UIDevice.current.userInterfaceIdiom == .phone {
 			UITestUtils.assertVisible(app: app, element: buttonCancelShare)

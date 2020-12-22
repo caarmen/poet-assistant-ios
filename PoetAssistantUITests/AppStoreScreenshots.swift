@@ -55,6 +55,16 @@ class AppStoreScreenshots: XCTestCase {
 		starWords(words: "acquiesce", "benight", "deferential", "fractious", "implacable", "obfuscation", "peon")
 		UITestNavigation.moveToFavorites(app: app)
 		UITestUtils.attachScreenshot(test: self, name: "favorites")
+		
+		let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+		WidgetUtils.createWidget(test: self, springboard: springboard)
+		let expandButton = WidgetUtils.getExpandButton(springboard: springboard)
+		if expandButton.exists {
+			expandButton.tap()
+		}
+		XCUIDevice.shared.press(XCUIDevice.Button.home)
+		UITestWaitHacks.wait(test: self, timeout: 1)
+		UITestUtils.attachScreenshot(test: self, name: "widget")
 	}
 	
 	private func starWords(words: String...) {
