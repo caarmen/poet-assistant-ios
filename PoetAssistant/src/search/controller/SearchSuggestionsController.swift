@@ -57,9 +57,12 @@ class SearchSuggestionsController: UITableViewController, UISearchResultsUpdatin
 	}
 	
 	func loadSuggestions(forQuery queryText: String?) {
-		fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(queryText: queryText)
-		fetchedResultsController?.performFetch { [weak self] in
-			self?.reloadData()
+		if (queryText != fetchedResultsController?.queryText) {
+			fetchedResultsController = Suggestion.createSearchSuggestionsFetchResultsController(queryText: queryText)
+			tableView.reloadData()
+			fetchedResultsController?.performFetch { [weak self] in
+				self?.reloadData()
+			}
 		}
 	}
 	private func reloadData() {
