@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+1.7.4 *(2020-12-22)*
+--------------------
+* Fix crash updating suggestions
+* Update copyright for about screen
+
 1.7.3 *(2020-12-21)*
 --------------------
 * Maintenance updates:
