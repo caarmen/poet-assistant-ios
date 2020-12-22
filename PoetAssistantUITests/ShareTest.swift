@@ -71,6 +71,9 @@ class ShareTest: XCTestCase {
 
 	private func testShare(expectedShareTexts: String...) {
 		app.buttons.matching(identifier: "HeaderButtonShare").firstMatch.tap()
+		UITestWaitHacks.waitFor(test: self, timeout: 2.0) {
+			self.app.buttons["Copy"].isHittable
+		}
 		app.buttons["Copy"].tap()
 		UITestNavigation.openComposerTab(app: app)
 		let poemTextView = app.textViews.firstMatch
