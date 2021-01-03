@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.7.5  *(2021-01-03)*
+--------------------
+* Remove link to personal website from about screen
+
 1.7.4 *(2020-12-22)*
 --------------------
 * Fix crash updating suggestions
