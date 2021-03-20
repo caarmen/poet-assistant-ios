@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.7.6  *(2021-03-20)*
+--------------------
+* Fix playback (fix bug applying pauses based on "...")
+
 1.7.5  *(2021-01-03)*
 --------------------
 * Remove link to personal website from about screen

@@ -86,8 +86,7 @@ class Tts {
 				// This optimization allows us to minimize the number of tokens we'll return, and to rely
 				// on the sentence pausing of the TTS engine when less than 3 dots separate two sentences.
 				else {
-					utterance = createUtterance(text: "\(prevUtterance!.speechString).\(token)", voiceIdentifier: voiceIdentifier)
-					utterance!.preUtteranceDelay = prevUtterance!.preUtteranceDelay
+					utterance = createUtterance(text: "\(prevUtterance!.speechString).\(token)", voiceIdentifier: voiceIdentifier, preDelay: prevUtterance!.preUtteranceDelay)
 					result[result.count - 1] = utterance!
 				}
 				prevUtterance = utterance
