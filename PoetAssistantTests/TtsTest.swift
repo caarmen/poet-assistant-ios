@@ -94,6 +94,14 @@ class TtsTest: XCTestCase {
 		testSplit(input: "To be or not to be.\nThat..\nis.\n the\nquestion", expectedUtterances: [AVSpeechUtterance(string: "To be or not to be.\nThat.\nis.\n the\nquestion")])
 	}
 
+	func testSplit12() {
+		let expectedUtterance1 = AVSpeechUtterance(string: "To be or not to be.\nThat")
+		let expectedUtterance2 = AVSpeechUtterance(string: "\nis.\n the\nquestion")
+		expectedUtterance2.preUtteranceDelay = 1
+
+		testSplit(input: "To be or not to be.\nThat....\nis.\n the\nquestion", expectedUtterances: [expectedUtterance1, expectedUtterance2])
+	}
+
 	func testSplitDotsOnly1() {
 		testSplit(input: ".", expectedUtterances:[])
 	}

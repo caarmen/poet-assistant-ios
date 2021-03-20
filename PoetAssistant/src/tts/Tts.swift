@@ -87,6 +87,7 @@ class Tts {
 				// on the sentence pausing of the TTS engine when less than 3 dots separate two sentences.
 				else {
 					utterance = createUtterance(text: "\(prevUtterance!.speechString).\(token)", voiceIdentifier: voiceIdentifier)
+					utterance!.preUtteranceDelay = prevUtterance!.preUtteranceDelay
 					result[result.count - 1] = utterance!
 				}
 				prevUtterance = utterance
