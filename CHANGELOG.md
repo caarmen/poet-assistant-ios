@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+1.7.7  *(2021-03-22)*
+--------------------
+* Fix display of play/stop button during playback pauses
+
 1.7.6  *(2021-03-20)*
 --------------------
 * Fix playback (fix bug applying pauses based on "...")
